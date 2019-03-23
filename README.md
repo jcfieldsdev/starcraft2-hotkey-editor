@@ -4,7 +4,7 @@ A hotkey editor for Starcraft II written in JavaScript. Includes all units and 
 
 ## Authors
 
-- J.C. Fields <jcfields+github@gmail.com>
+- J.C. Fields <jcfields+gitlab@gmail.com>
 
 ## License
 
