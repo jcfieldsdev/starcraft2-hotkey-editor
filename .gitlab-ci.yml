@@ -1,4 +1,6 @@
 pages:
+  script:
+  - echo
   artifacts:
     paths:
     - public
