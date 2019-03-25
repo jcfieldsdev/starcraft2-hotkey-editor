@@ -485,7 +485,7 @@ Editor.prototype.setHotkey=function(input, event) {
 	let fields=[];
 
 	for (let i=0; i<inputs.length; i++) {
-		fields[i]=inputs[i].value;
+		fields.push(inputs[i].value);
 	}
 
 	commands.setHotkeys(this.command, fields);
