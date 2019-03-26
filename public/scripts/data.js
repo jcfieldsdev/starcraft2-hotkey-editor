@@ -1437,11 +1437,26 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: {
-			"Barracks": [
+			"With Ghosts": [
 				"Marine/Barracks",
 				"Reaper/Barracks",
 				"Marauder/Barracks",
 				"Ghost/Barracks",
+				"Medic/Barracks",
+				"Firebat/Barracks",
+				"SelectBuilder",
+				"Rally",
+				"TechReactorAI/Barracks",
+				"TechLabBarracks/Barracks",
+				"Reactor/Barracks",
+				"Lift",
+				"Cancel"
+			],
+			"With Spectres": [
+				"Marine/Barracks",
+				"Reaper/Barracks",
+				"Marauder/Barracks",
+				"Spectre/Barracks",
 				"Medic/Barracks",
 				"Firebat/Barracks",
 				"SelectBuilder",
@@ -2172,6 +2187,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"TrainHERC/HERCCompound",
+			"SelectBuilder",
 			"Rally",
 			"Cancel"
 		]
@@ -8658,6 +8674,120 @@ data.units={
 		type: BUILDING,
 		commands: []
 	},
+	"LegacyOfTheVoid_Barracks": {
+		name: "Barracks",
+		icon: "btn-building-terran-barracks",
+		race: TERRAN,
+		commander: "LegacyOfTheVoid",
+		type: BUILDING,
+		commands: {
+			"Barracks": [
+				"Marine/Barracks",
+				"Reaper/Barracks",
+				"Marauder/Barracks",
+				"Medic/Barracks",
+				"Firebat/Barracks",
+				"Spectre/Barracks",
+				"SelectBuilder",
+				"Rally",
+				"TechLabBarracks/Barracks",
+				"Reactor/Barracks",
+				"Lift",
+				"Cancel"
+			],
+			"Campaign": [
+				"Marine/Barracks",
+				"Marauder/Barracks",
+				"Reaper/Barracks",
+				"Firebat/Barracks",
+				"Medic/Barracks",
+				"HireKelmorianMiners/Barracks",
+				"HireHammerSecurities/Barracks",
+				"HireDevilDogs/Barracks",
+				"MercReaper/Barracks",
+				"MercMedic/Barracks",
+				"Separatist/Barracks",
+				"Cancel"
+			]
+		}
+	},
+	"LegacyOfTheVoid_Factory": {
+		name: "Factory",
+		icon: "btn-building-terran-factory",
+		race: TERRAN,
+		commander: "LegacyOfTheVoid",
+		type: BUILDING,
+		commands: {
+			"Barracks": [
+				"Vulture/Factory",
+				"SiegeTank/Factory",
+				"Goliath/Factory",
+				"Thor/Factory",
+				"CampaignVehicles/Factory",
+				"SelectBuilder",
+				"Rally",
+				"TechLabFactory/Factory",
+				"Reactor/Factory",
+				"Lift",
+				"Cancel"
+			],
+			"Special": [
+				"Predator/Factory",
+				"MicroBot/Factory",
+				"Cancel"
+			],
+			"Campaign": [
+				"Hellion/Factory",
+				"Goliath/Factory",
+				"SiegeTank/Factory",
+				"Diamondback/Factory",
+				"MercHellion/Factory",
+				"HireSpartanCompany/Factory",
+				"HireSiegeBreakers/Factory",
+				"Thor/Factory",
+				"Cancel"
+			]
+		}
+	},
+	"LegacyOfTheVoid_Starport": {
+		name: "Starport",
+		icon: "btn-building-terran-starport",
+		race: TERRAN,
+		commander: "LegacyOfTheVoid",
+		type: BUILDING,
+		commands: {
+			"Barracks": [
+				"Banshee/Starport",
+				"Liberator/Starport",
+				"Raven/Starport",
+				"Battlecruiser/Starport",
+				"Wraith/Starport",
+				"VikingFighter/Starport",
+				"Medivac/Starport",
+				"SelectBuilder",
+				"Rally",
+				"TechLabStarport/Starport",
+				"Reactor/Starport",
+				"Lift",
+				"Cancel"
+			],
+			"Special": [
+				"BuildHercules/Starport",
+				"BuildScienceVessel/Starport",
+				"Cancel"
+			],
+			"Campaign": [
+				"VikingFighter/Starport",
+				"Banshee/Starport",
+				"Wraith/Starport",
+				"Battlecruiser/Starport",
+				"HireDuskWing/Starport",
+				"HireHelsAngels/Starport",
+				"HireDukesRevenge/Starport",
+				"Cancel"
+			]
+		}
+	},
 	"Artanis": {
 		name: "Artanis",
 		icon: "btn-unit-protoss-artanishero",
@@ -11804,6 +11934,14 @@ data.commands={
 		y: 0,
 		x: 3
 	},
+	"Spectre/Barracks": {
+		name: "Train Spectre",
+		hotkey: "S",
+		icon: "btn-unit-terran-spectre",
+		mask: false,
+		y: 0,
+		x: 3
+	},
 	"Firebat/Barracks": {
 		name: "Train Firebat",
 		hotkey: "F",
@@ -12152,6 +12290,22 @@ data.commands={
 		name: "Build Diamondback",
 		hotkey: "D",
 		icon: "btn-unit-terran-diamondback",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"MicroBot/Factory": {
+		name: "Sentry Bot",
+		hotkey: "S",
+		icon: "btn-unit-terran-ares",
+		mask: false,
+		y: 0,
+		x: 4
+	},
+	"CampaignVehicles/Factory": {
+		name: "Campaign Vehicles",
+		hotkey: "A",
+		icon: "btn-tips-armory",
 		mask: false,
 		y: 1,
 		x: 1
@@ -12595,6 +12749,102 @@ data.commands={
 		mask: false,
 		y: 0,
 		x: 0
+	},
+	"HireKelmorianMiners/Barracks": {
+		name: "War Pigs",
+		hotkey: "P",
+		icon: "btn-unit-terran-marinemercenary",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"HireHammerSecurities/Barracks": {
+		name: "Hammer Securities",
+		hotkey: "H",
+		icon: "btn-unit-terran-maraudermercenary",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"HireDevilDogs/Barracks": {
+		name: "Devil Dogs",
+		hotkey: "L",
+		icon: "btn-unit-terran-firebatmercenary",
+		mask: false,
+		y: 1,
+		x: 2
+	},
+	"MercReaper/Barracks": {
+		name: "Death Head",
+		hotkey: "J",
+		icon: "btn-unit-terran-deathhead",
+		mask: false,
+		y: 1,
+		x: 3
+	},
+	"MercMedic/Barracks": {
+		name: "Skibi's Angels",
+		hotkey: "B",
+		icon: "btn-unit-terran-medicelite",
+		mask: false,
+		y: 1,
+		x: 4
+	},
+	"Separatist/Barracks": {
+		name: "Train Trooper",
+		hotkey: "S",
+		icon: "btn-unit-terran-dom-grunt",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"MercHellion/Factory": {
+		name: "Outback Hunter",
+		hotkey: "N",
+		icon: "btn-unit-terran-outbackhunter",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"HireSpartanCompany/Factory": {
+		name: "Spartan Company",
+		hotkey: "C",
+		icon: "btn-unit-terran-goliathmercenary",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"HireSiegeBreakers/Factory": {
+		name: "Siege Breakers",
+		hotkey: "K",
+		icon: "btn-unit-terran-siegetankmercenary-tank",
+		mask: false,
+		y: 1,
+		x: 2
+	},
+	"HireDuskWing/Starport": {
+		name: "Dusk Wings",
+		hotkey: "I",
+		icon: "btn-unit-terran-bansheemercenary",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"HireHelsAngels/Starport": {
+		name: "Hel's Angels",
+		hotkey: "A",
+		icon: "btn-unit-terran-vikingmercenary-fighter",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"HireDukesRevenge/Starport": {
+		name: "Jackson's Revenge",
+		hotkey: "U",
+		icon: "btn-unit-terran-battlecruiserloki",
+		mask: false,
+		y: 1,
+		x: 2
 	},
 	"HireKelmorianMiners/MercCompound": {
 		name: "War Pigs",
@@ -20968,6 +21218,71 @@ data.overrides={
 		}
 	},
 	"LegacyOfTheVoid": {
+		"Marauder/Barracks": {
+			x: 1
+		},
+		"Reaper/Barracks": {
+			x: 2
+		},
+		"Firebat/Barracks": {
+			y: 0,
+			x: 3
+		},
+		"Medic/Barracks": {
+			y: 0,
+			x: 4
+		},
+		"Spectre/Barracks": {
+			y: 1,
+			x: 2
+		},
+		"Vulture/Factory": {
+			y: 0
+		},
+		"Goliath/Factory": {
+			y: 0,
+			x: 1
+		},
+		"SiegeTank/Factory": {
+			x: 2
+		},
+		"Thor/Factory": {
+			y: 0,
+			x: 4
+		},
+		"Predator/Factory": {
+			x: 1
+		},
+		"Diamondback/Factory": {
+			y: 0,
+			x: 3
+		},
+		"Liberator/Starport": {
+			y: 1,
+			x: 1
+		},
+		"Raven/Starport": {
+			y: 1,
+			x: 0
+		},
+		"Medivac/Starport": {
+			y: 1,
+			x: 2
+		},
+		"BuildHercules/Starport": {
+			y: 0
+		},
+		"Banshee/Starport": {
+			x: 1
+		},
+		"Wraith/Starport": {
+			y: 0,
+			x: 2
+		},
+		"Battlecruiser/Starport": {
+			y: 0,
+			x: 3
+		},
 		"GatherProt": {
 			icon: "btn-ability-protoss-gather"
 		},
