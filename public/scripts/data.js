@@ -8177,7 +8177,11 @@ data.units={
 				"KerriganVoidKineticBlast/KerriganVoidUlnar02",
 				"KerriganVoidSpawnBanelings/KerriganVoidUlnar02"
 			],
-			"Epilogue": [
+			"Epilogue 2": [
+				...common.basic,
+				"CelestialBeam/KerriganEpilogue02"
+			],
+			"Epilogue 3": [
 				...common.basic,
 				"KerriganEpilogue03QuantumRay/KerriganEpilogue03",
 				"KerriganEpilogue03Heal/KerriganEpilogue03",
@@ -11924,7 +11928,7 @@ data.commands={
 	},
 	"Spectre/Barracks": {
 		name: "Train Spectre",
-		hotkey: "S",
+		hotkey: "G",
 		icon: "btn-unit-terran-spectre",
 		mask: false,
 		y: 0,
@@ -20322,6 +20326,14 @@ data.commands={
 		y: 2,
 		x: 3
 	},
+	"CelestialBeam/KerriganEpilogue02": {
+		name: "Celestial Beam",
+		hotkey: "C",
+		icon: "btn-ability-zerg-quantumray",
+		mask: false,
+		y: 2,
+		x: 0
+	},
 	"KerriganEpilogue03QuantumRay/KerriganEpilogue03": {
 		name: "Quantum Ray",
 		hotkey: "Q",
@@ -20967,6 +20979,7 @@ data.overrides={
 			x: 0
 		},
 		"Spectre/Barracks": {
+			hotkey: "S",
 			y: 1,
 			x: 1
 		},
