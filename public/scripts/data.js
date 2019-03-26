@@ -733,8 +733,7 @@ data.units={
 				...common.flying,
 				"TechLabBarracks/Barracks",
 				"Reactor/Barracks",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -835,8 +834,7 @@ data.units={
 				...common.flying,
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -887,8 +885,7 @@ data.units={
 				...common.flying,
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -1472,8 +1469,7 @@ data.units={
 				"TechLabBarracks/Barracks",
 				"TechReactorAI/Barracks",
 				"Reactor/Barracks",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -1610,8 +1606,7 @@ data.units={
 				"TechReactorAI/Factory",
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -1658,8 +1653,7 @@ data.units={
 				"TechReactorAI/Starport",
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2038,8 +2032,7 @@ data.units={
 				...common.flying,
 				"TechLabBarracks/Barracks",
 				"Reactor/Barracks",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2115,8 +2108,7 @@ data.units={
 				...common.flying,
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2154,8 +2146,7 @@ data.units={
 				...common.flying,
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2450,8 +2441,7 @@ data.units={
 				...common.flying,
 				"TechLabBarracks/Barracks",
 				"Reactor/Barracks",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2524,8 +2514,7 @@ data.units={
 				...common.flying,
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2573,8 +2562,7 @@ data.units={
 				...common.flying,
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2871,8 +2859,7 @@ data.units={
 			"Flying": [
 				...common.flying,
 				"TechLabFactory/Factory",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -2918,8 +2905,7 @@ data.units={
 			"Flying": [
 				...common.flying,
 				"TechLabStarport/Starport",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -3193,8 +3179,7 @@ data.units={
 			"Flying": [
 				...common.flying,
 				"TechLabBarracks/Barracks",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -3264,8 +3249,7 @@ data.units={
 			"Flying": [
 				...common.flying,
 				"TechLabFactory/Factory",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -3309,8 +3293,7 @@ data.units={
 			"Flying": [
 				...common.flying,
 				"TechLabStarport/Starport",
-				"Land",
-				"Cancel"
+				"Land"
 			]
 		}
 	},
@@ -7079,8 +7062,7 @@ data.units={
 			"Uprooted": [
 				...common.flying,
 				"SITechLabBarracks/SIBarracks",
-				"SIRoot/SIBarracksFlying",
-				"Cancel"
+				"SIRoot/SIBarracksFlying"
 			]
 		}
 	},
@@ -7169,8 +7151,7 @@ data.units={
 			"Uprooted": [
 				...common.flying,
 				"SITechLabFactory/SIFactory",
-				"SIRoot/SIFactoryFlying",
-				"Cancel"
+				"SIRoot/SIFactoryFlying"
 			]
 		}
 	},
@@ -7216,8 +7197,7 @@ data.units={
 			"Uprooted": [
 				...common.flying,
 				"SITechLabStarport/SIStarport",
-				"SIRoot/SIStarportFlying",
-				"Cancel"
+				"SIRoot/SIStarportFlying"
 			]
 		}
 	},
