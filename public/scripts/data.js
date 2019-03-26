@@ -5537,14 +5537,14 @@ data.units={
 				"Lift",
 				"Cancel"
 			],
-			"Special": [
+			"Campaign": [
 				"Wraith/Starport",
 				"BuildHercules/Starport",
 				"BuildScienceVessel/Starport",
 				"Battlecruiser/Starport",
 				"Cancel"
 			],
-			"Campaign": [
+			"Mercenaries": [
 				"VikingFighter/Starport",
 				"Banshee/Starport",
 				"Wraith/Starport",
