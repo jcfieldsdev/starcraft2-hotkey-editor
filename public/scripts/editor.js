@@ -443,16 +443,19 @@ Editor.prototype.removeField=function() {
 
 	if (element.childElementCount>1) {
 		element.removeChild(element.lastChild);
-		element.lastChild.select();
 
 		commands.removeLast(this.command);
 		commands.checkDefaults(this.commander, this.command);
-
-		this.setVisibleHotkeys();
-		this.checkAllConflicts();
 	} else {
-		this.resetDefaults();
+		element.lastChild.value="";
+
+		commands.setHotkeys(this.command, []);
 	}
+
+	element.lastChild.select();
+
+	this.setVisibleHotkeys();
+	this.checkAllConflicts();
 };
 
 Editor.prototype.formatHotkey=function(hotkeys) {
