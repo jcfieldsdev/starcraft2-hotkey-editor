@@ -1555,6 +1555,18 @@ data.units={
 			"Cancel"
 		]
 	},
+	"WingsOfLiberty_ShadowOps": {
+		name: "Shadow Ops",
+		icon: "btn-building-terran-ghostacademy",
+		race: TERRAN,
+		commander: "WingsOfLiberty",
+		type: BUILDING,
+		commands: [
+			"SpectreNukeArm/GhostAcademy",
+			"SelectBuilder",
+			"Cancel"
+		]
+	},
 	"WingsOfLiberty_Factory": {
 		name: "Factory",
 		icon: "btn-building-terran-factory",
@@ -10658,7 +10670,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"ZeratulMapWideStasis/ZeratulACArtifact"
+		]
 	}
 };
 
@@ -12039,6 +12053,14 @@ data.commands={
 		x: 0
 	},
 	"NukeArm/GhostAcademy": {
+		name: "Arm Silo with Nuke",
+		hotkey: "N",
+		icon: "btn-ability-terran-armnuke",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"SpectreNukeArm/GhostAcademy": {
 		name: "Arm Silo with Nuke",
 		hotkey: "N",
 		icon: "btn-ability-terran-armnuke",
@@ -19445,6 +19467,14 @@ data.commands={
 		mask: false,
 		y: 0,
 		x: 3
+	},
+	"ZeratulMapWideStasis/ZeratulACArtifact": {
+		name: "Stasis Beam",
+		hotkey: "",
+		icon: "btn-ability-zeratul-topbar-stasisbeam",
+		mask: false,
+		y: 0,
+		x: 0
 	},
 	"Charge/ZeratulSummonZealot": {
 		name: "Charge",
