@@ -21398,9 +21398,6 @@ data.overrides={
 		},
 		"Carrier/StargateWarp": {
 			name: "Warp In Carrier\nWarp In Tempest\nWarp In Mothership"
-		},
-		"MicroBot/Factory": {
-			hotkey: "S"
 		}
 	},
 	"Artanis": {
