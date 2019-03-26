@@ -431,10 +431,16 @@ Editor.prototype.commandEditor=function(n) {
 };
 
 Editor.prototype.addField=function() {
+	let element=document.getElementById("hotkey");
+
+	// will not add new field if current field is empty
+	if (element.lastChild.value=="") {
+		element.lastChild.select();
+		return;
+	}
+
 	let input=this.createInput();
-	document.getElementById("hotkey").appendChild(input);
-	// element will be hidden if no hotkey set
-	document.getElementById("hotkey").classList.remove("hidden");
+	element.appendChild(input);
 	input.select();
 };
 
@@ -876,6 +882,10 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 	if (!this.checkUserOverrides(command)) {
 		this.clear(command);
 	}
+
+	hotkeys=hotkeys.filter(function(hotkey) {
+		return hotkey!=""; // omits blank entries
+	});
 
 	for (let i=0; i<hotkeys.length; i++) {
 		// converts from display format to file representation
