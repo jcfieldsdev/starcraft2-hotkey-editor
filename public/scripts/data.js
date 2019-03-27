@@ -1560,23 +1560,18 @@ data.units={
 		race: TERRAN,
 		commander: "WingsOfLiberty",
 		type: BUILDING,
-		commands: [
-			"NukeArm/GhostAcademy",
-			"SelectBuilder",
-			"Cancel"
-		]
-	},
-	"WingsOfLiberty_ShadowOps": {
-		name: "Shadow Ops",
-		icon: "btn-building-terran-ghostacademy",
-		race: TERRAN,
-		commander: "WingsOfLiberty",
-		type: BUILDING,
-		commands: [
-			"SpectreNukeArm/GhostAcademy",
-			"SelectBuilder",
-			"Cancel"
-		]
+		commands: {
+			"Ghost Academy": [
+				"NukeArm/GhostAcademy",
+				"SelectBuilder",
+				"Cancel"
+			],
+			"Shadow Ops": [
+				"SpectreNukeArm/GhostAcademy",
+				"SelectBuilder",
+				"Cancel"
+			]
+		}
 	},
 	"WingsOfLiberty_Factory": {
 		name: "Factory",
@@ -8178,7 +8173,7 @@ data.units={
 				"KerriganVoidSpawnBanelings/KerriganVoidUlnar02"
 			],
 			"Epilogue 2": [
-				...common.basic,
+				...common.tower,
 				"CelestialBeam/KerriganEpilogue02"
 			],
 			"Epilogue 3": [
