@@ -215,6 +215,7 @@ code, kbd, textarea {
 }
 
 div#author {
+	flex-grow: 1;
 	font-size: 0.8rem;
 	text-align: center;
 }
@@ -351,10 +352,6 @@ footer {
 	left: 0;
 	position: fixed;
 	width: 100%;
-}
-
-footer div {
-	flex-grow: 1;
 }
 
 h1 {
