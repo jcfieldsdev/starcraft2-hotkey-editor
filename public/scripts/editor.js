@@ -152,7 +152,7 @@ function Editor() {
 	this.commander="";
 	this.buttons=[];
 	this.selected=-1; // selected search result
-};
+}
 
 Editor.prototype.load=function() {
 	let unit="";
@@ -535,8 +535,6 @@ Editor.prototype.filter=function(unit) {
 };
 
 Editor.prototype.setVisibleHotkeys=function() {
-	let cards=document.getElementsByClassName("card");
-
 	// checks for conflicts in currently visible command cards
 	for (let n=0; n<this.buttons.length; n++) {
 		let keys={};
@@ -895,7 +893,7 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 				return;
 			}
 		});
-	};
+	}
 
 	this.list["Commands"][command]={};
 	this.list["Commands"][command].hotkey=hotkeys.join(",");
@@ -1052,7 +1050,7 @@ Overlay.prototype.focus=function() {
 };
 
 Overlay.prototype.select=function() {
-	document.getElementById(this.textarea).select()
+	document.getElementById(this.textarea).select();
 };
 
 /*
