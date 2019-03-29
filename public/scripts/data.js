@@ -4,7 +4,7 @@ const ZERG="zerg";
 const PROTOSS="protoss";
 
 const OTHER=0;
-const COMMANDER=1
+const COMMANDER=1;
 const UNIT=2;
 const HERO=3;
 const BUILDING=4;
@@ -397,7 +397,7 @@ const common={
 	basic: ["Move", "Stop", "MoveHoldPosition", "MovePatrol", "Attack"],
 	flying: ["Move", "Stop", "MoveHoldPosition", "MovePatrol"],
 	tower: ["Stop", "Attack"]
-}
+};
 
 const data={};
 
@@ -4609,34 +4609,6 @@ data.units={
 			"SJHyperionYamato/SJHyperion",
 			"SJHyperionLightningStorm/SJHyperion"
 		]
-	},
-	"HeartOfTheSwarm_Kerrigan": {
-		name: "Kerrigan",
-		icon: "btn-unit-zerg-kerriganinfested",
-		race: ZERG,
-		commander: "HeartOfTheSwarm",
-		type: HERO,
-		commands: {
-			"Unburrowed": [
-				"MindBolt/K5Kerrigan",
-				"PsionicLift/K5Kerrigan",
-				"WildMutation/K5Kerrigan",
-				"K5Leviathan/K5Kerrigan",
-				"BurrowDown"
-			],
-			"Burrowed": [
-				"MindBolt/K5KerriganBurrowed",
-				"PsionicLift/K5KerriganBurrowed",
-				"WildMutation/K5KerriganBurrowed",
-				"K5Leviathan/K5KerriganBurrowed",
-				"BurrowUp"
-			],
-			"Umoja": [
-				...common.basic,
-				"MindBolt/KerriganGhostLab",
-				"PsionicLift/KerriganGhostLab"
-			]
-		}
 	},
 	"HeartOfTheSwarm_Brutalisk": {
 		name: "Brutalisk",
@@ -14778,22 +14750,6 @@ data.commands={
 		x: 4
 	},
 	"ImpalerBurrowUp": {
-		name: "Unburrow",
-		hotkey: "R",
-		icon: "btn-ability-zerg-upburrow-color",
-		mask: false,
-		y: 2,
-		x: 4
-	},
-	"SwarmHostBurrowDown": {
-		name: "Burrow",
-		hotkey: "R",
-		icon: "btn-ability-zerg-burrow-color",
-		mask: false,
-		y: 2,
-		x: 4
-	},
-	"SwarmHostBurrowUp": {
 		name: "Unburrow",
 		hotkey: "R",
 		icon: "btn-ability-zerg-upburrow-color",
