@@ -219,7 +219,7 @@ Editor.prototype.unitEditor=function() {
 		h2.appendChild(img);
 	}
 
-	h2.innerHTML+=unit.name;
+	h2.appendChild(document.createTextNode(unit.name));
 	document.getElementById("unit").replaceWith(h2);
 
 	let cards=[], legends=[];
@@ -327,7 +327,7 @@ Editor.prototype.setLegend=function(title, n) {
 	let fieldset=document.getElementById("card"+n);
 	let legend=fieldset.getElementsByTagName("legend")[0];
 
-	legend.innerHTML=title;
+	legend.textContent=title;
 	legend.classList.toggle("hidden", !title);
 };
 
@@ -398,7 +398,7 @@ Editor.prototype.commandEditor=function(n) {
 		document.getElementById("hotkey").lastChild.select();
 	}
 
-	document.getElementById("command").innerHTML=this.name;
+	document.getElementById("command").textContent=this.name;
 
 	let p=document.createElement("p");
 	p.id="control";
@@ -408,7 +408,7 @@ Editor.prototype.commandEditor=function(n) {
 	button.addEventListener("click", function() {
 		this.addField();
 	}.bind(this));
-	button.innerHTML="Add";
+	button.appendChild(document.createTextNode("Add"));
 	p.appendChild(button);
 
 	button=document.createElement("button");
@@ -416,7 +416,7 @@ Editor.prototype.commandEditor=function(n) {
 	button.addEventListener("click", function() {
 		this.removeField();
 	}.bind(this));
-	button.innerHTML="Remove";
+	button.appendChild(document.createTextNode("Remove"));
 	p.appendChild(button);
 
 	button=document.createElement("button");
@@ -424,7 +424,7 @@ Editor.prototype.commandEditor=function(n) {
 	button.addEventListener("click", function() {
 		this.resetDefaults();
 	}.bind(this));
-	button.innerHTML="Reset";
+	button.appendChild(document.createTextNode("Reset"));
 	p.appendChild(button);
 
 	document.getElementById("control").replaceWith(p);
@@ -547,7 +547,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 			let hotkeys=commands.getHotkeys(this.commander, command.id);
 
 			let span="span_"+n+command.y+command.x;
-			document.getElementById(span).innerHTML=hotkeys[0];
+			document.getElementById(span).textContent=hotkeys[0];
 
 			hotkeys.forEach(function(hotkey) {
 				if (hotkey=="") {
@@ -681,7 +681,7 @@ Editor.prototype.findUnitsWith=function(id) {
 		});
 	});
 
-	document.getElementById("code").innerHTML=id;
+	document.getElementById("code").textContent=id;
 	this.formatResults("other", matches);
 };
 
@@ -716,9 +716,9 @@ Editor.prototype.formatResults=function(id, matches) {
 		let commander=data.units[unit.commander].displayName||unit.commander;
 
 		if (unit.type==COMMANDER) {
-			a.innerHTML="Commander: "+commander;
+			a.appendChild(document.createTextNode("Commander: "+commander));
 		} else {
-			a.innerHTML=commander+": "+unit.name;
+			a.appendChild(document.createTextNode(commander+": "+unit.name));
 			a.classList.toggle("conflict", commands.checkConflicts(match));
 		}
 
