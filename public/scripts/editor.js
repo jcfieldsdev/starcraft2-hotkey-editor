@@ -398,7 +398,7 @@ Editor.prototype.commandEditor=function(n) {
 		document.getElementById("hotkey").lastChild.select();
 	}
 
-	document.getElementById("command").textContent=this.name;
+	document.getElementById("command").innerHTML=this.name;
 
 	let p=document.createElement("p");
 	p.id="control";
