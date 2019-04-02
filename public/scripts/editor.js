@@ -933,19 +933,18 @@ Commands.prototype.checkConflicts=function(id) {
 			let hotkeys=this.getHotkeys(unit.commander, id);
 
 			hotkeys.forEach(function(hotkey) {
-				if (hotkey=="") {
+				if (conflict||hotkey=="") {
 					return;
 				}
 
 				if (!keys.hasOwnProperty(hotkey)) {
-					keys[hotkey]=new Set();
+					keys[hotkey]=0;
 				}
 
-				keys[hotkey].add(id);
+				keys[hotkey]++;
 
-				if (keys[hotkey].size>1) {
+				if (keys[hotkey]>1) {
 					conflict=true;
-					return;
 				}
 			});
 		}, this);
