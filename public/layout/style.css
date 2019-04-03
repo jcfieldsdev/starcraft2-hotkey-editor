@@ -195,7 +195,7 @@ button:focus, input:focus, textarea:focus {
 	outline: 0;
 }
 
-button:hover, p.hotkey input:focus {
+button:hover, p#hotkey input:focus {
 	box-shadow: 0 0 8px 2px #fff;
 	transition: box-shadow 0.1s;
 }
@@ -331,7 +331,7 @@ fieldset.card span {
 	top: 0;
 }
 
-fieldset.card span, h3, p.hotkey input {
+fieldset.card span, h3, p#hotkey input {
 	text-shadow: 1px 1px #000;
 }
 
@@ -574,7 +574,7 @@ main ul {
 	padding: 0;
 }
 
-p.hotkey input {
+p#hotkey input {
 	border-radius: 0.25em;
 	height: 1em;
 	margin: 0 0.5em 0.5em 0;
@@ -735,7 +735,7 @@ ul#results li.selected a {
 		font-size: 1.5rem;
 	}
 
-	button:hover, p.hotkey input:focus {
+	button:hover, p#hotkey input:focus {
 		box-shadow: 0 0 4px 1px #fff;
 	}
 
@@ -798,7 +798,7 @@ ul#results li.selected a {
 		font-size: 1.25rem;
 	}
 
-	button:hover, p.hotkey input:focus {
+	button:hover, p#hotkey input:focus {
 		box-shadow: 0 0 2px 1px #fff;
 	}
 

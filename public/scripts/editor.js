@@ -449,12 +449,10 @@ Editor.prototype.removeField=function() {
 
 	if (element.childElementCount>1) {
 		element.removeChild(element.lastChild);
-
 		commands.removeLast(this.command);
 		commands.checkDefaults(this.commander, this.command);
 	} else {
 		element.lastChild.value="";
-
 		commands.setHotkeys(this.command, []);
 	}
 
@@ -467,7 +465,6 @@ Editor.prototype.removeField=function() {
 Editor.prototype.formatHotkey=function(hotkeys) {
 	let p=document.createElement("p");
 	p.id="hotkey";
-	p.classList.add("hotkey");
 
 	if (hotkeys.length==0) { // hides field if empty
 		document.getElementById(p.id).replaceWith(p);
@@ -942,10 +939,7 @@ Commands.prototype.checkConflicts=function(id) {
 				}
 
 				keys[hotkey]++;
-
-				if (keys[hotkey]>1) {
-					conflict=true;
-				}
+				conflict=keys[hotkey]>1;
 			});
 		}, this);
 	}
