@@ -346,7 +346,7 @@ Editor.prototype.clearButtons=function() {
 
 	for (let n=0; n<CARDS; n++) {
 		let buttons=cards[n].getElementsByTagName("div")[0].children;
-		this.setLegend("&nbsp;", n);
+		this.setLegend(" ", n);
 
 		for (let y=0; y<ROWS; y++) {
 			for (let x=0; x<COLS; x++) {
