@@ -3672,7 +3672,7 @@ data.units={
 		commander: "Tychus",
 		type: HERO,
 		commands: {
-			"James \"Sirius\" Sykes": [
+			"James “Sirius” Sykes": [
 				"TychusWarhoundHaywireMissiles/TychusWarhound",
 				"TychusHeroCommonAbil1",
 				"TychusHeroCommonAbil2",
@@ -3687,7 +3687,7 @@ data.units={
 		}
 	},
 	"Tychus_Blaze": {
-		name: "Miles \"Blaze\" Lewis",
+		name: "Miles “Blaze” Lewis",
 		icon: "btn-unit-terran-tychusfirebat",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3701,7 +3701,7 @@ data.units={
 		]
 	},
 	"Tychus_Rattlesnake": {
-		name: "Kev \"Rattlesnake\" West",
+		name: "Kev “Rattlesnake” West",
 		icon: "btn-unit-terran-tychusmarauder",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3716,7 +3716,7 @@ data.units={
 		]
 	},
 	"Tychus_Cannonball": {
-		name: "Rob \"Cannonball\" Boswell",
+		name: "Rob “Cannonball” Boswell",
 		icon: "btn-unit-terran-tychusherc",
 		race: TERRAN,
 		commander: "Tychus",
@@ -13886,7 +13886,7 @@ data.commands={
 		x: 1
 	},
 	"TychusWarhound/TychusResearchCenter": {
-		name: "Recruit James \"Sirius\" Sykes",
+		name: "Recruit James “Sirius” Sykes",
 		hotkey: "E",
 		icon: "btn-unit-terran-tychuswarhound",
 		mask: false,
@@ -13894,7 +13894,7 @@ data.commands={
 		x: 2
 	},
 	"TychusFirebat/TychusResearchCenter": {
-		name: "Recruit Miles \"Blaze\" Lewis",
+		name: "Recruit Miles “Blaze” Lewis",
 		hotkey: "A",
 		icon: "btn-unit-terran-tychusfirebat",
 		mask: false,
@@ -13902,7 +13902,7 @@ data.commands={
 		x: 0
 	},
 	"TychusHERC/TychusResearchCenter": {
-		name: "Recruit Rob \"Cannonball\" Boswell",
+		name: "Recruit Rob “Cannonball” Boswell",
 		hotkey: "S",
 		icon: "btn-unit-terran-tychusherc",
 		mask: false,
@@ -13910,7 +13910,7 @@ data.commands={
 		x: 1
 	},
 	"TychusMarauder/TychusResearchCenter": {
-		name: "Recruit Kevin \"Rattlesnake\" West",
+		name: "Recruit Kevin “Rattlesnake” West",
 		hotkey: "D",
 		icon: "btn-unit-terran-tychusmarauder",
 		mask: false,
