@@ -3666,7 +3666,7 @@ data.units={
 		]
 	},
 	"Tychus_Sirius": {
-		name: "James \"Sirius\" Sykes",
+		name: "James “Sirius” Sykes",
 		icon: "btn-unit-terran-tychuswarhound",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3838,7 +3838,7 @@ data.units={
 		]
 	},
 	"Tychus_Bar": {
-		name: "Joeyray's Bar",
+		name: "Joeyray’s Bar",
 		icon: "btn-building-terran-tychusbar",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3886,7 +3886,7 @@ data.units={
 		]
 	},
 	"Tychus_Guns": {
-		name: "Gunslingers' Hideout",
+		name: "Gunslingers’ Hideout",
 		icon: "btn-building-terran-tychusassaultdepot",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3928,7 +3928,7 @@ data.units={
 		]
 	},
 	"Tychus_Fixers": {
-		name: "Fixers' Safehouse",
+		name: "Fixers’ Safehouse",
 		icon: "btn-building-terran-tychusspecialistdepot",
 		race: TERRAN,
 		commander: "Tychus",
@@ -7477,7 +7477,7 @@ data.units={
 		}
 	},
 	"Dehaka_DehakaDen": {
-		name: "Dehaka's Den",
+		name: "Dehaka’s Den",
 		icon: "btn-building-dehaka-dehakanest",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7488,7 +7488,7 @@ data.units={
 		]
 	},
 	"Dehaka_GlevigDen": {
-		name: "Glevig's Den",
+		name: "Glevig’s Den",
 		icon: "btn-building-dehaka-glevignest",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7503,7 +7503,7 @@ data.units={
 		]
 	},
 	"Dehaka_MurvarDen": {
-		name: "Murvar's Den",
+		name: "Murvar’s Den",
 		icon: "btn-building-dehaka-murvarnest",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7518,7 +7518,7 @@ data.units={
 		]
 	},
 	"Dehaka_DakrunDen": {
-		name: "Dakrun's Den",
+		name: "Dakrun’s Den",
 		icon: "btn-building-dehaka-dakrunnest",
 		race: ZERG,
 		commander: "Dehaka",
@@ -10454,7 +10454,7 @@ data.units={
 		]
 	},
 	"Zeratul_Probe": {
-		name: "Xel'Naga Precursor",
+		name: "Xel’Naga Precursor",
 		icon: "btn-unit-protoss-zeratulprobe",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -10483,7 +10483,7 @@ data.units={
 		}
 	},
 	"Zeratul_Stalker": {
-		name: "Xel'Naga Ambusher",
+		name: "Xel’Naga Ambusher",
 		icon: "btn-unit-protoss-zeratulstalker",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -10493,7 +10493,7 @@ data.units={
 		]
 	},
 	"Zeratul_Sentry": {
-		name: "Xel'Naga Shieldguard",
+		name: "Xel’Naga Shieldguard",
 		icon: "btn-unit-protoss-zeratulsentry",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -10514,7 +10514,7 @@ data.units={
 		]
 	},
 	"Zeratul_Immortal": {
-		name: "Xel'Naga Enforcer",
+		name: "Xel’Naga Enforcer",
 		icon: "btn-unit-protoss-zeratulimmortal",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -10524,7 +10524,7 @@ data.units={
 		]
 	},
 	"Zeratul_Observer": {
-		name: "Xel'Naga Watcher",
+		name: "Xel’Naga Watcher",
 		icon: "btn-unit-protoss-zeratulobserver",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -10535,7 +10535,7 @@ data.units={
 		]
 	},
 	"Zeratul_Disruptor": {
-		name: "Xel'Naga Abrogator",
+		name: "Xel’Naga Abrogator",
 		icon: "btn-unit-protoss-zeratuldisruptor",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -10545,7 +10545,7 @@ data.units={
 		]
 	},
 	"Zeratul_WarpPrism": {
-		name: "Xel'Naga Void Array",
+		name: "Xel’Naga Void Array",
 		icon: "btn-unit-protoss-zeratulwarpprism",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -10677,7 +10677,7 @@ data.units={
 		commands: []
 	},
 	"Zeratul_Gateway": {
-		name: "Xel'Naga Passageway",
+		name: "Xel’Naga Passageway",
 		icon: "btn-building-protoss-zeratulgateway",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -12758,7 +12758,7 @@ data.commands={
 		x: 3
 	},
 	"MercMedic/Barracks": {
-		name: "Skibi's Angels",
+		name: "Skibi’s Angels",
 		hotkey: "B",
 		icon: "btn-unit-terran-medicelite",
 		mask: false,
@@ -12806,7 +12806,7 @@ data.commands={
 		x: 0
 	},
 	"HireHelsAngels/Starport": {
-		name: "Hel's Angels",
+		name: "Hel’s Angels",
 		hotkey: "A",
 		icon: "btn-unit-terran-vikingmercenary-fighter",
 		mask: false,
@@ -12814,7 +12814,7 @@ data.commands={
 		x: 1
 	},
 	"HireDukesRevenge/Starport": {
-		name: "Jackson's Revenge",
+		name: "Jackson’s Revenge",
 		hotkey: "U",
 		icon: "btn-unit-terran-battlecruiserloki",
 		mask: false,
@@ -12862,7 +12862,7 @@ data.commands={
 		x: 0
 	},
 	"HireHelsAngels/MercCompound": {
-		name: "Hel's Angels",
+		name: "Hel’s Angels",
 		hotkey: "A",
 		icon: "btn-unit-terran-vikingmercenary-fighter",
 		mask: false,
@@ -12878,7 +12878,7 @@ data.commands={
 		x: 2
 	},
 	"HireDukesRevenge/MercCompound": {
-		name: "Jackson's Revenge",
+		name: "Jackson’s Revenge",
 		hotkey: "U",
 		icon: "btn-unit-terran-battlecruiserloki",
 		mask: false,
@@ -13814,7 +13814,7 @@ data.commands={
 		x: 1
 	},
 	"BuildTychusBar/TychusSCV": {
-		name: "Build Joeyray's Bar",
+		name: "Build Joeyray’s Bar",
 		hotkey: "B",
 		icon: "btn-building-terran-tychusbar",
 		mask: false,
@@ -13838,7 +13838,7 @@ data.commands={
 		x: 2
 	},
 	"TychusMercCompound/TychusSCV": {
-		name: "Build Gunslingers' Hideout",
+		name: "Build Gunslingers’ Hideout",
 		hotkey: "G",
 		icon: "btn-building-terran-tychusassaultdepot",
 		mask: false,
@@ -13854,7 +13854,7 @@ data.commands={
 		x: 1
 	},
 	"TychusGhostAcademy/TychusSCV": {
-		name: "Build Fixers' Safehouse",
+		name: "Build Fixers’ Safehouse",
 		hotkey: "F",
 		icon: "btn-building-terran-tychusspecialistdepot",
 		mask: false,
@@ -17022,7 +17022,7 @@ data.commands={
 		x: 1
 	},
 	"DehakaGlevigStructure/DehakaDrone": {
-		name: "Summon Glevig's Den",
+		name: "Summon Glevig’s Den",
 		hotkey: "A",
 		icon: "btn-building-dehaka-glevignest",
 		mask: false,
@@ -17030,7 +17030,7 @@ data.commands={
 		x: 0
 	},
 	"DehakaMurvarStructure/DehakaDrone": {
-		name: "Summon Murvar's Den",
+		name: "Summon Murvar’s Den",
 		hotkey: "S",
 		icon: "btn-building-dehaka-murvarnest",
 		mask: false,
@@ -17038,7 +17038,7 @@ data.commands={
 		x: 1
 	},
 	"DehakaDakrunStructure/DehakaDrone": {
-		name: "Summon Dakrun's Den",
+		name: "Summon Dakrun’s Den",
 		hotkey: "D",
 		icon: "btn-building-dehaka-dakrunnest",
 		mask: false,
@@ -17406,7 +17406,7 @@ data.commands={
 		x: 3
 	},
 	"ResearchDehakaTyrannozorArmorAura/DehakaDakrunStructure": {
-		name: "Evolve Tyrant's Protection",
+		name: "Evolve Tyrant’s Protection",
 		hotkey: "T",
 		icon: "btn-ability-zerg-dehaka-tyrannozor-tyrantprotection",
 		mask: false,
@@ -19310,7 +19310,7 @@ data.commands={
 		x: 1
 	},
 	"FenixKaldalisZealotDownloadUpgrade": {
-		name: "Download Kaldalis' A.I. Personality",
+		name: "Download Kaldalis’ A.I. Personality",
 		hotkey: "Z",
 		icon: "btn-unit-protoss-champion-zealot-purifier",
 		mask: false,
@@ -19318,7 +19318,7 @@ data.commands={
 		x: 0
 	},
 	"FenixTalisAdeptDownloadUpgrade": {
-		name: "Download Talis' A.I. Personality",
+		name: "Download Talis’ A.I. Personality",
 		hotkey: "S",
 		icon: "btn-unit-protoss-champion-adept-purifier",
 		mask: false,
@@ -19326,7 +19326,7 @@ data.commands={
 		x: 1
 	},
 	"FenixTaldarinImmortalDownloadUpgrade": {
-		name: "Download Taldarin's A.I. Personality",
+		name: "Download Taldarin’s A.I. Personality",
 		hotkey: "I",
 		icon: "btn-unit-protoss-champion-immortal-purifier",
 		mask: false,
@@ -19334,7 +19334,7 @@ data.commands={
 		x: 0
 	},
 	"FenixWarbringerColossusDownloadUpgrade": {
-		name: "Download Warbringer's A.I. Personality",
+		name: "Download Warbringer’s A.I. Personality",
 		hotkey: "C",
 		icon: "btn-unit-protoss-champion-colossus-purifier",
 		mask: false,
@@ -19342,7 +19342,7 @@ data.commands={
 		x: 1
 	},
 	"FenixMojoScoutDownloadUpgrade": {
-		name: "Download Mojo's A.I. Personality",
+		name: "Download Mojo’s A.I. Personality",
 		hotkey: "X",
 		icon: "btn-unit-protoss-champion-scout-purifier",
 		mask: false,
@@ -19350,7 +19350,7 @@ data.commands={
 		x: 0
 	},
 	"FenixClolarionCarrierDownloadUpgrade": {
-		name: "Download Clolarion's A.I. Personality",
+		name: "Download Clolarion’s A.I. Personality",
 		hotkey: "V",
 		icon: "btn-unit-protoss-champion-carrier-purifier",
 		mask: false,
@@ -19590,7 +19590,7 @@ data.commands={
 		x: 1
 	},
 	"StalkerZeratul/ZeratulGateway": {
-		name: "Warp In Xel'Naga Ambusher",
+		name: "Warp In Xel’Naga Ambusher",
 		hotkey: "S",
 		icon: "btn-unit-protoss-zeratulstalker",
 		mask: false,
@@ -19598,7 +19598,7 @@ data.commands={
 		x: 0
 	},
 	"SentryZeratul/ZeratulGateway": {
-		name: "Warp In Xel'Naga Shieldguard",
+		name: "Warp In Xel’Naga Shieldguard",
 		hotkey: "E",
 		icon: "btn-unit-protoss-zeratulsentry",
 		mask: false,
@@ -19646,7 +19646,7 @@ data.commands={
 		x: 1
 	},
 	"ImmortalZeratul/ZeratulRoboticsFacility": {
-		name: "Warp In Xel'Naga Enforcer",
+		name: "Warp In Xel’Naga Enforcer",
 		hotkey: "I",
 		icon: "btn-unit-protoss-zeratulimmortal",
 		mask: false,
@@ -19654,7 +19654,7 @@ data.commands={
 		x: 0
 	},
 	"ZeratulWarpinDisruptor/ZeratulRoboticsFacility": {
-		name: "Warp In Xel'Naga Abrogator",
+		name: "Warp In Xel’Naga Abrogator",
 		hotkey: "D",
 		icon: "btn-unit-protoss-zeratuldisruptor",
 		mask: false,
@@ -19662,7 +19662,7 @@ data.commands={
 		x: 1
 	},
 	"WarpInZeratulWarpPrism/ZeratulRoboticsFacility": {
-		name: "Warp In Xel'Naga Void Array",
+		name: "Warp In Xel’Naga Void Array",
 		hotkey: "V",
 		icon: "btn-unit-protoss-zeratulwarpprism",
 		mask: false,
@@ -19670,7 +19670,7 @@ data.commands={
 		x: 2
 	},
 	"ZeratulObserver/ZeratulRoboticsFacility": {
-		name: "Warp In Xel'Naga Watcher",
+		name: "Warp In Xel’Naga Watcher",
 		hotkey: "B",
 		icon: "btn-unit-protoss-zeratulobserver",
 		mask: false,
@@ -21650,7 +21650,7 @@ data.overrides={
 		},
 		"ResearchHighTemplarEnergyUpgrade/TemplarArchive": {
 			name: "Research Chaotic Attunement",
-			icon: "btn-upgrade-protoss-alarak-ascendant'spsiorbtravelsfurther"
+			icon: "btn-upgrade-protoss-alarak-ascendant’spsiorbtravelsfurther"
 		},
 		"ResearchHealingPsionicStorm/TemplarArchive": {
 			name: "Research Power Overwhelming",
@@ -21860,7 +21860,7 @@ data.overrides={
 			icon: "btn-building-protoss-zeratulnexus"
 		},
 		"Gateway/Probe": {
-			name: "Warp In Xel'Naga Passageway",
+			name: "Warp In Xel’Naga Passageway",
 			icon: "btn-building-protoss-zeratulgateway"
 		},
 		"CyberneticsCore/Probe": {
@@ -21890,7 +21890,7 @@ data.overrides={
 			icon: "btn-building-protoss-zeratulobserver-surveillance"
 		},
 		"Probe/Nexus": {
-			name: "Warp In Xel'Naga Precursor",
+			name: "Warp In Xel’Naga Precursor",
 			icon: "btn-unit-protoss-zeratulprobe"
 		}
 	}

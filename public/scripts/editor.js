@@ -645,7 +645,12 @@ Editor.prototype.findUnitsNamed=function(query) {
 			return;
 		}
 
-		if (properties.name.toLowerCase().indexOf(query)!=-1) {
+		let name=properties.name.toLowerCase();
+		// replace curly quotes
+		name=name.replace(/[‘’]/g, "'");
+		name=name.replace(/[“”]/g, "\"");
+
+		if (name.indexOf(query)!=-1) {
 			matches.push(unit);
 		}
 	});
