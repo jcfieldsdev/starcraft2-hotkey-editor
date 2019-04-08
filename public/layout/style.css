@@ -13,7 +13,7 @@
 	src: url(fonts/FiraMono.woff2) format("woff2");
 }
 
-*.hidden, a#download, h1, ul#filters span {
+*.hidden, a#file, h1, ul#filters span {
 	display: none;
 }
 
