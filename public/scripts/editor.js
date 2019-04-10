@@ -5,7 +5,6 @@
  */
 
 // dimensions of command cards
-const CARDS=4;
 const ROWS=3;
 const COLS=5;
 
@@ -123,16 +122,16 @@ window.addEventListener("load", function() {
 
 	let filters=document.getElementsByClassName("filter");
 
-	for (let i=0; i<filters.length; i++) {
-		filters[i].addEventListener("click", function() {
+	for (let element of filters) {
+		element.addEventListener("click", function() {
 			window.location.hash=data.units[this.value].defaultUnit;
 		});
 	}
 
 	let close=document.getElementsByClassName("close");
 
-	for (let i=0; i<close.length; i++) {
-		close[i].addEventListener("click", function() {
+	for (let element of close) {
+		element.addEventListener("click", function() {
 			overlays[this.value].hide();
 		});
 	}
@@ -235,10 +234,7 @@ Editor.prototype.unitEditor=function() {
 		legends=Object.keys(unit.commands);
 	}
 
-	// prevents error if unit has more command cards than HTML file
-	let length=Math.min(cards.length, CARDS);
-
-	for (let n=0; n<length; n++) {
+	for (let n=0; n<cards.length; n++) {
 		this.setLegend(legends[n], n);
 		this.createCommandCard(unit, cards[n], n);
 	}
@@ -256,6 +252,11 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 	let fieldset=document.getElementById("card"+n);
 	let buttons=[];
 
+	// prevents error if unit has more command cards than HTML file
+	if (fieldset==null) {
+		return;
+	}
+
 	if (n>2) { // unhides extra card
 		fieldset.classList.remove("hidden");
 	}
@@ -269,7 +270,7 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 		}
 
 		buttons.push({
-			id: id,
+			id,
 			y: command.y,
 			x: command.x
 		});
@@ -344,31 +345,28 @@ Editor.prototype.clear=function(element) {
 };
 
 Editor.prototype.clearButtons=function() {
-	let cards=document.getElementsByClassName("card");
+	let cards=Array.from(document.getElementsByClassName("card"));
 
-	for (let n=0; n<CARDS; n++) {
-		let buttons=cards[n].getElementsByTagName("div")[0].children;
+	cards.forEach(function(card, n) {
+		let buttons=card.getElementsByTagName("div")[0].children;
 		this.setLegend(" ", n);
 
-		for (let y=0; y<ROWS; y++) {
-			for (let x=0; x<COLS; x++) {
-				let pos=COLS*y+x;
-				buttons[pos].className="";
-				this.clear(buttons[pos]);
-			}
+		for (let element of buttons) {
+			element.className="";
+			this.clear(element);
 		}
 
 		if (n>2) { // hide cards after third unless needed
-			cards[n].classList.add("hidden");
+			card.classList.add("hidden");
 		}
-	}
+	}, this);
 };
 
 Editor.prototype.clearFields=function() {
 	let fields=document.getElementById("fields").children;
 
-	for (let i=0; i<fields.length; i++) {
-		this.clear(fields[i]);
+	for (let element of fields) {
+		this.clear(element);
 	}
 
 	this.clear(document.getElementById("code"));
@@ -492,8 +490,8 @@ Editor.prototype.setHotkey=function(input, event) {
 	let inputs=document.getElementById("hotkey").getElementsByTagName("input");
 	let fields=[];
 
-	for (let i=0; i<inputs.length; i++) {
-		fields.push(inputs[i].value);
+	for (let element of inputs) {
+		fields.push(element.value);
 	}
 
 	commands.setHotkeys(this.command, fields);
@@ -518,15 +516,15 @@ Editor.prototype.filter=function(unit) {
 	let items=document.getElementsByTagName("section");
 
 	// hides unit lists for commanders other than selected
-	for (let i=0; i<items.length; i++) {
-		items[i].classList.toggle("hidden", items[i].id!=filter);
+	for (let element of items) {
+		element.classList.toggle("hidden", element.id!=filter);
 	}
 
 	// sets commander icon to active
 	let icons=document.getElementsByClassName("filter");
 
-	for (let i=0; i<icons.length; i++) {
-		icons[i].classList.toggle("active", icons[i].value==filter);
+	for (let element of icons) {
+		element.classList.toggle("active", element.value==filter);
 	}
 
 	// sets color scheme to race of commander
@@ -535,10 +533,10 @@ Editor.prototype.filter=function(unit) {
 
 Editor.prototype.setVisibleHotkeys=function() {
 	// checks for conflicts in currently visible command cards
-	for (let n=0; n<this.buttons.length; n++) {
+	this.buttons.forEach(function(card, n) {
 		let keys={};
 
-		this.buttons[n].forEach(function(command) {
+		card.forEach(function(command) {
 			if (command=="") {
 				return;
 			}
@@ -581,7 +579,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 				}
 			});
 		});
-	}
+	}, this);
 };
 
 Editor.prototype.checkAllConflicts=function() {
@@ -589,23 +587,23 @@ Editor.prototype.checkAllConflicts=function() {
 	let commanders=new Set(), units=new Set();
 
 	// checks for conflicts in all unit links
-	for (let i=0; i<sections.length; i++) {
-		let links=sections[i].getElementsByTagName("a");
+	for (let section of sections) {
+		let links=section.getElementsByTagName("a");
 
-		for (let j=0; j<links.length; j++) {
-			if (links[j].hash=="") {
+		for (let link of links) {
+			if (link.hash=="") {
 				continue;
 			}
 
-			let unit=links[j].hash.replace("#", "");
+			let unit=link.hash.replace("#", "");
 
 			if (commands.checkConflicts(unit)) {
-				links[j].classList.add("conflict");
+				link.classList.add("conflict");
 
-				commanders.add(sections[i].id);
+				commanders.add(section.id);
 				units.add(unit);
 			} else {
-				links[j].classList.remove("conflict");
+				link.classList.remove("conflict");
 			}
 		}
 	}
@@ -613,21 +611,21 @@ Editor.prototype.checkAllConflicts=function() {
 	// checks for conflicts in "other units with command" list
 	let others=document.getElementById("other").getElementsByTagName("a");
 
-	for (let i=0; i<others.length; i++) {
-		if (others[i].hash=="") {
+	for (let element of others) {
+		if (element.hash=="") {
 			continue;
 		}
 
-		let unit=others[i].hash.replace("#", "");
-		others[i].classList.toggle("conflict", units.has(unit));
+		let unit=element.hash.replace("#", "");
+		element.classList.toggle("conflict", units.has(unit));
 	}
 
 	let filters=document.getElementsByClassName("filter");
 
 	// flags filter icon if section contains conflict
-	for (let i=0; i<filters.length; i++) {
-		let value=filters[i].value;
-		filters[i].classList.toggle("conflict", commanders.has(value));
+	for (let element of filters) {
+		let value=element.value;
+		element.classList.toggle("conflict", commanders.has(value));
 	}
 };
 
@@ -673,8 +671,8 @@ Editor.prototype.findUnitsWith=function(id) {
 		if (Array.isArray(properties.commands)) {
 			search=properties.commands;
 		} else {
-			Object.keys(properties.commands).forEach(function(card) {
-				search=search.concat(properties.commands[card]);
+			Object.values(properties.commands).forEach(function(card) {
+				search=search.concat(card);
 			});
 		}
 
@@ -734,7 +732,7 @@ Editor.prototype.formatResults=function(id, matches) {
 };
 
 Editor.prototype.highlightResult=function(dir) {
-	let results=document.getElementById("results").children;
+	let results=Array.from(document.getElementById("results").children);
 
 	if (dir) { // up arrow
 		if (this.selected==-1) {
@@ -752,14 +750,14 @@ Editor.prototype.highlightResult=function(dir) {
 		}
 	}
 
-	for (let i=0; i<results.length; i++) {
+	results.forEach(function(result, i) {
 		if (this.selected==i) {
-			results[i].classList.add("selected");
-			results[i].scrollIntoView(); // for long lists with scrollbars
+			result.classList.add("selected");
+			result.scrollIntoView(); // for long lists with scrollbars
 		} else {
-			results[i].classList.remove("selected");
+			result.classList.remove("selected");
 		}
-	}
+	}, this);
 };
 
 Editor.prototype.openResult=function() {
@@ -797,26 +795,26 @@ Commands.prototype.parse=function(text) {
 	// ensures empty line at end of file so final command block is saved
 	lines.push("");
 
-	for (let i=0; i<lines.length; i++) {
+	lines.forEach(function(line, i) {
 		// adds section block to object whenever new section block is found
 		// or at end of file (for the last section block)
-		if (lines.length==i+1||lines[i].match(/^\[(\w+)\]$/)) {
+		if (lines.length==i+1||line.match(/^\[(\w+)\]$/)) {
 			if (section!="") {
 				list[section]=block;
 				block={};
 			}
 
-			section=lines[i].slice(1, -1);
+			section=line.slice(1, -1);
 		}
 
 		// matches command=hotkey pairs
-		if (lines[i].match(pattern)) {
-			command=lines[i].replace(pattern, "$1");
-			hotkey=lines[i].replace(pattern, "$2");
+		if (line.match(pattern)) {
+			command=line.replace(pattern, "$1");
+			hotkey=line.replace(pattern, "$2");
 			block[command]={};
 			block[command].hotkey=hotkey;
 		}
-	}
+	});
 
 	this.load(list);
 };
@@ -855,27 +853,31 @@ Commands.prototype.getCommand=function(commander, id) {
 };
 
 Commands.prototype.getHotkeys=function(commander, id) {
-	let hotkey=data.commands[id].hotkey;
-
-	if (this.checkOverrides(commander, id, true)) {
-		hotkey=data.overrides[commander][id].hotkey;
-	}
+	let value="";
 
 	if (this.checkUserOverrides(id, true)) {
-		hotkey=this.list["Commands"][id].hotkey;
+		value=this.list["Commands"][id].hotkey;
+	} else if (this.checkOverrides(commander, id, true)) {
+		value=data.overrides[commander][id].hotkey;
+	} else {
+		value=data.commands[id].hotkey;
 	}
 
-	let hotkeys=hotkey.split(",");
+	let hotkeys=value.split(",");
 
-	for (let i=0; i<hotkeys.length; i++) {
+	hotkeys=hotkeys.map(function(symbol) {
+		let hotkey=symbol;
+
 		// converts from file format to display representation
 		Object.values(keyCodes).forEach(function(keyCode) {
-			if (hotkeys[i]==keyCode.hotkey) {
-				hotkeys[i]=keyCode.symbol||keyCode.hotkey;
+			if (symbol==keyCode.hotkey) {
+				hotkey=keyCode.symbol||keyCode.hotkey;
 				return;
 			}
 		});
-	}
+
+		return hotkey;
+	});
 
 	return hotkeys;
 };
@@ -889,15 +891,19 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 		return hotkey!=""; // omits blank entries
 	});
 
-	for (let i=0; i<hotkeys.length; i++) {
+	hotkeys=hotkeys.map(function(hotkey) {
+		let symbol=hotkey;
+
 		// converts from display format to file representation
 		Object.values(keyCodes).forEach(function(keyCode) {
-			if (hotkeys[i]==keyCode.symbol) {
-				hotkeys[i]=keyCode.hotkey;
+			if (hotkey==keyCode.symbol) {
+				symbol=keyCode.hotkey;
 				return;
 			}
 		});
-	}
+
+		return symbol;
+	});
 
 	this.list["Commands"][command]={};
 	this.list["Commands"][command].hotkey=hotkeys.join(",");
@@ -918,18 +924,18 @@ Commands.prototype.checkConflicts=function(id) {
 		cards=Object.values(unit.commands);
 	}
 
-	for (let n=0; n<cards.length; n++) {
+	cards.forEach(function(card, n) {
 		let keys={};
 
 		if (conflict) {
-			continue;
+			return;
 		}
 
 		if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-			cards[n]=cards[n].concat(common.basic);
+			card=card.concat(common.basic);
 		}
 
-		cards[n].forEach(function(id) {
+		card.forEach(function(id) {
 			if (conflict||data.commands[id]==undefined) {
 				return;
 			}
@@ -949,7 +955,7 @@ Commands.prototype.checkConflicts=function(id) {
 				conflict=keys[hotkey]>1;
 			});
 		}, this);
-	}
+	}, this);
 
 	return conflict;
 };
