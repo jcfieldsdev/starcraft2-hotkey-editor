@@ -551,7 +551,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 					return;
 				}
 
-				if (!keys.hasOwnProperty(hotkey)) {
+				if (keys[hotkey]==undefined) {
 					// using set to prevent duplicates so a hotkey cannot
 					// conflict with itself
 					keys[hotkey]=new Set();
@@ -947,7 +947,7 @@ Commands.prototype.checkConflicts=function(id) {
 					return;
 				}
 
-				if (!keys.hasOwnProperty(hotkey)) {
+				if (keys[hotkey]==undefined) {
 					keys[hotkey]=0;
 				}
 
