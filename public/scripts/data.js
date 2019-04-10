@@ -1,3 +1,5 @@
+"use strict";
+
 const NEUTRAL="neutral";
 const TERRAN="terran";
 const ZERG="zerg";
