@@ -1011,7 +1011,8 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: HERO,
 		commands: [
-			"GravitonBeam/Urun"
+			"GravitonBeam/Urun",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_Mohandar": {
@@ -1029,7 +1030,8 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: HERO,
 		commands: [
-			"Interceptor/Selendis"
+			"Interceptor/Selendis",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_Artanis": {
@@ -7783,7 +7785,8 @@ data.units={
 		commander: "Protoss",
 		type: UNIT,
 		commands: [
-			"GravitonBeam/Phoenix"
+			"GravitonBeam/Phoenix",
+			"Cancel"
 		]
 	},
 	"Protoss_Oracle": {
@@ -7824,7 +7827,8 @@ data.units={
 		commander: "Protoss",
 		type: UNIT,
 		commands: [
-			"Interceptor/Carrier"
+			"Interceptor/Carrier",
+			"Cancel"
 		]
 	},
 	"Protoss_MothershipCore": {
@@ -8436,7 +8440,8 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: UNIT,
 		commands: [
-			"ReaverScarabs/Reaver"
+			"ReaverScarabs/Reaver",
+			"Cancel"
 		]
 	},
 	"LegacyOfTheVoid_Wrathwalker": {
@@ -8454,7 +8459,8 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: UNIT,
 		commands: [
-			"GravitonBeam/Phoenix"
+			"GravitonBeam/Phoenix",
+			"Cancel"
 		]
 	},
 	"LegacyOfTheVoid_Corsair": {
@@ -8474,7 +8480,8 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: UNIT,
 		commands: [
-			"GravitonBeam/PhoenixPurifier"
+			"GravitonBeam/PhoenixPurifier",
+			"Cancel"
 		]
 	},
 	"LegacyOfTheVoid_VoidRay": {
@@ -8513,11 +8520,13 @@ data.units={
 		commands: {
 			"Carrier": [
 				"Interceptor/Carrier",
-				"RepairDrones/Carrier"
+				"RepairDrones/Carrier",
+				"Cancel"
 			],
 			"Prologue": [
 				...common.basic,
-				"Interceptor/Carrier"
+				"Interceptor/Carrier",
+				"Cancel"
 			]
 		}
 	},
@@ -8559,6 +8568,16 @@ data.units={
 			"QueenMPEnsnare/QueenClassic",
 			"QueenMPSpawnBroodlings/QueenClassic",
 			"CreepTumor/QueenClassic"
+		]
+	},
+	"LegacyOfTheVoid_TaurenMarine": {
+		name: "Tauren Space Marine",
+		icon: "btn-unit-terran-taurenspacemarine",
+		race: ZERG,
+		commander: "LegacyOfTheVoid",
+		type: UNIT,
+		commands: [
+			"Stim"
 		]
 	},
 	"LegacyOfTheVoid_Nexus": {
@@ -8862,7 +8881,8 @@ data.units={
 		commander: "Artanis",
 		type: UNIT,
 		commands: [
-			"ReaverScarabs/Reaver"
+			"ReaverScarabs/Reaver",
+			"Cancel"
 		]
 	},
 	"Artanis_Phoenix": {
@@ -8872,7 +8892,8 @@ data.units={
 		commander: "Artanis",
 		type: UNIT,
 		commands: [
-			"GravitonBeam/Phoenix"
+			"GravitonBeam/Phoenix",
+			"Cancel"
 		]
 	},
 	"Artanis_Tempest": {
@@ -9459,7 +9480,8 @@ data.units={
 		commander: "Karax",
 		type: UNIT,
 		commands: [
-			"GravitonBeam/PhoenixPurifier"
+			"GravitonBeam/PhoenixPurifier",
+			"Cancel"
 		]
 	},
 	"Karax_Carrier": {
@@ -9470,7 +9492,8 @@ data.units={
 		type: UNIT,
 		commands: [
 			"Interceptor/Carrier",
-			"RepairDrones/Carrier"
+			"RepairDrones/Carrier",
+			"Cancel"
 		]
 	},
 	"Karax_Nexus": {
@@ -10113,7 +10136,8 @@ data.units={
 		commander: "Fenix",
 		type: UNIT,
 		commands: [
-			"Interceptor/Carrier"
+			"Interceptor/Carrier",
+			"Cancel"
 		]
 	},
 	"Fenix_Probius": {
@@ -10234,7 +10258,8 @@ data.units={
 		type: UNIT,
 		commands: [
 			"FenixClolarionInterceptor/FenixClolarionCarrier",
-			"FenixClolarionBomberDummy/FenixClolarionCarrier"
+			"FenixClolarionBomberDummy/FenixClolarionCarrier",
+			"Cancel"
 		]
 	},
 	"Fenix_Nexus": {
