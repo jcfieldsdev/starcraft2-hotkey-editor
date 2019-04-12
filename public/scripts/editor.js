@@ -11,7 +11,12 @@ const COLS=5;
 // defaults
 const DEFAULT_UNIT="Raynor_SCV";
 const DEFAULT_SAVE_NAME="Hotkeys.SC2Hotkeys";
+const ICONS_DIR="icons/";
+const ICONS_EXT=".png";
 const HELP_PAGE="help.html";
+
+// delimiter for multiple hotkeys
+const DELIMITER=",";
 
 // objects
 const store=new Storage("sc2hk");
@@ -214,7 +219,7 @@ Editor.prototype.unitEditor=function() {
 
 	if (unit.icon!=undefined) {
 		let img=document.createElement("img");
-		img.setAttribute("src", "icons/"+unit.icon+".png");
+		img.setAttribute("src", ICONS_DIR+unit.icon+ICONS_EXT);
 		img.setAttribute("alt", "["+unit.name+"]");
 		img.setAttribute("title", unit.name);
 		h2.appendChild(img);
@@ -292,7 +297,7 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 Editor.prototype.createButton=function(id, command, n) {
 	let div=document.createElement("div");
 	let img=document.createElement("img");
-	img.setAttribute("src", "icons/"+command.icon+".png");
+	img.setAttribute("src", ICONS_DIR+command.icon+ICONS_EXT);
 	img.setAttribute("alt", "["+command.name+"]");
 	img.setAttribute("title", command.name);
 	img.addEventListener("click", function() {
@@ -697,7 +702,7 @@ Editor.prototype.formatResults=function(id, matches) {
 
 		if (unit.icon!=undefined) {
 			let img=document.createElement("img");
-			img.setAttribute("src", "icons/"+unit.icon+".png");
+			img.setAttribute("src", ICONS_DIR+unit.icon+ICONS_EXT);
 			img.setAttribute("alt", "["+unit.name+"]");
 			img.setAttribute("title", unit.name);
 			li.appendChild(img);
@@ -863,7 +868,7 @@ Commands.prototype.getHotkeys=function(commander, id) {
 		value=data.commands[id].hotkey;
 	}
 
-	let hotkeys=value.split(",");
+	let hotkeys=value.split(DELIMITER);
 
 	hotkeys=hotkeys.map(function(symbol) {
 		let hotkey=symbol;
@@ -906,7 +911,7 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 	});
 
 	this.list["Commands"][command]={};
-	this.list["Commands"][command].hotkey=hotkeys.join(",");
+	this.list["Commands"][command].hotkey=hotkeys.join(DELIMITER);
 };
 
 Commands.prototype.checkConflicts=function(id) {
@@ -968,7 +973,7 @@ Commands.prototype.checkDefaults=function(commander, id) {
 	}
 
 	// removes user hotkey if same as default (to avoid redundant entries)
-	if (this.getHotkeys(commander, id).join(",")==defaultHotkeys) {
+	if (this.getHotkeys(commander, id).join(DELIMITER)==defaultHotkeys) {
 		this.clear(id);
 	}
 };
@@ -1007,10 +1012,10 @@ Commands.prototype.checkUserOverrides=function(id, checkHotkey=false) {
 
 Commands.prototype.removeLast=function(command) {
 	if (this.checkUserOverrides(command)) {
-		let fields=this.list["Commands"][command].hotkey.split(",");
+		let fields=this.list["Commands"][command].hotkey.split(DELIMITER);
 		fields.splice(-1, 1);
 
-		this.list["Commands"][command].hotkey=fields.join(",");
+		this.list["Commands"][command].hotkey=fields.join(DELIMITER);
 	}
 };
 
