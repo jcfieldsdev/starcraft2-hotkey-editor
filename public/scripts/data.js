@@ -11,7 +11,9 @@ const UNIT=2;
 const HERO=3;
 const BUILDING=4;
 
-const keyCodes={
+const data={};
+
+data.keyCodes={
 	8: {
 		hotkey: "Backspace",
 		symbol: "Bck"
@@ -395,13 +397,25 @@ const keyCodes={
 	}
 };
 
-const common={
-	basic: ["Move", "Stop", "MoveHoldPosition", "MovePatrol", "Attack"],
-	flying: ["Move", "Stop", "MoveHoldPosition", "MovePatrol"],
-	tower: ["Stop", "Attack"]
+data.common={
+	basic: [
+		"Move",
+		"Stop",
+		"MoveHoldPosition",
+		"MovePatrol",
+		"Attack"
+	],
+	flying: [
+		"Move",
+		"Stop",
+		"MoveHoldPosition",
+		"MovePatrol"
+	],
+	tower: [
+		"Stop",
+		"Attack"
+	]
 };
-
-const data={};
 
 data.units={
 	"Terran": {
@@ -610,7 +624,7 @@ data.units={
 				"RavenShredderMissile/Raven"
 			],
 			"Auto-Turret": [
-				...common.tower
+				...data.common.tower
 			]
 		}
 	},
@@ -673,7 +687,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -732,7 +746,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabBarracks/Barracks",
 				"Reactor/Barracks",
 				"Land"
@@ -761,7 +775,7 @@ data.units={
 		commander: "Terran",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Stim",
 			"BunkerLoad",
@@ -776,7 +790,7 @@ data.units={
 		commander: "Terran",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/MissileTurret"
 		]
@@ -833,7 +847,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
 				"Land"
@@ -884,7 +898,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
 				"Land"
@@ -922,7 +936,7 @@ data.units={
 		commands: {
 			"Mar Sara": [],
 			"Castanar": [
-				...common.basic,
+				...data.common.basic,
 				"PlantC4Charge/Raynor",
 				"TossGrenade/Raynor",
 				"ExperimentalPlasmaGun/Raynor",
@@ -930,7 +944,7 @@ data.units={
 
 			],
 			"Char": [
-				...common.basic,
+				...data.common.basic,
 				"RaynorSnipe/RaynorCommando"
 			]
 		}
@@ -1304,7 +1318,7 @@ data.units={
 				"HunterSeekerMissile/Raven"
 			],
 			"Auto-Turret": [
-				...common.tower
+				...data.common.tower
 			]
 		}
 	},
@@ -1398,7 +1412,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -1469,7 +1483,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabBarracks/Barracks",
 				"TechReactorAI/Barracks",
 				"Reactor/Barracks",
@@ -1497,7 +1511,7 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Stim",
 			"BunkerLoad",
@@ -1512,7 +1526,7 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder"
 		]
 	},
@@ -1523,7 +1537,7 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder"
 		]
 	},
@@ -1601,7 +1615,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechReactorAI/Factory",
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
@@ -1648,7 +1662,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechReactorAI/Starport",
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
@@ -1837,14 +1851,14 @@ data.units={
 				"HunterSeekerMissile/Raven"
 			],
 			"With Spider Mines": [
-				...common.basic,
+				...data.common.basic,
 				"AutoTurret/Raven",
 				"BuildHealingDrone/Raven",
 				"HunterSeekerMissile/Raven",
 				"DeploySpiderMinesRaven/Raven"
 			],
 			"With Railgun Turrets": [
-				...common.basic,
+				...data.common.basic,
 				"BuildRailgunTurret/Raven",
 				"BuildHealingDrone/Raven",
 				"HunterSeekerMissile/Raven"
@@ -1978,7 +1992,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -2028,7 +2042,7 @@ data.units={
 				"Lift"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabBarracks/Barracks",
 				"Reactor/Barracks",
 				"Land"
@@ -2055,7 +2069,7 @@ data.units={
 		commander: "NovaCovertOps",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Stim",
 			"BunkerLoad",
@@ -2070,7 +2084,7 @@ data.units={
 		commander: "NovaCovertOps",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/MissileTurret"
 		]
@@ -2104,7 +2118,7 @@ data.units={
 				"Lift"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
 				"Land"
@@ -2142,7 +2156,7 @@ data.units={
 				"Lift"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
 				"Land"
@@ -2376,7 +2390,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -2437,7 +2451,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabBarracks/Barracks",
 				"Reactor/Barracks",
 				"Land"
@@ -2466,7 +2480,7 @@ data.units={
 		commander: "Raynor",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Stim",
 			"BunkerLoad",
@@ -2481,7 +2495,7 @@ data.units={
 		commander: "Raynor",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/MissileTurret"
 		]
@@ -2510,7 +2524,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabFactory/Factory",
 				"Reactor/Factory",
 				"Land"
@@ -2558,7 +2572,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabStarport/Starport",
 				"Reactor/Starport",
 				"Land"
@@ -2733,7 +2747,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -2789,12 +2803,12 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Unburrowed": [
-				...common.tower,
+				...data.common.tower,
 				"SelectBuilder",
 				"Salvage/PerditionTurret"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"SelectBuilder",
 				"Salvage/PerditionTurretUnderground"
 			]
@@ -2807,7 +2821,7 @@ data.units={
 		commander: "Swann",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/KelMorianGrenadeTurret"
 		]
@@ -2819,7 +2833,7 @@ data.units={
 		commander: "Swann",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/KelMorianMissileTurret"
 		]
@@ -2856,7 +2870,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabFactory/Factory",
 				"Land"
 			]
@@ -2902,7 +2916,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabStarport/Starport",
 				"Land"
 			]
@@ -3073,7 +3087,7 @@ data.units={
 				"InstantHunterSeekerMissile/Raven_BlackOps"
 			],
 			"Railgun Turret": [
-				...common.tower
+				...data.common.tower
 			]
 		}
 	},
@@ -3134,7 +3148,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -3176,7 +3190,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabBarracks/Barracks",
 				"Land"
 			]
@@ -3204,7 +3218,7 @@ data.units={
 		commander: "Nova",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/NovaACLaserTurret"
 		]
@@ -3216,7 +3230,7 @@ data.units={
 		commander: "Nova",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/MissileTurret"
 		]
@@ -3246,7 +3260,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabFactory/Factory",
 				"Land"
 			]
@@ -3290,7 +3304,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"TechLabStarport/Starport",
 				"Land"
 			]
@@ -3385,7 +3399,7 @@ data.units={
 				"MorphToHHHellion/HHHellionTank"
 			],
 			"Hellion": [
-				...common.basic,
+				...data.common.basic,
 				"MorphToHellionTank/HHHellion",
 				"HHHellionBomb/HHHellion"
 			]
@@ -3416,7 +3430,7 @@ data.units={
 				"AssaultMode"
 			],
 			"Assault Mode": [
-				...common.basic,
+				...data.common.basic,
 				"FleetwideJump/HHVikingAssault",
 				"FighterMode"
 			]
@@ -3464,7 +3478,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -3504,7 +3518,7 @@ data.units={
 		commander: "Han",
 		type: BUILDING,
 		commands: [
-			...common.basic,
+			...data.common.basic,
 			"ResearchHHMercStarportHangarBay/HHMercStarportUpgraded",
 			"HHReaper/HHMercStarportUpgraded",
 			"HHWidowMine/HHMercStarportUpgraded",
@@ -3540,7 +3554,7 @@ data.units={
 		commander: "Han",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/MissileTurret"
 		]
@@ -3645,7 +3659,7 @@ data.units={
 				"TychusHeroCommonAbil5"
 			],
 			"Upgraded": [
-				...common.basic,
+				...data.common.basic,
 				"TychusOdinNuclearStrike/TychusOdin",
 				"TychusHeroCommonAbil2",
 				"TychusHeroCommonAbil3",
@@ -3685,7 +3699,7 @@ data.units={
 				"TychusHeroCommonAbil5"
 			],
 			"Warhound Turret": [
-				...common.tower,
+				...data.common.tower,
 				"TychusWarhoundTurretHaywireMissiles/TychusWarhoundAutoTurret"
 			]
 		}
@@ -3824,7 +3838,7 @@ data.units={
 				"Cancel"
 			],
 			"Flying": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"Land"
@@ -3884,7 +3898,7 @@ data.units={
 		commander: "Tychus",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"SelectBuilder",
 			"Salvage/TychusSCVAutoTurret"
 		]
@@ -4067,7 +4081,7 @@ data.units={
 				"MorphtoOverlordTransport/Overlord"
 			],
 			"Ventral Sacs": [
-				...common.basic,
+				...data.common.basic,
 				"MorphToOverseer/Overlord",
 				"GenerateCreep/Overlord",
 				"BunkerLoad",
@@ -4092,7 +4106,7 @@ data.units={
 				"Contaminate/Overseer"
 			],
 			"Changeling": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -4174,7 +4188,7 @@ data.units={
 				"BurrowLurkerMP"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"LurkerCancelHoldFire/LurkerMP",
 				"LurkerHoldFire/LurkerMP",
 				"LurkerBurrowUp"
@@ -4209,7 +4223,7 @@ data.units={
 		commands: {
 			"Brood Lord": [],
 			"Broodling": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -4227,13 +4241,13 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"InfestedTerrans/InfestorBurrowed",
 				"NeuralParasite/InfestorBurrowed",
 				"BurrowUp"
 			],
 			"Infested Terran": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -4249,12 +4263,12 @@ data.units={
 				"SwarmHostBurrowDown"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"VoidSwarmHostSpawnLocust/SwarmHostBurrowedMP",
 				"SwarmHostBurrowUp"
 			],
 			"Locust": [
-				...common.basic,
+				...data.common.basic,
 				"LocustMPFlyingSwoop/LocustMPFlying"
 			]
 		}
@@ -4384,7 +4398,7 @@ data.units={
 		commander: "Zerg",
 		type: BUILDING,
 		commands: [
-			...common.basic,
+			...data.common.basic,
 			"SpineCrawlerRoot/SpineCrawlerUprooted",
 			"SpineCrawlerUproot/SpineCrawler"
 		]
@@ -4396,7 +4410,7 @@ data.units={
 		commander: "Zerg",
 		type: BUILDING,
 		commands: [
-			...common.basic,
+			...data.common.basic,
 			"SporeCrawlerUproot/SporeCrawler",
 			"SporeCrawlerRoot/SporeCrawlerUprooted"
 		]
@@ -4520,7 +4534,7 @@ data.units={
 				"BurrowUp"
 			],
 			"Umoja": [
-				...common.basic,
+				...data.common.basic,
 				"MindBolt/KerriganGhostLab",
 				"PsionicLift/KerriganGhostLab"
 			]
@@ -4538,14 +4552,14 @@ data.units={
 				"GrowSwarmQueen/LarvalQueen"
 			],
 			"Stage 1": [
-				...common.basic,
+				...data.common.basic,
 				"SwarmQueenParasiticInvasion/SwarmQueen",
 				"SwarmQueenZergling/SwarmQueen",
 				"GrowLargeQueen/SwarmQueen",
 				"BurrowDown"
 			],
 			"Stage 2": [
-				...common.basic,
+				...data.common.basic,
 				"SwarmQueenParasiticInvasion/LargeSwarmQueen",
 				"SwarmQueenZergling/LargeSwarmQueen",
 				"SwarmQueenRoach/LargeSwarmQueen",
@@ -4553,7 +4567,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Stage 3": [
-				...common.basic,
+				...data.common.basic,
 				"SwarmQueenParasiticInvasion/HugeSwarmQueen",
 				"SwarmQueenZergling/HugeSwarmQueen",
 				"SwarmQueenRoach/HugeSwarmQueen",
@@ -4574,7 +4588,7 @@ data.units={
 				"StukovInfestedTerrans/InfestedStukov"
 			],
 			"Infested Terran": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -4595,7 +4609,7 @@ data.units={
 				"BurrowUp"
 			],
 			"Spawn": [
-				...common.basic,
+				...data.common.basic,
 				"Drag/DehakaMirrorImage"
 			]
 		}
@@ -4830,7 +4844,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Spawn": [
-				...common.basic,
+				...data.common.basic,
 				"Explode/HotSSplitterlingBig",
 				"EnableBuildingAttack/HotSSplitterlingMedium",
 				"DisableBuildingAttack/HotSSplitterlingMedium",
@@ -4888,7 +4902,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			]
 		}
@@ -4905,11 +4919,11 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			],
 			"Roachling": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -4925,7 +4939,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			]
 		}
@@ -4993,7 +5007,7 @@ data.units={
 				"ImpalerBurrowDown"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"ImpalerBurrowUp"
 			]
 		}
@@ -5009,7 +5023,7 @@ data.units={
 				"BurrowLurkerMP"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"LurkerBurrowUp"
 			]
 		}
@@ -5028,7 +5042,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			]
 		}
@@ -5044,16 +5058,16 @@ data.units={
 				"SwarmHostRoot"
 			],
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"LocustLaunch/SwarmHostRooted",
 				"SwarmHostUproot"
 			],
 			"Unburrowed": [
-				...common.basic,
+				...data.common.basic,
 				"SwarmHostRootBurrow"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"LocustLaunch/SwarmHostBurrowed",
 				"SwarmHostUprootUnburrow"
 			]
@@ -5071,16 +5085,16 @@ data.units={
 				"SwarmHostRoot"
 			],
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"LocustFlyingLaunch/SwarmHostSplitARooted",
 				"SwarmHostUproot"
 			],
 			"Unburrowed": [
-				...common.basic,
+				...data.common.basic,
 				"SwarmHostRootBurrow"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"LocustFlyingLaunch/SwarmHostSplitABurrowed",
 				"SwarmHostUprootUnburrow"
 			]
@@ -5099,18 +5113,18 @@ data.units={
 				"SwarmHostRoot"
 			],
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"LocustLaunchCreeper/SwarmHostSplitBRooted",
 				"SwarmHostDeepBurrow/SwarmHostSplitBRooted",
 				"SwarmHostUproot"
 			],
 			"Unburrowed": [
-				...common.basic,
+				...data.common.basic,
 				"SwarmHostDeepBurrow/SwarmHostSplitB",
 				"SwarmHostRootBurrow"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"SwarmHostDeepBurrow/SwarmHostSplitBBurrowed",
 				"LocustLaunchCreeper/SwarmHostSplitBBurrowed",
 				"SwarmHostUprootUnburrow"
@@ -5156,7 +5170,7 @@ data.units={
 		commands: {
 			"Brood Lord": [],
 			"Broodling": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -5311,11 +5325,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SpineCrawlerUproot/SpineCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SpineCrawlerRoot/SpineCrawlerUprooted"
 			]
 		}
@@ -5328,11 +5342,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SporeCrawlerUproot/SporeCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SporeCrawlerRoot/SporeCrawlerUprooted"
 			]
 		}
@@ -5690,7 +5704,7 @@ data.units={
 				"BurrowLurkerMP"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"LurkerCancelHoldFire/LurkerBurrowed",
 				"LurkerHoldFire/LurkerBurrowed",
 				"LurkerBurrowUp"
@@ -5717,7 +5731,7 @@ data.units={
 		commands: {
 			"Brood Lord": [],
 			"Broodling": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -5822,11 +5836,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SpineCrawlerUproot/SpineCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SpineCrawlerRoot/SpineCrawlerUprooted"
 			]
 		}
@@ -5839,11 +5853,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SporeCrawlerUproot/SporeCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SporeCrawlerRoot/SporeCrawlerUprooted"
 			]
 		}
@@ -6081,7 +6095,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			]
 		}
@@ -6101,7 +6115,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Spawn": [
-				...common.basic,
+				...data.common.basic,
 				"Explode/HotSSplitterlingBig",
 				"EnableBuildingAttack/HotSSplitterlingMedium",
 				"DisableBuildingAttack/HotSSplitterlingMedium",
@@ -6176,7 +6190,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			]
 		}
@@ -6282,11 +6296,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SpineCrawlerUproot/SpineCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SpineCrawlerRoot/SpineCrawlerUprooted"
 			]
 		}
@@ -6299,11 +6313,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SporeCrawlerUproot/SporeCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SporeCrawlerRoot/SporeCrawlerUprooted"
 			]
 		}
@@ -6458,7 +6472,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"EvolveToBrutalisk/RoachBurrowed",
 				"BurrowUp"
 			]
@@ -6495,14 +6509,14 @@ data.units={
 				"SwarmHostRootBurrow"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"LocustLaunch/SwarmHostBurrowed",
 				"AbathurDeepTunnel/SwarmHostBurrowed",
 				"EvolveToBrutalisk/SwarmHost",
 				"SwarmHostUprootUnburrow"
 			],
 			"Locust": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -6661,11 +6675,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SpineCrawlerUproot/SpineCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SpineCrawlerRoot/SpineCrawlerUprooted"
 			]
 		}
@@ -6678,11 +6692,11 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SporeCrawlerUproot/SporeCrawler"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SporeCrawlerRoot/SporeCrawlerUprooted"
 			]
 		}
@@ -6971,7 +6985,7 @@ data.units={
 				"Cancel"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"CommandCenterLoad",
 				"CommandCenterUnloadAll",
 				"SIRoot/SICommandCenterFlying"
@@ -7005,7 +7019,7 @@ data.units={
 				"SIUproot/SICivilianStructure"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SIInfestedCivilian/SICivilianStructureFlying",
 				"SIRoot/SICivilianStructureFlying"
 			]
@@ -7031,7 +7045,7 @@ data.units={
 				"Cancel"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SITechLabBarracks/SIBarracks",
 				"SIRoot/SIBarracksFlying"
 			]
@@ -7060,7 +7074,7 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SIInfestedBunkerSpawnInfestedMarine/SIInfestedBunker",
 				"SelectBuilder",
 				"SIStukovPlaceHordeRally/SIInfestedBunker",
@@ -7069,7 +7083,7 @@ data.units={
 				"SIInfestedBunkerRoot/SIInfestedBunkerUprooted"
 			],
 			"Uprooted": [
-				...common.basic,
+				...data.common.basic,
 				"BunkerLoad",
 				"BunkerUnloadAll",
 				"SIInfestedBunkerUproot/SIInfestedBunker"
@@ -7084,13 +7098,13 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Rooted": [
-				...common.tower,
+				...data.common.tower,
 				"SelectBuilder",
 				"Salvage/SIMissileTurret",
 				"SIUproot/SIMissileTurret"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"Salvage/SIMissileTurret",
 				"SIRoot/SIMissileTurretFlying"
 			]
@@ -7120,7 +7134,7 @@ data.units={
 				"Cancel"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SITechLabFactory/SIFactory",
 				"SIRoot/SIFactoryFlying"
 			]
@@ -7166,7 +7180,7 @@ data.units={
 				"Cancel"
 			],
 			"Uprooted": [
-				...common.flying,
+				...data.common.flying,
 				"SITechLabStarport/SIStarport",
 				"SIRoot/SIStarportFlying"
 			]
@@ -7277,7 +7291,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			]
 		}
@@ -7293,7 +7307,7 @@ data.units={
 				"BurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"BurrowUp"
 			]
 		}
@@ -7344,7 +7358,7 @@ data.units={
 				"ImpalerBurrowDown"
 			],
 			"Burrowed": [
-				...common.basic,
+				...data.common.basic,
 				"ImpalerBurrowUp"
 			]
 		}
@@ -7362,12 +7376,12 @@ data.units={
 				"SwarmHostBurrowDown"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"DehakaSpawnLocusts/DehakaSwarmHostBurrowed",
 				"SwarmHostBurrowUp"
 			],
 			"Locust": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -7383,12 +7397,12 @@ data.units={
 				"SwarmHostBurrowDown"
 			],
 			"Burrowed": [
-				...common.tower,
+				...data.common.tower,
 				"DehakaSpawnLocustsBomb/DehakaPrimalSwarmHostBurrowed",
 				"SwarmHostBurrowUp"
 			],
 			"Creeper": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -7442,7 +7456,7 @@ data.units={
 				"Cancel"
 			],
 			"Uprooted": [
-				...common.basic,
+				...data.common.basic,
 				"Rally",
 				"PrimalBuildingUproot/DehakaHatchery"
 			]
@@ -7474,7 +7488,7 @@ data.units={
 				"Cancel"
 			],
 			"Uprooted": [
-				...common.basic,
+				...data.common.basic,
 				"Rally",
 				"PrimalBuildingRoot/DehakaBarracksUprooted"
 			]
@@ -7542,7 +7556,7 @@ data.units={
 		commander: "Dehaka",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"NydusDestroyerBeam/DehakaNydusDestroyer",
 			"NydusDestroyerDeepTunnel/DehakaNydusDestroyer"
 		]
@@ -7554,7 +7568,7 @@ data.units={
 		commander: "Dehaka",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"DehakaNydusDestroyerTimedNoFoodBeam/DehakaNydusDestroyerTimedNoFood",
 			"GreaterNydusDestroyerDeepTunnel/DehakaNydusDestroyerTimedNoFood"
 		]
@@ -7566,7 +7580,7 @@ data.units={
 		commander: "Dehaka",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"GlevigFirebreath/DehakaGlevig",
 			"GlevigTunnel/DehakaGlevig"
 		]
@@ -7947,7 +7961,7 @@ data.units={
 		commander: "Protoss",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"Protoss_CyberneticsCore": {
@@ -8133,7 +8147,7 @@ data.units={
 				"VoidShieldCapacitor/FenixChampion"
 			],
 			"Calldown": [
-				...common.basic,
+				...data.common.basic,
 				"FenixSOACharge/FenixSOA",
 				"FenixWhirlwind/FenixSOA"
 			]
@@ -8151,11 +8165,11 @@ data.units={
 				"KerriganVoidSpawnBanelings/KerriganVoidUlnar02"
 			],
 			"Epilogue 2": [
-				...common.tower,
+				...data.common.tower,
 				"CelestialBeam/KerriganEpilogue02"
 			],
 			"Epilogue 3": [
-				...common.basic,
+				...data.common.basic,
 				"KerriganEpilogue03QuantumRay/KerriganEpilogue03",
 				"KerriganEpilogue03Heal/KerriganEpilogue03",
 				"KerriganEpilogue03CreepTeleport/KerriganEpilogue03",
@@ -8211,7 +8225,7 @@ data.units={
 				"VoidZealotWhirlwind/ZealotAiur"
 			],
 			"Prologue": [
-				...common.basic,
+				...data.common.basic,
 				"Charge/Zealot"
 			]
 		}
@@ -8249,7 +8263,7 @@ data.units={
 				"GuardianShield/SentryAiur"
 			],
 			"Prologue": [
-				...common.basic,
+				...data.common.basic,
 				"VoidSentryShieldRepair/Sentry",
 				"GuardianShield/Sentry",
 				"ForceField/Sentry"
@@ -8290,7 +8304,7 @@ data.units={
 				"StalkerBlinkShieldRestoreBase/StalkerShakuras"
 			],
 			"Prologue": [
-				...common.basic,
+				...data.common.basic,
 				"Blink/Stalker"
 			]
 		}
@@ -8336,7 +8350,7 @@ data.units={
 				"AWrp"
 			],
 			"Archon": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -8374,7 +8388,7 @@ data.units={
 				"VoidDarkTemplarShadowFury/DarkTemplarShakuras"
 			],
 			"Prologue": [
-				...common.basic,
+				...data.common.basic,
 				"AWrp"
 			]
 		}
@@ -8524,7 +8538,7 @@ data.units={
 				"Cancel"
 			],
 			"Prologue": [
-				...common.basic,
+				...data.common.basic,
 				"Interceptor/Carrier",
 				"Cancel"
 			]
@@ -8541,7 +8555,7 @@ data.units={
 				"LightningBomb/Tempest"
 			],
 			"Prologue": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -8667,7 +8681,7 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"LegacyOfTheVoid_Monolith": {
@@ -8677,7 +8691,7 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"LegacyOfTheVoid_CyberneticsCore": {
@@ -8978,7 +8992,7 @@ data.units={
 		commander: "Artanis",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"Artanis_CyberneticsCore": {
@@ -9293,7 +9307,7 @@ data.units={
 		commander: "Vorazun",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"Vorazun_CyberneticsCore": {
@@ -9581,7 +9595,7 @@ data.units={
 		commander: "Karax",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"Karax_Monolith": {
@@ -9591,7 +9605,7 @@ data.units={
 		commander: "Karax",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"Karax_CyberneticsCore": {
@@ -9912,7 +9926,7 @@ data.units={
 		commander: "Alarak",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"Alarak_CyberneticsCore": {
@@ -10005,13 +10019,13 @@ data.units={
 				"VoidShieldCapacitor/FenixCoop"
 			],
 			"Solarite Dragoon": [
-				...common.basic,
+				...data.common.basic,
 				"FenixDragoonChargedBuster/FenixDragoon",
 				"FenixDragoonAirBomb/FenixDragoon",
 				"FenixDragoonArsenalOvercharge/FenixDragoon"
 			],
 			"Cybros Arbiter": [
-				...common.basic,
+				...data.common.basic,
 				"FenixArbiterStasisField/FenixArbiter",
 				"FenixArbiterCloakField/FenixArbiter",
 				"ArbiterMPRecall/FenixArbiter"
@@ -10337,7 +10351,7 @@ data.units={
 		commander: "Fenix",
 		type: BUILDING,
 		commands: [
-			...common.tower
+			...data.common.tower
 		]
 	},
 	"Fenix_CyberneticsCore": {
@@ -10608,7 +10622,7 @@ data.units={
 				"ZeratulXelNagaConstructPsiBlast/ZeratulXelNagaConstructCyan"
 			],
 			"Charged Crystal": [
-				...common.basic
+				...data.common.basic
 			]
 		}
 	},
@@ -10724,7 +10738,7 @@ data.units={
 		commander: "Zeratul",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"ZeratulPhaseCannonProjectionPassive/ZeratulPhotonCannon",
 			"ZeratulStructureBarrier/ZeratulPhotonCannon"
 		]
@@ -10736,7 +10750,7 @@ data.units={
 		commander: "Zeratul",
 		type: BUILDING,
 		commands: [
-			...common.tower,
+			...data.common.tower,
 			"ZeratulKhaydarinMonolithWarp/ZeratulKhaydarinMonolith",
 			"ZeratulStructureBarrier/ZeratulKhaydarinMonolith"
 		]

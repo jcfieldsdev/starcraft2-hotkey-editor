@@ -251,7 +251,7 @@ Editor.prototype.unitEditor=function() {
 Editor.prototype.createCommandCard=function(unit, card, n) {
 	// adds common commands
 	if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-		card=card.concat(common.basic);
+		card=card.concat(data.common.basic);
 	}
 
 	let fieldset=document.getElementById("card"+n);
@@ -389,7 +389,7 @@ Editor.prototype.clearSearch=function(clearQuery=false) {
 };
 
 Editor.prototype.commandEditor=function(n) {
-	if (common.basic.includes(this.command)) {
+	if (data.common.basic.includes(this.command)) {
 		this.clearFields();
 	} else {
 		this.findUnitsWith(this.command);
@@ -487,8 +487,8 @@ Editor.prototype.formatHotkey=function(hotkeys) {
 };
 
 Editor.prototype.setHotkey=function(input, event) {
-	if (event.keyCode in keyCodes) {
-		let keyCode=keyCodes[event.keyCode];
+	if (event.keyCode in data.keyCodes) {
+		let keyCode=data.keyCodes[event.keyCode];
 		input.value=keyCode.symbol||keyCode.hotkey;
 	}
 
@@ -874,7 +874,7 @@ Commands.prototype.getHotkeys=function(commander, id) {
 		let hotkey=symbol;
 
 		// converts from file format to display representation
-		Object.values(keyCodes).forEach(function(keyCode) {
+		Object.values(data.keyCodes).forEach(function(keyCode) {
 			if (symbol==keyCode.hotkey) {
 				hotkey=keyCode.symbol||keyCode.hotkey;
 				return;
@@ -900,7 +900,7 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 		let symbol=hotkey;
 
 		// converts from display format to file representation
-		Object.values(keyCodes).forEach(function(keyCode) {
+		Object.values(data.keyCodes).forEach(function(keyCode) {
 			if (hotkey==keyCode.symbol) {
 				symbol=keyCode.hotkey;
 				return;
@@ -937,7 +937,7 @@ Commands.prototype.checkConflicts=function(id) {
 		}
 
 		if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-			card=card.concat(common.basic);
+			card=card.concat(data.common.basic);
 		}
 
 		card.forEach(function(id) {
