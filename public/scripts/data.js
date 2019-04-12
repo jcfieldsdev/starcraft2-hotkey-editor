@@ -8573,7 +8573,7 @@ data.units={
 	"LegacyOfTheVoid_TaurenMarine": {
 		name: "Tauren Space Marine",
 		icon: "btn-unit-terran-taurenspacemarine",
-		race: ZERG,
+		race: NEUTRAL,
 		commander: "LegacyOfTheVoid",
 		type: UNIT,
 		commands: [
