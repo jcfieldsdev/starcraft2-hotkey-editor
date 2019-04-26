@@ -326,6 +326,7 @@ fieldset.card span {
 	height: 1em;
 	left: 0;
 	min-width: 1em;
+	pointer-events: none;
 	position: absolute;
 	text-align: center;
 	top: 0;
