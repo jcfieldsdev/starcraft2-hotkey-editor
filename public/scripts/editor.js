@@ -456,7 +456,7 @@ Editor.prototype.removeField=function() {
 		element.removeChild(element.lastChild);
 		commands.removeLast(this.command);
 		commands.checkDefaults(this.commander, this.command);
-	} else {
+	} else { // last field
 		element.lastChild.value="";
 		commands.setHotkeys(this.command, []);
 	}
@@ -797,7 +797,7 @@ Commands.prototype.parse=function(text) {
 	let lines=text.split("\n");
 	let pattern=/^([\w_\/]+)=([\w,+]+)$/;
 
-	// ensures empty line at end of file so final command block is saved
+	// ensures empty line at end of file so final section block is saved
 	lines.push("");
 
 	lines.forEach(function(line, i) {
