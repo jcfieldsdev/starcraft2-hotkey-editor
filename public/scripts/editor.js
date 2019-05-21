@@ -280,7 +280,7 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 			x: command.x
 		});
 
-		// re-select command if selected on previously viewed unit
+		// re-selects command if selected on previously viewed unit
 		if (this.command==id) {
 			this.setCommand(id, command.name);
 		}
@@ -361,7 +361,7 @@ Editor.prototype.clearButtons=function() {
 			this.clear(element);
 		}
 
-		if (n>2) { // hide cards after third unless needed
+		if (n>2) { // hides cards after third unless needed
 			card.classList.add("hidden");
 		}
 	}, this);
@@ -651,7 +651,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 		}
 
 		let name=properties.name.toLowerCase();
-		// replace curly quotes
+		// replaces curly quotes
 		name=name.replace(/[‘’]/g, "'");
 		name=name.replace(/[“”]/g, "\"");
 
