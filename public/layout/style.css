@@ -154,6 +154,10 @@ button#raynor {
 	background: url(portraits/raynor.png);
 }
 
+button#stetmann {
+	background: url(portraits/stetmann.png);
+}
+
 button#stukov {
 	background: url(portraits/stukov.png);
 }
