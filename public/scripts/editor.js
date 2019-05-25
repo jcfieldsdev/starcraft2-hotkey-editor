@@ -729,6 +729,10 @@ Editor.prototype.formatResults=function(id, matches) {
 			a.classList.toggle("conflict", commands.checkConflicts(match));
 		}
 
+		if (unit.suffix!=undefined) {
+			a.textContent+=" ("+unit.suffix+")";
+		}
+
 		li.appendChild(a);
 		ul.appendChild(li);
 	}, this);
