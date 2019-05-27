@@ -3977,492 +3977,6 @@ data.units={
 			"SelectBuilder"
 		]
 	},
-	"Stetmann": {
-		name: "Stetmann",
-		icon: "btn-unit-stetmann-supergary",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: COMMANDER,
-		defaultUnit: "Stetmann_Drone"
-	},
-	"Stetmann_Gary": {
-		name: "Gary",
-		icon: "btn-unit-stetmann-gary",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: HERO,
-		commands: {
-			"Gary": [
-				"GaryStetmannOrb/GaryStetmann",
-				"PowerTowerOverchargeStetmannSpeed/GaryStetmann",
-				"GaryStetmannRecall/GaryStetmann",
-				"MorphToSuperGaryStetmann/GaryStetmann",
-				"CancelSuperGaryStetmannMorph"
-			],
-			"Super Gary": [
-				...data.common.basic,
-				"GaryStetmannOrb/SuperGaryStetmann",
-				"PowerTowerOverchargeStetmannSpeed/SuperGaryStetmann",
-				"GaryStetmannRecall/SuperGaryStetmann",
-				"PowerFieldSuperGaryStetmannSpeed/SuperGaryStetmann"
-			]
-		},
-	},
-	"Stetmann_Larva": {
-		name: "Mecha Larva",
-		icon: "btn-unit-zerg-larva-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: OTHER,
-		commands: {
-			"Larva": [
-				"Drone/LarvaStetmann",
-				"Overlord/LarvaStetmann",
-				"Zergling/LarvaStetmann",
-				"Hydralisk/LarvaStetmann",
-				"Corruptor/LarvaStetmann",
-				"Infestor/LarvaStetmann",
-				"Ultralisk/LarvaStetmann"
-			],
-			"Cocoon": [
-				"Rally",
-				"Cancel"
-			]
-		}
-	},
-	"Stetmann_Drone": {
-		name: "Mecha Drone",
-		icon: "btn-unit-collection-drone-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Drone": [
-				"GatherProt",
-				"ReturnCargo",
-				"ZergBuild/Drone",
-				"ZergBuildAdvanced/Drone",
-				"RepairStetmann",
-				"Spray",
-				"BurrowUp"
-			],
-			"Build Structure": [
-				"Hatchery/Drone",
-				"Extractor/Drone",
-				"SpawningPool/Drone",
-				"EvolutionChamber/Drone",
-				"BanelingNest/Drone",
-				"SpineCrawler/Drone",
-				"SporeCrawler/Drone",
-				"Cancel"
-			],
-			"Build Advanced Structure": [
-				"HydraliskDen/Drone",
-				"InfestationPit/Drone",
-				"Spire/Drone",
-				"UltraliskCavern/Drone",
-				"Cancel"
-			]
-		}
-	},
-	"Stetmann_Overlord": {
-		name: "Mecha Overlord",
-		icon: "btn-unit-collection-overlord-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: [
-			"MorphToOverseerStetmann/OverlordStetmann",
-			"BunkerLoad",
-			"BunkerUnloadAll"
-		]
-	},
-	"Stetmann_Overseer": {
-		name: "Mecha Overseer",
-		icon: "btn-unit-collection-overseer-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: [
-			"MorphtoOverseerSiegeStetmann/OverseerStetmann",
-			"MorphtoOverseerNormalStetmann/OverseerStetmann"
-		]
-	},
-	"Stetmann_Zergling": {
-		name: "Mecha Zergling",
-		icon: "btn-unit-collection-zergling-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"BanelingStetmann/ZerglingStetmann",
-				"BurrowDown"
-			],
-			"Burrowed": [
-				"BurrowUp"
-			]
-		}
-	},
-	"Stetmann_Baneling": {
-		name: "Mecha Baneling",
-		icon: "btn-unit-collection-baneling-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"ExplodeStetmann/BanelingStetmann",
-				"EnableBuildingAttack/BanelingStetmann",
-				"DisableBuildingAttack/BanelingStetmann",
-				"BanelingStetmannMovementSpeed/BanelingStetmann",
-				"BurrowDown"
-			],
-			"Burrowed": [
-				"ExplodeStetmann/BanelingStetmannBurrowed",
-				"BurrowUp"
-			]
-		}
-	},
-	"Stetmann_Roach": {
-		name: "Mecha Roach",
-		icon: "btn-unit-collection-roach-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"BurrowDown"
-			],
-			"Burrowed": [
-				"BurrowUp"
-			]
-		}
-	},
-	"Stetmann_Ravager": {
-		name: "Mecha Ravager",
-		icon: "btn-unit-collection-ravager-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"RavagerStetmannCorrosiveBile/RavagerStetmann",
-				"BurrowDown"
-			],
-			"Burrowed": [
-				"BurrowUp"
-			]
-		}
-	},
-	"Stetmann_Hydralisk": {
-		name: "Mecha Hydralisk",
-		icon: "btn-unit-collection-hydralisk-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"HydraliskStetmannMissilePowerOn",
-				"HydraliskStetmannMissilePowerOff/HydraliskStetmann",
-				"LurkerStetmann/HydraliskStetmann",
-				"BurrowDown"
-			],
-			"Burrowed": [
-				"BurrowUp"
-			]
-		}
-	},
-	"Stetmann_Lurker": {
-		name: "Mecha Lurker",
-		icon: "btn-unit-collection-lurker-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"LurkerStetmannTunnelingBurst/LurkerStetmann",
-				"LurkerStetmannChannelingSpines/LurkerStetmann",
-				"LurkerBurrowDown"
-			],
-			"Burrowed": [
-				...data.common.tower,
-				"LurkerStetmannTunnelingBurst/LurkerStetmannBurrowed",
-				"LurkerStetmannChannelingSpines/LurkerStetmannBurrowed",
-				"LurkerCancelHoldFire/LurkerStetmannBurrowed",
-				"LurkerHoldFire/LurkerStetmannBurrowed",
-				"LurkerBurrowUp"
-			]
-		}
-	},
-	"Stetmann_Corruptor": {
-		name: "Mecha Corruptor",
-		icon: "btn-unit-collection-corruptor-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: [
-			"CorruptorStetmannMissilePods/CorruptorStetmann",
-			"CausticSprayStetmann/CorruptorStetmann",
-			"BroodLordStetmann/CorruptorStetmann",
-			"Cancel"
-		]
-	},
-	"Stetmann_BroodLord": {
-		name: "Mecha Battlecarrier Lord",
-		icon: "btn-unit-collection-broodlord-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Mecha Battlecarrier Lord": [
-				"BroodLordStetmannBroodlings/BroodLordStetmann",
-				"BroodLordStetmannBombers/BroodLordStetmann",
-				"BroodLordStetmannYamatoCannon",
-				"Cancel"
-			],
-			"Mecha Broodling": [
-				...data.common.basic
-			],
-			"Mecha Locusceptor": [
-				...data.common.basic
-			]
-		}
-	},
-	"Stetmann_Infestor": {
-		name: "Mecha Infestor",
-		icon: "btn-unit-collection-infestor-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"InfestorStetmannEggLaunch/InfestorStetmann",
-				"InfestorStetmannHealingTentacle/InfestorStetmann",
-				"InfestorStetmannInfestBuilding/InfestorStetmann",
-				"BurrowDown"
-			],
-			"Burrowed": [
-				...data.common.basic,
-				"InfestorStetmannEggLaunch/InfestorStetmannBurrowed",
-				"InfestorStetmannHealingTentacle/InfestorStetmannBurrowed",
-				"InfestorStetmannInfestBuilding/InfestorStetmannBurrowed",
-				"BurrowUp"
-			]
-		}
-	},
-	"Stetmann_Ultralisk": {
-		name: "Mecha Ultralisk",
-		icon: "btn-unit-collection-ultralisk-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: UNIT,
-		commands: {
-			"Unburrowed": [
-				"UltraliskStetmannBurrowCharge/UltraliskStetmann",
-				"UltraliskStetmannMechanicalLifeLeech/UltraliskStetmann",
-				"BurrowDown"
-			],
-			"Burrowed": [
-				"BurrowUp"
-			]
-		}
-	},
-	"Stetmann_Hatchery": {
-		name: "Mecha Hatchery",
-		icon: "btn-building-zerg-hatchery-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: {
-			"Mecha Hatchery": [
-				"Larva",
-				"Queen",
-				"ResearchBurrow",
-				"overlordspeed",
-				"RallyEgg",
-				"Rally",
-				"Lair/Hatchery",
-				"Cancel"
-			],
-			"Mecha Lair": [
-				"Larva",
-				"Queen",
-				"ResearchBurrow",
-				"overlordspeed",
-				"RallyEgg",
-				"Rally",
-				"Hive/Lair",
-				"Cancel"
-			],
-			"Mecha Hive": [
-				"Larva",
-				"Queen",
-				"ResearchBurrow",
-				"overlordspeed",
-				"RallyEgg",
-				"Rally",
-				"Cancel"
-			]
-		}
-	},
-	"Stetmann_Extractor": {
-		name: "Mecha Extractor",
-		icon: "btn-building-zerg-extractor-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: []
-	},
-	"Stetmann_SpawningPool": {
-		name: "Mecha Spawning Pool",
-		icon: "btn-building-zerg-spawningpool-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			"zerglingmovementspeed/SpawningPool",
-			"zerglingattackspeed/SpawningPool",
-			"Cancel"
-		]
-	},
-	"Stetmann_EvolutionChamber": {
-		name: "Mecha Evolution Chamber",
-		icon: "btn-building-zerg-evolutionchamber-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			"zergmeleeweapons1/EvolutionChamber",
-			"zergmissileweapons1/EvolutionChamber",
-			"zerggroundarmor1/EvolutionChamber",
-			"Cancel"
-		]
-	},
-	"Stetmann_BanelingNest": {
-		name: "Mecha Baneling Nest",
-		icon: "btn-building-zerg-banelingnest-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			"EvolveCentrificalHooks/BanelingNest",
-			"Cancel"
-		]
-	},
-	"Stetmann_SpineCrawler": {
-		name: "Mecha Spine Crawler",
-		icon: "btn-building-zerg-spinecrawler-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			...data.common.basic,
-			"SpineCrawlerRoot/SpineCrawlerUprooted",
-			"SpineCrawlerUproot/SpineCrawler"
-		]
-	},
-	"Stetmann_SporeCrawler": {
-		name: "Mecha Spore Crawler",
-		icon: "btn-building-zerg-sporecrawler-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			...data.common.basic,
-			"SporeCrawlerUproot/SporeCrawler",
-			"SporeCrawlerRoot/SporeCrawlerUprooted"
-		]
-	},
-	"Stetmann_HydraliskDen": {
-		name: "Mecha Hydralisk Den",
-		icon: "btn-building-zerg-hydraliskden-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: {
-			"Mecha Hydralisk Den": [
-				"EvolveGroovedSpines/HydraliskDen",
-				"EvolveMuscularAugments/HydraliskDen",
-				"Cancel"
-			],
-			"Mecha Lurker Den": [
-			]
-		}
-	},
-	"Stetmann_InfestationPit": {
-		name: "Mecha Infestation Pit",
-		icon: "btn-building-zerg-infestationpit-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			"EvolveInfestorEnergyUpgrade/InfestationPit",
-			"ResearchNeuralParasite/InfestationPit"
-		]
-	},
-	"Stetmann_Spire": {
-		name: "Mecha Spire",
-		icon: "btn-building-zerg-spire-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: {
-			"Mecha Spire": [
-				"zergflyerattack1",
-				"zergflyerarmor1",
-				"GreaterSpire/Spire",
-				"Cancel"
-			],
-			"Mecha Greater Spire": [
-				"zergflyerattack1",
-				"zergflyerarmor1",
-				"Cancel"
-			]
-		}
-	},
-	"Stetmann_UltraliskCavern": {
-		name: "Mecha Ultralisk Cavern",
-		icon: "btn-building-zerg-ultraliskcavern-mecha",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			"EvolveChitinousPlating/UltraliskCavern",
-			"EvolveAnabolicSynthesis2/UltraliskCavern"
-		]
-	},
-	"Stetmann_Stetellite": {
-		name: "Stetellite",
-		icon: "btn-building-stetmann-stetellite",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: {
-			"F.A.S.T. Configuration": [
-				"FASTOverloadStetmann/PowerTowerStetmann",
-				"Cancel"
-			],
-			"H.U.G.S. Configuration": [
-				"HUGSOverloadStetmann/PowerTowerStetmann",
-				"Cancel"
-			],
-			"J.U.I.C.E. Configuration": [
-				"JUICEOverloadStetmann/PowerTowerStetmann",
-				"Cancel"
-			]
-		}
-	},
-	"Stetmann_GaryRoom": {
-		name: "Gary’s Room",
-		icon: "btn-building-stetmann-garysroom",
-		race: TERRAN,
-		commander: "Stetmann",
-		type: BUILDING,
-		commands: [
-			"Rally"
-		]
-	},
 	"Zerg": {
 		name: "Zerg",
 		icon: "btn-unit-zerg-hydralisk",
@@ -8092,6 +7606,529 @@ data.units={
 		type: UNIT,
 		commands: [
 			"DakrunCrashingCharge/DehakaDakrun"
+		]
+	},
+	"Stetmann": {
+		name: "Stetmann",
+		icon: "btn-unit-stetmann-supergary",
+		race: ZERG,
+		commander: "Stetmann",
+		type: COMMANDER,
+		defaultUnit: "Stetmann_Drone"
+	},
+	"Stetmann_Gary": {
+		name: "Gary",
+		icon: "btn-unit-stetmann-gary",
+		race: ZERG,
+		commander: "Stetmann",
+		type: HERO,
+		commands: {
+			"Gary": [
+				"GaryStetmannOrb/GaryStetmann",
+				"PowerTowerOverchargeStetmannSpeed/GaryStetmann",
+				"GaryStetmannRecall/GaryStetmann",
+				"MorphToSuperGaryStetmann/GaryStetmann",
+				"CancelSuperGaryStetmannMorph"
+			],
+			"Super Gary": [
+				...data.common.basic,
+				"GaryStetmannOrb/SuperGaryStetmann",
+				"PowerTowerOverchargeStetmannSpeed/SuperGaryStetmann",
+				"GaryStetmannRecall/SuperGaryStetmann",
+				"PowerFieldSuperGaryStetmannSpeed/SuperGaryStetmann"
+			]
+		},
+	},
+	"Stetmann_Larva": {
+		name: "Mecha Larva",
+		icon: "btn-unit-zerg-larva-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: OTHER,
+		commands: {
+			"Mecha Larva": [
+				"Drone/LarvaStetmann",
+				"Overlord/LarvaStetmann",
+				"Zergling/LarvaStetmann",
+				"Hydralisk/LarvaStetmann",
+				"Corruptor/LarvaStetmann",
+				"Infestor/LarvaStetmann",
+				"Ultralisk/LarvaStetmann"
+			],
+			"Mecha Egg": [
+				"Rally",
+				"Cancel"
+			]
+		}
+	},
+	"Stetmann_Drone": {
+		name: "Mecha Drone",
+		icon: "btn-unit-collection-drone-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Mecha Drone": [
+				"GatherProt",
+				"ReturnCargo",
+				"ZergBuild/Drone",
+				"ZergBuildAdvanced/Drone",
+				"RepairStetmann",
+				"Spray",
+				"BurrowUp"
+			],
+			"Build Structure": [
+				"Hatchery/Drone",
+				"Extractor/Drone",
+				"SpawningPool/Drone",
+				"EvolutionChamber/Drone",
+				"BanelingNest/Drone",
+				"SpineCrawler/Drone",
+				"SporeCrawler/Drone",
+				"Cancel"
+			],
+			"Build Advanced Structure": [
+				"HydraliskDen/Drone",
+				"InfestationPit/Drone",
+				"Spire/Drone",
+				"UltraliskCavern/Drone",
+				"Cancel"
+			]
+		}
+	},
+	"Stetmann_Overlord": {
+		name: "Mecha Overlord",
+		icon: "btn-unit-collection-overlord-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: [
+			"MorphToOverseerStetmann/OverlordStetmann",
+			"BunkerLoad",
+			"BunkerUnloadAll"
+		]
+	},
+	"Stetmann_Overseer": {
+		name: "Mecha Overseer",
+		icon: "btn-unit-collection-overseer-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: [
+			"MorphtoOverseerSiegeStetmann/OverseerStetmann",
+			"MorphtoOverseerNormalStetmann/OverseerStetmann"
+		]
+	},
+	"Stetmann_Zergling": {
+		name: "Mecha Zergling",
+		icon: "btn-unit-collection-zergling-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"BanelingStetmann/ZerglingStetmann",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				"BurrowUp"
+			]
+		}
+	},
+	"Stetmann_Baneling": {
+		name: "Mecha Baneling",
+		icon: "btn-unit-collection-baneling-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"ExplodeStetmann/BanelingStetmann",
+				"EnableBuildingAttack/BanelingStetmann",
+				"DisableBuildingAttack/BanelingStetmann",
+				"BanelingStetmannMovementSpeed/BanelingStetmann",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				"ExplodeStetmann/BanelingStetmannBurrowed",
+				"BurrowUp"
+			]
+		}
+	},
+	"Stetmann_Roach": {
+		name: "Mecha Roach",
+		icon: "btn-unit-collection-roach-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"BurrowDown"
+			],
+			"Burrowed": [
+				...data.common.basic,
+				"BurrowUp"
+			]
+		}
+	},
+	"Stetmann_Ravager": {
+		name: "Mecha Ravager",
+		icon: "btn-unit-collection-ravager-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"RavagerStetmannCorrosiveBile/RavagerStetmann",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				"BurrowUp"
+			]
+		}
+	},
+	"Stetmann_Hydralisk": {
+		name: "Mecha Hydralisk",
+		icon: "btn-unit-collection-hydralisk-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"HydraliskStetmannMissilePowerOn",
+				"HydraliskStetmannMissilePowerOff/HydraliskStetmann",
+				"LurkerStetmann/HydraliskStetmann",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				"BurrowUp"
+			]
+		}
+	},
+	"Stetmann_Lurker": {
+		name: "Mecha Lurker",
+		icon: "btn-unit-collection-lurker-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"LurkerStetmannTunnelingBurst/LurkerStetmann",
+				"LurkerStetmannChannelingSpines/LurkerStetmann",
+				"LurkerBurrowDown"
+			],
+			"Burrowed": [
+				...data.common.tower,
+				"LurkerStetmannTunnelingBurst/LurkerStetmannBurrowed",
+				"LurkerStetmannChannelingSpines/LurkerStetmannBurrowed",
+				"LurkerCancelHoldFire/LurkerStetmannBurrowed",
+				"LurkerHoldFire/LurkerStetmannBurrowed",
+				"LurkerBurrowUp"
+			]
+		}
+	},
+	"Stetmann_Corruptor": {
+		name: "Mecha Corruptor",
+		icon: "btn-unit-collection-corruptor-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: [
+			"CorruptorStetmannMissilePods/CorruptorStetmann",
+			"CausticSprayStetmann/CorruptorStetmann",
+			"BroodLordStetmann/CorruptorStetmann",
+			"Cancel"
+		]
+	},
+	"Stetmann_BroodLord": {
+		name: "Mecha Battlecarrier Lord",
+		icon: "btn-unit-collection-broodlord-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Mecha Battlecarrier Lord": [
+				"BroodLordStetmannBroodlings/BroodLordStetmann",
+				"BroodLordStetmannBombers/BroodLordStetmann",
+				"BroodLordStetmannYamatoCannon",
+				"Cancel"
+			],
+			"Mecha Broodling": [
+				...data.common.basic
+			],
+			"Mecha Locusceptor": [
+				...data.common.basic
+			]
+		}
+	},
+	"Stetmann_Infestor": {
+		name: "Mecha Infestor",
+		icon: "btn-unit-collection-infestor-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"InfestorStetmannEggLaunch/InfestorStetmann",
+				"InfestorStetmannHealingTentacle/InfestorStetmann",
+				"InfestorStetmannInfestBuilding/InfestorStetmann",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				...data.common.basic,
+				"InfestorStetmannEggLaunch/InfestorStetmannBurrowed",
+				"InfestorStetmannHealingTentacle/InfestorStetmannBurrowed",
+				"InfestorStetmannInfestBuilding/InfestorStetmannBurrowed",
+				"BurrowUp"
+			]
+		}
+	},
+	"Stetmann_Ultralisk": {
+		name: "Mecha Ultralisk",
+		icon: "btn-unit-collection-ultralisk-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"UltraliskStetmannBurrowCharge/UltraliskStetmann",
+				"UltraliskStetmannMechanicalLifeLeech/UltraliskStetmann",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				"BurrowUp"
+			]
+		}
+	},
+	"Stetmann_Hatchery": {
+		name: "Mecha Hatchery",
+		icon: "btn-building-zerg-hatchery-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: {
+			"Mecha Hatchery": [
+				"Larva",
+				"overlordspeed",
+				"EvolveVentralSacks",
+				"RallyEgg",
+				"Rally",
+				"Lair/Hatchery",
+				"Cancel"
+			],
+			"Mecha Lair": [
+				"Larva",
+				"overlordspeed",
+				"EvolveVentralSacks",
+				"RallyEgg",
+				"Rally",
+				"Hive/Lair",
+				"Cancel"
+			],
+			"Mecha Hive": [
+				"Larva",
+				"overlordspeed",
+				"EvolveVentralSacks",
+				"RallyEgg",
+				"Rally",
+				"Cancel"
+			]
+		}
+	},
+	"Stetmann_Extractor": {
+		name: "Mecha Extractor",
+		icon: "btn-building-zerg-extractor-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: []
+	},
+	"Stetmann_SpawningPool": {
+		name: "Mecha Spawning Pool",
+		icon: "btn-building-zerg-spawningpool-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: [
+			"zerglingmovementspeed/SpawningPool",
+			"EvolveHardenedCarapace/SpawningPool",
+			"zerglingattackspeed/SpawningPool",
+			"EvolveBileLauncherIncreasedRange/SpawningPool",
+			"Cancel"
+		]
+	},
+	"Stetmann_EvolutionChamber": {
+		name: "Mecha Evolution Chamber",
+		icon: "btn-building-zerg-evolutionchamber-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: [
+			"zergmeleeweapons1/EvolutionChamber",
+			"zergmissileweapons1/EvolutionChamber",
+			"zerggroundarmor1/EvolutionChamber",
+			"Cancel"
+		]
+	},
+	"Stetmann_BanelingNest": {
+		name: "Mecha Baneling Nest",
+		icon: "btn-building-zerg-banelingnest-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: [
+			"EvolveCentrificalHooks/BanelingNest",
+			"EvolveBanelingCorrosiveBile/BanelingNest",
+			"EvolveBanelingRupture/BanelingNest",
+			"Cancel"
+		]
+	},
+	"Stetmann_SpineCrawler": {
+		name: "Mecha Spine Crawler",
+		icon: "btn-building-zerg-spinecrawler-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: {
+			"Rooted": [
+				...data.common.tower,
+				"SpineCrawlerUproot/SpineCrawler"
+			],
+			"Uprooted": [
+				...data.common.flying,
+				"SpineCrawlerRoot/SpineCrawlerUprooted"
+			]
+		}
+	},
+	"Stetmann_SporeCrawler": {
+		name: "Mecha Spore Crawler",
+		icon: "btn-building-zerg-spinecrawler-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: {
+			"Rooted": [
+				...data.common.tower,
+				"SporeCrawlerUproot/SporeCrawler"
+			],
+			"Uprooted": [
+				...data.common.flying,
+				"SporeCrawlerRoot/SporeCrawlerUprooted"
+			]
+		}
+	},
+	"Stetmann_HydraliskDen": {
+		name: "Mecha Hydralisk Den",
+		icon: "btn-building-zerg-hydraliskden-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: {
+			"Mecha Hydralisk Den": [
+				"EvolveMuscularAugments/HydraliskDen",
+				"EvolveAncillaryCarapace/HydraliskDen",
+				"EvolveFrenzy/HydraliskDen",
+				"ResearchLurkerRange/HydraliskDen",
+				"ReserachLurkerStetmannChannelingSpines/HydraliskDen",
+				"MutateintoLurkerDen/HydraliskDen",
+				"HydraliskStetmannRespawn/HydraliskDen",
+				"Cancel"
+			],
+			"Mecha Lurker Den": [
+				"EvolveMuscularAugments/LurkerDen",
+				"EvolveAncillaryCarapace/LurkerDen",
+				"EvolveFrenzy/LurkerDen",
+				"ResearchLurkerRange/LurkerDen",
+				"ReserachLurkerStetmannChannelingSpines/LurkerDen",
+				"HydraliskStetmannRespawn/LurkerDen",
+				"Cancel"
+			]
+		}
+	},
+	"Stetmann_InfestationPit": {
+		name: "Mecha Infestation Pit",
+		icon: "btn-building-zerg-infestationpit-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: [
+			"HotSPressurizedGlands/InfestationPit",
+			"EvolveViperImprovedCastRange/InfestationPit",
+			"InfestorStetmannRespawn/InfestationPit"
+		]
+	},
+	"Stetmann_Spire": {
+		name: "Mecha Spire",
+		icon: "btn-building-zerg-spire-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: {
+			"Mecha Spire": [
+				"zergflyerattack1",
+				"zergflyerarmor1",
+				"EvolveMutaliskRapidRegeneration/Spire",
+				"EvolveKerriganViciousGlaive/Spire",
+				"EvolveSeveringGlave/Spire",
+				"EvolveGuardianAttackRangeIncrease/Spire",
+				"GreaterSpire/Spire",
+				"CorruptorStetmannRespawn/Spire",
+				"Cancel"
+			],
+			"Mecha Greater Spire": [
+				"zergflyerattack1",
+				"zergflyerarmor1",
+				"EvolveMutaliskRapidRegeneration/GreaterSpire",
+				"EvolveKerriganViciousGlaive/GreaterSpire",
+				"EvolveSeveringGlave/GreaterSpire",
+				"EvolveGuardianAttackRangeIncrease/GreaterSpire",
+				"CorruptorStetmannRespawn/GreaterSpire",
+				"Cancel"
+			]
+		}
+	},
+	"Stetmann_UltraliskCavern": {
+		name: "Mecha Ultralisk Cavern",
+		icon: "btn-building-zerg-ultraliskcavern-mecha",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: [
+			"EvolveChitinousPlating/UltraliskCavern",
+			"EvolveBurrowCharge/UltraliskCavern",
+			"EvolveTissueAssimilation/UltraliskCavern",
+			"UltraliskStetmannRespawn/UltraliskCavern"
+		]
+	},
+	"Stetmann_Stetellite": {
+		name: "Stetellite",
+		icon: "btn-building-stetmann-stetellite",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: {
+			"F.A.S.T. Configuration": [
+				"FASTOverloadStetmann/PowerTowerStetmann",
+				"Cancel"
+			],
+			"H.U.G.S. Configuration": [
+				"HUGSOverloadStetmann/PowerTowerStetmann",
+				"Cancel"
+			],
+			"J.U.I.C.E. Configuration": [
+				"JUICEOverloadStetmann/PowerTowerStetmann",
+				"Cancel"
+			]
+		}
+	},
+	"Stetmann_GaryRoom": {
+		name: "Gary’s Room",
+		icon: "btn-building-stetmann-garysroom",
+		race: ZERG,
+		commander: "Stetmann",
+		type: BUILDING,
+		commands: [
+			"Rally"
 		]
 	},
 	"Protoss": {
@@ -14838,406 +14875,6 @@ data.commands={
 		y: 0,
 		x: 0
 	},
-	"GaryStetmannOrb/GaryStetmann": {
-		name: "E-Gorb",
-		hotkey: "T",
-		icon: "btn-ability-stetmann-garytravelingdamageorb",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"PowerTowerOverchargeStetmannSpeed/GaryStetmann": {
-		name: "Stetellite Overcharge",
-		hotkey: "C",
-		icon: "btn-ability-stetmann-garystetelliteovercharge-speed",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"GaryStetmannRecall/GaryStetmann": {
-		name: "Semi-Stable Mass Transportation",
-		hotkey: "R",
-		icon: "btn-ability-stetmann-garymassteleport",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"MorphToSuperGaryStetmann/GaryStetmann": {
-		name: "Super Gary Transformation Sequence",
-		hotkey: "U",
-		icon: "btn-unit-stetmann-supergary",
-		mask: false,
-		y: 2,
-		x: 3
-	},
-	"CancelSuperGaryStetmannMorph": {
-		name: "Cancel",
-		hotkey: "Escape",
-		icon: "btn-command-cancel",
-		mask: true,
-		y: 2,
-		x: 4
-	},
-	"GaryStetmannOrb/SuperGaryStetmann": {
-		name: "E-Gorb",
-		hotkey: "T",
-		icon: "btn-ability-stetmann-garytravelingdamageorb",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"PowerTowerOverchargeStetmannSpeed/SuperGaryStetmann": {
-		name: "Stetellite Overcharge",
-		hotkey: "C",
-		icon: "btn-ability-stetmann-garystetelliteovercharge-speed",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"GaryStetmannRecall/SuperGaryStetmann": {
-		name: "Semi-Stable Mass Transportation",
-		hotkey: "R",
-		icon: "btn-ability-stetmann-garymassteleport",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"PowerFieldSuperGaryStetmannSpeed/SuperGaryStetmann": {
-		name: "Gary-zone",
-		hotkey: "E",
-		icon: "btn-ability-stetmann-garypersonalstetzone-speed",
-		mask: false,
-		y: 2,
-		x: 3
-	},
-	"Drone/LarvaStetmann": {
-		name: "Morph to Mecha Drone",
-		hotkey: "D",
-		icon: "btn-unit-collection-drone-mecha",
-		mask: false,
-		y: 0,
-		x: 0
-	},
-	"Overlord/LarvaStetmann": {
-		name: "Morph to Mecha Overlord",
-		hotkey: "V",
-		icon: "btn-unit-collection-overlord-mecha",
-		mask: false,
-		y: 0,
-		x: 1
-	},
-	"Zergling/LarvaStetmann": {
-		name: "Morph to Mecha Zergling",
-		hotkey: "Z",
-		icon: "btn-unit-collection-zergling-mecha",
-		mask: false,
-		y: 0,
-		x: 2
-	},
-	"Hydralisk/LarvaStetmann": {
-		name: "Morph to Mecha Hydralisk",
-		hotkey: "H",
-		icon: "btn-unit-collection-hydralisk-mecha",
-		mask: false,
-		y: 1,
-		x: 0
-	},
-	"Corruptor/LarvaStetmann": {
-		name: "Morph to Mecha Corruptor",
-		hotkey: "C",
-		icon: "btn-unit-collection-corruptor-mecha",
-		mask: false,
-		y: 1,
-		x: 2
-	},
-	"Infestor/LarvaStetmann": {
-		name: "Morph to Mecha Infestor",
-		hotkey: "F",
-		icon: "btn-unit-collection-infestor-mecha",
-		mask: false,
-		y: 1,
-		x: 3
-	},
-	"Ultralisk/LarvaStetmann": {
-		name: "Morph to Mecha Ultralisk",
-		hotkey: "U",
-		icon: "btn-unit-collection-ultralisk-mecha",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"MorphToOverseerStetmann/OverlordStetmann": {
-		name: "Morph to Mecha Overseer",
-		hotkey: "V",
-		icon: "btn-unit-collection-overseer-mecha",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"MorphtoOverseerSiegeStetmann/OverseerStetmann": {
-		name: "Oversight",
-		hotkey: "W",
-		icon: "btn-ability-zerg-overlord-oversight",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"MorphtoOverseerNormalStetmann/OverseerStetmann": {
-		name: "Cancel Oversight",
-		hotkey: "R",
-		icon: "btn-ability-zerg-overlord-oversight-off",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"BanelingStetmann/ZerglingStetmann": {
-		name: "Morph to Mecha Baneling",
-		hotkey: "E",
-		icon: "btn-unit-collection-baneling-mecha",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"ExplodeStetmann/BanelingStetmann": {
-		name: "Explode",
-		hotkey: "X",
-		icon: "btn-ability-zerg-explode-color",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"ExplodeStetmann/BanelingStetmannBurrowed": {
-		name: "Explode",
-		hotkey: "X",
-		icon: "btn-ability-zerg-explode-color",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"EnableBuildingAttack/BanelingStetmann": {
-		name: "Enable Structure Attack",
-		hotkey: "F",
-		icon: "btn-ability-zerg-attackstructure-color",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"DisableBuildingAttack/BanelingStetmann": {
-		name: "Disable Structure Attack",
-		hotkey: "G",
-		icon: "btn-ability-zerg-explode-color",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"BanelingStetmannMovementSpeed/BanelingStetmann": {
-		name: "Anti-Centripetal Rocket Servos",
-		hotkey: "C",
-		icon: "btn-upgrade-stetmann-mechacentrifugalhooks",
-		mask: false,
-		y: 2,
-		x: 3
-	},
-	"RavagerStetmannCorrosiveBile/RavagerStetmann": {
-		name: "Environmentally Unfriendly Eruption",
-		hotkey: "C",
-		icon: "btn-ability-zerg-corrosivebile",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"HydraliskStetmannMissilePowerOn": {
-		name: "Juiced Up Payload: On",
-		hotkey: "F",
-		icon: "btn-ability-stetmann-hydraliskmissilepoweron",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"HydraliskStetmannMissilePowerOff/HydraliskStetmann": {
-		name: "Juiced Up Payload: Off",
-		hotkey: "G",
-		icon: "btn-ability-stetmann-hydraliskmissilepoweroff",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"LurkerStetmann/HydraliskStetmann": {
-		name: "Morph to Mecha Lurker",
-		hotkey: "E",
-		icon: "btn-unit-collection-lurker-mecha",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"LurkerStetmannTunnelingBurst/LurkerStetmann": {
-		name: "Tunnel of TERROR Algorithm",
-		hotkey: "B",
-		icon: "btn-ability-stetmann-lurkertunnelingburst",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"LurkerStetmannChannelingSpines/LurkerStetmann": {
-		name: "Focused Strike Algorithm",
-		hotkey: "C",
-		icon: "btn-ability-stetmann-lurkerchannelingspines",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"LurkerStetmannTunnelingBurst/LurkerStetmannBurrowed": {
-		name: "Tunnel of TERROR Algorithm",
-		hotkey: "B",
-		icon: "btn-ability-stetmann-lurkertunnelingburst",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"LurkerStetmannChannelingSpines/LurkerStetmannBurrowed": {
-		name: "Focused Strike Algorithm",
-		hotkey: "C",
-		icon: "btn-ability-stetmann-lurkerchannelingspines",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"CorruptorStetmannMissilePods/CorruptorStetmann": {
-		name: "Cluster Busters",
-		hotkey: "E",
-		icon: "btn-ability-stetmann-corruptormissilebarrage",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"CausticSprayStetmann/CorruptorStetmann": {
-		name: "Terraclean Solvent",
-		hotkey: "V",
-		icon: "btn-ability-stetmann-corruptorcausticspray",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"BroodLordStetmann/CorruptorStetmann": {
-		name: "Morph to Mecha Battlecarrier Lord",
-		hotkey: "B",
-		icon: "btn-unit-collection-broodlord-mecha",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"BroodLordStetmannBroodlings/BroodLordStetmann": {
-		name: "Ready Mecha Broodling",
-		hotkey: "B",
-		icon: "btn-unit-collection-symbiote-mecha",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"BroodLordStetmannBombers/BroodLordStetmann": {
-		name: "Build Mecha Locusceptor",
-		hotkey: "I",
-		icon: "btn-unit-collection-creeperhostspawnflyer-mecha",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"BroodLordStetmannYamatoCannon": {
-		name: "Stetmato Cannon",
-		hotkey: "Y",
-		icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"InfestorStetmannEggLaunch/InfestorStetmann": {
-		name: "Roaches Away!",
-		hotkey: "T",
-		icon: "btn-ability-stetmann-infestorrainofroaches",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"InfestorStetmannHealingTentacle/InfestorStetmann": {
-		name: "UMI-C Charging Protocol",
-		hotkey: "E",
-		icon: "btn-ability-stetmann-infestorrecharge",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"InfestorStetmannInfestBuilding/InfestorStetmann": {
-		name: "Deconstructive Roach-nites",
-		hotkey: "D",
-		icon: "btn-ability-stetmann-infestorbuildinginfestation",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"InfestorStetmannEggLaunch/InfestorStetmannBurrowed": {
-		name: "Roaches Away!",
-		hotkey: "T",
-		icon: "btn-ability-stetmann-infestorrainofroaches",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"InfestorStetmannHealingTentacle/InfestorStetmannBurrowed": {
-		name: "UMI-C Charging Protocol",
-		hotkey: "E",
-		icon: "btn-ability-stetmann-infestorrecharge",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"InfestorStetmannInfestBuilding/InfestorStetmannBurrowed": {
-		name: "Deconstructive Roach-nites",
-		hotkey: "D",
-		icon: "btn-ability-stetmann-infestorbuildinginfestation",
-		mask: false,
-		y: 2,
-		x: 2
-	},
-	"UltraliskStetmannBurrowCharge/UltraliskStetmann": {
-		name: "Vectored Burrow Charge",
-		hotkey: "B",
-		icon: "btn-ability-stetmann-mechaburrowcharge",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"UltraliskStetmannMechanicalLifeLeech/UltraliskStetmann": {
-		name: "Mecha Mooch Module",
-		hotkey: "E",
-		icon: "btn-ability-stetmann-ultraliskmechanicalassimilation",
-		mask: false,
-		y: 2,
-		x: 1
-	},
-	"FASTOverloadStetmann/PowerTowerStetmann": {
-		name: "F.A.S.T. Overload",
-		hotkey: "V",
-		icon: "btn-ability-stetmann-stetelliteoverloadspeed",
-		mask: false,
-		y: 0,
-		x: 0
-	},
-	"HUGSOverloadStetmann/PowerTowerStetmann": {
-		name: "H.U.G.S. Overload",
-		hotkey: "V",
-		icon: "btn-ability-stetmann-stetelliteoverloadhealth",
-		mask: false,
-		y: 0,
-		x: 0
-	},
-	"JUICEOverloadStetmann/PowerTowerStetmann": {
-		name: "J.U.I.C.E. Overload",
-		hotkey: "V",
-		icon: "btn-ability-stetmann-stetelliteoverloadenergy",
-		mask: false,
-		y: 0,
-		x: 0
-	},
 	"Drone/Larva": {
 		name: "Morph to Drone",
 		hotkey: "D",
@@ -18442,6 +18079,478 @@ data.commands={
 		name: "Brutal Charge",
 		hotkey: "Q",
 		icon: "btn-ability-zerg-kraith-chargingcrash",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"GaryStetmannOrb/GaryStetmann": {
+		name: "E-Gorb",
+		hotkey: "T",
+		icon: "btn-ability-stetmann-garytravelingdamageorb",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"PowerTowerOverchargeStetmannSpeed/GaryStetmann": {
+		name: "Stetellite Overcharge",
+		hotkey: "C",
+		icon: "btn-ability-stetmann-garystetelliteovercharge-speed",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"GaryStetmannRecall/GaryStetmann": {
+		name: "Semi-Stable Mass Transportation",
+		hotkey: "R",
+		icon: "btn-ability-stetmann-garymassteleport",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"MorphToSuperGaryStetmann/GaryStetmann": {
+		name: "Super Gary Transformation Sequence",
+		hotkey: "U",
+		icon: "btn-unit-stetmann-supergary",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"CancelSuperGaryStetmannMorph": {
+		name: "Cancel",
+		hotkey: "Escape",
+		icon: "btn-command-cancel",
+		mask: true,
+		y: 2,
+		x: 4
+	},
+	"GaryStetmannOrb/SuperGaryStetmann": {
+		name: "E-Gorb",
+		hotkey: "T",
+		icon: "btn-ability-stetmann-garytravelingdamageorb",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"PowerTowerOverchargeStetmannSpeed/SuperGaryStetmann": {
+		name: "Stetellite Overcharge",
+		hotkey: "C",
+		icon: "btn-ability-stetmann-garystetelliteovercharge-speed",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"GaryStetmannRecall/SuperGaryStetmann": {
+		name: "Semi-Stable Mass Transportation",
+		hotkey: "R",
+		icon: "btn-ability-stetmann-garymassteleport",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"PowerFieldSuperGaryStetmannSpeed/SuperGaryStetmann": {
+		name: "Gary-zone",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-garypersonalstetzone-speed",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"Drone/LarvaStetmann": {
+		name: "Morph to Mecha Drone",
+		hotkey: "D",
+		icon: "btn-unit-collection-drone-mecha",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"Overlord/LarvaStetmann": {
+		name: "Morph to Mecha Overlord",
+		hotkey: "V",
+		icon: "btn-unit-collection-overlord-mecha",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"Zergling/LarvaStetmann": {
+		name: "Morph to Mecha Zergling",
+		hotkey: "Z",
+		icon: "btn-unit-collection-zergling-mecha",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"Hydralisk/LarvaStetmann": {
+		name: "Morph to Mecha Hydralisk",
+		hotkey: "H",
+		icon: "btn-unit-collection-hydralisk-mecha",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"Corruptor/LarvaStetmann": {
+		name: "Morph to Mecha Corruptor",
+		hotkey: "C",
+		icon: "btn-unit-collection-corruptor-mecha",
+		mask: false,
+		y: 1,
+		x: 2
+	},
+	"Infestor/LarvaStetmann": {
+		name: "Morph to Mecha Infestor",
+		hotkey: "F",
+		icon: "btn-unit-collection-infestor-mecha",
+		mask: false,
+		y: 1,
+		x: 3
+	},
+	"Ultralisk/LarvaStetmann": {
+		name: "Morph to Mecha Ultralisk",
+		hotkey: "U",
+		icon: "btn-unit-collection-ultralisk-mecha",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"MorphToOverseerStetmann/OverlordStetmann": {
+		name: "Morph to Mecha Overseer",
+		hotkey: "V",
+		icon: "btn-unit-collection-overseer-mecha",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"MorphtoOverseerSiegeStetmann/OverseerStetmann": {
+		name: "Oversight",
+		hotkey: "W",
+		icon: "btn-ability-zerg-overlord-oversight",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"MorphtoOverseerNormalStetmann/OverseerStetmann": {
+		name: "Cancel Oversight",
+		hotkey: "R",
+		icon: "btn-ability-zerg-overlord-oversight-off",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BanelingStetmann/ZerglingStetmann": {
+		name: "Morph to Mecha Baneling",
+		hotkey: "E",
+		icon: "btn-unit-collection-baneling-mecha",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ExplodeStetmann/BanelingStetmann": {
+		name: "Explode",
+		hotkey: "X",
+		icon: "btn-ability-zerg-explode-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ExplodeStetmann/BanelingStetmannBurrowed": {
+		name: "Explode",
+		hotkey: "X",
+		icon: "btn-ability-zerg-explode-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"EnableBuildingAttack/BanelingStetmann": {
+		name: "Enable Structure Attack",
+		hotkey: "F",
+		icon: "btn-ability-zerg-attackstructure-color",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"DisableBuildingAttack/BanelingStetmann": {
+		name: "Disable Structure Attack",
+		hotkey: "G",
+		icon: "btn-ability-zerg-explode-color",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"BanelingStetmannMovementSpeed/BanelingStetmann": {
+		name: "Anti-Centripetal Rocket Servos",
+		hotkey: "C",
+		icon: "btn-upgrade-stetmann-mechacentrifugalhooks",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"RavagerStetmannCorrosiveBile/RavagerStetmann": {
+		name: "Environmentally Unfriendly Eruption",
+		hotkey: "C",
+		icon: "btn-ability-zerg-corrosivebile",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"HydraliskStetmannMissilePowerOn": {
+		name: "Juiced Up Payload: On",
+		hotkey: "F",
+		icon: "btn-ability-stetmann-hydraliskmissilepoweron",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"HydraliskStetmannMissilePowerOff/HydraliskStetmann": {
+		name: "Juiced Up Payload: Off",
+		hotkey: "G",
+		icon: "btn-ability-stetmann-hydraliskmissilepoweroff",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"LurkerStetmann/HydraliskStetmann": {
+		name: "Morph to Mecha Lurker",
+		hotkey: "E",
+		icon: "btn-unit-collection-lurker-mecha",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"LurkerStetmannTunnelingBurst/LurkerStetmann": {
+		name: "Tunnel of TERROR Algorithm",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-lurkertunnelingburst",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"LurkerStetmannChannelingSpines/LurkerStetmann": {
+		name: "Focused Strike Algorithm",
+		hotkey: "C",
+		icon: "btn-ability-stetmann-lurkerchannelingspines",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"LurkerStetmannTunnelingBurst/LurkerStetmannBurrowed": {
+		name: "Tunnel of TERROR Algorithm",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-lurkertunnelingburst",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"LurkerStetmannChannelingSpines/LurkerStetmannBurrowed": {
+		name: "Focused Strike Algorithm",
+		hotkey: "C",
+		icon: "btn-ability-stetmann-lurkerchannelingspines",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"CorruptorStetmannMissilePods/CorruptorStetmann": {
+		name: "Cluster Busters",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-corruptormissilebarrage",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"CausticSprayStetmann/CorruptorStetmann": {
+		name: "Terraclean Solvent",
+		hotkey: "V",
+		icon: "btn-ability-stetmann-corruptorcausticspray",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BroodLordStetmann/CorruptorStetmann": {
+		name: "Morph to Mecha Battlecarrier Lord",
+		hotkey: "B",
+		icon: "btn-unit-collection-broodlord-mecha",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"BroodLordStetmannBroodlings/BroodLordStetmann": {
+		name: "Ready Mecha Broodling",
+		hotkey: "B",
+		icon: "btn-unit-collection-symbiote-mecha",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"BroodLordStetmannBombers/BroodLordStetmann": {
+		name: "Build Mecha Locusceptor",
+		hotkey: "I",
+		icon: "btn-unit-collection-creeperhostspawnflyer-mecha",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BroodLordStetmannYamatoCannon": {
+		name: "Stetmato Cannon",
+		hotkey: "Y",
+		icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"InfestorStetmannEggLaunch/InfestorStetmann": {
+		name: "Roaches Away!",
+		hotkey: "T",
+		icon: "btn-ability-stetmann-infestorrainofroaches",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"InfestorStetmannHealingTentacle/InfestorStetmann": {
+		name: "UMI-C Charging Protocol",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-infestorrecharge",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"InfestorStetmannInfestBuilding/InfestorStetmann": {
+		name: "Deconstructive Roach-nites",
+		hotkey: "D",
+		icon: "btn-ability-stetmann-infestorbuildinginfestation",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"InfestorStetmannEggLaunch/InfestorStetmannBurrowed": {
+		name: "Roaches Away!",
+		hotkey: "T",
+		icon: "btn-ability-stetmann-infestorrainofroaches",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"InfestorStetmannHealingTentacle/InfestorStetmannBurrowed": {
+		name: "UMI-C Charging Protocol",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-infestorrecharge",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"InfestorStetmannInfestBuilding/InfestorStetmannBurrowed": {
+		name: "Deconstructive Roach-nites",
+		hotkey: "D",
+		icon: "btn-ability-stetmann-infestorbuildinginfestation",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"UltraliskStetmannBurrowCharge/UltraliskStetmann": {
+		name: "Vectored Burrow Charge",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-mechaburrowcharge",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"UltraliskStetmannMechanicalLifeLeech/UltraliskStetmann": {
+		name: "Mecha Mooch Module",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-ultraliskmechanicalassimilation",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"FASTOverloadStetmann/PowerTowerStetmann": {
+		name: "F.A.S.T. Overload",
+		hotkey: "V",
+		icon: "btn-ability-stetmann-stetelliteoverloadspeed",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"HUGSOverloadStetmann/PowerTowerStetmann": {
+		name: "H.U.G.S. Overload",
+		hotkey: "V",
+		icon: "btn-ability-stetmann-stetelliteoverloadhealth",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"JUICEOverloadStetmann/PowerTowerStetmann": {
+		name: "J.U.I.C.E. Overload",
+		hotkey: "V",
+		icon: "btn-ability-stetmann-stetelliteoverloadenergy",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ReserachLurkerStetmannChannelingSpines/HydraliskDen": {
+		name: "Research Focused Strike Algorithm",
+		hotkey: "S",
+		icon: "btn-ability-stetmann-lurkerchannelingspines",
+		mask: false,
+		y: 0,
+		x: 4
+	},
+	"MutateintoLurkerDen/HydraliskDen": {
+		name: "Mutate into Mecha Lurker Den",
+		hotkey: "D",
+		icon: "btn-building-zerg-lurkerden-mecha",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"HydraliskStetmannRespawn/HydraliskDen": {
+		name: "Recycle Mecha Hydralisk",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-hydraliskrespawn",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"ReserachLurkerStetmannChannelingSpines/LurkerDen": {
+		name: "Research Focused Strike Algorithm",
+		hotkey: "S",
+		icon: "btn-ability-stetmann-lurkerchannelingspines",
+		mask: false,
+		y: 0,
+		x: 4
+	},
+	"HydraliskStetmannRespawn/LurkerDen": {
+		name: "Recycle Mecha Hydralisk",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-hydraliskrespawn",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"InfestorStetmannRespawn/InfestationPit": {
+		name: "Recycle Mecha Infestor",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-infestorrespawn",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"CorruptorStetmannRespawn/Spire": {
+		name: "Recycle Mecha Corruptor",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-corruptorrespawn",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"CorruptorStetmannRespawn/GreaterSpire": {
+		name: "Recycle Mecha Corruptor",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-corruptorrespawn",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"UltraliskStetmannRespawn/UltraliskCavern": {
+		name: "Recycle Mecha Ultralisk",
+		hotkey: "U",
+		icon: "btn-ability-stetmann-ultraliskrespawn",
 		mask: false,
 		y: 2,
 		x: 0
@@ -21807,55 +21916,6 @@ data.overrides={
 			icon: "btn-ability-hornerhan-raven-analyzetargetmultilock"
 		}
 	},
-	"Stetmann": {
-		"GatherProt": {
-			icon: "btn-ability-zerg-gather"
-		},
-		"BunkerLoad": {
-			x: 2
-		},
-		"BunkerUnloadAll": {
-			x: 3
-		},
-		"BurrowDown": {
-			hotkey: "R",
-			x: 4
-		},
-		"Hatchery/Drone": {
-			icon: "btn-building-zerg-hatchery-mecha"
-		},
-		"Extractor/Drone": {
-			icon: "btn-building-zerg-extractor-mecha"
-		},
-		"SpawningPool/Drone": {
-			icon: "btn-building-zerg-spawningpool-mecha"
-		},
-		"EvolutionChamber/Drone": {
-			icon: "btn-building-zerg-evolutionchamber-mecha"
-		},
-		"BanelingNest/Drone": {
-			icon: "btn-building-zerg-banelingnest-mecha",
-			x: 2
-		},
-		"SpineCrawler/Drone": {
-			icon: "btn-building-zerg-spinecrawler-mecha"
-		},
-		"SporeCrawler/Drone": {
-			icon: "btn-building-zerg-sporecrawler-mecha"
-		},
-		"HydraliskDen/Drone": {
-			icon: "btn-building-zerg-hydraliskden-mecha"
-		},
-		"InfestationPit/Drone": {
-			icon: "btn-building-zerg-infestationpit-mecha"
-		},
-		"Spire/Drone": {
-			icon: "btn-building-zerg-spire-mecha"
-		},
-		"UltraliskCavern/Drone": {
-			icon: "btn-building-zerg-ultraliskcavern-mecha"
-		}
-	},
 	"Zerg": {
 		"GatherProt": {
 			icon: "btn-ability-zerg-gather"
@@ -22273,6 +22333,248 @@ data.overrides={
 		},
 		"SwarmHostBurrowUp": {
 			icon: "btn-ability-zerg-dehaka-upburrow-color"
+		}
+	},
+	"Stetmann": {
+		"GatherProt": {
+			icon: "btn-ability-zerg-gather"
+		},
+		"BunkerLoad": {
+			x: 2
+		},
+		"BunkerUnloadAll": {
+			x: 3
+		},
+		"BurrowDown": {
+			hotkey: "R",
+			x: 4
+		},
+		"Hatchery/Drone": {
+			name: "Mutate into Mecha Hatchery",
+			icon: "btn-building-zerg-hatchery-mecha"
+		},
+		"Extractor/Drone": {
+			name: "Mutate into Mecha Extractor",
+			icon: "btn-building-zerg-extractor-mecha"
+		},
+		"SpawningPool/Drone": {
+			name: "Mutate into Mecha Spawning Pool",
+			icon: "btn-building-zerg-spawningpool-mecha"
+		},
+		"EvolutionChamber/Drone": {
+			name: "Mutate into Mecha Evolution Chamber",
+			icon: "btn-building-zerg-evolutionchamber-mecha"
+		},
+		"BanelingNest/Drone": {
+			name: "Mutate into Mecha Baneling Nest",
+			icon: "btn-building-zerg-banelingnest-mecha",
+			x: 2
+		},
+		"SpineCrawler/Drone": {
+			name: "Mutate into Mecha Spine Crawler",
+			icon: "btn-building-zerg-spinecrawler-mecha"
+		},
+		"SporeCrawler/Drone": {
+			name: "Mutate into Mecha Spore Crawler",
+			icon: "btn-building-zerg-sporecrawler-mecha"
+		},
+		"HydraliskDen/Drone": {
+			name: "Mutate into Mecha Hydralisk Den",
+			icon: "btn-building-zerg-hydraliskden-mecha"
+		},
+		"InfestationPit/Drone": {
+			name: "Mutate into Mecha Infestation Pit",
+			icon: "btn-building-zerg-infestationpit-mecha"
+		},
+		"Spire/Drone": {
+			name: "Mutate into Mecha Spire",
+			icon: "btn-building-zerg-spire-mecha"
+		},
+		"UltraliskCavern/Drone": {
+			name: "Mutate into Mecha Ultralisk Cavern",
+			icon: "btn-building-zerg-ultraliskcavern-mecha"
+		},
+		"Larva": {
+			name: "Select Mecha Larva",
+			icon: "btn-unit-zerg-larva-mecha"
+		},
+		"Lair/Hatchery": {
+			name: "Mutate into Mecha Lair",
+			icon: "btn-building-zerg-lair-mecha"
+		},
+		"Hive/Lair": {
+			name: "Mutate into Mecha Hive",
+			icon: "btn-building-zerg-hive-mecha"
+		},
+		"overlordspeed": {
+			name: "Research Pneumatized Fuselage",
+			icon: "btn-upgrade-stetmann-mechapneumatizedcarapace"
+		},
+		"EvolveVentralSacks": {
+			name: "Research Ventral Pods",
+			icon: "btn-upgrade-stetmann-mechaventralsacs"
+		},
+		"zerglingmovementspeed/SpawningPool": {
+			name: "Research Metal-bolic Boost",
+			icon: "btn-upgrade-stetmann-mechametabolicboost"
+		},
+		"EvolveHardenedCarapace/SpawningPool": {
+			name: "Research Hardened Egonergy Shield",
+			hotkey: "H",
+			icon: "btn-upgrade-stetmann-zerglinghardenedshield"
+		},
+		"zerglingattackspeed/SpawningPool": {
+			name: "Research Synthetic Adrenal Pumps",
+			icon: "btn-upgrade-stetmann-mechaadrenalglands",
+			x: 2
+		},
+		"EvolveBileLauncherIncreasedRange/SpawningPool": {
+			name: "Recycle Mecha Zergling",
+			icon: "btn-ability-stetmann-zerglingrespawn"
+		},
+		"zergmeleeweapons1/EvolutionChamber": {
+			name: "Research Mecha Melee Attacks",
+			icon: "btn-upgrade-stetmann-mechameleeattacks-level1"
+		},
+		"zergmissileweapons1/EvolutionChamber": {
+			name: "Research Mecha Missile Attacks",
+			icon: "btn-upgrade-stetmann-mechamissileattacks-level1"
+		},
+		"zerggroundarmor1/EvolutionChamber": {
+			name: "Research Mecha Ground Plating",
+			icon: "btn-upgrade-stetmann-mechagroundplating-level1"
+		},
+		"EvolveCentrificalHooks/BanelingNest": {
+			name: "Anti-Centripetal Rocket Servos",
+			icon: "btn-upgrade-stetmann-mechacentrifugalhooks"
+		},
+		"EvolveBanelingCorrosiveBile/BanelingNest": {
+			name: "Egonergy Enhanced Explosives",
+			hotkey: "D",
+			icon: "btn-upgrade-stetmann-banelingextradamage"
+		},
+		"EvolveBanelingRupture/BanelingNest": {
+			name: "Egonergy Efficient Barrier",
+			hotkey: "B",
+			icon: "btn-upgrade-stetmann-banelingmanashieldefficiency"
+		},
+		"SpineCrawlerRoot/SpineCrawlerUprooted": {
+			hotkey: "R"
+		},
+		"SpineCrawlerUproot/SpineCrawler": {
+			x: 0
+		},
+		"SporeCrawlerRoot/SporeCrawlerUprooted": {
+			hotkey: "R"
+		},
+		"SporeCrawlerUproot/SporeCrawler": {
+			x: 0
+		},
+		"EvolveMuscularAugments/HydraliskDen": {
+			name: "Research Hydra-lic Augments",
+			hotkey: "A",
+			icon: "btn-upgrade-stetmann-mechamuscularaugments",
+			x: 0
+		},
+		"EvolveAncillaryCarapace/HydraliskDen": {
+			name: "Research Erudition Missile Launchers",
+			icon: "btn-upgrade-stetmann-mechahydraliskmissiledamage"
+		},
+		"EvolveFrenzy/HydraliskDen": {
+			name: "Research Tyr-Class Targeting System",
+			icon: "btn-upgrade-stetmann-mechahydraliskmissilerange"
+		},
+		"ResearchLurkerRange/HydraliskDen": {
+			name: "Research Extended Tunnel of TERROR Algorithm",
+			hotkey: "B",
+			icon: "btn-upgrade-stetmann-lurkertunnelingburstrange"
+		},
+		"EvolveMuscularAugments/LurkerDen": {
+			name: "Research Hydra-lic Augments",
+			hotkey: "A",
+			icon: "btn-upgrade-stetmann-mechamuscularaugments",
+			x: 0
+		},
+		"EvolveAncillaryCarapace/LurkerDen": {
+			name: "Research Erudition Missile Launchers",
+			icon: "btn-upgrade-stetmann-mechahydraliskmissiledamage"
+		},
+		"EvolveFrenzy/LurkerDen": {
+			name: "Research Tyr-Class Targeting System",
+			icon: "btn-upgrade-stetmann-mechahydraliskmissilerange"
+		},
+		"ResearchLurkerRange/LurkerDen": {
+			name: "Research Extended Tunnel of TERROR Algorithm",
+			hotkey: "B",
+			icon: "btn-upgrade-stetmann-lurkertunnelingburstrange"
+		},
+		"HotSPressurizedGlands/InfestationPit": {
+			name: "Research UMI-C Charging Protocol",
+			hotkey: "E",
+			icon: "btn-ability-stetmann-infestorrainofroaches"
+		},
+		"EvolveViperImprovedCastRange/InfestationPit": {
+			name: "Research BONUS Ravager!",
+			hotkey: "R",
+			icon: "btn-upgrade-stetmann-infestorbonusravager"
+		},
+		"zergflyerattack1": {
+			name: "Research Mecha Flyer Attacks",
+			icon: "btn-upgrade-stetmann-mechaflyerattacks-level1"
+		},
+		"zergflyerarmor1": {
+			name: "Research Mecha Flyer Plating",
+			icon: "btn-upgrade-stetmann-mechaflyerplating-level1"
+		},
+		"EvolveMutaliskRapidRegeneration/Spire": {
+			name: "Research Wide Area Cluster Busters",
+			icon: "btn-upgrade-stetmann-corruptormissileaoe"
+		},
+		"EvolveKerriganViciousGlaive/Spire": {
+			name: "Research Terraclean Solvent",
+			icon: "btn-ability-stetmann-corruptorcausticspray"
+		},
+		"EvolveSeveringGlave/Spire": {
+			name: "Research Locusceptor Bay",
+			icon: "btn-upgrade-stetmann-battlecarrierlordflyinglocusts"
+		},
+		"GreaterSpire/Spire": {
+			name: "Mutate into Mecha Greater Spire",
+			icon: "btn-building-zerg-greaterspire-mecha"
+		},
+		"EvolveGuardianAttackRangeIncrease/Spire": {
+			name: "Research Stetmato Cannon",
+			icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon"
+		},
+		"EvolveMutaliskRapidRegeneration/GreaterSpire": {
+			name: "Research Wide Area Cluster Busters",
+			icon: "btn-upgrade-stetmann-corruptormissileaoe"
+		},
+		"EvolveKerriganViciousGlaive/GreaterSpire": {
+			name: "Research Terraclean Solvent",
+			icon: "btn-ability-stetmann-corruptorcausticspray"
+		},
+		"EvolveSeveringGlave/GreaterSpire": {
+			name: "Research Locusceptor Bay",
+			icon: "btn-upgrade-stetmann-battlecarrierlordflyinglocusts"
+		},
+		"EvolveGuardianAttackRangeIncrease/GreaterSpire": {
+			name: "Research Stetmato Cannon",
+			icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon"
+		},
+		"EvolveChitinousPlating/UltraliskCavern": {
+			name: "Research Electrostatic Surprise!",
+			icon: "btn-upgrade-stetmann-ultraliskburrowchargestun"
+		},
+		"EvolveBurrowCharge/UltraliskCavern": {
+			name: "Research Mecha Mooch Module",
+			hotkey: "E",
+			icon: "btn-ability-stetmann-ultraliskmechanicalassimilation"
+		},
+		"EvolveTissueAssimilation/UltraliskCavern": {
+			name: "Research Chitanium Plating",
+			hotkey: "H",
+			icon: "btn-upgrade-stetmann-mechachitinousplating"
 		}
 	},
 	"Protoss": {
