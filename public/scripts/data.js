@@ -7745,6 +7745,12 @@ data.units={
 			"Unburrowed": [
 				"ExplodeStetmann/BanelingStetmann",
 				"EnableBuildingAttack/BanelingStetmann",
+				"BanelingStetmannMovementSpeed/BanelingStetmann",
+				"BurrowDown"
+			],
+			"Structure Attack": [
+				...data.common.basic,
+				"ExplodeStetmann/BanelingStetmann",
 				"DisableBuildingAttack/BanelingStetmann",
 				"BanelingStetmannMovementSpeed/BanelingStetmann",
 				"BurrowDown"
@@ -18273,7 +18279,7 @@ data.commands={
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
-		x: 2
+		x: 1
 	},
 	"BanelingStetmannMovementSpeed/BanelingStetmann": {
 		name: "Anti-Centripetal Rocket Servos",
@@ -18281,7 +18287,7 @@ data.commands={
 		icon: "btn-upgrade-stetmann-mechacentrifugalhooks",
 		mask: false,
 		y: 2,
-		x: 3
+		x: 2
 	},
 	"RavagerStetmannCorrosiveBile/RavagerStetmann": {
 		name: "Environmentally Unfriendly Eruption",
