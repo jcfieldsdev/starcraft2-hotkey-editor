@@ -22483,16 +22483,16 @@ data.overrides={
 			icon: "btn-upgrade-stetmann-mechagroundplating-level1"
 		},
 		"EvolveCentrificalHooks/BanelingNest": {
-			name: "Anti-Centripetal Rocket Servos",
+			name: "Research Anti-Centripetal Rocket Servos",
 			icon: "btn-upgrade-stetmann-mechacentrifugalhooks"
 		},
 		"EvolveBanelingCorrosiveBile/BanelingNest": {
-			name: "Egonergy Enhanced Explosives",
+			name: "Research Egonergy Enhanced Explosives",
 			hotkey: "D",
 			icon: "btn-upgrade-stetmann-banelingextradamage"
 		},
 		"EvolveBanelingRupture/BanelingNest": {
-			name: "Egonergy Efficient Barrier",
+			name: "Research Egonergy Efficient Barrier",
 			hotkey: "B",
 			icon: "btn-upgrade-stetmann-banelingmanashieldefficiency"
 		},
