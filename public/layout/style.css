@@ -644,7 +644,7 @@ ul#filters button:hover {
 }
 
 ul#filters button.conflict {
-	border-color: #f00 !important;
+	border-color: #c00000 !important;
 }
 
 ul#filters button.conflict.active {
@@ -652,7 +652,7 @@ ul#filters button.conflict.active {
 }
 
 ul#filters button.conflict:hover {
-	border-color: #c00000 !important;
+	border-color: #f00 !important;
 }
 
 ul#filters button.protoss {
