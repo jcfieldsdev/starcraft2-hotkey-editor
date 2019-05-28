@@ -8041,12 +8041,12 @@ data.units={
 				"Cancel"
 			],
 			"Mecha Lurker Den": [
-				"EvolveMuscularAugments/LurkerDen",
-				"EvolveAncillaryCarapace/LurkerDen",
-				"EvolveFrenzy/LurkerDen",
-				"ResearchLurkerRange/LurkerDen",
-				"ReserachLurkerStetmannChannelingSpines/LurkerDen",
-				"HydraliskStetmannRespawn/LurkerDen",
+				"EvolveMuscularAugments/LurkerDenMP",
+				"EvolveAncillaryCarapace/LurkerDenMP",
+				"EvolveFrenzy/LurkerDenMP",
+				"ResearchLurkerRange/LurkerDenMP",
+				"ReserachLurkerStetmannChannelingSpines/LurkerDenMP",
+				"HydraliskStetmannRespawn/LurkerDenMP",
 				"Cancel"
 			]
 		}
@@ -18513,7 +18513,39 @@ data.commands={
 		y: 2,
 		x: 1
 	},
-	"ReserachLurkerStetmannChannelingSpines/LurkerDen": {
+	"EvolveMuscularAugments/LurkerDenMP": {
+		name: "Research Hydra-lic Augments",
+		hotkey: "A",
+		icon: "btn-upgrade-stetmann-mechamuscularaugments",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"EvolveAncillaryCarapace/LurkerDenMP": {
+		name: "Research Erudition Missile Launchers",
+		hotkey: "C",
+		icon: "btn-upgrade-stetmann-mechahydraliskmissiledamage",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"EvolveFrenzy/LurkerDenMP": {
+		name: "Research Tyr-Class Targeting System",
+		hotkey: "F",
+		icon: "btn-upgrade-stetmann-mechahydraliskmissilerange",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ResearchLurkerRange/LurkerDenMP": {
+		name: "Research Extended Tunnel of TERROR Algorithm",
+		hotkey: "B",
+		icon: "btn-upgrade-stetmann-lurkertunnelingburstrange",
+		mask: false,
+		y: 0,
+		x: 3
+	},
+	"ReserachLurkerStetmannChannelingSpines/LurkerDenMP": {
 		name: "Research Focused Strike Algorithm",
 		hotkey: "S",
 		icon: "btn-ability-stetmann-lurkerchannelingspines",
@@ -18521,7 +18553,7 @@ data.commands={
 		y: 0,
 		x: 4
 	},
-	"HydraliskStetmannRespawn/LurkerDen": {
+	"HydraliskStetmannRespawn/LurkerDenMP": {
 		name: "Recycle Mecha Hydralisk",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-hydraliskrespawn",
@@ -22491,25 +22523,6 @@ data.overrides={
 			icon: "btn-upgrade-stetmann-mechahydraliskmissilerange"
 		},
 		"ResearchLurkerRange/HydraliskDen": {
-			name: "Research Extended Tunnel of TERROR Algorithm",
-			hotkey: "B",
-			icon: "btn-upgrade-stetmann-lurkertunnelingburstrange"
-		},
-		"EvolveMuscularAugments/LurkerDen": {
-			name: "Research Hydra-lic Augments",
-			hotkey: "A",
-			icon: "btn-upgrade-stetmann-mechamuscularaugments",
-			x: 0
-		},
-		"EvolveAncillaryCarapace/LurkerDen": {
-			name: "Research Erudition Missile Launchers",
-			icon: "btn-upgrade-stetmann-mechahydraliskmissiledamage"
-		},
-		"EvolveFrenzy/LurkerDen": {
-			name: "Research Tyr-Class Targeting System",
-			icon: "btn-upgrade-stetmann-mechahydraliskmissilerange"
-		},
-		"ResearchLurkerRange/LurkerDen": {
 			name: "Research Extended Tunnel of TERROR Algorithm",
 			hotkey: "B",
 			icon: "btn-upgrade-stetmann-lurkertunnelingburstrange"
