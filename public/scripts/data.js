@@ -22530,7 +22530,7 @@ data.overrides={
 		"HotSPressurizedGlands/InfestationPit": {
 			name: "Research UMI-C Charging Protocol",
 			hotkey: "E",
-			icon: "btn-ability-stetmann-infestorrainofroaches"
+			icon: "btn-ability-stetmann-infestorrecharge"
 		},
 		"EvolveViperImprovedCastRange/InfestationPit": {
 			name: "Research BONUS Ravager!",
