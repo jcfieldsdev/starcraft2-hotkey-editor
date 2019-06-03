@@ -2188,7 +2188,7 @@ data.units={
 	},
 	"Raynor": {
 		name: "Raynor",
-		icon: "btn-unit-terran-marineraynor",
+		icon: "talent-raynor-level15-hyperiondamageaura",
 		race: TERRAN,
 		commander: "Raynor",
 		type: COMMANDER,
@@ -2593,7 +2593,7 @@ data.units={
 	},
 	"Swann": {
 		name: "Swann",
-		icon: "btn-unit-terran-marauderswann",
+		icon: "talent-swann-level01-vehiclespecialist",
 		race: TERRAN,
 		commander: "Swann",
 		type: COMMANDER,
@@ -2943,7 +2943,7 @@ data.units={
 	},
 	"Nova": {
 		name: "Nova",
-		icon: "btn-unit-terran-nova",
+		icon: "nova coop_lvl 01_black ops",
 		race: TERRAN,
 		commander: "Nova",
 		type: COMMANDER,
@@ -3326,8 +3326,9 @@ data.units={
 		]
 	},
 	"Han": {
-		name: "Han and Horner",
-		icon: "btn-unit-collection-marine-junker",
+		name: "Han",
+		displayName: "Han & Horner",
+		icon: "btn-progression-hornerhan-1-precisionchaos",
 		race: TERRAN,
 		commander: "Han",
 		type: COMMANDER,
@@ -3624,7 +3625,7 @@ data.units={
 	},
 	"Tychus": {
 		name: "Tychus",
-		icon: "btn-unit-terran-tychuscoop",
+		icon: "talent-tychus-level01-squadbar",
 		race: TERRAN,
 		commander: "Tychus",
 		type: COMMANDER,
@@ -4579,7 +4580,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Stukov": {
 		name: "Stukov",
-		icon: "btn-unit-zerg-stukov",
+		icon: "btn-upgrade-zerg-stukov-unlockresearchbundle_infestedcivilianmarines_07",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: HERO,
@@ -5382,10 +5383,16 @@ data.units={
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
 		commands: {
-			"Spire": [
+			"With Brood Lords": [
 				"zergflyerattack1",
 				"zergflyerarmor1",
 				"GreaterSpireBroodlord/Spire",
+				"Cancel"
+			],
+			"With Vipers": [
+				"zergflyerattack1",
+				"zergflyerarmor1",
+				"GreaterSpireViper/Spire",
 				"Cancel"
 			],
 			"Greater Spire": [
@@ -5527,7 +5534,7 @@ data.units={
 	},
 	"Kerrigan": {
 		name: "Kerrigan",
-		icon: "btn-unit-zerg-kerriganinfested",
+		icon: "btn-ability-kerrigan-fury",
 		race: ZERG,
 		commander: "Kerrigan",
 		type: COMMANDER,
@@ -5951,7 +5958,7 @@ data.units={
 	},
 	"Zagara": {
 		name: "Zagara",
-		icon: "btn-unit-zerg-broodqueen",
+		icon: "talent-zagara-level07-volatilebanelingnest",
 		race: ZERG,
 		commander: "Zagara",
 		type: COMMANDER,
@@ -7190,7 +7197,7 @@ data.units={
 	},
 	"Dehaka": {
 		name: "Dehaka",
-		icon: "btn-unit-dehaka-mammothdehaka",
+		icon: "btn-progression-zerg-dehaka-1-dehakaunlock",
 		race: ZERG,
 		commander: "Dehaka",
 		type: COMMANDER,
@@ -7610,7 +7617,7 @@ data.units={
 	},
 	"Stetmann": {
 		name: "Stetmann",
-		icon: "btn-unit-stetmann-supergary",
+		icon: "btn-progression-stetmann-15-supergarytransform",
 		race: ZERG,
 		commander: "Stetmann",
 		type: COMMANDER,
@@ -8623,7 +8630,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Artanis": {
 		name: "Artanis",
-		icon: "btn-unit-protoss-artanishero",
+		icon: "talent-artanis-level01-swiftretribution",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: HERO,
@@ -9639,7 +9646,7 @@ data.units={
 	},
 	"Vorazun": {
 		name: "Vorazun",
-		icon: "btn-unit-protoss-vorazun",
+		icon: "talent-vorazun-level01-shadowstalk",
 		race: PROTOSS,
 		commander: "Vorazun",
 		type: COMMANDER,
@@ -9923,7 +9930,7 @@ data.units={
 	},
 	"Karax": {
 		name: "Karax",
-		icon: "btn-unit-protoss-karax",
+		icon: "btn-upgrade-karax-chronowave",
 		race: PROTOSS,
 		commander: "Karax",
 		type: COMMANDER,
@@ -10241,7 +10248,7 @@ data.units={
 	},
 	"Alarak": {
 		name: "Alarak",
-		icon: "btn-unit-protoss-alarak",
+		icon: "btn-upgrade-protoss-alarak-empoweraoeattacks",
 		race: PROTOSS,
 		commander: "Alarak",
 		type: COMMANDER,
@@ -10531,7 +10538,7 @@ data.units={
 	},
 	"Fenix": {
 		name: "Fenix",
-		icon: "btn-unit-protoss-fenix",
+		icon: "btn-progression-protoss-fenix-1-zealotsuit",
 		race: PROTOSS,
 		commander: "Fenix",
 		type: COMMANDER,
@@ -11006,7 +11013,7 @@ data.units={
 	},
 	"Zeratul": {
 		name: "Zeratul",
-		icon: "btn-unit-protoss-zeratulcoop",
+		icon: "btn-progression-zeratul-01-powerofthexelnaga",
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: COMMANDER,
@@ -15850,6 +15857,14 @@ data.commands={
 		x: 0
 	},
 	"GreaterSpireBroodlord/Spire": {
+		name: "Mutate into Greater Spire",
+		hotkey: "G",
+		icon: "btn-building-zerg-greaterspire",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"GreaterSpireViper/Spire": {
 		name: "Mutate into Greater Spire",
 		hotkey: "G",
 		icon: "btn-building-zerg-greaterspire",
