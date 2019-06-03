@@ -650,7 +650,8 @@ Editor.prototype.findUnitsNamed=function(query) {
 			return;
 		}
 
-		let name=properties.name.toLowerCase();
+		let name=properties.displayName||properties.name;
+		name=name.toLowerCase();
 		// replaces curly quotes
 		name=name.replace(/[‘’]/g, "'");
 		name=name.replace(/[“”]/g, "\"");
@@ -720,12 +721,12 @@ Editor.prototype.formatResults=function(id, matches) {
 			}.bind(this));
 		}
 
-		let commander=data.units[unit.commander].displayName||unit.commander;
-
 		if (unit.type==COMMANDER) {
-			a.appendChild(document.createTextNode("Commander: "+commander));
+			let name=data.units[unit.commander].displayName||unit.name;
+			a.appendChild(document.createTextNode("Commander: "+name));
 		} else {
-			a.appendChild(document.createTextNode(commander+": "+unit.name));
+			let filter=data.units[unit.commander].displayName||unit.commander;
+			a.appendChild(document.createTextNode(filter+": "+unit.name));
 			a.classList.toggle("conflict", commands.checkConflicts(match));
 		}
 
