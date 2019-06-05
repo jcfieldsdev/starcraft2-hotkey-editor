@@ -5360,8 +5360,12 @@ data.units={
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
 		commands: {
-			"Hydralisk Den": [
+			"With Lurkers": [
 				"LurkerDen/HydraliskDen",
+				"Cancel"
+			],
+			"With Impalers": [
+				"ImpalerDen/HydraliskDen",
 				"Cancel"
 			],
 			"Lurker Den": [],
@@ -7654,13 +7658,13 @@ data.units={
 		type: OTHER,
 		commands: {
 			"Mecha Larva": [
-				"Drone/LarvaStetmann",
-				"Overlord/LarvaStetmann",
-				"Zergling/LarvaStetmann",
-				"Hydralisk/LarvaStetmann",
-				"Corruptor/LarvaStetmann",
-				"Infestor/LarvaStetmann",
-				"Ultralisk/LarvaStetmann"
+				"DroneStetmann/LarvaStetmann",
+				"OverlordStetmann/LarvaStetmann",
+				"ZerglingStetmann/LarvaStetmann",
+				"HydraliskStetmann/LarvaStetmann",
+				"CorruptorStetmann/LarvaStetmann",
+				"InfestorStetmann/LarvaStetmann",
+				"UltraliskStetmann/LarvaStetmann"
 			],
 			"Mecha Egg": [
 				"Rally",
@@ -7685,20 +7689,20 @@ data.units={
 				"BurrowUp"
 			],
 			"Build Structure": [
-				"Hatchery/Drone",
-				"Extractor/Drone",
-				"SpawningPool/Drone",
-				"EvolutionChamber/Drone",
-				"BanelingNest/Drone",
-				"SpineCrawler/Drone",
-				"SporeCrawler/Drone",
+				"HatcheryStetmann/Drone",
+				"ExtractorStetmann/Drone",
+				"SpawningPoolStetmann/Drone",
+				"EvolutionChamberStetmann/Drone",
+				"BanelingNestStetmann/Drone",
+				"SpineCrawlerStetmann/Drone",
+				"SporeCrawlerStetmann/Drone",
 				"Cancel"
 			],
 			"Build Advanced Structure": [
-				"HydraliskDen/Drone",
-				"InfestationPit/Drone",
-				"Spire/Drone",
-				"UltraliskCavern/Drone",
+				"HydraliskDenStetmann/Drone",
+				"InfestationPitStetmann/Drone",
+				"SpireStetmann/Drone",
+				"UltraliskCavernStetmann/Drone",
 				"Cancel"
 			]
 		}
@@ -7921,28 +7925,28 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Mecha Hatchery": [
-				"Larva",
-				"overlordspeed",
-				"EvolveVentralSacks",
-				"RallyEgg",
+				"LarvaStetmann",
+				"ResearchOverlordStetmannSpeed",
+				"ResearchOverlordStetmannVentralSacks",
+				"RallyEggStetmann",
 				"Rally",
-				"Lair/Hatchery",
+				"LairStetmann/HatcheryStetmann",
 				"Cancel"
 			],
 			"Mecha Lair": [
-				"Larva",
-				"overlordspeed",
-				"EvolveVentralSacks",
-				"RallyEgg",
+				"LarvaStetmann",
+				"ResearchOverlordStetmannSpeed",
+				"ResearchOverlordStetmannVentralSacks",
+				"RallyEggStetmann",
 				"Rally",
-				"Hive/Lair",
+				"HiveStetmann/LairStetmann",
 				"Cancel"
 			],
 			"Mecha Hive": [
-				"Larva",
-				"overlordspeed",
-				"EvolveVentralSacks",
-				"RallyEgg",
+				"LarvaStetmann",
+				"ResearchOverlordStetmannSpeed",
+				"ResearchOverlordStetmannVentralSacks",
+				"RallyEggStetmann",
 				"Rally",
 				"Cancel"
 			]
@@ -7963,10 +7967,11 @@ data.units={
 		commander: "Stetmann",
 		type: BUILDING,
 		commands: [
-			"zerglingmovementspeed/SpawningPool",
-			"EvolveHardenedCarapace/SpawningPool",
-			"zerglingattackspeed/SpawningPool",
-			"EvolveBileLauncherIncreasedRange/SpawningPool",
+			"ResearchZerglingStetmannMovementSpeed/SpawningPoolStetmann",
+			"ResearchZerglingStetmannHardenedShield/SpawningPoolStetmann",
+			"ResearchZerglingStetmannAttackSpeed/SpawningPoolStetmann",
+			"RallyStetmannBuilding",
+			"ZerglingStetmannRespawn/SpawningPoolStetmann",
 			"Cancel"
 		]
 	},
@@ -7977,9 +7982,9 @@ data.units={
 		commander: "Stetmann",
 		type: BUILDING,
 		commands: [
-			"zergmeleeweapons1/EvolutionChamber",
-			"zergmissileweapons1/EvolutionChamber",
-			"zerggroundarmor1/EvolutionChamber",
+			"ZergMeleeWeaponsStetmann1/EvolutionChamberStetmann",
+			"ZergMissileWeaponsStetmann1/EvolutionChamberStetmann",
+			"ZergGroundArmorStetmann1/EvolutionChamberStetmann",
 			"Cancel"
 		]
 	},
@@ -7990,9 +7995,9 @@ data.units={
 		commander: "Stetmann",
 		type: BUILDING,
 		commands: [
-			"EvolveCentrificalHooks/BanelingNest",
-			"EvolveBanelingCorrosiveBile/BanelingNest",
-			"EvolveBanelingRupture/BanelingNest",
+			"ResearchBanelingStetmannMovementSpeed/BanelingNestStetmann",
+			"ResearchBanelingStetmannExtraDamage/BanelingNestStetmann",
+			"ResearchBanelingStetmannManaShieldBonus/BanelingNestStetmann",
 			"Cancel"
 		]
 	},
@@ -8005,11 +8010,11 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SpineCrawlerUproot/SpineCrawler"
+				"SpineCrawlerUprootStetmann/SpineCrawlerStetmann"
 			],
 			"Uprooted": [
 				...data.common.flying,
-				"SpineCrawlerRoot/SpineCrawlerUprooted"
+				"SpineCrawlerRootStetmann/SpineCrawlerUprootedStetmann"
 			]
 		}
 	},
@@ -8022,11 +8027,11 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SporeCrawlerUproot/SporeCrawler"
+				"SporeCrawlerUprootStetmann/SporeCrawlerStetmann"
 			],
 			"Uprooted": [
 				...data.common.flying,
-				"SporeCrawlerRoot/SporeCrawlerUprooted"
+				"SporeCrawlerRootStetmann/SporeCrawlerUprootedStetmann"
 			]
 		}
 	},
@@ -8038,22 +8043,24 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Mecha Hydralisk Den": [
-				"EvolveMuscularAugments/HydraliskDen",
-				"EvolveAncillaryCarapace/HydraliskDen",
-				"EvolveFrenzy/HydraliskDen",
-				"ResearchLurkerRange/HydraliskDen",
-				"ReserachLurkerStetmannChannelingSpines/HydraliskDen",
-				"MutateintoLurkerDen/HydraliskDen",
-				"HydraliskStetmannRespawn/HydraliskDen",
+				"ResearchHydraliskStetmannMovementSpeed/HydraliskDenStetmann",
+				"ResearchHydraliskStetmannDamage/HydraliskDenStetmann",
+				"ResearchHydraliskStetmannRange/HydraliskDenStetmann",
+				"ResearchLurkerStetmannTunnelingBurstRange/HydraliskDenStetmann",
+				"ReserachLurkerStetmannChannelingSpines/HydraliskDenStetmann",
+				"RallyStetmannBuilding",
+				"LurkerDenStetmann/HydraliskDenStetmann",
+				"HydraliskStetmannRespawn/HydraliskDenStetmann",
 				"Cancel"
 			],
 			"Mecha Lurker Den": [
-				"EvolveMuscularAugments/LurkerDenMP",
-				"EvolveAncillaryCarapace/LurkerDenMP",
-				"EvolveFrenzy/LurkerDenMP",
-				"ResearchLurkerRange/LurkerDenMP",
-				"ReserachLurkerStetmannChannelingSpines/LurkerDenMP",
-				"HydraliskStetmannRespawn/LurkerDenMP",
+				"ResearchHydraliskStetmannMovementSpeed/LurkerDenStetmann",
+				"ResearchHydraliskStetmannDamage/LurkerDenStetmann",
+				"ResearchHydraliskStetmannRange/LurkerDenStetmann",
+				"ResearchLurkerStetmannTunnelingBurstRange/LurkerDenStetmann",
+				"ReserachLurkerStetmannChannelingSpines/LurkerDenStetmann",
+				"RallyStetmannBuilding",
+				"HydraliskStetmannRespawn/LurkerDenStetmann",
 				"Cancel"
 			]
 		}
@@ -8065,9 +8072,11 @@ data.units={
 		commander: "Stetmann",
 		type: BUILDING,
 		commands: [
-			"HotSPressurizedGlands/InfestationPit",
-			"EvolveViperImprovedCastRange/InfestationPit",
-			"InfestorStetmannRespawn/InfestationPit"
+			"InfestorStetmannRecharge/InfestationPitStetmann",
+			"InfestorStetmannBonusRavager/InfestationPitStetmann",
+			"RallyStetmannBuilding",
+			"InfestorStetmannRespawn/InfestationPitStetmann",
+			"Cancel"
 		]
 	},
 	"Stetmann_Spire": {
@@ -8078,24 +8087,26 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"Mecha Spire": [
-				"zergflyerattack1",
-				"zergflyerarmor1",
-				"EvolveMutaliskRapidRegeneration/Spire",
-				"EvolveKerriganViciousGlaive/Spire",
-				"EvolveSeveringGlave/Spire",
-				"EvolveGuardianAttackRangeIncrease/Spire",
-				"GreaterSpire/Spire",
-				"CorruptorStetmannRespawn/Spire",
+				"ZergFlyerAttackStetmann1",
+				"ZergFlyerArmorStetmann1",
+				"CorruptorStetmannBiggerAoE/SpireStetmann",
+				"ResearchCorruptorCausticSprayStetmann/SpireStetmann",
+				"BroodLordStetmannBombersLearn/SpireStetmann",
+				"BroodLordStetmannYamato/SpireStetmann",
+				"RallyStetmannBuilding",
+				"GreaterSpireStetmann/SpireStetmann",
+				"CorruptorStetmannRespawn/SpireStetmann",
 				"Cancel"
 			],
 			"Mecha Greater Spire": [
-				"zergflyerattack1",
-				"zergflyerarmor1",
-				"EvolveMutaliskRapidRegeneration/GreaterSpire",
-				"EvolveKerriganViciousGlaive/GreaterSpire",
-				"EvolveSeveringGlave/GreaterSpire",
-				"EvolveGuardianAttackRangeIncrease/GreaterSpire",
-				"CorruptorStetmannRespawn/GreaterSpire",
+				"ZergFlyerAttackStetmann1",
+				"ZergFlyerArmorStetmann1",
+				"CorruptorStetmannBiggerAoE/GreaterSpireStetmann",
+				"ResearchCorruptorCausticSprayStetmann/GreaterSpireStetmann",
+				"BroodLordStetmannBombersLearn/GreaterSpireStetmann",
+				"BroodLordStetmannYamato/GreaterSpireStetmann",
+				"RallyStetmannBuilding",
+				"CorruptorStetmannRespawn/GreaterSpireStetmann",
 				"Cancel"
 			]
 		}
@@ -8107,10 +8118,12 @@ data.units={
 		commander: "Stetmann",
 		type: BUILDING,
 		commands: [
-			"EvolveChitinousPlating/UltraliskCavern",
-			"EvolveBurrowCharge/UltraliskCavern",
-			"EvolveTissueAssimilation/UltraliskCavern",
-			"UltraliskStetmannRespawn/UltraliskCavern"
+			"ResearchUltraliskStetmannBurrowChargeMechanicalStun/UltraliskCavernStetmann",
+			"ReserachUltraliskStetmannMechanicalLifeLeech/UltraliskCavernStetmann",
+			"ReserachUltraliskStetmannArmor/UltraliskCavernStetmann",
+			"RallyStetmannBuilding",
+			"UltraliskStetmannRespawn/UltraliskCavernStetmann",
+			"Cancel"
 		]
 	},
 	"Stetmann_Stetellite": {
@@ -11682,6 +11695,14 @@ data.commands={
 	},
 	"RallySCV": {
 		name: "Set Worker Rally Point",
+		hotkey: "Y",
+		icon: "btn-ability-terran-setrallypoint",
+		mask: true,
+		y: 1,
+		x: 4
+	},
+	"RallyStetmannBuilding": {
+		name: "Set Rally Point",
 		hotkey: "Y",
 		icon: "btn-ability-terran-setrallypoint",
 		mask: true,
@@ -15736,6 +15757,14 @@ data.commands={
 		y: 2,
 		x: 0
 	},
+	"ImpalerDen/HydraliskDen": {
+		name: "Mutate into Impaler Den",
+		hotkey: "D",
+		icon: "btn-building-zerg-lurkerden",
+		mask: false,
+		y: 2,
+		x: 0
+	},
 	"EvolveDiggingClaws/LurkerDenMP": {
 		name: "Evolve Adaptive Talons",
 		hotkey: "D",
@@ -18176,7 +18205,7 @@ data.commands={
 		y: 2,
 		x: 3
 	},
-	"Drone/LarvaStetmann": {
+	"DroneStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Drone",
 		hotkey: "D",
 		icon: "btn-unit-collection-drone-mecha",
@@ -18184,7 +18213,7 @@ data.commands={
 		y: 0,
 		x: 0
 	},
-	"Overlord/LarvaStetmann": {
+	"OverlordStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Overlord",
 		hotkey: "V",
 		icon: "btn-unit-collection-overlord-mecha",
@@ -18192,7 +18221,7 @@ data.commands={
 		y: 0,
 		x: 1
 	},
-	"Zergling/LarvaStetmann": {
+	"ZerglingStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Zergling",
 		hotkey: "Z",
 		icon: "btn-unit-collection-zergling-mecha",
@@ -18200,7 +18229,7 @@ data.commands={
 		y: 0,
 		x: 2
 	},
-	"Hydralisk/LarvaStetmann": {
+	"HydraliskStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Hydralisk",
 		hotkey: "H",
 		icon: "btn-unit-collection-hydralisk-mecha",
@@ -18208,7 +18237,7 @@ data.commands={
 		y: 1,
 		x: 0
 	},
-	"Corruptor/LarvaStetmann": {
+	"CorruptorStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Corruptor",
 		hotkey: "C",
 		icon: "btn-unit-collection-corruptor-mecha",
@@ -18216,7 +18245,7 @@ data.commands={
 		y: 1,
 		x: 2
 	},
-	"Infestor/LarvaStetmann": {
+	"InfestorStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Infestor",
 		hotkey: "F",
 		icon: "btn-unit-collection-infestor-mecha",
@@ -18224,13 +18253,101 @@ data.commands={
 		y: 1,
 		x: 3
 	},
-	"Ultralisk/LarvaStetmann": {
+	"UltraliskStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Ultralisk",
 		hotkey: "U",
 		icon: "btn-unit-collection-ultralisk-mecha",
 		mask: false,
 		y: 2,
 		x: 1
+	},
+	"HatcheryStetmann/Drone": {
+		name: "Mutate into Mecha Hatchery",
+		hotkey: "H",
+		icon: "btn-building-zerg-hatchery-mecha",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ExtractorStetmann/Drone": {
+		name: "Mutate into Mecha Extractor",
+		hotkey: "E",
+		icon: "btn-building-zerg-extractor-mecha",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"SpawningPoolStetmann/Drone": {
+		name: "Mutate into Mecha Spawning Pool",
+		hotkey: "S",
+		icon: "btn-building-zerg-spawningpool-mecha",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"EvolutionChamberStetmann/Drone": {
+		name: "Mutate into Mecha Evolution Chamber",
+		hotkey: "V",
+		icon: "btn-building-zerg-evolutionchamber-mecha",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"BanelingNestStetmann/Drone": {
+		name: "Mutate into Mecha Baneling Nest",
+		hotkey: "B",
+		icon: "btn-building-zerg-banelingnest-mecha",
+		mask: false,
+		y: 1,
+		x: 2
+	},
+	"SpineCrawlerStetmann/Drone": {
+		name: "Mutate into Mecha Spine Crawler",
+		hotkey: "C",
+		icon: "btn-building-zerg-spinecrawler-mecha",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"SporeCrawlerStetmann/Drone": {
+		name: "Mutate into Mecha Spore Crawler",
+		hotkey: "A",
+		icon: "btn-building-zerg-sporecrawler-mecha",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"HydraliskDenStetmann/Drone": {
+		name: "Mutate into Mecha Hydralisk Den",
+		hotkey: "H",
+		icon: "btn-building-zerg-hydraliskden-mecha",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"InfestationPitStetmann/Drone": {
+		name: "Mutate into Mecha Infestation Pit",
+		hotkey: "I",
+		icon: "btn-building-zerg-infestationpit-mecha",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"SpireStetmann/Drone": {
+		name: "Mutate into Mecha Spire",
+		hotkey: "S",
+		icon: "btn-building-zerg-spire-mecha",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"UltraliskCavernStetmann/Drone": {
+		name: "Mutate into Mecha Ultralisk Cavern",
+		hotkey: "U",
+		icon: "btn-building-zerg-ultraliskcavern-mecha",
+		mask: false,
+		y: 2,
+		x: 0
 	},
 	"MorphToOverseerStetmann/OverlordStetmann": {
 		name: "Morph to Mecha Overseer",
@@ -18504,31 +18621,167 @@ data.commands={
 		y: 0,
 		x: 0
 	},
-	"ReserachLurkerStetmannChannelingSpines/HydraliskDen": {
-		name: "Research Focused Strike Algorithm",
+	"LarvaStetmann": {
+		name: "Select Mecha Larva",
 		hotkey: "S",
-		icon: "btn-ability-stetmann-lurkerchannelingspines",
+		icon: "btn-unit-zerg-larva-mecha",
 		mask: false,
 		y: 0,
-		x: 4
+		x: 0
 	},
-	"MutateintoLurkerDen/HydraliskDen": {
-		name: "Mutate into Mecha Lurker Den",
-		hotkey: "D",
-		icon: "btn-building-zerg-lurkerden-mecha",
+	"ResearchOverlordStetmannSpeed": {
+		name: "Research Pneumatized Fuselage",
+		hotkey: "P",
+		icon: "btn-upgrade-stetmann-mechapneumatizedcarapace",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"ResearchOverlordStetmannVentralSacks": {
+		name: "Research Ventral Pods",
+		hotkey: "E",
+		icon: "btn-upgrade-stetmann-mechaventralsacs",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"RallyEggStetmann": {
+		name: "Set Worker Rally Point",
+		hotkey: "G",
+		icon: "btn-ability-zerg-setworkerrallypoint",
+		mask: true,
+		y: 1,
+		x: 3
+	},
+	"LairStetmann/HatcheryStetmann": {
+		name: "Mutate into Mecha Lair",
+		hotkey: "L",
+		icon: "btn-building-zerg-lair-mecha",
 		mask: false,
 		y: 2,
 		x: 0
 	},
-	"HydraliskStetmannRespawn/HydraliskDen": {
-		name: "Recycle Mecha Hydralisk",
-		hotkey: "B",
-		icon: "btn-ability-stetmann-hydraliskrespawn",
+	"HiveStetmann/LairStetmann": {
+		name: "Mutate into Mecha Hive",
+		hotkey: "H",
+		icon: "btn-building-zerg-hive-mecha",
 		mask: false,
 		y: 2,
+		x: 0
+	},
+	"ResearchZerglingStetmannMovementSpeed/SpawningPoolStetmann": {
+		name: "Research Metal-bolic Boost",
+		hotkey: "M",
+		icon: "btn-upgrade-stetmann-mechametabolicboost",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ResearchZerglingStetmannHardenedShield/SpawningPoolStetmann": {
+		name: "Research Hardened Egonergy Shield",
+		hotkey: "H",
+		icon: "btn-upgrade-stetmann-zerglinghardenedshield",
+		mask: false,
+		y: 0,
 		x: 1
 	},
-	"EvolveMuscularAugments/LurkerDenMP": {
+	"ResearchZerglingStetmannAttackSpeed/SpawningPoolStetmann": {
+		name: "Research Synthetic Adrenal Pumps",
+		hotkey: "A",
+		icon: "btn-upgrade-stetmann-mechaadrenalglands",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ZerglingStetmannRespawn/SpawningPoolStetmann": {
+		name: "Recycle Mecha Zergling",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-zerglingrespawn",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ZergMeleeWeaponsStetmann1/EvolutionChamberStetmann": {
+		name: "Research Mecha Melee Attacks",
+		hotkey: "M",
+		icon: "btn-upgrade-stetmann-mechameleeattacks-level1",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ZergMissileWeaponsStetmann1/EvolutionChamberStetmann": {
+		name: "Research Mecha Missile Attacks",
+		hotkey: "A",
+		icon: "btn-upgrade-stetmann-mechamissileattacks-level1",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"ZergGroundArmorStetmann1/EvolutionChamberStetmann": {
+		name: "Research Mecha Ground Plating",
+		hotkey: "C",
+		icon: "btn-upgrade-stetmann-mechagroundplating-level1",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ResearchBanelingStetmannMovementSpeed/BanelingNestStetmann": {
+		name: "Research Anti-Centripetal Rocket Servos",
+		hotkey: "C",
+		icon: "btn-upgrade-stetmann-mechacentrifugalhooks",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ResearchBanelingStetmannExtraDamage/BanelingNestStetmann": {
+		name: "Research Egonergy Enhanced Explosives",
+		hotkey: "D",
+		icon: "btn-upgrade-stetmann-banelingextradamage",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"ResearchBanelingStetmannManaShieldBonus/BanelingNestStetmann": {
+		name: "Research Egonergy Efficient Barrier",
+		hotkey: "B",
+		icon: "btn-upgrade-stetmann-banelingmanashieldefficiency",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"SpineCrawlerRootStetmann/SpineCrawlerUprootedStetmann": {
+		name: "Root",
+		hotkey: "D",
+		icon: "btn-ability-zerg-root-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"SpineCrawlerUprootStetmann/SpineCrawlerStetmann": {
+		name: "Uproot",
+		hotkey: "R",
+		icon: "btn-ability-zerg-uproot-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"SporeCrawlerRootStetmann/SporeCrawlerUprootedStetmann": {
+		name: "Root",
+		hotkey: "D",
+		icon: "btn-ability-zerg-root-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"SporeCrawlerUprootStetmann/SporeCrawlerStetmann": {
+		name: "Uproot",
+		hotkey: "R",
+		icon: "btn-ability-zerg-uproot-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ResearchHydraliskStetmannMovementSpeed/HydraliskDenStetmann": {
 		name: "Research Hydra-lic Augments",
 		hotkey: "A",
 		icon: "btn-upgrade-stetmann-mechamuscularaugments",
@@ -18536,7 +18789,7 @@ data.commands={
 		y: 0,
 		x: 0
 	},
-	"EvolveAncillaryCarapace/LurkerDenMP": {
+	"ResearchHydraliskStetmannDamage/HydraliskDenStetmann": {
 		name: "Research Erudition Missile Launchers",
 		hotkey: "C",
 		icon: "btn-upgrade-stetmann-mechahydraliskmissiledamage",
@@ -18544,7 +18797,7 @@ data.commands={
 		y: 0,
 		x: 1
 	},
-	"EvolveFrenzy/LurkerDenMP": {
+	"ResearchHydraliskStetmannRange/HydraliskDenStetmann": {
 		name: "Research Tyr-Class Targeting System",
 		hotkey: "F",
 		icon: "btn-upgrade-stetmann-mechahydraliskmissilerange",
@@ -18552,15 +18805,15 @@ data.commands={
 		y: 0,
 		x: 2
 	},
-	"ResearchLurkerRange/LurkerDenMP": {
+	"ResearchLurkerStetmannTunnelingBurstRange/HydraliskDenStetmann": {
 		name: "Research Extended Tunnel of TERROR Algorithm",
-		hotkey: "B",
+		hotkey: "T",
 		icon: "btn-upgrade-stetmann-lurkertunnelingburstrange",
 		mask: false,
 		y: 0,
 		x: 3
 	},
-	"ReserachLurkerStetmannChannelingSpines/LurkerDenMP": {
+	"ReserachLurkerStetmannChannelingSpines/HydraliskDenStetmann": {
 		name: "Research Focused Strike Algorithm",
 		hotkey: "S",
 		icon: "btn-ability-stetmann-lurkerchannelingspines",
@@ -18568,7 +18821,15 @@ data.commands={
 		y: 0,
 		x: 4
 	},
-	"HydraliskStetmannRespawn/LurkerDenMP": {
+	"LurkerDenStetmann/HydraliskDenStetmann": {
+		name: "Mutate into Mecha Lurker Den",
+		hotkey: "D",
+		icon: "btn-building-zerg-lurkerden-mecha",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"HydraliskStetmannRespawn/HydraliskDenStetmann": {
 		name: "Recycle Mecha Hydralisk",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-hydraliskrespawn",
@@ -18576,7 +18837,71 @@ data.commands={
 		y: 2,
 		x: 1
 	},
-	"InfestorStetmannRespawn/InfestationPit": {
+	"ResearchHydraliskStetmannMovementSpeed/LurkerDenStetmann": {
+		name: "Research Hydra-lic Augments",
+		hotkey: "A",
+		icon: "btn-upgrade-stetmann-mechamuscularaugments",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ResearchHydraliskStetmannDamage/LurkerDenStetmann": {
+		name: "Research Erudition Missile Launchers",
+		hotkey: "C",
+		icon: "btn-upgrade-stetmann-mechahydraliskmissiledamage",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"ResearchHydraliskStetmannRange/LurkerDenStetmann": {
+		name: "Research Tyr-Class Targeting System",
+		hotkey: "F",
+		icon: "btn-upgrade-stetmann-mechahydraliskmissilerange",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ResearchLurkerStetmannTunnelingBurstRange/LurkerDenStetmann": {
+		name: "Research Extended Tunnel of TERROR Algorithm",
+		hotkey: "T",
+		icon: "btn-upgrade-stetmann-lurkertunnelingburstrange",
+		mask: false,
+		y: 0,
+		x: 3
+	},
+	"ReserachLurkerStetmannChannelingSpines/LurkerDenStetmann": {
+		name: "Research Focused Strike Algorithm",
+		hotkey: "S",
+		icon: "btn-ability-stetmann-lurkerchannelingspines",
+		mask: false,
+		y: 0,
+		x: 4
+	},
+	"HydraliskStetmannRespawn/LurkerDenStetmann": {
+		name: "Recycle Mecha Hydralisk",
+		hotkey: "B",
+		icon: "btn-ability-stetmann-hydraliskrespawn",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"InfestorStetmannRecharge/InfestationPitStetmann": {
+		name: "Research UMI-C Charging Protocol",
+		hotkey: "P",
+		icon: "btn-ability-stetmann-infestorrecharge",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"InfestorStetmannBonusRavager/InfestationPitStetmann": {
+		name: "Research BONUS Ravager!",
+		hotkey: "R",
+		icon: "btn-upgrade-stetmann-infestorbonusravager",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"InfestorStetmannRespawn/InfestationPitStetmann": {
 		name: "Recycle Mecha Infestor",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-infestorrespawn",
@@ -18584,7 +18909,63 @@ data.commands={
 		y: 2,
 		x: 0
 	},
-	"CorruptorStetmannRespawn/Spire": {
+	"ZergFlyerAttackStetmann1": {
+		name: "Research Mecha Flyer Attacks",
+		hotkey: "A",
+		icon: "btn-upgrade-stetmann-mechaflyerattacks-level1",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ZergFlyerArmorStetmann1": {
+		name: "Research Mecha Flyer Plating",
+		hotkey: "C",
+		icon: "btn-upgrade-stetmann-mechaflyerplating-level1",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"CorruptorStetmannBiggerAoE/SpireStetmann": {
+		name: "Research Wide Area Cluster Busters",
+		hotkey: "R",
+		icon: "btn-upgrade-stetmann-corruptormissileaoe",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ResearchCorruptorCausticSprayStetmann/SpireStetmann": {
+		name: "Research Terraclean Solvent",
+		hotkey: "V",
+		icon: "btn-ability-stetmann-corruptorcausticspray",
+		mask: false,
+		y: 0,
+		x: 3
+	},
+	"BroodLordStetmannBombersLearn/SpireStetmann": {
+		name: "Research Locusceptor Bay",
+		hotkey: "S",
+		icon: "btn-upgrade-stetmann-battlecarrierlordflyinglocusts",
+		mask: false,
+		y: 0,
+		x: 4
+	},
+	"BroodLordStetmannYamato/SpireStetmann": {
+		name: "Research Stetmato Cannon",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"GreaterSpireStetmann/SpireStetmann": {
+		name: "Mutate into Mecha Greater Spire",
+		hotkey: "G",
+		icon: "btn-building-zerg-greaterspire-mecha",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"CorruptorStetmannRespawn/SpireStetmann": {
 		name: "Recycle Mecha Corruptor",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-corruptorrespawn",
@@ -18592,7 +18973,39 @@ data.commands={
 		y: 2,
 		x: 1
 	},
-	"CorruptorStetmannRespawn/GreaterSpire": {
+	"CorruptorStetmannBiggerAoE/GreaterSpireStetmann": {
+		name: "Research Wide Area Cluster Busters",
+		hotkey: "R",
+		icon: "btn-upgrade-stetmann-corruptormissileaoe",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ResearchCorruptorCausticSprayStetmann/GreaterSpireStetmann": {
+		name: "Research Terraclean Solvent",
+		hotkey: "V",
+		icon: "btn-ability-stetmann-corruptorcausticspray",
+		mask: false,
+		y: 0,
+		x: 3
+	},
+	"BroodLordStetmannBombersLearn/GreaterSpireStetmann": {
+		name: "Research Locusceptor Bay",
+		hotkey: "S",
+		icon: "btn-upgrade-stetmann-battlecarrierlordflyinglocusts",
+		mask: false,
+		y: 0,
+		x: 4
+	},
+	"BroodLordStetmannYamato/GreaterSpireStetmann": {
+		name: "Research Stetmato Cannon",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"CorruptorStetmannRespawn/GreaterSpireStetmann": {
 		name: "Recycle Mecha Corruptor",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-corruptorrespawn",
@@ -18600,7 +19013,31 @@ data.commands={
 		y: 2,
 		x: 1
 	},
-	"UltraliskStetmannRespawn/UltraliskCavern": {
+	"ResearchUltraliskStetmannBurrowChargeMechanicalStun/UltraliskCavernStetmann": {
+		name: "Research Electrostatic Surprise!",
+		hotkey: "C",
+		icon: "btn-upgrade-stetmann-ultraliskburrowchargestun",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ReserachUltraliskStetmannMechanicalLifeLeech/UltraliskCavernStetmann": {
+		name: "Research Mecha Mooch Module",
+		hotkey: "E",
+		icon: "btn-ability-stetmann-ultraliskmechanicalassimilation",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"ReserachUltraliskStetmannArmor/UltraliskCavernStetmann": {
+		name: "Research Chitanium Plating",
+		hotkey: "H",
+		icon: "btn-upgrade-stetmann-mechachitinousplating",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"UltraliskStetmannRespawn/UltraliskCavernStetmann": {
 		name: "Recycle Mecha Ultralisk",
 		hotkey: "U",
 		icon: "btn-ability-stetmann-ultraliskrespawn",
@@ -22031,9 +22468,6 @@ data.overrides={
 		"SporeCrawlerUproot/SporeCrawler": {
 			x: 0
 		},
-		"LurkerDen/HydraliskDen": {
-			name: "Mutate into Lurker Den\nMutate into Impaler Den"
-		},
 		"Marauder/Barracks": {
 			x: 1
 		},
@@ -22401,214 +22835,6 @@ data.overrides={
 		"BurrowDown": {
 			hotkey: "R",
 			x: 4
-		},
-		"Hatchery/Drone": {
-			name: "Mutate into Mecha Hatchery",
-			icon: "btn-building-zerg-hatchery-mecha"
-		},
-		"Extractor/Drone": {
-			name: "Mutate into Mecha Extractor",
-			icon: "btn-building-zerg-extractor-mecha"
-		},
-		"SpawningPool/Drone": {
-			name: "Mutate into Mecha Spawning Pool",
-			icon: "btn-building-zerg-spawningpool-mecha"
-		},
-		"EvolutionChamber/Drone": {
-			name: "Mutate into Mecha Evolution Chamber",
-			icon: "btn-building-zerg-evolutionchamber-mecha"
-		},
-		"BanelingNest/Drone": {
-			name: "Mutate into Mecha Baneling Nest",
-			icon: "btn-building-zerg-banelingnest-mecha",
-			x: 2
-		},
-		"SpineCrawler/Drone": {
-			name: "Mutate into Mecha Spine Crawler",
-			icon: "btn-building-zerg-spinecrawler-mecha"
-		},
-		"SporeCrawler/Drone": {
-			name: "Mutate into Mecha Spore Crawler",
-			icon: "btn-building-zerg-sporecrawler-mecha"
-		},
-		"HydraliskDen/Drone": {
-			name: "Mutate into Mecha Hydralisk Den",
-			icon: "btn-building-zerg-hydraliskden-mecha"
-		},
-		"InfestationPit/Drone": {
-			name: "Mutate into Mecha Infestation Pit",
-			icon: "btn-building-zerg-infestationpit-mecha"
-		},
-		"Spire/Drone": {
-			name: "Mutate into Mecha Spire",
-			icon: "btn-building-zerg-spire-mecha"
-		},
-		"UltraliskCavern/Drone": {
-			name: "Mutate into Mecha Ultralisk Cavern",
-			icon: "btn-building-zerg-ultraliskcavern-mecha"
-		},
-		"Larva": {
-			name: "Select Mecha Larva",
-			icon: "btn-unit-zerg-larva-mecha"
-		},
-		"Lair/Hatchery": {
-			name: "Mutate into Mecha Lair",
-			icon: "btn-building-zerg-lair-mecha"
-		},
-		"Hive/Lair": {
-			name: "Mutate into Mecha Hive",
-			icon: "btn-building-zerg-hive-mecha"
-		},
-		"overlordspeed": {
-			name: "Research Pneumatized Fuselage",
-			icon: "btn-upgrade-stetmann-mechapneumatizedcarapace"
-		},
-		"EvolveVentralSacks": {
-			name: "Research Ventral Pods",
-			icon: "btn-upgrade-stetmann-mechaventralsacs"
-		},
-		"zerglingmovementspeed/SpawningPool": {
-			name: "Research Metal-bolic Boost",
-			icon: "btn-upgrade-stetmann-mechametabolicboost"
-		},
-		"EvolveHardenedCarapace/SpawningPool": {
-			name: "Research Hardened Egonergy Shield",
-			hotkey: "H",
-			icon: "btn-upgrade-stetmann-zerglinghardenedshield"
-		},
-		"zerglingattackspeed/SpawningPool": {
-			name: "Research Synthetic Adrenal Pumps",
-			icon: "btn-upgrade-stetmann-mechaadrenalglands",
-			x: 2
-		},
-		"EvolveBileLauncherIncreasedRange/SpawningPool": {
-			name: "Recycle Mecha Zergling",
-			icon: "btn-ability-stetmann-zerglingrespawn"
-		},
-		"zergmeleeweapons1/EvolutionChamber": {
-			name: "Research Mecha Melee Attacks",
-			icon: "btn-upgrade-stetmann-mechameleeattacks-level1"
-		},
-		"zergmissileweapons1/EvolutionChamber": {
-			name: "Research Mecha Missile Attacks",
-			icon: "btn-upgrade-stetmann-mechamissileattacks-level1"
-		},
-		"zerggroundarmor1/EvolutionChamber": {
-			name: "Research Mecha Ground Plating",
-			icon: "btn-upgrade-stetmann-mechagroundplating-level1"
-		},
-		"EvolveCentrificalHooks/BanelingNest": {
-			name: "Research Anti-Centripetal Rocket Servos",
-			icon: "btn-upgrade-stetmann-mechacentrifugalhooks"
-		},
-		"EvolveBanelingCorrosiveBile/BanelingNest": {
-			name: "Research Egonergy Enhanced Explosives",
-			hotkey: "D",
-			icon: "btn-upgrade-stetmann-banelingextradamage"
-		},
-		"EvolveBanelingRupture/BanelingNest": {
-			name: "Research Egonergy Efficient Barrier",
-			hotkey: "B",
-			icon: "btn-upgrade-stetmann-banelingmanashieldefficiency"
-		},
-		"SpineCrawlerRoot/SpineCrawlerUprooted": {
-			hotkey: "R"
-		},
-		"SpineCrawlerUproot/SpineCrawler": {
-			x: 0
-		},
-		"SporeCrawlerRoot/SporeCrawlerUprooted": {
-			hotkey: "R"
-		},
-		"SporeCrawlerUproot/SporeCrawler": {
-			x: 0
-		},
-		"EvolveMuscularAugments/HydraliskDen": {
-			name: "Research Hydra-lic Augments",
-			hotkey: "A",
-			icon: "btn-upgrade-stetmann-mechamuscularaugments",
-			x: 0
-		},
-		"EvolveAncillaryCarapace/HydraliskDen": {
-			name: "Research Erudition Missile Launchers",
-			icon: "btn-upgrade-stetmann-mechahydraliskmissiledamage"
-		},
-		"EvolveFrenzy/HydraliskDen": {
-			name: "Research Tyr-Class Targeting System",
-			icon: "btn-upgrade-stetmann-mechahydraliskmissilerange"
-		},
-		"ResearchLurkerRange/HydraliskDen": {
-			name: "Research Extended Tunnel of TERROR Algorithm",
-			hotkey: "B",
-			icon: "btn-upgrade-stetmann-lurkertunnelingburstrange"
-		},
-		"HotSPressurizedGlands/InfestationPit": {
-			name: "Research UMI-C Charging Protocol",
-			hotkey: "E",
-			icon: "btn-ability-stetmann-infestorrecharge"
-		},
-		"EvolveViperImprovedCastRange/InfestationPit": {
-			name: "Research BONUS Ravager!",
-			hotkey: "R",
-			icon: "btn-upgrade-stetmann-infestorbonusravager"
-		},
-		"zergflyerattack1": {
-			name: "Research Mecha Flyer Attacks",
-			icon: "btn-upgrade-stetmann-mechaflyerattacks-level1"
-		},
-		"zergflyerarmor1": {
-			name: "Research Mecha Flyer Plating",
-			icon: "btn-upgrade-stetmann-mechaflyerplating-level1"
-		},
-		"EvolveMutaliskRapidRegeneration/Spire": {
-			name: "Research Wide Area Cluster Busters",
-			icon: "btn-upgrade-stetmann-corruptormissileaoe"
-		},
-		"EvolveKerriganViciousGlaive/Spire": {
-			name: "Research Terraclean Solvent",
-			icon: "btn-ability-stetmann-corruptorcausticspray"
-		},
-		"EvolveSeveringGlave/Spire": {
-			name: "Research Locusceptor Bay",
-			icon: "btn-upgrade-stetmann-battlecarrierlordflyinglocusts"
-		},
-		"GreaterSpire/Spire": {
-			name: "Mutate into Mecha Greater Spire",
-			icon: "btn-building-zerg-greaterspire-mecha"
-		},
-		"EvolveGuardianAttackRangeIncrease/Spire": {
-			name: "Research Stetmato Cannon",
-			icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon"
-		},
-		"EvolveMutaliskRapidRegeneration/GreaterSpire": {
-			name: "Research Wide Area Cluster Busters",
-			icon: "btn-upgrade-stetmann-corruptormissileaoe"
-		},
-		"EvolveKerriganViciousGlaive/GreaterSpire": {
-			name: "Research Terraclean Solvent",
-			icon: "btn-ability-stetmann-corruptorcausticspray"
-		},
-		"EvolveSeveringGlave/GreaterSpire": {
-			name: "Research Locusceptor Bay",
-			icon: "btn-upgrade-stetmann-battlecarrierlordflyinglocusts"
-		},
-		"EvolveGuardianAttackRangeIncrease/GreaterSpire": {
-			name: "Research Stetmato Cannon",
-			icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon"
-		},
-		"EvolveChitinousPlating/UltraliskCavern": {
-			name: "Research Electrostatic Surprise!",
-			icon: "btn-upgrade-stetmann-ultraliskburrowchargestun"
-		},
-		"EvolveBurrowCharge/UltraliskCavern": {
-			name: "Research Mecha Mooch Module",
-			hotkey: "E",
-			icon: "btn-ability-stetmann-ultraliskmechanicalassimilation"
-		},
-		"EvolveTissueAssimilation/UltraliskCavern": {
-			name: "Research Chitanium Plating",
-			hotkey: "H",
-			icon: "btn-upgrade-stetmann-mechachitinousplating"
 		}
 	},
 	"Protoss": {
