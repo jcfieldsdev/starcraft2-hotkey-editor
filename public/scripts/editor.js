@@ -832,10 +832,23 @@ Commands.prototype.parse=function(text) {
 // converts from object to hotkey file format
 Commands.prototype.convert=function() {
 	let text=Object.keys(this.list).reduce(function(text, section) {
-		text+="\n["+section+"]\n";
+		let list=Object.keys(this.list[section]).reduce(function(list, id) {
+			list.push({id, hotkey: this.list[section][id].hotkey});
+			return list;
+		}.bind(this), []);
 
-		text=Object.keys(this.list[section]).reduce(function(text, id) {
-			return text+id+"="+this.list[section][id].hotkey+"\n";
+		// alphabetizes commands
+		list.sort(function(a, b) {
+			if (a.id<b.id) {
+				return -1;
+			}
+
+			return a.id>b.id;
+		});
+
+		text+="\n["+section+"]\n";
+		text=list.reduce(function(text, item) {
+			return text+item.id+"="+item.hotkey+"\n";
 		}.bind(this), text);
 
 		return text;
