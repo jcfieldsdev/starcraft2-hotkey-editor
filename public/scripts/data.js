@@ -5414,6 +5414,16 @@ data.units={
 		type: BUILDING,
 		commands: []
 	},
+	"HeartOfTheSwarm_Chrysalis": {
+		name: "Kerrigan’s Chrysalis",
+		icon: "btn-doodad-chrysalis",
+		race: ZERG,
+		commander: "HeartOfTheSwarm",
+		type: BUILDING,
+		commands: [
+			"PrimalSpawning/Zerus02Chrysalis"
+		]
+	},
 	"HeartOfTheSwarm_Barracks": {
 		name: "Barracks",
 		icon: "btn-building-terran-barracks",
@@ -16724,6 +16734,14 @@ data.commands={
 		mask: false,
 		y: 2,
 		x: 1
+	},
+	"PrimalSpawning/Zerus02Chrysalis": {
+		name: "Spawn Locusts",
+		hotkey: "",
+		icon: "btn-unit-zerg-locust",
+		mask: false,
+		y: 0,
+		x: 0
 	},
 	"EvolveGlialRegeneration/RoachWarren": {
 		name: "Evolve Glial Reconstitution",
