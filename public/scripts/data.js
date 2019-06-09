@@ -2593,7 +2593,7 @@ data.units={
 	},
 	"Swann": {
 		name: "Swann",
-		icon: "talent-swann-level01-vehiclespecialist",
+		icon: "btn-upgrade-swann-laserdrillattack",
 		race: TERRAN,
 		commander: "Swann",
 		type: COMMANDER,
@@ -4580,7 +4580,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Stukov": {
 		name: "Stukov",
-		icon: "btn-upgrade-zerg-stukov-unlockresearchbundle_infestedcivilianmarines_07",
+		icon: "btn-unit-zerg-stukov",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: HERO,
@@ -6801,7 +6801,7 @@ data.units={
 	},
 	"Stukov": {
 		name: "Stukov",
-		icon: "btn-unit-zerg-stukov",
+		icon: "btn-upgrade-zerg-stukov-unlockresearchbundle_infestedcivilianmarines_07",
 		race: ZERG,
 		commander: "Stukov",
 		type: COMMANDER,
@@ -16741,7 +16741,7 @@ data.commands={
 		icon: "btn-unit-zerg-locust",
 		mask: false,
 		y: 0,
-		x: 0
+		x: 00
 	},
 	"EvolveGlialRegeneration/RoachWarren": {
 		name: "Evolve Glial Reconstitution",
