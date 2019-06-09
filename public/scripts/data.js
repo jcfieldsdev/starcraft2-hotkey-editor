@@ -16741,7 +16741,7 @@ data.commands={
 		icon: "btn-unit-zerg-locust",
 		mask: false,
 		y: 0,
-		x: 00
+		x: 0
 	},
 	"EvolveGlialRegeneration/RoachWarren": {
 		name: "Evolve Glial Reconstitution",
