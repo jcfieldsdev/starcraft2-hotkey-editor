@@ -350,9 +350,9 @@ Editor.prototype.clear=function(element) {
 };
 
 Editor.prototype.clearButtons=function() {
-	let cards=Array.from(document.getElementsByClassName("card"));
+	let cards=document.getElementsByClassName("card");
 
-	cards.forEach(function(card, n) {
+	Array.from(cards).forEach(function(card, n) {
 		let buttons=card.getElementsByTagName("div")[0].children;
 		this.setLegend(" ", n);
 
