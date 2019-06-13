@@ -754,7 +754,7 @@ Editor.prototype.formatResults=function(id, matches) {
 };
 
 Editor.prototype.highlightResult=function(dir) {
-	let results=Array.from(document.getElementById("results").children);
+	let results=document.getElementById("results").children;
 
 	if (dir) { // up arrow
 		if (this.selected==-1) {
@@ -772,7 +772,7 @@ Editor.prototype.highlightResult=function(dir) {
 		}
 	}
 
-	results.forEach(function(result, i) {
+	Array.from(results).forEach(function(result, i) {
 		if (this.selected==i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
