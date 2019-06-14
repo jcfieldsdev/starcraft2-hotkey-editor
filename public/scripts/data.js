@@ -8653,7 +8653,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Artanis": {
 		name: "Artanis",
-		icon: "talent-artanis-level01-swiftretribution",
+		icon: "btn-unit-protoss-artanishero",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: HERO,
@@ -9345,7 +9345,7 @@ data.units={
 	},
 	"Artanis": {
 		name: "Artanis",
-		icon: "btn-unit-protoss-artanishero",
+		icon: "talent-artanis-level01-swiftretribution",
 		race: PROTOSS,
 		commander: "Artanis",
 		type: COMMANDER,
