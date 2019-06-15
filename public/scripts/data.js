@@ -1699,6 +1699,46 @@ data.units={
 			"Rally"
 		]
 	},
+	"WingsOfLiberty_LaserDrill": {
+		name: "Drakken Laser Drill",
+		icon: "btn-upgrade-swann-laserdrillattack",
+		race: TERRAN,
+		commander: "WingsOfLiberty",
+		type: BUILDING,
+		commands: [
+			"Attack",
+		]
+	},
+	"WingsOfLiberty_Artifact": {
+		name: "Artifact",
+		icon: "btn-building-terran-artifact",
+		race: TERRAN,
+		commander: "WingsOfLiberty",
+		type: BUILDING,
+		commands: [
+			"EnergyNova/Artifact"
+		]
+	},
+	"WingsOfLiberty_MercCompound": {
+		name: "Merc Compound",
+		icon: "btn-building-terran-merccompound",
+		race: TERRAN,
+		commander: "WingsOfLiberty",
+		type: BUILDING,
+		commands: [
+			"HireKelmorianMiners/MercCompound",
+			"HireDevilDogs/MercCompound",
+			"HireHammerSecurities/MercCompound",
+			"HireSpartanCompany/MercCompound",
+			"HireSiegeBreakers/MercCompound",
+			"HireHelsAngels/MercCompound",
+			"HireDuskWing/MercCompound",
+			"HireDukesRevenge/MercCompound",
+			"SelectBuilder",
+			"Rally"
+		]
+	},
+
 	"NovaCovertOps": {
 		name: "NovaCovertOps",
 		displayName: "Nova Covert Ops",
@@ -13515,6 +13555,14 @@ data.commands={
 		name: "Jackson’s Revenge",
 		hotkey: "U",
 		icon: "btn-unit-terran-battlecruiserloki",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"EnergyNova/Artifact": {
+		name: "Energy Nova",
+		hotkey: "V",
+		icon: "btn-ability-terran-emp-color",
 		mask: false,
 		y: 2,
 		x: 0
