@@ -812,7 +812,7 @@ Commands.prototype.parse=function(text) {
 	let list={}, block={}, section="", command="", hotkey="";
 
 	let lines=text.split("\n");
-	let pattern=/^([\w_\/]+)=([\w,+]+)$/;
+	let pattern=/^([\w_\/]+)=([\w,+]*)$/;
 
 	// ensures empty line at end of file so final section block is saved
 	lines.push("");
