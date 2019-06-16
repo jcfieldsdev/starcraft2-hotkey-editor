@@ -1,6 +1,6 @@
 # starcraft2-hotkey-editor
 
-A [hotkey editor for Starcraft II](https://jcfields.gitlab.io/starcraft2-hotkey-editor/) written in JavaScript. Includes all units and structures from versus, co-op, and the official campaigns. Identifies conflicts across all three modes simultaneously.
+A [hotkey editor for *Starcraft II*](https://jcfields.gitlab.io/starcraft2-hotkey-editor/) written in JavaScript. Includes all units and structures from versus, co-op, and the official campaigns. Identifies conflicts across all three modes simultaneously.
 
 ## Authors
 
@@ -12,4 +12,4 @@ A [hotkey editor for Starcraft II](https://jcfields.gitlab.io/starcraft2-hotkey
 
 ## See also
 
-- [Warcraft III Hotkey Editor](https://gitlab.com/jcfields/warcraft3-hotkey-editor)—A similar editor on which this project is based.
+- [*Warcraft III* Hotkey Editor](https://gitlab.com/jcfields/warcraft3-hotkey-editor)—A similar editor on which this project is based.
