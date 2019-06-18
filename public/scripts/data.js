@@ -10111,6 +10111,14 @@ data.units={
 			"Cancel"
 		]
 	},
+	"Karax_PurifierBeam": {
+		name: "Purifier Beam",
+		icon: "btn-ability-spearofadun-purifierbeam",
+		race: PROTOSS,
+		commander: "Karax",
+		type: UNIT,
+		commands: []
+	},
 	"Karax_Nexus": {
 		name: "Nexus",
 		icon: "btn-building-protoss-nexus",
