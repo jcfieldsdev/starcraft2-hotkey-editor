@@ -251,7 +251,7 @@ Editor.prototype.unitEditor=function() {
 		legends=Object.keys(unit.commands);
 	}
 
-	for (let n=0; n<cards.length; n++) {
+	for (let n in cards) {
 		this.setLegend(legends[n], n);
 		this.createCommandCard(unit, cards[n], n);
 	}
