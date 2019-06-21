@@ -274,6 +274,10 @@ div.overlay {
 	z-index: 1;
 }
 
+div.overlay button:last-child {
+	margin-left: 0.5em;
+}
+
 div.overlay textarea {
 	height: 50%;
 	width: 80%;
@@ -580,7 +584,7 @@ main ul {
 }
 
 p#control button:last-child {
-	margin-left: 1.5em;
+	margin-left: 1em;
 }
 
 p#hotkey input {
