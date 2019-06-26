@@ -14,24 +14,24 @@ const DEFAULT_SAVE_NAME="Hotkeys.SC2Hotkeys";
 const ICONS_DIR="icons/";
 const ICONS_EXT=".png";
 const HELP_PAGE="help.html";
+const STORAGE_NAME="sc2hk";
 
 // delimiter for multiple hotkeys
 const DELIMITER=",";
-
-// objects
-const store=new Storage("sc2hk");
-const overlays={
-	load: new Overlay("load"),
-	save: new Overlay("save")
-};
-const commands=new Commands();
-const editor=new Editor();
 
 /*
  * initialization
  */
 
 window.addEventListener("load", function() {
+	const store=new Storage(STORAGE_NAME);
+	const overlays={
+		load: new Overlay("load"),
+		save: new Overlay("save")
+	};
+	const commands=new Commands();
+	const editor=new Editor(commands);
+
 	let saved=store.load();
 
 	if (saved!=null) {
@@ -166,7 +166,8 @@ window.addEventListener("load", function() {
  * Editor prototype
  */
 
-function Editor() {
+function Editor(commands) {
+	this.commands=commands;
 	this.unit="";
 	this.commander="";
 	this.buttons=[];
@@ -280,7 +281,7 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 	}
 
 	card.forEach(function(id) {
-		let command=commands.getCommand(unit.commander, id);
+		let command=this.commands.getCommand(unit.commander, id);
 
 		if (command==undefined) {
 			console.error("Undefined: "+id+" (command)");
@@ -408,7 +409,7 @@ Editor.prototype.commandEditor=function(n) {
 		this.findUnitsWith(this.command);
 	}
 
-	let hotkeys=commands.getHotkeys(this.commander, this.command);
+	let hotkeys=this.commands.getHotkeys(this.commander, this.command);
 	this.formatHotkey(hotkeys);
 
 	// automatically selects last hotkey field
@@ -467,11 +468,11 @@ Editor.prototype.removeField=function() {
 
 	if (element.childElementCount>1) {
 		element.removeChild(element.lastChild);
-		commands.removeLast(this.command);
-		commands.checkDefaults(this.commander, this.command);
+		this.commands.removeLast(this.command);
+		this.commands.checkDefaults(this.commander, this.command);
 	} else { // last field
 		element.lastChild.value="";
-		commands.setHotkeys(this.command, []);
+		this.commands.setHotkeys(this.command, []);
 	}
 
 	element.lastChild.select();
@@ -512,17 +513,17 @@ Editor.prototype.setHotkey=function(input, event) {
 		fields.push(element.value);
 	}
 
-	commands.setHotkeys(this.command, fields);
+	this.commands.setHotkeys(this.command, fields);
 
 	input.select();
-	commands.checkDefaults(this.commander, this.command);
+	this.commands.checkDefaults(this.commander, this.command);
 
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
 
 Editor.prototype.resetDefaults=function() {
-	commands.clear(this.command);
+	this.commands.clear(this.command);
 
 	this.commandEditor();
 	this.setVisibleHotkeys();
@@ -559,7 +560,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 				return;
 			}
 
-			let hotkeys=commands.getHotkeys(this.commander, command.id);
+			let hotkeys=this.commands.getHotkeys(this.commander, command.id);
 
 			let span="span_"+n+command.y+command.x;
 			document.getElementById(span).textContent=hotkeys[0];
@@ -615,7 +616,7 @@ Editor.prototype.checkAllConflicts=function() {
 
 			let unit=link.hash.replace("#", "");
 
-			if (commands.checkConflicts(unit)) {
+			if (this.commands.checkConflicts(unit)) {
 				link.classList.add("conflict");
 
 				commanders.add(section.id);
@@ -740,7 +741,7 @@ Editor.prototype.formatResults=function(id, matches) {
 		} else {
 			let filter=data.units[unit.commander].displayName||unit.commander;
 			a.appendChild(document.createTextNode(filter+": "+unit.name));
-			a.classList.toggle("conflict", commands.checkConflicts(match));
+			a.classList.toggle("conflict", this.commands.checkConflicts(match));
 		}
 
 		if (unit.suffix!=undefined) {
