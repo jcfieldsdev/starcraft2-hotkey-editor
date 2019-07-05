@@ -670,10 +670,10 @@ Editor.prototype.findUnitsNamed=function(query) {
 		name=name.replace(/[‘’]/g, "'");
 		name=name.replace(/[“”]/g, "\"");
 
-		let suffix=properties.suffix||"";
-		suffix=suffix.toLowerCase();
+		let keywords=properties.keywords||"";
+		keywords=keywords.toLowerCase();
 
-		if (name.indexOf(query)!=-1||suffix.indexOf(query)!=-1) {
+		if (name.indexOf(query)!=-1||keywords.indexOf(query)!=-1) {
 			matches.push(unit);
 		}
 	});

@@ -726,11 +726,15 @@ ul#results {
 	color: inherit;
 	left: 1em;
 	max-height: 50vh;
+	min-width: 24em;
 	overflow: auto;
 	padding: 1px 0;
 	position: absolute;
 	white-space: nowrap;
-	width: 24em;
+}
+
+ul#results li {
+	padding-right: 1em;
 }
 
 ul#results li.selected {

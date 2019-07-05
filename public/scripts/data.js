@@ -524,6 +524,7 @@ data.units={
 	},
 	"Terran_Hellbat": {
 		name: "Hellbat",
+		keywords: "Hellion",
 		icon: "btn-unit-terran-hellionbattlemode",
 		race: TERRAN,
 		commander: "Terran",
@@ -652,6 +653,7 @@ data.units={
 	},
 	"Terran_CommandCenter": {
 		name: "Command Center",
+		keywords: "Orbital Command, Planetary Fortress",
 		icon: "btn-building-terran-commandcenter",
 		race: TERRAN,
 		commander: "Terran",
@@ -929,6 +931,7 @@ data.units={
 	},
 	"WingsOfLiberty_Raynor": {
 		name: "Jim Raynor",
+		keywords: "Marine",
 		icon: "btn-unit-terran-marineraynorhev",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -951,6 +954,7 @@ data.units={
 	},
 	"WingsOfLiberty_Tychus": {
 		name: "Tychus Findlay",
+		keywords: "Marine",
 		icon: "btn-unit-terran-marinetychus",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -961,6 +965,7 @@ data.units={
 	},
 	"WingsOfLiberty_Swann": {
 		name: "Rory Swann",
+		keywords: "Marauder",
 		icon: "btn-unit-terran-marauderswann",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -971,6 +976,7 @@ data.units={
 	},
 	"WingsOfLiberty_Stetmann": {
 		name: "Egon Stetmann",
+		keywords: "Medic",
 		icon: "btn-unit-terran-medicstetmann",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -981,6 +987,7 @@ data.units={
 	},
 	"WingsOfLiberty_Nova": {
 		name: "Nova",
+		keywords: "Ghost",
 		icon: "btn-unit-terran-nova",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -995,6 +1002,7 @@ data.units={
 	},
 	"WingsOfLiberty_Tosh": {
 		name: "Tosh",
+		keywords: "Spectre",
 		icon: "btn-unit-terran-tosh",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1009,6 +1017,7 @@ data.units={
 	},
 	"WingsOfLiberty_Zeratul": {
 		name: "Zeratul",
+		keywords: "Dark Templar",
 		icon: "btn-unit-protoss-zeratul",
 		race: PROTOSS,
 		commander: "WingsOfLiberty",
@@ -1020,6 +1029,7 @@ data.units={
 	},
 	"WingsOfLiberty_Urun": {
 		name: "Urun",
+		keywords: "Phoenix",
 		icon: "btn-unit-protoss-phoenix-urun",
 		race: PROTOSS,
 		commander: "WingsOfLiberty",
@@ -1031,6 +1041,7 @@ data.units={
 	},
 	"WingsOfLiberty_Mohandar": {
 		name: "Mohandar",
+		keywords: "Void Ray",
 		icon: "btn-unit-protoss-voidray-mohandar",
 		race: PROTOSS,
 		commander: "WingsOfLiberty",
@@ -1039,6 +1050,7 @@ data.units={
 	},
 	"WingsOfLiberty_Selendis": {
 		name: "Selendis",
+		keywords: "Carrier",
 		icon: "btn-unit-protoss-carrier-selendis",
 		race: PROTOSS,
 		commander: "WingsOfLiberty",
@@ -1050,6 +1062,7 @@ data.units={
 	},
 	"WingsOfLiberty_Artanis": {
 		name: "Shield of Aiur",
+		keywords: "Artanis, Mothership",
 		icon: "btn-unit-protoss-artanis",
 		race: PROTOSS,
 		commander: "WingsOfLiberty",
@@ -1175,6 +1188,7 @@ data.units={
 	},
 	"WingsOfLiberty_Spectre": {
 		name: "Spectre",
+		keywords: "Ghost",
 		icon: "btn-unit-terran-spectre",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1358,6 +1372,7 @@ data.units={
 	},
 	"WingsOfLiberty_Odin": {
 		name: "Odin",
+		keywords: "Thor",
 		icon: "btn-unit-terran-odin",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1368,6 +1383,7 @@ data.units={
 	},
 	"WingsOfLiberty_WarBot": {
 		name: "A.R.E.S.",
+		keywords: "Warbot",
 		icon: "btn-unit-terran-ares",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1376,6 +1392,7 @@ data.units={
 	},
 	"WingsOfLiberty_CommandCenter": {
 		name: "Command Center",
+		keywords: "Orbital Relay, Orbital Command, Planetary Fortress",
 		icon: "btn-building-terran-commandcenter",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1574,6 +1591,7 @@ data.units={
 	},
 	"WingsOfLiberty_GhostAcademy": {
 		name: "Ghost Academy",
+		keywords: "Shadow Ops",
 		icon: "btn-building-terran-ghostacademy",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1682,6 +1700,7 @@ data.units={
 	},
 	"WingsOfLiberty_MercCompound": {
 		name: "Merc Compound",
+		keywords: "Mercenary Compound",
 		icon: "btn-building-terran-merccompound",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1719,26 +1738,6 @@ data.units={
 			"EnergyNova/Artifact"
 		]
 	},
-	"WingsOfLiberty_MercCompound": {
-		name: "Merc Compound",
-		icon: "btn-building-terran-merccompound",
-		race: TERRAN,
-		commander: "WingsOfLiberty",
-		type: BUILDING,
-		commands: [
-			"HireKelmorianMiners/MercCompound",
-			"HireDevilDogs/MercCompound",
-			"HireHammerSecurities/MercCompound",
-			"HireSpartanCompany/MercCompound",
-			"HireSiegeBreakers/MercCompound",
-			"HireHelsAngels/MercCompound",
-			"HireDuskWing/MercCompound",
-			"HireDukesRevenge/MercCompound",
-			"SelectBuilder",
-			"Rally"
-		]
-	},
-
 	"NovaCovertOps": {
 		name: "NovaCovertOps",
 		displayName: "Nova Covert Ops",
@@ -1751,6 +1750,7 @@ data.units={
 	},
 	"NovaCovertOps_Nova": {
 		name: "Nova",
+		keywords: "Ghost",
 		icon: "btn-unit-terran-nova",
 		race: TERRAN,
 		commander: "NovaCovertOps",
@@ -1835,6 +1835,7 @@ data.units={
 	},
 	"NovaCovertOps_Hellbat": {
 		name: "Hellbat",
+		keywords: "Hellion",
 		icon: "btn-unit-terran-hellbatblackops",
 		race: TERRAN,
 		commander: "NovaCovertOps",
@@ -1931,6 +1932,7 @@ data.units={
 	},
 	"NovaCovertOps_Trooper": {
 		name: "Trooper",
+		keywords: "Marine",
 		icon: "btn-unit-terran-dom-grunt",
 		race: TERRAN,
 		commander: "NovaCovertOps",
@@ -2383,6 +2385,7 @@ data.units={
 	},
 	"Raynor_Hyperion": {
 		name: "Hyperion",
+		keywords: "Raynor, Battlecruiser",
 		icon: "btn-unit-terran-hyperion",
 		race: TERRAN,
 		commander: "Raynor",
@@ -2395,6 +2398,7 @@ data.units={
 	},
 	"Raynor_DuskWings": {
 		name: "Dusk Wings",
+		keywords: "Banshee",
 		icon: "btn-unit-terran-merc-banshee",
 		race: TERRAN,
 		commander: "Raynor",
@@ -2406,6 +2410,7 @@ data.units={
 	},
 	"Raynor_CommandCenter": {
 		name: "Command Center",
+		keywords: "Orbital Command",
 		icon: "btn-building-terran-commandcenter",
 		race: TERRAN,
 		commander: "Raynor",
@@ -2676,6 +2681,7 @@ data.units={
 	},
 	"Swann_Hellbat": {
 		name: "Hellbat",
+		keywords: "Hellion",
 		icon: "btn-unit-terran-hellionbattlemode",
 		race: TERRAN,
 		commander: "Swann",
@@ -2763,6 +2769,7 @@ data.units={
 	},
 	"Swann_WarBot": {
 		name: "A.R.E.S.",
+		keywords: "Warbot",
 		icon: "btn-unit-terran-ares",
 		race: TERRAN,
 		commander: "Swann",
@@ -2991,6 +2998,7 @@ data.units={
 	},
 	"Nova_Nova": {
 		name: "Nova",
+		keywords: "Ghost",
 		icon: "btn-unit-terran-nova",
 		race: TERRAN,
 		commander: "Nova",
@@ -3073,6 +3081,7 @@ data.units={
 	},
 	"Nova_Hellbat": {
 		name: "Hellbat Ranger",
+		keywords: "Hellion",
 		icon: "btn-unit-terran-hellbatblackops",
 		race: TERRAN,
 		commander: "Nova",
@@ -3431,6 +3440,7 @@ data.units={
 	},
 	"Han_Hellbat": {
 		name: "Hellbat",
+		keywords: "Hellion",
 		icon: "btn-unit-collection-hellbat-junker",
 		race: TERRAN,
 		commander: "Han",
@@ -3673,6 +3683,7 @@ data.units={
 	},
 	"Tychus_Tychus": {
 		name: "Tychus",
+		keywords: "Marine",
 		icon: "btn-unit-terran-tychuscoop",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3687,6 +3698,7 @@ data.units={
 	},
 	"Tychus_Odin": {
 		name: "Odin",
+		keywords: "Thor",
 		icon: "btn-unit-terran-tychusodin",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3711,6 +3723,7 @@ data.units={
 	},
 	"Tychus_CrookedSam": {
 		name: "Crooked Sam",
+		keywords: "Reaper",
 		icon: "btn-unit-terran-tychusreaper",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3726,6 +3739,7 @@ data.units={
 	},
 	"Tychus_Sirius": {
 		name: "James “Sirius” Sykes",
+		keywords: "Warhound",
 		icon: "btn-unit-terran-tychuswarhound",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3747,6 +3761,7 @@ data.units={
 	},
 	"Tychus_Blaze": {
 		name: "Miles “Blaze” Lewis",
+		keywords: "Firebat",
 		icon: "btn-unit-terran-tychusfirebat",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3761,6 +3776,7 @@ data.units={
 	},
 	"Tychus_Rattlesnake": {
 		name: "Kev “Rattlesnake” West",
+		keywords: "Marauder",
 		icon: "btn-unit-terran-tychusmarauder",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3776,6 +3792,7 @@ data.units={
 	},
 	"Tychus_Cannonball": {
 		name: "Rob “Cannonball” Boswell",
+		keywords: "HERC",
 		icon: "btn-unit-terran-tychusherc",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3790,6 +3807,7 @@ data.units={
 	},
 	"Tychus_Vega": {
 		name: "Vega",
+		keywords: "Ghost",
 		icon: "btn-unit-terran-tychusghost",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3805,6 +3823,7 @@ data.units={
 	},
 	"Tychus_Nux": {
 		name: "Nux",
+		keywords: "Spectre",
 		icon: "btn-unit-terran-tychusspectre",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3819,6 +3838,7 @@ data.units={
 	},
 	"Tychus_Nikara": {
 		name: "Lt. Layna Nikara",
+		keywords: "Medic",
 		icon: "btn-unit-terran-tychusmedic",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4135,6 +4155,7 @@ data.units={
 	},
 	"Zerg_Overseer": {
 		name: "Overseer",
+		keywords: "Changeling",
 		icon: "btn-unit-zerg-overseer",
 		race: ZERG,
 		commander: "Zerg",
@@ -4258,6 +4279,7 @@ data.units={
 	},
 	"Zerg_BroodLord": {
 		name: "Brood Lord",
+		keywords: "Broodling",
 		icon: "btn-unit-zerg-broodlord",
 		race: ZERG,
 		commander: "Zerg",
@@ -4271,6 +4293,7 @@ data.units={
 	},
 	"Zerg_Infestor": {
 		name: "Infestor",
+		keywords: "Infested Terran",
 		icon: "btn-unit-zerg-infestor",
 		race: ZERG,
 		commander: "Zerg",
@@ -4295,6 +4318,7 @@ data.units={
 	},
 	"Zerg_SwarmHost": {
 		name: "Swarm Host",
+		keywords: "Locust",
 		icon: "btn-unit-zerg-swarmhost",
 		race: ZERG,
 		commander: "Zerg",
@@ -4341,6 +4365,7 @@ data.units={
 	},
 	"Zerg_Hatchery": {
 		name: "Hatchery",
+		keywords: "Lair, Hive",
 		icon: "btn-building-zerg-hatchery",
 		race: ZERG,
 		commander: "Zerg",
@@ -4493,6 +4518,7 @@ data.units={
 	},
 	"Zerg_Spire": {
 		name: "Spire",
+		keywords: "Greater Spire",
 		icon: "btn-building-zerg-spire",
 		race: ZERG,
 		commander: "Zerg",
@@ -4584,6 +4610,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Niadra": {
 		name: "Niadra",
+		keywords: "Queen, Broodmother",
 		icon: "btn-unit-zerg-broodqueen",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -4658,6 +4685,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Hyperion": {
 		name: "Hyperion",
+		keywords: "Horner, Battlecruiser",
 		icon: "btn-unit-terran-hyperion",
 		race: TERRAN,
 		commander: "HeartOfTheSwarm",
@@ -4703,7 +4731,7 @@ data.units={
 		name: "Lyote",
 		race: NEUTRAL,
 		commander: "HeartOfTheSwarm",
-		type: HERO,
+		type: UNIT,
 		commands: [
 			"Consume/Lyote"
 		]
@@ -4712,7 +4740,7 @@ data.units={
 		name: "Giant Ursadon",
 		race: NEUTRAL,
 		commander: "HeartOfTheSwarm",
-		type: HERO,
+		type: UNIT,
 		commands: [
 			"GiantYetiLeap/GiantYeti",
 			"Consume/GiantYeti"
@@ -4822,6 +4850,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_ZerglingSwarmling": {
 		name: "Zergling",
+		keywords: "Swarmling",
 		suffix: "Swarmling Strain",
 		icon: "btn-unit-zerg-zergling-swarmling",
 		race: ZERG,
@@ -4838,6 +4867,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_ZerglingRaptor": {
 		name: "Zergling",
+		keywords: "Raptor",
 		suffix: "Raptor Strain",
 		icon: "btn-unit-zerg-zergling-raptor",
 		race: ZERG,
@@ -4873,6 +4903,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_BanelingSplitter": {
 		name: "Baneling",
+		keywords: "Splitter",
 		suffix: "Splitter Strain",
 		icon: "btn-unit-zerg-baneling",
 		race: ZERG,
@@ -4900,6 +4931,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_BanelingHunter": {
 		name: "Baneling",
+		keywords: "Hunter",
 		suffix: "Hunter Strain",
 		icon: "btn-unit-zerg-baneling-hunter",
 		race: ZERG,
@@ -4951,6 +4983,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_RoachCorpser": {
 		name: "Roach",
+		keywords: "Corpser",
 		suffix: "Corpser Strain",
 		icon: "btn-unit-zerg-roach-corpser",
 		race: ZERG,
@@ -4971,6 +5004,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_RoachVile": {
 		name: "Roach",
+		keywords: "Vile",
 		suffix: "Vile Strain",
 		icon: "btn-unit-zerg-roach-vile",
 		race: ZERG,
@@ -5004,6 +5038,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_HydraliskImpaler": {
 		name: "Hydralisk",
+		keywords: "Impaler",
 		suffix: "Impaler Strain",
 		icon: "btn-unit-zerg-hydralisk-impaler",
 		race: ZERG,
@@ -5022,6 +5057,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_HydraliskLurker": {
 		name: "Hydralisk",
+		keywords: "Lurker",
 		suffix: "Lurker Strain",
 		icon: "btn-unit-zerg-hydralisk-lurker",
 		race: ZERG,
@@ -5183,6 +5219,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_MutaliskBroodLord": {
 		name: "Mutalisk",
+		keywords: "Brood Lord",
 		suffix: "Brood Lord Strain",
 		icon: "btn-unit-zerg-mutalisk-broodlord",
 		race: ZERG,
@@ -5194,6 +5231,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_MutaliskViper": {
 		name: "Mutalisk",
+		keywords: "Viper",
 		suffix: "Viper Strain",
 		icon: "btn-unit-zerg-mutalisk-viper",
 		race: ZERG,
@@ -5246,6 +5284,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_UltraliskNoxious": {
 		name: "Ultralisk",
+		keywords: "Noxious",
 		suffix: "Noxious Strain",
 		icon: "btn-unit-zerg-ultralisk-noxious",
 		race: ZERG,
@@ -5264,6 +5303,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_UltraliskTorrasque": {
 		name: "Ultralisk",
+		keywords: "Torrasque",
 		suffix: "Torrasque Strain",
 		icon: "btn-unit-zerg-ultralisk-torrasque",
 		race: ZERG,
@@ -5281,6 +5321,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Hatchery": {
 		name: "Hatchery",
+		keywords: "Lair, Hive",
 		icon: "btn-building-zerg-hatchery",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -5395,6 +5436,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_HydraliskDen": {
 		name: "Hydralisk Den",
+		keywords: "Lurker Den, Impaler Den",
 		icon: "btn-building-zerg-hydraliskden",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -5422,6 +5464,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Spire": {
 		name: "Spire",
+		keywords: "Greater Spire",
 		icon: "btn-building-zerg-spire",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -5723,6 +5766,7 @@ data.units={
 	},
 	"Kerrigan_Zergling": {
 		name: "Zergling",
+		keywords: "Raptor",
 		suffix: "Raptor Strain",
 		icon: "btn-unit-zerg-zergling-raptor",
 		race: ZERG,
@@ -5739,6 +5783,7 @@ data.units={
 	},
 	"Kerrigan_Hydralisk": {
 		name: "Hydralisk",
+		keywords: "Lurker",
 		suffix: "Lurker Strain",
 		icon: "btn-unit-zerg-hydralisk-lurker",
 		race: ZERG,
@@ -5775,6 +5820,7 @@ data.units={
 	},
 	"Kerrigan_Mutalisk": {
 		name: "Mutalisk",
+		keywords: "Brood Lord",
 		suffix: "Brood Lord Strain",
 		icon: "btn-unit-zerg-mutalisk-broodlord",
 		race: ZERG,
@@ -5786,6 +5832,7 @@ data.units={
 	},
 	"Kerrigan_BroodLord": {
 		name: "Brood Lord",
+		keywords: "Broodling",
 		icon: "btn-unit-zerg-broodlord",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -5799,6 +5846,7 @@ data.units={
 	},
 	"Kerrigan_Ultralisk": {
 		name: "Ultralisk",
+		keywords: "Torrasque",
 		suffix: "Torrasque Strain",
 		icon: "btn-unit-zerg-ultralisk-torrasque",
 		race: ZERG,
@@ -5816,6 +5864,7 @@ data.units={
 	},
 	"Kerrigan_Hatchery": {
 		name: "Hatchery",
+		keywords: "Lair, Hive",
 		icon: "btn-building-zerg-hatchery",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -5926,6 +5975,7 @@ data.units={
 	},
 	"Kerrigan_HydraliskDen": {
 		name: "Hydralisk Den",
+		keywords: "Lurker Den",
 		icon: "btn-building-zerg-hydraliskden",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -5950,6 +6000,7 @@ data.units={
 	},
 	"Kerrigan_Spire": {
 		name: "Spire",
+		keywords: "Greater Spire",
 		icon: "btn-building-zerg-spire",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -5978,6 +6029,7 @@ data.units={
 	},
 	"Kerrigan_NydusNetwork": {
 		name: "Omega Network",
+		keywords: "Nydus Network",
 		icon: "btn-building-zerg-nydusnetwork",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -6020,6 +6072,7 @@ data.units={
 	},
 	"Zagara_Zagara": {
 		name: "Zagara",
+		keywords: "Queen, Broodmother",
 		icon: "btn-unit-zerg-broodqueen",
 		race: ZERG,
 		commander: "Zagara",
@@ -6146,6 +6199,7 @@ data.units={
 	},
 	"Zagara_Zergling": {
 		name: "Zergling",
+		keywords: "Swarmling",
 		suffix: "Swarmling Strain",
 		icon: "btn-unit-collection-webby-zergling",
 		race: ZERG,
@@ -6164,6 +6218,7 @@ data.units={
 	},
 	"Zagara_Baneling": {
 		name: "Baneling",
+		keywords: "Splitter",
 		suffix: "Splitter Strain",
 		icon: "btn-unit-collection-webby-baneling",
 		race: ZERG,
@@ -6229,6 +6284,7 @@ data.units={
 	},
 	"Zagara_HunterKiller": {
 		name: "Hunter Killer",
+		keywords: "Hydralisk",
 		icon: "btn-unit-collection-webby-hydra",
 		race: ZERG,
 		commander: "Zagara",
@@ -6260,6 +6316,7 @@ data.units={
 	},
 	"Zagara_Hatchery": {
 		name: "Hatchery",
+		keywords: "Lair, Hive",
 		icon: "btn-building-zerg-hatchery",
 		race: ZERG,
 		commander: "Zagara",
@@ -6398,6 +6455,7 @@ data.units={
 	},
 	"Zagara_ScourgeNest": {
 		name: "Scourge Nest",
+		keywords: "Spire",
 		icon: "btn-doodad-scourgenests",
 		race: ZERG,
 		commander: "Zagara",
@@ -6560,6 +6618,7 @@ data.units={
 	},
 	"Abathur_SwarmHost": {
 		name: "Swarm Host",
+		keywords: "Locust",
 		icon: "btn-unit-zerg-swarmhost",
 		race: ZERG,
 		commander: "Abathur",
@@ -6656,6 +6715,7 @@ data.units={
 	},
 	"Abathur_Hatchery": {
 		name: "Hatchery",
+		keywords: "Lair, Hive",
 		icon: "btn-building-zerg-hatchery",
 		race: ZERG,
 		commander: "Abathur",
@@ -6779,6 +6839,7 @@ data.units={
 	},
 	"Abathur_Spire": {
 		name: "Spire",
+		keywords: "Greater Spire",
 		icon: "btn-building-zerg-spire",
 		race: ZERG,
 		commander: "Abathur",
@@ -6937,6 +6998,7 @@ data.units={
 	},
 	"Stukov_Marine": {
 		name: "Infested Marine",
+		keywords: "Infested Trooper",
 		icon: "btn-unit-zerg-infestedmarine",
 		race: ZERG,
 		commander: "Stukov",
@@ -7011,6 +7073,7 @@ data.units={
 	},
 	"Stukov_Apocalisk": {
 		name: "Apocalisk",
+		keywords: "Ultralisk",
 		icon: "btn-upgrade-zerg-stukov-apocolisk_04",
 		race: ZERG,
 		commander: "Stukov",
@@ -7022,6 +7085,7 @@ data.units={
 	},
 	"Stukov_Aleksander": {
 		name: "Aleksander",
+		keywords: "Stukov, Battlecruiser",
 		icon: "btn-ability-zerg-stukov-summonaleksander",
 		race: ZERG,
 		commander: "Stukov",
@@ -7259,6 +7323,7 @@ data.units={
 	},
 	"Dehaka_Dehaka": {
 		name: "Dehaka",
+		keywords: "Godzilla",
 		icon: "btn-unit-dehaka-mammothdehaka",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7428,6 +7493,7 @@ data.units={
 	},
 	"Dehaka_SwarmHost": {
 		name: "Primal Host",
+		keywords: "Locust",
 		icon: "btn-unit-collection-primal-creeperhost",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7679,6 +7745,7 @@ data.units={
 	},
 	"Stetmann_Gary": {
 		name: "Gary",
+		keywords: "Science Vessel",
 		icon: "btn-unit-stetmann-gary",
 		race: ZERG,
 		commander: "Stetmann",
@@ -7909,6 +7976,7 @@ data.units={
 	},
 	"Stetmann_BroodLord": {
 		name: "Mecha Battlecarrier Lord",
+		keywords: "Brood Lord, Mecha Broodling, Mecha Locusceptor",
 		icon: "btn-unit-collection-broodlord-mecha",
 		race: ZERG,
 		commander: "Stetmann",
@@ -7969,6 +8037,7 @@ data.units={
 	},
 	"Stetmann_Hatchery": {
 		name: "Mecha Hatchery",
+		keywords: "Mecha Lair, Mecha Hive",
 		icon: "btn-building-zerg-hatchery-mecha",
 		race: ZERG,
 		commander: "Stetmann",
@@ -8087,6 +8156,7 @@ data.units={
 	},
 	"Stetmann_HydraliskDen": {
 		name: "Mecha Hydralisk Den",
+		keywords: "Mecha Lurker Den",
 		icon: "btn-building-zerg-hydraliskden-mecha",
 		race: ZERG,
 		commander: "Stetmann",
@@ -8131,6 +8201,7 @@ data.units={
 	},
 	"Stetmann_Spire": {
 		name: "Mecha Spire",
+		keywords: "Mecha Greater Spire",
 		icon: "btn-building-zerg-spire-mecha",
 		race: ZERG,
 		commander: "Stetmann",
@@ -8504,6 +8575,7 @@ data.units={
 	},
 	"Protoss_Gateway": {
 		name: "Gateway",
+		keywords: "Warp Gate",
 		icon: "btn-building-protoss-gateway",
 		race: PROTOSS,
 		commander: "Protoss",
@@ -8681,6 +8753,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Zeratul": {
 		name: "Zeratul",
+		keywords: "Dark Templar",
 		icon: "btn-unit-protoss-zeratul",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8704,6 +8777,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Vorazun": {
 		name: "Vorazun",
+		keywords: "Dark Templar",
 		icon: "btn-unit-protoss-vorazun",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8816,6 +8890,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Zealot": {
 		name: "Zealot",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-zealot-aiur",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8833,6 +8908,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Centurion": {
 		name: "Centurion",
+		keywords: "Zealot",
+		suffix: "Nerazim Faction",
 		icon: "btn-unit-protoss-zealot-nerazim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8844,6 +8921,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Sentinel": {
 		name: "Sentinel",
+		keywords: "Zealot",
+		suffix: "Purifier Faction",
 		icon: "btn-unit-protoss-zealot-purifier",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8854,6 +8933,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Sentry": {
 		name: "Sentry",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-sentry",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8873,6 +8953,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Energizer": {
 		name: "Energizer",
+		suffix: "Purifier Faction",
+		keywords: "Sentry",
 		icon: "btn-unit-protoss-sentry-purifier",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8885,6 +8967,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Havoc": {
 		name: "Havoc",
+		suffix: "Tal’darim Faction",
+		keywords: "Sentry",
 		icon: "btn-unit-protoss-sentry-taldarim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8896,6 +8980,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Stalker": {
 		name: "Stalker",
+		suffix: "Nerazim Faction",
 		icon: "btn-unit-protoss-stalker",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8912,6 +8997,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Dragoon": {
 		name: "Dragoon",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-dragoon-void",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8920,6 +9006,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Adept": {
 		name: "Adept",
+		suffix: "Purifier Faction",
 		icon: "btn-unit-protoss-adept-purifier",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8930,6 +9017,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Instigator": {
 		name: "Instigator",
+		suffix: "Purifier Faction",
+		keywords: "Stalker",
 		icon: "btn-unit-collection-purifier-stalker",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8940,6 +9029,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_HighTemplar": {
 		name: "High Templar",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-hightemplarnocord",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8957,6 +9047,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_DarkArchon": {
 		name: "Dark Archon",
+		suffix: "Nerazim Faction",
 		icon: "btn-unit-protoss-darkarchon",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8968,6 +9059,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Ascendant": {
 		name: "Ascendant",
+		suffix: "Tal’darim Faction",
+		keywords: "High Templar",
 		icon: "btn-unit-protoss-hightemplar-taldarim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8980,6 +9073,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_DarkTemplar": {
 		name: "Dark Templar",
+		suffix: "Nerazim Faction",
 		icon: "btn-unit-protoss-darktemplar-nerazim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -8996,6 +9090,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Avenger": {
 		name: "Avenger",
+		suffix: "Aiur Faction",
+		keywords: "Dark Templar",
 		icon: "btn-unit-protoss-darktemplar-aiur",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9004,6 +9100,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_BloodHunter": {
 		name: "Blood Hunter",
+		suffix: "Tal’darim Faction",
+		keywords: "Dark Templar",
 		icon: "btn-unit-protoss-darktemplar-taldarim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9014,6 +9112,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Immortal": {
 		name: "Immortal",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-immortal",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9024,6 +9123,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Annihilator": {
 		name: "Annihilator",
+		keywords: "Immortal",
+		suffix: "Nerazim Faction",
 		icon: "btn-unit-protoss-immortal-nerazim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9034,6 +9135,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Vanguard": {
 		name: "Vanguard",
+		keywords: "Immortal",
+		suffix: "Tal’darim Faction",
 		icon: "btn-unit-protoss-immortal-taldarim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9042,6 +9145,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Colossus": {
 		name: "Colossus",
+		suffix: "Purifier Faction",
 		icon: "btn-unit-protoss-colossus-purifier",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9050,6 +9154,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Reaver": {
 		name: "Reaver",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-reaver",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9061,6 +9166,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Wrathwalker": {
 		name: "Wrathwalker",
+		suffix: "Tal’darim Faction",
+		keywords: "Colossus",
 		icon: "btn-unit-protoss-colossus-taldarimex3",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9069,6 +9176,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Phoenix": {
 		name: "Phoenix",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-phoenix",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9080,6 +9188,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Corsair": {
 		name: "Corsair",
+		suffix: "Nerazim Faction",
 		icon: "btn-unit-protoss-corsair",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9090,6 +9199,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Mirage": {
 		name: "Mirage",
+		suffix: "Purifier Faction",
+		keywords: "Phoenix",
 		icon: "btn-unit-protoss-phoenix-purifier",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9101,6 +9212,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_VoidRay": {
 		name: "Void Ray",
+		suffix: "Nerazim Faction",
 		icon: "btn-unit-protoss-voidray-nerazim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9109,6 +9221,8 @@ data.units={
 	},
 	"LegacyOfTheVoid_Destroyer": {
 		name: "Destroyer",
+		suffix: "Tal’darim Faction",
+		keywords: "Void Ray",
 		icon: "btn-unit-protoss-voidray-taldarim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9117,6 +9231,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Arbiter": {
 		name: "Arbiter",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-arbiter",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9128,6 +9243,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Carrier": {
 		name: "Carrier",
+		suffix: "Aiur Faction",
 		icon: "btn-unit-protoss-carrierhero",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9147,6 +9263,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Tempest": {
 		name: "Tempest",
+		suffix: "Purifier Faction",
 		icon: "btn-unit-protoss-tempest-purifier",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9162,6 +9279,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Mothership": {
 		name: "Mothership",
+		suffix: "Tal’darim Faction",
 		icon: "btn-unit-protoss-mothership-taldarim",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9226,6 +9344,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Gateway": {
 		name: "Gateway",
+		keywords: "Warp Gate",
 		icon: "btn-building-protoss-gateway",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9325,6 +9444,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_RoboticsFacility": {
 		name: "Robotics Facility",
+		keywords: "Warp Robotics Facility",
 		icon: "btn-building-protoss-roboticsfacility",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9354,6 +9474,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Stargate": {
 		name: "Stargate",
+		keywords: "Warp Stargate",
 		icon: "btn-building-protoss-stargate",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9552,6 +9673,7 @@ data.units={
 	},
 	"Artanis_Gateway": {
 		name: "Gateway",
+		keywords: "Warp Gate",
 		icon: "btn-building-protoss-gateway",
 		race: PROTOSS,
 		commander: "Artanis",
@@ -9638,6 +9760,7 @@ data.units={
 	},
 	"Artanis_RoboticsFacility": {
 		name: "Robotics Facility",
+		keywords: "Warp Robotics Facility",
 		icon: "btn-building-protoss-roboticsfacility",
 		race: PROTOSS,
 		commander: "Artanis",
@@ -9675,6 +9798,7 @@ data.units={
 	},
 	"Artanis_Stargate": {
 		name: "Stargate",
+		keywords: "Warp Stargate",
 		icon: "btn-building-protoss-stargate",
 		race: PROTOSS,
 		commander: "Artanis",
@@ -9750,6 +9874,7 @@ data.units={
 	},
 	"Vorazun_Zealot": {
 		name: "Centurion",
+		keywords: "Zealot",
 		icon: "btn-unit-protoss-zealot-nerazim",
 		race: PROTOSS,
 		commander: "Vorazun",
@@ -9824,6 +9949,7 @@ data.units={
 	},
 	"Vorazun_ShadowGuard": {
 		name: "Shadow Guard",
+		keywords: "Dark Templar",
 		icon: "btn-upgrade-vorazun-summonshadowguard",
 		race: PROTOSS,
 		commander: "Vorazun",
@@ -9865,6 +9991,7 @@ data.units={
 	},
 	"Vorazun_Gateway": {
 		name: "Gateway",
+		keywords: "Warp Gate",
 		icon: "btn-building-protoss-gateway",
 		race: PROTOSS,
 		commander: "Vorazun",
@@ -10037,6 +10164,7 @@ data.units={
 	},
 	"Karax_Zealot": {
 		name: "Sentinel",
+		keywords: "Zealot",
 		icon: "btn-unit-protoss-zealot-purifier",
 		race: PROTOSS,
 		commander: "Karax",
@@ -10047,6 +10175,7 @@ data.units={
 	},
 	"Karax_Sentry": {
 		name: "Energizer",
+		keywords: "Sentry",
 		icon: "btn-unit-protoss-sentry-purifier",
 		race: PROTOSS,
 		commander: "Karax",
@@ -10090,6 +10219,7 @@ data.units={
 	},
 	"Karax_Phoenix": {
 		name: "Mirage",
+		keywords: "Phoenix",
 		icon: "btn-unit-protoss-phoenix-purifier",
 		race: PROTOSS,
 		commander: "Karax",
@@ -10150,6 +10280,7 @@ data.units={
 	},
 	"Karax_Gateway": {
 		name: "Gateway",
+		keywords: "Warp Gate",
 		icon: "btn-building-protoss-gateway",
 		race: PROTOSS,
 		commander: "Karax",
@@ -10390,6 +10521,7 @@ data.units={
 	},
 	"Alarak_Sentry": {
 		name: "Havoc",
+		keywords: "Sentry",
 		icon: "btn-unit-protoss-alarak-taldarim-sentry",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10401,6 +10533,7 @@ data.units={
 	},
 	"Alarak_HighTemplar": {
 		name: "Ascendant",
+		keywords: "High Templar",
 		icon: "btn-unit-protoss-alarak-taldarim-hightemplar",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10413,6 +10546,7 @@ data.units={
 	},
 	"Alarak_Immortal": {
 		name: "Vanguard",
+		keywords: "Immortal",
 		icon: "btn-unit-protoss-alarak-taldarim-immortal",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10421,6 +10555,7 @@ data.units={
 	},
 	"Alarak_Colossus": {
 		name: "Wrathwalker",
+		keywords: "Colossus",
 		icon: "btn-unit-protoss-alarak-taldarim-colossus",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10429,6 +10564,7 @@ data.units={
 	},
 	"Alarak_WarpPrism": {
 		name: "War Prism",
+		keywords: "Warp Prism",
 		icon: "btn-unit-protoss-alarak-taldarim-warpprism",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10442,6 +10578,7 @@ data.units={
 	},
 	"Alarak_VoidRay": {
 		name: "Destroyer",
+		keywords: "Void Ray",
 		icon: "btn-unit-protoss-alarak-taldarim-voidray",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10490,6 +10627,7 @@ data.units={
 	},
 	"Alarak_Gateway": {
 		name: "Gateway",
+		keywords: "Warp Gate",
 		icon: "btn-unit-protoss-alarak-taldarim-gateway",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10554,6 +10692,7 @@ data.units={
 	},
 	"Alarak_TwilightCouncil": {
 		name: "Death Council",
+		keywords: "Twilight Council",
 		icon: "btn-unit-protoss-alarak-taldarim-twilightcouncil",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10568,6 +10707,7 @@ data.units={
 	},
 	"Alarak_TemplarArchives": {
 		name: "Ascendant Archives",
+		keywords: "Templar Archives",
 		icon: "btn-unit-protoss-alarak-taldarim-templararchives",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -10677,6 +10817,7 @@ data.units={
 	},
 	"Fenix_Zealot": {
 		name: "Legionnaire",
+		keywords: "Zealot",
 		icon: "btn-unit-collection-purifier-zealot",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10695,6 +10836,7 @@ data.units={
 	},
 	"Fenix_Sentry": {
 		name: "Conservator",
+		keywords: "Sentry",
 		icon: "btn-unit-collection-purifier-sentry",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10765,6 +10907,7 @@ data.units={
 	},
 	"Fenix_Probius": {
 		name: "Probius",
+		keywords: "Probe",
 		icon: "btn-unit-collection-purifier-probe",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10825,6 +10968,7 @@ data.units={
 	},
 	"Fenix_Kaldalis": {
 		name: "Kaldalis",
+		keywords: "Zealot, Legionnaire",
 		icon: "btn-unit-protoss-champion-zealot-purifier",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10835,6 +10979,7 @@ data.units={
 	},
 	"Fenix_Talis": {
 		name: "Talis",
+		keywords: "Adept",
 		icon: "btn-unit-protoss-champion-adept-purifier",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10845,6 +10990,7 @@ data.units={
 	},
 	"Fenix_Taldarin": {
 		name: "Taldarin",
+		keywords: "Immortal",
 		icon: "btn-unit-protoss-champion-immortal-purifier",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10855,6 +11001,7 @@ data.units={
 	},
 	"Fenix_Warbringer": {
 		name: "Warbringer",
+		keywords: "Colossus",
 		icon: "btn-unit-protoss-champion-colossus-purifier",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10865,6 +11012,7 @@ data.units={
 	},
 	"Fenix_Mojo": {
 		name: "Mojo",
+		keywords: "Scout",
 		icon: "btn-unit-protoss-champion-scout-purifier",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10875,6 +11023,7 @@ data.units={
 	},
 	"Fenix_Clolarion": {
 		name: "Clolarion",
+		keywords: "Carrier",
 		icon: "btn-unit-protoss-champion-carrier-purifier",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -10916,6 +11065,7 @@ data.units={
 	},
 	"Fenix_Gateway": {
 		name: "Gateway",
+		keywords: "Warp Gate",
 		icon: "btn-unit-protoss-fenix-purifier-gateway",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -11092,6 +11242,7 @@ data.units={
 	},
 	"Zeratul_Zeratul": {
 		name: "Zeratul",
+		keywords: "Dark Templar",
 		icon: "btn-unit-protoss-zeratulcoop",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11105,6 +11256,7 @@ data.units={
 	},
 	"Zeratul_Probe": {
 		name: "Xel’Naga Precursor",
+		keywords: "Probe",
 		icon: "btn-unit-protoss-zeratulprobe",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11134,6 +11286,7 @@ data.units={
 	},
 	"Zeratul_Stalker": {
 		name: "Xel’Naga Ambusher",
+		keywords: "Stalker",
 		icon: "btn-unit-protoss-zeratulstalker",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11144,6 +11297,7 @@ data.units={
 	},
 	"Zeratul_Sentry": {
 		name: "Xel’Naga Shieldguard",
+		keywords: "Sentry",
 		icon: "btn-unit-protoss-zeratulsentry",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11155,6 +11309,7 @@ data.units={
 	},
 	"Zeratul_DarkTemplar": {
 		name: "Void Templar",
+		keywords: "Dark Templar",
 		icon: "btn-unit-protoss-zeratuldarktemplar",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11165,6 +11320,7 @@ data.units={
 	},
 	"Zeratul_Immortal": {
 		name: "Xel’Naga Enforcer",
+		keywords: "Immortal",
 		icon: "btn-unit-protoss-zeratulimmortal",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11175,6 +11331,7 @@ data.units={
 	},
 	"Zeratul_Observer": {
 		name: "Xel’Naga Watcher",
+		keywords: "Observer",
 		icon: "btn-unit-protoss-zeratulobserver",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11186,6 +11343,7 @@ data.units={
 	},
 	"Zeratul_Disruptor": {
 		name: "Xel’Naga Abrogator",
+		keywords: "Disruptor",
 		icon: "btn-unit-protoss-zeratuldisruptor",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11196,6 +11354,7 @@ data.units={
 	},
 	"Zeratul_WarpPrism": {
 		name: "Xel’Naga Void Array",
+		keywords: "Warp Prism",
 		icon: "btn-unit-protoss-zeratulwarpprism",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11258,6 +11417,7 @@ data.units={
 	},
 	"Zeratul_Telbrus": {
 		name: "Telbrus",
+		keywords: "High Templar",
 		icon: "btn-unit-protoss-zeratulhightemplarhero",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11280,6 +11440,7 @@ data.units={
 	},
 	"Zeratul_Serdath": {
 		name: "Serdath",
+		keywords: "Dark Archon",
 		icon: "btn-unit-protoss-zeratuldarkarchonhero",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11299,6 +11460,7 @@ data.units={
 	},
 	"Zeratul_Zoraya": {
 		name: "Zoraya",
+		keywords: "Void Ray",
 		icon: "btn-unit-protoss-zeratulvoidrayhero",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11328,6 +11490,7 @@ data.units={
 	},
 	"Zeratul_Gateway": {
 		name: "Xel’Naga Passageway",
+		keywords: "Gateway",
 		icon: "btn-building-protoss-zeratulgateway",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11342,6 +11505,7 @@ data.units={
 	},
 	"Zeratul_PhotonCannon": {
 		name: "Tesseract Cannon",
+		keywords: "Photon Cannon",
 		icon: "btn-building-protoss-zeratulphotoncannon",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11366,6 +11530,7 @@ data.units={
 	},
 	"Zeratul_CyberneticsCore": {
 		name: "Core Forge",
+		keywords: "Cybernetics Core",
 		icon: "btn-building-protoss-zeratulcyberneticscore",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11374,6 +11539,7 @@ data.units={
 	},
 	"Zeratul_DarkShrine": {
 		name: "Void Shrine",
+		keywords: "Dark Shrine",
 		icon: "btn-building-protoss-zeratuldarkshrine",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11382,6 +11548,7 @@ data.units={
 	},
 	"Zeratul_RoboticsFacility": {
 		name: "Constructs Facility",
+		keywords: "Robotics Facility",
 		icon: "btn-building-protoss-zeratulroboticsfacility",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -11397,6 +11564,7 @@ data.units={
 	},
 	"Zeratul_RoboticsBay": {
 		name: "Constructs Bay",
+		keywords: "Robotics Bay",
 		icon: "btn-building-protoss-zeratulroboticssupportbay",
 		race: PROTOSS,
 		commander: "Zeratul",
