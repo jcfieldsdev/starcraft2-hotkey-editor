@@ -4539,6 +4539,7 @@ data.units={
 	},
 	"Zerg_NydusNetwork": {
 		name: "Nydus Network",
+		keywords: "Nydus Worm",
 		icon: "btn-building-zerg-nydusnetwork",
 		race: ZERG,
 		commander: "Zerg",
@@ -6029,7 +6030,7 @@ data.units={
 	},
 	"Kerrigan_NydusNetwork": {
 		name: "Omega Network",
-		keywords: "Nydus Network",
+		keywords: "Nydus Network, Nydus Worm, Omega Worm",
 		icon: "btn-building-zerg-nydusnetwork",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -6870,6 +6871,7 @@ data.units={
 	},
 	"Abathur_NydusNetwork": {
 		name: "Nydus Network",
+		keywords: "Nydus Worm",
 		icon: "btn-building-zerg-nydusnetwork",
 		race: ZERG,
 		commander: "Abathur",

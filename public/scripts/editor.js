@@ -665,13 +665,10 @@ Editor.prototype.findUnitsNamed=function(query) {
 		}
 
 		let name=properties.displayName||properties.name;
-		name=name.toLowerCase();
-		// replaces curly quotes
-		name=name.replace(/[‘’]/g, "'");
-		name=name.replace(/[“”]/g, "\"");
+		name=prepare(name);
 
 		let keywords=properties.keywords||"";
-		keywords=keywords.toLowerCase();
+		keywords=prepare(keywords);
 
 		if (name.indexOf(query)!=-1||keywords.indexOf(query)!=-1) {
 			matches.push(unit);
@@ -679,6 +676,15 @@ Editor.prototype.findUnitsNamed=function(query) {
 	});
 
 	this.formatResults("results", matches);
+
+	function prepare(str) {
+		str=str.toLowerCase();
+		// replaces curly quotes
+		str=str.replace(/[‘’]/g, "'");
+		str=str.replace(/[“”]/g, "\"");
+
+		return str;
+	}
 };
 
 Editor.prototype.findUnitsWith=function(id) {
