@@ -655,35 +655,40 @@ Editor.prototype.findUnitsNamed=function(query) {
 		return;
 	}
 
-	let matches=[];
+	let matches=new Set(), words=[];
 
-	query=query.toLowerCase();
+	if (query.match(/^".+"$/)) { // searches for exact match if query is quoted
+		words.push(query.replace(/"/g, ""));
+	} else {
+		words=query.toLowerCase().split(" ");
+	}
 
-	Object.entries(data.units).forEach(function([unit, properties]) {
-		if (properties.name==undefined) {
-			return;
-		}
+	words.forEach(function(word) {
+		Object.entries(data.units).forEach(function([unit, properties]) {
+			if (properties.name==undefined) {
+				return;
+			}
 
-		let name=properties.displayName||properties.name;
-		name=prepare(name);
+			let name=properties.displayName||properties.name;
+			name=prepareString(name);
 
-		let keywords=properties.keywords||"";
-		keywords=prepare(keywords);
+			let keywords=properties.keywords||"";
+			keywords=prepareString(keywords);
 
-		if (name.indexOf(query)!=-1||keywords.indexOf(query)!=-1) {
-			matches.push(unit);
-		}
+			if (name.indexOf(word)!=-1||keywords.indexOf(word)!=-1) {
+				matches.add(unit);
+			}
+		});
 	});
 
 	this.formatResults("results", matches);
 
-	function prepare(str) {
-		str=str.toLowerCase();
+	function prepareString(str) {
 		// replaces curly quotes
 		str=str.replace(/[‘’]/g, "'");
 		str=str.replace(/[“”]/g, "\"");
 
-		return str;
+		return str.toLowerCase();
 	}
 };
 
@@ -720,7 +725,7 @@ Editor.prototype.formatResults=function(id, matches) {
 	let ul=document.createElement("ul");
 	ul.id=id;
 
-	matches.forEach(function(match) {
+	for (let match of matches) {
 		let unit=data.units[match];
 		let li=document.createElement("li");
 
@@ -759,7 +764,7 @@ Editor.prototype.formatResults=function(id, matches) {
 
 		li.appendChild(a);
 		ul.appendChild(li);
-	}, this);
+	}
 
 	document.getElementById(id).replaceWith(ul);
 };
