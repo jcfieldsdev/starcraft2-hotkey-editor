@@ -649,21 +649,22 @@ Editor.prototype.checkAllConflicts=function() {
 };
 
 Editor.prototype.findUnitsNamed=function(query) {
-	// minimum three characters to search to prevent huge result lists
-	if (query.length<3) {
-		this.clearSearch();
-		return;
-	}
-
 	let matches=new Set(), words=[];
+
+	query=query.trim();
 
 	if (query.match(/^".+"$/)) { // searches for exact match if query is quoted
 		words.push(query.replace(/"/g, ""));
 	} else {
-		words=query.toLowerCase().split(" ");
+		words=query.toLowerCase().split(/\s+/);
 	}
 
 	words.forEach(function(word) {
+		// minimum three characters to search to prevent huge result lists
+		if (word.length<3) {
+			return;
+		}
+
 		Object.entries(data.units).forEach(function([unit, properties]) {
 			if (properties.name==undefined) {
 				return;
@@ -681,7 +682,11 @@ Editor.prototype.findUnitsNamed=function(query) {
 		});
 	});
 
-	this.formatResults("results", matches);
+	if (matches.size>0) {
+		this.formatResults("results", matches);
+	} else {
+		this.clearSearch();
+	}
 
 	function prepareString(str) {
 		// replaces curly quotes
