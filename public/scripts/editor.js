@@ -107,9 +107,9 @@ window.addEventListener("load", function() {
 	});
 	window.addEventListener("keyup", function(event) {
 		if (event.keyCode==27) { // Esc
-			Object.values(overlays).forEach(function(overlay) {
+			for (let overlay of Object.values(overlays)) {
 				overlay.hide();
-			});
+			}
 		}
 	});
 
@@ -253,7 +253,7 @@ Editor.prototype.unitEditor=function() {
 		legends=Object.keys(unit.commands);
 	}
 
-	for (let n in cards) {
+	for (let n of cards.keys()) {
 		this.setLegend(legends[n], n);
 		this.createCommandCard(unit, cards[n], n);
 	}
@@ -280,12 +280,12 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 		fieldset.classList.remove("hidden");
 	}
 
-	card.forEach(function(id) {
+	for (let id of card) {
 		let command=this.commands.getCommand(unit.commander, id);
 
 		if (command==undefined) {
 			console.error("Undefined: "+id+" (command)");
-			return;
+			continue;
 		}
 
 		buttons.push({
@@ -303,7 +303,7 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 		let pos=COLS*command.y+command.x;
 		let cell=fieldset.getElementsByTagName("div")[0].children[pos];
 		cell.replaceWith(button);
-	}, this);
+	}
 
 	this.buttons.push(buttons);
 };
@@ -366,7 +366,7 @@ Editor.prototype.clear=function(element) {
 Editor.prototype.clearButtons=function() {
 	let cards=document.getElementsByClassName("card");
 
-	Array.from(cards).forEach(function(card, n) {
+	for (let [n, card] of Array.from(cards).entries()) {
 		let buttons=card.getElementsByTagName("div")[0].children;
 		this.setLegend(" ", n);
 
@@ -378,7 +378,7 @@ Editor.prototype.clearButtons=function() {
 		if (n>2) { // hides cards after third unless needed
 			card.classList.add("hidden");
 		}
-	}, this);
+	}
 };
 
 Editor.prototype.clearFields=function() {
@@ -491,10 +491,9 @@ Editor.prototype.formatHotkey=function(hotkeys) {
 		return;
 	}
 
-	// handles multiple hotkeys
-	hotkeys.forEach(function(hotkey) {
+	for (let hotkey of hotkeys) { // handles multiple hotkeys
 		p.appendChild(this.createInput(hotkey));
-	}, this);
+	}
 
 	document.getElementById(p.id).classList.remove("hidden");
 	document.getElementById(p.id).replaceWith(p);
@@ -552,12 +551,12 @@ Editor.prototype.filter=function(unit) {
 
 Editor.prototype.setVisibleHotkeys=function() {
 	// checks for conflicts in currently visible command cards
-	this.buttons.forEach(function(card, n) {
+	for (let [n, card] of this.buttons.entries()) {
 		let keys={};
 
-		card.forEach(function(command) {
+		for (let command of card) {
 			if (command=="") {
-				return;
+				continue;
 			}
 
 			let hotkeys=this.commands.getHotkeys(this.commander, command.id);
@@ -565,9 +564,9 @@ Editor.prototype.setVisibleHotkeys=function() {
 			let span="span_"+n+command.y+command.x;
 			document.getElementById(span).textContent=hotkeys[0];
 
-			hotkeys.forEach(function(hotkey) {
+			for (let hotkey of hotkeys) {
 				if (hotkey=="") {
-					return;
+					continue;
 				}
 
 				if (keys[hotkey]==undefined) {
@@ -577,16 +576,16 @@ Editor.prototype.setVisibleHotkeys=function() {
 				}
 
 				keys[hotkey].add(span);
-			});
-		}, this);
+			}
+		}
 
 		// tracks conflicts outside of loop so conflicts can be detected in
 		// commands with multiple hotkeys, else class will be toggled an
 		// unpredictable amount
 		let conflicts=[];
 
-		Object.values(keys).forEach(function(values) {
-			values.forEach(function(value) {
+		for (let values of Object.values(keys)) {
+			for (let value of values) {
 				let conflict=values.size>1, span=document.getElementById(value);
 
 				if (!conflicts.includes(value)) {
@@ -596,9 +595,9 @@ Editor.prototype.setVisibleHotkeys=function() {
 				if (conflict) {
 					conflicts.push(value);
 				}
-			});
-		});
-	}, this);
+			}
+		}
+	}
 };
 
 Editor.prototype.checkAllConflicts=function() {
@@ -659,15 +658,15 @@ Editor.prototype.findUnitsNamed=function(query) {
 		words=query.toLowerCase().split(/\s+/);
 	}
 
-	words.forEach(function(word) {
+	for (let word of words) {
 		// minimum three characters to search to prevent huge result lists
 		if (word.length<3) {
-			return;
+			continue;
 		}
 
-		Object.entries(data.units).forEach(function([unit, properties]) {
+		for (let [unit, properties] of Object.entries(data.units)) {
 			if (properties.name==undefined) {
-				return;
+				continue;
 			}
 
 			let name=properties.displayName||properties.name;
@@ -679,8 +678,8 @@ Editor.prototype.findUnitsNamed=function(query) {
 			if (name.indexOf(word)!=-1||keywords.indexOf(word)!=-1) {
 				matches.add(unit);
 			}
-		});
-	});
+		}
+	}
 
 	if (matches.size>0) {
 		this.formatResults("results", matches);
@@ -700,9 +699,9 @@ Editor.prototype.findUnitsNamed=function(query) {
 Editor.prototype.findUnitsWith=function(id) {
 	let matches=new Set();
 
-	Object.entries(data.units).forEach(function([unit, properties]) {
+	for (let [unit, properties] of Object.entries(data.units)) {
 		if (properties.commands==undefined) {
-			return;
+			continue;
 		}
 
 		let search=[];
@@ -710,17 +709,17 @@ Editor.prototype.findUnitsWith=function(id) {
 		if (Array.isArray(properties.commands)) {
 			search=properties.commands;
 		} else {
-			Object.values(properties.commands).forEach(function(card) {
-				search=search.concat(card);
-			});
+			for (let card of Object.values(properties.commands)) {
+				search=search.concat(card); // combines all command cards
+			}
 		}
 
-		Object.values(search).forEach(function(result) {
+		for (let result of Object.values(search)) {
 			if (id==result) {
 				matches.add(unit);
 			}
-		});
-	});
+		}
+	}
 
 	document.getElementById("code").textContent=id;
 	this.formatResults("other", matches);
@@ -793,14 +792,14 @@ Editor.prototype.highlightResult=function(dir) {
 		}
 	}
 
-	Array.from(results).forEach(function(result, i) {
+	for (let [i, result] of Array.from(results).entries()) {
 		if (this.selected==i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
 		} else {
 			result.classList.remove("selected");
 		}
-	}, this);
+	}
 };
 
 Editor.prototype.openResult=function() {
@@ -838,7 +837,7 @@ Commands.prototype.parse=function(text) {
 	// ensures empty line at end of file so final section block is saved
 	lines.push("");
 
-	lines.forEach(function(line, i) {
+	for (let [i, line] of lines.entries()) {
 		// adds section block to object whenever new section block is found
 		// or at end of file (for the last section block)
 		if (lines.length==i+1||line.match(/^\[(\w+)\]$/)) {
@@ -857,7 +856,7 @@ Commands.prototype.parse=function(text) {
 			block[command]={};
 			block[command].hotkey=hotkey;
 		}
-	});
+	}
 
 	this.load(list);
 };
@@ -925,12 +924,12 @@ Commands.prototype.getHotkeys=function(commander, id) {
 		let hotkey=symbol;
 
 		// converts from file format to display representation
-		Object.values(data.keyCodes).forEach(function(keyCode) {
+		for (let keyCode of Object.values(data.keyCodes)) {
 			if (symbol==keyCode.hotkey) {
 				hotkey=keyCode.symbol||keyCode.hotkey;
-				return;
+				break;
 			}
-		});
+		}
 
 		return hotkey;
 	});
@@ -951,12 +950,12 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 		let symbol=hotkey;
 
 		// converts from display format to file representation
-		Object.values(data.keyCodes).forEach(function(keyCode) {
+		for (let keyCode of Object.values(data.keyCodes)) {
 			if (hotkey==keyCode.symbol) {
 				symbol=keyCode.hotkey;
-				return;
+				break;
 			}
-		});
+		}
 
 		return symbol;
 	});
@@ -980,27 +979,27 @@ Commands.prototype.checkConflicts=function(id) {
 		cards=Object.values(unit.commands);
 	}
 
-	cards.forEach(function(card, n) {
+	for (let [n, card] of cards.entries()) {
 		let keys={};
 
 		if (conflict) {
-			return;
+			break;
 		}
 
 		if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
 			card=card.concat(data.common.basic);
 		}
 
-		card.forEach(function(id) {
+		for (let id of card) {
 			if (conflict||data.commands[id]==undefined) {
-				return;
+				break;
 			}
 
 			let hotkeys=this.getHotkeys(unit.commander, id);
 
-			hotkeys.forEach(function(hotkey) {
+			for (let hotkey of hotkeys) {
 				if (conflict||hotkey=="") {
-					return;
+					break;
 				}
 
 				if (keys[hotkey]==undefined) {
@@ -1009,9 +1008,9 @@ Commands.prototype.checkConflicts=function(id) {
 
 				keys[hotkey]++;
 				conflict=keys[hotkey]>1;
-			});
-		}, this);
-	}, this);
+			}
+		}
+	}
 
 	return conflict;
 };
@@ -1136,8 +1135,12 @@ Storage.prototype.load=function() {
 };
 
 Storage.prototype.save=function(list) {
+	if (!list.hasOwnProperty("Commands")) {
+		return;
+	}
+
 	try {
-		if (Object.keys(list).length>1) {
+		if (Object.keys(list["Commands"]).length>0) {
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();
