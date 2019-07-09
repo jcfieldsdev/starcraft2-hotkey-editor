@@ -971,7 +971,7 @@ Commands.prototype.checkConflicts=function(id) {
 		return;
 	}
 
-	let cards=[], conflict=false;
+	let cards=[];
 
 	if (Array.isArray(unit.commands)) {
 		cards.push(unit.commands);
@@ -982,24 +982,20 @@ Commands.prototype.checkConflicts=function(id) {
 	for (let [n, card] of cards.entries()) {
 		let keys={};
 
-		if (conflict) {
-			break;
-		}
-
 		if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
 			card=card.concat(data.common.basic);
 		}
 
 		for (let id of card) {
-			if (conflict||data.commands[id]==undefined) {
-				break;
+			if (data.commands[id]==undefined) {
+				continue;
 			}
 
 			let hotkeys=this.getHotkeys(unit.commander, id);
 
 			for (let hotkey of hotkeys) {
-				if (conflict||hotkey=="") {
-					break;
+				if (hotkey=="") {
+					continue;
 				}
 
 				if (keys[hotkey]==undefined) {
@@ -1007,12 +1003,15 @@ Commands.prototype.checkConflicts=function(id) {
 				}
 
 				keys[hotkey]++;
-				conflict=keys[hotkey]>1;
+
+				if (keys[hotkey]>1) {
+					return true;
+				}
 			}
 		}
 	}
 
-	return conflict;
+	return false; // no conflicts
 };
 
 Commands.prototype.checkDefaults=function(commander, id) {
