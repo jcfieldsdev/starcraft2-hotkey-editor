@@ -23466,7 +23466,7 @@ data.overrides={
 		},
 		"ResearchHighTemplarEnergyUpgrade/TemplarArchive": {
 			name: "Research Chaotic Attunement",
-			icon: "btn-upgrade-protoss-alarak-ascendant’spsiorbtravelsfurther"
+			icon: "btn-upgrade-protoss-alarak-ascendant'spsiorbtravelsfurther"
 		},
 		"ResearchHealingPsionicStorm/TemplarArchive": {
 			name: "Research Power Overwhelming",
