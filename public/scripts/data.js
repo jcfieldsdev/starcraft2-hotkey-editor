@@ -21266,7 +21266,7 @@ data.commands={
 		x: 3
 	},
 	"Blink/ZeratulStalker": {
-		name: "Blink",
+		name: "Predictive Blink",
 		hotkey: "B",
 		icon: "btn-ability-zeratul-stalker-predectiveblink",
 		mask: false,
@@ -23390,6 +23390,9 @@ data.overrides={
 		},
 		"RoboticsBay/Probe": {
 			icon: "btn-unit-protoss-alarak-taldarim-roboticssupportbay"
+		},
+		"Blink/Stalker": {
+			name: "Phase Blink"
 		},
 		"AscendantSacrifice/HighTemplarTaldarim": {
 			hotkey: "C"
