@@ -10513,6 +10513,7 @@ data.units={
 	},
 	"Alarak_Stalker": {
 		name: "Slayer",
+		keywords: "Stalker",
 		icon: "btn-unit-protoss-alarak-taldarim-stalker",
 		race: PROTOSS,
 		commander: "Alarak",
