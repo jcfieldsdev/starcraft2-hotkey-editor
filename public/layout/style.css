@@ -615,6 +615,7 @@ ul#filters {
 	background: transparent linear-gradient(#000, transparent);
 	color: inherit;
 	display: flex;
+	height: calc(2em + 90px);
 	left: 0;
 	overflow: auto;
 	position: fixed;
@@ -798,6 +799,10 @@ ul#results li.selected a {
 		padding: 0.25em;
 	}
 
+	ul#filters {
+		height: calc(2em + 75px);
+	}
+
 	ul#filters button {
 		background-size: 50px 60px;
 		border-radius: 0.75em;
@@ -846,6 +851,10 @@ ul#results li.selected a {
 
 	main {
 		margin-top: 80px;
+	}
+
+	ul#filters {
+		height: calc(2em + 60px);
 	}
 
 	ul#filters button {
