@@ -9729,7 +9729,6 @@ data.units={
 		commands: [
 			"ProtossAirWeaponsLevel1/CyberneticsCore",
 			"ProtossAirArmorLevel1/CyberneticsCore",
-			"ResearchWarpGate/CyberneticsCore",
 			"Cancel"
 		]
 	},
