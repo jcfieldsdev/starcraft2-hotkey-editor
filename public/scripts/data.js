@@ -23046,25 +23046,13 @@ data.overrides={
 			icon: "btn-ability-zerg-gather"
 		},
 		"BurrowDown": {
-			icon: "btn-ability-zerg-dehaka-burrow-color",
 			hotkey: "R",
 			x: 4
 		},
-		"BurrowUp": {
-			icon: "btn-ability-zerg-dehaka-upburrow-color"
-		},
-		"ImpalerBurrowDown": {
-			icon: "btn-ability-zerg-dehaka-burrow-color"
-		},
-		"ImpalerBurrowUp": {
-			icon: "btn-ability-zerg-dehaka-upburrow-color"
-		},
 		"SwarmHostBurrowDown": {
-			icon: "btn-ability-zerg-dehaka-burrow-color"
+			hotkey: "R",
+			x: 4
 		},
-		"SwarmHostBurrowUp": {
-			icon: "btn-ability-zerg-dehaka-upburrow-color"
-		}
 	},
 	"Stetmann": {
 		"GatherProt": {
