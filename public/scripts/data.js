@@ -1755,15 +1755,17 @@ data.units={
 		race: TERRAN,
 		commander: "NovaCovertOps",
 		type: HERO,
-		commands: [
-			"GhostHoldFire/NovaHero",
-			"WeaponsFree/NovaHero",
-			"NovaWeaponCanisterRifleSnipe/NovaHero",
-			"NovaGadgetPulseGrenades/NovaHero",
-			"ApolloCloakOnNova/NovaHero",
-			"NovaDomination/NovaHero",
-			"HeroNukeCalldown/NovaHero"
-		]
+		commands: {
+			"Nova": [
+				"GhostHoldFire/NovaHero",
+				"WeaponsFree/NovaHero",
+				"NovaWeaponCanisterRifleSnipe/NovaHero",
+				"NovaGadgetPulseGrenades/NovaHero",
+				"ApolloCloakOnNova/NovaHero",
+				"NovaDomination/NovaHero",
+				"HeroNukeCalldown/NovaHero"
+			]
+		}
 	},
 	"NovaCovertOps_SCV": {
 		name: "SCV",
@@ -3003,14 +3005,23 @@ data.units={
 		race: TERRAN,
 		commander: "Nova",
 		type: HERO,
-		commands: [
-			"GhostHoldFire/NovaCoop",
-			"WeaponsFree/NovaCoop",
-			"NovaWeaponImprovedCanisterRifleSnipe",
-			"NovaGadgetBoombots",
-			"NovaUnitNuke",
-			"NovaSwitchAssaultMode"
-		]
+		commands: {
+			"Nova": [
+				"GhostHoldFire/NovaCoop",
+				"WeaponsFree/NovaCoop",
+				"NovaWeaponImprovedCanisterRifleSnipe",
+				"NovaGadgetBoombots",
+				"NovaUnitNuke",
+				"NovaSwitchAssaultMode"
+			],
+			"Nova’s Stasis Shell": [
+				"NovaWeaponImprovedCanisterRifleSnipe",
+				"NovaGadgetBoombots",
+				"NovaUnitNuke",
+				"NovaSwitchAssaultMode",
+				"Rally"
+			]
+		}
 	},
 	"Nova_SCV": {
 		name: "SCV",
@@ -5658,6 +5669,13 @@ data.units={
 				"KerriganVoidCoopEconDrop/K5KerriganBurrowed",
 				"KerriganVoidCoopCrushingGripWave/K5KerriganBurrowed",
 				"BurrowUp"
+			],
+			"Kerrigan’s Cocoon": [
+				"Rally",
+				"MindBolt/KerriganReviveCocoon",
+				"PsionicLift/KerriganReviveCocoon",
+				"KerriganVoidCoopEconDrop/KerriganReviveCocoon",
+				"KerriganVoidCoopCrushingGripWave/KerriganReviveCocoon"
 			]
 		}
 	},
@@ -6092,6 +6110,13 @@ data.units={
 				"ZagaraVoidCoopMassFrenzy/ZagaraVoidCoopBurrowed",
 				"MassRoachDrop/ZagaraVoidCoopBurrowed",
 				"BurrowUp"
+			],
+			"Zagara’s Cocoon": [
+				"Rally",
+				"ZagaraVoidCoopBanelingBarrage/ZagaraReviveCocoon",
+				"ZagaraVoidCoopSpawnHunterKillers/ZagaraReviveCocoon",
+				"ZagaraVoidCoopMassFrenzy/ZagaraReviveCocoon",
+				"MassRoachDrop/ZagaraReviveCocoon"
 			]
 		}
 	},
@@ -10463,11 +10488,19 @@ data.units={
 		race: PROTOSS,
 		commander: "Alarak",
 		type: HERO,
-		commands: [
-			"AlarakDeadlyCharge",
-			"AlarakKnockback",
-			"AlarakEmpower"
-		]
+		commands: {
+			"Alarak": [
+				"AlarakDeadlyCharge",
+				"AlarakKnockback",
+				"AlarakEmpower"
+			],
+			"Alarak’s Beacon": [
+				"Rally",
+				"AlarakDeadlyCharge",
+				"AlarakKnockback",
+				"AlarakEmpower"
+			]
+		}
 	},
 	"Alarak_Probe": {
 		name: "Probe",
@@ -11249,12 +11282,17 @@ data.units={
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: HERO,
-		commands: [
-			"ZeratulBlink/ZeratulCoop",
-			"ZeratulSummonVoidSeeker/ZeratulCoop",
-			"ZeratulShadowCleave/ZeratulCoop",
-			"ProphecyVision/ZeratulCoop"
-		]
+		commands: {
+			"Zeratul": [
+				"ZeratulBlink/ZeratulCoop",
+				"ZeratulSummonVoidSeeker/ZeratulCoop",
+				"ZeratulShadowCleave/ZeratulCoop",
+				"ProphecyVision/ZeratulCoop"
+			],
+			"Zeratul’s Beacon": [
+				"Rally"
+			]
+		}
 	},
 	"Zeratul_Probe": {
 		name: "Xel’Naga Precursor",
@@ -15409,6 +15447,38 @@ data.commands={
 		y: 2,
 		x: 3
 	},
+	"MindBolt/KerriganReviveCocoon": {
+		name: "Leaping Strike",
+		hotkey: "Q",
+		icon: "btn-ability-kerrigan-leapingstrike",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"PsionicLift/KerriganReviveCocoon": {
+		name: "Psionic Shift",
+		hotkey: "W",
+		icon: "btn-ability-kerrigan-psychicshift",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"KerriganVoidCoopEconDrop/KerriganReviveCocoon": {
+		name: "Assimilation Aura",
+		hotkey: "E",
+		icon: "btn-upgrade-kerrigan-assimilationaura",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"KerriganVoidCoopCrushingGripWave/KerriganReviveCocoon": {
+		name: "Immobilization Wave",
+		hotkey: "D",
+		icon: "btn-upgrade-kerrigan-crushinggripwave",
+		mask: false,
+		y: 2,
+		x: 3
+	},
 	"Hatchery/Drone": {
 		name: "Mutate into Hatchery",
 		hotkey: "H",
@@ -16266,6 +16336,38 @@ data.commands={
 		x: 2
 	},
 	"MassRoachDrop/ZagaraVoidCoopBurrowed": {
+		name: "Infested Drop",
+		hotkey: "D",
+		icon: "talent-zagara-level02-massroachdrop",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"ZagaraVoidCoopBanelingBarrage/ZagaraReviveCocoon": {
+		name: "Baneling Barrage",
+		hotkey: "Q",
+		icon: "btn-unit-zerg-baneling",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ZagaraVoidCoopSpawnHunterKillers/ZagaraReviveCocoon": {
+		name: "Spawn Hunter Killers",
+		hotkey: "W",
+		icon: "btn-unit-zerg-hydralisk",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"ZagaraVoidCoopMassFrenzy/ZagaraReviveCocoon": {
+		name: "Mass Frenzy",
+		hotkey: "E",
+		icon: "btn-upgrade-zerg-frenzy",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"MassRoachDrop/ZagaraReviveCocoon": {
 		name: "Infested Drop",
 		hotkey: "D",
 		icon: "talent-zagara-level02-massroachdrop",
