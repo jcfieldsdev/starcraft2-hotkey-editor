@@ -520,7 +520,15 @@ data.units={
 			"CloakOnBanshee",
 			"CloakOff",
 			"Cancel"
-		]
+		],
+		overrides: {
+			"CloakOnBanshee": {
+				x: 2
+			},
+			"CloakOff": {
+				x: 3
+			}
+		}
 	},
 	"Terran_Hellbat": {
 		name: "Hellbat",
@@ -599,7 +607,15 @@ data.units={
 			"MedivacSpeedBoost/Medivac",
 			"BunkerLoad",
 			"BunkerUnloadAll"
-		]
+		],
+		overrides: {
+			"BunkerLoad": {
+				x: 2
+			},
+			"BunkerUnloadAll": {
+				x: 3
+			}
+		}
 	},
 	"Terran_Liberator": {
 		name: "Liberator",
@@ -815,6 +831,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"ResearchPersonalCloaking/GhostAcademy",
+			"ResearchEnhancedShockwaves/GhostAcademy",
 			"NukeArm/GhostAcademy",
 			"SelectBuilder",
 			"Cancel"
@@ -1184,7 +1201,15 @@ data.units={
 			"CloakOnBanshee",
 			"CloakOff",
 			"Cancel"
-		]
+		],
+		overrides: {
+			"CloakOnBanshee": {
+				x: 2
+			},
+			"CloakOff": {
+				x: 3
+			}
+		}
 	},
 	"WingsOfLiberty_Spectre": {
 		name: "Spectre",
@@ -1202,7 +1227,15 @@ data.units={
 			"CloakOff",
 			"SpectreNukeCalldown/Spectre",
 			"Cancel"
-		]
+		],
+		overrides: {
+			"CloakOnBanshee": {
+				x: 2
+			},
+			"CloakOff": {
+				x: 3
+			}
+		}
 	},
 	"WingsOfLiberty_Hellion": {
 		name: "Hellion",
@@ -1378,7 +1411,8 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: UNIT,
 		commands: [
-			"OdinBarrage/Odin"
+			"OdinBarrage/Odin",
+			"OdinNukeCalldown/Odin"
 		]
 	},
 	"WingsOfLiberty_WarBot": {
@@ -1846,7 +1880,12 @@ data.units={
 			"Stim",
 			"MorphToHellion/Hellion",
 			"MorphToHellionTank/Hellion"
-		]
+		],
+		overrides: {
+			"Stim": {
+				x: 2
+			}
+		}
 	},
 	"NovaCovertOps_Goliath": {
 		name: "Goliath",
@@ -1917,7 +1956,15 @@ data.units={
 		commands: [
 			"CloakOnBanshee",
 			"CloakOff"
-		]
+		],
+		overrides: {
+			"CloakOnBanshee": {
+				x: 0
+			},
+			"CloakOff": {
+				x: 1
+			}
+		}
 	},
 	"NovaCovertOps_Battlecruiser": {
 		name: "Battlecruiser",
@@ -1932,6 +1979,24 @@ data.units={
 			"CloakOff"
 		]
 	},
+	"NovaCovertOps_Stone": {
+		name: "Stone",
+		icon: "btn-unit-terran-ghost",
+		race: TERRAN,
+		commander: "Terran",
+		type: HERO,
+		commands: [
+			"NovaStoneTargetEnemy/NovaStoneHeroic",
+			"NovaStoneTargetEMP/NovaStoneHeroic",
+			"GhostHoldFire/NovaStoneHeroic",
+			"WeaponsFree/NovaStoneHeroic",
+			"Snipe/NovaStoneHeroic",
+			"EMP/NovaStoneHeroic",
+			"NovaStoneDefensiveMatrix/NovaStoneHeroic",
+			"NovaArmorBlinkSuitBlinkStone/NovaStoneHeroic",
+			"SuperStimpackStone"
+		]
+	},
 	"NovaCovertOps_Trooper": {
 		name: "Trooper",
 		keywords: "Marine",
@@ -1941,7 +2006,13 @@ data.units={
 		type: UNIT,
 		commands: [
 			"Stim"
-		]
+		],
+		overrides: {
+			"Stim": {
+				name: "Use Stimpack",
+				icon: "btn-ability-terran-stimpack-color",
+			}
+		}
 	},
 	"NovaCovertOps_HERC": {
 		name: "HERC",
@@ -5462,8 +5533,7 @@ data.units={
 				"ImpalerDen/HydraliskDen",
 				"Cancel"
 			],
-			"Lurker Den": [],
-			"Impaler Den": []
+			"Lurker Den / Impaler Den": []
 		}
 	},
 	"HeartOfTheSwarm_InfestationPit": {
@@ -11703,6 +11773,14 @@ data.commands={
 		y: 1,
 		x: 2
 	},
+	"GhostHoldFire/NovaStoneHeroic": {
+		name: "Hold Fire",
+		hotkey: "F",
+		icon: "btn-ability-terran-holdfire",
+		mask: true,
+		y: 1,
+		x: 2
+	},
 	"SpectreHoldFire/Spectre": {
 		name: "Hold Fire",
 		hotkey: "F",
@@ -11736,6 +11814,14 @@ data.commands={
 		x: 4
 	},
 	"WeaponsFree/Ghost_BlackOps": {
+		name: "Weapons Free",
+		hotkey: "G",
+		icon: "btn-ability-terran-weaponsfree",
+		mask: true,
+		y: 1,
+		x: 3
+	},
+	"WeaponsFree/NovaStoneHeroic": {
 		name: "Weapons Free",
 		hotkey: "G",
 		icon: "btn-ability-terran-weaponsfree",
@@ -13039,6 +13125,14 @@ data.commands={
 		y: 0,
 		x: 0
 	},
+	"ResearchEnhancedShockwaves/GhostAcademy": {
+		name: "Research Enhanced Shockwaves",
+		hotkey: "S",
+		icon: "btn-ability-terran-electricfield",
+		mask: false,
+		y: 0,
+		x: 1
+	},
 	"NukeArm/GhostAcademy": {
 		name: "Arm Silo with Nuke",
 		hotkey: "N",
@@ -13862,6 +13956,14 @@ data.commands={
 		mask: false,
 		y: 2,
 		x: 4
+	},
+	"NovaStoneTargetEnemy/NovaStoneHeroic": {
+		name: "Target Enemy",
+		hotkey: "T",
+		icon: "btn-upgrade-terran-lazertargetingsystem",
+		mask: false,
+		y: 1,
+		x: 0
 	},
 	"NovaWeaponImprovedCanisterRifleSnipe": {
 		name: "Snipe\nPenetrating Blast",
@@ -21831,6 +21933,54 @@ data.commands={
 		y: 2,
 		x: 1
 	},
+	"NovaStoneTargetEMP/NovaStoneHeroic": {
+		name: "Target EMP",
+		hotkey: "Y",
+		icon: "btn-ability-protoss-targetlock",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"Snipe/NovaStoneHeroic": {
+		name: "Sniper Round",
+		hotkey: "R",
+		icon: "btn-ability-terran-snipe-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"EMP/NovaStoneHeroic": {
+		name: "EMP Round",
+		hotkey: "E",
+		icon: "btn-ability-terran-emp-color",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"NovaStoneDefensiveMatrix/NovaStoneHeroic": {
+		name: "Defensive Matrix",
+		hotkey: "D",
+		icon: "btn-upgrade-swann-defensivematrix",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"NovaArmorBlinkSuitBlinkStone/NovaStoneHeroic": {
+		name: "Blink",
+		hotkey: "B",
+		icon: "btn-ability-protoss-blinkcharges",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"SuperStimpackStone": {
+		name: "Stim Infusion",
+		hotkey: "W",
+		icon: "btn-upgrade-nova-equipment-superstimppack",
+		mask: false,
+		y: 2,
+		x: 4
+	},
 	"TrainHERC/HERCCompound": {
 		name: "Train HERC",
 		hotkey: "E",
@@ -22226,32 +22376,9 @@ data.commands={
 };
 
 data.overrides={
-	"Terran": {
-		"ChannelSnipe/Ghost": {
-			x: 2
-		},
-		"EMP/Ghost": {
-			x: 3
-		},
-		"MedivacSpeedBoost/Medivac": {
-			x: 3
-		}
-	},
 	"WingsOfLiberty": {
 		"GhostAcademy/SCV": {
 			name: "Build Ghost Academy\nBuild Shadow Ops"
-		},
-		"Snipe/Ghost": {
-			x: 2
-		},
-		"EMP/Ghost": {
-			x: 3
-		},
-		"UltrasonicPulse/Spectre": {
-			x: 2
-		},
-		"Obliterate/Spectre": {
-			x: 3
 		},
 		"SpiderMineReplenish/Vulture": {
 			icon: "btn-techupgrade-terran-replenishablemagazine",
@@ -22415,12 +22542,10 @@ data.overrides={
 			x: 3
 		},
 		"MorphToHellion/Hellion": {
-			icon: "btn-unit-terran-hellionblackops",
-			x: 1
+			icon: "btn-unit-terran-hellionblackops"
 		},
 		"MorphToHellionTank/Hellion": {
-			icon: "btn-unit-terran-hellbatblackops",
-			x: 2
+			icon: "btn-unit-terran-hellbatblackops"
 		},
 		"SiegeMode": {
 			icon: "btn-unit-terran-siegetankblackops-sieged"

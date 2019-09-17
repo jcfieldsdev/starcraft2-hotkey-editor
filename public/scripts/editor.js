@@ -281,7 +281,7 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 	}
 
 	for (let id of card) {
-		let command=this.commands.getCommand(unit.commander, id);
+		let command=this.commands.getCommand(unit.commander, this.unit, id);
 
 		if (command==undefined) {
 			console.error("Undefined: "+id+" (command)");
@@ -889,19 +889,19 @@ Commands.prototype.convert=function() {
 	return text.trim();
 };
 
-Commands.prototype.getCommand=function(commander, id) {
+Commands.prototype.getCommand=function(commander, unit, id) {
 	if (data.commands[id]==undefined) {
 		return;
 	}
 
 	let command=Object.assign({}, data.commands[id]);
 
-	if (this.checkUserOverrides(id)) {
-		command=Object.assign(command, this.list["Commands"][id]);
-	}
-
 	if (this.checkOverrides(commander, id)) {
 		command=Object.assign(command, data.overrides[commander][id]);
+	}
+
+	if (this.checkUnitOverrides(unit, id)) {
+		command=Object.assign(command, data.units[unit].overrides[id]);
 	}
 
 	return command;
@@ -1037,6 +1037,26 @@ Commands.prototype.checkOverrides=function(commander, id, checkHotkey=false) {
 	}
 
 	if (checkHotkey&&data.overrides[commander][id].hotkey==undefined) {
+		return;
+	}
+
+	return true;
+};
+
+Commands.prototype.checkUnitOverrides=function(unit, id, checkHotkey=false) {
+	if (data.units[unit]==undefined) {
+		return;
+	}
+
+	if (data.units[unit].overrides==undefined) {
+		return;
+	}
+
+	if (data.units[unit].overrides[id]==undefined) {
+		return;
+	}
+
+	if (checkHotkey&&data.units[unit].overrides[id].hotkey==undefined) {
 		return;
 	}
 
