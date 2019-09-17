@@ -461,6 +461,11 @@ data.units={
 				"FusionCore/SCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"Terran_MULE": {
@@ -630,6 +635,7 @@ data.units={
 	},
 	"Terran_Raven": {
 		name: "Raven",
+		keywords: "Auto-Turret",
 		icon: "btn-unit-terran-raven",
 		race: TERRAN,
 		commander: "Terran",
@@ -719,7 +725,9 @@ data.units={
 		commander: "Terran",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Terran_SupplyDepot": {
@@ -731,7 +739,9 @@ data.units={
 		commands: {
 			"Raised": [
 				"SelectBuilder",
-				"Lower/SupplyDepot"
+				"Lower/SupplyDepot",
+				"Halt",
+				"Cancel"
 			],
 			"Lowered": [
 				"Raise/SupplyDepotLowered"
@@ -783,6 +793,7 @@ data.units={
 			"ResearchHiSecAutoTracking/EngineeringBay",
 			"UpgradeBuildingArmorLevel1/EngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -795,10 +806,12 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
+			"Rally",
 			"Stim",
 			"BunkerLoad",
 			"BunkerUnloadAll",
-			"Salvage/Bunker"
+			"Salvage/Bunker",
+			"Cancel"
 		]
 	},
 	"Terran_MissileTurret": {
@@ -810,7 +823,9 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/MissileTurret"
+			"Salvage/MissileTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Terran_SensorTower": {
@@ -820,7 +835,9 @@ data.units={
 		commander: "Terran",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Terran_GhostAcademy": {
@@ -834,6 +851,7 @@ data.units={
 			"ResearchEnhancedShockwaves/GhostAcademy",
 			"NukeArm/GhostAcademy",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -884,6 +902,7 @@ data.units={
 			"TerranVehicleAndShipPlatingLevel1/Armory",
 			"TerranShipWeaponsLevel1/Armory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -933,6 +952,7 @@ data.units={
 		commands: [
 			"ResearchBattlecruiserSpecializations/FusionCore",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -982,14 +1002,19 @@ data.units={
 	},
 	"WingsOfLiberty_Swann": {
 		name: "Rory Swann",
-		keywords: "Marauder",
+		keywords: "Marauder, Flaming Betty",
 		icon: "btn-unit-terran-marauderswann",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
 		type: HERO,
-		commands: [
-			"DutchPlaceTurret/Swann"
-		]
+		commands: {
+			"Rory Swann": [
+				"DutchPlaceTurret/Swann"
+			],
+			"Flaming Betty": [
+				...data.common.tower
+			]
+		}
 	},
 	"WingsOfLiberty_Stetmann": {
 		name: "Egon Stetmann",
@@ -1126,6 +1151,11 @@ data.units={
 				"FusionCore/SCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"WingsOfLiberty_MULE": {
@@ -1354,6 +1384,7 @@ data.units={
 	},
 	"WingsOfLiberty_Raven": {
 		name: "Raven",
+		keywords: "Auto-Turret",
 		icon: "btn-unit-terran-raven",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1477,7 +1508,9 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_SupplyDepot": {
@@ -1489,7 +1522,9 @@ data.units={
 		commands: {
 			"Raised": [
 				"SelectBuilder",
-				"Lower/SupplyDepot"
+				"Lower/SupplyDepot",
+				"Halt",
+				"Cancel"
 			],
 			"Lowered": [
 				"Raise/SupplyDepotLowered"
@@ -1552,6 +1587,7 @@ data.units={
 			"TerranInfantryWeaponsLevel1/EngineeringBay",
 			"TerranInfantryArmorLevel1/EngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -1564,10 +1600,12 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
+			"Rally",
 			"Stim",
 			"BunkerLoad",
 			"BunkerUnloadAll",
-			"Salvage/Bunker"
+			"Salvage/Bunker",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_PerditionTurret": {
@@ -1578,7 +1616,9 @@ data.units={
 		type: BUILDING,
 		commands: [
 			...data.common.tower,
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_MissileTurret": {
@@ -1589,7 +1629,9 @@ data.units={
 		type: BUILDING,
 		commands: [
 			...data.common.tower,
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_SensorTower": {
@@ -1599,7 +1641,9 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_HiveMindEmulator": {
@@ -1610,7 +1654,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"MindControl/HiveMindEmulator",
-			"SelectBuilder"
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_PsiDisrupter": {
@@ -1620,7 +1664,7 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_GhostAcademy": {
@@ -1634,11 +1678,13 @@ data.units={
 			"Ghost Academy": [
 				"NukeArm/GhostAcademy",
 				"SelectBuilder",
+				"Halt",
 				"Cancel"
 			],
 			"Shadow Ops": [
 				"SpectreNukeArm/GhostAcademy",
 				"SelectBuilder",
+				"Halt",
 				"Cancel"
 			]
 		}
@@ -1687,6 +1733,7 @@ data.units={
 			"TerranShipWeaponsLevel1/Armory",
 			"TerranShipPlatingLevel1/Armory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -1729,7 +1776,9 @@ data.units={
 		commander: "WingsOfLiberty",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_MercCompound": {
@@ -1749,7 +1798,9 @@ data.units={
 			"HireDuskWing/MercCompound",
 			"HireDukesRevenge/MercCompound",
 			"SelectBuilder",
-			"Rally"
+			"Rally",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"WingsOfLiberty_LaserDrill": {
@@ -1789,17 +1840,15 @@ data.units={
 		race: TERRAN,
 		commander: "NovaCovertOps",
 		type: HERO,
-		commands: {
-			"Nova": [
-				"GhostHoldFire/NovaHero",
-				"WeaponsFree/NovaHero",
-				"NovaWeaponCanisterRifleSnipe/NovaHero",
-				"NovaGadgetPulseGrenades/NovaHero",
-				"ApolloCloakOnNova/NovaHero",
-				"NovaDomination/NovaHero",
-				"HeroNukeCalldown/NovaHero"
-			]
-		}
+		commands: [
+			"GhostHoldFire/NovaHero",
+			"WeaponsFree/NovaHero",
+			"NovaWeaponCanisterRifleSnipe/NovaHero",
+			"NovaGadgetPulseGrenades/NovaHero",
+			"ApolloCloakOnNova/NovaHero",
+			"NovaDomination/NovaHero",
+			"HeroNukeCalldown/NovaHero"
+		]
 	},
 	"NovaCovertOps_SCV": {
 		name: "SCV",
@@ -1834,6 +1883,11 @@ data.units={
 				"FusionCore/SCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"NovaCovertOps_Marine": {
@@ -1922,6 +1976,7 @@ data.units={
 	},
 	"NovaCovertOps_Raven": {
 		name: "Raven",
+		keywords: "Auto-Turret, Railgun Turret",
 		icon: "btn-unit-terran-ravenblackops",
 		race: TERRAN,
 		commander: "NovaCovertOps",
@@ -2123,7 +2178,9 @@ data.units={
 		commands: {
 			"Raised": [
 				"SelectBuilder",
-				"Lower/SupplyDepot"
+				"Lower/SupplyDepot",
+				"Halt",
+				"Cancel"
 			],
 			"Lowered": [
 				"Raise/SupplyDepotLowered"
@@ -2137,7 +2194,9 @@ data.units={
 		commander: "NovaCovertOps",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"NovaCovertOps_Barracks": {
@@ -2174,6 +2233,7 @@ data.units={
 			"TerranInfantryWeaponsLevel1/EngineeringBay",
 			"TerranInfantryArmorLevel1/EngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -2186,10 +2246,12 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
+			"Rally",
 			"Stim",
 			"BunkerLoad",
 			"BunkerUnloadAll",
-			"Salvage/Bunker"
+			"Salvage/Bunker",
+			"Cancel"
 		]
 	},
 	"NovaCovertOps_MissileTurret": {
@@ -2201,7 +2263,9 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/MissileTurret"
+			"Salvage/MissileTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"NovaCovertOps_GhostAcademy": {
@@ -2213,6 +2277,7 @@ data.units={
 		commands: [
 			"NovaNukeArm/GhostAcademy",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -2250,6 +2315,7 @@ data.units={
 			"TerranVehicleAndShipWeaponsLevel1/Armory",
 			"TerranVehicleAndShipPlatingLevel1/Armory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -2285,7 +2351,9 @@ data.units={
 		commander: "NovaCovertOps",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"NovaCovertOps_HERCCompound": {
@@ -2342,6 +2410,11 @@ data.units={
 				"FusionCore/SCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"Raynor_MULE": {
@@ -2522,7 +2595,9 @@ data.units={
 		commander: "Raynor",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Raynor_SupplyDepot": {
@@ -2534,7 +2609,9 @@ data.units={
 		commands: {
 			"Raised": [
 				"SelectBuilder",
-				"Lower/SupplyDepot"
+				"Lower/SupplyDepot",
+				"Halt",
+				"Cancel"
 			],
 			"Lowered": [
 				"Raise/SupplyDepotLowered"
@@ -2588,6 +2665,7 @@ data.units={
 			"ResearchNeosteelFrame/EngineeringBay",
 			"UpgradeBuildingArmorLevel1/EngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -2600,10 +2678,12 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
+			"Rally",
 			"Stim",
 			"BunkerLoad",
 			"BunkerUnloadAll",
-			"Salvage/Bunker"
+			"Salvage/Bunker",
+			"Cancel"
 		]
 	},
 	"Raynor_MissileTurret": {
@@ -2615,7 +2695,9 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/MissileTurret"
+			"Salvage/MissileTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Raynor_Factory": {
@@ -2661,6 +2743,7 @@ data.units={
 			"ResearchVehicleWeaponRange/Armory",
 			"ResearchRegenerativeBioSteel/Armory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -2706,6 +2789,7 @@ data.units={
 		commands: [
 			"ResearchBattlecruiserSpecializations/FusionCore",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -2750,6 +2834,11 @@ data.units={
 				"Starport/SCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"Swann_Hellbat": {
@@ -2881,7 +2970,9 @@ data.units={
 		commander: "Swann",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Swann_SupplyDepot": {
@@ -2893,7 +2984,9 @@ data.units={
 		commands: {
 			"Raised": [
 				"SelectBuilder",
-				"Lower/SupplyDepot"
+				"Lower/SupplyDepot",
+				"Halt",
+				"Cancel"
 			],
 			"Lowered": [
 				"Raise/SupplyDepotLowered"
@@ -2912,11 +3005,13 @@ data.units={
 			"ResearchFireSuppressionSystems/EngineeringBay",
 			"ResearchImprovedTurretAttackSpeed/EngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
 	"Swann_PerditionTurret": {
 		name: "Perdition Turret",
+		keywords: "Flaming Betty",
 		icon: "btn-unit-terran-perditionturret",
 		race: TERRAN,
 		commander: "Swann",
@@ -2925,7 +3020,9 @@ data.units={
 			"Unburrowed": [
 				...data.common.tower,
 				"SelectBuilder",
-				"Salvage/PerditionTurret"
+				"Salvage/PerditionTurret",
+				"Halt",
+				"Cancel"
 			],
 			"Burrowed": [
 				...data.common.tower,
@@ -2936,6 +3033,7 @@ data.units={
 	},
 	"Swann_DevastationTurret": {
 		name: "Devastation Turret",
+		keywords: "Blaster Billy",
 		icon: "btn-tips-flamingbetty",
 		race: TERRAN,
 		commander: "Swann",
@@ -2943,11 +3041,14 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/KelMorianGrenadeTurret"
+			"Salvage/KelMorianGrenadeTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Swann_MissileTurret": {
 		name: "Missile Turret",
+		keywords: "Spinning Dizzy",
 		icon: "btn-building-terran-missileturrettitaniumhousing",
 		race: TERRAN,
 		commander: "Swann",
@@ -2955,7 +3056,9 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/KelMorianMissileTurret"
+			"Salvage/KelMorianMissileTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Swann_Factory": {
@@ -3008,6 +3111,7 @@ data.units={
 			"ResearchVehicleWeaponRange/Armory",
 			"ResearchRegenerativeBioSteel/Armory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -3126,6 +3230,11 @@ data.units={
 				"Starport/SCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"Nova_Marine": {
@@ -3207,6 +3316,7 @@ data.units={
 	},
 	"Nova_Raven": {
 		name: "Raven Type-II",
+		keywords: "Railgun Turret",
 		icon: "btn-unit-terran-ravenblackops",
 		race: TERRAN,
 		commander: "Nova",
@@ -3293,7 +3403,9 @@ data.units={
 		commander: "Nova",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Nova_Barracks": {
@@ -3339,6 +3451,7 @@ data.units={
 			"ResearchNeosteelFrame/EngineeringBay",
 			"UpgradeBuildingArmorLevel1/EngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -3351,7 +3464,9 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/NovaACLaserTurret"
+			"Salvage/NovaACLaserTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Nova_MissileTurret": {
@@ -3363,7 +3478,9 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/MissileTurret"
+			"Salvage/MissileTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Nova_Factory": {
@@ -3407,6 +3524,7 @@ data.units={
 			"TerranVehicleAndShipWeaponsLevel1/Armory",
 			"TerranVehicleAndShipPlatingLevel1/Armory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -3453,6 +3571,7 @@ data.units={
 			"ResearchNovaShotgunBlastRange/GhostAcademyNova",
 			"ResearchNovaSnipeRefund/GhostAcademyNova",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -3496,6 +3615,11 @@ data.units={
 				"FusionCore/HHSCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"Han_Reaper": {
@@ -3689,7 +3813,9 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/MissileTurret"
+			"Salvage/MissileTurret",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Han_StrikeFighterPlatform": {
@@ -3701,6 +3827,7 @@ data.units={
 		commands: [
 			"HHBomberAreaBomb/HHBomberPlatform",
 			"TrainHHBomber/HHBomberPlatform",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -3714,6 +3841,7 @@ data.units={
 			"TerranVehicleAndShipWeaponsLevel1/Armory",
 			"TerranVehicleAndShipPlatingLevel1/Armory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -3752,6 +3880,7 @@ data.units={
 			"ResearchBattlecruiserSpecializations/FusionCore",
 			"ResearchHHBomberNapalm/FusionCore",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -3821,7 +3950,7 @@ data.units={
 	},
 	"Tychus_Sirius": {
 		name: "James “Sirius” Sykes",
-		keywords: "Warhound",
+		keywords: "Warhound, Warhound Turret",
 		icon: "btn-unit-terran-tychuswarhound",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3962,6 +4091,11 @@ data.units={
 				"BuildTychusMedivacPlatform/TychusSCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"Tychus_CommandCenter": {
@@ -3995,7 +4129,9 @@ data.units={
 		commander: "Tychus",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Tychus_Bar": {
@@ -4014,6 +4150,7 @@ data.units={
 			"TychusGhost/TychusResearchCenter",
 			"TychusSpectre/TychusResearchCenter",
 			"TychusMedic/TychusResearchCenter",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -4031,6 +4168,7 @@ data.units={
 			"TychusSquadDetection/TychusEngineeringBay",
 			"TychusUpgradeOdinRedButton/TychusEngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -4117,7 +4255,9 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"TychusMedicTransportUnits/TychusMedivacPlatform",
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Zerg": {
@@ -4207,7 +4347,8 @@ data.units={
 				"BurrowUp"
 			],
 			"Creep Tumor": [
-				"BuildCreepTumorPropagate/CreepTumorBurrowed"
+				"BuildCreepTumorPropagate/CreepTumorBurrowed",
+				"Cancel"
 			]
 		}
 	},
@@ -4490,7 +4631,9 @@ data.units={
 		race: ZERG,
 		commander: "Zerg",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Zerg_SpawningPool": {
 		name: "Spawning Pool",
@@ -4549,7 +4692,8 @@ data.units={
 		commands: [
 			...data.common.basic,
 			"SpineCrawlerRoot/SpineCrawlerUprooted",
-			"SpineCrawlerUproot/SpineCrawler"
+			"SpineCrawlerUproot/SpineCrawler",
+			"Cancel"
 		]
 	},
 	"Zerg_SporeCrawler": {
@@ -4561,7 +4705,8 @@ data.units={
 		commands: [
 			...data.common.basic,
 			"SporeCrawlerUproot/SporeCrawler",
-			"SporeCrawlerRoot/SporeCrawlerUprooted"
+			"SporeCrawlerRoot/SporeCrawlerUprooted",
+			"Cancel"
 		]
 	},
 	"Zerg_HydraliskDen": {
@@ -4584,7 +4729,8 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"EvolveInfestorEnergyUpgrade/InfestationPit",
-			"ResearchNeuralParasite/InfestationPit"
+			"ResearchNeuralParasite/InfestationPit",
+			"Cancel"
 		]
 	},
 	"Zerg_LurkerDen": {
@@ -4632,7 +4778,8 @@ data.units={
 				"SummonNydusWorm/NydusNetwork",
 				"Rally",
 				"BunkerLoad",
-				"BunkerUnloadAll"
+				"BunkerUnloadAll",
+				"Cancel"
 			],
 			"Nydus Worm": [
 				"Stop",
@@ -4640,6 +4787,14 @@ data.units={
 				"BunkerLoad",
 				"BunkerUnloadAll"
 			]
+		},
+		overrides: {
+			"BunkerLoad": {
+				x: 0
+			},
+			"BunkerUnloadAll": {
+				x: 1
+			}
 		}
 	},
 	"Zerg_UltraliskCavern": {
@@ -4730,6 +4885,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Stukov": {
 		name: "Stukov",
+		keywords: "Infested Terran",
 		icon: "btn-unit-zerg-stukov",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -4904,7 +5060,8 @@ data.units={
 				"BurrowUp"
 			],
 			"Creep Tumor": [
-				"BuildCreepTumorPropagate/CreepTumorBurrowed"
+				"BuildCreepTumorPropagate/CreepTumorBurrowed",
+				"Cancel"
 			]
 		}
 	},
@@ -5326,6 +5483,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_BroodLord": {
 		name: "Brood Lord",
+		keywords: "Broodling",
 		icon: "btn-unit-zerg-broodlord",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -5444,7 +5602,9 @@ data.units={
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"HeartOfTheSwarm_SpawningPool": {
 		name: "Spawning Pool",
@@ -5452,7 +5612,9 @@ data.units={
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"HeartOfTheSwarm_EvolutionChamber": {
 		name: "Evolution Chamber",
@@ -5473,7 +5635,9 @@ data.units={
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"HeartOfTheSwarm_BanelingNest": {
 		name: "Spawning Pool",
@@ -5481,7 +5645,9 @@ data.units={
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"HeartOfTheSwarm_SpineCrawler": {
 		name: "Spine Crawler",
@@ -5492,7 +5658,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SpineCrawlerUproot/SpineCrawler"
+				"SpineCrawlerUproot/SpineCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -5509,7 +5676,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SporeCrawlerUproot/SporeCrawler"
+				"SporeCrawlerUproot/SporeCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -5542,7 +5710,9 @@ data.units={
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"HeartOfTheSwarm_Spire": {
 		name: "Spire",
@@ -5577,7 +5747,9 @@ data.units={
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"HeartOfTheSwarm_Chrysalis": {
 		name: "Kerrigan’s Chrysalis",
@@ -5820,7 +5992,8 @@ data.units={
 				"BurrowUp"
 			],
 			"Creep Tumor": [
-				"BuildCreepTumorPropagate/CreepTumorBurrowed"
+				"BuildCreepTumorPropagate/CreepTumorBurrowed",
+				"Cancel"
 			]
 		}
 	},
@@ -5996,7 +6169,9 @@ data.units={
 		race: ZERG,
 		commander: "Kerrigan",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Kerrigan_SpawningPool": {
 		name: "Spawning Pool",
@@ -6037,7 +6212,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SpineCrawlerUproot/SpineCrawler"
+				"SpineCrawlerUproot/SpineCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -6054,7 +6230,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SporeCrawlerUproot/SporeCrawler"
+				"SporeCrawlerUproot/SporeCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -6129,7 +6306,8 @@ data.units={
 				"ZagaraVoidCoopNydusWorm/NydusNetwork",
 				"Rally",
 				"BunkerLoad",
-				"BunkerUnloadAll"
+				"BunkerUnloadAll",
+				"Cancel"
 			],
 			"Omega Worm": [
 				"Stop",
@@ -6137,6 +6315,14 @@ data.units={
 				"BunkerLoad",
 				"BunkerUnloadAll"
 			]
+		},
+		overrides: {
+			"BunkerLoad": {
+				x: 0
+			},
+			"BunkerUnloadAll": {
+				x: 1
+			}
 		}
 	},
 	"Kerrigan_UltraliskCavern": {
@@ -6148,7 +6334,8 @@ data.units={
 		commands: [
 			"EvolveChitinousPlating/UltraliskCavern",
 			"EvolveBurrowCharge/UltraliskCavern",
-			"EvolveTissueAssimilation/UltraliskCavern"
+			"EvolveTissueAssimilation/UltraliskCavern",
+			"Cancel"
 		]
 	},
 	"Zagara": {
@@ -6260,7 +6447,8 @@ data.units={
 				"BurrowUp"
 			],
 			"Creep Tumor": [
-				"BuildCreepTumorPropagate/CreepTumorBurrowed"
+				"BuildCreepTumorPropagate/CreepTumorBurrowed",
+				"Cancel"
 			]
 		}
 	},
@@ -6455,7 +6643,9 @@ data.units={
 		race: ZERG,
 		commander: "Zagara",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Zagara_SpawningPool": {
 		name: "Spawning Pool",
@@ -6513,7 +6703,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SpineCrawlerUproot/SpineCrawler"
+				"SpineCrawlerUproot/SpineCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -6530,7 +6721,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SporeCrawlerUproot/SporeCrawler"
+				"SporeCrawlerUproot/SporeCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -6546,7 +6738,8 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"Stop",
-			"BileLauncherBombardment/BileLauncherZagara"
+			"BileLauncherBombardment/BileLauncherZagara",
+			"Cancel"
 		]
 	},
 	"Zagara_ScourgeNest": {
@@ -6642,7 +6835,8 @@ data.units={
 				"BurrowUp"
 			],
 			"Creep Tumor": [
-				"BuildCreepTumorPropagate/CreepTumorBurrowed"
+				"BuildCreepTumorPropagate/CreepTumorBurrowed",
+				"Cancel"
 			]
 		}
 	},
@@ -6854,7 +7048,9 @@ data.units={
 		race: ZERG,
 		commander: "Abathur",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Abathur_RoachWarren": {
 		name: "Roach Warren",
@@ -6895,7 +7091,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SpineCrawlerUproot/SpineCrawler"
+				"SpineCrawlerUproot/SpineCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -6912,7 +7109,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SporeCrawlerUproot/SporeCrawler"
+				"SporeCrawlerUproot/SporeCrawler",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -6930,7 +7128,8 @@ data.units={
 			"HotSPressurizedGlands/InfestationPit",
 			"EvolveViperImprovedCastRange/InfestationPit",
 			"EvolveInfestorEnergyUpgrade/InfestationPit",
-			"ResearchNeuralParasite/InfestationPit"
+			"ResearchNeuralParasite/InfestationPit",
+			"Cancel"
 		]
 	},
 	"Abathur_Spire": {
@@ -6977,7 +7176,8 @@ data.units={
 				"ZagaraVoidCoopNydusWorm/NydusNetwork",
 				"Rally",
 				"BunkerLoad",
-				"BunkerUnloadAll"
+				"BunkerUnloadAll",
+				"Cancel"
 			],
 			"Omega Worm": [
 				"Stop",
@@ -6985,6 +7185,14 @@ data.units={
 				"BunkerLoad",
 				"BunkerUnloadAll"
 			]
+		},
+		overrides: {
+			"BunkerLoad": {
+				x: 0
+			},
+			"BunkerUnloadAll": {
+				x: 1
+			}
 		}
 	},
 	"Abathur_ToxicNest": {
@@ -6994,7 +7202,8 @@ data.units={
 		commander: "Abathur",
 		type: BUILDING,
 		commands: [
-			"ToxicNestExplode/ToxicNest"
+			"ToxicNestExplode/ToxicNest",
+			"Cancel"
 		]
 	},
 	"Stukov": {
@@ -7037,6 +7246,11 @@ data.units={
 				"SIStarport/SISCV",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
 		}
 	},
 	"Stukov_Civilian": {
@@ -7223,7 +7437,9 @@ data.units={
 		commander: "Stukov",
 		type: BUILDING,
 		commands: [
-			"SelectBuilder"
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
 		]
 	},
 	"Stukov_ColonistCompound": {
@@ -7240,7 +7456,8 @@ data.units={
 				"SelectBuilder",
 				"SIInfestedCivilian/SICivilianStructure",
 				"SIStukovPlaceHordeRally/SICivilianStructure",
-				"SIUproot/SICivilianStructure"
+				"SIUproot/SICivilianStructure",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -7261,7 +7478,8 @@ data.units={
 				"SelectBuilder",
 				"SIStukovPlaceHordeRally/SIBarracks",
 				"SITechLabBarracks/SIBarracks",
-				"SIUproot/SIBarracks"
+				"SIUproot/SIBarracks",
+				"Cancel"
 			],
 			"Tech Lab": [
 				"EvolveSIMarineTrooperImprovedRange/SIBarracksTechLab",
@@ -7287,6 +7505,7 @@ data.units={
 			"ResearchInfestedBunkerLifeRegen/SIEngineeringBay",
 			"ResearchInfestedBunkerArmor/SIEngineeringBay",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -7304,13 +7523,16 @@ data.units={
 				"SIStukovPlaceHordeRally/SIInfestedBunker",
 				"BunkerLoad",
 				"BunkerUnloadAll",
-				"SIInfestedBunkerRoot/SIInfestedBunkerUprooted"
+				"SIInfestedBunkerRoot/SIInfestedBunkerUprooted",
+				"Halt",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.basic,
 				"BunkerLoad",
 				"BunkerUnloadAll",
-				"SIInfestedBunkerUproot/SIInfestedBunker"
+				"SIInfestedBunkerUproot/SIInfestedBunker",
+				"Cancel"
 			]
 		}
 	},
@@ -7325,7 +7547,8 @@ data.units={
 				...data.common.tower,
 				"SelectBuilder",
 				"Salvage/SIMissileTurret",
-				"SIUproot/SIMissileTurret"
+				"SIUproot/SIMissileTurret",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -7374,6 +7597,7 @@ data.units={
 			"TerranVehicleAndShipWeaponsLevel1/SIArmory",
 			"TerranVehicleAndShipPlatingLevel1/SIArmory",
 			"SelectBuilder",
+			"Halt",
 			"Cancel"
 		]
 	},
@@ -7523,6 +7747,7 @@ data.units={
 	},
 	"Dehaka_Igniter": {
 		name: "Primal Igniter",
+		keywords: "Roach",
 		icon: "btn-unit-collection-primal-roachupgrade",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7590,7 +7815,7 @@ data.units={
 	},
 	"Dehaka_SwarmHost": {
 		name: "Primal Host",
-		keywords: "Locust",
+		keywords: "Swarm Host, Locust",
 		icon: "btn-unit-collection-primal-creeperhost",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7613,6 +7838,7 @@ data.units={
 	},
 	"Dehaka_CreeperHost": {
 		name: "Creeper Host",
+		keywords: "Swarm Host",
 		icon: "btn-unit-collection-primal-swarmhost",
 		race: ZERG,
 		commander: "Dehaka",
@@ -7694,7 +7920,9 @@ data.units={
 		race: ZERG,
 		commander: "Dehaka",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Dehaka_Barracks": {
 		name: "Primal Warden",
@@ -7743,7 +7971,8 @@ data.units={
 			"DehakaRoachMoveSpeed/DehakaGlevigStructure",
 			"DehakaGlevigRoachFireBreath/DehakaGlevigStructure",
 			"ResearchDehakaHydraliskSpeed/DehakaGlevigStructure",
-			"ResearchDehakaImpalerTenderize/DehakaGlevigStructure"
+			"ResearchDehakaImpalerTenderize/DehakaGlevigStructure",
+			"Cancel"
 		]
 	},
 	"Dehaka_MurvarDen": {
@@ -7758,7 +7987,8 @@ data.units={
 			"ResearchDehakaMutaliskRespawnOnDeath/DehakaMurvarStructure",
 			"ResearchDehakaGuardianExplosiveBomb/DehakaMurvarStructure",
 			"ResearchDehakaGuardianFury/DehakaMurvarStructure",
-			"DehakaMurvarCreeperAir/DehakaMurvarStructure"
+			"DehakaMurvarCreeperAir/DehakaMurvarStructure",
+			"Cancel"
 		]
 	},
 	"Dehaka_DakrunDen": {
@@ -7772,7 +8002,8 @@ data.units={
 			"ResearchDehakaUltraliskRegen/DehakaDakrunStructure",
 			"ResearchDehakaUltraliskBash/DehakaDakrunStructure",
 			"ResearchDehakaTyrannozorFanOfKnives/DehakaDakrunStructure",
-			"ResearchDehakaTyrannozorArmorAura/DehakaDakrunStructure"
+			"ResearchDehakaTyrannozorArmorAura/DehakaDakrunStructure",
+			"Cancel"
 		]
 	},
 	"Dehaka_Wurm": {
@@ -8087,9 +8318,6 @@ data.units={
 			],
 			"Mecha Broodling": [
 				...data.common.basic
-			],
-			"Mecha Locusceptor": [
-				...data.common.basic
 			]
 		}
 	},
@@ -8174,7 +8402,9 @@ data.units={
 		race: ZERG,
 		commander: "Stetmann",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Stetmann_SpawningPool": {
 		name: "Mecha Spawning Pool",
@@ -8226,7 +8456,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SpineCrawlerUprootStetmann/SpineCrawlerStetmann"
+				"SpineCrawlerUprootStetmann/SpineCrawlerStetmann",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -8243,7 +8474,8 @@ data.units={
 		commands: {
 			"Rooted": [
 				...data.common.tower,
-				"SporeCrawlerUprootStetmann/SporeCrawlerStetmann"
+				"SporeCrawlerUprootStetmann/SporeCrawlerStetmann",
+				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.flying,
@@ -8352,16 +8584,13 @@ data.units={
 		type: BUILDING,
 		commands: {
 			"F.A.S.T. Configuration": [
-				"FASTOverloadStetmann/PowerTowerStetmann",
-				"Cancel"
+				"FASTOverloadStetmann/PowerTowerStetmann"
 			],
 			"H.U.G.S. Configuration": [
-				"HUGSOverloadStetmann/PowerTowerStetmann",
-				"Cancel"
+				"HUGSOverloadStetmann/PowerTowerStetmann"
 			],
 			"J.U.I.C.E. Configuration": [
-				"JUICEOverloadStetmann/PowerTowerStetmann",
-				"Cancel"
+				"JUICEOverloadStetmann/PowerTowerStetmann"
 			]
 		}
 	},
@@ -8660,7 +8889,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Protoss",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Protoss_Pylon": {
 		name: "Pylon",
@@ -8668,7 +8899,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Protoss",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Protoss_Gateway": {
 		name: "Gateway",
@@ -8696,7 +8929,8 @@ data.units={
 				"WarpInAdept/WarpGate",
 				"HighTemplar",
 				"DarkTemplar",
-				"MorphBackToGateway/WarpGate"
+				"MorphBackToGateway/WarpGate",
+				"Cancel"
 			]
 		}
 	},
@@ -8708,7 +8942,8 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"Stop",
-			"ShieldBatteryRecharge/ShieldBattery"
+			"ShieldBatteryRecharge/ShieldBattery",
+			"Cancel"
 		]
 	},
 	"Protoss_Forge": {
@@ -8731,7 +8966,8 @@ data.units={
 		commander: "Protoss",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"Protoss_CyberneticsCore": {
@@ -9429,7 +9665,9 @@ data.units={
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"LegacyOfTheVoid_Pylon": {
 		name: "Pylon",
@@ -9437,7 +9675,9 @@ data.units={
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"LegacyOfTheVoid_Gateway": {
 		name: "Gateway",
@@ -9463,7 +9703,8 @@ data.units={
 				"Stalker",
 				"HighTemplar",
 				"DarkTemplar",
-				"MorphBackToGateway/WarpGate"
+				"MorphBackToGateway/WarpGate",
+				"Cancel"
 			]
 		}
 	},
@@ -9475,7 +9716,8 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"Stop",
-			"ShieldBatteryRecharge/ShieldBattery"
+			"ShieldBatteryRecharge/ShieldBattery",
+			"Cancel"
 		]
 	},
 	"LegacyOfTheVoid_Forge": {
@@ -9498,7 +9740,8 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"LegacyOfTheVoid_Monolith": {
@@ -9508,7 +9751,8 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"LegacyOfTheVoid_CyberneticsCore": {
@@ -9529,7 +9773,9 @@ data.units={
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"LegacyOfTheVoid_DarkShrine": {
 		name: "Dark Shrine",
@@ -9537,7 +9783,9 @@ data.units={
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"LegacyOfTheVoid_RoboticsFacility": {
 		name: "Robotics Facility",
@@ -9557,7 +9805,8 @@ data.units={
 			"Warp Robotics Facility": [
 				"Immortal/RoboticsFacilityWarp",
 				"Colossus/RoboticsFacilityWarp",
-				"MorphBackToRoboticsFacility/RoboticsFacilityWarp"
+				"MorphBackToRoboticsFacility/RoboticsFacilityWarp",
+				"Cancel"
 			]
 		}
 	},
@@ -9567,7 +9816,9 @@ data.units={
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"LegacyOfTheVoid_Stargate": {
 		name: "Stargate",
@@ -9589,7 +9840,8 @@ data.units={
 				"Phoenix/StargateWarp",
 				"VoidRay/StargateWarp",
 				"Carrier/StargateWarp",
-				"MorphBackToStargate/StargateWarp"
+				"MorphBackToStargate/StargateWarp",
+				"Cancel"
 			]
 		}
 	},
@@ -9599,7 +9851,9 @@ data.units={
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Artanis": {
 		name: "Artanis",
@@ -9758,7 +10012,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Artanis",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Artanis_Pylon": {
 		name: "Pylon",
@@ -9766,7 +10022,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Artanis",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Artanis_Gateway": {
 		name: "Gateway",
@@ -9788,7 +10046,8 @@ data.units={
 				"Zealot",
 				"Stalker",
 				"HighTemplar",
-				"MorphBackToGateway/WarpGate"
+				"MorphBackToGateway/WarpGate",
+				"Cancel"
 			]
 		}
 	},
@@ -9812,7 +10071,8 @@ data.units={
 		commander: "Artanis",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"Artanis_CyberneticsCore": {
@@ -9874,7 +10134,8 @@ data.units={
 				"Immortal/RoboticsFacilityWarp",
 				"Colossus/RoboticsFacilityWarp",
 				"Observer/RoboticsFacilityWarp",
-				"MorphBackToRoboticsFacility/RoboticsFacilityWarp"
+				"MorphBackToRoboticsFacility/RoboticsFacilityWarp",
+				"Cancel"
 			]
 		}
 	},
@@ -9910,7 +10171,8 @@ data.units={
 			"Warp Stargate": [
 				"Phoenix/StargateWarp",
 				"VoidRay/StargateWarp",
-				"MorphBackToStargate/StargateWarp"
+				"MorphBackToStargate/StargateWarp",
+				"Cancel"
 			]
 		}
 	},
@@ -10075,7 +10337,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Vorazun",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Vorazun_Pylon": {
 		name: "Pylon",
@@ -10083,7 +10347,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Vorazun",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Vorazun_Gateway": {
 		name: "Gateway",
@@ -10107,7 +10373,8 @@ data.units={
 				"Stalker",
 				"DarkTemplar",
 				"DarkArchon/WarpGate",
-				"MorphBackToGateway/WarpGate"
+				"MorphBackToGateway/WarpGate",
+				"Cancel"
 			]
 		}
 	},
@@ -10131,7 +10398,8 @@ data.units={
 		commander: "Vorazun",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"Vorazun_CyberneticsCore": {
@@ -10211,7 +10479,8 @@ data.units={
 		commander: "Vorazun",
 		type: BUILDING,
 		commands: [
-			"DarkPylonRecall/DarkPylon"
+			"DarkPylonRecall/DarkPylon",
+			"Cancel"
 		]
 	},
 	"Karax": {
@@ -10364,7 +10633,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Karax",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Karax_Pylon": {
 		name: "Pylon",
@@ -10372,7 +10643,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Karax",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Karax_Gateway": {
 		name: "Gateway",
@@ -10392,7 +10665,8 @@ data.units={
 			"Warp Gate": [
 				"Zealot",
 				"Sentry",
-				"MorphBackToGateway/WarpGate"
+				"MorphBackToGateway/WarpGate",
+				"Cancel"
 			]
 		}
 	},
@@ -10405,7 +10679,8 @@ data.units={
 		commands: [
 			"Stop",
 			"ShieldBatteryRecharge/ShieldBattery",
-			"ShieldBatteryStructureBarrier/ShieldBattery"
+			"ShieldBatteryStructureBarrier/ShieldBattery",
+			"Cancel"
 		]
 	},
 	"Karax_Forge": {
@@ -10431,7 +10706,8 @@ data.units={
 		commander: "Karax",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"Karax_Monolith": {
@@ -10441,7 +10717,8 @@ data.units={
 		commander: "Karax",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"Karax_CyberneticsCore": {
@@ -10570,6 +10847,11 @@ data.units={
 				"AlarakKnockback",
 				"AlarakEmpower"
 			]
+		},
+		overrides: {
+			"Rally": {
+				y: 2
+			}
 		}
 	},
 	"Alarak_Probe": {
@@ -10720,7 +11002,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Alarak",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Alarak_Pylon": {
 		name: "Pylon",
@@ -10728,7 +11012,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Alarak",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Alarak_Gateway": {
 		name: "Gateway",
@@ -10752,7 +11038,8 @@ data.units={
 				"Sentry",
 				"Stalker",
 				"HighTemplar",
-				"MorphBackToGateway/WarpGate"
+				"MorphBackToGateway/WarpGate",
+				"Cancel"
 			]
 		}
 	},
@@ -10778,7 +11065,8 @@ data.units={
 		commander: "Alarak",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"Alarak_CyberneticsCore": {
@@ -11158,7 +11446,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Fenix",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Fenix_Pylon": {
 		name: "Pylon",
@@ -11166,7 +11456,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Fenix",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Fenix_Gateway": {
 		name: "Gateway",
@@ -11188,7 +11480,8 @@ data.units={
 				"Zealot",
 				"Sentry",
 				"Stalker",
-				"MorphBackToGateway/WarpGate"
+				"MorphBackToGateway/WarpGate",
+				"Cancel"
 			]
 		}
 	},
@@ -11215,7 +11508,8 @@ data.units={
 		commander: "Fenix",
 		type: BUILDING,
 		commands: [
-			...data.common.tower
+			...data.common.tower,
+			"Cancel"
 		]
 	},
 	"Fenix_CyberneticsCore": {
@@ -11362,6 +11656,11 @@ data.units={
 			"Zeratul’s Beacon": [
 				"Rally"
 			]
+		},
+		overrides: {
+			"Rally": {
+				y: 2
+			}
 		}
 	},
 	"Zeratul_Probe": {
@@ -11596,7 +11895,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Zeratul_Gateway": {
 		name: "Xel’Naga Passageway",
@@ -11623,7 +11924,8 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"ZeratulPhaseCannonProjectionPassive/ZeratulPhotonCannon",
-			"ZeratulStructureBarrier/ZeratulPhotonCannon"
+			"ZeratulStructureBarrier/ZeratulPhotonCannon",
+			"Cancel"
 		]
 	},
 	"Zeratul_Monolith": {
@@ -11635,7 +11937,8 @@ data.units={
 		commands: [
 			...data.common.tower,
 			"ZeratulKhaydarinMonolithWarp/ZeratulKhaydarinMonolith",
-			"ZeratulStructureBarrier/ZeratulKhaydarinMonolith"
+			"ZeratulStructureBarrier/ZeratulKhaydarinMonolith",
+			"Cancel"
 		]
 	},
 	"Zeratul_CyberneticsCore": {
@@ -11645,7 +11948,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Zeratul_DarkShrine": {
 		name: "Void Shrine",
@@ -11654,7 +11959,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Zeratul_RoboticsFacility": {
 		name: "Constructs Facility",
@@ -11679,7 +11986,9 @@ data.units={
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: BUILDING,
-		commands: []
+		commands: [
+			"Cancel"
+		]
 	},
 	"Zeratul_ArtifactReserve": {
 		name: "Artifact Reserve",
@@ -12019,7 +12328,7 @@ data.commands={
 		icon: "btn-command-cancel",
 		mask: true,
 		y: 2,
-		x: 4
+		x: 3
 	},
 	"Cancel": {
 		name: "Cancel",
@@ -17659,7 +17968,7 @@ data.commands={
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
 		y: 2,
-		x: 3
+		x: 2
 	},
 	"SIStukovPlaceHordeRally/SICivilianStructure": {
 		name: "Deploy Psi Emitter",

@@ -648,36 +648,28 @@ Editor.prototype.checkAllConflicts=function() {
 };
 
 Editor.prototype.findUnitsNamed=function(query) {
-	let matches=new Set(), words=[];
+	query=query.toLowerCase().trim();
 
-	query=query.trim();
-
-	if (query.match(/^".+"$/)) { // searches for exact match if query is quoted
-		words.push(query.replace(/"/g, ""));
-	} else {
-		words=query.toLowerCase().split(/\s+/);
+	// minimum three characters to search to prevent huge result lists
+	if (query.length<3) {
+		return;
 	}
 
-	for (let word of words) {
-		// minimum three characters to search to prevent huge result lists
-		if (word.length<3) {
+	let matches=new Set();
+
+	for (let [unit, properties] of Object.entries(data.units)) {
+		if (properties.name==undefined) {
 			continue;
 		}
 
-		for (let [unit, properties] of Object.entries(data.units)) {
-			if (properties.name==undefined) {
-				continue;
-			}
+		let name=properties.displayName||properties.name;
+		name=prepareString(name);
 
-			let name=properties.displayName||properties.name;
-			name=prepareString(name);
+		let keywords=properties.keywords||"";
+		keywords=prepareString(keywords);
 
-			let keywords=properties.keywords||"";
-			keywords=prepareString(keywords);
-
-			if (name.indexOf(word)!=-1||keywords.indexOf(word)!=-1) {
-				matches.add(unit);
-			}
+		if (name.indexOf(query)!=-1||keywords.indexOf(query)!=-1) {
+			matches.add(unit);
 		}
 	}
 
