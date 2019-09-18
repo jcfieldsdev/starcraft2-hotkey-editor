@@ -652,6 +652,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 
 	// minimum three characters to search to prevent huge result lists
 	if (query.length<3) {
+		this.clearSearch();
 		return;
 	}
 
