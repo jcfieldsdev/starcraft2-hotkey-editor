@@ -3421,7 +3421,8 @@ data.units={
 				"Firebat/Barracks",
 				"SelectBuilder",
 				"TechLabBarracks/Barracks",
-				"Lift"
+				"Lift",
+				"Cancel"
 			],
 			"Tech Lab": [
 				"ResearchShieldWall/BarracksTechLab",
@@ -3496,7 +3497,8 @@ data.units={
 				"SiegeTank/Factory",
 				"SelectBuilder",
 				"TechLabFactory/Factory",
-				"Lift"
+				"Lift",
+				"Cancel"
 			],
 			"Tech Lab": [
 				"ResearchHighCapacityBarrels/FactoryTechLab",
@@ -3541,7 +3543,8 @@ data.units={
 				"Raven/Starport",
 				"SelectBuilder",
 				"TechLabStarport/Starport",
-				"Lift"
+				"Lift",
+				"Cancel"
 			],
 			"Tech Lab": [
 				"ResearchBansheeCloak/StarportTechLab",

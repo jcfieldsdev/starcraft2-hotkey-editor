@@ -8,8 +8,10 @@
 const ROWS=3;
 const COLS=5;
 
-// defaults
+// initial unit on load
 const DEFAULT_UNIT="Raynor_SCV";
+
+// file names and locations
 const DEFAULT_SAVE_NAME="Hotkeys.SC2Hotkeys";
 const ICONS_DIR="icons/";
 const ICONS_EXT=".png";
