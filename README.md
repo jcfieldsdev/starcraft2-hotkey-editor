@@ -13,3 +13,4 @@ A [hotkey editor for *Starcraft II*](https://jcfields.gitlab.io/starcraft2-hotk
 ## See also
 
 - [*Warcraft III* Hotkey Editor](https://gitlab.com/jcfields/warcraft3-hotkey-editor)—A similar editor on which this project is based.
+- [*Starcraft II* Co-op Randomizer](https://gitlab.com/jcfields/starcraft2-coop-randomizer)—Another helpful utility for co-op mode.
