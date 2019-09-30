@@ -85,7 +85,7 @@ window.addEventListener("load", function() {
 		overlays.save.setText(commands.convert());
 		overlays.save.show();
 	});
-	document.getElementById("file").addEventListener("input", function(event) {
+	document.getElementById("file").addEventListener("change", function(event) {
 		let file=event.target.files[0];
 
 		if (file) {
