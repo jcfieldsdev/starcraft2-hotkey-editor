@@ -34,10 +34,10 @@ window.addEventListener("load", function() {
 	const commands=new Commands();
 	const editor=new Editor(commands);
 
-	let saved=store.load();
+	let mem=store.load();
 
-	if (saved!=null) {
-		commands.load(saved);
+	if (mem!=null) {
+		commands.load(mem);
 	}
 
 	editor.load();
@@ -1010,14 +1010,16 @@ Commands.prototype.checkConflicts=function(id) {
 };
 
 Commands.prototype.checkDefaults=function(commander, id) {
-	let defaultHotkeys=data.commands[id].hotkey;
+	let defaultHotkey=data.commands[id].hotkey;
 
 	if (this.checkOverrides(commander, id, true)) {
-		defaultHotkeys=data.overrides[commander][id].hotkey;
+		defaultHotkey=data.overrides[commander][id].hotkey;
 	}
 
+	let hotkey=this.getHotkeys(commander, id).join(DELIMITER);
+
 	// removes user hotkey if same as default (to avoid redundant entries)
-	if (this.getHotkeys(commander, id).join(DELIMITER)==defaultHotkeys) {
+	if (!this.getSuffix()&&hotkey==defaultHotkey) {
 		this.clear(id);
 	}
 };
@@ -1072,6 +1074,23 @@ Commands.prototype.checkUserOverrides=function(id, checkHotkey=false) {
 	}
 
 	return true;
+};
+
+// gets suffix used for non-standard base layouts
+Commands.prototype.getSuffix=function() {
+	if (this.list["Settings"]==undefined) {
+		return;
+	}
+
+	if (this.list["Settings"]["Suffix"]==undefined) {
+		return;
+	}
+
+	// _NRS standard for lefties
+	// _GLS grid
+	// _GRS grid for lefties
+	// _SC1 classic
+	return this.list["Settings"]["Suffix"];
 };
 
 Commands.prototype.removeLast=function(command) {
@@ -1149,7 +1168,7 @@ Storage.prototype.load=function() {
 };
 
 Storage.prototype.save=function(list) {
-	if (!list.hasOwnProperty("Commands")) {
+	if (list["Commands"]==undefined) {
 		return;
 	}
 
