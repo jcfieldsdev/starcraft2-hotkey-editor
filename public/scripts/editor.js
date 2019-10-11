@@ -244,30 +244,30 @@ Editor.prototype.unitEditor=function() {
 	h2.appendChild(document.createTextNode(unit.name));
 	document.getElementById("unit").replaceWith(h2);
 
-	let cards=[], legends=[];
+	let commands=[], legends=[];
 	this.buttons=[];
 
 	if (Array.isArray(unit.commands)) {
-		cards.push(unit.commands);
+		commands.push(unit.commands);
 		legends.push(unit.name);
 	} else {
-		cards=Object.values(unit.commands);
+		commands=Object.values(unit.commands);
 		legends=Object.keys(unit.commands);
 	}
 
-	for (let n of cards.keys()) {
+	for (let n of commands.keys()) {
 		this.setLegend(legends[n], n);
-		this.createCommandCard(unit, cards[n], n);
+		this.createCommandCard(unit, commands[n], n);
 	}
 
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
 
-Editor.prototype.createCommandCard=function(unit, card, n) {
+Editor.prototype.createCommandCard=function(unit, commands, n) {
 	// adds common commands
 	if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-		card=card.concat(data.common.basic);
+		commands=commands.concat(data.common.basic);
 	}
 
 	let fieldset=document.getElementById("card"+n);
@@ -282,7 +282,7 @@ Editor.prototype.createCommandCard=function(unit, card, n) {
 		fieldset.classList.remove("hidden");
 	}
 
-	for (let id of card) {
+	for (let id of commands) {
 		let command=this.commands.getCommand(unit.commander, this.unit, id);
 
 		if (command==undefined) {
@@ -471,7 +471,7 @@ Editor.prototype.removeField=function() {
 	if (element.childElementCount>1) {
 		element.removeChild(element.lastChild);
 		this.commands.removeLast(this.command);
-		this.commands.checkDefaults(this.commander, this.command);
+		this.commands.checkDefaults(this.command, this.commander);
 	} else { // last field
 		element.lastChild.value="";
 		this.commands.setHotkeys(this.command, []);
@@ -517,7 +517,7 @@ Editor.prototype.setHotkey=function(input, event) {
 	this.commands.setHotkeys(this.command, fields);
 
 	input.select();
-	this.commands.checkDefaults(this.commander, this.command);
+	this.commands.checkDefaults(this.command, this.commander);
 
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
@@ -816,10 +816,28 @@ function Commands() {
 	this.list={
 		"Commands": {}
 	};
+	this.suffix="";
 }
 
-Commands.prototype.load=function(list) {
+Commands.prototype.load=function(list={}) {
 	this.list=list;
+
+	if (this.list["Commands"]==undefined) {
+		this.list["Commands"]={};
+	}
+
+	// gets suffix used for non-standard base layouts
+	if (this.list["Settings"]==undefined) {
+		this.suffix="";
+	} else if (this.list["Settings"]["Suffix"]==undefined) {
+		this.suffix="";
+	} else {
+		// _NRS standard for lefties
+		// _GLS grid
+		// _GRS grid for lefties
+		// _SC1 classic
+		this.suffix=this.list["Settings"]["Suffix"];
+	}
 };
 
 // converts from hotkey file format to object
@@ -849,7 +867,7 @@ Commands.prototype.parse=function(text) {
 			command=line.replace(pattern, "$1");
 			hotkey=line.replace(pattern, "$2");
 			block[command]={};
-			block[command].hotkey=hotkey;
+			block[command]=hotkey;
 		}
 	}
 
@@ -860,7 +878,7 @@ Commands.prototype.parse=function(text) {
 Commands.prototype.convert=function() {
 	let text=Object.keys(this.list).reduce(function(text, section) {
 		let list=Object.keys(this.list[section]).reduce(function(list, id) {
-			list.push({id, hotkey: this.list[section][id].hotkey});
+			list.push({id, hotkey: this.list[section][id]});
 			return list;
 		}.bind(this), []);
 
@@ -891,11 +909,11 @@ Commands.prototype.getCommand=function(commander, unit, id) {
 
 	let command=Object.assign({}, data.commands[id]);
 
-	if (this.checkOverrides(commander, id)) {
+	if (this.checkCommanderOverride(id, commander, false)) {
 		command=Object.assign(command, data.overrides[commander][id]);
 	}
 
-	if (this.checkUnitOverrides(unit, id)) {
+	if (this.checkUnitOverride(id, unit)) {
 		command=Object.assign(command, data.units[unit].overrides[id]);
 	}
 
@@ -903,12 +921,16 @@ Commands.prototype.getCommand=function(commander, unit, id) {
 };
 
 Commands.prototype.getHotkeys=function(commander, id) {
-	let value="";
+	let value="", branch=0;
 
-	if (this.checkUserOverrides(id, true)) {
-		value=this.list["Commands"][id].hotkey;
-	} else if (this.checkOverrides(commander, id, true)) {
+	if (this.checkUserOverride(id, true)) {
+		value=this.list["Commands"][id];
+	} else if (this.checkCommanderSuffixOverride(id, commander)) {
+		value=data.overrides[commander][id]["hotkey"+this.suffix];
+	} else if (this.checkCommanderOverride(id, commander, true)) {
 		value=data.overrides[commander][id].hotkey;
+	} else if (this.checkSuffixOverride(id)) {
+		value=data.commands[id]["hotkey"+this.suffix];
 	} else {
 		value=data.commands[id].hotkey;
 	}
@@ -933,7 +955,7 @@ Commands.prototype.getHotkeys=function(commander, id) {
 };
 
 Commands.prototype.setHotkeys=function(command, hotkeys) {
-	if (!this.checkUserOverrides(command)) {
+	if (!this.checkUserOverride(command)) {
 		this.clear(command);
 	}
 
@@ -955,8 +977,8 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 		return symbol;
 	});
 
-	this.list["Commands"][command]={};
-	this.list["Commands"][command].hotkey=hotkeys.join(DELIMITER);
+	this.list["Commands"][command]="";
+	this.list["Commands"][command]=hotkeys.join(DELIMITER);
 };
 
 Commands.prototype.checkConflicts=function(id) {
@@ -1009,38 +1031,36 @@ Commands.prototype.checkConflicts=function(id) {
 	return false; // no conflicts
 };
 
-Commands.prototype.checkDefaults=function(commander, id) {
+Commands.prototype.checkDefaults=function(id, commander) {
 	let defaultHotkey=data.commands[id].hotkey;
 
-	if (this.checkOverrides(commander, id, true)) {
+	if (this.checkCommanderOverride(id, commander, true)) {
 		defaultHotkey=data.overrides[commander][id].hotkey;
 	}
 
 	let hotkey=this.getHotkeys(commander, id).join(DELIMITER);
 
 	// removes user hotkey if same as default (to avoid redundant entries)
-	if (!this.getSuffix()&&hotkey==defaultHotkey) {
+	if (!this.suffix&&hotkey==defaultHotkey) {
 		this.clear(id);
 	}
 };
 
-Commands.prototype.checkOverrides=function(commander, id, checkHotkey=false) {
-	if (data.overrides[commander]==undefined) {
+// applies only to hotkey
+Commands.prototype.checkUserOverride=function(id) {
+	if (this.list["Commands"]==undefined) {
 		return;
 	}
 
-	if (data.overrides[commander][id]==undefined) {
-		return;
-	}
-
-	if (checkHotkey&&data.overrides[commander][id].hotkey==undefined) {
+	if (this.list["Commands"][id]==undefined) {
 		return;
 	}
 
 	return true;
 };
 
-Commands.prototype.checkUnitOverrides=function(unit, id, checkHotkey=false) {
+// applies to everything but hotkey
+Commands.prototype.checkUnitOverride=function(id, unit) {
 	if (data.units[unit]==undefined) {
 		return;
 	}
@@ -1053,63 +1073,74 @@ Commands.prototype.checkUnitOverrides=function(unit, id, checkHotkey=false) {
 		return;
 	}
 
-	if (checkHotkey&&data.units[unit].overrides[id].hotkey==undefined) {
+	return true;
+};
+
+// applies only to hotkey
+Commands.prototype.checkCommanderSuffixOverride=function(id, commander) {
+	if (this.suffix==undefined) {
+		return;
+	}
+
+	if (data.overrides[commander]==undefined) {
+		return;
+	}
+
+	if (data.overrides[commander][id]==undefined) {
+		return;
+	}
+
+	if (data.overrides[commander][id]["hotkey"+this.suffix]==undefined) {
 		return;
 	}
 
 	return true;
 };
 
-Commands.prototype.checkUserOverrides=function(id, checkHotkey=false) {
-	if (this.list["Commands"]==undefined) {
+Commands.prototype.checkCommanderOverride=function(id, commander, hotkey) {
+	if (data.overrides[commander]==undefined) {
 		return;
 	}
 
-	if (this.list["Commands"][id]==undefined) {
+	if (data.overrides[commander][id]==undefined) {
 		return;
 	}
 
-	if (checkHotkey&&this.list["Commands"][id].hotkey==undefined) {
+	if (hotkey&&data.overrides[commander][id].hotkey==undefined) {
 		return;
 	}
 
 	return true;
 };
 
-// gets suffix used for non-standard base layouts
-Commands.prototype.getSuffix=function() {
-	if (this.list["Settings"]==undefined) {
+// suffix override only applies to hotkey
+Commands.prototype.checkSuffixOverride=function(id) {
+	if (this.suffix==undefined) {
 		return;
 	}
 
-	if (this.list["Settings"]["Suffix"]==undefined) {
+	if (data.commands[id]["hotkey"+this.suffix]==undefined) {
 		return;
 	}
 
-	// _NRS standard for lefties
-	// _GLS grid
-	// _GRS grid for lefties
-	// _SC1 classic
-	return this.list["Settings"]["Suffix"];
+	return true;
 };
 
-Commands.prototype.removeLast=function(command) {
-	if (this.checkUserOverrides(command)) {
-		let fields=this.list["Commands"][command].hotkey.split(DELIMITER);
+Commands.prototype.removeLast=function(id) {
+	if (this.checkUserOverride(id)) {
+		let fields=this.list["Commands"][id].split(DELIMITER);
 		fields.splice(-1, 1);
 
-		this.list["Commands"][command].hotkey=fields.join(DELIMITER);
+		this.list["Commands"][id]=fields.join(DELIMITER);
 	}
 };
 
-Commands.prototype.clear=function(command) {
-	delete this.list["Commands"][command];
+Commands.prototype.clear=function(id) {
+	delete this.list["Commands"][id];
 };
 
 Commands.prototype.reset=function() {
-	this.load({
-		"Commands": {}
-	});
+	this.load();
 };
 
 /*
@@ -1160,7 +1191,18 @@ Storage.prototype.load=function() {
 		let contents=localStorage.getItem(this.name);
 
 		if (contents!=null) {
-			return JSON.parse(contents);
+			let obj=JSON.parse(contents);
+
+			// converts from old format
+			for (let section of Object.keys(obj)) {
+				for (let [key, value] of Object.entries(obj[section])) {
+					if (typeof value=="object"&&value.hotkey!=undefined) {
+						obj[section][key]=value.hotkey;
+					}
+				}
+			}
+
+			return obj;
 		}
 	} catch (err) {
 		console.error(err);
@@ -1173,7 +1215,7 @@ Storage.prototype.save=function(list) {
 	}
 
 	try {
-		if (Object.keys(list["Commands"]).length>0) {
+		if (Object.keys(list).length>1||Object.keys(list["Commands"]).length) {
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();
