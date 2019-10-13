@@ -1034,14 +1034,16 @@ Commands.prototype.checkConflicts=function(id) {
 Commands.prototype.checkDefaults=function(id, commander) {
 	let defaultHotkey=data.commands[id].hotkey;
 
-	if (this.checkCommanderOverride(id, commander, true)) {
+	if (this.checkCommanderSuffixOverride(id, commander)) {
+		defaultHotkey=data.overrides[commander][id]["hotkey"+this.suffix];
+	} else if (this.checkCommanderOverride(id, commander, true)) {
 		defaultHotkey=data.overrides[commander][id].hotkey;
 	}
 
 	let hotkey=this.getHotkeys(commander, id).join(DELIMITER);
 
 	// removes user hotkey if same as default (to avoid redundant entries)
-	if (!this.suffix&&hotkey==defaultHotkey) {
+	if (hotkey==defaultHotkey) {
 		this.clear(id);
 	}
 };
@@ -1215,6 +1217,9 @@ Storage.prototype.save=function(list) {
 	}
 
 	try {
+		// saves storage if:
+		// it contains more than one section ("Commands" is always present)
+		// or "Commands" is not empty (and therefore contains custom values)
 		if (Object.keys(list).length>1||Object.keys(list["Commands"]).length) {
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {

@@ -1222,17 +1222,32 @@ data.units={
 		race: TERRAN,
 		commander: "WingsOfLiberty",
 		type: UNIT,
-		commands: [
-			"NukeCalldown/Ghost",
-			"GhostHoldFire/Ghost",
-			"WeaponsFree/Ghost",
-			"Snipe/Ghost",
-			"EMP/Ghost",
-			"CloakOnBanshee",
-			"Cancel"
-		],
+		commands: {
+			"Decloaked": [
+				"NukeCalldown/Ghost",
+				"GhostHoldFire/Ghost",
+				"WeaponsFree/Ghost",
+				"Snipe/Ghost",
+				"EMP/Ghost",
+				"CloakOnBanshee",
+				"Cancel"
+			],
+			"Cloaked": [
+				...data.common.basic,
+				"NukeCalldown/Ghost",
+				"GhostHoldFire/Ghost",
+				"WeaponsFree/Ghost",
+				"Snipe/Ghost",
+				"EMP/Ghost",
+				"CloakOff",
+				"Cancel"
+			]
+		},
 		overrides: {
 			"CloakOnBanshee": {
+				x: 2
+			},
+			"CloakOff": {
 				x: 2
 			},
 			"NukeCalldown/Ghost": {
@@ -1248,17 +1263,32 @@ data.units={
 		race: TERRAN,
 		commander: "WingsOfLiberty",
 		type: UNIT,
-		commands: [
-			"SpectreHoldFire/Spectre",
-			"SpectreWeaponsFree/Spectre",
-			"UltrasonicPulse/Spectre",
-			"Obliterate/Spectre",
-			"CloakOnBanshee",
-			"SpectreNukeCalldown/Spectre",
-			"Cancel"
-		],
+		commands: {
+			"Decloaked": [
+				"SpectreHoldFire/Spectre",
+				"SpectreWeaponsFree/Spectre",
+				"UltrasonicPulse/Spectre",
+				"Obliterate/Spectre",
+				"CloakOnBanshee",
+				"SpectreNukeCalldown/Spectre",
+				"Cancel"
+			],
+			"Cloaked": [
+				...data.common.basic,
+				"SpectreHoldFire/Spectre",
+				"SpectreWeaponsFree/Spectre",
+				"UltrasonicPulse/Spectre",
+				"Obliterate/Spectre",
+				"CloakOff",
+				"SpectreNukeCalldown/Spectre",
+				"Cancel"
+			]
+		},
 		overrides: {
 			"CloakOnBanshee": {
+				x: 2
+			},
+			"CloakOff": {
 				x: 2
 			}
 		}
@@ -1479,6 +1509,7 @@ data.units={
 			],
 			"Orbital Relay": [
 				"SCV",
+				"UpgradeToPlanetaryFortress/CommandCenter",
 				"Rally",
 				"CalldownMULE/CommandCenter",
 				"Scan/CommandCenter",
@@ -4530,6 +4561,7 @@ data.units={
 		type: UNIT,
 		commands: {
 			"Unburrowed": [
+				"Cancel",
 				"InfestedTerrans/Infestor",
 				"FungalGrowth/Infestor",
 				"NeuralParasite/Infestor",
@@ -4537,6 +4569,7 @@ data.units={
 			],
 			"Burrowed": [
 				...data.common.basic,
+				"Cancel",
 				"InfestedTerrans/InfestorBurrowed",
 				"NeuralParasite/InfestorBurrowed",
 				"BurrowUp"
@@ -4544,6 +4577,12 @@ data.units={
 			"Infested Terran": [
 				...data.common.basic
 			]
+		},
+		overrides: {
+			"Cancel": {
+				x: 2,
+				y: 1
+			}
 		}
 	},
 	"Zerg_SwarmHost": {
@@ -5088,6 +5127,7 @@ data.units={
 		type: UNIT,
 		commands: {
 			"Unburrowed": [
+				"Baneling/Zergling",
 				"BurrowDown"
 			],
 			"Burrowed": [
@@ -5105,6 +5145,7 @@ data.units={
 		type: UNIT,
 		commands: {
 			"Unburrowed": [
+				"Baneling/HotSSwarmling",
 				"BurrowDown"
 			],
 			"Burrowed": [
@@ -5122,6 +5163,7 @@ data.units={
 		type: UNIT,
 		commands: {
 			"Unburrowed": [
+				"Baneling/HotSRaptor",
 				"BurrowDown"
 			],
 			"Burrowed": [
@@ -11775,15 +11817,21 @@ data.units={
 		race: PROTOSS,
 		commander: "Zeratul",
 		type: UNIT,
-		commands: [
-			"PhasingMode/ZeratulWarpPrism",
-			"TransportMode/ZeratulWarpPrismPhasing",
-			"ZeratulWarpPrismSelectVoidRift",
-			"WarpPrismLoad",
-			"ZeratulWarpPrismUnload/ZeratulWarpPrismPhasing",
-			"ZeratulWarpPrismAutoUnloadOn/ZeratulWarpPrismPhasing",
-			"ZeratulWarpPrismAutoUnloadOff/ZeratulWarpPrismPhasing"
-		]
+		commands: {
+			"Flight Mode": [
+				"PhasingMode/ZeratulWarpPrism",
+				"ZeratulWarpPrismSelectVoidRift",
+			],
+			"Wormhole Mode": [
+				...data.common.basic,
+				"TransportMode/ZeratulWarpPrismPhasing",
+				"ZeratulWarpPrismSelectVoidRift",
+				"WarpPrismLoad",
+				"ZeratulWarpPrismUnload/ZeratulWarpPrismPhasing",
+				"ZeratulWarpPrismAutoUnloadOn/ZeratulWarpPrismPhasing",
+				"ZeratulWarpPrismAutoUnloadOff/ZeratulWarpPrismPhasing"
+			]
+		}
 	},
 	"Zeratul_VoidSuppressionCrystal": {
 		name: "Void Suppression Crystal",
@@ -12021,6 +12069,7 @@ data.commands={
 	"Stop": {
 		name: "Stop",
 		hotkey: "S",
+		hotkey_NRS: "O",
 		icon: "btn-command-stop",
 		mask: true,
 		y: 0,
@@ -12044,6 +12093,7 @@ data.commands={
 	"Attack":{
 		name: "Attack",
 		hotkey: "A",
+		hotkey_NRS: "K",
 		icon: "btn-command-attack",
 		mask: true,
 		y: 0,
@@ -12212,6 +12262,7 @@ data.commands={
 	"AdvancedConstructionAuto/SCV": {
 		name: "Advanced Construction",
 		hotkey: "O",
+		hotkey_NRS: "J",
 		icon: "talent-swann-level08-improvedscvs",
 		mask: false,
 		y: 1,
@@ -12228,6 +12279,7 @@ data.commands={
 	"TerranBuildAdvanced/SCV": {
 		name: "Build Advanced Structure",
 		hotkey: "V",
+		hotkey_NRS: "N",
 		icon: "btn-command-terran-buildadvancedstructure",
 		mask: true,
 		y: 2,
@@ -12244,6 +12296,7 @@ data.commands={
 	"TerranBuildAdvanced/HHSCV": {
 		name: "Build Advanced Structure",
 		hotkey: "V",
+		hotkey_NRS: "N",
 		icon: "btn-command-terran-buildadvancedstructure",
 		mask: true,
 		y: 2,
@@ -12268,6 +12321,7 @@ data.commands={
 	"TerranBuildAdvanced/SISCV": {
 		name: "Build Advanced Structure",
 		hotkey: "V",
+		hotkey_NRS: "N",
 		icon: "btn-command-terran-buildadvancedstructure",
 		mask: true,
 		y: 2,
@@ -12284,6 +12338,7 @@ data.commands={
 	"ZergBuildAdvanced/Drone": {
 		name: "Advanced Mutation",
 		hotkey: "V",
+		hotkey_NRS: "N",
 		icon: "btn-ability-zerg-advancedmutation",
 		mask: true,
 		y: 2,
@@ -12300,6 +12355,7 @@ data.commands={
 	"ProtossBuildAdvanced/Probe": {
 		name: "Warp In Advanced Structure",
 		hotkey: "V",
+		hotkey_NRS: "N",
 		icon: "btn-command-protoss-buildadvancedstructure",
 		mask: true,
 		y: 2,
@@ -12308,6 +12364,7 @@ data.commands={
 	"Repair": {
 		name: "Repair",
 		hotkey: "R",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-repair",
 		mask: true,
 		y: 2,
@@ -12340,6 +12397,7 @@ data.commands={
 	"Cancel": {
 		name: "Cancel",
 		hotkey: "Escape",
+		hotkey_NRS: "F12",
 		icon: "btn-command-cancel",
 		mask: true,
 		y: 2,
@@ -12348,6 +12406,7 @@ data.commands={
 	"SelectBuilder": {
 		name: "Select Builder",
 		hotkey: "Q",
+		hotkey_NRS: "Z",
 		hotkey_SC1: "I",
 		icon: "btn-upgrade-terran-weaponrefit",
 		mask: false,
@@ -12382,6 +12441,7 @@ data.commands={
 	"Lift": {
 		name: "Lift Off",
 		hotkey: "L",
+		hotkey_NRS: "F",
 		icon: "btn-ability-terran-liftoff",
 		mask: true,
 		y: 2,
@@ -12390,6 +12450,7 @@ data.commands={
 	"Land": {
 		name: "Land",
 		hotkey: "L",
+		hotkey_NRS: "F",
 		icon: "btn-ability-terran-land",
 		mask: true,
 		y: 2,
@@ -12406,6 +12467,7 @@ data.commands={
 	"BurrowUp": {
 		name: "Unburrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-upburrow-color",
 		mask: false,
@@ -12423,6 +12485,7 @@ data.commands={
 	"Refinery/SCV": {
 		name: "Build Refinery",
 		hotkey: "R",
+		hotkey_NRS: "I",
 		icon: "btn-building-terran-refinery",
 		mask: false,
 		y: 0,
@@ -12431,6 +12494,7 @@ data.commands={
 	"SupplyDepot/SCV": {
 		name: "Build Supply Depot",
 		hotkey: "S",
+		hotkey_NRS: "P",
 		icon: "btn-building-terran-supplydepot",
 		mask: false,
 		y: 0,
@@ -12447,6 +12511,7 @@ data.commands={
 	"EngineeringBay/SCV": {
 		name: "Build Engineering Bay",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-building-terran-engineeringbay",
 		mask: false,
 		y: 1,
@@ -12463,6 +12528,7 @@ data.commands={
 	"PerditionTurret/SCV": {
 		name: "Build Perdition Turret",
 		hotkey: "P",
+		hotkey_NRS: "L",
 		icon: "btn-unit-terran-perditionturret",
 		mask: false,
 		y: 1,
@@ -12471,6 +12537,7 @@ data.commands={
 	"MissileTurret/SCV": {
 		name: "Build Missile Turret",
 		hotkey: "T",
+		hotkey_NRS: "M",
 		icon: "btn-building-terran-missileturret",
 		mask: false,
 		y: 2,
@@ -12479,6 +12546,7 @@ data.commands={
 	"SensorTower/SCV": {
 		name: "Build Sensor Tower",
 		hotkey: "N",
+		hotkey_NRS: "O",
 		icon: "btn-building-terran-sensordome",
 		mask: false,
 		y: 2,
@@ -12487,6 +12555,7 @@ data.commands={
 	"HiveMindEmulator/SCV": {
 		name: "Build Hive Mind Emulator\nBuild Psi Disrupter",
 		hotkey: "I",
+		hotkey_NRS: "H",
 		icon: "btn-building-terran-hivemindemulator",
 		mask: false,
 		y: 2,
@@ -12511,6 +12580,7 @@ data.commands={
 	"MercCompound/SCV": {
 		name: "Build Merc Compound",
 		hotkey: "M",
+		hotkey_NRS: "R",
 		icon: "btn-building-terran-merccompound",
 		mask: false,
 		y: 0,
@@ -12519,6 +12589,7 @@ data.commands={
 	"Factory/SCV": {
 		name: "Build Factory",
 		hotkey: "F",
+		hotkey_NRS: "O",
 		icon: "btn-building-terran-factory",
 		mask: false,
 		y: 1,
@@ -12527,6 +12598,7 @@ data.commands={
 	"Armory/SCV": {
 		name: "Build Armory",
 		hotkey: "A",
+		hotkey_NRS: "M",
 		icon: "btn-building-terran-armory",
 		mask: false,
 		y: 1,
@@ -12535,6 +12607,7 @@ data.commands={
 	"Starport/SCV": {
 		name: "Build Starport",
 		hotkey: "S",
+		hotkey_NRS: "P",
 		icon: "btn-building-terran-starport",
 		mask: false,
 		y: 2,
@@ -12543,6 +12616,7 @@ data.commands={
 	"FusionCore/SCV": {
 		name: "Build Fusion Core",
 		hotkey: "C",
+		hotkey_NRS: "U",
 		icon: "btn-building-terran-fusioncore",
 		mask: false,
 		y: 2,
@@ -12551,6 +12625,7 @@ data.commands={
 	"Stim": {
 		name: "Use Stimpack",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-stimpack-color",
 		mask: false,
 		y: 2,
@@ -12591,6 +12666,7 @@ data.commands={
 	"Snipe/Ghost": {
 		name: "Sniper Round",
 		hotkey: "R",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-snipe-color",
 		mask: false,
 		y: 2,
@@ -12599,6 +12675,7 @@ data.commands={
 	"ChannelSnipe/Ghost": {
 		name: "Steady Targeting",
 		hotkey: "R",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-snipe-color",
 		mask: false,
 		y: 2,
@@ -12607,6 +12684,7 @@ data.commands={
 	"EMP/Ghost": {
 		name: "EMP Round",
 		hotkey: "E",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-emp-color",
 		mask: false,
 		y: 2,
@@ -12639,6 +12717,7 @@ data.commands={
 	"MedicHeal/Medic": {
 		name: "Heal",
 		hotkey: "E",
+		hotkey_NRS: "X",
 		icon: "btn-ability-terran-heal-color",
 		mask: false,
 		y: 2,
@@ -12647,6 +12726,7 @@ data.commands={
 	"MorphToHellion/Hellion": {
 		name: "Hellion Mode",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-unit-terran-hellion",
 		mask: false,
 		y: 2,
@@ -12655,6 +12735,7 @@ data.commands={
 	"MorphToHellionTank/Hellion": {
 		name: "Hellbat Mode",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		icon: "btn-unit-terran-hellionbattlemode",
 		mask: false,
 		y: 2,
@@ -12663,6 +12744,7 @@ data.commands={
 	"SpiderMine/Vulture": {
 		name: "Deploy Spider Mine",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		icon: "btn-upgrade-terran-spidermineex3",
 		mask: false,
 		y: 2,
@@ -12671,6 +12753,7 @@ data.commands={
 	"SpiderMineReplenish/Vulture": {
 		name: "Replenish Spider Mine",
 		hotkey: "R",
+		hotkey_NRS: "L",
 		icon: "btn-upgrade-raynor-replenishablemagazine",
 		mask: false,
 		y: 2,
@@ -12679,6 +12762,7 @@ data.commands={
 	"IgniteAfterburners/Vulture": {
 		name: "Ignite Afterburners",
 		hotkey: "B",
+		hotkey_NRS: "J",
 		hotkey_SC1: "J",
 		icon: "btn-upgrade-terran-medivacemergencythrusters",
 		mask: false,
@@ -12688,6 +12772,7 @@ data.commands={
 	"WidowMineBurrow/WidowMine": {
 		name: "Activate Mine",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-terran-activatemine",
 		mask: false,
 		y: 2,
@@ -12696,6 +12781,7 @@ data.commands={
 	"WidowMineUnburrow/WidowMine": {
 		name: "Deactivate Mine",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-deactivatemine",
 		mask: false,
 		y: 2,
@@ -12704,6 +12790,7 @@ data.commands={
 	"SiegeMode": {
 		name: "Siege Mode",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		hotkey_SC1: "O",
 		icon: "btn-unit-terran-siegetanksiegemode",
 		mask: false,
@@ -12713,6 +12800,7 @@ data.commands={
 	"Unsiege": {
 		name: "Tank Mode",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		hotkey_SC1: "O",
 		icon: "btn-unit-terran-siegetank",
 		mask: false,
@@ -12722,6 +12810,7 @@ data.commands={
 	"IgniteAfterburners/SiegeTank": {
 		name: "Ignite Afterburners",
 		hotkey: "B",
+		hotkey_NRS: "J",
 		hotkey_SC1: "J",
 		icon: "btn-upgrade-terran-medivacemergencythrusters",
 		mask: false,
@@ -12739,6 +12828,7 @@ data.commands={
 	"ArmorpiercingMode": {
 		name: "High Impact Payload",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		hotkey_SC1: "B",
 		icon: "btn-unit-terran-thorsiegemode",
 		mask: false,
@@ -12748,6 +12838,7 @@ data.commands={
 	"ExplosiveMode": {
 		name: "Explosive Payload",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-unit-terran-thor",
 		mask: false,
@@ -12755,16 +12846,9 @@ data.commands={
 		x: 1
 	},
 	"250mmStrikeCannons/Thor": {
-		name: "330mm Barrage Cannon",
+		name: "250mm Strike Cannons",
 		hotkey: "C",
-		icon: "btn-ability-terran-bombardmentstrike-color",
-		mask: false,
-		y: 2,
-		x: 0
-	},
-	"250mmStrikeCannons/ThorWreckage": {
-		name: "330mm Barrage Cannon",
-		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-bombardmentstrike-color",
 		mask: false,
 		y: 2,
@@ -12789,6 +12873,7 @@ data.commands={
 	"FighterMode": {
 		name: "Fighter Mode",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		icon: "btn-unit-terran-vikingfighter",
 		mask: false,
 		y: 2,
@@ -12797,6 +12882,7 @@ data.commands={
 	"AssaultMode": {
 		name: "Assault Mode",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		icon: "btn-unit-terran-vikingassault",
 		mask: false,
 		y: 2,
@@ -12805,6 +12891,7 @@ data.commands={
 	"IgniteAfterburners/VikingAssault": {
 		name: "Ignite Afterburners",
 		hotkey: "B",
+		hotkey_NRS: "J",
 		hotkey_SC1: "J",
 		icon: "btn-upgrade-terran-medivacemergencythrusters",
 		mask: false,
@@ -12814,6 +12901,7 @@ data.commands={
 	"Heal/Medivac": {
 		name: "Heal",
 		hotkey: "E",
+		hotkey_NRS: "X",
 		icon: "btn-ability-terran-heal-color",
 		mask: false,
 		y: 2,
@@ -12846,6 +12934,7 @@ data.commands={
 	"BuildAutoTurret/Raven": {
 		name: "Build Auto-Turret",
 		hotkey: "T",
+		hotkey_NRS: "U",
 		icon: "btn-building-terran-autoturret",
 		mask: false,
 		y: 2,
@@ -12854,6 +12943,7 @@ data.commands={
 	"AutoTurret/Raven": {
 		name: "Build Auto-Turret",
 		hotkey: "T",
+		hotkey_NRS: "U",
 		icon: "btn-building-terran-autoturret",
 		mask: false,
 		y: 2,
@@ -12862,6 +12952,7 @@ data.commands={
 	"BuildPointDefenseDrone/Raven": {
 		name: "Build Point Defense Drone",
 		hotkey: "D",
+		hotkey_NRS: "I",
 		icon: "btn-unit-terran-targetingdrone",
 		mask: false,
 		y: 2,
@@ -12886,6 +12977,7 @@ data.commands={
 	"HunterSeekerMissile/Raven": {
 		name: "Seeker Missile",
 		hotkey: "R",
+		hotkey_NRS: "L",
 		icon: "btn-ability-terran-huntermissile-color",
 		mask: false,
 		y: 2,
@@ -12894,6 +12986,7 @@ data.commands={
 	"CloakOnBanshee": {
 		name: "Cloak",
 		hotkey: "C",
+		hotkey_NRS: "L",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 2,
@@ -12918,6 +13011,7 @@ data.commands={
 	"CloakOff": {
 		name: "Decloak",
 		hotkey: "D",
+		hotkey_NRS: "SemiColon",
 		hotkey_SC1: "C",
 		icon: "btn-ability-terran-decloak-color",
 		mask: false,
@@ -12927,6 +13021,7 @@ data.commands={
 	"IgniteAfterburners/Banshee": {
 		name: "Ignite Afterburners",
 		hotkey: "B",
+		hotkey_NRS: "J",
 		hotkey_SC1: "J",
 		icon: "btn-upgrade-terran-medivacemergencythrusters",
 		mask: false,
@@ -13008,6 +13103,7 @@ data.commands={
 	"MissilePods/Battlecruiser": {
 		name: "Missile Pods",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-hurricane",
 		mask: true,
 		y: 2,
@@ -13016,6 +13112,7 @@ data.commands={
 	"DefensiveMatrix/Battlecruiser": {
 		name: "Defensive Matrix",
 		hotkey: "D",
+		hotkey_NRS: "N",
 		icon: "btn-ability-terran-defensivematrix",
 		mask: true,
 		y: 2,
@@ -13024,6 +13121,7 @@ data.commands={
 	"Hyperjump/Battlecruiser": {
 		name: "Tactical Jump",
 		hotkey: "T",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-terran-warpjump",
 		mask: false,
@@ -13033,6 +13131,7 @@ data.commands={
 	"IgniteAfterburners/Battlecruiser": {
 		name: "Ignite Afterburners",
 		hotkey: "B",
+		hotkey_NRS: "J",
 		hotkey_SC1: "J",
 		icon: "btn-upgrade-terran-medivacemergencythrusters",
 		mask: false,
@@ -13058,6 +13157,8 @@ data.commands={
 	"HyperionAdvancedPDD/HyperionVoidCoop": {
 		name: "Point Defense Drone",
 		hotkey: "D",
+		hotkey_NRS: "R",
+		hotkey_SC1: "R",
 		icon: "talent-raynor-level05-pointdefensedrones",
 		mask: false,
 		y: 2,
@@ -13066,6 +13167,7 @@ data.commands={
 	"SCV": {
 		name: "Train SCV",
 		hotkey: "S",
+		hotkey_NRS: "J",
 		icon: "btn-unit-terran-scv",
 		mask: false,
 		y: 0,
@@ -13074,6 +13176,7 @@ data.commands={
 	"OrbitalCommand/CommandCenter": {
 		name: "Upgrade to Orbital Command",
 		hotkey: "B",
+		hotkey_NRS: "O",
 		icon: "btn-building-terran-surveillancestation",
 		mask: false,
 		y: 0,
@@ -13082,6 +13185,7 @@ data.commands={
 	"UpgradeToPlanetaryFortress/CommandCenter": {
 		name: "Upgrade to Planetary Fortress",
 		hotkey: "P",
+		hotkey_NRS: "P",
 		icon: "btn-building-terran-planetaryfortress",
 		mask: false,
 		y: 0,
@@ -13090,6 +13194,7 @@ data.commands={
 	"CommandCenterLoad": {
 		name: "Load",
 		hotkey: "O",
+		hotkey_NRS: "A",
 		icon: "btn-ability-terran-load",
 		mask: true,
 		y: 2,
@@ -13106,6 +13211,7 @@ data.commands={
 	"CalldownMULE/OrbitalCommand": {
 		name: "Calldown: MULE",
 		hotkey: "E",
+		hotkey_NRS: "U",
 		icon: "btn-unit-terran-mule",
 		mask: false,
 		y: 2,
@@ -13114,6 +13220,7 @@ data.commands={
 	"Scan/OrbitalCommand": {
 		name: "Scanner Sweep",
 		hotkey: "C",
+		hotkey_NRS: "N",
 		icon: "btn-ability-terran-scannersweep-color",
 		mask: false,
 		y: 2,
@@ -13122,6 +13229,7 @@ data.commands={
 	"SupplyDrop/OrbitalCommand": {
 		name: "Calldown: Extra Supplies",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-terran-calldownextrasupplies-color",
 		mask: false,
 		y: 2,
@@ -13130,6 +13238,7 @@ data.commands={
 	"CalldownMULE/CommandCenter": {
 		name: "Calldown: MULE",
 		hotkey: "E",
+		hotkey_NRS: "U",
 		icon: "btn-unit-terran-mule",
 		mask: false,
 		y: 1,
@@ -13138,6 +13247,7 @@ data.commands={
 	"Scan/CommandCenter": {
 		name: "Scanner Sweep",
 		hotkey: "C",
+		hotkey_NRS: "N",
 		icon: "btn-ability-terran-scannersweep-color",
 		mask: false,
 		y: 1,
@@ -13154,6 +13264,7 @@ data.commands={
 	"Lower/SupplyDepot": {
 		name: "Lower",
 		hotkey: "R",
+		hotkey_NRS: "O",
 		icon: "btn-building-terran-supplydepotlowered",
 		mask: false,
 		y: 2,
@@ -13162,6 +13273,7 @@ data.commands={
 	"Raise/SupplyDepotLowered": {
 		name: "Raise",
 		hotkey: "R",
+		hotkey_NRS: "O",
 		icon: "btn-building-terran-supplydepot",
 		mask: false,
 		y: 2,
@@ -13170,6 +13282,7 @@ data.commands={
 	"Marine/Barracks": {
 		name: "Train Marine",
 		hotkey: "A",
+		hotkey_NRS: "M",
 		hotkey_SC1: "M",
 		icon: "btn-unit-terran-marine",
 		mask: false,
@@ -13179,6 +13292,7 @@ data.commands={
 	"Reaper/Barracks": {
 		name: "Train Reaper",
 		hotkey: "R",
+		hotkey_NRS: "P",
 		hotkey_SC1: "E",
 		icon: "btn-unit-terran-reaper",
 		mask: false,
@@ -13188,6 +13302,7 @@ data.commands={
 	"Marauder/Barracks": {
 		name: "Train Marauder",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		hotkey_SC1: "F",
 		icon: "btn-unit-terran-marauder",
 		mask: false,
@@ -13205,6 +13320,7 @@ data.commands={
 	"Spectre/Barracks": {
 		name: "Train Spectre",
 		hotkey: "G",
+		hotkey_NRS: "K",
 		hotkey_SC1: "Q",
 		icon: "btn-unit-terran-spectre",
 		mask: false,
@@ -13214,6 +13330,7 @@ data.commands={
 	"Firebat/Barracks": {
 		name: "Train Firebat",
 		hotkey: "F",
+		hotkey_NRS: "B",
 		icon: "btn-unit-terran-firebat",
 		mask: false,
 		y: 1,
@@ -13222,6 +13339,7 @@ data.commands={
 	"Medic/Barracks": {
 		name: "Train Medic",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		hotkey_SC1: "C",
 		icon: "btn-unit-terran-medic",
 		mask: false,
@@ -13231,6 +13349,7 @@ data.commands={
 	"TechLabBarracks/Barracks": {
 		name: "Build Tech Lab",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		hotkey_SC1: "Z",
 		icon: "btn-building-terran-techlab",
 		mask: false,
@@ -13240,6 +13359,7 @@ data.commands={
 	"Reactor/Barracks": {
 		name: "Build Reactor",
 		hotkey: "C",
+		hotkey_NRS: "SemiColon",
 		hotkey_SC1: "X",
 		icon: "btn-building-terran-reactor",
 		mask: false,
@@ -13249,6 +13369,7 @@ data.commands={
 	"TechReactorAI/Barracks": {
 		name: "Build Tech Reactor",
 		hotkey: "Z",
+		hotkey_NRS: "Comma",
 		hotkey_SC1: "S",
 		icon: "btn-building-terran-techreactor",
 		mask: false,
@@ -13306,6 +13427,7 @@ data.commands={
 	"TerranInfantryWeaponsLevel1/EngineeringBay": {
 		name: "Upgrade Infantry Weapons",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		hotkey_SC1: "W",
 		icon: "btn-upgrade-terran-infantryweaponslevel1",
 		mask: false,
@@ -13363,6 +13485,7 @@ data.commands={
 	"BunkerLoad": {
 		name: "Load",
 		hotkey: "L",
+		hotkey_NRS: "A",
 		icon: "btn-ability-terran-load",
 		mask: true,
 		y: 2,
@@ -13371,6 +13494,7 @@ data.commands={
 	"BunkerUnloadAll": {
 		name: "Unload All",
 		hotkey: "D",
+		hotkey_NRS: "D",
 		hotkey_SC1: "U",
 		icon: "btn-ability-terran-unloadall",
 		mask: true,
@@ -13452,6 +13576,7 @@ data.commands={
 	"MindControl/HiveMindEmulator": {
 		name: "Mind Control",
 		hotkey: "C",
+		hotkey_NRS: "M",
 		icon: "btn-ability-terran-scannersweep-color",
 		mask: false,
 		y: 2,
@@ -13460,6 +13585,7 @@ data.commands={
 	"ResearchPersonalCloaking/GhostAcademy": {
 		name: "Research Personal Cloaking",
 		hotkey: "C",
+		hotkey_NRS: "L",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 0,
@@ -13500,6 +13626,7 @@ data.commands={
 	"Hellion/Factory": {
 		name: "Build Hellion",
 		hotkey: "E",
+		hotkey_NRS: "H",
 		hotkey_SC1: "V",
 		icon: "btn-unit-terran-hellion",
 		mask: false,
@@ -13509,6 +13636,7 @@ data.commands={
 	"HellionTank/Factory": {
 		name: "Build Hellbat",
 		hotkey: "R",
+		hotkey_NRS: "P",
 		hotkey_SC1: "H",
 		icon: "btn-unit-terran-hellionbattlemode",
 		mask: false,
@@ -13534,6 +13662,7 @@ data.commands={
 	"SiegeTank/Factory": {
 		name: "Build Siege Tank",
 		hotkey: "S",
+		hotkey_NRS: "I",
 		hotkey_SC1: "T",
 		icon: "btn-unit-terran-siegetank",
 		mask: false,
@@ -13551,6 +13680,7 @@ data.commands={
 	"Thor/Factory": {
 		name: "Build Thor",
 		hotkey: "T",
+		hotkey_NRS: "O",
 		hotkey_SC1: "G",
 		icon: "btn-unit-terran-thor",
 		mask: false,
@@ -13576,6 +13706,7 @@ data.commands={
 	"Diamondback/Factory": {
 		name: "Build Diamondback",
 		hotkey: "D",
+		hotkey_NRS: "M",
 		icon: "btn-unit-terran-diamondback",
 		mask: false,
 		y: 1,
@@ -13600,6 +13731,7 @@ data.commands={
 	"TechLabFactory/Factory": {
 		name: "Build Tech Lab",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		hotkey_SC1: "Z",
 		icon: "btn-building-terran-techlab",
 		mask: false,
@@ -13609,6 +13741,7 @@ data.commands={
 	"Reactor/Factory": {
 		name: "Build Reactor",
 		hotkey: "C",
+		hotkey_NRS: "SemiColon",
 		hotkey_SC1: "X",
 		icon: "btn-building-terran-reactor",
 		mask: false,
@@ -13618,6 +13751,7 @@ data.commands={
 	"TechReactorAI/Factory": {
 		name: "Build Tech Reactor",
 		hotkey: "Z",
+		hotkey_NRS: "Comma",
 		hotkey_SC1: "S",
 		icon: "btn-building-terran-techreactor",
 		mask: false,
@@ -13659,6 +13793,7 @@ data.commands={
 	"ResearchDrillClaws/FactoryTechLab": {
 		name: "Research Drilling Claws",
 		hotkey: "C",
+		hotkey_NRS: "P",
 		hotkey_SC1: "P",
 		icon: "btn-upgrade-terran-researchdrillingclaws",
 		mask: false,
@@ -13692,6 +13827,7 @@ data.commands={
 	"ResearchImprovedSiegeMode/FactoryTechLab": {
 		name: "Research Advanced Siege Tech",
 		hotkey: "E",
+		hotkey_NRS: "S",
 		hotkey_SC1: "S",
 		icon: "btn-upgrade-raynor-improvedsiegemode",
 		mask: false,
@@ -13766,6 +13902,7 @@ data.commands={
 	"Research330mmBarrageCannon/FactoryTechReactor": {
 		name: "Research 330mm Barrage Cannon",
 		hotkey: "C",
+		hotkey_NRS: "N",
 		icon: "btn-ability-terran-bombardmentstrike-color",
 		mask: false,
 		y: 1,
@@ -13774,6 +13911,7 @@ data.commands={
 	"TerranVehicleWeaponsLevel1/Armory": {
 		name: "Upgrade Vehicle Weapons",
 		hotkey: "E",
+		hotkey_NRS: "A",
 		hotkey_SC1: "W",
 		icon: "btn-upgrade-terran-vehicleweaponslevel1",
 		mask: false,
@@ -13809,6 +13947,7 @@ data.commands={
 	"TerranVehicleAndShipWeaponsLevel1/Armory": {
 		name: "Upgrade Vehicle and Ship Weapons",
 		hotkey: "E",
+		hotkey_NRS: "A",
 		hotkey_SC1: "W",
 		icon: "btn-upgrade-terran-vehicleweaponslevel1",
 		mask: false,
@@ -13843,6 +13982,7 @@ data.commands={
 	"VikingFighter/Starport": {
 		name: "Build Viking",
 		hotkey: "V",
+		hotkey_NRS: "K",
 		hotkey_SC1: "W",
 		icon: "btn-unit-terran-vikingfighter",
 		mask: false,
@@ -13852,6 +13992,7 @@ data.commands={
 	"Medivac/Starport": {
 		name: "Build Medivac",
 		hotkey: "D",
+		hotkey_NRS: "M",
 		icon: "btn-unit-terran-medivac",
 		mask: false,
 		y: 0,
@@ -13860,6 +14001,7 @@ data.commands={
 	"Banshee/Starport": {
 		name: "Build Banshee",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-unit-terran-banshee",
 		mask: false,
 		y: 0,
@@ -13876,6 +14018,7 @@ data.commands={
 	"Wraith/Starport": {
 		name: "Build Wraith",
 		hotkey: "A",
+		hotkey_NRS: "T",
 		icon: "btn-unit-terran-wraith",
 		mask: false,
 		y: 1,
@@ -13900,6 +14043,7 @@ data.commands={
 	"Liberator/Starport": {
 		name: "Build Liberator",
 		hotkey: "N",
+		hotkey_NRS: "I",
 		icon: "btn-unit-terran-liberator",
 		mask: false,
 		y: 0,
@@ -13908,6 +14052,7 @@ data.commands={
 	"Raven/Starport": {
 		name: "Build Raven",
 		hotkey: "R",
+		hotkey_NRS: "V",
 		hotkey_SC1: "V",
 		icon: "btn-unit-terran-raven",
 		mask: false,
@@ -13917,6 +14062,7 @@ data.commands={
 	"TechLabStarport/Starport": {
 		name: "Build Tech Lab",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		hotkey_SC1: "Z",
 		icon: "btn-building-terran-techlab",
 		mask: false,
@@ -13926,6 +14072,7 @@ data.commands={
 	"Reactor/Starport": {
 		name: "Build Reactor",
 		hotkey: "C",
+		hotkey_NRS: "SemiColon",
 		hotkey_SC1: "X",
 		icon: "btn-building-terran-reactor",
 		mask: false,
@@ -13935,6 +14082,7 @@ data.commands={
 	"TechReactorAI/Starport": {
 		name: "Build Tech Reactor",
 		hotkey: "Z",
+		hotkey_NRS: "Comma",
 		hotkey_SC1: "S",
 		icon: "btn-building-terran-techreactor",
 		mask: false,
@@ -13984,6 +14132,7 @@ data.commands={
 	"ResearchBansheeCloak/StarportTechLab": {
 		name: "Research Cloaking Field",
 		hotkey: "C",
+		hotkey_NRS: "L",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 0,
@@ -14048,6 +14197,7 @@ data.commands={
 	"ResearchMedivacCloakedHealBeam/StarportTechLab": {
 		name: "Research Covert Triage",
 		hotkey: "H",
+		hotkey_NRS: "C",
 		icon: "btn-upgrade-terran-nova-repairbeamcloak",
 		mask: false,
 		y: 1,
@@ -14395,6 +14545,7 @@ data.commands={
 	"EMP/Ghost_BlackOps": {
 		name: "EMP Round",
 		hotkey: "E",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-emp-color",
 		mask: false,
 		y: 2,
@@ -14427,7 +14578,6 @@ data.commands={
 	"SiegeTank_BlackOpsSiege": {
 		name: "Siege Mode",
 		hotkey: "E",
-		hotkey_SC1: "O",
 		icon: "btn-unit-terran-siegetankblackops-sieged",
 		mask: false,
 		y: 2,
@@ -14436,7 +14586,6 @@ data.commands={
 	"SiegeTank_BlackOpsUnsiege": {
 		name: "Tank Mode",
 		hotkey: "D",
-		hotkey_SC1: "O",
 		icon: "btn-unit-terran-siegetankblackops-tank",
 		mask: false,
 		y: 2,
@@ -14445,6 +14594,7 @@ data.commands={
 	"SpiderMine/Reaper": {
 		name: "Deploy Spider Mine",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-upgrade-siegetank-spidermines",
 		mask: false,
 		y: 2,
@@ -14491,7 +14641,7 @@ data.commands={
 		x: 1
 	},
 	"BuildRailgunTurret/Raven": {
-		name: "Build Railgun Turret",
+		name: "Deploy Railgun Turret",
 		hotkey: "T",
 		icon: "btn-unit-terran-autoturretblackops",
 		mask: false,
@@ -14565,6 +14715,7 @@ data.commands={
 	"ResearchNovaDetector/GhostAcademyNova": {
 		name: "Research Ghost Visor",
 		hotkey: "G",
+		hotkey_NRS: "D",
 		hotkey_SC1: "D",
 		icon: "btn-upgrade-terran-nova-detector",
 		mask: false,
@@ -14574,6 +14725,7 @@ data.commands={
 	"ResearchNovaLifeRegen/GhostAcademyNova": {
 		name: "Research Caduceus Reactor",
 		hotkey: "C",
+		hotkey_NRS: "F",
 		hotkey_SC1: "F",
 		icon: "btn-upgrade-terran-nova-liferegen",
 		mask: false,
@@ -14583,6 +14735,7 @@ data.commands={
 	"ResearchNovaShotgunBlastRange/GhostAcademyNova": {
 		name: "Research Operational Efficiency",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-upgrade-terran-nova-snipeenergyrefund",
 		mask: false,
@@ -14592,6 +14745,7 @@ data.commands={
 	"ResearchNovaSnipeRefund/GhostAcademyNova": {
 		name: "Research Infernal Projectiles",
 		hotkey: "H",
+		hotkey_NRS: "P",
 		hotkey_SC1: "P",
 		icon: "btn-upgrade-terran-nova-shotgunaoe",
 		mask: false,
@@ -14609,6 +14763,7 @@ data.commands={
 	"TornadoMissile/WarHound": {
 		name: "Haywire Missiles",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-terran-haywiremissile",
 		mask: false,
 		y: 2,
@@ -14633,6 +14788,7 @@ data.commands={
 	"EMP/NovaSonarDrone": {
 		name: "EMP Round",
 		hotkey: "E",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-emp-color",
 		mask: false,
 		y: 2,
@@ -14657,6 +14813,7 @@ data.commands={
 	"SupplyDepot/HHSCV": {
 		name: "Build Supply Depot",
 		hotkey: "S",
+		hotkey_NRS: "P",
 		icon: "btn-building-hornerhan-supplypod",
 		mask: false,
 		y: 0,
@@ -14681,6 +14838,7 @@ data.commands={
 	"MissileTurret/HHSCV": {
 		name: "Build Missile Turret",
 		hotkey: "T",
+		hotkey_NRS: "M",
 		icon: "btn-building-hornerhan-missileturret",
 		mask: false,
 		y: 2,
@@ -14689,6 +14847,8 @@ data.commands={
 	"BuildHHBomberPlatform/HHSCV": {
 		name: "Build Strike Fighter Platform",
 		hotkey: "F",
+		hotkey_NRS: "B",
+		hotkey_SC1: "B",
 		icon: "btn-building-hornerhan-bomberplatform",
 		mask: false,
 		y: 1,
@@ -14705,6 +14865,7 @@ data.commands={
 	"FusionCore/HHSCV": {
 		name: "Build Fusion Core",
 		hotkey: "C",
+		hotkey_NRS: "U",
 		icon: "btn-building-hornerhan-fusioncore",
 		mask: false,
 		y: 2,
@@ -14769,6 +14930,7 @@ data.commands={
 	"WidowMineBurrow/HHWidowMine": {
 		name: "Activate Mine",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-terran-activatemine",
 		mask: false,
 		y: 2,
@@ -14777,6 +14939,7 @@ data.commands={
 	"WidowMineUnburrow/HHWidowMine": {
 		name: "Deactivate Mine",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-deactivatemine",
 		mask: false,
 		y: 2,
@@ -14785,6 +14948,7 @@ data.commands={
 	"MorphToHellionTank/HHHellion": {
 		name: "Hellbat Mode",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		icon: "btn-unit-collection-hellbat-junker",
 		mask: false,
 		y: 2,
@@ -14809,6 +14973,7 @@ data.commands={
 	"FleetwideJump/HHWraith": {
 		name: "Tactical Jump",
 		hotkey: "T",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-hornerhan-fleethyperjump",
 		mask: false,
@@ -14834,6 +14999,7 @@ data.commands={
 	"FleetwideJump/HHVikingFighter": {
 		name: "Tactical Jump",
 		hotkey: "T",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-hornerhan-fleethyperjump",
 		mask: false,
@@ -14851,6 +15017,7 @@ data.commands={
 	"FleetwideJump/HHVikingAssault": {
 		name: "Tactical Jump",
 		hotkey: "T",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-hornerhan-fleethyperjump",
 		mask: false,
@@ -14860,6 +15027,7 @@ data.commands={
 	"FleetwideJump/HHRaven": {
 		name: "Tactical Jump",
 		hotkey: "T",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-hornerhan-fleethyperjump",
 		mask: false,
@@ -14893,6 +15061,7 @@ data.commands={
 	"Hyperjump/HHBattlecruiser": {
 		name: "Tactical Jump",
 		hotkey: "T",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-hornerhan-fleethyperjump",
 		mask: false,
@@ -15015,6 +15184,7 @@ data.commands={
 	"VikingFighter/HHStarport": {
 		name: "Build Deimos Viking",
 		hotkey: "V",
+		hotkey_NRS: "K",
 		hotkey_SC1: "K",
 		icon: "btn-unit-collection-vikingfighter-covertops",
 		mask: false,
@@ -15184,6 +15354,7 @@ data.commands={
 	"TychusRefinery/TychusSCV": {
 		name: "Build Refinery",
 		hotkey: "R",
+		hotkey_NRS: "I",
 		icon: "btn-building-terran-tychusrefinery",
 		mask: false,
 		y: 0,
@@ -15200,6 +15371,7 @@ data.commands={
 	"TychusEngineeringBay/TychusSCV": {
 		name: "Build Engineering Bay",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-building-terran-tychusengineeringbay",
 		mask: false,
 		y: 1,
@@ -15656,6 +15828,7 @@ data.commands={
 	"TychusMedicTransportUnits/TychusMedivacPlatform": {
 		name: "Medivac Pickup",
 		hotkey: "Z",
+		hotkey_NRS: "I",
 		icon: "btn-ability-tychus-medivac",
 		mask: false,
 		y: 0,
@@ -15664,6 +15837,7 @@ data.commands={
 	"Drone/Larva": {
 		name: "Morph to Drone",
 		hotkey: "D",
+		hotkey_NRS: "N",
 		icon: "btn-unit-zerg-drone",
 		mask: false,
 		y: 0,
@@ -15672,6 +15846,7 @@ data.commands={
 	"Overlord/Larva": {
 		name: "Morph to Overlord",
 		hotkey: "V",
+		hotkey_NRS: "O",
 		hotkey_SC1: "O",
 		icon: "btn-unit-zerg-overlord",
 		mask: false,
@@ -15681,6 +15856,7 @@ data.commands={
 	"Zergling/Larva": {
 		name: "Morph to Zergling",
 		hotkey: "Z",
+		hotkey_NRS: "J",
 		icon: "btn-unit-zerg-zergling",
 		mask: false,
 		y: 0,
@@ -15689,6 +15865,7 @@ data.commands={
 	"Roach/Larva": {
 		name: "Morph to Roach",
 		hotkey: "R",
+		hotkey_NRS: "K",
 		icon: "btn-unit-zerg-roach",
 		mask: false,
 		y: 0,
@@ -15705,6 +15882,7 @@ data.commands={
 	"Mutalisk/Larva": {
 		name: "Morph to Mutalisk",
 		hotkey: "T",
+		hotkey_NRS: "M",
 		hotkey_SC1: "M",
 		icon: "btn-unit-zerg-mutalisk",
 		mask: false,
@@ -15714,6 +15892,7 @@ data.commands={
 	"Corruptor/Larva": {
 		name: "Morph to Corruptor",
 		hotkey: "C",
+		hotkey_NRS: "P",
 		icon: "btn-unit-zerg-corruptor",
 		mask: false,
 		y: 1,
@@ -15722,6 +15901,7 @@ data.commands={
 	"Infestor/Larva": {
 		name: "Morph to Infestor",
 		hotkey: "F",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-infestor",
 		mask: false,
 		y: 1,
@@ -15730,6 +15910,7 @@ data.commands={
 	"SwarmHostMP/Larva": {
 		name: "Morph to Swarm Host",
 		hotkey: "A",
+		hotkey_NRS: "G",
 		icon: "btn-unit-zerg-swarmhost",
 		mask: false,
 		y: 1,
@@ -15738,6 +15919,7 @@ data.commands={
 	"Viper/Larva": {
 		name: "Morph to Viper",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-viper",
 		mask: false,
 		y: 2,
@@ -15746,6 +15928,7 @@ data.commands={
 	"Ultralisk/Larva": {
 		name: "Morph to Ultralisk",
 		hotkey: "U",
+		hotkey_NRS: "T",
 		icon: "btn-unit-zerg-ultralisk",
 		mask: false,
 		y: 2,
@@ -15770,6 +15953,8 @@ data.commands={
 	"StopGenerateCreep": {
 		name: "Stop Generate Creep",
 		hotkey: "C",
+		hotkey_NRS: "T",
+		hotkey_SC1: "G",
 		icon: "btn-ability-zerg-generatecreepstop-color",
 		mask: false,
 		y: 2,
@@ -15802,6 +15987,7 @@ data.commands={
 	"SpawnChangeling/Overseer": {
 		name: "Spawn Changeling",
 		hotkey: "C",
+		hotkey_NRS: "N",
 		icon: "btn-unit-zerg-changeling",
 		mask: false,
 		y: 2,
@@ -15810,6 +15996,7 @@ data.commands={
 	"Contaminate/Overseer": {
 		name: "Contaminate",
 		hotkey: "E",
+		hotkey_NRS: "T",
 		icon: "btn-ability-zerg-contaminate-color",
 		mask: false,
 		y: 2,
@@ -15818,6 +16005,7 @@ data.commands={
 	"MindBolt/KerriganGhostLab": {
 		name: "Kinetic Blast",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-kerrigan-kineticblast",
 		mask: false,
 		y: 2,
@@ -15826,6 +16014,7 @@ data.commands={
 	"PsionicLift/KerriganGhostLab": {
 		name: "Crushing Grip",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-ability-kerrigan-crushinggrip",
 		mask: false,
 		y: 2,
@@ -15834,6 +16023,7 @@ data.commands={
 	"MindBolt/K5Kerrigan": {
 		name: "Kinetic Blast\nLeaping Strike",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-kerrigan-kineticblast",
 		mask: false,
 		y: 2,
@@ -15842,6 +16032,7 @@ data.commands={
 	"PsionicLift/K5Kerrigan": {
 		name: "Crushing Grip\nPsionic Shift",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-ability-kerrigan-crushinggrip",
 		mask: false,
 		y: 2,
@@ -15850,6 +16041,7 @@ data.commands={
 	"WildMutation/K5Kerrigan": {
 		name: "Wild Mutation\nSpawn Banelings\nMend",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-kerrigan-wildmutation",
 		mask: false,
 		y: 2,
@@ -15858,6 +16050,7 @@ data.commands={
 	"K5Leviathan/K5Kerrigan": {
 		name: "Apocalypse\nSpawn Leviathan\nDrop Pods",
 		hotkey: "D",
+		hotkey_NRS: "L",
 		icon: "btn-ability-kerrigan-apocalypse",
 		mask: false,
 		y: 2,
@@ -15882,6 +16075,7 @@ data.commands={
 	"MindBolt/K5KerriganBurrowed": {
 		name: "Kinetic Blast\nLeaping Strike",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-kerrigan-kineticblast",
 		mask: false,
 		y: 2,
@@ -15890,6 +16084,7 @@ data.commands={
 	"PsionicLift/K5KerriganBurrowed": {
 		name: "Crushing Grip\nPsionic Shift",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-ability-kerrigan-crushinggrip",
 		mask: false,
 		y: 2,
@@ -15898,6 +16093,7 @@ data.commands={
 	"WildMutation/K5KerriganBurrowed": {
 		name: "Wild Mutation\nSpawn Banelings\nMend",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-kerrigan-wildmutation",
 		mask: false,
 		y: 2,
@@ -15906,6 +16102,7 @@ data.commands={
 	"K5Leviathan/K5KerriganBurrowed": {
 		name: "Apocalypse\nSpawn Leviathan\nDrop Pods",
 		hotkey: "D",
+		hotkey_NRS: "L",
 		icon: "btn-ability-kerrigan-apocalypse",
 		mask: false,
 		y: 2,
@@ -15930,6 +16127,7 @@ data.commands={
 	"MindBolt/KerriganReviveCocoon": {
 		name: "Leaping Strike",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-kerrigan-leapingstrike",
 		mask: false,
 		y: 2,
@@ -15970,6 +16168,7 @@ data.commands={
 	"Extractor/Drone": {
 		name: "Mutate into Extractor",
 		hotkey: "E",
+		hotkey_NRS: "K",
 		icon: "btn-building-zerg-extractor",
 		mask: false,
 		y: 0,
@@ -15978,6 +16177,7 @@ data.commands={
 	"SpawningPool/Drone": {
 		name: "Mutate into Spawning Pool",
 		hotkey: "S",
+		hotkey_NRS: "P",
 		icon: "btn-building-zerg-spawningpool",
 		mask: false,
 		y: 1,
@@ -15994,6 +16194,7 @@ data.commands={
 	"SpineCrawler/Drone": {
 		name: "Mutate into Spine Crawler",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-building-zerg-spinecrawler",
 		mask: false,
 		y: 2,
@@ -16002,6 +16203,7 @@ data.commands={
 	"SporeCrawler/Drone": {
 		name: "Mutate into Spore Crawler",
 		hotkey: "A",
+		hotkey_NRS: "O",
 		hotkey_SC1: "O",
 		icon: "btn-building-zerg-sporecrawler",
 		mask: false,
@@ -16029,6 +16231,7 @@ data.commands={
 	"Spire/Drone": {
 		name: "Mutate into Spire",
 		hotkey: "S",
+		hotkey_NRS: "P",
 		icon: "btn-building-zerg-spire",
 		mask: false,
 		y: 1,
@@ -16053,6 +16256,7 @@ data.commands={
 	"BuildCreepTumor/QueenCoop": {
 		name: "Spawn Creep Tumor",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-building-zerg-creeptumor",
 		mask: false,
 		y: 2,
@@ -16061,6 +16265,7 @@ data.commands={
 	"MorphMorphalisk/QueenCoop": {
 		name: "Spawn Larvae",
 		hotkey: "V",
+		hotkey_NRS: "L",
 		icon: "btn-unit-zerg-larva",
 		mask: false,
 		y: 2,
@@ -16077,6 +16282,7 @@ data.commands={
 	"QueenBurstHeal/Queen": {
 		name: "Rapid Transfusion",
 		hotkey: "T",
+		hotkey_NRS: "J",
 		icon: "btn-ability-zerg-transfusion-color",
 		mask: false,
 		y: 2,
@@ -16085,6 +16291,7 @@ data.commands={
 	"BuildCreepTumorPropagate/CreepTumorBurrowed": {
 		name: "Spawn Creep Tumor",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-building-zerg-creeptumor",
 		mask: false,
 		y: 2,
@@ -16101,6 +16308,7 @@ data.commands={
 	"Lurker/HydraliskLurker": {
 		name: "Morph to Lurker",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-lurker",
 		mask: false,
 		y: 2,
@@ -16109,6 +16317,7 @@ data.commands={
 	"Impaler/HydraliskImpaler": {
 		name: "Morph to Impaler",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-impaler",
 		mask: false,
 		y: 2,
@@ -16117,6 +16326,7 @@ data.commands={
 	"HydraliskFrenzy/Hydralisk": {
 		name: "Frenzy",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-upgrade-zerg-frenzy",
 		mask: false,
 		y: 2,
@@ -16125,6 +16335,7 @@ data.commands={
 	"HydraliskFrenzy/HydraliskLurker": {
 		name: "Frenzy",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-upgrade-zerg-frenzy",
 		mask: false,
 		y: 2,
@@ -16133,6 +16344,7 @@ data.commands={
 	"HydraliskFrenzy/HydraliskImpaler": {
 		name: "Frenzy",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-upgrade-zerg-frenzy",
 		mask: false,
 		y: 2,
@@ -16149,6 +16361,7 @@ data.commands={
 	"LurkerBurrowDown": {
 		name: "Burrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-burrow-color",
 		mask: false,
 		y: 2,
@@ -16157,6 +16370,7 @@ data.commands={
 	"LurkerBurrowUp": {
 		name: "Unburrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-upburrow-color",
 		mask: false,
 		y: 2,
@@ -16165,6 +16379,7 @@ data.commands={
 	"ImpalerBurrowDown": {
 		name: "Burrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-burrow-color",
 		mask: false,
 		y: 2,
@@ -16173,6 +16388,7 @@ data.commands={
 	"ImpalerBurrowUp": {
 		name: "Unburrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-upburrow-color",
 		mask: false,
 		y: 2,
@@ -16207,6 +16423,7 @@ data.commands={
 	"Viper/MutaliskViper": {
 		name: "Morph to Viper",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-viper",
 		mask: false,
 		y: 2,
@@ -16215,6 +16432,7 @@ data.commands={
 	"InfestedTerrans/Infestor": {
 		name: "Infested Terran",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-infestedmarine",
 		mask: false,
 		y: 2,
@@ -16223,6 +16441,7 @@ data.commands={
 	"InfestedTerrans/InfestorBurrowed": {
 		name: "Infested Terran",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-infestedmarine",
 		mask: false,
 		y: 2,
@@ -16231,6 +16450,7 @@ data.commands={
 	"FungalGrowth/Infestor": {
 		name: "Fungal Growth",
 		hotkey: "F",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-fungalgrowth-color",
 		mask: false,
 		y: 2,
@@ -16239,6 +16459,7 @@ data.commands={
 	"FungalGrowth/InfestorBurrowed": {
 		name: "Fungal Growth",
 		hotkey: "F",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-fungalgrowth-color",
 		mask: false,
 		y: 2,
@@ -16247,6 +16468,7 @@ data.commands={
 	"NeuralParasite/Infestor": {
 		name: "Neural Parasite",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-ability-zerg-neuralparasite-color",
 		mask: false,
 		y: 2,
@@ -16255,6 +16477,7 @@ data.commands={
 	"NeuralParasite/InfestorBurrowed": {
 		name: "Neural Parasite",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-ability-zerg-neuralparasite-color",
 		mask: false,
 		y: 2,
@@ -16263,6 +16486,7 @@ data.commands={
 	"NPSwarm/Infestor": {
 		name: "Parasitic Domination",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-zerg-neuralparasite-color",
 		mask: false,
 		y: 2,
@@ -16271,6 +16495,7 @@ data.commands={
 	"InfestorConsumption/Infestor": {
 		name: "Consumption",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-consume",
 		mask: false,
 		y: 2,
@@ -16284,18 +16509,18 @@ data.commands={
 		y: 2,
 		x: 0
 	},
-	"DefilerMPPlague/DefilerMP": {
-		name: "Plague",
-		hotkey: "G",
-		icon: "btn-ability-zerg-defilerplague",
-		mask: false,
-		y: 2,
-		x: 1
-	},
 	"DefilerMPDarkSwarm/DefilerMP": {
 		name: "Dark Swarm",
 		hotkey: "D",
 		icon: "btn-ability-zerg-darkswarm",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"DefilerMPPlague/DefilerMP": {
+		name: "Plague",
+		hotkey: "G",
+		icon: "btn-ability-zerg-defilerplague",
 		mask: false,
 		y: 2,
 		x: 2
@@ -16327,6 +16552,7 @@ data.commands={
 	"PoisonNova/HotSNoxious": {
 		name: "Toxic Blast",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		hotkey_SC1: "T",
 		icon: "btn-ability-zerg-poisonnova",
 		mask: false,
@@ -16336,6 +16562,7 @@ data.commands={
 	"Larva": {
 		name: "Select Larva",
 		hotkey: "S",
+		hotkey_NRS: "L",
 		icon: "btn-unit-zerg-larva",
 		mask: false,
 		y: 0,
@@ -16344,6 +16571,7 @@ data.commands={
 	"Queen": {
 		name: "Birth Queen",
 		hotkey: "Q",
+		hotkey_NRS: "U",
 		hotkey_SC1: "E",
 		icon: "btn-unit-zerg-queen",
 		mask: false,
@@ -16361,6 +16589,7 @@ data.commands={
 	"RespawnZergling/Hatchery": {
 		name: "Zergling Reconstitution",
 		hotkey: "Z",
+		hotkey_NRS: "J",
 		icon: "btn-ability-kerrigan-zerglingreconstitution",
 		mask: false,
 		y: 0,
@@ -16369,6 +16598,7 @@ data.commands={
 	"RespawnZergling/Lair": {
 		name: "Zergling Reconstitution",
 		hotkey: "Z",
+		hotkey_NRS: "J",
 		icon: "btn-ability-kerrigan-zerglingreconstitution",
 		mask: false,
 		y: 0,
@@ -16377,6 +16607,7 @@ data.commands={
 	"RespawnZergling/Hive": {
 		name: "Zergling Reconstitution",
 		hotkey: "Z",
+		hotkey_NRS: "J",
 		icon: "btn-ability-kerrigan-zerglingreconstitution",
 		mask: false,
 		y: 0,
@@ -16393,6 +16624,7 @@ data.commands={
 	"EvolveVentralSacks": {
 		name: "Evolve Ventral Sacs",
 		hotkey: "E",
+		hotkey_NRS: "C",
 		hotkey_SC1: "V",
 		icon: "btn-upgrade-zerg-ventralsacs",
 		mask: false,
@@ -16411,6 +16643,7 @@ data.commands={
 	"Lair/Hatchery": {
 		name: "Mutate into Lair",
 		hotkey: "L",
+		hotkey_NRS: "H",
 		icon: "btn-building-zerg-lair",
 		mask: false,
 		y: 2,
@@ -16611,6 +16844,7 @@ data.commands={
 	"SpineCrawlerUproot/SpineCrawler": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -16628,6 +16862,7 @@ data.commands={
 	"SporeCrawlerUproot/SporeCrawler": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -16774,6 +17009,7 @@ data.commands={
 	"ZagaraVoidCoopBanelingBarrage/ZagaraVoidCoop": {
 		name: "Baneling Barrage",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-unit-zerg-baneling",
 		mask: false,
 		y: 2,
@@ -16902,6 +17138,27 @@ data.commands={
 	"Baneling/Zergling": {
 		name: "Morph to Baneling",
 		hotkey: "E",
+		hotkey_NRS: "B",
+		hotkey_SC1: "B",
+		icon: "btn-unit-zerg-baneling",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"Baneling/HotSRaptor": {
+		name: "Morph to Baneling",
+		hotkey: "E",
+		hotkey_NRS: "B",
+		hotkey_SC1: "B",
+		icon: "btn-unit-zerg-baneling",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"Baneling/HotSSwarmling": {
+		name: "Morph to Baneling",
+		hotkey: "E",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-unit-zerg-baneling",
 		mask: false,
@@ -16911,6 +17168,7 @@ data.commands={
 	"Explode/Baneling": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -16919,6 +17177,7 @@ data.commands={
 	"Explode/BanelingBurrowed": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -16927,6 +17186,7 @@ data.commands={
 	"EnableBuildingAttack/Baneling": {
 		name: "Enable Structure Attack",
 		hotkey: "F",
+		hotkey_NRS: "G",
 		icon: "btn-ability-zerg-attackstructure-color",
 		mask: false,
 		y: 2,
@@ -16935,6 +17195,7 @@ data.commands={
 	"DisableBuildingAttack/Baneling": {
 		name: "Disable Structure Attack",
 		hotkey: "G",
+		hotkey_NRS: "B",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -16943,6 +17204,7 @@ data.commands={
 	"Explode/HotSSplitterlingBig": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -16951,6 +17213,7 @@ data.commands={
 	"Explode/HotSSplitterlingBigBurrowed": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -16959,6 +17222,7 @@ data.commands={
 	"Explode/HotSHunter": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -16967,6 +17231,7 @@ data.commands={
 	"Explode/HotSHunterBurrowed": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -16975,6 +17240,7 @@ data.commands={
 	"EnableBuildingAttack/HotSSplitterlingBig": {
 		name: "Enable Structure Attack",
 		hotkey: "F",
+		hotkey_NRS: "G",
 		icon: "btn-ability-zerg-attackstructure-color",
 		mask: false,
 		y: 2,
@@ -16983,6 +17249,7 @@ data.commands={
 	"EnableBuildingAttack/HotSSplitterlingMedium": {
 		name: "Enable Structure Attack",
 		hotkey: "F",
+		hotkey_NRS: "G",
 		icon: "btn-ability-zerg-attackstructure-color",
 		mask: false,
 		y: 2,
@@ -16991,6 +17258,7 @@ data.commands={
 	"EnableBuildingAttack/HotSHunter": {
 		name: "Enable Structure Attack",
 		hotkey: "F",
+		hotkey_NRS: "G",
 		icon: "btn-ability-zerg-attackstructure-color",
 		mask: false,
 		y: 2,
@@ -16999,6 +17267,7 @@ data.commands={
 	"DisableBuildingAttack/HotSSplitterlingBig": {
 		name: "Disable Structure Attack",
 		hotkey: "G",
+		hotkey_NRS: "B",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -17007,6 +17276,7 @@ data.commands={
 	"DisableBuildingAttack/HotSSplitterlingMedium": {
 		name: "Disable Structure Attack",
 		hotkey: "G",
+		hotkey_NRS: "B",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -17015,6 +17285,7 @@ data.commands={
 	"DisableBuildingAttack/HotSHunter": {
 		name: "Disable Structure Attack",
 		hotkey: "G",
+		hotkey_NRS: "B",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -17023,6 +17294,7 @@ data.commands={
 	"DetonateScourge/Scourge": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "D",
 		hotkey_SC1: "D",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
@@ -17048,6 +17320,7 @@ data.commands={
 	"CorruptionAbility/ZagaraCorruptor": {
 		name: "Corruption",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-corruption-color",
 		mask: false,
 		y: 2,
@@ -17145,6 +17418,7 @@ data.commands={
 	"RoachWarren/Drone": {
 		name: "Mutate into Roach Warren",
 		hotkey: "R",
+		hotkey_NRS: "N",
 		icon: "btn-building-zerg-roachwarren",
 		mask: false,
 		y: 1,
@@ -17241,6 +17515,7 @@ data.commands={
 	"BuildCreepTumor/Queen": {
 		name: "Spawn Creep Tumor",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-building-zerg-creeptumor",
 		mask: false,
 		y: 2,
@@ -17249,6 +17524,7 @@ data.commands={
 	"MorphMorphalisk/Queen": {
 		name: "Spawn Larvae",
 		hotkey: "V",
+		hotkey_NRS: "L",
 		icon: "btn-unit-zerg-larva",
 		mask: false,
 		y: 2,
@@ -17313,6 +17589,7 @@ data.commands={
 	"LocustLaunch/SwarmHostRooted": {
 		name: "Spawn Locusts",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-locust",
 		mask: false,
 		y: 2,
@@ -17321,6 +17598,7 @@ data.commands={
 	"LocustLaunch/SwarmHostBurrowed": {
 		name: "Spawn Locusts",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-locust",
 		mask: false,
 		y: 2,
@@ -17329,6 +17607,7 @@ data.commands={
 	"LocustFlyingLaunch/SwarmHostSplitARooted": {
 		name: "Spawn Locusts",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-locustflyer",
 		mask: false,
 		y: 2,
@@ -17337,6 +17616,7 @@ data.commands={
 	"LocustFlyingLaunch/SwarmHostSplitABurrowed": {
 		name: "Spawn Locusts",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-locustflyer",
 		mask: false,
 		y: 2,
@@ -17345,6 +17625,7 @@ data.commands={
 	"LocustLaunchCreeper/SwarmHostSplitBRooted": {
 		name: "Spawn Locusts",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-locust",
 		mask: false,
 		y: 2,
@@ -17353,6 +17634,7 @@ data.commands={
 	"LocustLaunchCreeper/SwarmHostSplitBBurrowed": {
 		name: "Spawn Locusts",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-locust",
 		mask: false,
 		y: 2,
@@ -17417,6 +17699,7 @@ data.commands={
 	"SwarmHostBurrowUp": {
 		name: "Unburrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-upburrow-color",
 		mask: false,
 		y: 2,
@@ -17425,6 +17708,7 @@ data.commands={
 	"SwarmHostRoot": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-swarmhost_root",
 		mask: false,
 		y: 2,
@@ -17433,6 +17717,7 @@ data.commands={
 	"SwarmHostUproot": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-swarmhost_unroot",
 		mask: false,
 		y: 2,
@@ -17441,6 +17726,7 @@ data.commands={
 	"SwarmHostRootBurrow": {
 		name: "Burrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-burrow-color",
 		mask: false,
 		y: 2,
@@ -17449,6 +17735,7 @@ data.commands={
 	"SwarmHostUprootUnburrow": {
 		name: "Unburrow",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-upburrow-color",
 		mask: false,
 		y: 2,
@@ -17481,6 +17768,7 @@ data.commands={
 	"ViperConsume/Viper": {
 		name: "Consume",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-consume",
 		mask: false,
 		y: 2,
@@ -17489,6 +17777,7 @@ data.commands={
 	"FaceEmbrace/Viper": {
 		name: "Abduct",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-abduct",
 		mask: false,
 		y: 2,
@@ -17513,6 +17802,7 @@ data.commands={
 	"ViperConsumption/Viper": {
 		name: "Consumption",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-consume",
 		mask: false,
 		y: 2,
@@ -17545,6 +17835,7 @@ data.commands={
 	"HotSBioPlasmidDischarge/HotSLeviathan": {
 		name: "Bio-Plasmid Discharge",
 		hotkey: "Q",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -17553,6 +17844,7 @@ data.commands={
 	"HotSBioStasis/HotSLeviathan": {
 		name: "Bio-Stasis",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-corruption-color",
 		mask: false,
 		y: 2,
@@ -17642,6 +17934,7 @@ data.commands={
 	"ResearchNeuralParasite/InfestationPit": {
 		name: "Evolve Neural Parasite",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-ability-zerg-neuralparasite-color",
 		mask: false,
 		y: 0,
@@ -17746,6 +18039,7 @@ data.commands={
 	"SICivilianStructure/SISCV": {
 		name: "Build Infested Colonist Compound",
 		hotkey: "S",
+		hotkey_NRS: "V",
 		hotkey_SC1: "V",
 		icon: "btn-building-stukov-infestedcolonisthut",
 		mask: false,
@@ -17787,6 +18081,7 @@ data.commands={
 	"SIFactory/SISCV": {
 		name: "Build Infested Factory",
 		hotkey: "F",
+		hotkey_NRS: "O",
 		icon: "btn-building-stukov-infestedfactory",
 		mask: false,
 		y: 1,
@@ -17795,6 +18090,7 @@ data.commands={
 	"SIArmory/SISCV": {
 		name: "Build Infested Armory",
 		hotkey: "A",
+		hotkey_NRS: "M",
 		icon: "btn-building-stukov-infestedarmory",
 		mask: false,
 		y: 1,
@@ -17803,6 +18099,7 @@ data.commands={
 	"SIStarport/SISCV": {
 		name: "Build Infested Starport",
 		hotkey: "S",
+		hotkey_NRS: "P",
 		icon: "btn-building-stukov-infestedstarport",
 		mask: false,
 		y: 2,
@@ -17819,6 +18116,7 @@ data.commands={
 	"ExplodeVolatileInfested/SIVolatileInfested": {
 		name: "Explode",
 		hotkey: "X",
+		hotkey_NRS: "L",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -17827,6 +18125,7 @@ data.commands={
 	"EnableBuildingAttackVolatileInfested/SIVolatileInfested": {
 		name: "Enable Structure Attack",
 		hotkey: "F",
+		hotkey_NRS: "G",
 		icon: "btn-ability-zerg-attackstructure-color",
 		mask: false,
 		y: 2,
@@ -17835,6 +18134,7 @@ data.commands={
 	"DisableBuildingAttackVolatileInfested/SIVolatileInfested": {
 		name: "Disable Structure Attack",
 		hotkey: "G",
+		hotkey_NRS: "B",
 		icon: "btn-ability-zerg-explode-color",
 		mask: false,
 		y: 2,
@@ -17859,6 +18159,7 @@ data.commands={
 	"StukovInfestedSiegeTankUproot/StukovInfestedSiegeTank": {
 		name: "Uproot",
 		hotkey: "D",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -17900,6 +18201,7 @@ data.commands={
 	"CreepTumor/QueenClassic": {
 		name: "Creep Tumor",
 		hotkey: "C",
+		hotkey_NRS: "N",
 		icon: "btn-building-zerg-creeptumor",
 		mask: false,
 		y: 2,
@@ -17948,6 +18250,7 @@ data.commands={
 	"SIUproot/SICommandCenter": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -17957,6 +18260,7 @@ data.commands={
 	"SIRoot/SICommandCenterFlying": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -17966,6 +18270,7 @@ data.commands={
 	"SIUproot/SICivilianStructure": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -17975,6 +18280,7 @@ data.commands={
 	"SIRoot/SICivilianStructureFlying": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -17984,6 +18290,7 @@ data.commands={
 	"SIUproot/SIBarracks": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -17993,6 +18300,7 @@ data.commands={
 	"SIRoot/SIBarracksFlying": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -18002,6 +18310,7 @@ data.commands={
 	"SIUproot/SIMissileTurret": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -18011,6 +18320,7 @@ data.commands={
 	"SIRoot/SIMissileTurretFlying": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -18020,6 +18330,7 @@ data.commands={
 	"SIUproot/SIFactory": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -18029,6 +18340,7 @@ data.commands={
 	"SIRoot/SIFactoryFlying": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -18038,6 +18350,7 @@ data.commands={
 	"SIUproot/SIStarport": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -18047,6 +18360,7 @@ data.commands={
 	"SIRoot/SIStarportFlying": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -18100,10 +18414,19 @@ data.commands={
 	"SISCV": {
 		name: "Spawn Infested SCV",
 		hotkey: "S",
+		hotkey_NRS: "J",
 		icon: "btn-unit-zerg-infestedscv",
 		mask: false,
 		y: 0,
 		x: 0
+	},
+	"SIOverlord/SICommandCenter": {
+		name: "Spawn Overlord",
+		hotkey: "V",
+		icon: "btn-unit-zerg-overlord",
+		mask: false,
+		y: 0,
+		x: 1
 	},
 	"ResearchHeavyInfestation/SICommandCenter": {
 		name: "Research Aggressive Incubation",
@@ -18214,6 +18537,7 @@ data.commands={
 	"TerranInfantryWeaponsLevel1/SIEngineeringBay": {
 		name: "Upgrade Infantry Weapons",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		hotkey_SC1: "W",
 		icon: "btn-upgrade-terran-infantryweaponslevel1",
 		mask: false,
@@ -18255,6 +18579,7 @@ data.commands={
 	"SISiegeTank/SIFactory": {
 		name: "Spawn Infested Siege Tank",
 		hotkey: "S",
+		hotkey_NRS: "I",
 		hotkey_SC1: "T",
 		icon: "btn-unit-zerg-infestedsiegetank",
 		mask: false,
@@ -18305,6 +18630,7 @@ data.commands={
 	"TerranVehicleAndShipWeaponsLevel1/SIArmory": {
 		name: "Upgrade Vehicle and Ship Weapons",
 		hotkey: "E",
+		hotkey_NRS: "A",
 		hotkey_SC1: "W",
 		icon: "btn-upgrade-terran-vehicleweaponslevel1",
 		mask: false,
@@ -18323,6 +18649,7 @@ data.commands={
 	"SILiberator/SIStarport": {
 		name: "Spawn Infested Liberator",
 		hotkey: "N",
+		hotkey_NRS: "E",
 		icon: "btn-unit-zerg-infestedliberator",
 		mask: false,
 		y: 0,
@@ -18331,6 +18658,7 @@ data.commands={
 	"SIBanshee/SIStarport": {
 		name: "Spawn Infested Banshee",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-unit-zerg-infestedbanshee",
 		mask: false,
 		y: 0,
@@ -18339,6 +18667,7 @@ data.commands={
 	"SIQueen": {
 		name: "Spawn Brood Queen",
 		hotkey: "U",
+		hotkey_NRS: "Q",
 		hotkey_SC1: "Q",
 		icon: "btn-unit-zerg-classicqueen",
 		mask: false,
@@ -18719,6 +19048,7 @@ data.commands={
 	"PrimalBuildingRoot/DehakaHatcheryUprooted": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-dehaka-uproot-color",
 		mask: false,
@@ -18728,6 +19058,7 @@ data.commands={
 	"PrimalBuildingUproot/DehakaHatchery": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-dehaka-root-color",
 		mask: false,
@@ -18737,6 +19068,7 @@ data.commands={
 	"PrimalBuildingRoot/DehakaBarracksUprooted": {
 		name: "Root",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-dehaka-uproot-color",
 		mask: false,
@@ -18746,6 +19078,7 @@ data.commands={
 	"PrimalBuildingUproot/DehakaBarracks": {
 		name: "Uproot",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-zerg-dehaka-root-color",
 		mask: false,
@@ -18787,6 +19120,7 @@ data.commands={
 	"DehakaUltralisk/DehakaBarracks": {
 		name: "Spawn Primal Ultralisk",
 		hotkey: "U",
+		hotkey_NRS: "A",
 		hotkey_SC1: "A",
 		icon: "btn-unit-collection-primal-ultralisk",
 		mask: false,
@@ -19115,7 +19449,7 @@ data.commands={
 	},
 	"CorruptorStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Corruptor",
-		hotkey: "C",
+		hotkey: "A",
 		icon: "btn-unit-collection-corruptor-mecha",
 		mask: false,
 		y: 1,
@@ -19508,6 +19842,7 @@ data.commands={
 	"ResearchOverlordStetmannSpeed": {
 		name: "Research Pneumatized Fuselage",
 		hotkey: "P",
+		hotkey_NRS: "C",
 		icon: "btn-upgrade-stetmann-mechapneumatizedcarapace",
 		mask: false,
 		y: 1,
@@ -19932,6 +20267,7 @@ data.commands={
 	"Assimilator/Probe": {
 		name: "Warp In Assimilator",
 		hotkey: "A",
+		hotkey_NRS: "I",
 		icon: "btn-building-protoss-assimilator",
 		mask: false,
 		y: 0,
@@ -19940,6 +20276,7 @@ data.commands={
 	"Pylon/Probe": {
 		name: "Warp In Pylon",
 		hotkey: "E",
+		hotkey_NRS: "P",
 		hotkey_SC1: "P",
 		icon: "btn-building-protoss-pylon",
 		mask: false,
@@ -19957,6 +20294,7 @@ data.commands={
 	"Forge/Probe": {
 		name: "Warp In Forge",
 		hotkey: "F",
+		hotkey_NRS: "O",
 		icon: "btn-building-protoss-forge",
 		mask: false,
 		y: 1,
@@ -19981,6 +20319,7 @@ data.commands={
 	"PhotonCannon/Probe": {
 		name: "Warp In Photon Cannon",
 		hotkey: "C",
+		hotkey_NRS: "H",
 		icon: "btn-building-protoss-photoncannon",
 		mask: false,
 		y: 2,
@@ -19997,6 +20336,7 @@ data.commands={
 	"TwilightCouncil/Probe": {
 		name: "Warp In Twilight Council",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-building-protoss-twilightcouncil",
 		mask: false,
 		y: 0,
@@ -20005,6 +20345,7 @@ data.commands={
 	"Stargate/Probe": {
 		name: "Warp In Stargate",
 		hotkey: "S",
+		hotkey_NRS: "G",
 		icon: "btn-building-protoss-stargate",
 		mask: false,
 		y: 0,
@@ -20013,6 +20354,7 @@ data.commands={
 	"RoboticsFacility/Probe": {
 		name: "Warp In Robotics Facility",
 		hotkey: "R",
+		hotkey_NRS: "O",
 		icon: "btn-building-protoss-roboticsfacility",
 		mask: false,
 		y: 0,
@@ -20021,6 +20363,7 @@ data.commands={
 	"TemplarArchive/Probe": {
 		name: "Warp In Templar Archives",
 		hotkey: "T",
+		hotkey_NRS: "P",
 		icon: "btn-building-protoss-templararchives",
 		mask: false,
 		y: 1,
@@ -20029,6 +20372,7 @@ data.commands={
 	"FleetBeacon/Probe": {
 		name: "Warp In Fleet Beacon",
 		hotkey: "F",
+		hotkey_NRS: "L",
 		icon: "btn-building-protoss-fleetbeacon",
 		mask: false,
 		y: 1,
@@ -20045,6 +20389,7 @@ data.commands={
 	"DarkShrine/Probe": {
 		name: "Warp In Dark Shrine",
 		hotkey: "D",
+		hotkey_NRS: "K",
 		icon: "btn-building-protoss-darkshrine",
 		mask: false,
 		y: 2,
@@ -20053,6 +20398,7 @@ data.commands={
 	"Charge/Zealot": {
 		name: "Charge",
 		hotkey: "C",
+		hotkey_NRS: "G",
 		icon: "btn-ability-protoss-charge-color",
 		mask: false,
 		y: 2,
@@ -20061,6 +20407,7 @@ data.commands={
 	"Charge/ZealotAiur": {
 		name: "Charge",
 		hotkey: "C",
+		hotkey_NRS: "G",
 		icon: "btn-ability-protoss-charge-color",
 		mask: false,
 		y: 2,
@@ -20085,6 +20432,7 @@ data.commands={
 	"Feedback/HighTemplar": {
 		name: "Feedback",
 		hotkey: "F",
+		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-feedback-color",
 		mask: false,
 		y: 2,
@@ -20093,6 +20441,7 @@ data.commands={
 	"PsiStorm/HighTemplar": {
 		name: "Psionic Storm",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-psistorm-color",
 		mask: false,
 		y: 2,
@@ -20101,6 +20450,7 @@ data.commands={
 	"AWrp": {
 		name: "Archon Warp",
 		hotkey: "C",
+		hotkey_NRS: "N",
 		icon: "btn-unit-protoss-archon",
 		mask: false,
 		y: 2,
@@ -20109,6 +20459,7 @@ data.commands={
 	"Feedback/Archon": {
 		name: "Feedback",
 		hotkey: "F",
+		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-feedback-color",
 		mask: false,
 		y: 2,
@@ -20117,6 +20468,7 @@ data.commands={
 	"PsiStorm/Archon": {
 		name: "Psionic Storm",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-psistorm-color",
 		mask: false,
 		y: 2,
@@ -20157,6 +20509,7 @@ data.commands={
 	"GravitonBeam/Phoenix": {
 		name: "Graviton Beam",
 		hotkey: "G",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-gravitonbeam-color",
 		mask: false,
 		y: 2,
@@ -20165,6 +20518,7 @@ data.commands={
 	"GravitonBeam/Urun": {
 		name: "Graviton Beam",
 		hotkey: "G",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-gravitonbeam-color",
 		mask: false,
 		y: 2,
@@ -20173,6 +20527,7 @@ data.commands={
 	"LightningBomb/Tempest": {
 		name: "Disintegration",
 		hotkey: "D",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-protoss-disintegration",
 		mask: false,
@@ -20199,6 +20554,7 @@ data.commands={
 	"MorphToMothership/MothershipCore": {
 		name: "Upgrade to Mothership",
 		hotkey: "U",
+		hotkey_NRS: "A",
 		icon: "btn-unit-protoss-mothership",
 		mask: false,
 		y: 1,
@@ -20207,6 +20563,7 @@ data.commands={
 	"MothershipCoreWeapon/MothershipCore": {
 		name: "Photon Overcharge",
 		hotkey: "F",
+		hotkey_NRS: "G",
 		icon: "btn-ability-protoss-purify",
 		mask: false,
 		y: 2,
@@ -20215,6 +20572,7 @@ data.commands={
 	"MothershipCoreMassRecall/MothershipCore": {
 		name: "Mass Recall",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-protoss-massrecall",
 		mask: false,
 		y: 2,
@@ -20223,6 +20581,7 @@ data.commands={
 	"TemporalField/MothershipCore": {
 		name: "Time Warp",
 		hotkey: "T",
+		hotkey_NRS: "C",
 		hotkey_SC1: "C",
 		icon: "btn-ability-protoss-timewarp",
 		mask: false,
@@ -20232,6 +20591,7 @@ data.commands={
 	"MassRecall/Mothership": {
 		name: "Mass Recall",
 		hotkey: "R",
+		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-wormholetransit-color",
 		mask: false,
 		y: 2,
@@ -20248,6 +20608,7 @@ data.commands={
 	"TemporalField/Mothership": {
 		name: "Time Warp",
 		hotkey: "T",
+		hotkey_NRS: "Y",
 		hotkey_SC1: "Y",
 		icon: "btn-ability-protoss-timewarp",
 		mask: false,
@@ -20257,6 +20618,7 @@ data.commands={
 	"MassRecall/Artanis": {
 		name: "Mass Recall",
 		hotkey: "R",
+		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-wormholetransit-color",
 		mask: false,
 		y: 2,
@@ -20265,6 +20627,7 @@ data.commands={
 	"Vortex/Artanis": {
 		name: "Vortex",
 		hotkey: "V",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-blackhole-color",
 		mask: false,
 		y: 2,
@@ -20273,6 +20636,7 @@ data.commands={
 	"Probe/Nexus": {
 		name: "Warp In Probe",
 		hotkey: "E",
+		hotkey_NRS: "P",
 		hotkey_SC1: "P",
 		icon: "btn-unit-protoss-probe",
 		mask: false,
@@ -20315,6 +20679,7 @@ data.commands={
 	"Zealot": {
 		name: "Warp In Zealot",
 		hotkey: "Z",
+		hotkey_NRS: "O",
 		icon: "btn-unit-protoss-zealot",
 		mask: false,
 		y: 0,
@@ -20323,6 +20688,7 @@ data.commands={
 	"Sentry": {
 		name: "Warp In Sentry",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-unit-protoss-sentry",
 		mask: false,
 		y: 0,
@@ -20331,6 +20697,7 @@ data.commands={
 	"Stalker": {
 		name: "Warp In Stalker",
 		hotkey: "S",
+		hotkey_NRS: "L",
 		hotkey_SC1: "D",
 		icon: "btn-unit-protoss-stalker",
 		mask: false,
@@ -20340,6 +20707,7 @@ data.commands={
 	"HighTemplar": {
 		name: "Warp In High Templar",
 		hotkey: "T",
+		hotkey_NRS: "H",
 		icon: "btn-unit-protoss-hightemplar",
 		mask: false,
 		y: 1,
@@ -20348,6 +20716,7 @@ data.commands={
 	"DarkTemplar": {
 		name: "Warp In Dark Templar",
 		hotkey: "D",
+		hotkey_NRS: "K",
 		hotkey_SC1: "K",
 		icon: "btn-unit-protoss-darktemplar",
 		mask: false,
@@ -20357,6 +20726,7 @@ data.commands={
 	"WarpInAdept/Gateway": {
 		name: "Warp In Adept",
 		hotkey: "H",
+		hotkey_NRS: "D",
 		icon: "btn-unit-protoss-adept",
 		mask: false,
 		y: 0,
@@ -20365,6 +20735,7 @@ data.commands={
 	"WarpInAdept/WarpGate": {
 		name: "Warp In Adept",
 		hotkey: "H",
+		hotkey_NRS: "D",
 		icon: "btn-unit-protoss-adept",
 		mask: false,
 		y: 0,
@@ -20373,14 +20744,16 @@ data.commands={
 	"DarkArchon/Gateway": {
 		name: "Warp In Dark Archon",
 		hotkey: "A",
+		hotkey_NRS: "J",
 		icon: "btn-unit-protoss-darkarchon",
 		mask: false,
 		y: 1,
 		x: 2
 	},
 	"DarkArchon/WarpGate": {
-		name: "Warp In Zealot",
+		name: "Warp In Dark Archon",
 		hotkey: "A",
+		hotkey_NRS: "J",
 		icon: "btn-unit-protoss-darkarchon",
 		mask: false,
 		y: 1,
@@ -20397,6 +20770,7 @@ data.commands={
 	"MorphBackToGateway/WarpGate": {
 		name: "Transform to Gateway",
 		hotkey: "M",
+		hotkey_NRS: "A",
 		icon: "btn-building-protoss-gateway",
 		mask: false,
 		y: 2,
@@ -20430,6 +20804,7 @@ data.commands={
 	"ProtossAirWeaponsLevel1/CyberneticsCore": {
 		name: "Upgrade Air Weapons",
 		hotkey: "E",
+		hotkey_NRS: "P",
 		hotkey_SC1: "W",
 		icon: "btn-upgrade-protoss-airweaponslevel1",
 		mask: false,
@@ -20480,6 +20855,7 @@ data.commands={
 	"ResearchDragoonRange/TwilightCouncil": {
 		name: "Research Singularity Charge",
 		hotkey: "B",
+		hotkey_NRS: "R",
 		hotkey_SC1: "R",
 		icon: "btn-upgrade-artanis-singularitycharge",
 		mask: false,
@@ -20505,6 +20881,7 @@ data.commands={
 	"ResearchPsiStorm/TemplarArchive": {
 		name: "Research Psionic Storm",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		hotkey_SC1: "P",
 		icon: "btn-ability-protoss-psistorm-color",
 		mask: false,
@@ -20538,6 +20915,7 @@ data.commands={
 	"Colossus/RoboticsFacility": {
 		name: "Warp In Colossus",
 		hotkey: "C",
+		hotkey_NRS: "L",
 		hotkey_SC1: "V",
 		icon: "btn-unit-protoss-colossus",
 		mask: false,
@@ -20547,6 +20925,7 @@ data.commands={
 	"Observer/RoboticsFacility": {
 		name: "Warp In Observer",
 		hotkey: "B",
+		hotkey_NRS: "O",
 		hotkey_SC1: "O",
 		icon: "btn-unit-protoss-observer",
 		mask: false,
@@ -20556,6 +20935,7 @@ data.commands={
 	"WarpPrism/RoboticsFacility": {
 		name: "Warp In Warp Prism",
 		hotkey: "A",
+		hotkey_NRS: "P",
 		hotkey_SC1: "S",
 		icon: "btn-unit-protoss-warpprism",
 		mask: false,
@@ -20581,6 +20961,7 @@ data.commands={
 	"Colossus/RoboticsFacilityWarp": {
 		name: "Warp In Colossus",
 		hotkey: "C",
+		hotkey_NRS: "L",
 		hotkey_SC1: "V",
 		icon: "btn-unit-protoss-colossus",
 		mask: false,
@@ -20590,6 +20971,7 @@ data.commands={
 	"Observer/RoboticsFacilityWarp": {
 		name: "Warp In Observer",
 		hotkey: "B",
+		hotkey_NRS: "O",
 		hotkey_SC1: "O",
 		icon: "btn-unit-protoss-observer",
 		mask: false,
@@ -20625,6 +21007,7 @@ data.commands={
 	"ResearchExtendedThermalLance/RoboticsBay": {
 		name: "Research Extended Thermal Lance",
 		hotkey: "E",
+		hotkey_NRS: "T",
 		hotkey_SC1: "T",
 		icon: "btn-upgrade-protoss-extendedthermallance",
 		mask: false,
@@ -20650,6 +21033,7 @@ data.commands={
 	"Phoenix/Stargate": {
 		name: "Warp In Phoenix",
 		hotkey: "X",
+		hotkey_NRS: "P",
 		hotkey_SC1: "E",
 		icon: "btn-unit-protoss-phoenix",
 		mask: false,
@@ -20659,6 +21043,7 @@ data.commands={
 	"VoidRay/Stargate": {
 		name: "Warp In Void Ray",
 		hotkey: "V",
+		hotkey_NRS: "O",
 		hotkey_SC1: "O",
 		icon: "btn-unit-protoss-warpray",
 		mask: false,
@@ -20668,6 +21053,7 @@ data.commands={
 	"Tempest/Stargate": {
 		name: "Warp In Tempest",
 		hotkey: "T",
+		hotkey_NRS: "U",
 		icon: "btn-unit-protoss-tempest",
 		mask: false,
 		y: 0,
@@ -20676,6 +21062,7 @@ data.commands={
 	"Carrier/Stargate": {
 		name: "Warp In Carrier",
 		hotkey: "C",
+		hotkey_NRS: "I",
 		icon: "btn-unit-protoss-carrier",
 		mask: false,
 		y: 0,
@@ -20692,6 +21079,7 @@ data.commands={
 	"Phoenix/StargateWarp": {
 		name: "Warp In Phoenix",
 		hotkey: "X",
+		hotkey_NRS: "P",
 		hotkey_SC1: "E",
 		icon: "btn-unit-protoss-phoenix",
 		mask: false,
@@ -20701,6 +21089,7 @@ data.commands={
 	"VoidRay/StargateWarp": {
 		name: "Warp In Void Ray",
 		hotkey: "V",
+		hotkey_NRS: "O",
 		hotkey_SC1: "O",
 		icon: "btn-unit-protoss-warpray",
 		mask: false,
@@ -20726,6 +21115,7 @@ data.commands={
 	"AnionPulseCrystals/FleetBeacon": {
 		name: "Research Anion Pulse-Crystals",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-upgrade-protoss-phoenixrange",
 		mask: false,
 		y: 0,
@@ -20734,6 +21124,7 @@ data.commands={
 	"ResearchDoubleGravitonBeam/FleetBeacon": {
 		name: "Research Double Graviton Beam",
 		hotkey: "G",
+		hotkey_NRS: "D",
 		hotkey_SC1: "D",
 		icon: "btn-ability-protoss-dualgravitonbeam",
 		mask: false,
@@ -20743,6 +21134,7 @@ data.commands={
 	"ResearchTempestDisintegration/FleetBeacon": {
 		name: "Research Disintegration",
 		hotkey: "D",
+		hotkey_NRS: "I",
 		hotkey_SC1: "I",
 		icon: "btn-ability-protoss-disintegration",
 		mask: false,
@@ -20768,6 +21160,7 @@ data.commands={
 	"ForceField/Sentry": {
 		name: "Force Field",
 		hotkey: "F",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-forcefield-color",
 		mask: false,
 		y: 2,
@@ -20810,6 +21203,7 @@ data.commands={
 	"Hallucination/Sentry": {
 		name: "Hallucination",
 		hotkey: "C",
+		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-hallucination-color",
 		mask: false,
 		y: 2,
@@ -20818,6 +21212,7 @@ data.commands={
 	"ProbeHallucination/Sentry": {
 		name: "Summon 4 Probe Hallucinations",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		hotkey_SC1: "P",
 		icon: "btn-unit-protoss-probe",
 		mask: false,
@@ -20827,6 +21222,7 @@ data.commands={
 	"ZealotHallucination/Sentry": {
 		name: "Summon 2 Zealot Hallucinations",
 		hotkey: "Z",
+		hotkey_NRS: "O",
 		icon: "btn-unit-protoss-zealot",
 		mask: false,
 		y: 0,
@@ -20835,6 +21231,7 @@ data.commands={
 	"AdeptHallucination/Sentry": {
 		name: "Summon 2 Adept Hallucinations",
 		hotkey: "H",
+		hotkey_NRS: "T",
 		icon: "btn-unit-protoss-adept",
 		mask: false,
 		y: 0,
@@ -20843,6 +21240,7 @@ data.commands={
 	"StalkerHallucination/Sentry": {
 		name: "Summon 2 Stalker Hallucinations",
 		hotkey: "S",
+		hotkey_NRS: "L",
 		hotkey_SC1: "D",
 		icon: "btn-unit-protoss-stalker",
 		mask: false,
@@ -20860,6 +21258,7 @@ data.commands={
 	"HighTemplarHallucination/Sentry": {
 		name: "Summon 2 High Templar Hallucinations",
 		hotkey: "T",
+		hotkey_NRS: "H",
 		icon: "btn-unit-protoss-hightemplar",
 		mask: false,
 		y: 1,
@@ -20886,6 +21285,7 @@ data.commands={
 	"PhoenixHallucination/Sentry": {
 		name: "Summon Phoenix Hallucination",
 		hotkey: "X",
+		hotkey_NRS: "P",
 		hotkey_SC1: "S",
 		icon: "btn-unit-protoss-phoenix",
 		mask: false,
@@ -20904,6 +21304,7 @@ data.commands={
 	"OracleHallucination/Sentry": {
 		name: "Summon Oracle Hallucination",
 		hotkey: "L",
+		hotkey_NRS: "A",
 		icon: "btn-unit-protoss-oracle",
 		mask: false,
 		y: 2,
@@ -20912,6 +21313,7 @@ data.commands={
 	"ColossusHallucination/Sentry": {
 		name: "Summon Colossus Hallucination",
 		hotkey: "C",
+		hotkey_NRS: "K",
 		hotkey_SC1: "V",
 		icon: "btn-unit-protoss-colossus",
 		mask: false,
@@ -20961,7 +21363,8 @@ data.commands={
 	},
 	"VoidDarkTemplarShadowFury/DarkTemplarShakuras": {
 		name: "Shadow Fury",
-		hotkey: "E",
+		hotkey: "Q",
+		hotkey_SC1: "W",
 		icon: "btn-ability-protoss-shadowfury",
 		mask: false,
 		y: 2,
@@ -21051,6 +21454,7 @@ data.commands={
 	"VoidRaySwarmDamageBoost/VoidRay": {
 		name: "Prismatic Alignment",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-protoss-voidrayprismaticalignment",
 		mask: false,
@@ -21060,6 +21464,7 @@ data.commands={
 	"OracleRevelation/Oracle": {
 		name: "Revelation",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		icon: "btn-ability-protoss-preordain",
 		mask: false,
 		y: 2,
@@ -21076,6 +21481,7 @@ data.commands={
 	"OracleWeaponOn/Oracle": {
 		name: "Activate Pulsar Beam",
 		hotkey: "C",
+		hotkey_NRS: "J",
 		hotkey_SC1: "J",
 		icon: "btn-ability-protoss-oraclepulsarcannonon",
 		mask: false,
@@ -21085,6 +21491,7 @@ data.commands={
 	"OracleWeaponOff/Oracle": {
 		name: "Deactivate Pulsar Beam",
 		hotkey: "D",
+		hotkey_NRS: "N",
 		hotkey_SC1: "N",
 		icon: "btn-ability-protoss-oraclepulsarcannonoff",
 		mask: false,
@@ -21150,6 +21557,7 @@ data.commands={
 	"Oracle/Stargate": {
 		name: "Warp In Oracle",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		hotkey_SC1: "L",
 		icon: "btn-unit-protoss-oracle",
 		mask: false,
@@ -21167,6 +21575,7 @@ data.commands={
 	"Charge/ZealotPurifier": {
 		name: "Charge",
 		hotkey: "C",
+		hotkey_NRS: "G",
 		icon: "btn-ability-protoss-charge-color",
 		mask: false,
 		y: 2,
@@ -21240,6 +21649,7 @@ data.commands={
 	"GravitonBeam/PhoenixPurifier": {
 		name: "Graviton Beam",
 		hotkey: "G",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-gravitonbeam-color",
 		mask: false,
 		y: 2,
@@ -21248,6 +21658,7 @@ data.commands={
 	"ShieldBatteryRecharge/ShieldBattery": {
 		name: "Restore",
 		hotkey: "R",
+		hotkey_NRS: "U",
 		hotkey_SC1: "U",
 		icon: "btn-ability-protoss-shieldbattery-color",
 		mask: false,
@@ -21380,6 +21791,7 @@ data.commands={
 	"SentryTaldarimForceField/Monitor": {
 		name: "Force Field",
 		hotkey: "F",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-forcefield-red",
 		mask: false,
 		y: 2,
@@ -21413,6 +21825,7 @@ data.commands={
 	"PhasingMode/WarpPrism": {
 		name: "Phasing Mode",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		icon: "btn-unit-protoss-warpprismstationary",
 		mask: false,
 		y: 2,
@@ -21421,6 +21834,7 @@ data.commands={
 	"TransportMode/WarpPrism": {
 		name: "Transport Mode",
 		hotkey: "T",
+		hotkey_NRS: "N",
 		icon: "btn-unit-protoss-warpprism",
 		mask: false,
 		y: 2,
@@ -21429,6 +21843,7 @@ data.commands={
 	"ACAlarakPhasingMode/WarpPrismTaldarim": {
 		name: "Phasing Mode",
 		hotkey: "E",
+		hotkey_NRS: "I",
 		icon: "btn-unit-protoss-alarak-taldarim-warpprismstationary",
 		mask: false,
 		y: 2,
@@ -21437,6 +21852,7 @@ data.commands={
 	"ACAlarakTransportMode/WarpPrismTaldarim": {
 		name: "Transport Mode",
 		hotkey: "T",
+		hotkey_NRS: "N",
 		icon: "btn-unit-protoss-alarak-taldarim-warpprism",
 		mask: false,
 		y: 2,
@@ -21493,6 +21909,7 @@ data.commands={
 	"FenixWhirlwind/FenixCoop": {
 		name: "Whirlwind",
 		hotkey: "E",
+		hotkey_NRS: "R",
 		hotkey_SC1: "Y",
 		icon: "btn-ability-protoss-whirlwindfenix",
 		mask: false,
@@ -21502,6 +21919,7 @@ data.commands={
 	"VoidShieldCapacitor/FenixCoop": {
 		name: "Shield Capacitor",
 		hotkey: "R",
+		hotkey_NRS: "T",
 		hotkey_SC1: "T",
 		icon: "btn-ability-protoss-shieldcapacitor",
 		mask: false,
@@ -21603,6 +22021,7 @@ data.commands={
 	"WarpinDisruptor/RoboticsFacility": {
 		name: "Warp In Disruptor",
 		hotkey: "D",
+		hotkey_NRS: "R",
 		hotkey_SC1: "U",
 		icon: "btn-unit-protoss-disruptor",
 		mask: false,
@@ -21764,6 +22183,7 @@ data.commands={
 	"ImmortalOverload/FenixTaldarinImmortal": {
 		name: "Barrier",
 		hotkey: "B",
+		hotkey_NRS: "V",
 		hotkey_SC1: "V",
 		icon: "btn-ability-protoss-invulnerabilityshield",
 		mask: false,
@@ -21894,6 +22314,7 @@ data.commands={
 	"ZeratulStun/Zeratul": {
 		name: "Void Prison",
 		hotkey: "V",
+		hotkey_NRS: "I",
 		icon: "btn-ability-protoss-voidprison",
 		mask: true,
 		y: 2,
@@ -22087,6 +22508,7 @@ data.commands={
 	"StalkerZeratul/ZeratulGateway": {
 		name: "Warp In Xel’Naga Ambusher",
 		hotkey: "S",
+		hotkey_NRS: "L",
 		hotkey_SC1: "D",
 		icon: "btn-unit-protoss-zeratulstalker",
 		mask: false,
@@ -22096,6 +22518,7 @@ data.commands={
 	"SentryZeratul/ZeratulGateway": {
 		name: "Warp In Xel’Naga Shieldguard",
 		hotkey: "E",
+		hotkey_NRS: "N",
 		icon: "btn-unit-protoss-zeratulsentry",
 		mask: false,
 		y: 0,
@@ -22104,6 +22527,7 @@ data.commands={
 	"DarkTemplarZeratul/ZeratulGateway": {
 		name: "Warp In Void Templar",
 		hotkey: "D",
+		hotkey_NRS: "K",
 		hotkey_SC1: "K",
 		icon: "btn-unit-protoss-zeratuldarktemplar",
 		mask: false,
@@ -22161,6 +22585,7 @@ data.commands={
 	"WarpInZeratulWarpPrism/ZeratulRoboticsFacility": {
 		name: "Warp In Xel’Naga Void Array",
 		hotkey: "V",
+		hotkey_NRS: "R",
 		hotkey_SC1: "U",
 		icon: "btn-unit-protoss-zeratulwarpprism",
 		mask: false,
@@ -22186,6 +22611,7 @@ data.commands={
 	"Charge/ZeratulSummonZealot": {
 		name: "Charge",
 		hotkey: "C",
+		hotkey_NRS: "G",
 		icon: "btn-ability-protoss-charge-color",
 		mask: false,
 		y: 2,
@@ -22202,6 +22628,7 @@ data.commands={
 	"Feedback/ZeratulSummonKarass": {
 		name: "Feedback",
 		hotkey: "F",
+		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-feedback-color",
 		mask: false,
 		y: 2,
@@ -22282,6 +22709,7 @@ data.commands={
 	"PlantC4Charge/Raynor": {
 		name: "Plant Breaching Charge",
 		hotkey: "D",
+		hotkey_NRS: "B",
 		icon: "btn-ability-terran-d8charge",
 		mask: true,
 		y: 2,
@@ -22290,6 +22718,7 @@ data.commands={
 	"TossGrenade/Raynor": {
 		name: "Grenade",
 		hotkey: "T",
+		hotkey_NRS: "G",
 		icon: "btn-ability-terran-raynortossgrenade",
 		mask: true,
 		y: 2,
@@ -22298,6 +22727,7 @@ data.commands={
 	"ExperimentalPlasmaGun/Raynor": {
 		name: "Experimental Plasma Gun",
 		hotkey: "G",
+		hotkey_NRS: "L",
 		icon: "btn-ability-terran-raynorplasmagun",
 		mask: true,
 		y: 2,
@@ -22306,6 +22736,7 @@ data.commands={
 	"TheMorosDevice/Raynor": {
 		name: "Chrono Rift Device",
 		hotkey: "R",
+		hotkey_NRS: "N",
 		icon: "btn-ability-terran-chronoriftdevice",
 		mask: true,
 		y: 2,
@@ -22322,6 +22753,7 @@ data.commands={
 	"TossGrenadeTychus/TychusCommando": {
 		name: "Toss Shredder Grenade",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-tychustossgrenade",
 		mask: true,
 		y: 2,
@@ -22330,6 +22762,7 @@ data.commands={
 	"DutchPlaceTurret/Swann": {
 		name: "Place Flaming Betty",
 		hotkey: "T",
+		hotkey_NRS: "I",
 		icon: "btn-building-terran-autoturret",
 		mask: false,
 		y: 2,
@@ -22338,6 +22771,7 @@ data.commands={
 	"BonesHeal/Stetmann": {
 		name: "Heal",
 		hotkey: "E",
+		hotkey_NRS: "X",
 		icon: "btn-ability-terran-heal-color",
 		mask: false,
 		y: 2,
@@ -22346,6 +22780,7 @@ data.commands={
 	"NovaSnipe/Nova": {
 		name: "Snipe",
 		hotkey: "R",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-snipe-color",
 		mask: false,
 		y: 2,
@@ -22354,6 +22789,7 @@ data.commands={
 	"Domination/Nova": {
 		name: "Domination",
 		hotkey: "D",
+		hotkey_NRS: "T",
 		icon: "btn-ability-terran-domination",
 		mask: true,
 		y: 2,
@@ -22362,6 +22798,7 @@ data.commands={
 	"ReleaseMinion/Nova": {
 		name: "Release Minion",
 		hotkey: "E",
+		hotkey_NRS: "Y",
 		icon: "btn-command-cancel",
 		mask: true,
 		y: 2,
@@ -22386,6 +22823,7 @@ data.commands={
 	"VoodooShield/Tosh": {
 		name: "Psi Shield",
 		hotkey: "D",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-defensivematrix",
 		mask: true,
 		y: 2,
@@ -22394,6 +22832,7 @@ data.commands={
 	"Consumption/Tosh": {
 		name: "Consumption",
 		hotkey: "C",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-tosh-consumption",
 		mask: true,
 		y: 2,
@@ -22434,6 +22873,7 @@ data.commands={
 	"Snipe/NovaStoneHeroic": {
 		name: "Sniper Round",
 		hotkey: "R",
+		hotkey_NRS: "I",
 		icon: "btn-ability-terran-snipe-color",
 		mask: false,
 		y: 2,
@@ -22442,6 +22882,7 @@ data.commands={
 	"EMP/NovaStoneHeroic": {
 		name: "EMP Round",
 		hotkey: "E",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-emp-color",
 		mask: false,
 		y: 2,
@@ -22473,7 +22914,7 @@ data.commands={
 	},
 	"TrainHERC/HERCCompound": {
 		name: "Train HERC",
-		hotkey: "E",
+		hotkey: "H",
 		icon: "btn-unit-terran-herc",
 		mask: false,
 		y: 0,
@@ -22482,6 +22923,7 @@ data.commands={
 	"GiantYetiLeap/GiantYeti": {
 		name: "Leap",
 		hotkey: "Q",
+		hotkey_NRS: "U",
 		icon: "btn-ability-neutral-ursadonleap",
 		mask: false,
 		y: 2,
@@ -22490,6 +22932,7 @@ data.commands={
 	"Consume/GiantYeti": {
 		name: "Consume Host",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-consume",
 		mask: false,
 		y: 2,
@@ -22498,6 +22941,7 @@ data.commands={
 	"Consume/Lyote": {
 		name: "Consume Host",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-consume",
 		mask: false,
 		y: 2,
@@ -22506,6 +22950,7 @@ data.commands={
 	"ParasiticInvasion/LarvalQueen": {
 		name: "Parasitic Invasion",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-zerg-parasiticinvasion",
 		mask: false,
 		y: 2,
@@ -22514,6 +22959,7 @@ data.commands={
 	"SwarmQueenParasiticInvasion/SwarmQueen": {
 		name: "Parasitic Invasion",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-zerg-parasiticinvasion",
 		mask: false,
 		y: 2,
@@ -22522,6 +22968,7 @@ data.commands={
 	"SwarmQueenParasiticInvasion/LargeSwarmQueen": {
 		name: "Parasitic Invasion",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-zerg-parasiticinvasion",
 		mask: false,
 		y: 2,
@@ -22530,6 +22977,7 @@ data.commands={
 	"SwarmQueenParasiticInvasion/HugeSwarmQueen": {
 		name: "Parasitic Invasion",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-zerg-parasiticinvasion",
 		mask: false,
 		y: 2,
@@ -22570,6 +23018,7 @@ data.commands={
 	"SwarmQueenZergling/LargeSwarmQueen": {
 		name: "Birth Zergling",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-zergling",
 		mask: false,
 		y: 2,
@@ -22578,6 +23027,7 @@ data.commands={
 	"SwarmQueenZergling/HugeSwarmQueen": {
 		name: "Birth Zergling",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-zergling",
 		mask: false,
 		y: 2,
@@ -22586,6 +23036,7 @@ data.commands={
 	"SwarmQueenRoach/LargeSwarmQueen": {
 		name: "Birth Roach",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-roach",
 		mask: false,
 		y: 2,
@@ -22594,6 +23045,7 @@ data.commands={
 	"SwarmQueenRoach/HugeSwarmQueen": {
 		name: "Birth Roach",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-roach",
 		mask: false,
 		y: 2,
@@ -22602,6 +23054,7 @@ data.commands={
 	"SwarmQueenHydralisk/HugeSwarmQueen": {
 		name: "Birth Hydralisk",
 		hotkey: "D",
+		hotkey_NRS: "L",
 		icon: "btn-unit-zerg-hydralisk",
 		mask: false,
 		y: 2,
@@ -22610,6 +23063,7 @@ data.commands={
 	"DevastatingShot/InfestedStukov": {
 		name: "Corrosive Blast",
 		hotkey: "Q",
+		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-corrosiveblast",
 		mask: false,
 		y: 2,
@@ -22618,6 +23072,7 @@ data.commands={
 	"StukovInfestedTerrans/InfestedStukov": {
 		name: "Spawn Infested Terrans",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-infestedmarine",
 		mask: false,
 		y: 2,
@@ -22626,6 +23081,7 @@ data.commands={
 	"Drag/Dehaka": {
 		name: "Drag",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-zerg-drag",
 		mask: false,
 		y: 2,
@@ -22634,6 +23090,7 @@ data.commands={
 	"DehakaMirrorImage/Dehaka": {
 		name: "Generate Spawns",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-ability-zerg-dehakaspawn",
 		mask: false,
 		y: 2,
@@ -22642,6 +23099,7 @@ data.commands={
 	"DehakaHeal/Dehaka": {
 		name: "Mend",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-zerg-transfusion-color",
 		mask: false,
 		y: 2,
@@ -22650,6 +23108,7 @@ data.commands={
 	"Drag/DehakaMirrorImage": {
 		name: "Drag",
 		hotkey: "Q",
+		hotkey_NRS: "J",
 		icon: "btn-ability-zerg-drag",
 		mask: false,
 		y: 2,
@@ -22658,6 +23117,7 @@ data.commands={
 	"SJHyperionBlink/SJHyperion": {
 		name: "Jump",
 		hotkey: "Q",
+		hotkey_NRS: "U",
 		icon: "btn-ability-terran-warpjump",
 		mask: false,
 		y: 2,
@@ -22666,6 +23126,7 @@ data.commands={
 	"SJHyperionFighters/SJHyperion": {
 		name: "Fighter Strike",
 		hotkey: "W",
+		hotkey_NRS: "I",
 		icon: "btn-unit-terran-tacfighter",
 		mask: false,
 		y: 2,
@@ -22674,6 +23135,7 @@ data.commands={
 	"SJHyperionYamato/SJHyperion": {
 		name: "Yamato",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		icon: "btn-ability-terran-yamatogun-color",
 		mask: false,
 		y: 2,
@@ -22682,6 +23144,7 @@ data.commands={
 	"SJHyperionLightningStorm/SJHyperion": {
 		name: "Electric Field",
 		hotkey: "R",
+		hotkey_NRS: "L",
 		icon: "btn-ability-terran-electricfield",
 		mask: false,
 		y: 2,
@@ -22690,6 +23153,7 @@ data.commands={
 	"SJHyperionFightersRecall/SJHyperion": {
 		name: "Recall Fighters",
 		hotkey: "X",
+		hotkey_NRS: "J",
 		icon: "btn-command-cancel",
 		mask: true,
 		y: 1,
@@ -22707,6 +23171,7 @@ data.commands={
 	"ArtanisAstralWind/ArtanisVoid": {
 		name: "Astral Wind",
 		hotkey: "E",
+		hotkey_NRS: "B",
 		hotkey_SC1: "B",
 		icon: "btn-ability-protoss-astralwind",
 		mask: false,
@@ -22725,6 +23190,7 @@ data.commands={
 	"MohandarOmnislash/VorazunChampion": {
 		name: "Shadow Fury",
 		hotkey: "E",
+		hotkey_NRS: "U",
 		icon: "btn-ability-protoss-shadowfury",
 		mask: false,
 		y: 2,
@@ -22767,6 +23233,7 @@ data.commands={
 	"FenixSOACharge/FenixChampion": {
 		name: "Thunderous Charge",
 		hotkey: "Q",
+		hotkey_NRS: "C",
 		hotkey_SC1: "C",
 		icon: "btn-ability-protoss-thunderouscharge",
 		mask: false,
@@ -22776,6 +23243,7 @@ data.commands={
 	"FenixSOACharge/FenixSOA": {
 		name: "Thunderous Charge",
 		hotkey: "Q",
+		hotkey_NRS: "C",
 		hotkey_SC1: "C",
 		icon: "btn-ability-protoss-thunderouscharge",
 		mask: false,
@@ -22785,6 +23253,7 @@ data.commands={
 	"FenixWhirlwind/FenixChampion": {
 		name: "Whirlwind",
 		hotkey: "E",
+		hotkey_NRS: "R",
 		hotkey_SC1: "Y",
 		icon: "btn-ability-protoss-whirlwindfenix",
 		mask: false,
@@ -22794,6 +23263,7 @@ data.commands={
 	"FenixWhirlwind/FenixSOA": {
 		name: "Whirlwind",
 		hotkey: "E",
+		hotkey_NRS: "R",
 		hotkey_SC1: "Y",
 		icon: "btn-ability-protoss-whirlwindfenix",
 		mask: false,
@@ -22803,6 +23273,7 @@ data.commands={
 	"VoidShieldCapacitor/FenixChampion": {
 		name: "Shield Capacitor",
 		hotkey: "R",
+		hotkey_NRS: "V",
 		hotkey_SC1: "V",
 		icon: "btn-ability-protoss-shieldcapacitor",
 		mask: false,
@@ -23051,6 +23522,7 @@ data.overrides={
 		},
 		"Stim": {
 			name: "Super Stimpack",
+			hotkey_NRS: "I",
 			icon: "btn-upgrade-nova-equipment-superstimppack"
 		},
 		"CloakOnBanshee": {
@@ -23081,10 +23553,15 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
+			hotkey_SC1: "U",
 			x: 4
 		}
 	},
 	"Raynor": {
+		"CloakOnBanshee": {
+			hotkey_NRS: "C"
+		},
 		"Bunker/SCV": {
 			icon: "btn-building-terran-bunkershriketurret"
 		},
@@ -23152,6 +23629,9 @@ data.overrides={
 		"MissileTurret/SCV": {
 			icon: "btn-building-terran-missileturrettitaniumhousing"
 		},
+		"250mmStrikeCannons/Thor": {
+			name: "330mm Barrage Cannon"
+		},
 		"Hellion/Factory": {
 			hotkey_SC1: "E",
 			y: 1
@@ -23191,6 +23671,7 @@ data.overrides={
 		},
 		"Wraith/Starport": {
 			hotkey: "T",
+			hotkey_SC1: "W",
 			y: 0,
 		},
 		"BuildHercules/Starport": {
@@ -23418,11 +23899,13 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U",
 			x: 4
 		},
 		"BurrowLurkerMP": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			x: 4
 		},
 		"Roach/Larva": {
@@ -23451,6 +23934,7 @@ data.overrides={
 		},
 		"SpineCrawlerRoot/SpineCrawlerUprooted": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U"
 		},
 		"SpineCrawlerUproot/SpineCrawler": {
@@ -23458,6 +23942,7 @@ data.overrides={
 		},
 		"SporeCrawlerRoot/SporeCrawlerUprooted": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U"
 		},
 		"SporeCrawlerUproot/SporeCrawler": {
@@ -23475,6 +23960,7 @@ data.overrides={
 			x: 3
 		},
 		"Medic/Barracks": {
+			hotkey_NRS: "I",
 			y: 0,
 			x: 4
 		},
@@ -23487,6 +23973,18 @@ data.overrides={
 			hotkey_SC1: "P",
 			y: 1,
 			x: 1
+		},
+		"HireKelmorianMiners/Barracks": {
+			hotkey_NRS: "W"
+		},
+		"HireDevilDogs/Barracks": {
+			hotkey_NRS: "A"
+		},
+		"MercReaper/Barracks": {
+			hotkey_NRS: "V"
+		},
+		"MercMedic/Barracks": {
+			hotkey_NRS: "S"
 		},
 		"TechLabBarracks/Barracks": {
 			x: 1
@@ -23502,6 +24000,7 @@ data.overrides={
 			x: 1
 		},
 		"WarHound/Factory": {
+			hotkey_NRS: "U",
 			hotkey_SC1: "O",
 			x: 1
 		},
@@ -23521,6 +24020,7 @@ data.overrides={
 			x: 4
 		},
 		"MicroBot/Factory": {
+			hotkey_NRS: "B",
 			y: 1,
 			x: 1
 		},
@@ -23541,6 +24041,7 @@ data.overrides={
 		},
 		"Wraith/Starport": {
 			hotkey: "W",
+			hotkey_NRS: "T",
 			y: 0,
 			x: 2
 		},
@@ -23556,8 +24057,11 @@ data.overrides={
 			x: 0
 		},
 		"BuildScienceVessel/Starport": {
-			x: 1,
-			hotkey: "R"
+			hotkey: "R",
+			x: 1
+		},
+		"HireHelsAngels/Starport": {
+			hotkey_NRS: "J"
 		},
 		"TechLabStarport/Starport": {
 			x: 1
@@ -23578,11 +24082,13 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U",
 			x: 4
 		},
 		"BurrowLurkerMP": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			x: 4
 		},
 		"MindBolt/K5Kerrigan": {
@@ -23591,6 +24097,7 @@ data.overrides={
 		},
 		"PsionicLift/K5Kerrigan": {
 			name: "Psionic Shift",
+			hotkey_NRS: "W",
 			icon: "btn-ability-kerrigan-psychicshift"
 		},
 		"MindBolt/K5KerriganBurrowed": {
@@ -23599,6 +24106,7 @@ data.overrides={
 		},
 		"PsionicLift/K5KerriganBurrowed": {
 			name: "Psionic Shift",
+			hotkey_NRS: "W",
 			icon: "btn-ability-kerrigan-psychicshift"
 		},
 		"Zergling/Larva": {
@@ -23667,6 +24175,7 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U",
 			x: 4
 		},
@@ -23737,6 +24246,7 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U",
 			x: 4
 		},
@@ -23805,8 +24315,12 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U",
 			x: 4
+		},
+		"CloakOnBanshee": {
+			hotkey_NRS: "C"
 		},
 		"overlordspeed": {
 			x: 1
@@ -23818,13 +24332,15 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U",
 			x: 4
 		},
 		"SwarmHostBurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			x: 4
-		},
+		}
 	},
 	"Stetmann": {
 		"GatherProt": {
@@ -23838,6 +24354,7 @@ data.overrides={
 		},
 		"BurrowDown": {
 			hotkey: "R",
+			hotkey_NRS: "U",
 			hotkey_SC1: "U",
 			x: 4
 		}
@@ -23873,6 +24390,7 @@ data.overrides={
 			hotkey_SC1: "W"
 		},
 		"ImmortalOverload/Immortal": {
+			hotkey_NRS: "V",
 			hotkey_SC1: "V"
 		},
 		"Zealot": {
@@ -23981,9 +24499,8 @@ data.overrides={
 		"GatherProt": {
 			icon: "btn-ability-protoss-gather"
 		},
-		"Zealot": {
-			name: "Warp In Centurion",
-			icon: "btn-unit-protoss-zealot-nerazim"
+		"VoidDarkTemplarShadowFury/DarkTemplarShakuras": {
+			hotkey: "E"
 		},
 		"OracleBuildStasisTrap/Oracle": {
 			x: 2
@@ -23993,6 +24510,10 @@ data.overrides={
 		},
 		"OracleWeaponOff/Oracle": {
 			x: 1
+		},
+		"Zealot": {
+			name: "Warp In Centurion",
+			icon: "btn-unit-protoss-zealot-nerazim"
 		},
 		"ResearchCharge/TwilightCouncil": {
 			name: "Research Shadow Charge",
@@ -24278,6 +24799,8 @@ data.overrides={
 		},
 		"SOAMothershipLineAttack/SOAMothershipv4": {
 			hotkey: "E",
+			hotkey_NRS: "V",
+			hotkey_SC1: "V",
 			x: 0
 		}
 	},
