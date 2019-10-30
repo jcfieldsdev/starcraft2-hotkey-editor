@@ -199,10 +199,10 @@ Editor.prototype.setUnit=function(unit) {
 	this.unit=unit;
 
 	if (data.units[this.unit]==undefined) {
-		console.error("Undefined: "+this.unit+" (unit)");
+		console.error(`Undefined: ${this.unit} (unit)`);
 	} else {
 		this.commander=data.units[this.unit].commander;
-		console.log("Unit: "+data.units[this.unit].name+" ("+this.unit+")");
+		console.log(`Unit: ${data.units[this.unit].name} (${this.unit})`);
 		this.filter(data.units[this.unit]);
 	}
 
@@ -213,7 +213,7 @@ Editor.prototype.setUnit=function(unit) {
 Editor.prototype.setCommand=function(command, name) {
 	this.command=command;
 	this.name=name.replace(/\n/g, "<br>");
-	console.log("Command: "+name+" ("+command+")");
+	console.log(`Command: ${name} (${command})`);
 
 	this.commandEditor();
 };
@@ -286,7 +286,7 @@ Editor.prototype.createCommandCard=function(unit, commands, n) {
 		let command=this.commands.getCommand(unit.commander, this.unit, id);
 
 		if (command==undefined) {
-			console.error("Undefined: "+id+" (command)");
+			console.error(`Undefined: ${id} (command)`);
 			continue;
 		}
 
