@@ -16,6 +16,7 @@ const DEFAULT_SAVE_NAME="Hotkeys.SC2Hotkeys";
 const ICONS_DIR="icons/";
 const ICONS_EXT=".png";
 const HELP_PAGE="help.html";
+const MIME_TYPE="text/plain";
 const STORAGE_NAME="sc2hk";
 
 // delimiter for multiple hotkeys
@@ -66,7 +67,7 @@ window.addEventListener("load", function() {
 		document.execCommand("copy");
 	});
 	document.getElementById("download").addEventListener("click", function() {
-		let contents=new Blob([overlays.save.getText()], {type: "text/plain"});
+		let contents=new Blob([overlays.save.getText()], {type: MIME_TYPE});
 
 		let a=document.getElementById("link");
 		a.download=DEFAULT_SAVE_NAME;
@@ -140,17 +141,13 @@ window.addEventListener("load", function() {
 	});
 	disableAutocomplete(query);
 
-	let filters=document.getElementsByClassName("filter");
-
-	for (let element of filters) {
+	for (let element of document.getElementsByClassName("filter")) {
 		element.addEventListener("click", function() {
 			window.location.hash=data.units[this.value].defaultUnit;
 		});
 	}
 
-	let close=document.getElementsByClassName("close");
-
-	for (let element of close) {
+	for (let element of document.getElementsByClassName("close")) {
 		element.addEventListener("click", function() {
 			overlays[this.value].hide();
 		});
@@ -369,10 +366,9 @@ Editor.prototype.clearButtons=function() {
 	let cards=document.getElementsByClassName("card");
 
 	for (let [n, card] of Array.from(cards).entries()) {
-		let buttons=card.getElementsByTagName("div")[0].children;
 		this.setLegend(" ", n);
 
-		for (let element of buttons) {
+		for (let element of card.getElementsByTagName("div")[0].children) {
 			element.className="";
 			this.clear(element);
 		}
@@ -384,9 +380,7 @@ Editor.prototype.clearButtons=function() {
 };
 
 Editor.prototype.clearFields=function() {
-	let fields=document.getElementById("fields").children;
-
-	for (let element of fields) {
+	for (let element of document.getElementById("fields").children) {
 		this.clear(element);
 	}
 
@@ -533,17 +527,14 @@ Editor.prototype.resetDefaults=function() {
 
 Editor.prototype.filter=function(unit) {
 	let filter=data.units[unit.commander].sortCommander||unit.commander;
-	let items=document.getElementsByTagName("section");
 
 	// hides unit lists for commanders other than selected
-	for (let element of items) {
+	for (let element of document.getElementsByTagName("section")) {
 		element.classList.toggle("hidden", element.id!=filter);
 	}
 
 	// sets commander icon to active
-	let icons=document.getElementsByClassName("filter");
-
-	for (let element of icons) {
+	for (let element of document.getElementsByClassName("filter")) {
 		element.classList.toggle("active", element.value==filter);
 	}
 
@@ -603,14 +594,11 @@ Editor.prototype.setVisibleHotkeys=function() {
 };
 
 Editor.prototype.checkAllConflicts=function() {
-	let sections=document.getElementsByTagName("section");
 	let commanders=new Set(), units=new Set();
 
 	// checks for conflicts in all unit links
-	for (let section of sections) {
-		let links=section.getElementsByTagName("a");
-
-		for (let link of links) {
+	for (let section of document.getElementsByTagName("section")) {
+		for (let link of section.getElementsByTagName("a")) {
 			if (link.hash=="") {
 				continue;
 			}
@@ -629,21 +617,17 @@ Editor.prototype.checkAllConflicts=function() {
 	}
 
 	// checks for conflicts in "other units with command" list
-	let others=document.getElementById("other").getElementsByTagName("a");
-
-	for (let element of others) {
-		if (element.hash=="") {
+	for (let a of document.getElementById("other").getElementsByTagName("a")) {
+		if (a.hash=="") {
 			continue;
 		}
 
-		let unit=element.hash.replace("#", "");
-		element.classList.toggle("conflict", units.has(unit));
+		let unit=a.hash.replace("#", "");
+		a.classList.toggle("conflict", units.has(unit));
 	}
 
-	let filters=document.getElementsByClassName("filter");
-
 	// flags filter icon if section contains conflict
-	for (let element of filters) {
+	for (let element of document.getElementsByClassName("filter")) {
 		let value=element.value;
 		element.classList.toggle("conflict", commanders.has(value));
 	}
