@@ -97,8 +97,6 @@ window.addEventListener("load", function() {
 			reader.readAsText(file);
 		}
 	});
-	disableAutocomplete(document.getElementById("text_load"));
-	disableAutocomplete(document.getElementById("text_save"));
 
 	window.addEventListener("beforeunload", function() {
 		// saves on close
@@ -115,7 +113,6 @@ window.addEventListener("load", function() {
 			}
 		}
 	});
-
 
 	let query=document.getElementById("query");
 
@@ -139,7 +136,10 @@ window.addEventListener("load", function() {
 			editor.highlightResult(false);
 		}
 	});
+
 	disableAutocomplete(query);
+	disableAutocomplete(document.getElementById("text_load"));
+	disableAutocomplete(document.getElementById("text_save"));
 
 	for (let element of document.getElementsByClassName("filter")) {
 		element.addEventListener("click", function() {
@@ -252,78 +252,80 @@ Editor.prototype.unitEditor=function() {
 		legends=Object.keys(unit.commands);
 	}
 
+	const self=this;
+
 	for (let n of commands.keys()) {
 		this.setLegend(legends[n], n);
-		this.createCommandCard(unit, commands[n], n);
+		createCommandCard(unit, commands[n], n);
 	}
 
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
-};
 
-Editor.prototype.createCommandCard=function(unit, commands, n) {
-	// adds common commands
-	if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-		commands=commands.concat(data.common.basic);
-	}
-
-	let fieldset=document.getElementById("card"+n);
-	let buttons=[];
-
-	// prevents error if unit has more command cards than HTML file
-	if (fieldset==null) {
-		return;
-	}
-
-	if (n>2) { // unhides extra card
-		fieldset.classList.remove("hidden");
-	}
-
-	for (let id of commands) {
-		let command=this.commands.getCommand(unit.commander, this.unit, id);
-
-		if (command==undefined) {
-			console.error(`Undefined: ${id} (command)`);
-			continue;
+	function createCommandCard(unit, commands, n) {
+		// adds common commands
+		if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
+			commands=commands.concat(data.common.basic);
 		}
 
-		buttons.push({
-			id,
-			y: command.y,
-			x: command.x
-		});
+		let fieldset=document.getElementById("card"+n);
+		let buttons=[];
 
-		// re-selects command if selected on previously viewed unit
-		if (this.command==id) {
-			this.setCommand(id, command.name);
+		// prevents error if unit has more command cards than HTML file
+		if (fieldset==null) {
+			return;
 		}
 
-		let button=this.createButton(id, command, n);
-		let pos=COLS*command.y+command.x;
-		let cell=fieldset.getElementsByTagName("div")[0].children[pos];
-		cell.replaceWith(button);
+		if (n>2) { // unhides extra card
+			fieldset.classList.remove("hidden");
+		}
+
+		for (let id of commands) {
+			let command=self.commands.getCommand(unit.commander, self.unit, id);
+
+			if (command==undefined) {
+				console.error(`Undefined: ${id} (command)`);
+				continue;
+			}
+
+			buttons.push({
+				id,
+				y: command.y,
+				x: command.x
+			});
+
+			// re-selects command if selected on previously viewed unit
+			if (self.command==id) {
+				self.setCommand(id, command.name);
+			}
+
+			let button=createButton(id, command, n);
+			let pos=COLS*command.y+command.x;
+			let cell=fieldset.getElementsByTagName("div")[0].children[pos];
+			cell.replaceWith(button);
+		}
+
+		self.buttons.push(buttons);
 	}
 
-	this.buttons.push(buttons);
-};
+	function createButton(id, command, n) {
+		let div=document.createElement("div");
+		let img=document.createElement("img");
+		img.setAttribute("src", ICONS_DIR+command.icon+ICONS_EXT);
+		img.setAttribute("alt", "["+command.name+"]");
+		img.setAttribute("title", command.name);
+		img.addEventListener("click", function() {
+			self.setCommand(id, command.name);
+		}.bind(self));
+		img.classList.toggle("mask", command.mask);
+		div.appendChild(img);
 
-Editor.prototype.createButton=function(id, command, n) {
-	let div=document.createElement("div");
-	let img=document.createElement("img");
-	img.setAttribute("src", ICONS_DIR+command.icon+ICONS_EXT);
-	img.setAttribute("alt", "["+command.name+"]");
-	img.setAttribute("title", command.name);
-	img.addEventListener("click", function() {
-		this.setCommand(id, command.name);
-	}.bind(this));
-	img.classList.toggle("mask", command.mask);
-	div.appendChild(img);
+		let span=document.createElement("span");
+		span.id="span_"+n+command.y+command.x;
+		div.appendChild(span);
 
-	let span=document.createElement("span");
-	span.id="span_"+n+command.y+command.x;
-	div.appendChild(span);
-
-	return div;
+		return div;
+	}
 };
 
 Editor.prototype.createInput=function(hotkey="") {
@@ -350,52 +352,6 @@ Editor.prototype.setLegend=function(title, n) {
 
 	legend.textContent=title;
 	legend.classList.toggle("hidden", !title);
-};
-
-Editor.prototype.clear=function(element) {
-	if (element==null) {
-		return;
-	}
-
-	while (element.lastChild) { // removes all children
-		element.removeChild(element.lastChild);
-	}
-};
-
-Editor.prototype.clearButtons=function() {
-	let cards=document.getElementsByClassName("card");
-
-	for (let [n, card] of Array.from(cards).entries()) {
-		this.setLegend(" ", n);
-
-		for (let element of card.getElementsByTagName("div")[0].children) {
-			element.className="";
-			this.clear(element);
-		}
-
-		if (n>2) { // hides cards after third unless needed
-			card.classList.add("hidden");
-		}
-	}
-};
-
-Editor.prototype.clearFields=function() {
-	for (let element of document.getElementById("fields").children) {
-		this.clear(element);
-	}
-
-	this.clear(document.getElementById("code"));
-	this.clear(document.getElementById("other"));
-};
-
-Editor.prototype.clearSearch=function(clearQuery=false) {
-	if (clearQuery) {
-		document.getElementById("query").value="";
-	}
-
-	this.selected=-1;
-	this.clear(document.getElementById("results"));
-	document.getElementById("results").classList.add("hidden");
 };
 
 Editor.prototype.commandEditor=function(n) {
@@ -525,23 +481,6 @@ Editor.prototype.resetDefaults=function() {
 	this.checkAllConflicts();
 };
 
-Editor.prototype.filter=function(unit) {
-	let filter=data.units[unit.commander].sortCommander||unit.commander;
-
-	// hides unit lists for commanders other than selected
-	for (let element of document.getElementsByTagName("section")) {
-		element.classList.toggle("hidden", element.id!=filter);
-	}
-
-	// sets commander icon to active
-	for (let element of document.getElementsByClassName("filter")) {
-		element.classList.toggle("active", element.value==filter);
-	}
-
-	// sets color scheme to race of commander
-	document.documentElement.className=unit.race;
-};
-
 Editor.prototype.setVisibleHotkeys=function() {
 	// checks for conflicts in currently visible command cards
 	for (let [n, card] of this.buttons.entries()) {
@@ -631,6 +570,23 @@ Editor.prototype.checkAllConflicts=function() {
 		let value=element.value;
 		element.classList.toggle("conflict", commanders.has(value));
 	}
+};
+
+Editor.prototype.filter=function(unit) {
+	let filter=data.units[unit.commander].sortCommander||unit.commander;
+
+	// hides unit lists for commanders other than selected
+	for (let element of document.getElementsByTagName("section")) {
+		element.classList.toggle("hidden", element.id!=filter);
+	}
+
+	// sets commander icon to active
+	for (let element of document.getElementsByClassName("filter")) {
+		element.classList.toggle("active", element.value==filter);
+	}
+
+	// sets color scheme to race of commander
+	document.documentElement.className=unit.race;
 };
 
 Editor.prototype.findUnitsNamed=function(query) {
@@ -792,6 +748,52 @@ Editor.prototype.openResult=function() {
 	results[this.selected].getElementsByTagName("a")[0].click();
 };
 
+Editor.prototype.clear=function(element) {
+	if (element==null) {
+		return;
+	}
+
+	while (element.lastChild) { // removes all children
+		element.removeChild(element.lastChild);
+	}
+};
+
+Editor.prototype.clearButtons=function() {
+	let cards=document.getElementsByClassName("card");
+
+	for (let [n, card] of Array.from(cards).entries()) {
+		this.setLegend(" ", n);
+
+		for (let element of card.getElementsByTagName("div")[0].children) {
+			element.className="";
+			this.clear(element);
+		}
+
+		if (n>2) { // hides cards after third unless needed
+			card.classList.add("hidden");
+		}
+	}
+};
+
+Editor.prototype.clearFields=function() {
+	for (let element of document.getElementById("fields").children) {
+		this.clear(element);
+	}
+
+	this.clear(document.getElementById("code"));
+	this.clear(document.getElementById("other"));
+};
+
+Editor.prototype.clearSearch=function(clearQuery=false) {
+	if (clearQuery) {
+		document.getElementById("query").value="";
+	}
+
+	this.selected=-1;
+	this.clear(document.getElementById("results"));
+	document.getElementById("results").classList.add("hidden");
+};
+
 /*
  * Commands prototype
  */
@@ -905,7 +907,7 @@ Commands.prototype.getCommand=function(commander, unit, id) {
 };
 
 Commands.prototype.getHotkeys=function(commander, id) {
-	let value="", branch=0;
+	let value="";
 
 	if (this.checkUserOverride(id, true)) {
 		value=this.list["Commands"][id];
@@ -968,45 +970,43 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 Commands.prototype.checkConflicts=function(id) {
 	let unit=data.units[id];
 
-	if (unit==undefined||unit.commands==undefined) {
-		return;
-	}
+	if (unit!=undefined&&unit.commands!=undefined) {
+		let cards=[];
 
-	let cards=[];
-
-	if (Array.isArray(unit.commands)) {
-		cards.push(unit.commands);
-	} else {
-		cards=Object.values(unit.commands);
-	}
-
-	for (let [n, card] of cards.entries()) {
-		let keys={};
-
-		if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-			card=card.concat(data.common.basic);
+		if (Array.isArray(unit.commands)) {
+			cards.push(unit.commands);
+		} else {
+			cards=Object.values(unit.commands);
 		}
 
-		for (let id of card) {
-			if (data.commands[id]==undefined) {
-				continue;
+		for (let [n, card] of cards.entries()) {
+			let keys={};
+
+			if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
+				card=card.concat(data.common.basic);
 			}
 
-			let hotkeys=this.getHotkeys(unit.commander, id);
-
-			for (let hotkey of hotkeys) {
-				if (hotkey=="") {
+			for (let id of card) {
+				if (data.commands[id]==undefined) {
 					continue;
 				}
 
-				if (keys[hotkey]==undefined) {
-					keys[hotkey]=0;
-				}
+				let hotkeys=this.getHotkeys(unit.commander, id);
 
-				keys[hotkey]++;
+				for (let hotkey of hotkeys) {
+					if (hotkey=="") {
+						continue;
+					}
 
-				if (keys[hotkey]>1) {
-					return true;
+					if (keys[hotkey]==undefined) {
+						keys[hotkey]=0;
+					}
+
+					keys[hotkey]++;
+
+					if (keys[hotkey]>1) {
+						return true;
+					}
 				}
 			}
 		}
