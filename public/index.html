@@ -10,26 +10,26 @@
 <script src="scripts/data.js" type="text/javascript"></script>
 <script src="scripts/editor.js" type="text/javascript"></script></head>
 <body><header><h1>Starcraft II Hotkey Editor</h1></header>
-<nav><ul id="filters"><li><button value="Terran" title="Terran" id="terran" class="filter terran"><span>Terran</span></button></li>
-<li><button value="Raynor" id="raynor" title="Raynor" class="filter terran"><span>Raynor</span></button></li>
-<li><button value="Swann" title="Swann" id="swann" class="filter terran"><span>Swann</span></button></li>
-<li><button value="Nova" title="Nova" id="nova" class="filter terran"><span>Nova</span></button></li>
-<li><button value="Han" title="Han &amp; Horner" id="han" class="filter terran"><span>Han &amp; Horner</span></button></li>
-<li><button value="Tychus" title="Tychus" id="tychus" class="filter terran"><span>Tychus</span></button></li>
-<li><button value="Zerg" title="Zerg" id="zerg" class="filter zerg"><span>Zerg</span></button></li>
-<li><button value="Kerrigan" title="Kerrigan" id="kerrigan" class="filter zerg"><span>Kerrigan</span></button></li>
-<li><button value="Zagara" title="Zagara" id="zagara" class="filter zerg"><span>Zagara</span></button></li>
-<li><button value="Abathur" title="Abathur" id="abathur" class="filter zerg"><span>Abathur</span></button></li>
-<li><button value="Stukov" title="Stukov" id="stukov" class="filter zerg"><span>Stukov</span></button></li>
-<li><button value="Dehaka" title="Dehaka" id="dehaka" class="filter zerg"><span>Dehaka</span></button></li>
-<li><button value="Stetmann" title="Stetmann" id="stetmann" class="filter zerg"><span>Stetmann</span></button></li>
-<li><button value="Protoss" title="Protoss" id="protoss" class="filter protoss"><span>Protoss</span></button></li>
-<li><button value="Artanis" title="Artanis" id="artanis" class="filter protoss"><span>Artanis</span></button></li>
-<li><button value="Vorazun" title="Vorazun" id="vorazun" class="filter protoss"><span>Vorazun</span></button></li>
-<li><button value="Karax" title="Karax" id="karax" class="filter protoss"><span>Karax</span></button></li>
-<li><button value="Alarak" title="Alarak" id="alarak" class="filter protoss"><span>Alarak</span></button></li>
-<li><button value="Fenix" title="Fenix" id="fenix" class="filter protoss"><span>Fenix</span></button></li>
-<li><button value="Zeratul" title="Zeratul" id="zeratul" class="filter protoss"><span>Zeratul</span></button></li></ul></nav>
+<nav><ul id="filters"><li><button type="button" value="Terran" title="Terran" id="terran" class="filter terran"><span>Terran</span></button></li>
+<li><button type="button" value="Raynor" id="raynor" title="Raynor" class="filter terran"><span>Raynor</span></button></li>
+<li><button type="button" value="Swann" title="Swann" id="swann" class="filter terran"><span>Swann</span></button></li>
+<li><button type="button" value="Nova" title="Nova" id="nova" class="filter terran"><span>Nova</span></button></li>
+<li><button type="button" value="Han" title="Han &amp; Horner" id="han" class="filter terran"><span>Han &amp; Horner</span></button></li>
+<li><button type="button" value="Tychus" title="Tychus" id="tychus" class="filter terran"><span>Tychus</span></button></li>
+<li><button type="button" value="Zerg" title="Zerg" id="zerg" class="filter zerg"><span>Zerg</span></button></li>
+<li><button type="button" value="Kerrigan" title="Kerrigan" id="kerrigan" class="filter zerg"><span>Kerrigan</span></button></li>
+<li><button type="button" value="Zagara" title="Zagara" id="zagara" class="filter zerg"><span>Zagara</span></button></li>
+<li><button type="button" value="Abathur" title="Abathur" id="abathur" class="filter zerg"><span>Abathur</span></button></li>
+<li><button type="button" value="Stukov" title="Stukov" id="stukov" class="filter zerg"><span>Stukov</span></button></li>
+<li><button type="button" value="Dehaka" title="Dehaka" id="dehaka" class="filter zerg"><span>Dehaka</span></button></li>
+<li><button type="button" value="Stetmann" title="Stetmann" id="stetmann" class="filter zerg"><span>Stetmann</span></button></li>
+<li><button type="button" value="Protoss" title="Protoss" id="protoss" class="filter protoss"><span>Protoss</span></button></li>
+<li><button type="button" value="Artanis" title="Artanis" id="artanis" class="filter protoss"><span>Artanis</span></button></li>
+<li><button type="button" value="Vorazun" title="Vorazun" id="vorazun" class="filter protoss"><span>Vorazun</span></button></li>
+<li><button type="button" value="Karax" title="Karax" id="karax" class="filter protoss"><span>Karax</span></button></li>
+<li><button type="button" value="Alarak" title="Alarak" id="alarak" class="filter protoss"><span>Alarak</span></button></li>
+<li><button type="button" value="Fenix" title="Fenix" id="fenix" class="filter protoss"><span>Fenix</span></button></li>
+<li><button type="button" value="Zeratul" title="Zeratul" id="zeratul" class="filter protoss"><span>Zeratul</span></button></li></ul></nav>
 <main><noscript><p>Must have JavaScript enabled.</p></noscript>
 <section id="Terran"><h2>Terran</h2>
 <h3>Units</h3>
@@ -962,8 +962,8 @@
 		<div id="lists">
 			<p id="code"></p>
 			<ul id="tabs">
-				<li><button type="button" value="units" class="tab">Units with Command</button></li>
-				<li><button type="button" value="commands" class="tab">Similar Commands</button></li>
+				<li><button type="button" value="units" title="Shows other units with this command" class="tab">Units with Command</button></li>
+				<li><button type="button" value="commands" title="Shows other commands with the same name" class="tab">Similar Commands</button></li>
 			</ul>
 			<ul id="units"></ul>
 			<ul id="commands"></ul>

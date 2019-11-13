@@ -436,6 +436,7 @@ Editor.prototype.removeField=function() {
 	element.lastChild.select();
 
 	this.findCommandsLike(this.command);
+	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
@@ -477,6 +478,7 @@ Editor.prototype.setHotkey=function(input, event) {
 	this.commands.checkDefaults(this.command, this.commander);
 
 	this.findCommandsLike(this.command);
+	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
@@ -486,6 +488,7 @@ Editor.prototype.resetDefaults=function() {
 
 	this.commandEditor();
 	this.findCommandsLike(this.command);
+	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
@@ -726,11 +729,13 @@ Editor.prototype.findCommandsLike=function(id) {
 			this.setCommand(match, command.name)
 		}.bind(this));
 		a.appendChild(document.createTextNode(match));
-
 		li.appendChild(a);
 
 		let hotkey=this.commands.getHotkeys(this.commander, match);
-		li.appendChild(document.createTextNode(" ("+hotkey+")"));
+
+		if (hotkey!="") {
+			li.appendChild(document.createTextNode(" ("+hotkey+")"));
+		}
 
 		ul.appendChild(li);
 	}

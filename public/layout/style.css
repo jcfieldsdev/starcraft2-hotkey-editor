@@ -583,6 +583,10 @@ main ul {
 	padding: 0;
 }
 
+p#code {
+	margin: 0 0 1em;
+}
+
 p#control button:last-child {
 	margin-left: 1em;
 }
