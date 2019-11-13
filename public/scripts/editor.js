@@ -153,6 +153,12 @@ window.addEventListener("load", function() {
 		});
 	}
 
+	for (let element of document.getElementsByClassName("tab")) {
+		element.addEventListener("click", function() {
+			editor.switchTab(this.value);
+		});
+	}
+
 	function disableAutocomplete(input) {
 		input.setAttribute("autocomplete", "off");
 		input.setAttribute("autocorrect", "off");
@@ -170,6 +176,7 @@ function Editor(commands) {
 	this.unit="";
 	this.commander="";
 	this.buttons=[];
+	this.tab="units";
 	this.selected=-1; // selected search result
 }
 
@@ -213,6 +220,7 @@ Editor.prototype.setCommand=function(command, name) {
 	console.log(`Command: ${name} (${command})`);
 
 	this.commandEditor();
+	this.switchTab(this.tab);
 };
 
 Editor.prototype.unitEditor=function() {
@@ -355,12 +363,6 @@ Editor.prototype.setLegend=function(title, n) {
 };
 
 Editor.prototype.commandEditor=function(n) {
-	if (data.common.basic.includes(this.command)) {
-		this.clearFields();
-	} else {
-		this.findUnitsWith(this.command);
-	}
-
 	let hotkeys=this.commands.getHotkeys(this.commander, this.command);
 	this.formatHotkey(hotkeys);
 
@@ -399,6 +401,10 @@ Editor.prototype.commandEditor=function(n) {
 	p.appendChild(button);
 
 	document.getElementById("control").replaceWith(p);
+
+	this.findUnitsWith(this.command);
+	this.findCommandsLike(this.command);
+	document.getElementById("tabs").classList.remove("hidden");
 };
 
 Editor.prototype.addField=function() {
@@ -429,6 +435,7 @@ Editor.prototype.removeField=function() {
 
 	element.lastChild.select();
 
+	this.findCommandsLike(this.command);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
@@ -469,6 +476,7 @@ Editor.prototype.setHotkey=function(input, event) {
 	input.select();
 	this.commands.checkDefaults(this.command, this.commander);
 
+	this.findCommandsLike(this.command);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
@@ -477,6 +485,7 @@ Editor.prototype.resetDefaults=function() {
 	this.commands.clear(this.command);
 
 	this.commandEditor();
+	this.findCommandsLike(this.command);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
@@ -556,7 +565,7 @@ Editor.prototype.checkAllConflicts=function() {
 	}
 
 	// checks for conflicts in "other units with command" list
-	for (let a of document.getElementById("other").getElementsByTagName("a")) {
+	for (let a of document.getElementById("units").getElementsByTagName("a")) {
 		if (a.hash=="") {
 			continue;
 		}
@@ -587,6 +596,25 @@ Editor.prototype.filter=function(unit) {
 
 	// sets color scheme to race of commander
 	document.documentElement.className=unit.race;
+};
+
+Editor.prototype.switchTab=function(value) {
+	for (let element of document.getElementsByClassName("tab")) {
+		element.classList.toggle("active", element.value==value);
+	}
+
+	let lists=document.getElementById("lists").getElementsByTagName("ul");
+
+	for (let element of lists) {
+		if (element.id=="tabs") {
+			continue;
+		}
+
+		let condition=element.id!=value||!element.children.length;
+		element.classList.toggle("hidden", condition);
+	}
+
+	this.tab=value;
 };
 
 Editor.prototype.findUnitsNamed=function(query) {
@@ -657,7 +685,57 @@ Editor.prototype.findUnitsWith=function(id) {
 	}
 
 	document.getElementById("code").textContent=id;
-	this.formatResults("other", matches);
+	this.formatResults("units", matches);
+};
+
+Editor.prototype.findCommandsLike=function(id) {
+	let matches=new Set();
+
+	for (let [command, properties] of Object.entries(data.commands)) {
+		if (properties.name==this.name) {
+			matches.add(command);
+		}
+	}
+
+	for (let commander of Object.values(data.overrides)) {
+		for (let [command, properties] of Object.entries(commander)) {
+			if (properties.name==this.name) {
+				matches.add(command);
+			}
+		}
+	}
+
+	let ul=document.createElement("ul");
+	ul.id="commands";
+
+	for (let match of matches) {
+		let command=data.commands[match];
+		let li=document.createElement("li");
+
+		if (command.icon!=undefined) {
+			let img=document.createElement("img");
+			img.setAttribute("src", ICONS_DIR+command.icon+ICONS_EXT);
+			img.setAttribute("alt", "["+command.name+"]");
+			img.setAttribute("title", command.name);
+			img.classList.toggle("mask", command.mask);
+			li.appendChild(img);
+		}
+
+		let a=document.createElement("a");
+		a.addEventListener("click", function() {
+			this.setCommand(match, command.name)
+		}.bind(this));
+		a.appendChild(document.createTextNode(match));
+
+		li.appendChild(a);
+
+		let hotkey=this.commands.getHotkeys(this.commander, match);
+		li.appendChild(document.createTextNode(" ("+hotkey+")"));
+
+		ul.appendChild(li);
+	}
+
+	document.getElementById("commands").replaceWith(ul);
 };
 
 Editor.prototype.formatResults=function(id, matches) {
@@ -781,7 +859,14 @@ Editor.prototype.clearFields=function() {
 	}
 
 	this.clear(document.getElementById("code"));
-	this.clear(document.getElementById("other"));
+	this.clear(document.getElementById("units"));
+	this.clear(document.getElementById("commands"));
+
+	let lists=document.getElementById("lists").getElementsByTagName("ul");
+
+	for (let element of lists) {
+		element.classList.add("hidden");
+	}
 };
 
 Editor.prototype.clearSearch=function(clearQuery=false) {

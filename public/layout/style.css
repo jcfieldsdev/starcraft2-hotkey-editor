@@ -249,13 +249,13 @@ div#editor button {
 
 div#fields {
 	float: left;
-	padding: 0.5em;
 	width: 50%;
 }
 
-div#fields, div#list {
+div#fields, div#lists {
 	max-height: 35vh;
 	overflow: auto;
+	padding: 0.5em;
 }
 
 div#util {
@@ -427,7 +427,7 @@ html.neutral button, html.neutral ul#results li.selected {
 	background: #ff8040 linear-gradient(#ff8040, #ffc000);
 }
 
-html.neutral fieldset {
+html.neutral fieldset, html.neutral ul#commands, html.neutral ul#units {
 	border-color: #a06020;
 }
 
@@ -457,7 +457,7 @@ html.protoss button, html.protoss ul#results li.selected {
 	background: #2040c0 linear-gradient(#2040c0, #4080ff);
 }
 
-html.protoss fieldset {
+html.protoss fieldset, html.protoss ul#commands, html.protoss ul#units {
 	border-color: #2040c0;
 }
 
@@ -487,7 +487,7 @@ html.terran button, html.terran ul#results li.selected {
 	background: #208040 linear-gradient(#208040, #40c060);
 }
 
-html.terran fieldset {
+html.terran fieldset, html.terran ul#commands, html.terran ul#units {
 	border-color: #208040;
 }
 
@@ -517,7 +517,7 @@ html.zerg button, html.zerg ul#results li.selected {
 	background: #804080 linear-gradient(#804080, #c060c0);
 }
 
-html.zerg fieldset {
+html.zerg fieldset, html.zerg ul#commands, html.zerg ul#units {
 	border-color: #804080;
 }
 
@@ -611,6 +611,28 @@ textarea {
 	padding: 1em;
 }
 
+ul#commands, ul#units {
+	border: 1px solid #fff;
+	border-radius: 0 0.5em 0.5em 0.5em;
+	clear: left;
+	list-style: none;
+	margin: 0;
+	padding: 0.5em;
+	white-space: nowrap;
+}
+
+ul#commands img, ul#results img, ul#units img {
+	height: 1.5em;
+	margin-right: 0.5em;
+	vertical-align: middle;
+	width: 1.5em;
+}
+
+ul#commands img:hover, ul#units img:hover {
+	cursor: default;
+	outline: 0;
+}
+
 ul#filters {
 	background: transparent linear-gradient(#000, transparent);
 	color: inherit;
@@ -621,12 +643,6 @@ ul#filters {
 	position: fixed;
 	top: 0;
 	width: 100%;
-}
-
-ul#filters, ul#other {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 ul#filters button {
@@ -704,21 +720,10 @@ ul#filters li {
 	flex-grow: 1;
 }
 
-ul#other {
-	margin: 1em 0;
-	white-space: nowrap;
-}
-
-ul#other img, ul#results img {
-	height: 1.5em;
-	margin-right: 0.5em;
-	vertical-align: middle;
-	width: 1.5em;
-}
-
-ul#other img:hover {
-	cursor: default;
-	outline: 0;
+ul#filters, ul#tabs {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 ul#results {
@@ -726,6 +731,7 @@ ul#results {
 	bottom: 2em;
 	color: inherit;
 	left: 1em;
+	list-style: none;
 	max-height: 50vh;
 	min-width: 24em;
 	overflow: auto;
@@ -746,6 +752,23 @@ ul#results li.selected {
 ul#results li.selected a {
 	background: none;
 	color: #fff;
+}
+
+ul#tabs li {
+	float: left;
+	line-height: 100%;
+}
+
+ul#tabs button {
+	border-radius: 0.5em 0.5em 0 0;
+	border-width: 1px 1px 0;
+	line-height: 125%;
+	margin: 0 0.25em 0 0;
+}
+
+ul#tabs button:not(.active) {
+	background: none;
+	color: inherit;
 }
 
 @media (max-width: 1600px) {
