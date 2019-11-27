@@ -1004,7 +1004,7 @@ Commands.prototype.getHotkeys=function(commander, id) {
 	} else if (this.checkSuffixOverride(id)) {
 		value=data.commands[id]["hotkey"+this.suffix];
 	} else {
-		value=data.commands[id].hotkey;
+		value=data.commands[id].hotkey||"";
 	}
 
 	let hotkeys=value.split(DELIMITER);

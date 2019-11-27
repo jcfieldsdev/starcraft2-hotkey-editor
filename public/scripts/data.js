@@ -4300,11 +4300,437 @@ data.units={
 	},
 	"Mengsk": {
 		name: "Mengsk",
-		icon: "",
+		icon: "btn-upgrade-mengsk-veterancy",
 		race: TERRAN,
 		commander: "Mengsk",
 		type: COMMANDER,
 		defaultUnit: "Mengsk_Laborer"
+	},
+	"Mengsk_Laborer": {
+		name: "Dominion Laborer",
+		keywords: "SCV",
+		icon: "btn-unit-terran-scvmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: {
+			"Laborer": [
+				"GatherProt",
+				"ReturnCargo",
+				"TerranBuild/SCVMengsk",
+				"TerranBuildAdvanced/SCVMengsk",
+				"TrooperMengskEnlist/SCVMengsk",
+				"Repair",
+				"Spray",
+				"Halt"
+			],
+			"Build Structure": [
+				"CommandCenterMengsk/SCVMengsk",
+				"RefineryMengsk/SCVMengsk",
+				"BunkerMengsk/SCVMengsk",
+				"BarracksMengsk/SCVMengsk",
+				"EngineeringBayMengsk/SCVMengsk",
+				"ArtilleryMengsk/SCVMengsk",
+				"MissileTurretMengsk/SCVMengsk",
+				"Cancel"
+			],
+			"Build Advanced Structure": [
+				"GhostAcademyMengsk/SCVMengsk",
+				"FactoryMengsk/SCVMengsk",
+				"ArmoryMengsk/SCVMengsk",
+				"StarportMengsk/SCVMengsk",
+				"FusionCoreMengsk/SCVMengsk",
+				"Cancel"
+			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
+		}
+	},
+	"Mengsk_Trooper": {
+		name: "Dominion Trooper",
+		icon: "btn-unit-terran-troopermengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: {
+			"Trooper": [
+				"SCVMengskEnlist/TrooperMengsk",
+				"TrooperMengskBuild/TrooperMengsk",
+				"TrooperMengskSpecializeImproved/TrooperMengsk",
+				"TrooperMengskSpecializeFlamethrower/TrooperMengsk",
+				"TrooperMengskSpecializeAA/TrooperMengsk",
+				"Halt"
+			],
+			"Build Combat Structure": [
+				"BunkerMengsk/TrooperMengsk",
+				"ArtilleryMengsk/TrooperMengsk",
+				"MissileTurretMengsk/TrooperMengsk",
+				"Cancel"
+			]
+		},
+		overrides: {
+			"Halt": {
+				x: 4
+			}
+		}
+	},
+	"Mengsk_Marauder": {
+		name: "Aegis Guard",
+		keywords: "Marauder",
+		icon: "btn-unit-terran-maraudermengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"MarauderMengskAttackSpeedBoost/MarauderMengsk"
+		]
+	},
+	"Mengsk_Ghost": {
+		name: "Emperor’s Shadow",
+		keywords: "Ghost",
+		icon: "btn-unit-terran-ghostmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"GhostMengskHoldFire/GhostMengsk",
+			"WeaponsFreeMengsk/GhostMengsk",
+			"GhostMengskIrradiate/GhostMengsk",
+			"GhostMengskEMP/GhostMengsk",
+			"GhostMengskSuperCloak/GhostMengsk",
+			"NukeCalldownMengsk/GhostMengsk",
+			"Cancel"
+		]
+	},
+	"Mengsk_SiegeTank": {
+		name: "Shock Division",
+		keywords: "Siege Tank",
+		icon: "btn-unit-terran-siegetankmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"SiegeModeMengsk",
+			"UnsiegeMengsk/SiegeTankMengsk"
+		]
+	},
+	"Mengsk_Thor": {
+		name: "Blackhammer",
+		keywords: "Thor",
+		icon: "btn-unit-terran-thormengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"ThorMengskSiege/ThorMengsk",
+			"ThorMengskUnsiege/ThorMengsk"
+		]
+	},
+	"Mengsk_Viking": {
+		name: "Sky Fury",
+		keywords: "Viking",
+		icon: "btn-unit-terran-vikingmengskfighter",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"FighterModeMengsk/VikingMengskFighter",
+			"AssaultModeMengsk/VikingMengskFighter"
+		]
+	},
+	"Mengsk_Medivac": {
+		name: "Imperial Intercessor",
+		keywords: "Medivac",
+		icon: "btn-unit-terran-medivacmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"HealMengsk/MedivacMengsk",
+			"IgniteAfterburnersMengsk/MedivacMengsk",
+			"BunkerLoad",
+			"BunkerUnloadAll"
+		],
+		overrides: {
+			"BunkerLoad": {
+				x: 2
+			},
+			"BunkerUnloadAll": {
+				x: 3
+			}
+		}
+	},
+	"Mengsk_Raven": {
+		name: "Imperial Witness",
+		icon: "btn-unit-terran-blimpmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"MorphtoRavenMengskSieged/RavenMengsk",
+			"MorphtoRavenMengsk/RavenMengsk"
+		]
+	},
+	"Mengsk_Battlecruiser": {
+		name: "Pride of Augustgrad",
+		keywords: "Battlecruiser",
+		icon: "btn-unit-terran-battlecruisermengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: [
+			"YamatoGunMengsk",
+			"BattlecruiserMengskHyperjump/BattlecruiserMengsk"
+		]
+	},
+	"Mengsk_CommandCenter": {
+		name: "Enlistment Center",
+		keywords: "Command Center",
+		icon: "btn-building-terran-commandcentermengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: {
+			"Enlistment Center": [
+				"SCVMengsk",
+				"TrooperMengsk/CommandCenterMengsk",
+				"SCVMengskEnlistCC/CommandCenterMengsk",
+				"TrooperMengskEnlistCC/CommandCenterMengsk",
+				"SelectBuilder",
+				"SetArtilleryMengskRallyPoint/CommandCenterMengsk",
+				"Lift",
+				"Cancel"
+			],
+			"Flying": [
+				...data.common.flying,
+				"Land"
+			]
+		}
+	},
+	"Mengsk_Refinery": {
+		name: "Refinery",
+		icon: "btn-building-terran-refinerymengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
+		]
+	},
+	"Mengsk_SupplyDepot": {
+		name: "Supply Bunker",
+		keywords: "Supply Depot",
+		icon: "btn-building-terran-supplybunkermengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			...data.common.tower,
+			"SCVMengskEnlistCC/BunkerDepotMengsk",
+			"TrooperMengskEnlistCC/BunkerDepotMengsk",
+			"SelectBuilder",
+			"SetArtilleryMengskRallyPoint/BunkerDepotMengsk",
+			"BunkerDepotMengskLoad",
+			"ArtilleryMengskUnloadAll",
+			"BunkerMengskSalvage/BunkerDepotMengsk",
+			"Cancel"
+		]
+	},
+	"Mengsk_Barracks": {
+		name: "Barracks",
+		icon: "btn-building-terran-barracksmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: {
+			"Barracks": [
+				"MarauderMengsk/BarracksMengsk",
+				"GhostMengsk/BarracksMengsk",
+				"Cancel"
+			],
+			"Flying": [
+				...data.common.flying,
+				"Land"
+			]
+		}
+	},
+	"Mengsk_EngineeringBay": {
+		name: "Engineering Bay",
+		icon: "btn-building-terran-engineeringbaymengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			"MengskTrooperWeaponsLevel1/EngineeringBayMengsk",
+			"MengskTrooperArmorLevel1/EngineeringBayMengsk",
+			"TrooperMengskDropTrainResearch/EngineeringBayMengsk",
+			"StructureArmorMengsk/EngineeringBayMengsk",
+			"BunkerDepotMengskRangeResearch/EngineeringBayMengsk",
+			"ArtilleryMengskRangeResearch/EngineeringBayMengsk",
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
+		],
+		overrides: {
+			"SelectBuilder": {
+				y: 0
+			}
+		}
+	},
+	"Mengsk_EarthsplitterOrdnance": {
+		name: "Earthsplitter Ordnance",
+		icon: "btn-building-terran-artillerymengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			"Stop",
+			"SelectBuilder",
+			"SetArtilleryMengskRallyPoint/ArtilleryMengsk",
+			"ArtilleryMengskBombardment/ArtilleryMengsk",
+			"ArtilleryMengskLoad",
+			"ArtilleryMengskUnloadAll",
+			"Salvage/ArtilleryMengsk",
+			"Cancel"
+		]
+	},
+	"Mengsk_MissileTurret": {
+		name: "Missile Turret",
+		icon: "btn-building-terran-missileturretmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			...data.common.tower,
+			"SelectBuilder",
+			"Salvage/MissileTurretMengsk",
+			"Halt",
+			"Cancel"
+		]
+	},
+	"Mengsk_GhostAcademy": {
+		name: "Royal Academy",
+		keywords: "Ghost Academy",
+		icon: "btn-building-terran-ghostacademymengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			"MarauderMengskSlowResearch/GhostAcademyMengsk",
+			"GhostMengskGuidedStrikeRessearch/GhostAcademyMengsk",
+			"NukeMengskArm/GhostAcademyMengsk"
+		]
+	},
+	"Mengsk_Factory": {
+		name: "Factory",
+		icon: "btn-building-terran-factorymengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: {
+			"Factory": [
+				"SiegeTankMengsk/FactoryMengsk",
+				"ThorMengsk/FactoryMengsk",
+				"SelectBuilder",
+				"Lift",
+				"Cancel"
+			],
+			"Flying": [
+				...data.common.flying,
+				"Land"
+			]
+		}
+	},
+	"Mengsk_Armory": {
+		name: "Armory",
+		icon: "btn-building-terran-armorymengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			"MedivacMengskSiegeTankAirliftResearch/ArmoryMengsk",
+			"ThorMengskArmorAuraResearch/ArmoryMengsk",
+			"MechTransformationSpeedMengsk/ArmoryMengsk",
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
+		]
+	},
+	"Mengsk_Starport": {
+		name: "Starport",
+		icon: "btn-building-terran-starportmengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: {
+			"Starport": [
+				"VikingMengskFighter/StarportMengsk",
+				"MedivacMengsk/StarportMengsk",
+				"RavenMengsk/StarportMengsk",
+				"BattlecruiserMengsk/StarportMengsk",
+				"SelectBuilder",
+				"Lift",
+				"Cancel"
+			],
+			"Flying": [
+				...data.common.flying,
+				"Land"
+			]
+		}
+	},
+	"Mengsk_FusionCore": {
+		name: "Fusion Core",
+		icon: "btn-building-terran-fusioncoremengsk",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: BUILDING,
+		commands: [
+			"MedivacMengskDoubleHealBeamResearch/FusionCoreMengsk",
+			"MedivacMengskPermanentCloakResearch/FusionCoreMengsk",
+			"BlimpMengskTopbarRegenResearch/FusionCoreMengsk",
+			"VikingMengskSpeedResearch/FusionCoreMengsk",
+			"BattlecruiserMengskRangeAuraResearch/FusionCoreMengsk",
+			"SelectBuilder",
+			"Halt",
+			"Cancel"
+		]
+	},
+	"Mengsk_Zergling": {
+		name: "Enthralled Zergling",
+		icon: "btn-unit-zerg-zerglingupgraded-rcz",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: []
+	},
+	"Mengsk_Hydralisk": {
+		name: "Enthralled Hydralisk",
+		icon: "btn-unit-zerg-hydralisk-rcz",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: []
+	},
+	"Mengsk_Mutalisk": {
+		name: "Enthralled Mutalisk",
+		icon: "btn-unit-zerg-mutalisk-rcz",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: []
+	},
+	"Mengsk_Ultralisk": {
+		name: "Enthralled Ultralisk",
+		icon: "btn-unit-zerg-ultralisk-rcz",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: UNIT,
+		commands: []
 	},
 	"Zerg": {
 		name: "Zerg",
@@ -12166,6 +12592,14 @@ data.commands={
 		y: 1,
 		x: 2
 	},
+	"GhostMengskHoldFire/GhostMengsk": {
+		name: "Hold Fire",
+		hotkey: "F",
+		icon: "btn-ability-terran-holdfire",
+		mask: true,
+		y: 1,
+		x: 2
+	},
 	"WeaponsFree/Ghost": {
 		name: "Weapons Free",
 		hotkey: "G",
@@ -12207,6 +12641,14 @@ data.commands={
 		x: 3
 	},
 	"SpectreWeaponsFree/Spectre": {
+		name: "Weapons Free",
+		hotkey: "G",
+		icon: "btn-ability-terran-weaponsfree",
+		mask: true,
+		y: 1,
+		x: 3
+	},
+	"WeaponsFreeMengsk/GhostMengsk": {
 		name: "Weapons Free",
 		hotkey: "G",
 		icon: "btn-ability-terran-weaponsfree",
@@ -12320,6 +12762,23 @@ data.commands={
 		mask: true,
 		y: 2,
 		x: 0
+	},
+	"TerranBuild/SCVMengsk": {
+		name: "Build Structure",
+		hotkey: "B",
+		icon: "btn-command-terran-buildstructure",
+		mask: true,
+		y: 2,
+		x: 0
+	},
+	"TerranBuildAdvanced/SCVMengsk": {
+		name: "Build Advanced Structure",
+		hotkey: "V",
+		hotkey_NRS: "N",
+		icon: "btn-command-terran-buildadvancedstructure",
+		mask: true,
+		y: 2,
+		x: 1
 	},
 	"TerranBuild/SISCV": {
 		name: "Build Structure",
@@ -13593,6 +14052,30 @@ data.commands={
 		y: 2,
 		x: 3
 	},
+	"BunkerMengskSalvage/BunkerDepotMengsk": {
+		name: "Salvage",
+		hotkey: "V",
+		icon: "btn-ability-terran-salvage",
+		mask: true,
+		y: 2,
+		x: 3
+	},
+	"Salvage/ArtilleryMengsk": {
+		name: "Salvage",
+		hotkey: "V",
+		icon: "btn-ability-terran-salvage",
+		mask: true,
+		y: 2,
+		x: 3
+	},
+	"Salvage/MissileTurretMengsk": {
+		name: "Salvage",
+		hotkey: "V",
+		icon: "btn-ability-terran-salvage",
+		mask: true,
+		y: 2,
+		x: 0
+	},
 	"Salvage/SIMissileTurret": {
 		name: "Salvage",
 		hotkey: "V",
@@ -14577,6 +15060,14 @@ data.commands={
 		mask: false,
 		y: 2,
 		x: 1
+	},
+	"MagrailMunitions/Marauder_BlackOps": {
+		name: "Magrail Munitions",
+		hotkey: "U",
+		icon: "btn-upgrade-terran-magrailmunitions",
+		mask: false,
+		y: 2,
+		x: 0
 	},
 	"Snipe_BlackOps/Ghost_BlackOps": {
 		name: "Snipe",
@@ -15877,6 +16368,614 @@ data.commands={
 		mask: false,
 		y: 0,
 		x: 0
+	},
+	"TrooperMengskEnlist/SCVMengsk": {
+		name: "Report for Combat",
+		hotkey: "X",
+		icon: "btn-ability-mengsk-trooper-volunteertofight",
+		mask: false,
+		y: 1,
+		x: 4
+	},
+	"SCVMengskEnlist/TrooperMengsk": {
+		name: "Report for Labor",
+		hotkey: "Z",
+		icon: "btn-ability-mengsk-trooper-volunteertowork",
+		mask: false,
+		y: 1,
+		x: 4
+	},
+	"CommandCenterMengsk/SCVMengsk": {
+		name: "Build Enlistment Center",
+		hotkey: "C",
+		icon: "btn-building-terran-commandcentermengsk",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"RefineryMengsk/SCVMengsk": {
+		name: "Build Refinery",
+		hotkey: "R",
+		icon: "btn-building-terran-refinerymengsk",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"BunkerMengsk/SCVMengsk": {
+		name: "Build Supply Bunker",
+		hotkey: "S",
+		icon: "btn-building-terran-supplybunkermengsk",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"BunkerMengsk/TrooperMengsk": {
+		name: "Build Supply Bunker",
+		hotkey: "S",
+		icon: "btn-building-terran-supplybunkermengsk",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"BarracksMengsk/SCVMengsk": {
+		name: "Build Barracks",
+		hotkey: "B",
+		icon: "btn-building-terran-barracksmengsk",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"EngineeringBayMengsk/SCVMengsk": {
+		name: "Build Engineering Bay",
+		hotkey: "E",
+		icon: "btn-building-terran-engineeringbaymengsk",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"ArtilleryMengsk/SCVMengsk": {
+		name: "Build Earthsplitter Ordnance",
+		hotkey: "A",
+		icon: "btn-building-terran-artillerymengsk",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ArtilleryMengsk/TrooperMengsk": {
+		name: "Build Earthsplitter Ordnance",
+		hotkey: "A",
+		icon: "btn-building-terran-artillerymengsk",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"MissileTurretMengsk/SCVMengsk": {
+		name: "Build Missile Turret",
+		hotkey: "T",
+		icon: "btn-building-terran-missileturretmengsk",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"MissileTurretMengsk/TrooperMengsk": {
+		name: "Build Missile Turret",
+		hotkey: "T",
+		icon: "btn-building-terran-missileturretmengsk",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"GhostAcademyMengsk/SCVMengsk": {
+		name: "Build Royal Academy",
+		hotkey: "G",
+		icon: "btn-building-terran-ghostacademymengsk",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"FactoryMengsk/SCVMengsk": {
+		name: "Build Factory",
+		hotkey: "F",
+		icon: "btn-building-terran-factorymengsk",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"ArmoryMengsk/SCVMengsk": {
+		name: "Build Armory",
+		hotkey: "A",
+		icon: "btn-building-terran-armorymengsk",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"StarportMengsk/SCVMengsk": {
+		name: "Build Starport",
+		hotkey: "S",
+		icon: "btn-building-terran-starportmengsk",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"FusionCoreMengsk/SCVMengsk": {
+		name: "Build Fusion Core",
+		hotkey: "C",
+		icon: "btn-building-terran-fusioncoremengsk",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"TrooperMengskBuild/TrooperMengsk": {
+		name: "Build Combat Structure",
+		hotkey: "B",
+		icon: "btn-ability-mengsk-trooper-buildcombatstructure",
+		mask: true,
+		y: 2,
+		x: 0
+	},
+	"TrooperMengskSpecializeImproved/TrooperMengsk": {
+		name: "Equip B-2 High-Cal LMG",
+		hotkey: "G",
+		icon: "btn-upgrade-mengsk-trooper-plasmarifle",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"TrooperMengskSpecializeFlamethrower/TrooperMengsk": {
+		name: "Equip CPO-7 Salamander Flamethrower",
+		hotkey: "F",
+		icon: "btn-upgrade-mengsk-trooper-flamethrower",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"TrooperMengskSpecializeAA/TrooperMengsk": {
+		name: "Equip Hailstorm Launcher",
+		hotkey: "N",
+		icon: "btn-upgrade-mengsk-trooper-missilelauncher",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"MarauderMengskAttackSpeedBoost/MarauderMengsk": {
+		name: "High-Grade Stimpacks",
+		hotkey: "T",
+		icon: "btn-ability-mengsk-marauder-royalstimpack",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"GhostMengskIrradiate/GhostMengsk": {
+		name: "Pyrokinetic Immolation",
+		hotkey: "R",
+		icon: "btn-ability-mengsk-ghost-pyrokineticimmolation_blue",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"GhostMengskEMP/GhostMengsk": {
+		name: "EMP Blast",
+		hotkey: "E",
+		icon: "btn-ability-mengsk-ghost-staticempblast",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"GhostMengskSuperCloak/GhostMengsk": {
+		name: "Labyrinth Cloak",
+		hotkey: "Z",
+		icon: "btn-ability-mengsk-ghost-supercloak",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"NukeCalldownMengsk/GhostMengsk": {
+		name: "Tactical Missile Strike",
+		hotkey: "N",
+		icon: "btn-ability-mengsk-ghost-tacticalmissilestrike",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"SiegeModeMengsk": {
+		name: "Siege Mode",
+		hotkey: "E",
+		icon: "btn-unit-terran-siegetankmengsksieged",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"UnsiegeMengsk/SiegeTankMengsk": {
+		name: "Tank Mode",
+		hotkey: "D",
+		icon: "btn-unit-terran-siegetankmengsk",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"ThorMengskSiege/ThorMengsk": {
+		name: "Overwatch Mode",
+		hotkey: "E",
+		icon: "btn-unit-terran-thormengsksieged",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ThorMengskUnsiege/ThorMengsk": {
+		name: "Walker Mode",
+		hotkey: "D",
+		icon: "btn-unit-terran-thormengsk",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"FighterModeMengsk/VikingMengskFighter": {
+		name: "Fighter Mode",
+		hotkey: "E",
+		icon: "btn-unit-terran-vikingmengskfighter",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"AssaultModeMengsk/VikingMengskFighter": {
+		name: "Assault Mode",
+		hotkey: "D",
+		icon: "btn-unit-terran-vikingmengskassault",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"HealMengsk/MedivacMengsk": {
+		name: "Heal",
+		hotkey: "E",
+		icon: "btn-ability-terran-heal-color",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"IgniteAfterburnersMengsk/MedivacMengsk": {
+		name: "Ignite Afterburners",
+		hotkey: "B",
+		icon: "btn-ability-mengsk-medivac-igniteafterburners",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"MorphtoRavenMengskSieged/RavenMengsk": {
+		name: "Patriot Mode",
+		hotkey: "E",
+		icon: "btn-ability-mengsk-blimp-propagandamode",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"MorphtoRavenMengsk/RavenMengsk": {
+		name: "Cancel Patriot Mode",
+		hotkey: "D",
+		icon: "btn-ability-mengsk-blimp-movementmode",
+		mask: false,
+		y: 2,
+		x: 3
+	},
+	"YamatoGunMengsk": {
+		name: "Yamato Cannon",
+		hotkey: "Y",
+		icon: "btn-ability-mengsk-battlecruiser-yamatocannon",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"BattlecruiserMengskHyperjump/BattlecruiserMengsk": {
+		name: "Tactical Jump",
+		hotkey: "T",
+		icon: "btn-ability-terran-warpjump",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"SCVMengsk": {
+		name: "Conscript Dominion Laborer",
+		hotkey: "S",
+		icon: "btn-unit-terran-scvmengsk",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"TrooperMengsk/CommandCenterMengsk": {
+		name: "Conscript Dominion Trooper",
+		hotkey: "A",
+		icon: "btn-unit-terran-troopermengsk",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"SCVMengskEnlistCC/CommandCenterMengsk": {
+		name: "Call to Labor",
+		hotkey: "Z",
+		icon: "btn-ability-mengsk-trooper-volunteertowork",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"TrooperMengskEnlistCC/CommandCenterMengsk": {
+		name: "Call to Arms",
+		hotkey: "X",
+		icon: "btn-ability-mengsk-trooper-volunteertofight",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"SetArtilleryMengskRallyPoint/CommandCenterMengsk": {
+		name: "Set Trooper Rally Point",
+		hotkey: "Y",
+		icon: "btn-ability-terran-setrallypoint",
+		mask: true,
+		y: 1,
+		x: 4
+	},
+	"MarauderMengsk/BarracksMengsk": {
+		name: "Train Aegis Guard",
+		hotkey: "D",
+		icon: "btn-unit-terran-maraudermengsk",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"GhostMengsk/BarracksMengsk": {
+		name: "Train Emperor’s Shadow",
+		hotkey: "G",
+		icon: "btn-unit-terran-ghostmengsk",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"SCVMengskEnlistCC/BunkerDepotMengsk": {
+		name: "Call to Labor",
+		hotkey: "Z",
+		icon: "btn-ability-mengsk-trooper-volunteertowork",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"TrooperMengskEnlistCC/BunkerDepotMengsk": {
+		name: "Call to Arms",
+		hotkey: "X",
+		icon: "btn-ability-mengsk-trooper-volunteertofight",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"SetArtilleryMengskRallyPoint/BunkerDepotMengsk": {
+		name: "Set Supply Bunker Rally Point",
+		hotkey: "Y",
+		icon: "btn-ability-terran-setrallypoint",
+		mask: true,
+		y: 1,
+		x: 4
+	},
+	"BunkerDepotMengskLoad": {
+		name: "Load",
+		hotkey: "L",
+		icon: "btn-ability-terran-load",
+		mask: true,
+		y: 2,
+		x: 1
+	},
+	"ArtilleryMengskUnloadAll": {
+		name: "Unload All",
+		hotkey: "D",
+		icon: "btn-ability-terran-unloadall",
+		mask: true,
+		y: 2,
+		x: 2
+	},
+	"MengskTrooperWeaponsLevel1/EngineeringBayMengsk": {
+		name: "Upgrade Dominion Weapons",
+		hotkey: "E",
+		icon: "btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"MengskTrooperArmorLevel1/EngineeringBayMengsk": {
+		name: "Upgrade Dominion Armor",
+		hotkey: "A",
+		icon: "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"TrooperMengskDropTrainResearch/EngineeringBayMengsk": {
+		name: "Research Orbital Trooper Pods",
+		hotkey: "D",
+		icon: "btn-upgrade-mengsk-engineeringbay-orbitaldrop",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"StructureArmorMengsk/EngineeringBayMengsk": {
+		name: "Research Neosteel Fortified Armor",
+		hotkey: "S",
+		icon: "btn-upgrade-mengsk-engineeringbay-neosteelfortifiedarmor",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"BunkerDepotMengskRangeResearch/EngineeringBayMengsk": {
+		name: "Research Aim-assist Embrasures",
+		hotkey: "S",
+		icon: "btn-upgrade-mengsk-engineeringbay-improvedbunkersights",
+		mask: false,
+		y: 1,
+		x: 2
+	},
+	"ArtilleryMengskRangeResearch/EngineeringBayMengsk": {
+		name: "Research Hemispheric Accelerants",
+		hotkey: "B",
+		icon: "btn-upgrade-mengsk-engineeringbay-improvedartilleryrange",
+		mask: false,
+		y: 1,
+		x: 3
+	},
+	"SetArtilleryMengskRallyPoint/ArtilleryMengsk": {
+		name: "Set Supply Bunker Rally Point",
+		hotkey: "Y",
+		icon: "btn-ability-terran-setrallypoint",
+		mask: true,
+		y: 1,
+		x: 4
+	},
+	"ArtilleryMengskBombardment/ArtilleryMengsk": {
+		name: "Bombardment",
+		hotkey: "B",
+		icon: "btn-ability-mengsk-earthsplitterordnance-earthsplitterbombardment",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"ArtilleryMengskLoad": {
+		name: "Load",
+		hotkey: "L",
+		icon: "btn-ability-terran-load",
+		mask: true,
+		y: 2,
+		x: 1
+	},
+	"MarauderMengskSlowResearch/GhostAcademyMengsk": {
+		name: "Research Incapacitator Shells",
+		hotkey: "C",
+		icon: "btn-ability-mengsk-marauder-superconcussiveshells",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"GhostMengskGuidedStrikeRessearch/GhostAcademyMengsk": {
+		name: "Research Sovereign Tactical Missiles",
+		hotkey: "G",
+		icon: "btn-upgrade-mengsk-ghostacademy-guidedtacticalstrike",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"NukeMengskArm/GhostAcademyMengsk": {
+		name: "Arm Silo with Tactical Missile",
+		hotkey: "R",
+		icon: "btn-ability-mengsk-ghostacademy-armsilowithtacticalmissile",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"SiegeTankMengsk/FactoryMengsk": {
+		name: "Build Shock Division",
+		hotkey: "S",
+		icon: "btn-unit-terran-siegetankmengsk",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ThorMengsk/FactoryMengsk": {
+		name: "Build Blackhammer",
+		hotkey: "T",
+		icon: "btn-unit-terran-thormengsk",
+		mask: false,
+		y: 0,
+		x: 4
+	},
+	"VikingMengskFighter/StarportMengsk": {
+		name: "Build Sky Fury",
+		hotkey: "V",
+		icon: "btn-unit-terran-vikingmengskfighter",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"MedivacMengsk/StarportMengsk": {
+		name: "Build Imperial Intercessor",
+		hotkey: "D",
+		icon: "btn-unit-terran-medivacmengsk",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"RavenMengsk/StarportMengsk": {
+		name: "Build Imperial Witness",
+		hotkey: "R",
+		icon: "btn-unit-terran-blimpmengsk",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"BattlecruiserMengsk/StarportMengsk": {
+		name: "Build Pride of Augustgrad",
+		hotkey: "B",
+		icon: "btn-unit-terran-battlecruisermengsk",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"MedivacMengskSiegeTankAirliftResearch/ArmoryMengsk": {
+		name: "Research Armament Stabilizers",
+		hotkey: "V",
+		icon: "btn-ability-mengsk-siegetank-flyingtankarmament",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"ThorMengskArmorAuraResearch/ArmoryMengsk": {
+		name: "Research Bulwark Field",
+		hotkey: "C",
+		icon: "btn-ability-mengsk-thor-bigboycover",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"MechTransformationSpeedMengsk/ArmoryMengsk": {
+		name: "Research Smart Servos",
+		hotkey: "S",
+		icon: "btn-upgrade-mengsk-armory-smartservos",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"MedivacMengskDoubleHealBeamResearch/FusionCoreMengsk": {
+		name: "Research Dual Resuscitators",
+		hotkey: "C",
+		icon: "btn-ability-mengsk-medivac-doublehealbeam",
+		mask: false,
+		y: 0,
+		x: 0
+	},
+	"MedivacMengskPermanentCloakResearch/FusionCoreMengsk": {
+		name: "Research Scatter Veil",
+		hotkey: "E",
+		icon: "btn-ability-mengsk-medivac-permanentcloak",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"BlimpMengskTopbarRegenResearch/FusionCoreMengsk": {
+		name: "Research Amplified Airwaves",
+		hotkey: "R",
+		icon: "btn-upgrade-mengsk-blimp-propagandaamplification",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"VikingMengskSpeedResearch/FusionCoreMengsk": {
+		name: "Research Aesir Turbines",
+		hotkey: "V",
+		icon: "btn-ability-mengsk-viking-speed",
+		mask: false,
+		y: 0,
+		x: 3
+	},
+	"BattlecruiserMengskRangeAuraResearch/FusionCoreMengsk": {
+		name: "Research Field-Assist Targeting System",
+		hotkey: "F",
+		icon: "btn-ability-mengsk-battlecruiser-decksights",
+		mask: false,
+		y: 0,
+		x: 4
 	},
 	"Drone/Larva": {
 		name: "Morph to Drone",
@@ -20670,7 +21769,7 @@ data.commands={
 		hotkey: "T",
 		hotkey_NRS: "Y",
 		hotkey_SC1: "Y",
-		icon: "btn-ability-protoss-timewarp",
+		icon: "btn-ability-protoss-timewarp-red",
 		mask: false,
 		y: 2,
 		x: 1
