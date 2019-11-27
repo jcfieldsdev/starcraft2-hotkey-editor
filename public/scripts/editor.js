@@ -206,7 +206,6 @@ Editor.prototype.setUnit=function(unit) {
 		console.error(`Undefined: ${this.unit} (unit)`);
 	} else {
 		this.commander=data.units[this.unit].commander;
-		console.log(`Unit: ${data.units[this.unit].name} (${this.unit})`);
 		this.filter(data.units[this.unit]);
 	}
 
@@ -217,7 +216,6 @@ Editor.prototype.setUnit=function(unit) {
 Editor.prototype.setCommand=function(command, name) {
 	this.command=command;
 	this.name=name.replace(/\n/g, "<br>");
-	console.log(`Command: ${name} (${command})`);
 
 	this.commandEditor();
 	this.switchTab(this.tab);
@@ -403,7 +401,7 @@ Editor.prototype.commandEditor=function(n) {
 	document.getElementById("control").replaceWith(p);
 
 	this.findUnitsWith(this.command);
-	this.findCommandsLike(this.command);
+	this.findCommandsNamed(this.command);
 	document.getElementById("tabs").classList.remove("hidden");
 };
 
@@ -435,7 +433,7 @@ Editor.prototype.removeField=function() {
 
 	element.lastChild.select();
 
-	this.findCommandsLike(this.command);
+	this.findCommandsNamed(this.command);
 	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
@@ -477,7 +475,7 @@ Editor.prototype.setHotkey=function(input, event) {
 	input.select();
 	this.commands.checkDefaults(this.command, this.commander);
 
-	this.findCommandsLike(this.command);
+	this.findCommandsNamed(this.command);
 	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
@@ -487,7 +485,7 @@ Editor.prototype.resetDefaults=function() {
 	this.commands.clear(this.command);
 
 	this.commandEditor();
-	this.findCommandsLike(this.command);
+	this.findCommandsNamed(this.command);
 	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
@@ -613,8 +611,7 @@ Editor.prototype.switchTab=function(value) {
 			continue;
 		}
 
-		let condition=element.id!=value||!element.children.length;
-		element.classList.toggle("hidden", condition);
+		element.classList.toggle("hidden", element.id!=value);
 	}
 
 	this.tab=value;
@@ -691,7 +688,7 @@ Editor.prototype.findUnitsWith=function(id) {
 	this.formatResults("units", matches);
 };
 
-Editor.prototype.findCommandsLike=function(id) {
+Editor.prototype.findCommandsNamed=function(id) {
 	let matches=new Set();
 
 	for (let [command, properties] of Object.entries(data.commands)) {
@@ -766,7 +763,6 @@ Editor.prototype.formatResults=function(id, matches) {
 		// hashchange event)
 		if (this.unit==match) {
 			a.addEventListener("click", function() {
-				this.commandEditor();
 				this.clearSearch(true);
 			}.bind(this));
 		}
@@ -1282,6 +1278,7 @@ Storage.prototype.load=function() {
 		}
 	} catch (err) {
 		console.error(err);
+		return null;
 	}
 };
 

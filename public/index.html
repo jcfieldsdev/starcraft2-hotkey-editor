@@ -11,11 +11,12 @@
 <script src="scripts/editor.js" type="text/javascript"></script></head>
 <body><header><h1>Starcraft II Hotkey Editor</h1></header>
 <nav><ul id="filters"><li><button type="button" value="Terran" title="Terran" id="terran" class="filter terran"><span>Terran</span></button></li>
-<li><button type="button" value="Raynor" id="raynor" title="Raynor" class="filter terran"><span>Raynor</span></button></li>
+<li><button type="button" value="Raynor" title="Raynor" id="raynor" class="filter terran"><span>Raynor</span></button></li>
 <li><button type="button" value="Swann" title="Swann" id="swann" class="filter terran"><span>Swann</span></button></li>
 <li><button type="button" value="Nova" title="Nova" id="nova" class="filter terran"><span>Nova</span></button></li>
 <li><button type="button" value="Han" title="Han &amp; Horner" id="han" class="filter terran"><span>Han &amp; Horner</span></button></li>
 <li><button type="button" value="Tychus" title="Tychus" id="tychus" class="filter terran"><span>Tychus</span></button></li>
+<li><button type="button" value="Mengsk" title="Mengsk" id="mengsk" class="filter terran"><span>Mengsk</span></button></li>
 <li><button type="button" value="Zerg" title="Zerg" id="zerg" class="filter zerg"><span>Zerg</span></button></li>
 <li><button type="button" value="Kerrigan" title="Kerrigan" id="kerrigan" class="filter zerg"><span>Kerrigan</span></button></li>
 <li><button type="button" value="Zagara" title="Zagara" id="zagara" class="filter zerg"><span>Zagara</span></button></li>
@@ -302,6 +303,36 @@
 <ul><li><a href="#Tychus_Odin">Odin</a></li></ul>
 <h3>Special Structures</h3>
 <ul><li><a href="#Tychus_Bar">Joeyray&rsquo;s Bar</a></li></ul></section>
+<section id="Mengsk"><h2>Mengsk</h2>
+<h3>Units</h3>
+<ul><li><a href="#Mengsk_Laborer">Dominion Laborer</a></li>
+<li><a href="#Mengsk_Trooper">Dominion Trooper</a></li>
+<li><a href="#Mengsk_Marauder">Aegis Guard</a></li>
+<li><a href="#Mengsk_Ghost">Emperor&rsquo;s Shadow</a></li>
+<li><a href="#Mengsk_SiegeTank">Shock Division</a></li>
+<li><a href="#Mengsk_Blackhammer">Blackhammer</a></li>
+<li><a href="#Mengsk_Viking">Sky Fury</a></li>
+<li><a href="#Mengsk_Medivac">Imperial Intercessor</a></li>
+<li><a href="#Mengsk_Raven">Imperial Witness</a></li>
+<li><a href="#Mengsk_Battlecruiser">Pride of Augustgrad</a></li></ul>
+<h3>Structures</h3>
+<ul><li><a href="#Mengsk_CommandCenter">Enlistment Center</a></li>
+<li><a href="#Mengsk_Refinery">Refinery</a></li>
+<li><a href="#Mengsk_SupplyDepot">Supply Bunker</a></li>
+<li><a href="#Mengsk_Barracks">Barracks</a></li>
+<li><a href="#Mengsk_EngineeringBay">Engineering Bay</a></li>
+<li><a href="#Mengsk_EarthsplitterOrdnance">Earthsplitter Ordnance</a></li>
+<li><a href="#Mengsk_MissileTurret">Missile Turret</a></li>
+<li><a href="#Mengsk_GhostAcademy">Royal Academy</a></li>
+<li><a href="#Mengsk_Factory">Factory</a></li>
+<li><a href="#Mengsk_Armory">Armory</a></li>
+<li><a href="#Mengsk_Starport">Starport</a></li>
+<li><a href="#Mengsk_FusionCore">Fusion Core</a></li></ul>
+<h3>Special Units</h3>
+<ul><li><a href="#Mengsk_Zergling">Enthralled Zergling</a></li>
+<li><a href="#Mengsk_Hydralisk">Enthralled Hydralisk</a></li>
+<li><a href="#Mengsk_Mutalisk">Enthralled Mutalisk</a></li>
+<li><a href="#Mengsk_Ultralisk">Enthralled Ultralisk</a></li></ul></ul></section>
 <section id="Zerg"><h2>Zerg</h2>
 <h3>Units</h3>
 <ul><li><a href="#Zerg_Larva">Larva</a></li>
@@ -872,13 +903,13 @@
 <li><a href="#Fenix_Stargate">Stargate</a></li>
 <li><a href="#Fenix_FleetBeacon">Fleet Beacon</a></li></ul>
 <h3>Special Units</h3>
-<ul><li><a href="#Fenix_Probius">Probius</a></li>
-<li><a href="#Fenix_Kaldalis">Kaldalis</a></li>
-<li><a href="#Fenix_Talis">Talis</a></li>
-<li><a href="#Fenix_Taldarin">Taldarin</a></li>
-<li><a href="#Fenix_Warbringer">Warbringer</a></li>
-<li><a href="#Fenix_Mojo">Mojo</a></li>
-<li><a href="#Fenix_Clolarion">Clolarion</a></li></ul>
+<ul><li><a href="#Fenix_ProbeChampion">Probius</a></li>
+<li><a href="#Fenix_ZealotChampion">Kaldalis</a></li>
+<li><a href="#Fenix_AdeptChampion">Talis</a></li>
+<li><a href="#Fenix_ImmortalChampion">Taldarin</a></li>
+<li><a href="#Fenix_ColossusChampion">Warbringer</a></li>
+<li><a href="#Fenix_ScoutChampion">Mojo</a></li>
+<li><a href="#Fenix_CarrierChampion">Clolarion</a></li></ul>
 <h3>Special Structures</h3>
 <ul><li><a href="#Fenix_PurifierConclave">Purifier Conclave</a></li>
 <li><a href="#Fenix_PurifierDataCore">Purifier Data Core</a></li></ul></section>
@@ -962,8 +993,8 @@
 		<div id="lists">
 			<p id="code"></p>
 			<ul id="tabs">
-				<li><button type="button" value="units" title="Shows other units with this command" class="tab">Units with Command</button></li>
-				<li><button type="button" value="commands" title="Shows other commands with the same name" class="tab">Similar Commands</button></li>
+				<li><button type="button" value="units" title="Shows other units with this command." class="tab">Units with Command</button></li>
+				<li><button type="button" value="commands" title="Shows other commands with the same name." class="tab">Similar Commands</button></li>
 			</ul>
 			<ul id="units"></ul>
 			<ul id="commands"></ul>

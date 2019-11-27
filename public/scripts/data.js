@@ -928,11 +928,9 @@ data.units={
 				"Cancel"
 			],
 			"Tech Lab": [
-				"ResearchRapidReignitionSystem/StarportTechLab",
 				"ResearchRavenEnergyUpgrade/StarportTechLab",
 				"ResearchBansheeCloak/StarportTechLab",
 				"BansheeSpeed/StarportTechLab",
-				"ResearchBallisticRange/StarportTechLab",
 				"Cancel"
 			],
 			"Flying": [
@@ -951,6 +949,8 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"ResearchBattlecruiserSpecializations/FusionCore",
+			"ResearchRapidReignitionSystem/FusionCore",
+			"ResearchBallisticRange/FusionCore",
 			"SelectBuilder",
 			"Halt",
 			"Cancel"
@@ -4298,6 +4298,14 @@ data.units={
 			"Cancel"
 		]
 	},
+	"Mengsk": {
+		name: "Mengsk",
+		icon: "",
+		race: TERRAN,
+		commander: "Mengsk",
+		type: COMMANDER,
+		defaultUnit: "Mengsk_Laborer"
+	},
 	"Zerg": {
 		name: "Zerg",
 		icon: "btn-unit-zerg-hydralisk",
@@ -4776,6 +4784,7 @@ data.units={
 		commands: [
 			"EvolveInfestorEnergyUpgrade/InfestationPit",
 			"ResearchNeuralParasite/InfestationPit",
+			"EvolveAmorphousArmorcloud/InfestationPit",
 			"Cancel"
 		]
 	},
@@ -4787,6 +4796,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"EvolveDiggingClaws/LurkerDenMP",
+			"ResearchLurkerRange/LurkerDenMP",
 			"Cancel"
 		]
 	},
@@ -8176,27 +8186,27 @@ data.units={
 			"Mecha Drone": [
 				"GatherProt",
 				"ReturnCargo",
-				"ZergBuild/Drone",
-				"ZergBuildAdvanced/Drone",
+				"ZergBuild/DroneStetmann",
+				"ZergBuildAdvanced/DroneStetmann",
 				"RepairStetmann",
 				"Spray",
 				"BurrowUp"
 			],
 			"Build Structure": [
-				"HatcheryStetmann/Drone",
-				"ExtractorStetmann/Drone",
-				"SpawningPoolStetmann/Drone",
-				"EvolutionChamberStetmann/Drone",
-				"BanelingNestStetmann/Drone",
-				"SpineCrawlerStetmann/Drone",
-				"SporeCrawlerStetmann/Drone",
+				"HatcheryStetmann/DroneStetmann",
+				"ExtractorStetmann/DroneStetmann",
+				"SpawningPoolStetmann/DroneStetmann",
+				"EvolutionChamberStetmann/DroneStetmann",
+				"BanelingNestStetmann/DroneStetmann",
+				"SpineCrawlerStetmann/DroneStetmann",
+				"SporeCrawlerStetmann/DroneStetmann",
 				"Cancel"
 			],
 			"Build Advanced Structure": [
-				"HydraliskDenStetmann/Drone",
-				"InfestationPitStetmann/Drone",
-				"SpireStetmann/Drone",
-				"UltraliskCavernStetmann/Drone",
+				"HydraliskDenStetmann/DroneStetmann",
+				"InfestationPitStetmann/DroneStetmann",
+				"SpireStetmann/DroneStetmann",
+				"UltraliskCavernStetmann/DroneStetmann",
 				"Cancel"
 			]
 		}
@@ -9120,6 +9130,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			"AnionPulseCrystals/FleetBeacon",
+			"ResearchVoidRaySpeedUpgrade/FleetBeacon",
 			"Cancel"
 		]
 	},
@@ -11347,7 +11358,7 @@ data.units={
 			"Cancel"
 		]
 	},
-	"Fenix_Probius": {
+	"Fenix_ProbeChampion": {
 		name: "Probius",
 		keywords: "Probe",
 		icon: "btn-unit-collection-purifier-probe",
@@ -11408,7 +11419,7 @@ data.units={
 			]
 		}
 	},
-	"Fenix_Kaldalis": {
+	"Fenix_ZealotChampion": {
 		name: "Kaldalis",
 		keywords: "Zealot, Legionnaire",
 		icon: "btn-unit-protoss-champion-zealot-purifier",
@@ -11419,7 +11430,7 @@ data.units={
 			"FenixKaldalisZealotCharge/FenixKaldalisZealot"
 		]
 	},
-	"Fenix_Talis": {
+	"Fenix_AdeptChampion": {
 		name: "Talis",
 		keywords: "Adept",
 		icon: "btn-unit-protoss-champion-adept-purifier",
@@ -11430,7 +11441,7 @@ data.units={
 			"FenixTalisAdeptBounceShot/FenixTalisAdept"
 		]
 	},
-	"Fenix_Taldarin": {
+	"Fenix_ImmortalChampion": {
 		name: "Taldarin",
 		keywords: "Immortal",
 		icon: "btn-unit-protoss-champion-immortal-purifier",
@@ -11441,7 +11452,7 @@ data.units={
 			"ImmortalOverload/FenixTaldarinImmortal"
 		]
 	},
-	"Fenix_Warbringer": {
+	"Fenix_ColossusChampion": {
 		name: "Warbringer",
 		keywords: "Colossus",
 		icon: "btn-unit-protoss-champion-colossus-purifier",
@@ -11452,7 +11463,7 @@ data.units={
 			"FenixWarbringerColossusPowerShot/FenixWarbringerColossus"
 		]
 	},
-	"Fenix_Mojo": {
+	"Fenix_ScoutChampion": {
 		name: "Mojo",
 		keywords: "Scout",
 		icon: "btn-unit-protoss-champion-scout-purifier",
@@ -11463,7 +11474,7 @@ data.units={
 			"FenixMojoMissiles/FenixMojoScout"
 		]
 	},
-	"Fenix_Clolarion": {
+	"Fenix_CarrierChampion": {
 		name: "Clolarion",
 		keywords: "Carrier",
 		icon: "btn-unit-protoss-champion-carrier-purifier",
@@ -12336,6 +12347,23 @@ data.commands={
 		x: 0
 	},
 	"ZergBuildAdvanced/Drone": {
+		name: "Advanced Mutation",
+		hotkey: "V",
+		hotkey_NRS: "N",
+		icon: "btn-ability-zerg-advancedmutation",
+		mask: true,
+		y: 2,
+		x: 1
+	},
+	"ZergBuild/DroneStetmann": {
+		name: "Basic Mutation",
+		hotkey: "B",
+		icon: "btn-ability-zerg-basicmutation",
+		mask: true,
+		y: 2,
+		x: 0
+	},
+	"ZergBuildAdvanced/DroneStetmann": {
 		name: "Advanced Mutation",
 		hotkey: "V",
 		hotkey_NRS: "N",
@@ -14111,22 +14139,6 @@ data.commands={
 		icon: "btn-upgrade-terran-corvidreactor",
 		mask: false,
 		y: 0,
-		x: 1
-	},
-	"BansheeSpeed/StarportTechLab": {
-		name: "Research Hyperflight Rotors",
-		hotkey: "B",
-		icon: "btn-upgrade-terran-hyperflightrotors",
-		mask: false,
-		y: 0,
-		x: 3
-	},
-	"ResearchBallisticRange/StarportTechLab": {
-		name: "Research Advanced Ballistics",
-		hotkey: "N",
-		icon: "btn-upgrade-terran-advanceballistics",
-		mask: false,
-		y: 1,
 		x: 0
 	},
 	"ResearchBansheeCloak/StarportTechLab": {
@@ -14136,7 +14148,23 @@ data.commands={
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 0,
+		x: 1
+	},
+	"BansheeSpeed/StarportTechLab": {
+		name: "Research Hyperflight Rotors",
+		hotkey: "B",
+		icon: "btn-upgrade-terran-hyperflightrotors",
+		mask: false,
+		y: 0,
 		x: 2
+	},
+	"ResearchBallisticRange/StarportTechLab": {
+		name: "Research Advanced Ballistics",
+		hotkey: "N",
+		icon: "btn-upgrade-terran-advanceballistics",
+		mask: false,
+		y: 1,
+		x: 0
 	},
 	"ResearchBansheeCloak/StarportTechReactor": {
 		name: "Research Pulse Amplifier",
@@ -14218,6 +14246,22 @@ data.commands={
 		mask: false,
 		y: 0,
 		x: 0
+	},
+	"ResearchRapidReignitionSystem/FusionCore": {
+		name: "Research Rapid Reignition System",
+		hotkey: "R",
+		icon: "btn-upgrade-terran-highcapacityfueltanks",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"ResearchBallisticRange/FusionCore": {
+		name: "Research Advanced Ballistics",
+		hotkey: "N",
+		icon: "btn-upgrade-terran-advanceballistics",
+		mask: false,
+		y: 0,
+		x: 2
 	},
 	"HireKelmorianMiners/Barracks": {
 		name: "War Pigs",
@@ -16801,6 +16845,14 @@ data.commands={
 		y: 0,
 		x: 0
 	},
+	"ResearchLurkerRange/LurkerDenMP": {
+		name: "Evolve Seismic Spines",
+		hotkey: "S",
+		icon: "btn-upgrade-kerrigan-seismicspines",
+		mask: false,
+		y: 0,
+		x: 1
+	},
 	"EvolveAncillaryCarapace/LurkerDen": {
 		name: "Evolve Ancillary Carapace",
 		hotkey: "C",
@@ -17939,6 +17991,14 @@ data.commands={
 		mask: false,
 		y: 0,
 		x: 1
+	},
+	"EvolveAmorphousArmorcloud/InfestationPit": {
+		name: "Evolve Microbial Shroud",
+		hotkey: "C",
+		icon: "btn-ability-zerg-darkswarm",
+		mask: false,
+		y: 0,
+		x: 2
 	},
 	"HotSPressurizedGlands/InfestationPit": {
 		name: "Evolve Pressurized Glands",
@@ -19471,7 +19531,7 @@ data.commands={
 		y: 2,
 		x: 1
 	},
-	"HatcheryStetmann/Drone": {
+	"HatcheryStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Hatchery",
 		hotkey: "H",
 		icon: "btn-building-zerg-hatchery-mecha",
@@ -19479,7 +19539,7 @@ data.commands={
 		y: 0,
 		x: 0
 	},
-	"ExtractorStetmann/Drone": {
+	"ExtractorStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Extractor",
 		hotkey: "E",
 		icon: "btn-building-zerg-extractor-mecha",
@@ -19487,7 +19547,7 @@ data.commands={
 		y: 0,
 		x: 1
 	},
-	"SpawningPoolStetmann/Drone": {
+	"SpawningPoolStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spawning Pool",
 		hotkey: "S",
 		icon: "btn-building-zerg-spawningpool-mecha",
@@ -19495,7 +19555,7 @@ data.commands={
 		y: 1,
 		x: 0
 	},
-	"EvolutionChamberStetmann/Drone": {
+	"EvolutionChamberStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Evolution Chamber",
 		hotkey: "V",
 		icon: "btn-building-zerg-evolutionchamber-mecha",
@@ -19503,7 +19563,7 @@ data.commands={
 		y: 1,
 		x: 1
 	},
-	"BanelingNestStetmann/Drone": {
+	"BanelingNestStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Baneling Nest",
 		hotkey: "B",
 		icon: "btn-building-zerg-banelingnest-mecha",
@@ -19511,7 +19571,7 @@ data.commands={
 		y: 1,
 		x: 2
 	},
-	"SpineCrawlerStetmann/Drone": {
+	"SpineCrawlerStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spine Crawler",
 		hotkey: "C",
 		icon: "btn-building-zerg-spinecrawler-mecha",
@@ -19519,7 +19579,7 @@ data.commands={
 		y: 2,
 		x: 0
 	},
-	"SporeCrawlerStetmann/Drone": {
+	"SporeCrawlerStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spore Crawler",
 		hotkey: "A",
 		icon: "btn-building-zerg-sporecrawler-mecha",
@@ -19527,7 +19587,7 @@ data.commands={
 		y: 2,
 		x: 1
 	},
-	"HydraliskDenStetmann/Drone": {
+	"HydraliskDenStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Hydralisk Den",
 		hotkey: "H",
 		icon: "btn-building-zerg-hydraliskden-mecha",
@@ -19535,7 +19595,7 @@ data.commands={
 		y: 0,
 		x: 0
 	},
-	"InfestationPitStetmann/Drone": {
+	"InfestationPitStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Infestation Pit",
 		hotkey: "I",
 		icon: "btn-building-zerg-infestationpit-mecha",
@@ -19543,7 +19603,7 @@ data.commands={
 		y: 0,
 		x: 1
 	},
-	"SpireStetmann/Drone": {
+	"SpireStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spire",
 		hotkey: "S",
 		icon: "btn-building-zerg-spire-mecha",
@@ -19551,7 +19611,7 @@ data.commands={
 		y: 1,
 		x: 0
 	},
-	"UltraliskCavernStetmann/Drone": {
+	"UltraliskCavernStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Ultralisk Cavern",
 		hotkey: "U",
 		icon: "btn-building-zerg-ultraliskcavern-mecha",
@@ -21121,6 +21181,15 @@ data.commands={
 		y: 0,
 		x: 0
 	},
+	"ResearchVoidRaySpeedUpgrade/FleetBeacon": {
+		name: "Research Flux Vanes",
+		hotkey: "F",
+		hotkey_SC1: "G",
+		icon: "btn-upgrade-protoss-fluxvanes",
+		mask: false,
+		y: 0,
+		x: 1
+	},
 	"ResearchDoubleGravitonBeam/FleetBeacon": {
 		name: "Research Double Graviton Beam",
 		hotkey: "G",
@@ -21658,8 +21727,6 @@ data.commands={
 	"ShieldBatteryRecharge/ShieldBattery": {
 		name: "Restore",
 		hotkey: "R",
-		hotkey_NRS: "U",
-		hotkey_SC1: "U",
 		icon: "btn-ability-protoss-shieldbattery-color",
 		mask: false,
 		y: 2,
@@ -24393,6 +24460,10 @@ data.overrides={
 			hotkey_NRS: "V",
 			hotkey_SC1: "V"
 		},
+		"ShieldBatteryRecharge/ShieldBattery": {
+			hotkey_NRS: "U",
+			hotkey_SC1: "U"
+		},
 		"Zealot": {
 			name: "Warp In Zealot\nWarp In Centurion\nWarp In Sentinel",
 			icon: "btn-unit-protoss-zealot-aiur"
@@ -24584,6 +24655,10 @@ data.overrides={
 		},
 		"MorphtoObserver/Observer": {
 			x: 3
+		},
+		"ShieldBatteryRecharge/ShieldBattery": {
+			hotkey_NRS: "U",
+			hotkey_SC1: "U"
 		},
 		"ResearchDragoonRange/TwilightCouncil": {
 			name: "Research Reconstruction",

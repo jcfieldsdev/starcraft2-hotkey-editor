@@ -38,7 +38,7 @@ a:hover, a:active {
 	color: #fff;
 	text-decoration: underline;
 	text-shadow: 0 0 8px;
-	transition: color 0.3s;
+	transition: 0.3s color;
 }
 
 body {
@@ -142,6 +142,10 @@ button#kerrigan {
 	background: url(portraits/kerrigan.png);
 }
 
+button#mengsk {
+	background: url(portraits/mengsk.png);
+}
+
 button#nova {
 	background: url(portraits/nova.png);
 }
@@ -201,7 +205,7 @@ button:focus, input:focus, textarea:focus {
 
 button:hover, p#hotkey input:focus {
 	box-shadow: 0 0 8px 2px #fff;
-	transition: box-shadow 0.1s;
+	transition: 0.1s box-shadow;
 }
 
 cite {
@@ -285,8 +289,12 @@ div.overlay textarea {
 
 div.overlay.open {
 	opacity: 1;
-	transition: opacity 0.3s;
+	transition: 0.3s opacity;
 	visibility: visible;
+}
+
+fieldset, ul#commands, ul#units {
+	border-color: #a00000;
 }
 
 fieldset.card {
@@ -616,11 +624,12 @@ textarea {
 }
 
 ul#commands, ul#units {
-	border: 1px solid #fff;
-	border-radius: 0 0.5em 0.5em 0.5em;
+	border-style: solid;
+	border-width: 1px;
 	clear: left;
 	list-style: none;
 	margin: 0;
+	min-height: 1em;
 	padding: 0.5em;
 	white-space: nowrap;
 }
@@ -664,7 +673,7 @@ ul#filters button {
 ul#filters button.active {
 	box-shadow: 0 0 4px 1px #fff;
 	transform: scale(1.25);
-	transition: transform 0.3s ease;
+	transition: 0.3s transform ease;
 }
 
 ul#filters button:hover {
