@@ -4552,6 +4552,7 @@ data.units={
 				"MarauderMengsk/BarracksMengsk",
 				"GhostMengsk/BarracksMengsk",
 				"SelectBuilder",
+				"Rally",
 				"Lift",
 				"Cancel"
 			],
@@ -4639,6 +4640,7 @@ data.units={
 				"SiegeTankMengsk/FactoryMengsk",
 				"ThorMengsk/FactoryMengsk",
 				"SelectBuilder",
+				"Rally",
 				"Lift",
 				"Cancel"
 			],
@@ -4676,6 +4678,7 @@ data.units={
 				"RavenMengsk/StarportMengsk",
 				"BattlecruiserMengsk/StarportMengsk",
 				"SelectBuilder",
+				"Rally",
 				"Lift",
 				"Cancel"
 			],
@@ -24717,6 +24720,8 @@ data.overrides={
 		},
 		"LiberatorAAMode/Liberator": {
 			hotkey: "F",
+			hotkey_NRS: "D",
+			hotkey_SC1: "D",
 			icon: "btn-unit-terran-liberatorblackops"
 		},
 		"BurrowDown": {

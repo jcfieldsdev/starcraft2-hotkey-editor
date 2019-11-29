@@ -887,6 +887,7 @@ function Commands() {
 		"Commands": {}
 	};
 	this.suffix="";
+	this.allowSetConflicts=false;
 }
 
 Commands.prototype.load=function(list={}) {
@@ -899,14 +900,19 @@ Commands.prototype.load=function(list={}) {
 	// gets suffix used for non-standard base layouts
 	if (this.list["Settings"]==undefined) {
 		this.suffix="";
-	} else if (this.list["Settings"]["Suffix"]==undefined) {
-		this.suffix="";
 	} else {
-		// _NRS standard for lefties
-		// _GLS grid
-		// _GRS grid for lefties
-		// _SC1 classic
-		this.suffix=this.list["Settings"]["Suffix"];
+		if (this.list["Settings"]["Suffix"]==undefined) {
+			this.suffix="";
+		} else {
+			// _NRS standard for lefties
+			// _GLS grid
+			// _GRS grid for lefties
+			// _SC1 classic
+			this.suffix=this.list["Settings"]["Suffix"];
+		}
+
+		let allowSetConflicts=this.list["Settings"]["AllowSetConflicts"];
+		this.allowSetConflicts=Boolean(allowSetConflicts);
 	}
 };
 
