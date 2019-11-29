@@ -4551,6 +4551,8 @@ data.units={
 			"Barracks": [
 				"MarauderMengsk/BarracksMengsk",
 				"GhostMengsk/BarracksMengsk",
+				"SelectBuilder",
+				"Lift",
 				"Cancel"
 			],
 			"Flying": [
@@ -14732,7 +14734,7 @@ data.commands={
 	},
 	"ResearchRapidReignitionSystem/FusionCore": {
 		name: "Research Rapid Reignition System",
-		hotkey: "R",
+		hotkey: "S",
 		icon: "btn-upgrade-terran-highcapacityfueltanks",
 		mask: false,
 		y: 0,
