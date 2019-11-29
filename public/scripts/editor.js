@@ -44,7 +44,7 @@ window.addEventListener("load", function() {
 	editor.load();
 
 	// sets event listeners
-	document.getElementById("open").addEventListener("click", function() {
+	$("#open").addEventListener("click", function() {
 		let file=overlays.load.getText();
 
 		if (file!="") {
@@ -53,7 +53,7 @@ window.addEventListener("load", function() {
 			overlays.load.hide();
 		}
 	});
-	document.getElementById("reset").addEventListener("click", function() {
+	$("#reset").addEventListener("click", function() {
 		commands.reset();
 		store.reset();
 
@@ -62,31 +62,31 @@ window.addEventListener("load", function() {
 		overlays.load.setText("");
 		overlays.load.hide();
 	});
-	document.getElementById("copy").addEventListener("click", function() {
+	$("#copy").addEventListener("click", function() {
 		overlays[this.value].select();
 		document.execCommand("copy");
 	});
-	document.getElementById("download").addEventListener("click", function() {
+	$("#download").addEventListener("click", function() {
 		let contents=new Blob([overlays.save.getText()], {type: MIME_TYPE});
 
-		let a=document.getElementById("link");
+		let a=$("#link");
 		a.download=DEFAULT_SAVE_NAME;
 		a.href=window.URL.createObjectURL(contents);
 		a.click();
 		window.URL.revokeObjectURL(contents);
 	});
-	document.getElementById("help").addEventListener("click", function() {
+	$("#help").addEventListener("click", function() {
 		window.location=HELP_PAGE;
 	});
-	document.getElementById("load").addEventListener("click", function() {
+	$("#load").addEventListener("click", function() {
 		overlays.load.show();
 	});
-	document.getElementById("save").addEventListener("click", function() {
+	$("#save").addEventListener("click", function() {
 		store.save(commands.list);
 		overlays.save.setText(commands.convert());
 		overlays.save.show();
 	});
-	document.getElementById("file").addEventListener("change", function(event) {
+	$("#file").addEventListener("change", function(event) {
 		let file=event.target.files[0];
 
 		if (file) {
@@ -114,7 +114,7 @@ window.addEventListener("load", function() {
 		}
 	});
 
-	let query=document.getElementById("query");
+	let query=$("#query");
 
 	query.addEventListener("input", function() {
 		editor.findUnitsNamed(this.value);
@@ -137,23 +137,23 @@ window.addEventListener("load", function() {
 		}
 	});
 
+	disableAutocomplete($("#text_load"));
+	disableAutocomplete($("#text_save"));
 	disableAutocomplete(query);
-	disableAutocomplete(document.getElementById("text_load"));
-	disableAutocomplete(document.getElementById("text_save"));
 
-	for (let element of document.getElementsByClassName("filter")) {
+	for (let element of $$(".filter")) {
 		element.addEventListener("click", function() {
 			window.location.hash=data.units[this.value].defaultUnit;
 		});
 	}
 
-	for (let element of document.getElementsByClassName("close")) {
+	for (let element of $$(".close")) {
 		element.addEventListener("click", function() {
 			overlays[this.value].hide();
 		});
 	}
 
-	for (let element of document.getElementsByClassName("tab")) {
+	for (let element of $$(".tab")) {
 		element.addEventListener("click", function() {
 			editor.switchTab(this.value);
 		});
@@ -166,6 +166,14 @@ window.addEventListener("load", function() {
 		input.setAttribute("spellcheck", "false");
 	}
 });
+
+function $(selector) {
+	return document.querySelector(selector);
+}
+
+function $$(selector) {
+	return Array.from(document.querySelectorAll(selector));
+}
 
 /*
  * Editor prototype
@@ -245,7 +253,7 @@ Editor.prototype.unitEditor=function() {
 	}
 
 	h2.appendChild(document.createTextNode(unit.name));
-	document.getElementById("unit").replaceWith(h2);
+	$("#unit").replaceWith(h2);
 
 	let commands=[], legends=[];
 	this.buttons=[];
@@ -274,7 +282,7 @@ Editor.prototype.unitEditor=function() {
 			commands=commands.concat(data.common.basic);
 		}
 
-		let fieldset=document.getElementById("card"+n);
+		let fieldset=$("#card"+n);
 		let buttons=[];
 
 		// prevents error if unit has more command cards than HTML file
@@ -307,8 +315,7 @@ Editor.prototype.unitEditor=function() {
 
 			let button=createButton(id, command, n);
 			let pos=COLS*command.y+command.x;
-			let cell=fieldset.getElementsByTagName("div")[0].children[pos];
-			cell.replaceWith(button);
+			$$(`#card${n}>div div`)[pos].replaceWith(button);
 		}
 
 		self.buttons.push(buttons);
@@ -353,9 +360,7 @@ Editor.prototype.createInput=function(hotkey="") {
 };
 
 Editor.prototype.setLegend=function(title, n) {
-	let fieldset=document.getElementById("card"+n);
-	let legend=fieldset.getElementsByTagName("legend")[0];
-
+	let legend=$(`#card${n} legend`);
 	legend.textContent=title;
 	legend.classList.toggle("hidden", !title);
 };
@@ -366,10 +371,10 @@ Editor.prototype.commandEditor=function(n) {
 
 	// automatically selects last hotkey field
 	if (hotkeys.length>0) {
-		document.getElementById("hotkey").lastChild.select();
+		$("#hotkey").lastChild.select();
 	}
 
-	document.getElementById("command").innerHTML=this.name;
+	$("#command").innerHTML=this.name;
 
 	let p=document.createElement("p");
 	p.id="control";
@@ -398,15 +403,15 @@ Editor.prototype.commandEditor=function(n) {
 	button.appendChild(document.createTextNode("Reset"));
 	p.appendChild(button);
 
-	document.getElementById("control").replaceWith(p);
+	$("#control").replaceWith(p);
 
 	this.findUnitsWith(this.command);
 	this.findCommandsNamed(this.command);
-	document.getElementById("tabs").classList.remove("hidden");
+	$("#tabs").classList.remove("hidden");
 };
 
 Editor.prototype.addField=function() {
-	let element=document.getElementById("hotkey");
+	let element=$("#hotkey");
 
 	// will not add new field if current field is empty
 	if (element.lastChild.value=="") {
@@ -420,7 +425,7 @@ Editor.prototype.addField=function() {
 };
 
 Editor.prototype.removeField=function() {
-	let element=document.getElementById("hotkey");
+	let element=$("#hotkey");
 
 	if (element.childElementCount>1) {
 		element.removeChild(element.lastChild);
@@ -443,9 +448,11 @@ Editor.prototype.formatHotkey=function(hotkeys) {
 	let p=document.createElement("p");
 	p.id="hotkey";
 
+	let element=$("#"+p.id);
+
 	if (hotkeys.length==0) { // hides field if empty
-		document.getElementById(p.id).replaceWith(p);
-		document.getElementById(p.id).classList.add("hidden");
+		element.replaceWith(p);
+		element.classList.add("hidden");
 		return;
 	}
 
@@ -453,8 +460,8 @@ Editor.prototype.formatHotkey=function(hotkeys) {
 		p.appendChild(this.createInput(hotkey));
 	}
 
-	document.getElementById(p.id).classList.remove("hidden");
-	document.getElementById(p.id).replaceWith(p);
+	element.classList.remove("hidden");
+	element.replaceWith(p);
 };
 
 Editor.prototype.setHotkey=function(input, event) {
@@ -463,10 +470,9 @@ Editor.prototype.setHotkey=function(input, event) {
 		input.value=keyCode.symbol||keyCode.hotkey;
 	}
 
-	let inputs=document.getElementById("hotkey").getElementsByTagName("input");
 	let fields=[];
 
-	for (let element of inputs) {
+	for (let element of $$("#hotkey input")) {
 		fields.push(element.value);
 	}
 
@@ -503,8 +509,8 @@ Editor.prototype.setVisibleHotkeys=function() {
 
 			let hotkeys=this.commands.getHotkeys(this.commander, command.id);
 
-			let span="span_"+n+command.y+command.x;
-			document.getElementById(span).textContent=hotkeys[0];
+			let id="span_"+n+command.y+command.x;
+			$("#"+id).textContent=hotkeys[0];
 
 			for (let hotkey of hotkeys) {
 				if (hotkey=="") {
@@ -517,7 +523,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 					keys[hotkey]=new Set();
 				}
 
-				keys[hotkey].add(span);
+				keys[hotkey].add(id);
 			}
 		}
 
@@ -528,7 +534,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 
 		for (let values of Object.values(keys)) {
 			for (let value of values) {
-				let conflict=values.size>1, span=document.getElementById(value);
+				let conflict=values.size>1, span=$("#"+value);
 
 				if (!conflicts.includes(value)) {
 					span.classList.toggle("conflict", conflict);
@@ -546,37 +552,35 @@ Editor.prototype.checkAllConflicts=function() {
 	let commanders=new Set(), units=new Set();
 
 	// checks for conflicts in all unit links
-	for (let section of document.getElementsByTagName("section")) {
-		for (let link of section.getElementsByTagName("a")) {
-			if (link.hash=="") {
-				continue;
-			}
+	for (let element of $$("section a")) {
+		if (element.hash=="") {
+			continue;
+		}
 
-			let unit=link.hash.replace("#", "");
+		let unit=element.hash.replace("#", "");
 
-			if (this.commands.checkConflicts(unit)) {
-				link.classList.add("conflict");
+		if (this.commands.checkConflicts(unit)) {
+			element.classList.add("conflict");
 
-				commanders.add(section.id);
-				units.add(unit);
-			} else {
-				link.classList.remove("conflict");
-			}
+			commanders.add(element.closest("section").id);
+			units.add(unit);
+		} else {
+			element.classList.remove("conflict");
 		}
 	}
 
 	// checks for conflicts in "other units with command" list
-	for (let a of document.getElementById("units").getElementsByTagName("a")) {
-		if (a.hash=="") {
+	for (let element of $$("#units a")) {
+		if (element.hash=="") {
 			continue;
 		}
 
-		let unit=a.hash.replace("#", "");
-		a.classList.toggle("conflict", units.has(unit));
+		let unit=element.hash.replace("#", "");
+		element.classList.toggle("conflict", units.has(unit));
 	}
 
 	// flags filter icon if section contains conflict
-	for (let element of document.getElementsByClassName("filter")) {
+	for (let element of $$(".filter")) {
 		let value=element.value;
 		element.classList.toggle("conflict", commanders.has(value));
 	}
@@ -586,12 +590,12 @@ Editor.prototype.filter=function(unit) {
 	let filter=data.units[unit.commander].sortCommander||unit.commander;
 
 	// hides unit lists for commanders other than selected
-	for (let element of document.getElementsByTagName("section")) {
+	for (let element of $$("section")) {
 		element.classList.toggle("hidden", element.id!=filter);
 	}
 
 	// sets commander icon to active
-	for (let element of document.getElementsByClassName("filter")) {
+	for (let element of $$(".filter")) {
 		element.classList.toggle("active", element.value==filter);
 	}
 
@@ -600,13 +604,11 @@ Editor.prototype.filter=function(unit) {
 };
 
 Editor.prototype.switchTab=function(value) {
-	for (let element of document.getElementsByClassName("tab")) {
+	for (let element of $$(".tab")) {
 		element.classList.toggle("active", element.value==value);
 	}
 
-	let lists=document.getElementById("lists").getElementsByTagName("ul");
-
-	for (let element of lists) {
+	for (let element of $$("#lists ul")) {
 		if (element.id=="tabs") {
 			continue;
 		}
@@ -684,7 +686,7 @@ Editor.prototype.findUnitsWith=function(id) {
 		}
 	}
 
-	document.getElementById("code").textContent=id;
+	$("#code").textContent=id;
 	this.formatResults("units", matches);
 };
 
@@ -737,7 +739,7 @@ Editor.prototype.findCommandsNamed=function(id) {
 		ul.appendChild(li);
 	}
 
-	document.getElementById("commands").replaceWith(ul);
+	$("#commands").replaceWith(ul);
 };
 
 Editor.prototype.formatResults=function(id, matches) {
@@ -784,11 +786,11 @@ Editor.prototype.formatResults=function(id, matches) {
 		ul.appendChild(li);
 	}
 
-	document.getElementById(id).replaceWith(ul);
+	$("#"+id).replaceWith(ul);
 };
 
 Editor.prototype.highlightResult=function(dir) {
-	let results=document.getElementById("results").children;
+	let results=$$("#results li");
 
 	if (dir) { // up arrow
 		if (this.selected==-1) {
@@ -806,7 +808,7 @@ Editor.prototype.highlightResult=function(dir) {
 		}
 	}
 
-	for (let [i, result] of Array.from(results).entries()) {
+	for (let [i, result] of results.entries()) {
 		if (this.selected==i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
@@ -817,14 +819,14 @@ Editor.prototype.highlightResult=function(dir) {
 };
 
 Editor.prototype.openResult=function() {
-	let results=document.getElementById("results").children;
+	let results=$$("#results a");
 
 	// ignores invalid array indices
 	if (this.selected<0||this.selected>=results.length) {
 		return;
 	}
 
-	results[this.selected].getElementsByTagName("a")[0].click();
+	results[this.selected].click();
 };
 
 Editor.prototype.clear=function(element) {
@@ -838,12 +840,10 @@ Editor.prototype.clear=function(element) {
 };
 
 Editor.prototype.clearButtons=function() {
-	let cards=document.getElementsByClassName("card");
-
-	for (let [n, card] of Array.from(cards).entries()) {
+	for (let [n, card] of $$(".card").entries()) {
 		this.setLegend(" ", n);
 
-		for (let element of card.getElementsByTagName("div")[0].children) {
+		for (let element of $$(`#card${n}>div div`)) {
 			element.className="";
 			this.clear(element);
 		}
@@ -855,29 +855,27 @@ Editor.prototype.clearButtons=function() {
 };
 
 Editor.prototype.clearFields=function() {
-	for (let element of document.getElementById("fields").children) {
+	for (let element of $$("#fields h3, #fields p")) {
 		this.clear(element);
 	}
 
-	this.clear(document.getElementById("code"));
-	this.clear(document.getElementById("units"));
-	this.clear(document.getElementById("commands"));
+	this.clear($("#code"));
+	this.clear($("#units"));
+	this.clear($("#commands"));
 
-	let lists=document.getElementById("lists").getElementsByTagName("ul");
-
-	for (let element of lists) {
+	for (let element of $$("#lists ul")) {
 		element.classList.add("hidden");
 	}
 };
 
 Editor.prototype.clearSearch=function(clearQuery=false) {
 	if (clearQuery) {
-		document.getElementById("query").value="";
+		$("#query").value="";
 	}
 
 	this.selected=-1;
-	this.clear(document.getElementById("results"));
-	document.getElementById("results").classList.add("hidden");
+	this.clear($("#results"));
+	$("#results").classList.add("hidden");
 };
 
 /*
@@ -1220,34 +1218,34 @@ Commands.prototype.reset=function() {
  */
 
 function Overlay(id) {
-	this.id="overlay_"+id;
-	this.textarea="text_"+id;
+	this.element=$("#overlay_"+id);
+	this.textarea=$("#text_"+id);
 }
 
 Overlay.prototype.show=function() {
-	document.getElementById(this.id).classList.add("open");
+	this.element.classList.add("open");
 	this.focus();
 };
 
 Overlay.prototype.hide=function() {
-	document.getElementById(this.id).classList.remove("open");
+	this.element.classList.remove("open");
 };
 
 Overlay.prototype.getText=function() {
-	return document.getElementById(this.textarea).value;
+	return this.textarea.value;
 };
 
 Overlay.prototype.setText=function(text) {
-	document.getElementById(this.textarea).value=text;
+	this.textarea.value=text;
 };
 
 Overlay.prototype.focus=function() {
-	document.getElementById(this.textarea).focus();
-	document.getElementById(this.textarea).setSelectionRange(0, 0);
+	this.textarea.focus();
+	this.textarea.setSelectionRange(0, 0);
 };
 
 Overlay.prototype.select=function() {
-	document.getElementById(this.textarea).select();
+	this.textarea.select();
 };
 
 /*

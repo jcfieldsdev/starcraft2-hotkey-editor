@@ -16820,7 +16820,7 @@ data.commands={
 		x: 3
 	},
 	"SetArtilleryMengskRallyPoint/ArtilleryMengsk": {
-		name: "Set Supply Bunker Rally Point",
+		name: "Set Earthsplitter Ordnance Rally Point",
 		hotkey: "Y",
 		icon: "btn-ability-terran-setrallypoint",
 		mask: true,
