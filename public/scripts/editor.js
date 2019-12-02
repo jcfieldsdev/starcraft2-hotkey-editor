@@ -679,10 +679,8 @@ Editor.prototype.findUnitsWith=function(id) {
 			}
 		}
 
-		for (let result of Object.values(search)) {
-			if (id==result) {
-				matches.add(unit);
-			}
+		if (search.includes(id)) {
+			matches.add(unit);
 		}
 	}
 
