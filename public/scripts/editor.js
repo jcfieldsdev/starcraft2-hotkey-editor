@@ -181,8 +181,12 @@ function $$(selector) {
 
 function Editor(commands) {
 	this.commands=commands;
+
 	this.unit="";
+	this.command="";
+	this.name="";
 	this.commander="";
+
 	this.buttons=[];
 	this.tab="units";
 	this.selected=-1; // selected search result

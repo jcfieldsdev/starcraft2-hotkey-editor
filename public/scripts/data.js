@@ -4585,7 +4585,7 @@ data.units={
 			}
 		}
 	},
-	"Mengsk_EarthsplitterOrdnance": {
+	"Mengsk_Artillery": {
 		name: "Earthsplitter Ordnance",
 		icon: "btn-building-terran-artillerymengsk",
 		race: TERRAN,
@@ -16800,7 +16800,7 @@ data.commands={
 	},
 	"StructureArmorMengsk/EngineeringBayMengsk": {
 		name: "Research Neosteel Fortified Armor",
-		hotkey: "S",
+		hotkey: "F",
 		icon: "btn-upgrade-mengsk-engineeringbay-neosteelfortifiedarmor",
 		mask: false,
 		y: 1,
