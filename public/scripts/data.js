@@ -3484,7 +3484,6 @@ data.units={
 		commands: [
 			"TerranInfantryWeaponsLevel1/EngineeringBay",
 			"TerranInfantryArmorLevel1/EngineeringBay",
-			"ResearchNeosteelFrame/EngineeringBay",
 			"UpgradeBuildingArmorLevel1/EngineeringBay",
 			"SelectBuilder",
 			"Halt",
