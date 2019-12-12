@@ -1284,6 +1284,7 @@ Storage.prototype.load=function() {
 		}
 	} catch (err) {
 		console.error(err);
+		this.reset();
 		return null;
 	}
 };
