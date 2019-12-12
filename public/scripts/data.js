@@ -22900,7 +22900,7 @@ data.commands={
 		x: 1
 	},
 	"ResearchSOAOrbitalStrikeUpgrade/SolarForge": {
-		name: "Phase Detonation",
+		name: "Research Phase Detonation",
 		hotkey: "B",
 		icon: "btn-upgrade-karax-orbitalassault_stun",
 		mask: false,
