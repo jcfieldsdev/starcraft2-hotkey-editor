@@ -19201,9 +19201,7 @@ data.commands={
 	},
 	"SICivilianStructure/SISCV": {
 		name: "Build Infested Colonist Compound",
-		hotkey: "S",
-		hotkey_NRS: "V",
-		hotkey_SC1: "V",
+		hotkey: "V",
 		icon: "btn-building-stukov-infestedcolonisthut",
 		mask: false,
 		y: 0,
@@ -19247,7 +19245,7 @@ data.commands={
 		hotkey_NRS: "O",
 		icon: "btn-building-stukov-infestedfactory",
 		mask: false,
-		y: 1,
+		y: 0,
 		x: 0
 	},
 	"SIArmory/SISCV": {
@@ -19257,7 +19255,7 @@ data.commands={
 		icon: "btn-building-stukov-infestedarmory",
 		mask: false,
 		y: 1,
-		x: 1
+		x: 0
 	},
 	"SIStarport/SISCV": {
 		name: "Build Infested Starport",
@@ -19265,8 +19263,8 @@ data.commands={
 		hotkey_NRS: "P",
 		icon: "btn-building-stukov-infestedstarport",
 		mask: false,
-		y: 2,
-		x: 0
+		y: 0,
+		x: 1
 	},
 	"MorphToOverseer/SIOverlord": {
 		name: "Morph to Overseer",
