@@ -13,6 +13,7 @@ There are a few known limitations of the editor:
 ## Authors
 
 - J.C. Fields <jcfields+gitlab@gmail.com>
+- Uses [Fira Mono](https://github.com/mozilla/Fira) font by [Carrois Type Design](http://www.carrois.com/)
 
 ## License
 

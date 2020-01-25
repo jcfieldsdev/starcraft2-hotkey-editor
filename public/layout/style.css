@@ -9,7 +9,7 @@
 }
 
 @font-face {
-	font-family: Larabiefont;
+	font-family: "Fira Mono";
 	src: url(fonts/FiraMono.woff2) format("woff2");
 }
 
@@ -219,7 +219,7 @@ code, fieldset {
 }
 
 code, kbd, textarea {
-	font-family: Larabiefont, Consolas, monospace;
+	font-family: "Fira Mono", Consolas, monospace;
 }
 
 div#author {
