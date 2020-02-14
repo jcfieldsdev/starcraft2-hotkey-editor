@@ -58,6 +58,11 @@ body.doc h4, div#editor input, div.overlay, fieldset.card span {
 	font-size: 1.25rem;
 }
 
+body.doc img {
+	height: auto;
+	max-width: 100%;
+}
+
 body.doc header {
 	text-align: center;
 }
