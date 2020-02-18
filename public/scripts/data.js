@@ -7763,9 +7763,15 @@ data.units={
 		race: ZERG,
 		commander: "Stukov",
 		type: UNIT,
-		commands: [
-			"MorphToOverseer/SIOverlord"
-		]
+		commands: {
+			"Overlord": [
+				"MorphToOverseer/SIOverlord",
+				"GenerateCreep/SIOverlord"
+			],
+			"Generating Creep": [
+				"StopGenerateCreep"
+			]
+		}
 	},
 	"Stukov_Overseer": {
 		name: "Overseer",
@@ -17090,6 +17096,14 @@ data.commands={
 		x: 0
 	},
 	"GenerateCreep/Overlord": {
+		name: "Generate Creep",
+		hotkey: "G",
+		icon: "btn-ability-zerg-generatecreep-color",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"GenerateCreep/SIOverlord": {
 		name: "Generate Creep",
 		hotkey: "G",
 		icon: "btn-ability-zerg-generatecreep-color",
