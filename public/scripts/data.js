@@ -9200,9 +9200,15 @@ data.units={
 		race: PROTOSS,
 		commander: "Protoss",
 		type: UNIT,
-		commands: [
-			"AdeptPhaseShift/Adept"
-		]
+		commands: {
+			"Adept": [
+				"AdeptPhaseShift/Adept"
+			],
+			"Shade": [
+				...data.common.basic,
+				"Cancel"
+			]
+		}
 	},
 	"Protoss_HighTemplar": {
 		name: "High Templar",
