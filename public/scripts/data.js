@@ -3614,6 +3614,7 @@ data.units={
 	},
 	"Han": {
 		name: "Han",
+		keywords: "Mira Han, Matt Horner",
 		displayName: "Han & Horner",
 		icon: "btn-progression-hornerhan-1-precisionchaos",
 		race: TERRAN,
@@ -4350,6 +4351,7 @@ data.units={
 	},
 	"Mengsk_Trooper": {
 		name: "Dominion Trooper",
+		keywords: "Marine",
 		icon: "btn-unit-terran-troopermengsk",
 		race: TERRAN,
 		commander: "Mengsk",
@@ -4464,6 +4466,7 @@ data.units={
 	},
 	"Mengsk_Raven": {
 		name: "Imperial Witness",
+		keywords: "Raven",
 		icon: "btn-unit-terran-blimpmengsk",
 		race: TERRAN,
 		commander: "Mengsk",
@@ -4586,6 +4589,7 @@ data.units={
 	},
 	"Mengsk_Artillery": {
 		name: "Earthsplitter Ordnance",
+		keywords: "Artillery",
 		icon: "btn-building-terran-artillerymengsk",
 		race: TERRAN,
 		commander: "Mengsk",
@@ -7867,6 +7871,7 @@ data.units={
 	},
 	"Stukov_Queen": {
 		name: "Brood Queen",
+		keywords: "Classic Queen",
 		icon: "btn-unit-zerg-classicqueen",
 		race: ZERG,
 		commander: "Stukov",
@@ -9646,6 +9651,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Fenix": {
 		name: "Fenix",
+		keywords: "Talandar",
 		icon: "btn-unit-protoss-fenix",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9846,9 +9852,15 @@ data.units={
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
 		type: UNIT,
-		commands: [
-			"AdeptPhaseShift/Adept"
-		]
+		commands: {
+			"Adept": [
+				"AdeptPhaseShift/Adept"
+			],
+			"Shade": [
+				...data.common.basic,
+				"Cancel"
+			]
+		}
 	},
 	"LegacyOfTheVoid_Instigator": {
 		name: "Instigator",
@@ -10127,6 +10139,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Queen": {
 		name: "Queen",
+		keywords: "Classic Queen, Brood Queen",
 		icon: "btn-unit-zerg-queenclassic",
 		race: ZERG,
 		commander: "LegacyOfTheVoid",
@@ -11644,6 +11657,7 @@ data.units={
 	},
 	"Fenix": {
 		name: "Fenix",
+		keywords: "Talandar",
 		icon: "btn-progression-protoss-fenix-1-zealotsuit",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -11652,6 +11666,7 @@ data.units={
 	},
 	"Fenix_Fenix": {
 		name: "Fenix",
+		keywords: "Talandar, Praetor Armor, Solarite Dragoon, Cybros Arbiter",
 		icon: "btn-unit-protoss-fenix",
 		race: PROTOSS,
 		commander: "Fenix",
