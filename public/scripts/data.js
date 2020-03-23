@@ -9207,7 +9207,8 @@ data.units={
 		type: UNIT,
 		commands: {
 			"Adept": [
-				"AdeptPhaseShift/Adept"
+				"AdeptPhaseShift/Adept",
+				"Cancel"
 			],
 			"Shade": [
 				...data.common.basic,
@@ -9327,7 +9328,8 @@ data.units={
 		commander: "Protoss",
 		type: UNIT,
 		commands: [
-			"VoidRaySwarmDamageBoost/VoidRay"
+			"VoidRaySwarmDamageBoost/VoidRay",
+			"Cancel"
 		]
 	},
 	"Protoss_Tempest": {
@@ -9854,7 +9856,8 @@ data.units={
 		type: UNIT,
 		commands: {
 			"Adept": [
-				"AdeptPhaseShift/Adept"
+				"AdeptPhaseShift/Adept",
+				"Cancel"
 			],
 			"Shade": [
 				...data.common.basic,

@@ -836,10 +836,6 @@ ul#tabs button:not(.active) {
 		margin-top: 100px;
 	}
 
-	input#query {
-		padding: 0.25em;
-	}
-
 	ul#filters {
 		height: calc(2em + 75px);
 	}
