@@ -137,9 +137,12 @@ window.addEventListener("load", function() {
 		}
 	});
 
-	disableAutocomplete($("#text_load"));
-	disableAutocomplete($("#text_save"));
-	disableAutocomplete(query);
+	for (let element of $$("#query, textarea")) {
+		element.setAttribute("autocomplete", "off");
+		element.setAttribute("autocorrect", "off");
+		element.setAttribute("autocapitalize", "off");
+		element.setAttribute("spellcheck", "false");
+	}
 
 	for (let element of $$(".filter")) {
 		element.addEventListener("click", function() {
@@ -157,13 +160,6 @@ window.addEventListener("load", function() {
 		element.addEventListener("click", function() {
 			editor.switchTab(this.value);
 		});
-	}
-
-	function disableAutocomplete(input) {
-		input.setAttribute("autocomplete", "off");
-		input.setAttribute("autocorrect", "off");
-		input.setAttribute("autocapitalize", "off");
-		input.setAttribute("spellcheck", "false");
 	}
 });
 
@@ -504,7 +500,7 @@ Editor.prototype.resetDefaults=function() {
 Editor.prototype.setVisibleHotkeys=function() {
 	// checks for conflicts in currently visible command cards
 	for (let [n, card] of this.buttons.entries()) {
-		let keys={};
+		let keys={}, sets={};
 
 		for (let command of card) {
 			if (command=="") {
@@ -512,9 +508,15 @@ Editor.prototype.setVisibleHotkeys=function() {
 			}
 
 			let hotkeys=this.commands.getHotkeys(this.commander, command.id);
+			let hotkeySet=data.commands[command.id].hotkeySet||"";
 
 			let id="span_"+n+command.y+command.x;
 			$("#"+id).textContent=hotkeys[0];
+
+			// records hotkey set if specified and "allow set conflicts" is on
+			if (this.commands.allowSetConflicts&&hotkeySet!="") {
+				sets[id]=hotkeySet;
+			}
 
 			for (let hotkey of hotkeys) {
 				if (hotkey=="") {
@@ -536,16 +538,30 @@ Editor.prototype.setVisibleHotkeys=function() {
 		// unpredictable amount
 		let conflicts=[];
 
-		for (let values of Object.values(keys)) {
-			for (let value of values) {
-				let conflict=values.size>1, span=$("#"+value);
+		for (let ids of Object.values(keys)) {
+			for (let id of ids) {
+				let size=ids.size;
 
-				if (!conflicts.includes(value)) {
-					span.classList.toggle("conflict", conflict);
+				if (this.commands.allowSetConflicts&&size>1) {
+					let currentSet=sets[id];
+
+					for (let [cmpId, cmpSet] of Object.entries(sets)) {
+						// ignores hotkey conflict if it comes from a
+						// member of the same set
+						if (id!=cmpId&&currentSet==cmpSet&&ids.has(cmpId)) {
+							size--;
+						}
+					}
+				}
+
+				let conflict=size>1;
+
+				if (!conflicts.includes(id)) {
+					$("#"+id).classList.toggle("conflict", conflict);
 				}
 
 				if (conflict) {
-					conflicts.push(value);
+					conflicts.push(id);
 				}
 			}
 		}
@@ -727,7 +743,7 @@ Editor.prototype.findCommandsNamed=function(id) {
 
 		let a=document.createElement("a");
 		a.addEventListener("click", function() {
-			this.setCommand(match, command.name)
+			this.setCommand(match, command.name);
 		}.bind(this));
 		a.appendChild(document.createTextNode(match));
 		li.appendChild(a);
@@ -902,6 +918,7 @@ Commands.prototype.load=function(list={}) {
 	// gets suffix used for non-standard base layouts
 	if (this.list["Settings"]==undefined) {
 		this.suffix="";
+		this.allowSetConflicts=false;
 	} else {
 		if (this.list["Settings"]["Suffix"]==undefined) {
 			this.suffix="";
@@ -1072,7 +1089,7 @@ Commands.prototype.checkConflicts=function(id) {
 		}
 
 		for (let [n, card] of cards.entries()) {
-			let keys={};
+			let keys={}, sets={};
 
 			if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
 				card=card.concat(data.common.basic);
@@ -1084,6 +1101,7 @@ Commands.prototype.checkConflicts=function(id) {
 				}
 
 				let hotkeys=this.getHotkeys(unit.commander, id);
+				let hotkeySet=data.commands[id].hotkeySet;
 
 				for (let hotkey of hotkeys) {
 					if (hotkey=="") {
@@ -1092,6 +1110,16 @@ Commands.prototype.checkConflicts=function(id) {
 
 					if (keys[hotkey]==undefined) {
 						keys[hotkey]=0;
+					}
+
+					if (this.allowSetConflicts&&hotkeySet!=undefined) {
+						// only records same hotkey once per hotkey set (for
+						// two-state commands) if set conflicts allowed
+						if (sets[hotkeySet]==hotkey) {
+							continue;
+						}
+
+						sets[hotkeySet]=hotkey;
 					}
 
 					keys[hotkey]++;

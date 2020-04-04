@@ -12581,6 +12581,7 @@ data.commands={
 	"GhostHoldFire/Ghost": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12589,6 +12590,7 @@ data.commands={
 	"GhostHoldFire/NovaHero": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12597,6 +12599,7 @@ data.commands={
 	"GhostHoldFire/NovaCoop": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12605,6 +12608,7 @@ data.commands={
 	"GhostHoldFire/Ghost_BlackOps": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12613,6 +12617,7 @@ data.commands={
 	"GhostHoldFire/NovaStoneHeroic": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12621,6 +12626,7 @@ data.commands={
 	"SpectreHoldFire/Spectre": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12629,6 +12635,7 @@ data.commands={
 	"GhostMengskHoldFire/GhostMengsk": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12637,6 +12644,7 @@ data.commands={
 	"WeaponsFree/Ghost": {
 		name: "Weapons Free",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12645,6 +12653,7 @@ data.commands={
 	"WeaponsFree/NovaHero": {
 		name: "Weapons Free",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12653,6 +12662,7 @@ data.commands={
 	"WeaponsFree/NovaCoop": {
 		name: "Weapons Free",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12661,6 +12671,7 @@ data.commands={
 	"WeaponsFree/Ghost_BlackOps": {
 		name: "Weapons Free",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12669,6 +12680,7 @@ data.commands={
 	"WeaponsFree/NovaStoneHeroic": {
 		name: "Weapons Free",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12677,6 +12689,7 @@ data.commands={
 	"SpectreWeaponsFree/Spectre": {
 		name: "Weapons Free",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12685,6 +12698,7 @@ data.commands={
 	"WeaponsFreeMengsk/GhostMengsk": {
 		name: "Weapons Free",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12693,6 +12707,7 @@ data.commands={
 	"LurkerHoldFire/LurkerBurrowed": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "LurkerHoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12701,6 +12716,7 @@ data.commands={
 	"LurkerHoldFire/LurkerMP": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "LurkerHoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12709,6 +12725,7 @@ data.commands={
 	"LurkerCancelHoldFire/LurkerBurrowed": {
 		name: "Cancel Hold Fire",
 		hotkey: "G",
+		hotkeySet: "LurkerHoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12717,6 +12734,7 @@ data.commands={
 	"LurkerCancelHoldFire/LurkerMP": {
 		name: "Cancel Hold Fire",
 		hotkey: "G",
+		hotkeySet: "LurkerHoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -12725,6 +12743,7 @@ data.commands={
 	"LurkerCancelHoldFire/LurkerStetmannBurrowed": {
 		name: "Hold Fire",
 		hotkey: "F",
+		hotkeySet: "LurkerHoldFire",
 		icon: "btn-ability-terran-holdfire",
 		mask: true,
 		y: 1,
@@ -12733,6 +12752,7 @@ data.commands={
 	"LurkerHoldFire/LurkerStetmannBurrowed": {
 		name: "Cancel Hold Fire",
 		hotkey: "G",
+		hotkeySet: "LurkerHoldFire",
 		icon: "btn-ability-terran-weaponsfree",
 		mask: true,
 		y: 1,
@@ -13248,6 +13268,7 @@ data.commands={
 		name: "Hellion Mode",
 		hotkey: "E",
 		hotkey_NRS: "B",
+		hotkeySet: "HellionModes",
 		icon: "btn-unit-terran-hellion",
 		mask: false,
 		y: 2,
@@ -13257,6 +13278,7 @@ data.commands={
 		name: "Hellbat Mode",
 		hotkey: "D",
 		hotkey_NRS: "U",
+		hotkeySet: "HellionModes",
 		icon: "btn-unit-terran-hellionbattlemode",
 		mask: false,
 		y: 2,
@@ -13294,6 +13316,7 @@ data.commands={
 		name: "Activate Mine",
 		hotkey: "E",
 		hotkey_NRS: "B",
+		hotkeySet: "WidowMineModes",
 		icon: "btn-ability-terran-activatemine",
 		mask: false,
 		y: 2,
@@ -13303,6 +13326,7 @@ data.commands={
 		name: "Deactivate Mine",
 		hotkey: "D",
 		hotkey_NRS: "U",
+		hotkeySet: "WidowMineModes",
 		icon: "btn-ability-terran-deactivatemine",
 		mask: false,
 		y: 2,
@@ -13313,6 +13337,7 @@ data.commands={
 		hotkey: "E",
 		hotkey_NRS: "I",
 		hotkey_SC1: "O",
+		hotkeySet: "TankModes",
 		icon: "btn-unit-terran-siegetanksiegemode",
 		mask: false,
 		y: 2,
@@ -13323,6 +13348,7 @@ data.commands={
 		hotkey: "D",
 		hotkey_NRS: "U",
 		hotkey_SC1: "O",
+		hotkeySet: "TankModes",
 		icon: "btn-unit-terran-siegetank",
 		mask: false,
 		y: 2,
@@ -13351,6 +13377,7 @@ data.commands={
 		hotkey: "E",
 		hotkey_NRS: "I",
 		hotkey_SC1: "B",
+		hotkeySet: "ThorModes",
 		icon: "btn-unit-terran-thorsiegemode",
 		mask: false,
 		y: 2,
@@ -13361,6 +13388,7 @@ data.commands={
 		hotkey: "D",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
+		hotkeySet: "ThorModes",
 		icon: "btn-unit-terran-thor",
 		mask: false,
 		y: 2,
@@ -13395,6 +13423,7 @@ data.commands={
 		name: "Fighter Mode",
 		hotkey: "E",
 		hotkey_NRS: "I",
+		hotkeySet: "VikingModes",
 		icon: "btn-unit-terran-vikingfighter",
 		mask: false,
 		y: 2,
@@ -13404,6 +13433,7 @@ data.commands={
 		name: "Assault Mode",
 		hotkey: "D",
 		hotkey_NRS: "U",
+		hotkeySet: "VikingModes",
 		icon: "btn-unit-terran-vikingassault",
 		mask: false,
 		y: 2,
@@ -13439,6 +13469,7 @@ data.commands={
 	"LiberatorAGMode/Liberator": {
 		name: "Defender Mode",
 		hotkey: "E",
+		hotkeySet: "LiberatorModes",
 		icon: "btn-upgrade-terran-liberator-agmode",
 		mask: false,
 		y: 2,
@@ -13447,6 +13478,7 @@ data.commands={
 	"LiberatorAAMode/Liberator": {
 		name: "Fighter Mode",
 		hotkey: "D",
+		hotkeySet: "LiberatorModes",
 		icon: "btn-unit-terran-liberator",
 		mask: false,
 		y: 2,
@@ -13508,6 +13540,7 @@ data.commands={
 		name: "Cloak",
 		hotkey: "C",
 		hotkey_NRS: "L",
+		hotkeySet: "Cloak",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 2,
@@ -13516,6 +13549,7 @@ data.commands={
 	"CloakOnLiberator": {
 		name: "Cloak",
 		hotkey: "C",
+		hotkeySet: "Cloak",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 2,
@@ -13524,6 +13558,7 @@ data.commands={
 	"CloakOnBattlecruiser": {
 		name: "Cloak",
 		hotkey: "C",
+		hotkeySet: "Cloak",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 2,
@@ -13534,6 +13569,7 @@ data.commands={
 		hotkey: "D",
 		hotkey_NRS: "SemiColon",
 		hotkey_SC1: "C",
+		hotkeySet: "Cloak",
 		icon: "btn-ability-terran-decloak-color",
 		mask: false,
 		y: 2,
@@ -13552,6 +13588,7 @@ data.commands={
 	"WraithCloakOn/Wraith": {
 		name: "Cloak",
 		hotkey: "C",
+		hotkeySet: "WraithCloak",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 2,
@@ -13560,6 +13597,7 @@ data.commands={
 	"WraithCloakOff/Wraith": {
 		name: "Decloak",
 		hotkey: "D",
+		hotkeySet: "WraithCloak",
 		icon: "btn-ability-terran-decloak-color",
 		mask: false,
 		y: 2,
@@ -15123,6 +15161,7 @@ data.commands={
 	"MorphToHellion/HellionBlackOps": {
 		name: "Hellion Mode",
 		hotkey: "E",
+		hotkeySet: "HellionModes",
 		icon: "btn-unit-terran-hellionblackops",
 		mask: false,
 		y: 2,
@@ -15131,6 +15170,7 @@ data.commands={
 	"MorphToHellbatBlackOps/HellionBlackOps": {
 		name: "Hellbat Mode",
 		hotkey: "D",
+		hotkeySet: "HellionModes",
 		icon: "btn-unit-terran-hellbatblackops",
 		mask: false,
 		y: 2,
@@ -15147,6 +15187,7 @@ data.commands={
 	"SiegeTank_BlackOpsSiege": {
 		name: "Siege Mode",
 		hotkey: "E",
+		hotkeySet: "TankModes",
 		icon: "btn-unit-terran-siegetankblackops-sieged",
 		mask: false,
 		y: 2,
@@ -15155,6 +15196,7 @@ data.commands={
 	"SiegeTank_BlackOpsUnsiege": {
 		name: "Tank Mode",
 		hotkey: "D",
+		hotkeySet: "TankModes",
 		icon: "btn-unit-terran-siegetankblackops-tank",
 		mask: false,
 		y: 2,
@@ -15196,6 +15238,7 @@ data.commands={
 	"Liberator_BlackOpsMorphtoAG/Liberator_BlackOps": {
 		name: "Defender Mode",
 		hotkey: "E",
+		hotkeySet: "RaidLiberatorModes",
 		icon: "btn-unit-terran-liberator-agmodeblackops",
 		mask: false,
 		y: 2,
@@ -15204,6 +15247,7 @@ data.commands={
 	"Liberator_BlackOpsMorphtoAA/Liberator_BlackOps": {
 		name: "Fighter Mode",
 		hotkey: "D",
+		hotkeySet: "RaidLiberatorModes",
 		icon: "btn-unit-terran-liberatorblackops",
 		mask: false,
 		y: 2,
@@ -15500,6 +15544,7 @@ data.commands={
 		name: "Activate Mine",
 		hotkey: "E",
 		hotkey_NRS: "B",
+		hotkeySet: "WidowMineModes",
 		icon: "btn-ability-terran-activatemine",
 		mask: false,
 		y: 2,
@@ -15509,6 +15554,7 @@ data.commands={
 		name: "Deactivate Mine",
 		hotkey: "D",
 		hotkey_NRS: "U",
+		hotkeySet: "WidowMineModes",
 		icon: "btn-ability-terran-deactivatemine",
 		mask: false,
 		y: 2,
@@ -15518,6 +15564,7 @@ data.commands={
 		name: "Hellbat Mode",
 		hotkey: "D",
 		hotkey_NRS: "U",
+		hotkeySet: "HellionModes",
 		icon: "btn-unit-collection-hellbat-junker",
 		mask: false,
 		y: 2,
@@ -15534,6 +15581,7 @@ data.commands={
 	"MorphToHHHellion/HHHellionTank": {
 		name: "Hellion Mode",
 		hotkey: "E",
+		hotkeySet: "HellionModes",
 		icon: "btn-unit-collection-hellion-junker",
 		mask: false,
 		y: 2,
@@ -15552,6 +15600,7 @@ data.commands={
 	"WraithCloakOn/HHWraith": {
 		name: "Cloak",
 		hotkey: "C",
+		hotkeySet: "WraithCloak",
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 2,
@@ -15560,6 +15609,7 @@ data.commands={
 	"WraithCloakOff/HHWraith": {
 		name: "Decloak",
 		hotkey: "D",
+		hotkeySet: "WraithCloak",
 		icon: "btn-ability-terran-decloak-color",
 		mask: false,
 		y: 2,
@@ -15614,6 +15664,7 @@ data.commands={
 	"MorphtoHHRavenSiege/HHRaven": {
 		name: "Enable Silent Mode",
 		hotkey: "E",
+		hotkeySet: "TheiaRavenModes",
 		icon: "btn-unit-collection-ravencoop-junker",
 		mask: false,
 		y: 2,
@@ -15622,6 +15673,7 @@ data.commands={
 	"MorphtoHHRaven/HHRaven": {
 		name: "Cancel Silent Mode",
 		hotkey: "D",
+		hotkeySet: "TheiaRavenModes",
 		icon: "btn-unit-collection-ravencoop-junker",
 		mask: false,
 		y: 2,
@@ -16614,6 +16666,7 @@ data.commands={
 	"SiegeModeMengsk": {
 		name: "Siege Mode",
 		hotkey: "E",
+		hotkeySet: "TankModes",
 		icon: "btn-unit-terran-siegetankmengsksieged",
 		mask: false,
 		y: 2,
@@ -16622,6 +16675,7 @@ data.commands={
 	"UnsiegeMengsk/SiegeTankMengsk": {
 		name: "Tank Mode",
 		hotkey: "D",
+		hotkeySet: "TankModes",
 		icon: "btn-unit-terran-siegetankmengsk",
 		mask: false,
 		y: 2,
@@ -16646,6 +16700,7 @@ data.commands={
 	"FighterModeMengsk/VikingMengskFighter": {
 		name: "Fighter Mode",
 		hotkey: "E",
+		hotkeySet: "VikingModes",
 		icon: "btn-unit-terran-vikingmengskfighter",
 		mask: false,
 		y: 2,
@@ -16654,6 +16709,7 @@ data.commands={
 	"AssaultModeMengsk/VikingMengskFighter": {
 		name: "Assault Mode",
 		hotkey: "D",
+		hotkeySet: "VikingModes",
 		icon: "btn-unit-terran-vikingmengskassault",
 		mask: false,
 		y: 2,
@@ -17122,6 +17178,7 @@ data.commands={
 	"GenerateCreep/Overlord": {
 		name: "Generate Creep",
 		hotkey: "G",
+		hotkeySet: "GenerateCreep",
 		icon: "btn-ability-zerg-generatecreep-color",
 		mask: false,
 		y: 2,
@@ -17130,6 +17187,7 @@ data.commands={
 	"GenerateCreep/SIOverlord": {
 		name: "Generate Creep",
 		hotkey: "G",
+		hotkeySet: "GenerateCreep",
 		icon: "btn-ability-zerg-generatecreep-color",
 		mask: false,
 		y: 2,
@@ -17140,6 +17198,7 @@ data.commands={
 		hotkey: "C",
 		hotkey_NRS: "T",
 		hotkey_SC1: "G",
+		hotkeySet: "GenerateCreep",
 		icon: "btn-ability-zerg-generatecreepstop-color",
 		mask: false,
 		y: 2,
@@ -17156,6 +17215,7 @@ data.commands={
 	"MorphtoOverseerSiege/Overseer": {
 		name: "Oversight",
 		hotkey: "W",
+		hotkeySet: "OverseerModes",
 		icon: "btn-ability-zerg-overlord-oversight",
 		mask: false,
 		y: 2,
@@ -17164,6 +17224,7 @@ data.commands={
 	"MorphtoOverseerNormal/Overseer": {
 		name: "Cancel Oversight",
 		hotkey: "R",
+		hotkeySet: "OverseerModes",
 		icon: "btn-ability-zerg-overlord-oversight-off",
 		mask: false,
 		y: 2,
@@ -20769,6 +20830,7 @@ data.commands={
 	"MorphtoOverseerSiegeStetmann/OverseerStetmann": {
 		name: "Oversight",
 		hotkey: "W",
+		hotkeySet: "OverseerModes",
 		icon: "btn-ability-zerg-overlord-oversight",
 		mask: false,
 		y: 2,
@@ -20777,6 +20839,7 @@ data.commands={
 	"MorphtoOverseerNormalStetmann/OverseerStetmann": {
 		name: "Cancel Oversight",
 		hotkey: "R",
+		hotkeySet: "OverseerModes",
 		icon: "btn-ability-zerg-overlord-oversight-off",
 		mask: false,
 		y: 2,
@@ -20841,6 +20904,7 @@ data.commands={
 	"HydraliskStetmannMissilePowerOn": {
 		name: "Juiced Up Payload: On",
 		hotkey: "F",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-stetmann-hydraliskmissilepoweron",
 		mask: false,
 		y: 2,
@@ -20849,6 +20913,7 @@ data.commands={
 	"HydraliskStetmannMissilePowerOff/HydraliskStetmann": {
 		name: "Juiced Up Payload: Off",
 		hotkey: "G",
+		hotkeySet: "HoldFire",
 		icon: "btn-ability-stetmann-hydraliskmissilepoweroff",
 		mask: false,
 		y: 2,
@@ -21684,6 +21749,7 @@ data.commands={
 	"MorphtoObserverSiege/Observer": {
 		name: "Surveillance Mode",
 		hotkey: "E",
+		hotkeySet: "ObserverModes",
 		icon: "btn-unit-protoss-observer-surveillance",
 		mask: false,
 		y: 2,
@@ -21692,6 +21758,7 @@ data.commands={
 	"MorphtoObserver/Observer": {
 		name: "Observer Mode",
 		hotkey: "T",
+		hotkeySet: "ObserverModes",
 		icon: "btn-unit-protoss-observer",
 		mask: false,
 		y: 2,
@@ -22691,6 +22758,7 @@ data.commands={
 		hotkey: "C",
 		hotkey_NRS: "J",
 		hotkey_SC1: "J",
+		hotkeySet: "PulsarBeam",
 		icon: "btn-ability-protoss-oraclepulsarcannonon",
 		mask: false,
 		y: 2,
@@ -22701,6 +22769,7 @@ data.commands={
 		hotkey: "D",
 		hotkey_NRS: "N",
 		hotkey_SC1: "N",
+		hotkeySet: "PulsarBeam",
 		icon: "btn-ability-protoss-oraclepulsarcannonoff",
 		mask: false,
 		y: 2,
@@ -22809,6 +22878,7 @@ data.commands={
 	"VoidSentryPhasingMode/SentryPurifier": {
 		name: "Phasing Mode",
 		hotkey: "E",
+		hotkeySet: "KaraxSentryModes",
 		icon: "btn-ability-protoss-energizerphasingmode",
 		mask: false,
 		y: 2,
@@ -22817,6 +22887,7 @@ data.commands={
 	"VoidSentryMobileMode/SentryPurifier": {
 		name: "Mobile Mode",
 		hotkey: "T",
+		hotkeySet: "KaraxSentryModes",
 		icon: "btn-ability-protoss-energizermobilemode",
 		mask: false,
 		y: 2,
@@ -23032,6 +23103,7 @@ data.commands={
 		name: "Phasing Mode",
 		hotkey: "E",
 		hotkey_NRS: "I",
+		hotkeySet: "WarpPrismModes",
 		icon: "btn-unit-protoss-warpprismstationary",
 		mask: false,
 		y: 2,
@@ -23041,6 +23113,7 @@ data.commands={
 		name: "Transport Mode",
 		hotkey: "T",
 		hotkey_NRS: "N",
+		hotkeySet: "WarpPrismModes",
 		icon: "btn-unit-protoss-warpprism",
 		mask: false,
 		y: 2,
@@ -23050,6 +23123,7 @@ data.commands={
 		name: "Phasing Mode",
 		hotkey: "E",
 		hotkey_NRS: "I",
+		hotkeySet: "AlarakWarpPrismModes",
 		icon: "btn-unit-protoss-alarak-taldarim-warpprismstationary",
 		mask: false,
 		y: 2,
@@ -23059,6 +23133,7 @@ data.commands={
 		name: "Transport Mode",
 		hotkey: "T",
 		hotkey_NRS: "N",
+		hotkeySet: "AlarakWarpPrismModes",
 		icon: "btn-unit-protoss-alarak-taldarim-warpprism",
 		mask: false,
 		y: 2,
@@ -23195,6 +23270,7 @@ data.commands={
 	"VoidSentryPhasingMode/SentryFenix": {
 		name: "Phasing Mode",
 		hotkey: "E",
+		hotkeySet: "FenixSentryModes",
 		icon: "btn-unit-collection-purifier-sentrypylon",
 		mask: false,
 		y: 2,
@@ -23203,6 +23279,7 @@ data.commands={
 	"VoidSentryMobileMode/SentryFenix": {
 		name: "Mobile Mode",
 		hotkey: "T",
+		hotkeySet: "FenixSentryModes",
 		icon: "btn-unit-collection-purifier-sentry",
 		mask: false,
 		y: 2,
@@ -23626,6 +23703,7 @@ data.commands={
 	"MorphtoObserverSiege/ZeratulObserver": {
 		name: "Surveillance Mode",
 		hotkey: "E",
+		hotkeySet: "ObserverModes",
 		icon: "btn-unit-protoss-zeratulobserver-surveillance",
 		mask: false,
 		y: 2,
@@ -23634,6 +23712,7 @@ data.commands={
 	"MorphtoObserver/ZeratulObserver": {
 		name: "Observer Mode",
 		hotkey: "T",
+		hotkeySet: "ObserverModes",
 		icon: "btn-unit-protoss-zeratulobserver",
 		mask: false,
 		y: 2,
