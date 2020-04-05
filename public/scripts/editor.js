@@ -89,7 +89,7 @@ window.addEventListener("load", function() {
 	$("#file").addEventListener("change", function(event) {
 		let file=event.target.files[0];
 
-		if (file) {
+		if (file!=null) {
 			let reader=new FileReader();
 			reader.addEventListener("load", function(event) {
 				overlays.load.setText(event.target.result);
@@ -1108,10 +1108,6 @@ Commands.prototype.checkConflicts=function(id) {
 						continue;
 					}
 
-					if (keys[hotkey]==undefined) {
-						keys[hotkey]=0;
-					}
-
 					if (this.allowSetConflicts&&hotkeySet!=undefined) {
 						// only records same hotkey once per hotkey set (for
 						// two-state commands) if set conflicts allowed
@@ -1120,6 +1116,10 @@ Commands.prototype.checkConflicts=function(id) {
 						}
 
 						sets[hotkeySet]=hotkey;
+					}
+
+					if (keys[hotkey]==undefined) {
+						keys[hotkey]=0;
 					}
 
 					keys[hotkey]++;
