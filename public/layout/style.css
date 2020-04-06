@@ -13,13 +13,33 @@
 	src: url(fonts/FiraMono.woff2) format("woff2");
 }
 
+:root {
+	--conflict-link: #f00;
+	--conflict-border: #c00000;
+	--base-link: #ffff00;
+	--base-border: #a00000;
+	--base-button: #600000;
+	--neutral-link: #ff8040;
+	--neutral-link-hover: #ffbfbf;
+	--neutral-button: #a06020;
+	--protoss-link: #40a0ff;
+	--protoss-link-hover: #bfdfff;
+	--protoss-button: #2040c0;
+	--terran-link: #40c060;
+	--terran-link-hover: #bfffdf;
+	--terran-button: #208040;
+	--zerg-link: #c060c0;
+	--zerg-link-hover: #ffbfff;
+	--zerg-button: #804080;
+}
+
 *.hidden, a#link, h1, ul#filters span {
 	display: none;
 }
 
 a {
 	background: none;
-	color: #ffff00;
+	color: var(--base-link);
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -30,7 +50,7 @@ a, button, div#cards img {
 
 a.conflict, span.conflict {
 	background: none;
-	color: #f00 !important;
+	color: var(--conflict-link) !important;
 }
 
 a:hover, a:active {
@@ -78,7 +98,7 @@ body.doc main, code, div#editor, div.overlay, fieldset.card>div div, fieldset.ca
 
 body.doc main, div#editor {
 	box-shadow: 0 0 0 2px #606060;
-	border: 2px solid #a00000;
+	border: 2px solid var(--base-border);
 	border-radius: 1em;
 	padding: 1em;
 }
@@ -92,7 +112,7 @@ body.doc section p {
 }
 
 button {
-	border: 2px outset #a00000;
+	border: 2px outset var(--base-border);
 	border-radius: 0.1em;
 	color: #fff;
 	font-family: inherit;
@@ -108,7 +128,7 @@ button, input {
 }
 
 button, ul#results li.selected {
-	background: #600000 linear-gradient(#600000, #a00000);
+	background: var(--base-button) linear-gradient(var(--base-button), var(--base-border));
 }
 
 button#abathur {
@@ -299,7 +319,7 @@ div.overlay.open {
 }
 
 fieldset, ul#commands, ul#units {
-	border-color: #a00000;
+	border-color: var(--base-border);
 }
 
 fieldset.card {
@@ -424,28 +444,28 @@ html {
 
 html.neutral a {
 	background: none;
-	color: #ff8040;
+	color: var(--neutral-link);
 }
 
 html.neutral a:hover, html.neutral a:active {
 	background: none;
-	color: #ffbfbf;
+	color: var(--neutral-link-hover);
 }
 
 html.neutral button, html.neutral div#editor {
-	border-color: #ff8040;
+	border-color: var(--neutral-link);
 }
 
 html.neutral button, html.neutral ul#results li.selected {
-	background: #ff8040 linear-gradient(#ff8040, #ffc000);
+	background: var(--neutral-button) linear-gradient(var(--neutral-button), var(--neutral-link));
 }
 
 html.neutral fieldset, html.neutral ul#commands, html.neutral ul#units {
-	border-color: #a06020;
+	border-color: var(--neutral-button);
 }
 
 html.neutral h2 {
-	text-shadow: 0 0 8px #ffbfbf;
+	text-shadow: 0 0 8px var(--neutral-link-hover);
 }
 
 html.neutral img.mask {
@@ -454,28 +474,28 @@ html.neutral img.mask {
 
 html.protoss a {
 	background: none;
-	color: #40a0ff;
+	color: var(--protoss-link);
 }
 
 html.protoss a:hover, html.protoss a:active {
 	background: none;
-	color: #bfdfff;
+	color: var(--protoss-link-hover);
 }
 
 html.protoss button, html.protoss div#editor {
-	border-color: #4080ff;
+	border-color: var(--protoss-link);
 }
 
 html.protoss button, html.protoss ul#results li.selected {
-	background: #2040c0 linear-gradient(#2040c0, #4080ff);
+	background: var(--protoss-button) linear-gradient(var(--protoss-button), var(--protoss-link));
 }
 
 html.protoss fieldset, html.protoss ul#commands, html.protoss ul#units {
-	border-color: #2040c0;
+	border-color: var(--protoss-button);
 }
 
 html.protoss h2 {
-	text-shadow: 0 0 8px #dfefff;
+	text-shadow: 0 0 8px var(--protoss-link-hover);
 }
 
 html.protoss img.mask {
@@ -484,28 +504,28 @@ html.protoss img.mask {
 
 html.terran a {
 	background: none;
-	color: #40c060;
+	color: var(--terran-link);
 }
 
 html.terran a:hover, html.terran a:active {
 	background: none;
-	color: #bfffdf;
+	color: var(--terran-link-hover);
 }
 
 html.terran button, html.terran div#editor {
-	border-color: #40c060;
+	border-color: var(--terran-link);
 }
 
 html.terran button, html.terran ul#results li.selected {
-	background: #208040 linear-gradient(#208040, #40c060);
+	background: var(--terran-button) linear-gradient(var(--terran-button), var(--terran-link));
 }
 
 html.terran fieldset, html.terran ul#commands, html.terran ul#units {
-	border-color: #208040;
+	border-color: var(--terran-button);
 }
 
 html.terran h2 {
-	text-shadow: 0 0 8px #40c060;
+	text-shadow: 0 0 8px var(--terran-link-hover);
 }
 
 html.terran img.mask {
@@ -514,28 +534,28 @@ html.terran img.mask {
 
 html.zerg a {
 	background: none;
-	color: #c060c0;
+	color: var(--zerg-link);
 }
 
 html.zerg a:hover, html.zerg a:active {
 	background: none;
-	color: #ffbfff;
+	color: var(--zerg-link-hover);
 }
 
 html.zerg button, html.zerg div#editor {
-	border-color: #c060c0;
+	border-color: var(--zerg-link);
 }
 
 html.zerg button, html.zerg ul#results li.selected {
-	background: #804080 linear-gradient(#804080, #c060c0);
+	background: var(--zerg-button) linear-gradient(var(--zerg-button), var(--zerg-link));
 }
 
 html.zerg fieldset, html.zerg ul#commands, html.zerg ul#units {
-	border-color: #804080;
+	border-color: var(--zerg-button);
 }
 
 html.zerg h2 {
-	text-shadow: 0 0 8px #ffbfff;
+	text-shadow: 0 0 8px var(--zerg-link-hover);
 }
 
 html.zerg img.mask {
@@ -665,7 +685,7 @@ ul#filters {
 
 ul#filters button {
 	background-size: 60px 72px;
-	border: 1px solid #a00000;
+	border: 1px solid var(--base-button);
 	border-radius: 0.5em;
 	color: inherit;
 	display: block;
@@ -682,56 +702,56 @@ ul#filters button.active {
 }
 
 ul#filters button:hover {
-	border-color: #f00;
+	border-color: var(--conflict-link);
 	box-shadow: none;
 }
 
 ul#filters button.conflict {
-	border-color: #c00000 !important;
+	border-color: var(--conflict-border) !important;
 }
 
 ul#filters button.conflict.active {
-	box-shadow: 0 0 4px 1px #f00 !important;
+	box-shadow: 0 0 4px 1px var(--conflict-link) !important;
 }
 
 ul#filters button.conflict:hover {
-	border-color: #f00 !important;
+	border-color: var(--conflict-link) !important;
 }
 
 ul#filters button.protoss {
-	border-color: #40a0ff;
+	border-color: var(--protoss-link);
 }
 
 ul#filters button.protoss.active {
-	box-shadow: 0 0 4px 1px #4080ff;
+	box-shadow: 0 0 4px 1px var(--protoss-link);
 }
 
 ul#filters button.protoss:hover {
-	border-color: #bfdfff;
+	border-color: var(--protoss-link-hover);
 }
 
 ul#filters button.terran {
-	border-color: #40c060;
+	border-color: var(--terran-link);
 }
 
 ul#filters button.terran.active {
-	box-shadow: 0 0 4px 1px #40c060;
+	box-shadow: 0 0 4px 1px var(--terran-link);
 }
 
 ul#filters button.terran:hover {
-	border-color: #bfffdf;
+	border-color: var(--terran-link-hover);
 }
 
 ul#filters button.zerg {
-	border-color: #c060c0;
+	border-color: var(--zerg-link);
 }
 
 ul#filters button.zerg.active {
-	box-shadow: 0 0 4px 1px #c060c0;
+	box-shadow: 0 0 4px 1px var(--zerg-link);
 }
 
 ul#filters button.zerg:hover {
-	border-color: #ffbfff;
+	border-color: var(--zerg-link-hover);
 }
 
 ul#filters li {
