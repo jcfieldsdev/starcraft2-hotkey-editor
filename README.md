@@ -1,6 +1,6 @@
 # starcraft2-hotkey-editor
 
-<div align="center"><img src="https://gitlab.com/jcfields/starcraft2-coop-randomizer/raw/master/screenshot.jpg" width="713" height="384" alt="[Starcraft II Hotkey Editor]"></div>
+<div align="center"><img src="https://gitlab.com/jcfields/starcraft2-hotkey-editor/raw/master/screenshot.jpg" width="713" height="384" alt="[Starcraft II Hotkey Editor]"></div>
 
 A [hotkey editor for *Starcraft II*](https://jcfields.gitlab.io/starcraft2-hotkey-editor/) written in JavaScript. Includes all units and structures from versus, co-op, and the official campaigns. Identifies conflicts across all three modes simultaneously.
 
