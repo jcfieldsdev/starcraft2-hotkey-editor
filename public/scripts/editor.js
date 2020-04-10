@@ -1057,7 +1057,6 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 	hotkeys=hotkeys.filter(function(hotkey) {
 		return hotkey!=""; // omits blank entries
 	});
-
 	hotkeys=hotkeys.map(function(hotkey) {
 		let symbol=hotkey;
 
