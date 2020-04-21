@@ -61,4 +61,5 @@ The `?` button next to the `Load` and `Save` buttons brings up the [help page](h
 ## See also
 
 - [*Warcraft III* Hotkey Editor](https://gitlab.com/jcfields/warcraft3-hotkey-editor)—A similar editor on which this project is based.
-- [*Starcraft II* Co-op Randomizer](https://gitlab.com/jcfields/starcraft2-coop-randomizer)—Another helpful utility for co-op mode.
+- [*Starcraft II* Co-op Randomizer](https://gitlab.com/jcfields/starcraft2-coop-randomizer)—A utility for picking a random co-op map or commander.
+- [*Starcraft II* Co-op Replay Tool](https://gitlab.com/jcfields/starcraft2-coop-replay-tool)—A utility for analyzing co-op replays.
