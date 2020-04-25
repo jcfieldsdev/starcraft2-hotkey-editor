@@ -968,7 +968,7 @@ data.units={
 	},
 	"WingsOfLiberty_Raynor": {
 		name: "Jim Raynor",
-		keywords: "Marine",
+		keywords: "Renegade Commander, Marine",
 		icon: "btn-unit-terran-marineraynorhev",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -991,7 +991,7 @@ data.units={
 	},
 	"WingsOfLiberty_Tychus": {
 		name: "Tychus Findlay",
-		keywords: "Marine",
+		keywords: "Legendary Outlaw, Marine",
 		icon: "btn-unit-terran-marinetychus",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1002,7 +1002,7 @@ data.units={
 	},
 	"WingsOfLiberty_Swann": {
 		name: "Rory Swann",
-		keywords: "Marauder, Flaming Betty",
+		keywords: "Chief Engineer, Marauder, Flaming Betty",
 		icon: "btn-unit-terran-marauderswann",
 		race: TERRAN,
 		commander: "WingsOfLiberty",
@@ -1104,7 +1104,7 @@ data.units={
 	},
 	"WingsOfLiberty_Artanis": {
 		name: "Shield of Aiur",
-		keywords: "Artanis, Mothership",
+		keywords: "Artanis, Hierarch of the Daelaam, Mothership",
 		icon: "btn-unit-protoss-artanis",
 		race: PROTOSS,
 		commander: "WingsOfLiberty",
@@ -2406,6 +2406,7 @@ data.units={
 	},
 	"Raynor": {
 		name: "Raynor",
+		keywords: "Renegade Commander",
 		icon: "talent-raynor-level15-hyperiondamageaura",
 		race: TERRAN,
 		commander: "Raynor",
@@ -2830,6 +2831,7 @@ data.units={
 	},
 	"Swann": {
 		name: "Swann",
+		keywords: "Chief Engineer",
 		icon: "btn-upgrade-swann-laserdrillattack",
 		race: TERRAN,
 		commander: "Swann",
@@ -3202,6 +3204,7 @@ data.units={
 	},
 	"Nova": {
 		name: "Nova",
+		keywords: "Dominion Ghost",
 		icon: "nova coop_lvl 01_black ops",
 		race: TERRAN,
 		commander: "Nova",
@@ -3614,7 +3617,7 @@ data.units={
 	},
 	"Han": {
 		name: "Han",
-		keywords: "Mira Han, Matt Horner",
+		keywords: "Mira Han, Matt Horner, Mercenary, Dominion Admiral",
 		displayName: "Han & Horner",
 		icon: "btn-progression-hornerhan-1-precisionchaos",
 		race: TERRAN,
@@ -3924,6 +3927,7 @@ data.units={
 	},
 	"Tychus": {
 		name: "Tychus",
+		keywords: "Legendary Outlaw",
 		icon: "talent-tychus-level01-squadbar",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3932,7 +3936,7 @@ data.units={
 	},
 	"Tychus_Tychus": {
 		name: "Tychus",
-		keywords: "Marine",
+		keywords: "Legendary Outlaw, Marine",
 		icon: "btn-unit-terran-tychuscoop",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3972,7 +3976,7 @@ data.units={
 	},
 	"Tychus_CrookedSam": {
 		name: "Crooked Sam",
-		keywords: "Reaper",
+		keywords: "Outlaw, Reaper",
 		icon: "btn-unit-terran-tychusreaper",
 		race: TERRAN,
 		commander: "Tychus",
@@ -3988,7 +3992,7 @@ data.units={
 	},
 	"Tychus_Sirius": {
 		name: "James “Sirius” Sykes",
-		keywords: "Warhound, Warhound Turret",
+		keywords: "Outlaw, Warhound, Warhound Turret",
 		icon: "btn-unit-terran-tychuswarhound",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4010,7 +4014,7 @@ data.units={
 	},
 	"Tychus_Blaze": {
 		name: "Miles “Blaze” Lewis",
-		keywords: "Firebat",
+		keywords: "Outlaw, Firebat",
 		icon: "btn-unit-terran-tychusfirebat",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4025,7 +4029,7 @@ data.units={
 	},
 	"Tychus_Rattlesnake": {
 		name: "Kev “Rattlesnake” West",
-		keywords: "Marauder",
+		keywords: "Outlaw, Marauder",
 		icon: "btn-unit-terran-tychusmarauder",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4041,7 +4045,7 @@ data.units={
 	},
 	"Tychus_Cannonball": {
 		name: "Rob “Cannonball” Boswell",
-		keywords: "HERC",
+		keywords: "Outlaw, HERC",
 		icon: "btn-unit-terran-tychusherc",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4056,7 +4060,7 @@ data.units={
 	},
 	"Tychus_Vega": {
 		name: "Vega",
-		keywords: "Ghost",
+		keywords: "Outlaw, Ghost",
 		icon: "btn-unit-terran-tychusghost",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4072,7 +4076,7 @@ data.units={
 	},
 	"Tychus_Nux": {
 		name: "Nux",
-		keywords: "Spectre",
+		keywords: "Outlaw, Spectre",
 		icon: "btn-unit-terran-tychusspectre",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4087,7 +4091,7 @@ data.units={
 	},
 	"Tychus_Nikara": {
 		name: "Lt. Layna Nikara",
-		keywords: "Medic",
+		keywords: "Outlaw, Medic",
 		icon: "btn-unit-terran-tychusmedic",
 		race: TERRAN,
 		commander: "Tychus",
@@ -4300,6 +4304,7 @@ data.units={
 	},
 	"Mengsk": {
 		name: "Mengsk",
+		keywords: "Emperor of the Dominion",
 		icon: "btn-upgrade-mengsk-veterancy",
 		race: TERRAN,
 		commander: "Mengsk",
@@ -5310,6 +5315,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Kerrigan": {
 		name: "Kerrigan",
+		keywords: "Queen of Blades",
 		icon: "btn-unit-zerg-kerriganinfested",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -5375,7 +5381,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Stukov": {
 		name: "Stukov",
-		keywords: "Infested Terran",
+		keywords: "Infested Admiral, Infested Terran",
 		icon: "btn-unit-zerg-stukov",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -5392,6 +5398,7 @@ data.units={
 	},
 	"HeartOfTheSwarm_Dehaka": {
 		name: "Dehaka",
+		keywords: "Primal Pack Leader",
 		icon: "btn-unit-zerg-dehaka",
 		race: ZERG,
 		commander: "HeartOfTheSwarm",
@@ -6378,6 +6385,7 @@ data.units={
 	},
 	"Kerrigan": {
 		name: "Kerrigan",
+		keywords: "Queen of Blades",
 		icon: "btn-ability-kerrigan-fury",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -6386,6 +6394,7 @@ data.units={
 	},
 	"Kerrigan_Kerrigan": {
 		name: "Kerrigan",
+		keywords: "Queen of Blades",
 		icon: "btn-unit-zerg-kerriganinfested",
 		race: ZERG,
 		commander: "Kerrigan",
@@ -6833,6 +6842,7 @@ data.units={
 	},
 	"Zagara": {
 		name: "Zagara",
+		keywords: "Overqueen",
 		icon: "talent-zagara-level07-volatilebanelingnest",
 		race: ZERG,
 		commander: "Zagara",
@@ -6841,7 +6851,7 @@ data.units={
 	},
 	"Zagara_Zagara": {
 		name: "Zagara",
-		keywords: "Queen, Broodmother",
+		keywords: "Overqueen, Queen, Broodmother",
 		icon: "btn-unit-zerg-broodqueen",
 		race: ZERG,
 		commander: "Zagara",
@@ -7252,6 +7262,7 @@ data.units={
 	},
 	"Abathur": {
 		name: "Abathur",
+		keywords: "Evolution Master",
 		icon: "btn-upgrade-zerg-abathur-biomass",
 		race: ZERG,
 		commander: "Abathur",
@@ -7701,6 +7712,7 @@ data.units={
 	},
 	"Stukov": {
 		name: "Stukov",
+		keywords: "Infested Admiral",
 		icon: "btn-upgrade-zerg-stukov-unlockresearchbundle_infestedcivilianmarines_07",
 		race: ZERG,
 		commander: "Stukov",
@@ -8136,6 +8148,7 @@ data.units={
 	},
 	"Dehaka": {
 		name: "Dehaka",
+		keywords: "Primal Pack Leader",
 		icon: "btn-progression-zerg-dehaka-1-dehakaunlock",
 		race: ZERG,
 		commander: "Dehaka",
@@ -8144,7 +8157,7 @@ data.units={
 	},
 	"Dehaka_Dehaka": {
 		name: "Dehaka",
-		keywords: "Godzilla",
+		keywords: "Primal Pack Leader, Godzilla",
 		icon: "btn-unit-dehaka-mammothdehaka",
 		race: ZERG,
 		commander: "Dehaka",
@@ -8565,6 +8578,7 @@ data.units={
 	},
 	"Stetmann": {
 		name: "Stetmann",
+		keywords: "Hero Genius (Henius)",
 		icon: "btn-progression-stetmann-15-supergarytransform",
 		race: ZERG,
 		commander: "Stetmann",
@@ -9595,7 +9609,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Zeratul": {
 		name: "Zeratul",
-		keywords: "Dark Templar",
+		keywords: "Dark Prelate, Dark Templar",
 		icon: "btn-unit-protoss-zeratul",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9608,6 +9622,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Artanis": {
 		name: "Artanis",
+		keywords: "Hierarch of the Daelaam",
 		icon: "btn-unit-protoss-artanishero",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9619,7 +9634,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Vorazun": {
 		name: "Vorazun",
-		keywords: "Dark Templar",
+		keywords: "Matriarch of the Nerazim, Dark Templar",
 		icon: "btn-unit-protoss-vorazun",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9631,6 +9646,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Alarak": {
 		name: "Alarak",
+		keywords: "Highlord of the Tal'darim",
 		icon: "btn-unit-protoss-alarak",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9642,6 +9658,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Karax": {
 		name: "Karax",
+		keywords: "Master Phase-Smith",
 		icon: "btn-unit-protoss-karax",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -9653,7 +9670,7 @@ data.units={
 	},
 	"LegacyOfTheVoid_Fenix": {
 		name: "Fenix",
-		keywords: "Talandar",
+		keywords: "Purifier Executor, Talandar",
 		icon: "btn-unit-protoss-fenix",
 		race: PROTOSS,
 		commander: "LegacyOfTheVoid",
@@ -10375,6 +10392,7 @@ data.units={
 	},
 	"Artanis": {
 		name: "Artanis",
+		keywords: "Hierarch of the Daelaam",
 		icon: "talent-artanis-level01-swiftretribution",
 		race: PROTOSS,
 		commander: "Artanis",
@@ -10709,6 +10727,7 @@ data.units={
 	},
 	"Vorazun": {
 		name: "Vorazun",
+		keywords: "Matriarch of the Nerazim",
 		icon: "talent-vorazun-level01-shadowstalk",
 		race: PROTOSS,
 		commander: "Vorazun",
@@ -11003,6 +11022,7 @@ data.units={
 	},
 	"Karax": {
 		name: "Karax",
+		keywords: "Master Phase-Smith",
 		icon: "btn-upgrade-karax-chronowave",
 		race: PROTOSS,
 		commander: "Karax",
@@ -11341,6 +11361,7 @@ data.units={
 	},
 	"Alarak": {
 		name: "Alarak",
+		keywords: "Highlord of the Tal'darim",
 		icon: "btn-upgrade-protoss-alarak-empoweraoeattacks",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -11349,6 +11370,7 @@ data.units={
 	},
 	"Alarak_Alarak": {
 		name: "Alarak",
+		keywords: "Highlord of the Tal'darim",
 		icon: "btn-unit-protoss-alarak",
 		race: PROTOSS,
 		commander: "Alarak",
@@ -11660,7 +11682,7 @@ data.units={
 	},
 	"Fenix": {
 		name: "Fenix",
-		keywords: "Talandar",
+		keywords: "Purifier Executor, Talandar",
 		icon: "btn-progression-protoss-fenix-1-zealotsuit",
 		race: PROTOSS,
 		commander: "Fenix",
@@ -11668,7 +11690,7 @@ data.units={
 		defaultUnit: "Fenix_Probe"
 	},
 	"Fenix_Fenix": {
-		name: "Fenix",
+		name: "Purifier Executor, Fenix",
 		keywords: "Talandar, Praetor Armor, Solarite Dragoon, Cybros Arbiter",
 		icon: "btn-unit-protoss-fenix",
 		race: PROTOSS,
@@ -12153,6 +12175,7 @@ data.units={
 	},
 	"Zeratul": {
 		name: "Zeratul",
+		keywords: "Dark Prelate",
 		icon: "btn-progression-zeratul-01-powerofthexelnaga",
 		race: PROTOSS,
 		commander: "Zeratul",
@@ -12161,7 +12184,7 @@ data.units={
 	},
 	"Zeratul_Zeratul": {
 		name: "Zeratul",
-		keywords: "Dark Templar",
+		keywords: "Dark Prelate, Dark Templar",
 		icon: "btn-unit-protoss-zeratulcoop",
 		race: PROTOSS,
 		commander: "Zeratul",
