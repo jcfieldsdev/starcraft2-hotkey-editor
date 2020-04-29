@@ -10319,6 +10319,7 @@ data.units={
 		commander: "LegacyOfTheVoid",
 		type: BUILDING,
 		commands: [
+			"Rally",
 			"Cancel"
 		]
 	},
