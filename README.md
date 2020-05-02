@@ -49,10 +49,13 @@ The `?` button next to the `Load` and `Save` buttons brings up the [help page](h
 - The editor only edits hotkeys for units and thus cannot detect conflicts that could potentially arise between units and UI hotkeys. For example, if you set a Protoss hotkey to `W`, it will interfere with the default hotkey for selecting Warp Gates, but the editor will not detect or warn you about this. Similarly, it cannot be used to set hotkeys outside of units, such as setting top bar commands or setting up rapid-fire.
 - There are a number of weird, unused commands in the game that could potentially cause conflicts but are not included in the editor because of the impracticality of including so many unused commands and because of the amount of clutter they would create. For example, the *Wings of Liberty* campaign dependency includes all of the old multiplayer upgrades, even though they are not used in the campaign or even necessarily in the modern multiplayer mode. So you could, for instance, create a conflict between the "Weapons Refit" upgrade and the now obsolete "Behemoth Reactor" upgrade in the Fusion Core that the editor would not detect. Some of the potential conflicts are even stranger: the Twilight Council in *Legacy of the Void* includes commands for summoning various "champions" (alongside the standard commands for researching "Charge" and "Blink"). The *Legacy of the Void* campaign's Banshee has a "Lift Off" command for some reason. Many of the production structures for Amon's forces in co-op mode have combinations of units that never appear to the player, allowing you to inadvertently create conflicts that would not otherwise be possible, such as between Ravens and Science Vessels.
 
+## Acknowledgments
+
+Uses [Fira Mono](https://github.com/mozilla/Fira) font by [Carrois Type Design](http://www.carrois.com/).
+
 ## Authors
 
 - J.C. Fields <jcfields+gitlab@gmail.com>
-- Uses [Fira Mono](https://github.com/mozilla/Fira) font by [Carrois Type Design](http://www.carrois.com/)
 
 ## License
 
