@@ -254,16 +254,16 @@ Editor.prototype.unitEditor=function() {
 		img.setAttribute("alt", "["+unit.name+"]");
 		img.setAttribute("title", unit.name);
 		img.addEventListener("click", function() {
-			self.clicks++;
+			this.clicks++;
 
-			if (self.clicks>=ANNOYED_CLICKS) {
-				self.clicks=0;
+			if (this.clicks>=ANNOYED_CLICKS) {
+				this.clicks=0;
 
 				let audio=new Audio();
 				audio.src=ICONS_DIR+"/"+ANNOYED_SOUND;
 				audio.play();
 			}
-		});
+		}.bind(this));
 
 		h2.appendChild(img);
 	}
