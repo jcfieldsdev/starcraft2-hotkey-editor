@@ -11691,8 +11691,8 @@ data.units={
 		defaultUnit: "Fenix_Probe"
 	},
 	"Fenix_Fenix": {
-		name: "Purifier Executor, Fenix",
-		keywords: "Talandar, Praetor Armor, Solarite Dragoon, Cybros Arbiter",
+		name: "Fenix",
+		keywords: "Purifier Executor, Talandar, Praetor Armor, Solarite Dragoon, Cybros Arbiter",
 		icon: "btn-unit-protoss-fenix",
 		race: PROTOSS,
 		commander: "Fenix",
