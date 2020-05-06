@@ -13,9 +13,11 @@ const DEFAULT_UNIT="Raynor_SCV";
 
 // file names and locations
 const DEFAULT_SAVE_NAME="Hotkeys.SC2Hotkeys";
-const ICONS_DIR="icons/";
+const ICONS_DIR="icons";
 const ICONS_EXT=".png";
 const HELP_PAGE="help.html";
+const ANNOYED_CLICKS=10;
+const ANNOYED_SOUND="annoyed.ogg"
 const MIME_TYPE="text/plain";
 const STORAGE_NAME="sc2hk";
 
@@ -245,10 +247,24 @@ Editor.prototype.unitEditor=function() {
 	h2.id="unit";
 
 	if (unit.icon!=undefined) {
+		this.clicks=0;
+
 		let img=document.createElement("img");
-		img.setAttribute("src", ICONS_DIR+unit.icon+ICONS_EXT);
+		img.setAttribute("src", ICONS_DIR+"/"+unit.icon+ICONS_EXT);
 		img.setAttribute("alt", "["+unit.name+"]");
 		img.setAttribute("title", unit.name);
+		img.addEventListener("click", function() {
+			self.clicks++;
+
+			if (self.clicks>=ANNOYED_CLICKS) {
+				self.clicks=0;
+
+				let audio=new Audio();
+				audio.src=ICONS_DIR+"/"+ANNOYED_SOUND;
+				audio.play();
+			}
+		});
+
 		h2.appendChild(img);
 	}
 
@@ -324,7 +340,7 @@ Editor.prototype.unitEditor=function() {
 	function createButton(id, command, n) {
 		let div=document.createElement("div");
 		let img=document.createElement("img");
-		img.setAttribute("src", ICONS_DIR+command.icon+ICONS_EXT);
+		img.setAttribute("src", ICONS_DIR+"/"+command.icon+ICONS_EXT);
 		img.setAttribute("alt", "["+command.name+"]");
 		img.setAttribute("title", command.name);
 		img.addEventListener("click", function() {
@@ -734,7 +750,7 @@ Editor.prototype.findCommandsNamed=function(id) {
 
 		if (command.icon!=undefined) {
 			let img=document.createElement("img");
-			img.setAttribute("src", ICONS_DIR+command.icon+ICONS_EXT);
+			img.setAttribute("src", ICONS_DIR+"/"+command.icon+ICONS_EXT);
 			img.setAttribute("alt", "["+command.name+"]");
 			img.setAttribute("title", command.name);
 			img.classList.toggle("mask", command.mask);
@@ -770,7 +786,7 @@ Editor.prototype.formatResults=function(id, matches) {
 
 		if (unit.icon!=undefined) {
 			let img=document.createElement("img");
-			img.setAttribute("src", ICONS_DIR+unit.icon+ICONS_EXT);
+			img.setAttribute("src", ICONS_DIR+"/"+unit.icon+ICONS_EXT);
 			img.setAttribute("alt", "["+unit.name+"]");
 			img.setAttribute("title", unit.name);
 			li.appendChild(img);
