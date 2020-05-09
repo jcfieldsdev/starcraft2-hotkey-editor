@@ -59,7 +59,7 @@ Uses [Fira Mono](https://github.com/mozilla/Fira) font by [Carrois Type Design](
 
 ## License
 
-- [MIT license](http://opensource.org/licenses/mit-license.php)
+- [MIT license](https://opensource.org/licenses/mit-license.php)
 
 ## See also
 
