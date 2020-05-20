@@ -17,7 +17,7 @@ const ICONS_DIR="icons";
 const ICONS_EXT=".png";
 const HELP_PAGE="help.html";
 const ANNOYED_CLICKS=10;
-const ANNOYED_SOUND="annoyed.ogg"
+const ANNOYED_SOUND="annoyed.ogg";
 const MIME_TYPE="text/plain";
 const STORAGE_NAME="sc2hk";
 
@@ -259,8 +259,7 @@ Editor.prototype.unitEditor=function() {
 			if (this.clicks>=ANNOYED_CLICKS) {
 				this.clicks=0;
 
-				let audio=new Audio();
-				audio.src=ICONS_DIR+"/"+ANNOYED_SOUND;
+				let audio=new Audio(ICONS_DIR+"/"+ANNOYED_SOUND);
 				audio.play();
 			}
 		}.bind(this));
@@ -617,8 +616,7 @@ Editor.prototype.checkAllConflicts=function() {
 
 	// flags filter icon if section contains conflict
 	for (let element of $$(".filter")) {
-		let value=element.value;
-		element.classList.toggle("conflict", commanders.has(value));
+		element.classList.toggle("conflict", commanders.has(element.value));
 	}
 };
 
@@ -664,7 +662,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 		return;
 	}
 
-	let matches=new Set();
+	let matches=new Set(), filters=new Set();
 
 	for (let [unit, properties] of Object.entries(data.units)) {
 		if (properties.name==undefined) {
@@ -679,11 +677,13 @@ Editor.prototype.findUnitsNamed=function(query) {
 
 		if (name.indexOf(query)!=-1||keywords.indexOf(query)!=-1) {
 			matches.add(unit);
+			filters.add(properties.commander);
 		}
 	}
 
 	if (matches.size>0) {
 		this.formatResults("results", matches);
+		this.dimFilters(filters);
 	} else {
 		this.clearSearch();
 	}
@@ -863,6 +863,16 @@ Editor.prototype.openResult=function() {
 	results[this.selected].click();
 };
 
+Editor.prototype.dimFilters=function(filters) {
+	filters=Array.from(filters).map(function(filter) {
+		return data.units[filter].sortCommander||filter;
+	});
+
+	for (let element of $$(".filter")) {
+		element.classList.toggle("exclude", !filters.includes(element.value));
+	}
+};
+
 Editor.prototype.clear=function(element) {
 	if (element==null) {
 		return;
@@ -910,6 +920,10 @@ Editor.prototype.clearSearch=function(clearQuery=false) {
 	this.selected=-1;
 	this.clear($("#results"));
 	$("#results").classList.add("hidden");
+
+	for (let element of $$(".filter")) {
+		element.classList.remove("exclude");
+	}
 };
 
 /*

@@ -78,11 +78,6 @@ body.doc h4, div#editor input, div.overlay, fieldset.card span {
 	font-size: 1.25rem;
 }
 
-body.doc img {
-	height: auto;
-	max-width: 100%;
-}
-
 body.doc header {
 	text-align: center;
 }
@@ -396,6 +391,11 @@ footer {
 	width: 100%;
 }
 
+figure img {
+	height: auto;
+	max-width: 100%;
+}
+
 h1 {
 	font-size: 2rem;
 }
@@ -698,7 +698,7 @@ ul#filters button {
 ul#filters button.active {
 	box-shadow: 0 0 4px 1px #fff;
 	transform: scale(1.25);
-	transition: 0.3s transform ease;
+	transition: 0.3s transform;
 }
 
 ul#filters button:hover {
@@ -716,6 +716,11 @@ ul#filters button.conflict.active {
 
 ul#filters button.conflict:hover {
 	border-color: var(--conflict-link) !important;
+}
+
+ul#filters button.exclude {
+	opacity: 0.25;
+	transition: 0.2s opacity;
 }
 
 ul#filters button.protoss {
@@ -875,6 +880,10 @@ ul#tabs button:not(.active) {
 @media (max-width: 1366px) {
 	button {
 		font-size: 1.25rem;
+	}
+
+	button {
+		border-width: 1px;
 	}
 
 	button:hover, p#hotkey input:focus {
