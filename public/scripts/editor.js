@@ -360,9 +360,6 @@ Editor.prototype.createInput=function(hotkey="") {
 	let input=document.createElement("input");
 	input.setAttribute("type", "text");
 	input.setAttribute("value", hotkey);
-	input.addEventListener("click", function() {
-		this.select();
-	});
 	input.addEventListener("keydown", function(event) {
 		// ignores input if modifier key held
 		if (!event.ctrlKey&&!event.altKey&&!event.metaKey) {
@@ -386,7 +383,7 @@ Editor.prototype.commandEditor=function(n) {
 
 	// automatically selects last hotkey field
 	if (hotkeys.length>0) {
-		$("#hotkey").lastChild.select();
+		$("#hotkey").lastChild.focus();
 	}
 
 	$("#command").innerHTML=this.name;
@@ -430,13 +427,13 @@ Editor.prototype.addField=function() {
 
 	// will not add new field if current field is empty
 	if (element.lastChild.value=="") {
-		element.lastChild.select();
+		element.lastChild.focus();
 		return;
 	}
 
 	let input=this.createInput();
 	element.appendChild(input);
-	input.select();
+	input.focus();
 };
 
 Editor.prototype.removeField=function() {
@@ -451,7 +448,7 @@ Editor.prototype.removeField=function() {
 		this.commands.setHotkeys(this.command, []);
 	}
 
-	element.lastChild.select();
+	element.lastChild.focus();
 
 	this.findCommandsNamed(this.command);
 	this.switchTab(this.tab);
@@ -492,8 +489,6 @@ Editor.prototype.setHotkey=function(input, event) {
 	}
 
 	this.commands.setHotkeys(this.command, fields);
-
-	input.select();
 	this.commands.checkDefaults(this.command, this.commander);
 
 	this.findCommandsNamed(this.command);
@@ -827,7 +822,7 @@ Editor.prototype.highlightResult=function(dir) {
 	let results=$$("#results li");
 
 	if (dir) { // up arrow
-		if (this.selected==-1) {
+		if (this.selected<0) {
 			// loops back around to bottom
 			this.selected=results.length-1;
 		} else {

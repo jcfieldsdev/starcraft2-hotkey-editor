@@ -5223,7 +5223,6 @@ data.units={
 		commands: [
 			"EvolveInfestorEnergyUpgrade/InfestationPit",
 			"ResearchNeuralParasite/InfestationPit",
-			"EvolveAmorphousArmorcloud/InfestationPit",
 			"Cancel"
 		]
 	},
@@ -9402,6 +9401,7 @@ data.units={
 			"Rally",
 			"ChronoBoostEnergyCost/Nexus",
 			"NexusMassRecall/Nexus",
+			"BatteryOvercharge/Nexus",
 			"Cancel"
 		]
 	},
@@ -13760,6 +13760,7 @@ data.commands={
 		name: "Upgrade to Orbital Command",
 		hotkey: "B",
 		hotkey_NRS: "O",
+		hotkey_SC1: "C",
 		icon: "btn-building-terran-surveillancestation",
 		mask: false,
 		y: 0,
@@ -21965,6 +21966,14 @@ data.commands={
 		mask: false,
 		y: 2,
 		x: 1
+	},
+	"BatteryOvercharge/Nexus": {
+		name: "Battery Overcharge",
+		hotkey: "B",
+		icon: "btn-ability-zeratul-observer-sensorarray",
+		mask: false,
+		y: 2,
+		x: 2
 	},
 	"Zealot": {
 		name: "Warp In Zealot",
