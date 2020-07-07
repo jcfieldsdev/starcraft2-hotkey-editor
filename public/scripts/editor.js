@@ -5,41 +5,41 @@
  */
 
 // dimensions of command cards
-const ROWS=3;
-const COLS=5;
+const ROWS = 3;
+const COLS = 5;
 
 // initial unit on load
-const DEFAULT_UNIT="Raynor_SCV";
+const DEFAULT_UNIT = "Raynor_SCV";
 
 // file names and locations
-const DEFAULT_SAVE_NAME="Hotkeys.SC2Hotkeys";
-const ICONS_DIR="icons";
-const ICONS_EXT=".png";
-const HELP_PAGE="help.html";
-const ANNOYED_CLICKS=10;
-const ANNOYED_SOUND="annoyed.ogg";
-const MIME_TYPE="text/plain";
-const STORAGE_NAME="sc2hk";
+const DEFAULT_SAVE_NAME = "Hotkeys.SC2Hotkeys";
+const ICONS_DIR = "icons";
+const ICONS_EXT = ".png";
+const HELP_PAGE = "help.html";
+const ANNOYED_CLICKS = 10;
+const ANNOYED_SOUND = "annoyed.ogg";
+const MIME_TYPE = "text/plain";
+const STORAGE_NAME = "sc2hk";
 
 // delimiter for multiple hotkeys
-const DELIMITER=",";
+const DELIMITER = ",";
 
 /*
  * initialization
  */
 
 window.addEventListener("load", function() {
-	const store=new Storage(STORAGE_NAME);
-	const overlays={
+	const store = new Storage(STORAGE_NAME);
+	const overlays = {
 		load: new Overlay("load"),
 		save: new Overlay("save")
 	};
-	const commands=new Commands();
-	const editor=new Editor(commands);
+	const commands = new Commands();
+	const editor = new Editor(commands);
 
-	let mem=store.load();
+	let mem = store.load();
 
-	if (mem!=null) {
+	if (mem != null) {
 		commands.load(mem);
 	}
 
@@ -47,9 +47,9 @@ window.addEventListener("load", function() {
 
 	// sets event listeners
 	$("#open").addEventListener("click", function() {
-		let file=overlays.load.getText();
+		let file = overlays.load.getText();
 
-		if (file!="") {
+		if (file != "") {
 			commands.parse(file);
 			editor.open();
 			overlays.load.hide();
@@ -69,16 +69,16 @@ window.addEventListener("load", function() {
 		document.execCommand("copy");
 	});
 	$("#download").addEventListener("click", function() {
-		let contents=new Blob([overlays.save.getText()], {type: MIME_TYPE});
+		let contents = new Blob([overlays.save.getText()], {type: MIME_TYPE});
 
-		let a=$("#link");
-		a.download=DEFAULT_SAVE_NAME;
-		a.href=window.URL.createObjectURL(contents);
+		let a = $("#link");
+		a.download = DEFAULT_SAVE_NAME;
+		a.href = window.URL.createObjectURL(contents);
 		a.click();
 		window.URL.revokeObjectURL(contents);
 	});
 	$("#help").addEventListener("click", function() {
-		window.location=HELP_PAGE;
+		window.location = HELP_PAGE;
 	});
 	$("#load").addEventListener("click", function() {
 		overlays.load.show();
@@ -89,10 +89,10 @@ window.addEventListener("load", function() {
 		overlays.save.show();
 	});
 	$("#file").addEventListener("change", function(event) {
-		let file=event.target.files[0];
+		let file = event.target.files[0];
 
-		if (file!=null) {
-			let reader=new FileReader();
+		if (file != null) {
+			let reader = new FileReader();
 			reader.addEventListener("load", function(event) {
 				overlays.load.setText(event.target.result);
 			});
@@ -109,32 +109,34 @@ window.addEventListener("load", function() {
 		editor.load();
 	});
 	window.addEventListener("keyup", function(event) {
-		if (event.keyCode==27) { // Esc
+		if (event.keyCode == 27) { // Esc
 			for (let overlay of Object.values(overlays)) {
 				overlay.hide();
 			}
 		}
 	});
 
-	let query=$("#query");
+	let query = $("#query");
 
 	query.addEventListener("input", function() {
 		editor.findUnitsNamed(this.value);
 	});
 	query.addEventListener("keydown", function(event) {
-		if (event.keyCode==13) { // return/enter
+		let keyCode = event.keyCode;
+
+		if (keyCode == 13) { // return/enter
 			editor.openResult();
 		}
 
-		if (event.keyCode==27) { // Esc
+		if (keyCode == 27) { // Esc
 			editor.clearSearch(true);
 		}
 
-		if (event.keyCode==38) { // up arrow
+		if (keyCode == 38) { // up arrow
 			editor.highlightResult(true);
 		}
 
-		if (event.keyCode==40) { // down arrow
+		if (keyCode == 40) { // down arrow
 			editor.highlightResult(false);
 		}
 	});
@@ -148,7 +150,7 @@ window.addEventListener("load", function() {
 
 	for (let element of $$(".filter")) {
 		element.addEventListener("click", function() {
-			window.location.hash=data.units[this.value].defaultUnit;
+			window.location.hash = data.units[this.value].defaultUnit;
 		});
 	}
 
@@ -178,44 +180,44 @@ function $$(selector) {
  */
 
 function Editor(commands) {
-	this.commands=commands;
+	this.commands = commands;
 
-	this.unit="";
-	this.command="";
-	this.name="";
-	this.commander="";
+	this.unit = "";
+	this.command = "";
+	this.name = "";
+	this.commander = "";
 
-	this.buttons=[];
-	this.tab="units";
-	this.selected=-1; // selected search result
+	this.buttons = [];
+	this.tab = "units";
+	this.selected = -1; // selected search result
 }
 
-Editor.prototype.load=function() {
-	let unit="";
+Editor.prototype.load = function() {
+	let unit = "";
 
 	// gets current unit from URL if specified
-	if (window.location.hash!="") {
-		unit=window.location.hash.replace("#", ""); // chops initial #
+	if (window.location.hash != "") {
+		unit = window.location.hash.replace("#", ""); // chops initial #
 	} else {
-		unit=DEFAULT_UNIT;
+		unit = DEFAULT_UNIT;
 	}
 
 	this.setUnit(unit);
 };
 
-Editor.prototype.open=function() {
+Editor.prototype.open = function() {
 	this.clearButtons();
 	this.clearFields();
 	this.unitEditor();
 };
 
-Editor.prototype.setUnit=function(unit) {
-	this.unit=unit;
+Editor.prototype.setUnit = function(unit) {
+	this.unit = unit;
 
-	if (data.units[this.unit]==undefined) {
+	if (data.units[this.unit] == undefined) {
 		console.error(`Undefined: ${this.unit} (unit)`);
 	} else {
-		this.commander=data.units[this.unit].commander;
+		this.commander = data.units[this.unit].commander;
 		this.filter(data.units[this.unit]);
 	}
 
@@ -223,43 +225,43 @@ Editor.prototype.setUnit=function(unit) {
 	this.open();
 };
 
-Editor.prototype.setCommand=function(command, name) {
-	this.command=command;
-	this.name=name.replace(/\n/g, "<br>");
+Editor.prototype.setCommand = function(command, name) {
+	this.command = command;
+	this.name = name.replace(/\n/g, "<br>");
 
 	this.commandEditor();
 	this.switchTab(this.tab);
 };
 
-Editor.prototype.unitEditor=function() {
-	let unit=data.units[this.unit];
+Editor.prototype.unitEditor = function() {
+	let unit = data.units[this.unit];
 
-	if (unit==undefined) {
+	if (unit == undefined) {
 		return;
 	}
 
-	if (unit.type==COMMANDER) {
+	if (unit.type == COMMANDER) {
 		this.setUnit(unit.defaultUnit);
 		return;
 	}
 
-	let h2=document.createElement("h2");
-	h2.id="unit";
+	let h2 = document.createElement("h2");
+	h2.id = "unit";
 
-	if (unit.icon!=undefined) {
-		this.clicks=0;
+	if (unit.icon != undefined) {
+		this.clicks = 0;
 
-		let img=document.createElement("img");
-		img.setAttribute("src", ICONS_DIR+"/"+unit.icon+ICONS_EXT);
-		img.setAttribute("alt", "["+unit.name+"]");
+		let img = document.createElement("img");
+		img.setAttribute("src", ICONS_DIR + "/" + unit.icon + ICONS_EXT);
+		img.setAttribute("alt", "[" + unit.name + "]");
 		img.setAttribute("title", unit.name);
 		img.addEventListener("click", function() {
 			this.clicks++;
 
-			if (this.clicks>=ANNOYED_CLICKS) {
-				this.clicks=0;
+			if (this.clicks >= ANNOYED_CLICKS) {
+				this.clicks = 0;
 
-				let audio=new Audio(ICONS_DIR+"/"+ANNOYED_SOUND);
+				let audio = new Audio(ICONS_DIR + "/" + ANNOYED_SOUND);
 				audio.play();
 			}
 		}.bind(this));
@@ -270,18 +272,18 @@ Editor.prototype.unitEditor=function() {
 	h2.appendChild(document.createTextNode(unit.name));
 	$("#unit").replaceWith(h2);
 
-	let commands=[], legends=[];
-	this.buttons=[];
+	let commands = [], legends = [];
+	this.buttons = [];
 
 	if (Array.isArray(unit.commands)) {
 		commands.push(unit.commands);
 		legends.push(unit.name);
 	} else {
-		commands=Object.values(unit.commands);
-		legends=Object.keys(unit.commands);
+		commands = Object.values(unit.commands);
+		legends = Object.keys(unit.commands);
 	}
 
-	const self=this;
+	const self = this;
 
 	for (let n of commands.keys()) {
 		this.setLegend(legends[n], n);
@@ -293,26 +295,28 @@ Editor.prototype.unitEditor=function() {
 
 	function createCommandCard(unit, commands, n) {
 		// adds common commands
-		if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-			commands=commands.concat(data.common.basic);
+		if (n == 0 && (unit.type == UNIT || unit.type == HERO)) {
+			commands = commands.concat(data.common.basic);
 		}
 
-		let fieldset=$("#card"+n);
-		let buttons=[];
+		let fieldset = $("#card" + n);
+		let buttons = [];
 
 		// prevents error if unit has more command cards than HTML file
-		if (fieldset==null) {
+		if (fieldset == null) {
 			return;
 		}
 
-		if (n>2) { // unhides extra card
+		if (n > 2) { // unhides extra card
 			fieldset.classList.remove("hidden");
 		}
 
 		for (let id of commands) {
-			let command=self.commands.getCommand(unit.commander, self.unit, id);
+			let command = self.commands.getCommand(
+				unit.commander, self.unit, id
+			);
 
-			if (command==undefined) {
+			if (command == undefined) {
 				console.error(`Undefined: ${id} (command)`);
 				continue;
 			}
@@ -324,12 +328,12 @@ Editor.prototype.unitEditor=function() {
 			});
 
 			// re-selects command if selected on previously viewed unit
-			if (self.command==id) {
+			if (self.command == id) {
 				self.setCommand(id, command.name);
 			}
 
-			let button=createButton(id, command, n);
-			let pos=COLS*command.y+command.x;
+			let button = createButton(id, command, n);
+			let pos = COLS * command.y + command.x;
 			$$(`#card${n}>div div`)[pos].replaceWith(button);
 		}
 
@@ -337,10 +341,10 @@ Editor.prototype.unitEditor=function() {
 	}
 
 	function createButton(id, command, n) {
-		let div=document.createElement("div");
-		let img=document.createElement("img");
-		img.setAttribute("src", ICONS_DIR+"/"+command.icon+ICONS_EXT);
-		img.setAttribute("alt", "["+command.name+"]");
+		let div = document.createElement("div");
+		let img = document.createElement("img");
+		img.setAttribute("src", ICONS_DIR + "/" + command.icon + ICONS_EXT);
+		img.setAttribute("alt", "[" + command.name + "]");
 		img.setAttribute("title", command.name);
 		img.addEventListener("click", function() {
 			self.setCommand(id, command.name);
@@ -348,21 +352,21 @@ Editor.prototype.unitEditor=function() {
 		img.classList.toggle("mask", command.mask);
 		div.appendChild(img);
 
-		let span=document.createElement("span");
-		span.id="span_"+n+command.y+command.x;
+		let span = document.createElement("span");
+		span.id = "span_" + n + command.y + command.x;
 		div.appendChild(span);
 
 		return div;
 	}
 };
 
-Editor.prototype.createInput=function(hotkey="") {
-	let input=document.createElement("input");
+Editor.prototype.createInput = function(hotkey="") {
+	let input = document.createElement("input");
 	input.setAttribute("type", "text");
 	input.setAttribute("value", hotkey);
 	input.addEventListener("keydown", function(event) {
 		// ignores input if modifier key held
-		if (!event.ctrlKey&&!event.altKey&&!event.metaKey) {
+		if (!event.ctrlKey && !event.altKey && !event.metaKey) {
 			event.preventDefault();
 			this.setHotkey(input, event);
 		}
@@ -371,27 +375,27 @@ Editor.prototype.createInput=function(hotkey="") {
 	return input;
 };
 
-Editor.prototype.setLegend=function(title, n) {
-	let legend=$(`#card${n} legend`);
-	legend.textContent=title;
+Editor.prototype.setLegend = function(title, n) {
+	let legend = $(`#card${n} legend`);
+	legend.textContent = title;
 	legend.classList.toggle("hidden", !title);
 };
 
-Editor.prototype.commandEditor=function(n) {
-	let hotkeys=this.commands.getHotkeys(this.commander, this.command);
+Editor.prototype.commandEditor = function(n) {
+	let hotkeys = this.commands.getHotkeys(this.commander, this.command);
 	this.formatHotkey(hotkeys);
 
 	// automatically selects last hotkey field
-	if (hotkeys.length>0) {
+	if (hotkeys.length > 0) {
 		$("#hotkey").lastChild.focus();
 	}
 
-	$("#command").innerHTML=this.name;
+	$("#command").innerHTML = this.name;
 
-	let p=document.createElement("p");
-	p.id="control";
+	let p = document.createElement("p");
+	p.id = "control";
 
-	let button=document.createElement("button");
+	let button = document.createElement("button");
 	button.setAttribute("type", "button");
 	button.addEventListener("click", function() {
 		this.addField();
@@ -399,7 +403,7 @@ Editor.prototype.commandEditor=function(n) {
 	button.appendChild(document.createTextNode("Add"));
 	p.appendChild(button);
 
-	button=document.createElement("button");
+	button = document.createElement("button");
 	button.setAttribute("type", "button");
 	button.addEventListener("click", function() {
 		this.removeField();
@@ -407,7 +411,7 @@ Editor.prototype.commandEditor=function(n) {
 	button.appendChild(document.createTextNode("Remove"));
 	p.appendChild(button);
 
-	button=document.createElement("button");
+	button = document.createElement("button");
 	button.setAttribute("type", "button");
 	button.addEventListener("click", function() {
 		this.resetDefaults();
@@ -422,29 +426,29 @@ Editor.prototype.commandEditor=function(n) {
 	$("#tabs").classList.remove("hidden");
 };
 
-Editor.prototype.addField=function() {
-	let element=$("#hotkey");
+Editor.prototype.addField = function() {
+	let element = $("#hotkey");
 
 	// will not add new field if current field is empty
-	if (element.lastChild.value=="") {
+	if (element.lastChild.value == "") {
 		element.lastChild.focus();
 		return;
 	}
 
-	let input=this.createInput();
+	let input = this.createInput();
 	element.appendChild(input);
 	input.focus();
 };
 
-Editor.prototype.removeField=function() {
-	let element=$("#hotkey");
+Editor.prototype.removeField = function() {
+	let element = $("#hotkey");
 
-	if (element.childElementCount>1) {
+	if (element.childElementCount > 1) {
 		element.removeChild(element.lastChild);
 		this.commands.removeLast(this.command);
 		this.commands.checkDefaults(this.command, this.commander);
 	} else { // last field
-		element.lastChild.value="";
+		element.lastChild.value = "";
 		this.commands.setHotkeys(this.command, []);
 	}
 
@@ -456,13 +460,13 @@ Editor.prototype.removeField=function() {
 	this.checkAllConflicts();
 };
 
-Editor.prototype.formatHotkey=function(hotkeys) {
-	let p=document.createElement("p");
-	p.id="hotkey";
+Editor.prototype.formatHotkey = function(hotkeys) {
+	let p = document.createElement("p");
+	p.id = "hotkey";
 
-	let element=$("#"+p.id);
+	let element = $("#" + p.id);
 
-	if (hotkeys.length==0) { // hides field if empty
+	if (hotkeys.length == 0) { // hides field if empty
 		element.replaceWith(p);
 		element.classList.add("hidden");
 		return;
@@ -476,13 +480,13 @@ Editor.prototype.formatHotkey=function(hotkeys) {
 	element.replaceWith(p);
 };
 
-Editor.prototype.setHotkey=function(input, event) {
+Editor.prototype.setHotkey = function(input, event) {
 	if (event.keyCode in data.keyCodes) {
-		let keyCode=data.keyCodes[event.keyCode];
-		input.value=keyCode.symbol||keyCode.hotkey;
+		let keyCode = data.keyCodes[event.keyCode];
+		input.value = keyCode.symbol || keyCode.hotkey;
 	}
 
-	let fields=[];
+	let fields = [];
 
 	for (let element of $$("#hotkey input")) {
 		fields.push(element.value);
@@ -497,7 +501,7 @@ Editor.prototype.setHotkey=function(input, event) {
 	this.checkAllConflicts();
 };
 
-Editor.prototype.resetDefaults=function() {
+Editor.prototype.resetDefaults = function() {
 	this.commands.clear(this.command);
 
 	this.commandEditor();
@@ -507,36 +511,36 @@ Editor.prototype.resetDefaults=function() {
 	this.checkAllConflicts();
 };
 
-Editor.prototype.setVisibleHotkeys=function() {
+Editor.prototype.setVisibleHotkeys = function() {
 	// checks for conflicts in currently visible command cards
 	for (let [n, card] of this.buttons.entries()) {
-		let keys={}, sets={};
+		let keys = {}, sets = {};
 
 		for (let command of card) {
-			if (command=="") {
+			if (command == "") {
 				continue;
 			}
 
-			let hotkeys=this.commands.getHotkeys(this.commander, command.id);
-			let hotkeySet=data.commands[command.id].hotkeySet||"";
+			let hotkeys = this.commands.getHotkeys(this.commander, command.id);
+			let hotkeySet = data.commands[command.id].hotkeySet || "";
 
-			let id="span_"+n+command.y+command.x;
-			$("#"+id).textContent=hotkeys[0];
+			let id = "span_" + n + command.y + command.x;
+			$("#" + id).textContent = hotkeys[0];
 
 			// records hotkey set if specified and "allow set conflicts" is on
-			if (this.commands.allowSetConflicts&&hotkeySet!="") {
-				sets[id]=hotkeySet;
+			if (this.commands.allowSetConflicts && hotkeySet != "") {
+				sets[id] = hotkeySet;
 			}
 
 			for (let hotkey of hotkeys) {
-				if (hotkey=="") {
+				if (hotkey == "") {
 					continue;
 				}
 
-				if (keys[hotkey]==undefined) {
+				if (keys[hotkey] == undefined) {
 					// using set to prevent duplicates so a hotkey cannot
 					// conflict with itself
-					keys[hotkey]=new Set();
+					keys[hotkey] = new Set();
 				}
 
 				keys[hotkey].add(id);
@@ -546,28 +550,32 @@ Editor.prototype.setVisibleHotkeys=function() {
 		// tracks conflicts outside of loop so conflicts can be detected in
 		// commands with multiple hotkeys, else class will be toggled an
 		// unpredictable amount
-		let conflicts=[];
+		let conflicts = [];
 
 		for (let ids of Object.values(keys)) {
 			for (let id of ids) {
-				let size=ids.size;
+				let size = ids.size;
 
-				if (this.commands.allowSetConflicts&&size>1) {
-					let currentSet=sets[id];
+				if (this.commands.allowSetConflicts && size > 1) {
+					let currentSet = sets[id];
 
-					for (let [cmpId, cmpSet] of Object.entries(sets)) {
+					for (let [compareId, compareSet] of Object.entries(sets)) {
 						// ignores hotkey conflict if it comes from a
 						// member of the same set
-						if (id!=cmpId&&currentSet==cmpSet&&ids.has(cmpId)) {
+						if (
+							id != compareId
+							&& currentSet == compareSet
+							&& ids.has(compareId)
+						) {
 							size--;
 						}
 					}
 				}
 
-				let conflict=size>1;
+				let conflict = size > 1;
 
 				if (!conflicts.includes(id)) {
-					$("#"+id).classList.toggle("conflict", conflict);
+					$("#" + id).classList.toggle("conflict", conflict);
 				}
 
 				if (conflict) {
@@ -578,16 +586,16 @@ Editor.prototype.setVisibleHotkeys=function() {
 	}
 };
 
-Editor.prototype.checkAllConflicts=function() {
-	let commanders=new Set(), units=new Set();
+Editor.prototype.checkAllConflicts = function() {
+	let commanders = new Set(), units = new Set();
 
 	// checks for conflicts in all unit links
 	for (let element of $$("section a")) {
-		if (element.hash=="") {
+		if (element.hash == "") {
 			continue;
 		}
 
-		let unit=element.hash.replace("#", "");
+		let unit = element.hash.replace("#", "");
 
 		if (this.commands.checkConflicts(unit)) {
 			element.classList.add("conflict");
@@ -601,11 +609,11 @@ Editor.prototype.checkAllConflicts=function() {
 
 	// checks for conflicts in "other units with command" list
 	for (let element of $$("#units a")) {
-		if (element.hash=="") {
+		if (element.hash == "") {
 			continue;
 		}
 
-		let unit=element.hash.replace("#", "");
+		let unit = element.hash.replace("#", "");
 		element.classList.toggle("conflict", units.has(unit));
 	}
 
@@ -615,68 +623,68 @@ Editor.prototype.checkAllConflicts=function() {
 	}
 };
 
-Editor.prototype.filter=function(unit) {
-	let filter=data.units[unit.commander].sortCommander||unit.commander;
+Editor.prototype.filter = function(unit) {
+	let filter = data.units[unit.commander].sortCommander || unit.commander;
 
 	// hides unit lists for commanders other than selected
 	for (let element of $$("section")) {
-		element.classList.toggle("hidden", element.id!=filter);
+		element.classList.toggle("hidden", element.id != filter);
 	}
 
 	// sets commander icon to active
 	for (let element of $$(".filter")) {
-		element.classList.toggle("active", element.value==filter);
+		element.classList.toggle("active", element.value == filter);
 	}
 
 	// sets color scheme to race of commander
-	document.documentElement.className=unit.race;
+	document.documentElement.className = unit.race;
 };
 
-Editor.prototype.switchTab=function(value) {
+Editor.prototype.switchTab = function(value) {
 	for (let element of $$(".tab")) {
-		element.classList.toggle("active", element.value==value);
+		element.classList.toggle("active", element.value == value);
 	}
 
 	for (let element of $$("#lists ul")) {
-		if (element.id=="tabs") {
+		if (element.id == "tabs") {
 			continue;
 		}
 
-		element.classList.toggle("hidden", element.id!=value);
+		element.classList.toggle("hidden", element.id != value);
 	}
 
-	this.tab=value;
+	this.tab = value;
 };
 
-Editor.prototype.findUnitsNamed=function(query) {
-	query=query.toLowerCase().trim();
+Editor.prototype.findUnitsNamed = function(query) {
+	query = query.toLowerCase().trim();
 
 	// minimum three characters to search to prevent huge result lists
-	if (query.length<3) {
+	if (query.length < 3) {
 		this.clearSearch();
 		return;
 	}
 
-	let matches=new Set(), filters=new Set();
+	let matches = new Set(), filters = new Set();
 
 	for (let [unit, properties] of Object.entries(data.units)) {
-		if (properties.name==undefined) {
+		if (properties.name == undefined) {
 			continue;
 		}
 
-		let name=properties.displayName||properties.name;
-		name=prepareString(name);
+		let name = properties.displayName || properties.name;
+		name = prepareString(name);
 
-		let keywords=properties.keywords||"";
-		keywords=prepareString(keywords);
+		let keywords = properties.keywords || "";
+		keywords = prepareString(keywords);
 
-		if (name.indexOf(query)!=-1||keywords.indexOf(query)!=-1) {
+		if (name.indexOf(query) != -1 || keywords.indexOf(query) != -1) {
 			matches.add(unit);
 			filters.add(properties.commander);
 		}
 	}
 
-	if (matches.size>0) {
+	if (matches.size > 0) {
 		this.formatResults("results", matches);
 		this.dimFilters(filters);
 	} else {
@@ -685,28 +693,28 @@ Editor.prototype.findUnitsNamed=function(query) {
 
 	function prepareString(str) {
 		// replaces curly quotes
-		str=str.replace(/[‘’]/g, "'");
-		str=str.replace(/[“”]/g, "\"");
+		str = str.replace(/[‘’]/g, "'");
+		str = str.replace(/[“”]/g, "\"");
 
 		return str.toLowerCase();
 	}
 };
 
-Editor.prototype.findUnitsWith=function(id) {
-	let matches=new Set();
+Editor.prototype.findUnitsWith = function(id) {
+	let matches = new Set();
 
 	for (let [unit, properties] of Object.entries(data.units)) {
-		if (properties.commands==undefined) {
+		if (properties.commands == undefined) {
 			continue;
 		}
 
-		let search=[];
+		let search = [];
 
 		if (Array.isArray(properties.commands)) {
-			search=properties.commands;
+			search = properties.commands;
 		} else {
 			for (let card of Object.values(properties.commands)) {
-				search=search.concat(card); // combines all command cards
+				search = search.concat(card); // combines all command cards
 			}
 		}
 
@@ -715,54 +723,54 @@ Editor.prototype.findUnitsWith=function(id) {
 		}
 	}
 
-	$("#code").textContent=id;
+	$("#code").textContent = id;
 	this.formatResults("units", matches);
 };
 
-Editor.prototype.findCommandsNamed=function(id) {
-	let matches=new Set();
+Editor.prototype.findCommandsNamed = function(id) {
+	let matches = new Set();
 
 	for (let [command, properties] of Object.entries(data.commands)) {
-		if (properties.name==this.name) {
+		if (properties.name == this.name) {
 			matches.add(command);
 		}
 	}
 
 	for (let commander of Object.values(data.overrides)) {
 		for (let [command, properties] of Object.entries(commander)) {
-			if (properties.name==this.name) {
+			if (properties.name == this.name) {
 				matches.add(command);
 			}
 		}
 	}
 
-	let ul=document.createElement("ul");
-	ul.id="commands";
+	let ul = document.createElement("ul");
+	ul.id = "commands";
 
 	for (let match of matches) {
-		let command=data.commands[match];
-		let li=document.createElement("li");
+		let command = data.commands[match];
+		let li = document.createElement("li");
 
-		if (command.icon!=undefined) {
-			let img=document.createElement("img");
-			img.setAttribute("src", ICONS_DIR+"/"+command.icon+ICONS_EXT);
-			img.setAttribute("alt", "["+command.name+"]");
+		if (command.icon != undefined) {
+			let img = document.createElement("img");
+			img.setAttribute("src", ICONS_DIR + "/" + command.icon + ICONS_EXT);
+			img.setAttribute("alt", "[" + command.name + "]");
 			img.setAttribute("title", command.name);
 			img.classList.toggle("mask", command.mask);
 			li.appendChild(img);
 		}
 
-		let a=document.createElement("a");
+		let a = document.createElement("a");
 		a.addEventListener("click", function() {
 			this.setCommand(match, command.name);
 		}.bind(this));
 		a.appendChild(document.createTextNode(match));
 		li.appendChild(a);
 
-		let hotkey=this.commands.getHotkeys(this.commander, match);
+		let hotkey = this.commands.getHotkeys(this.commander, match);
 
-		if (hotkey!="") {
-			li.appendChild(document.createTextNode(" ("+hotkey+")"));
+		if (hotkey != "") {
+			li.appendChild(document.createTextNode(" (" + hotkey + ")"));
 		}
 
 		ul.appendChild(li);
@@ -771,74 +779,74 @@ Editor.prototype.findCommandsNamed=function(id) {
 	$("#commands").replaceWith(ul);
 };
 
-Editor.prototype.formatResults=function(id, matches) {
-	let ul=document.createElement("ul");
-	ul.id=id;
+Editor.prototype.formatResults = function(id, matches) {
+	let ul = document.createElement("ul");
+	ul.id = id;
 
 	for (let match of matches) {
-		let unit=data.units[match];
-		let li=document.createElement("li");
+		let unit = data.units[match];
+		let li = document.createElement("li");
 
-		if (unit.icon!=undefined) {
-			let img=document.createElement("img");
-			img.setAttribute("src", ICONS_DIR+"/"+unit.icon+ICONS_EXT);
-			img.setAttribute("alt", "["+unit.name+"]");
+		if (unit.icon != undefined) {
+			let img = document.createElement("img");
+			img.setAttribute("src", ICONS_DIR + "/" + unit.icon + ICONS_EXT);
+			img.setAttribute("alt", "[" + unit.name + "]");
 			img.setAttribute("title", unit.name);
 			li.appendChild(img);
 		}
 
-		let a=document.createElement("a");
-		a.href="#"+match;
+		let a = document.createElement("a");
+		a.href = "#" + match;
 
 		// special case for currently selected unit (which will not fire
 		// hashchange event)
-		if (this.unit==match) {
+		if (this.unit == match) {
 			a.addEventListener("click", function() {
 				this.clearSearch(true);
 			}.bind(this));
 		}
 
-		if (unit.type==COMMANDER) {
-			let name=data.units[unit.commander].displayName||unit.name;
-			a.appendChild(document.createTextNode("Commander: "+name));
+		if (unit.type == COMMANDER) {
+			let name = data.units[unit.commander].displayName || unit.name;
+			a.appendChild(document.createTextNode("Commander: " + name));
 		} else {
-			let filter=data.units[unit.commander].displayName||unit.commander;
-			a.appendChild(document.createTextNode(filter+": "+unit.name));
+			let name = data.units[unit.commander].displayName || unit.commander;
+			a.appendChild(document.createTextNode(name + ": " + unit.name));
 			a.classList.toggle("conflict", this.commands.checkConflicts(match));
 		}
 
-		if (unit.suffix!=undefined) {
-			a.textContent+=" ("+unit.suffix+")";
+		if (unit.suffix != undefined) {
+			a.textContent += " (" + unit.suffix + ")";
 		}
 
 		li.appendChild(a);
 		ul.appendChild(li);
 	}
 
-	$("#"+id).replaceWith(ul);
+	$("#" + id).replaceWith(ul);
 };
 
-Editor.prototype.highlightResult=function(dir) {
-	let results=$$("#results li");
+Editor.prototype.highlightResult = function(dir) {
+	let results = $$("#results li");
 
 	if (dir) { // up arrow
-		if (this.selected<0) {
+		if (this.selected < 0) {
 			// loops back around to bottom
-			this.selected=results.length-1;
+			this.selected = results.length - 1;
 		} else {
 			this.selected--;
 		}
 	} else { // down arrow
-		if (this.selected>=results.length-1) {
+		if (this.selected >= results.length - 1) {
 			// loops back around to top
-			this.selected=-1;
+			this.selected =- 1;
 		} else {
 			this.selected++;
 		}
 	}
 
 	for (let [i, result] of results.entries()) {
-		if (this.selected==i) {
+		if (this.selected == i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
 		} else {
@@ -847,20 +855,20 @@ Editor.prototype.highlightResult=function(dir) {
 	}
 };
 
-Editor.prototype.openResult=function() {
-	let results=$$("#results a");
+Editor.prototype.openResult = function() {
+	let results = $$("#results a");
 
 	// ignores invalid array indices
-	if (this.selected<0||this.selected>=results.length) {
+	if (this.selected < 0 || this.selected >= results.length) {
 		return;
 	}
 
 	results[this.selected].click();
 };
 
-Editor.prototype.dimFilters=function(filters) {
-	filters=Array.from(filters).map(function(filter) {
-		return data.units[filter].sortCommander||filter;
+Editor.prototype.dimFilters = function(filters) {
+	filters = Array.from(filters).map(function(filter) {
+		return data.units[filter].sortCommander || filter;
 	});
 
 	for (let element of $$(".filter")) {
@@ -868,8 +876,8 @@ Editor.prototype.dimFilters=function(filters) {
 	}
 };
 
-Editor.prototype.clear=function(element) {
-	if (element==null) {
+Editor.prototype.clear = function(element) {
+	if (element == null) {
 		return;
 	}
 
@@ -878,22 +886,22 @@ Editor.prototype.clear=function(element) {
 	}
 };
 
-Editor.prototype.clearButtons=function() {
+Editor.prototype.clearButtons = function() {
 	for (let [n, card] of $$(".card").entries()) {
 		this.setLegend(" ", n);
 
 		for (let element of $$(`#card${n}>div div`)) {
-			element.className="";
+			element.className = "";
 			this.clear(element);
 		}
 
-		if (n>2) { // hides cards after third unless needed
+		if (n > 2) { // hides cards after third unless needed
 			card.classList.add("hidden");
 		}
 	}
 };
 
-Editor.prototype.clearFields=function() {
+Editor.prototype.clearFields = function() {
 	for (let element of $$("#fields h3, #fields p")) {
 		this.clear(element);
 	}
@@ -907,12 +915,12 @@ Editor.prototype.clearFields=function() {
 	}
 };
 
-Editor.prototype.clearSearch=function(clearQuery=false) {
+Editor.prototype.clearSearch = function(clearQuery=false) {
 	if (clearQuery) {
-		$("#query").value="";
+		$("#query").value = "";
 	}
 
-	this.selected=-1;
+	this.selected = -1;
 	this.clear($("#results"));
 	$("#results").classList.add("hidden");
 
@@ -926,46 +934,46 @@ Editor.prototype.clearSearch=function(clearQuery=false) {
  */
 
 function Commands() {
-	this.list={
+	this.list = {
 		"Commands": {}
 	};
-	this.suffix="";
-	this.allowSetConflicts=false;
+	this.suffix = "";
+	this.allowSetConflicts = false;
 }
 
-Commands.prototype.load=function(list={}) {
-	this.list=list;
+Commands.prototype.load = function(list={}) {
+	this.list = list;
 
-	if (this.list["Commands"]==undefined) {
-		this.list["Commands"]={};
+	if (this.list["Commands"] == undefined) {
+		this.list["Commands"] = {};
 	}
 
 	// gets suffix used for non-standard base layouts
-	if (this.list["Settings"]==undefined) {
-		this.suffix="";
-		this.allowSetConflicts=false;
+	if (this.list["Settings"] == undefined) {
+		this.suffix = "";
+		this.allowSetConflicts = false;
 	} else {
-		if (this.list["Settings"]["Suffix"]==undefined) {
-			this.suffix="";
+		if (this.list["Settings"]["Suffix"] == undefined) {
+			this.suffix = "";
 		} else {
 			// _NRS standard for lefties
 			// _GLS grid
 			// _GRS grid for lefties
 			// _SC1 classic
-			this.suffix=this.list["Settings"]["Suffix"];
+			this.suffix = this.list["Settings"]["Suffix"];
 		}
 
-		let allowSetConflicts=this.list["Settings"]["AllowSetConflicts"];
-		this.allowSetConflicts=Boolean(allowSetConflicts);
+		let allowSetConflicts = this.list["Settings"]["AllowSetConflicts"];
+		this.allowSetConflicts = Boolean(allowSetConflicts);
 	}
 };
 
 // converts from hotkey file format to object
-Commands.prototype.parse=function(text) {
-	let list={}, block={}, section="", command="", hotkey="";
+Commands.prototype.parse = function(text) {
+	let list = {}, block = {}, section = "", command = "", hotkey = "";
 
-	let lines=text.split("\n");
-	let pattern=/^([\w_\/]+)=([\w,+]*)$/;
+	let lines = text.split("\n");
+	let pattern = /^([\w_\/]+)=([\w,+]*)$/;
 
 	// ensures empty line at end of file so final section block is saved
 	lines.push("");
@@ -973,21 +981,21 @@ Commands.prototype.parse=function(text) {
 	for (let [i, line] of lines.entries()) {
 		// adds section block to object whenever new section block is found
 		// or at end of file (for the last section block)
-		if (lines.length==i+1||line.match(/^\[(\w+)\]$/)) {
-			if (section!="") {
-				list[section]=block;
-				block={};
+		if (lines.length == i + 1 || line.match(/^\[(\w+)\]$/)) {
+			if (section != "") {
+				list[section] = block;
+				block = {};
 			}
 
-			section=line.slice(1, -1);
+			section = line.slice(1, -1);
 		}
 
 		// matches command=hotkey pairs
 		if (line.match(pattern)) {
-			command=line.replace(pattern, "$1");
-			hotkey=line.replace(pattern, "$2");
-			block[command]={};
-			block[command]=hotkey;
+			command = line.replace(pattern, "$1");
+			hotkey = line.replace(pattern, "$2");
+			block[command] = {};
+			block[command] = hotkey;
 		}
 	}
 
@@ -995,25 +1003,25 @@ Commands.prototype.parse=function(text) {
 };
 
 // converts from object to hotkey file format
-Commands.prototype.convert=function() {
-	let text=Object.keys(this.list).reduce(function(text, section) {
-		let list=Object.keys(this.list[section]).reduce(function(list, id) {
+Commands.prototype.convert = function() {
+	let text = Object.keys(this.list).reduce(function(text, section) {
+		let list = Object.keys(this.list[section]).reduce(function(list, id) {
 			list.push({id, hotkey: this.list[section][id]});
 			return list;
 		}.bind(this), []);
 
 		// alphabetizes commands
 		list.sort(function(a, b) {
-			if (a.id<b.id) {
+			if (a.id < b.id) {
 				return -1;
 			}
 
-			return a.id>b.id;
+			return a.id > b.id;
 		});
 
-		text+="\n["+section+"]\n";
-		text=list.reduce(function(text, item) {
-			return text+item.id+"="+item.hotkey+"\n";
+		text += "\n[" + section + "]\n";
+		text = list.reduce(function(text, item) {
+			return text + item.id + "=" + item.hotkey + "\n";
 		}.bind(this), text);
 
 		return text;
@@ -1022,48 +1030,48 @@ Commands.prototype.convert=function() {
 	return text.trim();
 };
 
-Commands.prototype.getCommand=function(commander, unit, id) {
-	if (data.commands[id]==undefined) {
+Commands.prototype.getCommand = function(commander, unit, id) {
+	if (data.commands[id] == undefined) {
 		return;
 	}
 
-	let command=Object.assign({}, data.commands[id]);
+	let command = Object.assign({}, data.commands[id]);
 
 	if (this.checkCommanderOverride(id, commander, false)) {
-		command=Object.assign(command, data.overrides[commander][id]);
+		command = Object.assign(command, data.overrides[commander][id]);
 	}
 
 	if (this.checkUnitOverride(id, unit)) {
-		command=Object.assign(command, data.units[unit].overrides[id]);
+		command = Object.assign(command, data.units[unit].overrides[id]);
 	}
 
 	return command;
 };
 
-Commands.prototype.getHotkeys=function(commander, id) {
-	let value="";
+Commands.prototype.getHotkeys = function(commander, id) {
+	let value = "";
 
 	if (this.checkUserOverride(id, true)) {
-		value=this.list["Commands"][id];
+		value = this.list["Commands"][id];
 	} else if (this.checkCommanderSuffixOverride(id, commander)) {
-		value=data.overrides[commander][id]["hotkey"+this.suffix];
+		value = data.overrides[commander][id]["hotkey" + this.suffix];
 	} else if (this.checkCommanderOverride(id, commander, true)) {
-		value=data.overrides[commander][id].hotkey;
+		value = data.overrides[commander][id].hotkey;
 	} else if (this.checkSuffixOverride(id)) {
-		value=data.commands[id]["hotkey"+this.suffix];
+		value = data.commands[id]["hotkey" + this.suffix];
 	} else {
-		value=data.commands[id].hotkey||"";
+		value = data.commands[id].hotkey || "";
 	}
 
-	let hotkeys=value.split(DELIMITER);
+	let hotkeys = value.split(DELIMITER);
 
-	hotkeys=hotkeys.map(function(symbol) {
-		let hotkey=symbol;
+	hotkeys = hotkeys.map(function(symbol) {
+		let hotkey = symbol;
 
 		// converts from file format to display representation
 		for (let keyCode of Object.values(data.keyCodes)) {
-			if (symbol==keyCode.hotkey) {
-				hotkey=keyCode.symbol||keyCode.hotkey;
+			if (symbol == keyCode.hotkey) {
+				hotkey = keyCode.symbol || keyCode.hotkey;
 				break;
 			}
 		}
@@ -1074,21 +1082,21 @@ Commands.prototype.getHotkeys=function(commander, id) {
 	return hotkeys;
 };
 
-Commands.prototype.setHotkeys=function(command, hotkeys) {
+Commands.prototype.setHotkeys = function(command, hotkeys) {
 	if (!this.checkUserOverride(command)) {
 		this.clear(command);
 	}
 
-	hotkeys=hotkeys.filter(function(hotkey) {
-		return hotkey!=""; // omits blank entries
+	hotkeys = hotkeys.filter(function(hotkey) {
+		return hotkey != ""; // omits blank entries
 	});
-	hotkeys=hotkeys.map(function(hotkey) {
-		let symbol=hotkey;
+	hotkeys = hotkeys.map(function(hotkey) {
+		let symbol = hotkey;
 
 		// converts from display format to file representation
 		for (let keyCode of Object.values(data.keyCodes)) {
-			if (hotkey==keyCode.symbol) {
-				symbol=keyCode.hotkey;
+			if (hotkey == keyCode.symbol) {
+				symbol = keyCode.hotkey;
 				break;
 			}
 		}
@@ -1096,59 +1104,59 @@ Commands.prototype.setHotkeys=function(command, hotkeys) {
 		return symbol;
 	});
 
-	this.list["Commands"][command]="";
-	this.list["Commands"][command]=hotkeys.join(DELIMITER);
+	this.list["Commands"][command] = "";
+	this.list["Commands"][command] = hotkeys.join(DELIMITER);
 };
 
-Commands.prototype.checkConflicts=function(id) {
-	let unit=data.units[id];
+Commands.prototype.checkConflicts = function(id) {
+	let unit = data.units[id];
 
-	if (unit!=undefined&&unit.commands!=undefined) {
-		let cards=[];
+	if (unit != undefined && unit.commands != undefined) {
+		let cards = [];
 
 		if (Array.isArray(unit.commands)) {
 			cards.push(unit.commands);
 		} else {
-			cards=Object.values(unit.commands);
+			cards = Object.values(unit.commands);
 		}
 
 		for (let [n, card] of cards.entries()) {
-			let keys={}, sets={};
+			let keys = {}, sets = {};
 
-			if (n==0&&(unit.type==UNIT||unit.type==HERO)) {
-				card=card.concat(data.common.basic);
+			if (n == 0 && (unit.type == UNIT || unit.type == HERO)) {
+				card = card.concat(data.common.basic);
 			}
 
 			for (let id of card) {
-				if (data.commands[id]==undefined) {
+				if (data.commands[id] == undefined) {
 					continue;
 				}
 
-				let hotkeys=this.getHotkeys(unit.commander, id);
-				let hotkeySet=data.commands[id].hotkeySet;
+				let hotkeys = this.getHotkeys(unit.commander, id);
+				let hotkeySet = data.commands[id].hotkeySet;
 
 				for (let hotkey of hotkeys) {
-					if (hotkey=="") {
+					if (hotkey == "") {
 						continue;
 					}
 
-					if (this.allowSetConflicts&&hotkeySet!=undefined) {
+					if (this.allowSetConflicts && hotkeySet != undefined) {
 						// only records same hotkey once per hotkey set (for
 						// two-state commands) if set conflicts allowed
-						if (sets[hotkeySet]==hotkey) {
+						if (sets[hotkeySet] == hotkey) {
 							continue;
 						}
 
-						sets[hotkeySet]=hotkey;
+						sets[hotkeySet] = hotkey;
 					}
 
-					if (keys[hotkey]==undefined) {
-						keys[hotkey]=0;
+					if (keys[hotkey] == undefined) {
+						keys[hotkey] = 0;
 					}
 
 					keys[hotkey]++;
 
-					if (keys[hotkey]>1) {
+					if (keys[hotkey] > 1) {
 						return true;
 					}
 				}
@@ -1159,30 +1167,30 @@ Commands.prototype.checkConflicts=function(id) {
 	return false; // no conflicts
 };
 
-Commands.prototype.checkDefaults=function(id, commander) {
-	let defaultHotkey=data.commands[id].hotkey;
+Commands.prototype.checkDefaults = function(id, commander) {
+	let defaultHotkey = data.commands[id].hotkey;
 
 	if (this.checkCommanderSuffixOverride(id, commander)) {
-		defaultHotkey=data.overrides[commander][id]["hotkey"+this.suffix];
+		defaultHotkey = data.overrides[commander][id]["hotkey" + this.suffix];
 	} else if (this.checkCommanderOverride(id, commander, true)) {
-		defaultHotkey=data.overrides[commander][id].hotkey;
+		defaultHotkey = data.overrides[commander][id].hotkey;
 	}
 
-	let hotkey=this.getHotkeys(commander, id).join(DELIMITER);
+	let hotkey = this.getHotkeys(commander, id).join(DELIMITER);
 
 	// removes user hotkey if same as default (to avoid redundant entries)
-	if (hotkey==defaultHotkey) {
+	if (hotkey == defaultHotkey) {
 		this.clear(id);
 	}
 };
 
 // applies only to hotkey
-Commands.prototype.checkUserOverride=function(id) {
-	if (this.list["Commands"]==undefined) {
+Commands.prototype.checkUserOverride = function(id) {
+	if (this.list["Commands"] == undefined) {
 		return;
 	}
 
-	if (this.list["Commands"][id]==undefined) {
+	if (this.list["Commands"][id] == undefined) {
 		return;
 	}
 
@@ -1190,16 +1198,16 @@ Commands.prototype.checkUserOverride=function(id) {
 };
 
 // applies to everything but hotkey
-Commands.prototype.checkUnitOverride=function(id, unit) {
-	if (data.units[unit]==undefined) {
+Commands.prototype.checkUnitOverride = function(id, unit) {
+	if (data.units[unit] == undefined) {
 		return;
 	}
 
-	if (data.units[unit].overrides==undefined) {
+	if (data.units[unit].overrides == undefined) {
 		return;
 	}
 
-	if (data.units[unit].overrides[id]==undefined) {
+	if (data.units[unit].overrides[id] == undefined) {
 		return;
 	}
 
@@ -1207,36 +1215,36 @@ Commands.prototype.checkUnitOverride=function(id, unit) {
 };
 
 // applies only to hotkey
-Commands.prototype.checkCommanderSuffixOverride=function(id, commander) {
-	if (this.suffix==undefined) {
+Commands.prototype.checkCommanderSuffixOverride = function(id, commander) {
+	if (this.suffix == undefined) {
 		return;
 	}
 
-	if (data.overrides[commander]==undefined) {
+	if (data.overrides[commander] == undefined) {
 		return;
 	}
 
-	if (data.overrides[commander][id]==undefined) {
+	if (data.overrides[commander][id] == undefined) {
 		return;
 	}
 
-	if (data.overrides[commander][id]["hotkey"+this.suffix]==undefined) {
+	if (data.overrides[commander][id]["hotkey" + this.suffix] == undefined) {
 		return;
 	}
 
 	return true;
 };
 
-Commands.prototype.checkCommanderOverride=function(id, commander, hotkey) {
-	if (data.overrides[commander]==undefined) {
+Commands.prototype.checkCommanderOverride = function(id, commander, hotkey) {
+	if (data.overrides[commander] == undefined) {
 		return;
 	}
 
-	if (data.overrides[commander][id]==undefined) {
+	if (data.overrides[commander][id] == undefined) {
 		return;
 	}
 
-	if (hotkey&&data.overrides[commander][id].hotkey==undefined) {
+	if (hotkey && data.overrides[commander][id].hotkey == undefined) {
 		return;
 	}
 
@@ -1244,32 +1252,32 @@ Commands.prototype.checkCommanderOverride=function(id, commander, hotkey) {
 };
 
 // suffix override only applies to hotkey
-Commands.prototype.checkSuffixOverride=function(id) {
-	if (this.suffix==undefined) {
+Commands.prototype.checkSuffixOverride = function(id) {
+	if (this.suffix == undefined) {
 		return;
 	}
 
-	if (data.commands[id]["hotkey"+this.suffix]==undefined) {
+	if (data.commands[id]["hotkey" + this.suffix] == undefined) {
 		return;
 	}
 
 	return true;
 };
 
-Commands.prototype.removeLast=function(id) {
+Commands.prototype.removeLast = function(id) {
 	if (this.checkUserOverride(id)) {
-		let fields=this.list["Commands"][id].split(DELIMITER);
+		let fields = this.list["Commands"][id].split(DELIMITER);
 		fields.splice(-1, 1);
 
-		this.list["Commands"][id]=fields.join(DELIMITER);
+		this.list["Commands"][id] = fields.join(DELIMITER);
 	}
 };
 
-Commands.prototype.clear=function(id) {
+Commands.prototype.clear = function(id) {
 	delete this.list["Commands"][id];
 };
 
-Commands.prototype.reset=function() {
+Commands.prototype.reset = function() {
 	this.load();
 };
 
@@ -1278,33 +1286,33 @@ Commands.prototype.reset=function() {
  */
 
 function Overlay(id) {
-	this.element=$("#overlay_"+id);
-	this.textarea=$("#text_"+id);
+	this.element = $("#overlay_" + id);
+	this.textarea = $("#text_" + id);
 }
 
-Overlay.prototype.show=function() {
+Overlay.prototype.show = function() {
 	this.element.classList.add("open");
 	this.focus();
 };
 
-Overlay.prototype.hide=function() {
+Overlay.prototype.hide = function() {
 	this.element.classList.remove("open");
 };
 
-Overlay.prototype.getText=function() {
+Overlay.prototype.getText = function() {
 	return this.textarea.value;
 };
 
-Overlay.prototype.setText=function(text) {
-	this.textarea.value=text;
+Overlay.prototype.setText = function(text) {
+	this.textarea.value = text;
 };
 
-Overlay.prototype.focus=function() {
+Overlay.prototype.focus = function() {
 	this.textarea.focus();
 	this.textarea.setSelectionRange(0, 0);
 };
 
-Overlay.prototype.select=function() {
+Overlay.prototype.select = function() {
 	this.textarea.select();
 };
 
@@ -1313,21 +1321,21 @@ Overlay.prototype.select=function() {
  */
 
 function Storage(name) {
-	this.name=name;
+	this.name = name;
 }
 
-Storage.prototype.load=function() {
+Storage.prototype.load = function() {
 	try {
-		let contents=localStorage.getItem(this.name);
+		let contents = localStorage.getItem(this.name);
 
-		if (contents!=null) {
-			let obj=JSON.parse(contents);
+		if (contents != null) {
+			let obj = JSON.parse(contents);
 
 			// converts from old format
 			for (let section of Object.keys(obj)) {
 				for (let [key, value] of Object.entries(obj[section])) {
-					if (typeof value=="object"&&value.hotkey!=undefined) {
-						obj[section][key]=value.hotkey;
+					if (typeof value == "object" && value.hotkey != undefined) {
+						obj[section][key] = value.hotkey;
 					}
 				}
 			}
@@ -1341,8 +1349,8 @@ Storage.prototype.load=function() {
 	}
 };
 
-Storage.prototype.save=function(list) {
-	if (list["Commands"]==undefined) {
+Storage.prototype.save = function(list) {
+	if (list["Commands"] == undefined) {
 		return;
 	}
 
@@ -1350,7 +1358,10 @@ Storage.prototype.save=function(list) {
 		// saves storage if:
 		// it contains more than one section ("Commands" is always present)
 		// or "Commands" is not empty (and therefore contains custom values)
-		if (Object.keys(list).length>1||Object.keys(list["Commands"]).length) {
+		if (
+			Object.keys(list).length > 1
+			|| Object.keys(list["Commands"]).length
+		) {
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();
@@ -1360,7 +1371,7 @@ Storage.prototype.save=function(list) {
 	}
 };
 
-Storage.prototype.reset=function() {
+Storage.prototype.reset = function() {
 	try {
 		localStorage.removeItem(this.name);
 	} catch (err) {

@@ -1,19 +1,19 @@
 "use strict";
 
-const NEUTRAL="neutral";
-const TERRAN="terran";
-const ZERG="zerg";
-const PROTOSS="protoss";
+const NEUTRAL = "neutral";
+const TERRAN = "terran";
+const ZERG = "zerg";
+const PROTOSS = "protoss";
 
-const OTHER=0;
-const COMMANDER=1;
-const UNIT=2;
-const HERO=3;
-const BUILDING=4;
+const OTHER = 0;
+const COMMANDER = 1;
+const UNIT = 2;
+const HERO = 3;
+const BUILDING = 4;
 
-const data={};
+const data = {};
 
-data.keyCodes={
+data.keyCodes = {
 	8: {
 		hotkey: "Backspace",
 		symbol: "Bck"
@@ -397,7 +397,7 @@ data.keyCodes={
 	}
 };
 
-data.common={
+data.common = {
 	basic: [
 		"Move",
 		"Stop",
@@ -417,7 +417,7 @@ data.common={
 	]
 };
 
-data.units={
+data.units = {
 	"Terran": {
 		name: "Terran",
 		icon: "btn-unit-terran-marine",
@@ -12552,7 +12552,7 @@ data.units={
 	}
 };
 
-data.commands={
+data.commands = {
 	"Move": {
 		name: "Move",
 		hotkey: "M",
@@ -24667,7 +24667,7 @@ data.commands={
 	}
 };
 
-data.overrides={
+data.overrides = {
 	"WingsOfLiberty": {
 		"GhostAcademy/SCV": {
 			name: "Build Ghost Academy\nBuild Shadow Ops"
