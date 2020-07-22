@@ -66,7 +66,7 @@ window.addEventListener("load", function() {
 	document.addEventListener("click", function(event) {
 		let element = event.target;
 
-		if (element.matches("#open")) {
+		if (element.closest("#open")) {
 			let file = overlays.load.getText();
 
 			if (file != "") {
@@ -76,7 +76,7 @@ window.addEventListener("load", function() {
 			}
 		}
 
-		if (element.matches("#reset")) {
+		if (element.closest("#reset")) {
 			commands.reset();
 			store.reset();
 
@@ -86,9 +86,23 @@ window.addEventListener("load", function() {
 			overlays.load.hide();
 		}
 
-		if (element.matches("#copy")) {
-			overlays[element.value].select();
+		if (element.closest("#copy")) {
+			overlays.save.select();
 			document.execCommand("copy");
+		}
+
+		if (element.matches("#help")) {
+			window.location = HELP_PAGE;
+		}
+
+		if (element.closest("#load")) {
+			overlays.load.show();
+		}
+
+		if (element.closest("#save")) {
+			store.save(commands.list);
+			overlays.save.setText(commands.convert());
+			overlays.save.show();
 		}
 
 		if (element.matches("#download")) {
@@ -101,26 +115,12 @@ window.addEventListener("load", function() {
 			window.URL.revokeObjectURL(file);
 		}
 
-		if (element.matches("#help")) {
-			window.location = HELP_PAGE;
-		}
-
-		if (element.matches("#load")) {
-			overlays.load.show();
-		}
-
-		if (element.matches("#save")) {
-			store.save(commands.list);
-			overlays.save.setText(commands.convert());
-			overlays.save.show();
-		}
-
 		if (element.matches(".filter")) {
 			window.location.hash = data.units[element.value].defaultUnit;
 		}
 
-		if (element.matches(".close")) {
-			overlays[element.value].hide();
+		if (element.closest(".close")) {
+			overlays[element.closest(".close").value].hide();
 		}
 
 		if (element.matches(".tab")) {
