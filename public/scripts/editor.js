@@ -45,61 +45,6 @@ window.addEventListener("load", function() {
 
 	editor.load();
 
-	// sets event listeners
-	$("#open").addEventListener("click", function() {
-		let file = overlays.load.getText();
-
-		if (file != "") {
-			commands.parse(file);
-			editor.open();
-			overlays.load.hide();
-		}
-	});
-	$("#reset").addEventListener("click", function() {
-		commands.reset();
-		store.reset();
-
-		editor.open();
-
-		overlays.load.setText("");
-		overlays.load.hide();
-	});
-	$("#copy").addEventListener("click", function() {
-		overlays[this.value].select();
-		document.execCommand("copy");
-	});
-	$("#download").addEventListener("click", function() {
-		let contents = new Blob([overlays.save.getText()], {type: MIME_TYPE});
-
-		let a = $("#link");
-		a.download = DEFAULT_SAVE_NAME;
-		a.href = window.URL.createObjectURL(contents);
-		a.click();
-		window.URL.revokeObjectURL(contents);
-	});
-	$("#help").addEventListener("click", function() {
-		window.location = HELP_PAGE;
-	});
-	$("#load").addEventListener("click", function() {
-		overlays.load.show();
-	});
-	$("#save").addEventListener("click", function() {
-		store.save(commands.list);
-		overlays.save.setText(commands.convert());
-		overlays.save.show();
-	});
-	$("#file").addEventListener("change", function(event) {
-		let file = event.target.files[0];
-
-		if (file != null) {
-			let reader = new FileReader();
-			reader.addEventListener("load", function(event) {
-				overlays.load.setText(event.target.result);
-			});
-			reader.readAsText(file);
-		}
-	});
-
 	window.addEventListener("beforeunload", function() {
 		// saves on close
 		store.save(commands.list);
@@ -116,12 +61,90 @@ window.addEventListener("load", function() {
 		}
 	});
 
-	let query = $("#query");
+	document.addEventListener("click", function(event) {
+		let element = event.target;
 
-	query.addEventListener("input", function() {
-		editor.findUnitsNamed(this.value);
+		if (element.matches("#open")) {
+			let file = overlays.load.getText();
+
+			if (file != "") {
+				commands.parse(file);
+				editor.open();
+				overlays.load.hide();
+			}
+		}
+
+		if (element.matches("#reset")) {
+			commands.reset();
+			store.reset();
+
+			editor.open();
+
+			overlays.load.setText("");
+			overlays.load.hide();
+		}
+
+		if (element.matches("#copy")) {
+			overlays[element.value].select();
+			document.execCommand("copy");
+		}
+
+		if (element.matches("#download")) {
+			let file = new Blob([overlays.save.getText()], {type: MIME_TYPE});
+
+			let a = $("#link");
+			a.download = DEFAULT_SAVE_NAME;
+			a.href = window.URL.createObjectURL(file);
+			a.click();
+			window.URL.revokeObjectURL(file);
+		}
+
+		if (element.matches("#help")) {
+			window.location = HELP_PAGE;
+		}
+
+		if (element.matches("#load")) {
+			overlays.load.show();
+		}
+
+		if (element.matches("#save")) {
+			store.save(commands.list);
+			overlays.save.setText(commands.convert());
+			overlays.save.show();
+		}
+
+		if (element.matches(".filter")) {
+			window.location.hash = data.units[element.value].defaultUnit;
+		}
+
+		if (element.matches(".close")) {
+			overlays[element.value].hide();
+		}
+
+		if (element.matches(".tab")) {
+			editor.switchTab(element.value);
+		}
 	});
-	query.addEventListener("keydown", function(event) {
+	document.addEventListener("input", function(event) {
+		let element = event.target;
+
+		if (element.matches("#query")) {
+			editor.findUnitsNamed(element.value);
+		}
+	});
+
+	$("#file").addEventListener("change", function(event) {
+		let file = event.target.files[0];
+
+		if (file != null) {
+			let reader = new FileReader();
+			reader.addEventListener("load", function(event) {
+				overlays.load.setText(event.target.result);
+			});
+			reader.readAsText(file);
+		}
+	});
+	$("#query").addEventListener("keydown", function(event) {
 		let keyCode = event.keyCode;
 
 		if (keyCode == 13) { // return/enter
@@ -146,24 +169,6 @@ window.addEventListener("load", function() {
 		element.setAttribute("autocorrect", "off");
 		element.setAttribute("autocapitalize", "off");
 		element.setAttribute("spellcheck", "false");
-	}
-
-	for (let element of $$(".filter")) {
-		element.addEventListener("click", function() {
-			window.location.hash = data.units[this.value].defaultUnit;
-		});
-	}
-
-	for (let element of $$(".close")) {
-		element.addEventListener("click", function() {
-			overlays[this.value].hide();
-		});
-	}
-
-	for (let element of $$(".tab")) {
-		element.addEventListener("click", function() {
-			editor.switchTab(this.value);
-		});
 	}
 });
 
