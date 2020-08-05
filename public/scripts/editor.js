@@ -190,9 +190,9 @@ function Editor(commands) {
 	this.commands = commands;
 
 	this.unit = "";
-	this.command = "";
-	this.name = "";
 	this.commander = "";
+	this.id = "";
+	this.command = null;
 
 	this.buttons = [];
 	this.tab = "units";
@@ -232,9 +232,9 @@ Editor.prototype.setUnit = function(unit) {
 	this.open();
 };
 
-Editor.prototype.setCommand = function(command, name) {
+Editor.prototype.setCommand = function(id, command) {
+	this.id = id;
 	this.command = command;
-	this.name = name.replace(/\n/g, "<br>");
 
 	this.commandEditor();
 	this.switchTab(this.tab);
@@ -336,7 +336,7 @@ Editor.prototype.unitEditor = function() {
 
 			// re-selects command if selected on previously viewed unit
 			if (self.command == id) {
-				self.setCommand(id, command.name);
+				self.setCommand(id, command);
 			}
 
 			let button = createButton(id, command, n);
@@ -354,7 +354,7 @@ Editor.prototype.unitEditor = function() {
 		img.setAttribute("alt", "[" + command.name + "]");
 		img.setAttribute("title", command.name);
 		img.addEventListener("click", function() {
-			self.setCommand(id, command.name);
+			self.setCommand(id, command);
 		}.bind(self));
 		img.classList.toggle("mask", command.mask);
 		div.appendChild(img);
@@ -389,7 +389,7 @@ Editor.prototype.setLegend = function(title, n) {
 };
 
 Editor.prototype.commandEditor = function(n) {
-	let hotkeys = this.commands.getHotkeys(this.commander, this.command);
+	let hotkeys = this.commands.getHotkeys(this.commander, this.id);
 	this.formatHotkey(hotkeys);
 
 	// automatically selects last hotkey field
@@ -397,7 +397,8 @@ Editor.prototype.commandEditor = function(n) {
 		$("#hotkey").lastChild.focus();
 	}
 
-	$("#command").innerHTML = this.name;
+	$("#command").innerHTML = this.command.name.replace(/\n/g, "<br>");
+	$("#prestige").textContent = this.command.prestige || "";
 
 	let p = document.createElement("p");
 	p.id = "control";
@@ -428,8 +429,8 @@ Editor.prototype.commandEditor = function(n) {
 
 	$("#control").replaceWith(p);
 
-	this.findUnitsWith(this.command);
-	this.findCommandsNamed(this.command);
+	this.findUnitsWith(this.id);
+	this.findCommandsNamed(this.id);
 	$("#tabs").classList.remove("hidden");
 };
 
@@ -452,16 +453,16 @@ Editor.prototype.removeField = function() {
 
 	if (element.childElementCount > 1) {
 		element.removeChild(element.lastChild);
-		this.commands.removeLast(this.command);
-		this.commands.checkDefaults(this.command, this.commander);
+		this.commands.removeLast(this.id);
+		this.commands.checkDefaults(this.id, this.commander);
 	} else { // last field
 		element.lastChild.value = "";
-		this.commands.setHotkeys(this.command, []);
+		this.commands.setHotkeys(this.id, []);
 	}
 
 	element.lastChild.focus();
 
-	this.findCommandsNamed(this.command);
+	this.findCommandsNamed(this.id);
 	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
@@ -499,20 +500,20 @@ Editor.prototype.setHotkey = function(input, event) {
 		fields.push(element.value);
 	}
 
-	this.commands.setHotkeys(this.command, fields);
-	this.commands.checkDefaults(this.command, this.commander);
+	this.commands.setHotkeys(this.id, fields);
+	this.commands.checkDefaults(this.id, this.commander);
 
-	this.findCommandsNamed(this.command);
+	this.findCommandsNamed(this.id);
 	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
 
 Editor.prototype.resetDefaults = function() {
-	this.commands.clear(this.command);
+	this.commands.clear(this.id);
 
 	this.commandEditor();
-	this.findCommandsNamed(this.command);
+	this.findCommandsNamed(this.id);
 	this.switchTab(this.tab);
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
@@ -738,14 +739,14 @@ Editor.prototype.findCommandsNamed = function(id) {
 	let matches = new Set();
 
 	for (let [command, properties] of Object.entries(data.commands)) {
-		if (properties.name == this.name) {
+		if (properties.name == this.command.name) {
 			matches.add(command);
 		}
 	}
 
 	for (let commander of Object.values(data.overrides)) {
 		for (let [command, properties] of Object.entries(commander)) {
-			if (properties.name == this.name) {
+			if (properties.name == this.command.name) {
 				matches.add(command);
 			}
 		}
@@ -769,7 +770,7 @@ Editor.prototype.findCommandsNamed = function(id) {
 
 		let a = document.createElement("a");
 		a.addEventListener("click", function() {
-			this.setCommand(match, command.name);
+			this.setCommand(match, command);
 		}.bind(this));
 		a.appendChild(document.createTextNode(match));
 		li.appendChild(a);
