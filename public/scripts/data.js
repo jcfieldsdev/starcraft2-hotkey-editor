@@ -956,6 +956,35 @@ data.units = {
 			"Cancel"
 		]
 	},
+	"CoopMissionsTerran": {
+		name: "CoopMissionsTerran",
+		displayName: "Co-op Missions",
+		icon: "btn-unit-terran-marauder",
+		race: ZERG,
+		commander: "CoopMissionsTerran",
+		sortCommander: "Terran",
+		type: COMMANDER,
+		defaultUnit: "Terran_SCV"
+	},
+
+	"CoopMissionsTerran_Raven": {
+		name: "Raven",
+		keywords: "Auto-Turret",
+		icon: "btn-unit-terran-raven",
+		race: TERRAN,
+		commander: "CoopMissionsTerran",
+		type: UNIT,
+		commands: {
+			"Raven": [
+				"BuildAutoTurret/Raven",
+				"BuildPointDefenseDrone/Raven",
+				"HunterSeekerMissile/Raven"
+			],
+			"Auto-Turret": [
+				...data.common.tower
+			]
+		}
+	},
 	"WingsOfLiberty": {
 		name: "WingsOfLiberty",
 		displayName: "Wings of Liberty",
@@ -1103,8 +1132,8 @@ data.units = {
 		]
 	},
 	"WingsOfLiberty_Artanis": {
-		name: "Shield of Aiur",
-		keywords: "Artanis, Hierarch of the Daelaam, Mothership",
+		name: "Artanis",
+		keywords: "Hierarch of the Daelaam, Mothership, Shield of Aiur",
 		icon: "btn-unit-protoss-artanis",
 		race: PROTOSS,
 		commander: "WingsOfLiberty",
@@ -5009,7 +5038,7 @@ data.units = {
 		commands: {
 			"Unburrowed": [
 				"Cancel",
-				"InfestedTerrans/Infestor",
+				"AmorphousArmorcloud/Infestor",
 				"FungalGrowth/Infestor",
 				"NeuralParasite/Infestor",
 				"BurrowDown"
@@ -5017,12 +5046,9 @@ data.units = {
 			"Burrowed": [
 				...data.common.basic,
 				"Cancel",
-				"InfestedTerrans/InfestorBurrowed",
+				"AmorphousArmorcloud/InfestorBurrowed",
 				"NeuralParasite/InfestorBurrowed",
 				"BurrowUp"
-			],
-			"Infested Terran": [
-				...data.common.basic
 			]
 		},
 		overrides: {
@@ -6379,6 +6405,70 @@ data.units = {
 				"HireHelsAngels/Starport",
 				"HireDukesRevenge/Starport",
 				"Cancel"
+			]
+		}
+	},
+	"CoopMissionsZerg": {
+		name: "CoopMissionsZerg",
+		displayName: "Co-op Missions",
+		icon: "btn-unit-zerg-zergling",
+		race: ZERG,
+		commander: "CoopMissionsZerg",
+		sortCommander: "Zerg",
+		type: COMMANDER,
+		defaultUnit: "Zerg_Drone"
+	},
+	"CoopMissionsZerg_Queen": {
+		name: "Swarm Queen",
+		icon: "btn-unit-zerg-queen",
+		race: ZERG,
+		commander: "CoopMissionsZerg",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"QueenBurstHeal/Queen",
+				"DeepTunnel/Queen",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				"BurrowUp"
+			]
+		}
+	},
+	"CoopMissionsZerg_Corruptor": {
+		name: "Corruptor",
+		icon: "btn-unit-zerg-corruptor",
+		race: ZERG,
+		commander: "CoopMissionsZerg",
+		type: UNIT,
+		commands: [
+			"CorruptionAbility/Corruptor",
+			"CausticSpray/Corruptor",
+			"BroodLord/Corruptor",
+			"Cancel"
+		]
+	},
+	"CoopMissionsZerg_Infestor": {
+		name: "Infestor",
+		keywords: "Infested Terran",
+		icon: "btn-unit-zerg-infestor",
+		race: ZERG,
+		commander: "CoopMissionsZerg",
+		type: UNIT,
+		commands: {
+			"Unburrowed": [
+				"InfestedTerrans/Infestor",
+				"FungalGrowth/Infestor",
+				"InfestorConsumption/Infestor",
+				"BurrowDown"
+			],
+			"Burrowed": [
+				...data.common.basic,
+				"InfestedTerrans/InfestorBurrowed",
+				"BurrowUp"
+			],
+			"Infested Terran": [
+				...data.common.basic
 			]
 		}
 	},
@@ -10435,6 +10525,40 @@ data.units = {
 			"Cancel"
 		]
 	},
+	"CoopMissionsProtoss": {
+		name: "CoopMissionsProtoss",
+		displayName: "Co-op Missions",
+		icon: "btn-unit-protoss-stalker",
+		race: PROTOSS,
+		commander: "CoopMissionsProtoss",
+		sortCommander: "Protoss",
+		type: COMMANDER,
+		defaultUnit: "Protoss_Probe"
+	},
+	"CoopMissionsProtoss_Sentry": {
+		name: "Sentry",
+		icon: "btn-unit-protoss-sentry",
+		race: PROTOSS,
+		commander: "CoopMissionsProtoss",
+		type: UNIT,
+		commands: [
+			"VoidSentryShieldRepair/Sentry",
+			"GuardianShield/Sentry",
+			"ForceField/Sentry"
+		]
+	},
+	"CoopMissionsProtoss_PurifierDataCore": {
+		name: "Purifier Data Core",
+		icon: "btn-building-purifier-datacore",
+		race: PROTOSS,
+		commander: "CoopMissionsProtoss",
+		type: BUILDING,
+		commands: [
+			"DownloadBackupPart1/CybrosEscortDownloader",
+			"DownloadBackupPart2/CybrosEscortDownloader",
+			"DownloadBackupPart3/CybrosEscortDownloader"
+		]
+	},
 	"Artanis": {
 		name: "Artanis",
 		keywords: "Hierarch of the Daelaam",
@@ -12206,18 +12330,6 @@ data.units = {
 				"BrokenFenixAltarOfPsiStorms/FenixAltarOfPsiStorms"
 			]
 		}
-	},
-	"Fenix_PurifierDataCore": {
-		name: "Purifier Data Core",
-		icon: "btn-building-purifier-datacore",
-		race: PROTOSS,
-		commander: "Fenix",
-		type: BUILDING,
-		commands: [
-			"DownloadBackupPart1/CybrosEscortDownloader",
-			"DownloadBackupPart2/CybrosEscortDownloader",
-			"DownloadBackupPart3/CybrosEscortDownloader"
-		]
 	},
 	"Zeratul": {
 		name: "Zeratul",
@@ -17604,6 +17716,14 @@ data.commands = {
 		y: 2,
 		x: 1
 	},
+	"DeepTunnel/Queen": {
+		name: "Deep Tunnel",
+		hotkey: "D",
+		icon: "btn-ability-zerg-burrow",
+		mask: true,
+		y: 2,
+		x: 3
+	},
 	"BuildCreepTumorPropagate/CreepTumorBurrowed": {
 		name: "Spawn Creep Tumor",
 		hotkey: "C",
@@ -17759,6 +17879,22 @@ data.commands = {
 		hotkey: "T",
 		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-infestedmarine",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"AmorphousArmorcloud/Infestor": {
+		name: "Microbial Shroud",
+		hotkey: "C",
+		icon: "btn-ability-zerg-darkswarm",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"AmorphousArmorcloud/InfestorBurrowed": {
+		name: "Microbial Shroud",
+		hotkey: "C",
+		icon: "btn-ability-zerg-darkswarm",
 		mask: false,
 		y: 2,
 		x: 0
@@ -18649,6 +18785,15 @@ data.commands = {
 		mask: false,
 		y: 2,
 		x: 2
+	},
+	"CorruptionAbility/Corruptor": {
+		name: "Corruption",
+		hotkey: "C",
+		hotkey_NRS: "I",
+		icon: "btn-ability-zerg-corruption-color",
+		mask: false,
+		y: 2,
+		x: 0
 	},
 	"CorruptionAbility/ZagaraCorruptor": {
 		name: "Corruption",
@@ -25632,6 +25777,27 @@ data.overrides = {
 			x: 2
 		}
 	},
+	"CoopMissionsZerg": {
+		"BurrowDown": {
+			hotkey: "R",
+			hotkey_NRS: "U",
+			hotkey_SC1: "U",
+			x: 4
+		},
+		"CausticSpray/Corruptor": {
+			hotkey: "V",
+			x: 2
+		},
+		"InfestedTerrans/Infestor": {
+			x: 1
+		},
+		"FungalGrowth/Infestor": {
+			x: 0
+		},
+		"InfestorConsumption/Infestor": {
+			x: 3
+		}
+	},
 	"Kerrigan": {
 		"GatherProt": {
 			icon: "btn-ability-zerg-gather"
@@ -26005,6 +26171,11 @@ data.overrides = {
 		},
 		"Carrier/StargateWarp": {
 			name: "Warp In Carrier\nWarp In Tempest\nWarp In Mothership"
+		}
+	},
+	"CoopMissionsProtoss": {
+		"ForceField/Sentry": {
+			x: 2
 		}
 	},
 	"Artanis": {
