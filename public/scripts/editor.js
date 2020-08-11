@@ -115,6 +115,29 @@ window.addEventListener("load", function() {
 			window.URL.revokeObjectURL(file);
 		}
 
+		if (element.matches("#add")) {
+			editor.addField();
+		}
+
+		if (element.matches("#remove")) {
+			editor.removeField();
+		}
+
+		if (element.matches("#defaults")) {
+			editor.resetDefaults();
+		}
+
+		if (element.matches("h2#unit img")) {
+			editor.clicks++;
+
+			if (editor.clicks >= ANNOYED_CLICKS) {
+				editor.clicks = 0;
+
+				let audio = new Audio(ICONS_DIR + "/" + ANNOYED_SOUND);
+				audio.play();
+			}
+		}
+
 		if (element.matches(".filter")) {
 			window.location.hash = data.units[element.value].defaultUnit;
 		}
@@ -196,6 +219,8 @@ function Editor(commands) {
 
 	this.buttons = [];
 	this.tab = "units";
+
+	this.matches = [];
 	this.selected = -1; // selected search result
 }
 
@@ -262,16 +287,6 @@ Editor.prototype.unitEditor = function() {
 		img.setAttribute("src", ICONS_DIR + "/" + unit.icon + ICONS_EXT);
 		img.setAttribute("alt", "[" + unit.name + "]");
 		img.setAttribute("title", unit.name);
-		img.addEventListener("click", function() {
-			this.clicks++;
-
-			if (this.clicks >= ANNOYED_CLICKS) {
-				this.clicks = 0;
-
-				let audio = new Audio(ICONS_DIR + "/" + ANNOYED_SOUND);
-				audio.play();
-			}
-		}.bind(this));
 
 		h2.appendChild(img);
 	}
@@ -349,13 +364,14 @@ Editor.prototype.unitEditor = function() {
 
 	function createButton(id, command, n) {
 		let div = document.createElement("div");
+
 		let img = document.createElement("img");
 		img.setAttribute("src", ICONS_DIR + "/" + command.icon + ICONS_EXT);
 		img.setAttribute("alt", "[" + command.name + "]");
 		img.setAttribute("title", command.name);
 		img.addEventListener("click", function() {
 			self.setCommand(id, command);
-		}.bind(self));
+		});
 		img.classList.toggle("mask", command.mask);
 		div.appendChild(img);
 
@@ -400,38 +416,12 @@ Editor.prototype.commandEditor = function(n) {
 	$("#command").innerHTML = this.command.name.replace(/\n/g, "<br>");
 	$("#prestige").textContent = this.command.prestige || "";
 
-	let p = document.createElement("p");
-	p.id = "control";
-
-	let button = document.createElement("button");
-	button.setAttribute("type", "button");
-	button.addEventListener("click", function() {
-		this.addField();
-	}.bind(this));
-	button.appendChild(document.createTextNode("Add"));
-	p.appendChild(button);
-
-	button = document.createElement("button");
-	button.setAttribute("type", "button");
-	button.addEventListener("click", function() {
-		this.removeField();
-	}.bind(this));
-	button.appendChild(document.createTextNode("Remove"));
-	p.appendChild(button);
-
-	button = document.createElement("button");
-	button.setAttribute("type", "button");
-	button.addEventListener("click", function() {
-		this.resetDefaults();
-	}.bind(this));
-	button.appendChild(document.createTextNode("Reset"));
-	p.appendChild(button);
-
-	$("#control").replaceWith(p);
-
 	this.findUnitsWith(this.id);
 	this.findCommandsNamed(this.id);
-	$("#tabs").classList.remove("hidden");
+
+	for (let element of $$("#control button, #tabs")) {
+		element.classList.remove("hidden");
+	}
 };
 
 Editor.prototype.addField = function() {
@@ -693,6 +683,8 @@ Editor.prototype.findUnitsNamed = function(query) {
 	}
 
 	if (matches.size > 0) {
+		this.matches = Array.from(matches);
+
 		this.formatResults("results", matches);
 		this.dimFilters(filters);
 	} else {
@@ -847,7 +839,7 @@ Editor.prototype.highlightResult = function(dir) {
 	} else { // down arrow
 		if (this.selected >= results.length - 1) {
 			// loops back around to top
-			this.selected =- 1;
+			this.selected = -1;
 		} else {
 			this.selected++;
 		}
@@ -857,7 +849,14 @@ Editor.prototype.highlightResult = function(dir) {
 		if (this.selected == i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
+			this.highlightFilter(i);
 		} else {
+			if (this.selected < 0) {
+				for (let element of $$(".filter")) {
+					element.classList.remove("highlight");
+				}
+			}
+
 			result.classList.remove("selected");
 		}
 	}
@@ -881,6 +880,16 @@ Editor.prototype.dimFilters = function(filters) {
 
 	for (let element of $$(".filter")) {
 		element.classList.toggle("exclude", !filters.includes(element.value));
+	}
+};
+
+Editor.prototype.highlightFilter = function(n) {
+	let match = this.matches[n];
+	let unit = data.units[match];
+	let filter = data.units[unit.commander].sortCommander || unit.commander;
+
+	for (let element of $$(".filter")) {
+		element.classList.toggle("highlight", element.value == filter);
 	}
 };
 
@@ -918,7 +927,7 @@ Editor.prototype.clearFields = function() {
 	this.clear($("#units"));
 	this.clear($("#commands"));
 
-	for (let element of $$("#lists ul")) {
+	for (let element of $$("#control button, #lists ul")) {
 		element.classList.add("hidden");
 	}
 };
@@ -928,12 +937,14 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 		$("#query").value = "";
 	}
 
+	this.matches = [];
 	this.selected = -1;
+
 	this.clear($("#results"));
 	$("#results").classList.add("hidden");
 
 	for (let element of $$(".filter")) {
-		element.classList.remove("exclude");
+		element.classList.remove("exclude", "highlight");
 	}
 };
 

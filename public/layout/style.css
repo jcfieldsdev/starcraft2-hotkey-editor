@@ -13,6 +13,20 @@
 	src: url(fonts/FiraMono.woff2) format("woff2");
 }
 
+@keyframes zoom {
+   0% {
+		transform: none;
+   }
+
+   50% {
+		transform: scale(1.25);
+   }
+
+   100% {
+		transform: none;
+   }
+}
+
 :root {
 	--conflict-link: #f00;
 	--conflict-border: #c00000;
@@ -138,6 +152,10 @@ button#artanis {
 	background: url(portraits/artanis.png);
 }
 
+button#defaults {
+	margin-left: 1em;
+}
+
 button#dehaka {
 	background: url(portraits/dehaka.png);
 }
@@ -212,6 +230,10 @@ button#zeratul {
 
 button#zerg {
 	background: url(portraits/zerg.png);
+}
+
+button.close {
+	margin-left: 0.5em;
 }
 
 button:disabled {
@@ -296,10 +318,6 @@ div.overlay {
 	width: 100%;
 	visibility: hidden;
 	z-index: 1;
-}
-
-div.overlay button:last-child {
-	margin-left: 0.5em;
 }
 
 div.overlay textarea {
@@ -620,10 +638,6 @@ p#code {
 	margin: 0 0 1em;
 }
 
-p#control button:last-child {
-	margin-left: 1em;
-}
-
 p#hotkey input {
 	border-radius: 0.25em;
 	height: 1em;
@@ -703,6 +717,10 @@ ul#filters button.active {
 	box-shadow: 0 0 4px 1px #fff;
 	transform: scale(1.25);
 	transition: 0.3s transform;
+}
+
+ul#filters button.highlight {
+	animation: zoom 1s ease infinite;
 }
 
 ul#filters button:hover {

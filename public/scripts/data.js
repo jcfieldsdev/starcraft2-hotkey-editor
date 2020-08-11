@@ -12493,7 +12493,7 @@ data.units = {
 		type: UNIT,
 		commands: []
 	},
-	"Zeratul_AvatarForm": {
+	"Zeratul_AvatarOfForm": {
 		name: "Avatar of Form",
 		icon: "btn-unit-protoss-zeratulconstructform",
 		race: PROTOSS,
@@ -12510,7 +12510,7 @@ data.units = {
 			]
 		}
 	},
-	"Zeratul_AvatarEssence": {
+	"Zeratul_AvatarOfEssence": {
 		name: "Avatar of Essence",
 		icon: "btn-unit-protoss-zeratulconstructessence",
 		race: PROTOSS,
