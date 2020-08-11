@@ -350,7 +350,7 @@ Editor.prototype.unitEditor = function() {
 			});
 
 			// re-selects command if selected on previously viewed unit
-			if (self.command == id) {
+			if (self.id == id) {
 				self.setCommand(id, command);
 			}
 
