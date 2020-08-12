@@ -7474,11 +7474,13 @@ data.units = {
 		commands: {
 			"Unburrowed": [
 				"Ravager/Roach",
+				"BrutaliskDeepTunnel/RoachVile",
 				"EvolveToBrutalisk/Roach",
 				"BurrowDown"
 			],
 			"Burrowed": [
 				...data.common.basic,
+				"BrutaliskDeepTunnel/RoachVileBurrowed",
 				"EvolveToBrutalisk/RoachBurrowed",
 				"BurrowUp"
 			]
@@ -7493,6 +7495,7 @@ data.units = {
 		commands: {
 			"Unburrowed": [
 				"RavagerAbathurCorrosiveBile/RavagerAbathur",
+				"BrutaliskDeepTunnel/RavagerAbathur",
 				"EvolveToBrutalisk/RavagerAbathur",
 				"BurrowDown"
 			],
@@ -19318,6 +19321,33 @@ data.commands = {
 		mask: false,
 		y: 2,
 		x: 3
+	},
+	"BrutaliskDeepTunnel/RoachVile": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BrutaliskDeepTunnel/RoachVileBurrowed": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BrutaliskDeepTunnel/RavagerAbathur": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
 	},
 	"HotSBioPlasmidDischarge/HotSLeviathan": {
 		name: "Bio-Plasmid Discharge",
