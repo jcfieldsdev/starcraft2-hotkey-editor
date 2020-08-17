@@ -2710,6 +2710,14 @@ data.units = {
 				"ResearchJuggernautPlating/BarracksTechLab",
 				"Cancel"
 			],
+			"Tech Reactor": [
+				"ResearchShieldWall/BarracksTechReactor",
+				"Stimpack/BarracksTechReactor",
+				"ResearchPunisherGrenades/BarracksTechReactor",
+				"ResearchIncineratorGauntlets/BarracksTechReactor",
+				"ResearchJuggernautPlating/BarracksTechReactor",
+				"Cancel"
+			],
 			"Flying": [
 				...data.common.flying,
 				"TechLabBarracks/Barracks",
@@ -2788,6 +2796,12 @@ data.units = {
 				"ResearchImprovedSiegeMode/FactoryTechLab",
 				"Cancel"
 			],
+			"Tech Reactor": [
+				"ResearchHighCapacityBarrels/FactoryTechReactor",
+				"ResearchHellbatHellArmor/FactoryTechReactor",
+				"ResearchImprovedSiegeMode/FactoryTechReactor",
+				"Cancel"
+			],
 			"Flying": [
 				...data.common.flying,
 				"TechLabFactory/Factory",
@@ -2835,6 +2849,13 @@ data.units = {
 				"ResearchShockwaveMissileBattery/StarportTechLab",
 				"ResearchPhobosClassWeaponsSystem/StarportTechLab",
 				"ResearchRipwaveMissiles/StarportTechLab",
+				"Cancel"
+			],
+			"Tech Reactor": [
+				"ResearchBansheeCloak/StarportTechReactor",
+				"ResearchShockwaveMissileBattery/StarportTechReactor",
+				"ResearchPhobosClassWeaponsSystem/StarportTechReactor",
+				"ResearchRipwaveMissiles/StarportTechReactor",
 				"Cancel"
 			],
 			"Flying": [
@@ -3147,6 +3168,17 @@ data.units = {
 				"Lift",
 				"Cancel"
 			],
+			"Tech Lab": [
+				"ResearchHighCapacityBarrels/FactoryTechLab",
+				"ResearchHellbatHellArmor/FactoryTechLab",
+				"ResearchImprovedSiegeMode/FactoryTechLab",
+				"ResearchMultiLockWeaponsSystem/FactoryTechLab",
+				"ResearchMaelstromRounds/FactoryTechLab",
+				"ResearchLockOnRangeUpgrade/FactoryTechLab",
+				"ResearchCycloneLockOnDamageUpgrade/FactoryTechLab",
+				"Research330mmBarrageCannon/FactoryTechLab",
+				"Cancel"
+			],
 			"Tech Reactor": [
 				"ResearchHighCapacityBarrels/FactoryTechReactor",
 				"ResearchHellbatHellArmor/FactoryTechReactor",
@@ -3196,6 +3228,13 @@ data.units = {
 				"Rally",
 				"TechLabStarport/Starport",
 				"Lift",
+				"Cancel"
+			],
+			"Tech Lab": [
+				"ResearchBansheeCloak/StarportTechLab",
+				"ResearchShockwaveMissileBattery/StarportTechLab",
+				"ResearchPhobosClassWeaponsSystem/StarportTechLab",
+				"ResearchRipwaveMissiles/StarportTechLab",
 				"Cancel"
 			],
 			"Tech Reactor": [
@@ -7514,19 +7553,30 @@ data.units = {
 		commands: {
 			"Unburrowed": [
 				"LocustLaunch/SwarmHost",
-				"AbathurDeepTunnel/SwarmHost",
+				"AbathurDeepTunnel",
 				"EvolveToBrutalisk/SwarmHost",
 				"SwarmHostRootBurrow"
 			],
 			"Burrowed": [
 				...data.common.tower,
 				"LocustLaunch/SwarmHostBurrowed",
-				"AbathurDeepTunnel/SwarmHostBurrowed",
-				"EvolveToBrutalisk/SwarmHost",
+				"AbathurDeepTunnel",
+				"EvolveToBrutalisk/SwarmHostBurrowed",
 				"SwarmHostUprootUnburrow"
 			],
-			"Locust": [
-				...data.common.basic
+			"Prestige Unburrowed": [
+				...data.common.basic,
+				"LocustLaunch/SwarmHost",
+				"BrutaliskDeepTunnel/SwarmHost",
+				"EvolveToBrutalisk/SwarmHost",
+				"SwarmHostRootBurrow"
+			],
+			"Prestige Burrowed": [
+				...data.common.tower,
+				"LocustLaunch/SwarmHostBurrowed",
+				"BrutaliskDeepTunnel/SwarmHostBurrowed",
+				"EvolveToBrutalisk/SwarmHostBurrowed",
+				"SwarmHostUprootUnburrow"
 			]
 		}
 	},
@@ -14128,6 +14178,14 @@ data.commands = {
 		y: 0,
 		x: 0
 	},
+	"ResearchShieldWall/BarracksTechReactor": {
+		name: "Research Combat Shield",
+		hotkey: "C",
+		icon: "btn-techupgrade-terran-combatshield-color",
+		mask: false,
+		y: 0,
+		x: 0
+	},
 	"Stimpack/BarracksTechLab": {
 		name: "Research Stimpack",
 		hotkey: "T",
@@ -14136,7 +14194,23 @@ data.commands = {
 		y: 0,
 		x: 1
 	},
+	"Stimpack/BarracksTechReactor": {
+		name: "Research Stabilizer Medpacks",
+		hotkey: "T",
+		icon: "btn-upgrade-raynor-stabilizermedpacks",
+		mask: false,
+		y: 0,
+		x: 1
+	},
 	"ResearchPunisherGrenades/BarracksTechLab": {
+		name: "Research Concussive Shells",
+		hotkey: "G",
+		icon: "btn-ability-terran-punishergrenade-color",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ResearchPunisherGrenades/BarracksTechReactor": {
 		name: "Research Concussive Shells",
 		hotkey: "G",
 		icon: "btn-ability-terran-punishergrenade-color",
@@ -14152,6 +14226,14 @@ data.commands = {
 		y: 0,
 		x: 3
 	},
+	"ResearchMarauderMagrailMunitions/BarracksTechReactor": {
+		name: "Research Magrail Munitions",
+		hotkey: "S",
+		icon: "btn-upgrade-terran-magrailmunitions",
+		mask: false,
+		y: 0,
+		x: 3
+	},
 	"ResearchIncineratorGauntlets/BarracksTechLab": {
 		name: "Research Incinerator Gauntlets",
 		hotkey: "I",
@@ -14160,7 +14242,23 @@ data.commands = {
 		y: 1,
 		x: 0
 	},
+	"ResearchIncineratorGauntlets/BarracksTechReactor": {
+		name: "Research Incinerator Gauntlets",
+		hotkey: "I",
+		icon: "btn-upgrade-raynor-incineratorgauntlets",
+		mask: false,
+		y: 1,
+		x: 0
+	},
 	"ResearchJuggernautPlating/BarracksTechLab": {
+		name: "Research Juggernaut Plating",
+		hotkey: "J",
+		icon: "btn-upgrade-raynor-juggernautplating",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"ResearchJuggernautPlating/BarracksTechReactor": {
 		name: "Research Juggernaut Plating",
 		hotkey: "J",
 		icon: "btn-upgrade-raynor-juggernautplating",
@@ -14603,18 +14701,19 @@ data.commands = {
 		x: 2
 	},
 	"ResearchImprovedSiegeMode/FactoryTechReactor": {
-		name: "Research Ares-Class Targeting System",
+		name: "Research Advanced Siege Tech",
 		hotkey: "E",
+		hotkey_NRS: "S",
 		hotkey_SC1: "S",
-		icon: "btn-upgrade-swann-aresclasstargetingsystem",
+		icon: "btn-upgrade-raynor-improvedsiegemode",
 		mask: false,
 		y: 0,
 		x: 2
 	},
 	"ResearchMultiLockWeaponsSystem/FactoryTechLab": {
-		name: "Research Lockdown Missiles",
+		name: "Research Multi-Lock Weapons System",
 		hotkey: "L",
-		icon: "btn-upgrade-terran-nova-hellfiremissiles",
+		icon: "btn-upgrade-swann-multilockweaponsystem",
 		mask: false,
 		y: 0,
 		x: 3
@@ -14628,9 +14727,9 @@ data.commands = {
 		x: 3
 	},
 	"ResearchMaelstromRounds/FactoryTechLab": {
-		name: "Research Spider Mines",
+		name: "Research Maelstrom Rounds",
 		hotkey: "M",
-		icon: "btn-upgrade-siegetank-spidermines",
+		icon: "btn-upgrade-raynor-maelstromrounds",
 		mask: false,
 		y: 1,
 		x: 0
@@ -14644,9 +14743,9 @@ data.commands = {
 		x: 0
 	},
 	"ResearchLockOnRangeUpgrade/FactoryTechLab": {
-		name: "Research Graduating Range",
+		name: "Research Targeting Optics",
 		hotkey: "R",
-		icon: "btn-upgrade-terran-nova-siegetankrange",
+		icon: "btn-upgrade-swann-targetingoptics",
 		mask: false,
 		y: 1,
 		x: 1
@@ -14659,6 +14758,14 @@ data.commands = {
 		y: 1,
 		x: 1
 	},
+	"ResearchCycloneLockOnDamageUpgrade/FactoryTechLab": {
+		name: "Research Mag-Field Accelerator",
+		hotkey: "O",
+		icon: "btn-upgrade-terran-magfieldaccelerator",
+		mask: false,
+		y: 1,
+		x: 2
+	},
 	"ResearchCycloneLockOnDamageUpgrade/FactoryTechReactor": {
 		name: "Research Mag-Field Accelerator",
 		hotkey: "O",
@@ -14666,6 +14773,15 @@ data.commands = {
 		mask: false,
 		y: 1,
 		x: 2
+	},
+	"Research330mmBarrageCannon/FactoryTechLab": {
+		name: "Research 330mm Barrage Cannon",
+		hotkey: "C",
+		hotkey_NRS: "N",
+		icon: "btn-ability-terran-bombardmentstrike-color",
+		mask: false,
+		y: 1,
+		x: 3
 	},
 	"Research330mmBarrageCannon/FactoryTechReactor": {
 		name: "Research 330mm Barrage Cannon",
@@ -14907,9 +15023,10 @@ data.commands = {
 		x: 0
 	},
 	"ResearchBansheeCloak/StarportTechReactor": {
-		name: "Research Pulse Amplifier",
+		name: "Research Cloaking Field",
 		hotkey: "C",
-		icon: "btn-upgrade-swann-improvedburstlaser",
+		hotkey_NRS: "L",
+		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 0,
 		x: 0
@@ -14923,9 +15040,9 @@ data.commands = {
 		x: 1
 	},
 	"ResearchShockwaveMissileBattery/StarportTechReactor": {
-		name: "Research Displacement Field",
+		name: "Research Shockwave Missile Battery",
 		hotkey: "S",
-		icon: "btn-upgrade-swann-displacementfield",
+		icon: "btn-upgrade-raynor-shockwavemissilebattery",
 		mask: false,
 		y: 0,
 		x: 1
@@ -14939,9 +15056,9 @@ data.commands = {
 		x: 2
 	},
 	"ResearchPhobosClassWeaponsSystem/StarportTechReactor": {
-		name: "Research Improved Nano-Repair",
+		name: "Research Phobos Weapons System",
 		hotkey: "B",
-		icon: "btn-upgrade-swann-improvednanorepair",
+		icon: "btn-upgrade-raynor-phobosclassweaponssystem",
 		mask: false,
 		y: 0,
 		x: 2
@@ -14955,9 +15072,9 @@ data.commands = {
 		x: 3
 	},
 	"ResearchRipwaveMissiles/StarportTechReactor": {
-		name: "Research Defensive Matrix",
+		name: "Research Ripwave Missiles",
 		hotkey: "R",
-		icon: "btn-upgrade-swann-defensivematrix",
+		icon: "btn-upgrade-raynor-ripwavemissiles",
 		mask: false,
 		y: 0,
 		x: 3
@@ -19162,6 +19279,14 @@ data.commands = {
 		y: 2,
 		x: 1
 	},
+	"AbathurDeepTunnel": {
+		name: "Deep Tunnel",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
 	"AbathurDeepTunnel/SwarmHost": {
 		name: "Deep Tunnel",
 		hotkey: "D",
@@ -19341,6 +19466,24 @@ data.commands = {
 		x: 1
 	},
 	"BrutaliskDeepTunnel/RavagerAbathur": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BrutaliskDeepTunnel/SwarmHost": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BrutaliskDeepTunnel/SwarmHostBurrowed": {
 		name: "Deep Tunnel",
 		prestige: "Tunneling Horror",
 		hotkey: "D",
@@ -25339,7 +25482,15 @@ data.overrides = {
 			name: "Research Replenishable Magazine",
 			icon: "btn-upgrade-raynor-replenishablemagazine"
 		},
+		"ResearchHighCapacityBarrels/FactoryTechReactor": {
+			name: "Research Replenishable Magazine",
+			icon: "btn-upgrade-raynor-replenishablemagazine"
+		},
 		"ResearchHellbatHellArmor/FactoryTechLab": {
+			name: "Research Cerberus Mines",
+			icon: "btn-upgrade-raynor-cerberusmines"
+		},
+		"ResearchHellbatHellArmor/FactoryTechReactor": {
 			name: "Research Cerberus Mines",
 			icon: "btn-upgrade-raynor-cerberusmines"
 		},
@@ -25402,9 +25553,50 @@ data.overrides = {
 			name: "Build Tech Reactor",
 			icon: "btn-building-terran-techreactor"
 		},
+		"ResearchImprovedSiegeMode/FactoryTechLab": {
+			name: "Research Ares-Class Targeting System",
+			icon: "btn-upgrade-swann-aresclasstargetingsystem"
+		},
+		"ResearchImprovedSiegeMode/FactoryTechReactor": {
+			name: "Research Ares-Class Targeting System",
+			icon: "btn-upgrade-swann-aresclasstargetingsystem"
+		},
 		"TechLabStarport/Starport": {
 			name: "Build Tech Reactor",
 			icon: "btn-building-terran-techreactor"
+		},
+		"ResearchBansheeCloak/StarportTechLab": {
+			name: "Research Pulse Amplifier",
+			icon: "btn-upgrade-swann-improvedburstlaser",
+			x: 0
+		},
+		"ResearchBansheeCloak/StarportTechReactor": {
+			name: "Research Pulse Amplifier",
+			icon: "btn-upgrade-swann-improvedburstlaser"
+		},
+		"ResearchShockwaveMissileBattery/StarportTechLab": {
+			name: "Research Displacement Field",
+			icon: "btn-upgrade-swann-displacementfield"
+		},
+		"ResearchShockwaveMissileBattery/StarportTechReactor": {
+			name: "Research Displacement Field",
+			icon: "btn-upgrade-swann-displacementfield"
+		},
+		"ResearchPhobosClassWeaponsSystem/StarportTechLab": {
+			name: "Research Improved Nano-Repair",
+			icon: "btn-upgrade-swann-improvednanorepair"
+		},
+		"ResearchPhobosClassWeaponsSystem/StarportTechReactor": {
+			name: "Research Improved Nano-Repair",
+			icon: "btn-upgrade-swann-improvednanorepair"
+		},
+		"ResearchRipwaveMissiles/StarportTechLab": {
+			name: "Research Defensive Matrix",
+			icon: "btn-upgrade-swann-defensivematrix"
+		},
+		"ResearchRipwaveMissiles/StarportTechReactor": {
+			name: "Research Defensive Matrix",
+			icon: "btn-upgrade-swann-defensivematrix"
 		},
 		"Wraith/Starport": {
 			hotkey: "T",
@@ -25520,6 +25712,18 @@ data.overrides = {
 		"ResearchImprovedSiegeMode/FactoryTechLab": {
 			name: "Research Ares-Class Targeting System",
 			icon: "btn-upgrade-swann-aresclasstargetingsystem"
+		},
+		"ResearchMultiLockWeaponsSystem/FactoryTechLab": {
+			name: "Research Lockdown Missiles",
+			icon: "btn-upgrade-terran-nova-hellfiremissiles"
+		},
+		"ResearchMaelstromRounds/FactoryTechLab": {
+			name: "Research Spider Mines",
+			icon: "btn-upgrade-siegetank-spidermines"
+		},
+		"ResearchLockOnRangeUpgrade/FactoryTechLab": {
+			name: "Research Graduating Range",
+			icon: "btn-upgrade-terran-nova-siegetankrange"
 		},
 		"Liberator/Starport": {
 			name: "Deploy Raid Liberators",

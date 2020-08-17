@@ -51,6 +51,8 @@ The `?` button next to the `Load` and `Save` buttons brings up the [help page](h
 
 ## Acknowledgments
 
+Used [Maguro's co-op test maps](https://www.maguro.one/p/my-maps.html) for testing.
+
 Uses [Fira Mono](https://github.com/mozilla/Fira) font by [Carrois Type Design](http://www.carrois.com/).
 
 ## Authors
