@@ -7514,19 +7514,30 @@ data.units = {
 		commands: {
 			"Unburrowed": [
 				"LocustLaunch/SwarmHost",
-				"AbathurDeepTunnel/SwarmHost",
+				"AbathurDeepTunnel",
 				"EvolveToBrutalisk/SwarmHost",
 				"SwarmHostRootBurrow"
 			],
 			"Burrowed": [
 				...data.common.tower,
 				"LocustLaunch/SwarmHostBurrowed",
-				"AbathurDeepTunnel/SwarmHostBurrowed",
-				"EvolveToBrutalisk/SwarmHost",
+				"AbathurDeepTunnel",
+				"EvolveToBrutalisk/SwarmHostBurrowed",
 				"SwarmHostUprootUnburrow"
 			],
-			"Locust": [
-				...data.common.basic
+			"Prestige Unburrowed": [
+				...data.common.basic,
+				"LocustLaunch/SwarmHost",
+				"BrutaliskDeepTunnel/SwarmHost",
+				"EvolveToBrutalisk/SwarmHost",
+				"SwarmHostRootBurrow"
+			],
+			"Prestige Burrowed": [
+				...data.common.tower,
+				"LocustLaunch/SwarmHostBurrowed",
+				"BrutaliskDeepTunnel/SwarmHostBurrowed",
+				"EvolveToBrutalisk/SwarmHostBurrowed",
+				"SwarmHostUprootUnburrow"
 			]
 		}
 	},
@@ -19162,6 +19173,14 @@ data.commands = {
 		y: 2,
 		x: 1
 	},
+	"AbathurDeepTunnel": {
+		name: "Deep Tunnel",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
 	"AbathurDeepTunnel/SwarmHost": {
 		name: "Deep Tunnel",
 		hotkey: "D",
@@ -19341,6 +19360,24 @@ data.commands = {
 		x: 1
 	},
 	"BrutaliskDeepTunnel/RavagerAbathur": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BrutaliskDeepTunnel/SwarmHost": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BrutaliskDeepTunnel/SwarmHostBurrowed": {
 		name: "Deep Tunnel",
 		prestige: "Tunneling Horror",
 		hotkey: "D",
