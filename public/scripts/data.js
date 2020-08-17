@@ -3539,6 +3539,15 @@ data.units = {
 				"ResearchJuggernautPlating/BarracksTechLab",
 				"Cancel"
 			],
+			"Tech Reactor": [
+				"ResearchShieldWall/BarracksTechReactor",
+				"Stimpack/BarracksTechReactor",
+				"ResearchPunisherGrenades/BarracksTechReactor",
+				"ResearchMarauderMagrailMunitions/BarracksTechReactor",
+				"ResearchIncineratorGauntlets/BarracksTechReactor",
+				"ResearchJuggernautPlating/BarracksTechReactor",
+				"Cancel"
+			],
 			"Flying": [
 				...data.common.flying,
 				"TechLabBarracks/Barracks",
@@ -3614,6 +3623,15 @@ data.units = {
 				"ResearchLockOnRangeUpgrade/FactoryTechLab",
 				"Cancel"
 			],
+			"Tech Reactor": [
+				"ResearchHighCapacityBarrels/FactoryTechReactor",
+				"ResearchHellbatHellArmor/FactoryTechReactor",
+				"ResearchImprovedSiegeMode/FactoryTechReactor",
+				"ResearchMultiLockWeaponsSystem/FactoryTechReactor",
+				"ResearchMaelstromRounds/FactoryTechReactor",
+				"ResearchLockOnRangeUpgrade/FactoryTechReactor",
+				"Cancel"
+			],
 			"Flying": [
 				...data.common.flying,
 				"TechLabFactory/Factory",
@@ -3658,6 +3676,15 @@ data.units = {
 				"ResearchRipwaveMissiles/StarportTechLab",
 				"ResearchMedivacCloakedHealBeam/StarportTechLab",
 				"ResearchSuperScience/StarportTechLab",
+				"Cancel"
+			],
+			"Tech Reactor": [
+				"ResearchBansheeCloak/StarportTechReactor",
+				"ResearchShockwaveMissileBattery/StarportTechReactor",
+				"ResearchPhobosClassWeaponsSystem/StarportTechReactor",
+				"ResearchRipwaveMissiles/StarportTechReactor",
+				"ResearchMedivacCloakedHealBeam/StarportTechReactor",
+				"ResearchSuperScience/StarportTechReactor",
 				"Cancel"
 			],
 			"Flying": [
@@ -15088,7 +15115,24 @@ data.commands = {
 		y: 1,
 		x: 0
 	},
+	"ResearchMedivacCloakedHealBeam/StarportTechReactor": {
+		name: "Research Covert Triage",
+		hotkey: "H",
+		hotkey_NRS: "C",
+		icon: "btn-upgrade-terran-nova-repairbeamcloak",
+		mask: false,
+		y: 1,
+		x: 0
+	},
 	"ResearchSuperScience/StarportTechLab": {
+		name: "Research Enhanced Manufacturing",
+		hotkey: "U",
+		icon: "btn-upgrade-terran-nova-superscience",
+		mask: false,
+		y: 1,
+		x: 1
+	},
+	"ResearchSuperScience/StarportTechReactor": {
 		name: "Research Enhanced Manufacturing",
 		hotkey: "U",
 		icon: "btn-upgrade-terran-nova-superscience",
@@ -25667,7 +25711,15 @@ data.overrides = {
 			name: "Research Laser Targeting System",
 			icon: "btn-upgrade-terran-lazertargetingsystem"
 		},
+		"ResearchShieldWall/BarracksTechReactor": {
+			name: "Research Laser Targeting System",
+			icon: "btn-upgrade-terran-lazertargetingsystem"
+		},
 		"Stimpack/BarracksTechLab": {
+			name: "Research Super Stimpack",
+			icon: "btn-upgrade-nova-equipment-superstimppack"
+		},
+		"Stimpack/BarracksTechReactor": {
 			name: "Research Super Stimpack",
 			icon: "btn-upgrade-nova-equipment-superstimppack"
 		},
@@ -25675,11 +25727,23 @@ data.overrides = {
 			name: "Research Suppression Shells",
 			icon: "btn-ability-terran-superconcussive"
 		},
+		"ResearchPunisherGrenades/BarracksTechReactor": {
+			name: "Research Suppression Shells",
+			icon: "btn-ability-terran-superconcussive"
+		},
 		"ResearchIncineratorGauntlets/BarracksTechLab": {
 			name: "Research EMP Rounds",
 			icon: "btn-ability-terran-emp-color"
 		},
+		"ResearchIncineratorGauntlets/BarracksTechReactor": {
+			name: "Research EMP Rounds",
+			icon: "btn-ability-terran-emp-color"
+		},
 		"ResearchJuggernautPlating/BarracksTechLab": {
+			name: "Research Triple Tap",
+			icon: "btn-upgrade-terran-nova-snipetripletap"
+		},
+		"ResearchJuggernautPlating/BarracksTechReactor": {
 			name: "Research Triple Tap",
 			icon: "btn-upgrade-terran-nova-snipetripletap"
 		},
@@ -25709,7 +25773,15 @@ data.overrides = {
 			name: "Research Jump Jet Assault",
 			icon: "btn-upgrade-terran-jumpjets"
 		},
+		"ResearchHellbatHellArmor/FactoryTechReactor": {
+			name: "Research Jump Jet Assault",
+			icon: "btn-upgrade-terran-jumpjets"
+		},
 		"ResearchImprovedSiegeMode/FactoryTechLab": {
+			name: "Research Ares-Class Targeting System",
+			icon: "btn-upgrade-swann-aresclasstargetingsystem"
+		},
+		"ResearchImprovedSiegeMode/FactoryTechReactor": {
 			name: "Research Ares-Class Targeting System",
 			icon: "btn-upgrade-swann-aresclasstargetingsystem"
 		},
@@ -25717,11 +25789,23 @@ data.overrides = {
 			name: "Research Lockdown Missiles",
 			icon: "btn-upgrade-terran-nova-hellfiremissiles"
 		},
+		"ResearchMultiLockWeaponsSystem/FactoryTechReactor": {
+			name: "Research Lockdown Missiles",
+			icon: "btn-upgrade-terran-nova-hellfiremissiles"
+		},
 		"ResearchMaelstromRounds/FactoryTechLab": {
 			name: "Research Spider Mines",
 			icon: "btn-upgrade-siegetank-spidermines"
 		},
+		"ResearchMaelstromRounds/FactoryTechReactor": {
+			name: "Research Spider Mines",
+			icon: "btn-upgrade-siegetank-spidermines"
+		},
 		"ResearchLockOnRangeUpgrade/FactoryTechLab": {
+			name: "Research Graduating Range",
+			icon: "btn-upgrade-terran-nova-siegetankrange"
+		},
+		"ResearchLockOnRangeUpgrade/FactoryTechReactor": {
 			name: "Research Graduating Range",
 			icon: "btn-upgrade-terran-nova-siegetankrange"
 		},
@@ -25751,7 +25835,15 @@ data.overrides = {
 			name: "Research Rocket Barrage",
 			icon: "btn-upgrade-terran-nova-bansheemissilestrik"
 		},
+		"ResearchShockwaveMissileBattery/StarportTechReactor": {
+			name: "Research Rocket Barrage",
+			icon: "btn-upgrade-terran-nova-bansheemissilestrik"
+		},
 		"ResearchPhobosClassWeaponsSystem/StarportTechLab": {
+			name: "Research Raid Artillery",
+			icon: "btn-upgrade-terran-nova-terrandefendermodestructureattack"
+		},
+		"ResearchPhobosClassWeaponsSystem/StarportTechReactor": {
 			name: "Research Raid Artillery",
 			icon: "btn-upgrade-terran-nova-terrandefendermodestructureattack"
 		},
@@ -25760,12 +25852,8 @@ data.overrides = {
 			icon: "btn-upgrade-terran-transformationservos"
 		},
 		"ResearchRipwaveMissiles/StarportTechReactor": {
-			name: "Research Defensive Matrix",
-			hotkey: "R",
-			icon: "btn-upgrade-swann-defensivematrix",
-			mask: false,
-			y: 0,
-			x: 3
+			name: "Research Smart Servos",
+			icon: "btn-upgrade-terran-transformationservos"
 		}
 	},
 	"Han": {
