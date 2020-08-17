@@ -276,11 +276,20 @@ div#buttons {
 
 div#cards {
 	display: flex;
+	grid-area: cards;
 	overflow: auto;
 }
 
 div#editor {
 	bottom: 5em;
+	display: grid;
+	grid-gap: 1em 1em;
+	grid-template-areas:
+		"heading heading"
+		"cards   cards"
+		"fields  lists";
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto auto 1fr;
 	position: fixed;
 	left: 25%;
 	right: 1em;
@@ -294,8 +303,7 @@ div#editor button {
 }
 
 div#fields {
-	float: left;
-	width: 50%;
+	grid-area: fields;
 }
 
 div#fields, div#lists {
@@ -304,8 +312,8 @@ div#fields, div#lists {
 	padding: 0.5em;
 }
 
-div#util {
-	margin-top: 1em;
+div#lists {
+	grid-area: lists;
 }
 
 div.overlay {
@@ -430,11 +438,9 @@ h1, h2, h3, h4, p#prestige {
 
 h2#unit {
 	font-size: 2rem;
+	grid-area: heading;
 	line-height: 64px;
-}
-
-h2#unit, h3#command {
-	margin: 0 0 1em;
+	margin: 0;
 }
 
 h2#unit img {
@@ -444,6 +450,10 @@ h2#unit img {
 
 h3 {
 	font-size: 1.25rem;
+}
+
+h3#command {
+	margin: 0 0 1em;
 }
 
 h4 {
@@ -647,6 +657,7 @@ p#hotkey input {
 }
 
 p#prestige {
+	font-size: 0.75rem;
 	margin: 0;
 }
 
