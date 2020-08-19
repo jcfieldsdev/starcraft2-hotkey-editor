@@ -5606,6 +5606,8 @@ data.units = {
 		type: UNIT,
 		commands: {
 			"Drone": [
+				"HarvestQuillgorCorpse/Drone",
+				"CarryBiomass/Drone",
 				"GatherProt",
 				"ReturnCargo",
 				"ZergBuild/Drone",
@@ -19536,6 +19538,22 @@ data.commands = {
 		y: 2,
 		x: 1
 	},
+	"HarvestQuillgorCorpse/Drone": {
+		name: "Harvest Quillgor Corpse",
+		hotkey: "",
+		icon: "btn-ability-zerg-harvestcorpse",
+		mask: false,
+		y: 1,
+		x: 0
+	},
+	"CarryBiomass/Drone": {
+		name: "Carry Biomass",
+		hotkey: "",
+		icon: "btn-ability-zerg-carrybiomass",
+		mask: false,
+		y: 1,
+		x: 1
+	},
 	"HotSBioPlasmidDischarge/HotSLeviathan": {
 		name: "Bio-Plasmid Discharge",
 		hotkey: "Q",
@@ -25924,7 +25942,11 @@ data.overrides = {
 	},
 	"HeartOfTheSwarm": {
 		"GatherProt": {
-			icon: "btn-ability-zerg-gather"
+			icon: "btn-ability-zerg-gather",
+			x: 2
+		},
+		"ReturnCargo": {
+			x: 3
 		},
 		"BurrowDown": {
 			hotkey: "R",
