@@ -960,13 +960,12 @@ data.units = {
 		name: "CoopMissionsTerran",
 		displayName: "Co-op Missions",
 		icon: "btn-unit-terran-marauder",
-		race: ZERG,
+		race: TERRAN,
 		commander: "CoopMissionsTerran",
 		sortCommander: "Terran",
 		type: COMMANDER,
 		defaultUnit: "Terran_SCV"
 	},
-
 	"CoopMissionsTerran_Raven": {
 		name: "Raven",
 		keywords: "Auto-Turret",
@@ -984,6 +983,23 @@ data.units = {
 				...data.common.tower
 			]
 		}
+	},
+	"CoopMissionsTerran_BoomBot": {
+		name: "Boom Bot",
+		race: NEUTRAL,
+		commander: "CoopMissionsTerran",
+		type: OTHER,
+		commands: [
+			"MutatorBoomBot1/MutatorBoomBot",
+			"MutatorBoomBot2/MutatorBoomBot",
+			"MutatorBoomBot3/MutatorBoomBot",
+			"MutatorBoomBot4/MutatorBoomBot",
+			"MutatorBoomBot5/MutatorBoomBot",
+			"MutatorBoomBot6/MutatorBoomBot",
+			"MutatorBoomBot7/MutatorBoomBot",
+			"MutatorBoomBot8/MutatorBoomBot",
+			"MutatorBoomBot9/MutatorBoomBot"
+		]
 	},
 	"WingsOfLiberty": {
 		name: "WingsOfLiberty",
@@ -1010,7 +1026,6 @@ data.units = {
 				"TossGrenade/Raynor",
 				"ExperimentalPlasmaGun/Raynor",
 				"TheMorosDevice/Raynor"
-
 			],
 			"Char": [
 				...data.common.basic,
@@ -3013,7 +3028,8 @@ data.units = {
 		commands: [
 			"NanoRepair/ScienceVessel",
 			"Irradiate/ScienceVessel",
-			"DefensiveMatrixTarget/ScienceVessel"
+			"DefensiveMatrixTarget/ScienceVessel",
+			"FleetwideJump/ScienceVessel"
 		]
 	},
 	"Swann_WarBot": {
@@ -8765,7 +8781,6 @@ data.units = {
 			"GlevigFirebreath/DehakaGlevig",
 			"GlevigTunnel/DehakaGlevig",
 			"CommanderPrestigeDehakaPackLeadersRetreat/DehakaGlevig"
-
 		]
 	},
 	"Dehaka_Murvar": {
@@ -11772,7 +11787,8 @@ data.units = {
 		type: UNIT,
 		commands: [
 			"SOAMothershipLineAttack/SOAMothershipv4",
-			"AlarakMothershipMassTeleport/SOAMothershipv4"
+			"AlarakMothershipMassTeleport/SOAMothershipv4",
+			"VoidRay/SOAMothershipv4"
 		]
 	},
 	"Alarak_Nexus": {
@@ -13913,6 +13929,17 @@ data.commands = {
 		mask: false,
 		y: 2,
 		x: 2
+	},
+	"FleetwideJump/ScienceVessel": {
+		name: "Tactical Jump",
+		prestige: "Payload Director",
+		hotkey: "T",
+		hotkey_NRS: "B",
+		hotkey_SC1: "B",
+		icon: "btn-ability-hornerhan-fleethyperjump",
+		mask: false,
+		y: 1,
+		x: 0
 	},
 	"YamatoGun": {
 		name: "Yamato Cannon",
@@ -23826,6 +23853,17 @@ data.commands = {
 		y: 2,
 		x: 1
 	},
+	"VoidRay/SOAMothershipv4": {
+		name: "Warp In Destroyer",
+		prestige: "Shadow of Death",
+		hotkey: "V",
+		hotkey_NRS: "O",
+		hotkey_SC1: "O",
+		icon: "btn-unit-protoss-alarak-taldarim-voidray",
+		mask: false,
+		y: 2,
+		x: 2
+	},
 	"ResearchAlarakTargetLockBuff/CyberneticsCore": {
 		name: "Research Detect Weakness",
 		hotkey: "T",
@@ -25286,6 +25324,78 @@ data.commands = {
 		mask: false,
 		y: 2,
 		x: 3
+	},
+	"MutatorBoomBot1/MutatorBoomBot": {
+		name: "1",
+		hotkey: "NumPad1",
+		icon: "btn-number-1",
+		mask: true,
+		y: 2,
+		x: 0
+	},
+	"MutatorBoomBot2/MutatorBoomBot": {
+		name: "2",
+		hotkey: "NumPad2",
+		icon: "btn-number-2",
+		mask: true,
+		y: 2,
+		x: 1
+	},
+	"MutatorBoomBot3/MutatorBoomBot": {
+		name: "3",
+		hotkey: "NumPad3",
+		icon: "btn-number-3",
+		mask: true,
+		y: 2,
+		x: 2
+	},
+	"MutatorBoomBot4/MutatorBoomBot": {
+		name: "4",
+		hotkey: "NumPad4",
+		icon: "btn-number-4",
+		mask: true,
+		y: 1,
+		x: 0
+	},
+	"MutatorBoomBot5/MutatorBoomBot": {
+		name: "5",
+		hotkey: "NumPad5",
+		icon: "btn-number-5",
+		mask: true,
+		y: 1,
+		x: 1
+	},
+	"MutatorBoomBot6/MutatorBoomBot": {
+		name: "6",
+		hotkey: "NumPad6",
+		icon: "btn-number-6",
+		mask: true,
+		y: 1,
+		x: 2
+	},
+	"MutatorBoomBot7/MutatorBoomBot": {
+		name: "7",
+		hotkey: "NumPad7",
+		icon: "btn-number-7",
+		mask: true,
+		y: 0,
+		x: 0
+	},
+	"MutatorBoomBot8/MutatorBoomBot": {
+		name: "8",
+		hotkey: "NumPad8",
+		icon: "btn-number-8",
+		mask: true,
+		y: 0,
+		x: 1
+	},
+	"MutatorBoomBot9/MutatorBoomBot": {
+		name: "9",
+		hotkey: "NumPad9",
+		icon: "btn-number-9",
+		mask: true,
+		y: 0,
+		x: 2
 	}
 };
 

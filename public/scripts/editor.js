@@ -13,8 +13,9 @@ const DEFAULT_UNIT = "Raynor_SCV";
 
 // file names and locations
 const DEFAULT_SAVE_NAME = "Hotkeys.SC2Hotkeys";
-const ICONS_DIR = "icons";
-const ICONS_EXT = ".png";
+const DEFAULT_ICON = "btn-missing-kaeo";
+const ICON_DIR = "icons";
+const ICON_EXT = ".png";
 const HELP_PAGE = "help.html";
 const ANNOYED_CLICKS = 10;
 const ANNOYED_SOUND = "annoyed.ogg";
@@ -133,7 +134,7 @@ window.addEventListener("load", function() {
 			if (editor.clicks >= ANNOYED_CLICKS) {
 				editor.clicks = 0;
 
-				let audio = new Audio(ICONS_DIR + "/" + ANNOYED_SOUND);
+				let audio = new Audio(ICON_DIR + "/" + ANNOYED_SOUND);
 				audio.play();
 			}
 		}
@@ -277,20 +278,18 @@ Editor.prototype.unitEditor = function() {
 		return;
 	}
 
+	this.clicks = 0;
+
 	let h2 = document.createElement("h2");
 	h2.id = "unit";
 
-	if (unit.icon != undefined) {
-		this.clicks = 0;
+	let icon = unit.icon || DEFAULT_ICON;
+	let img = document.createElement("img");
+	img.setAttribute("src", ICON_DIR + "/" + icon + ICON_EXT);
+	img.setAttribute("alt", "[" + unit.name + "]");
+	img.setAttribute("title", unit.name);
 
-		let img = document.createElement("img");
-		img.setAttribute("src", ICONS_DIR + "/" + unit.icon + ICONS_EXT);
-		img.setAttribute("alt", "[" + unit.name + "]");
-		img.setAttribute("title", unit.name);
-
-		h2.appendChild(img);
-	}
-
+	h2.appendChild(img);
 	h2.appendChild(document.createTextNode(unit.name));
 	$("#unit").replaceWith(h2);
 
@@ -365,8 +364,9 @@ Editor.prototype.unitEditor = function() {
 	function createButton(id, command, n) {
 		let div = document.createElement("div");
 
+		let icon = command.icon || DEFAULT_ICON;
 		let img = document.createElement("img");
-		img.setAttribute("src", ICONS_DIR + "/" + command.icon + ICONS_EXT);
+		img.setAttribute("src", ICON_DIR + "/" + icon + ICON_EXT);
 		img.setAttribute("alt", "[" + command.name + "]");
 		img.setAttribute("title", command.name);
 		img.addEventListener("click", function() {
@@ -751,14 +751,13 @@ Editor.prototype.findCommandsNamed = function(id) {
 		let command = data.commands[match];
 		let li = document.createElement("li");
 
-		if (command.icon != undefined) {
-			let img = document.createElement("img");
-			img.setAttribute("src", ICONS_DIR + "/" + command.icon + ICONS_EXT);
-			img.setAttribute("alt", "[" + command.name + "]");
-			img.setAttribute("title", command.name);
-			img.classList.toggle("mask", command.mask);
-			li.appendChild(img);
-		}
+		let icon = command.icon || DEFAULT_ICON;
+		let img = document.createElement("img");
+		img.setAttribute("src", ICON_DIR + "/" + icon + ICON_EXT);
+		img.setAttribute("alt", "[" + command.name + "]");
+		img.setAttribute("title", command.name);
+		img.classList.toggle("mask", command.mask);
+		li.appendChild(img);
 
 		let a = document.createElement("a");
 		a.addEventListener("click", function() {
@@ -787,13 +786,12 @@ Editor.prototype.formatResults = function(id, matches) {
 		let unit = data.units[match];
 		let li = document.createElement("li");
 
-		if (unit.icon != undefined) {
-			let img = document.createElement("img");
-			img.setAttribute("src", ICONS_DIR + "/" + unit.icon + ICONS_EXT);
-			img.setAttribute("alt", "[" + unit.name + "]");
-			img.setAttribute("title", unit.name);
-			li.appendChild(img);
-		}
+		let icon = unit.icon || DEFAULT_ICON;
+		let img = document.createElement("img");
+		img.setAttribute("src", ICON_DIR + "/" + icon + ICON_EXT);
+		img.setAttribute("alt", "[" + unit.name + "]");
+		img.setAttribute("title", unit.name);
+		li.appendChild(img);
 
 		let a = document.createElement("a");
 		a.href = "#" + match;
