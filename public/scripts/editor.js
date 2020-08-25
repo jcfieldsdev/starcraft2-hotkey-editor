@@ -372,7 +372,7 @@ Editor.prototype.unitEditor = function() {
 		img.addEventListener("click", function() {
 			self.setCommand(id, command);
 		});
-		img.classList.toggle("mask", command.mask);
+		img.classList.toggle("mask", command.mask || icon == DEFAULT_ICON);
 		div.appendChild(img);
 
 		let span = document.createElement("span");
@@ -756,7 +756,7 @@ Editor.prototype.findCommandsNamed = function(id) {
 		img.setAttribute("src", ICON_DIR + "/" + icon + ICON_EXT);
 		img.setAttribute("alt", "[" + command.name + "]");
 		img.setAttribute("title", command.name);
-		img.classList.toggle("mask", command.mask);
+		img.classList.toggle("mask", command.mask || icon == DEFAULT_ICON);
 		li.appendChild(img);
 
 		let a = document.createElement("a");

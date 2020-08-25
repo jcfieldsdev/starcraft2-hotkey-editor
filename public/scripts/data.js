@@ -9825,6 +9825,7 @@ data.units = {
 		commands: [
 			"AnionPulseCrystals/FleetBeacon",
 			"ResearchVoidRaySpeedUpgrade/FleetBeacon",
+			"TempestResearchGroundAttackUpgrade/FleetBeacon",
 			"Cancel"
 		]
 	},
@@ -23069,6 +23070,14 @@ data.commands = {
 		mask: false,
 		y: 0,
 		x: 1
+	},
+	"TempestResearchGroundAttackUpgrade/FleetBeacon": {
+		name: "Research Tectonic Destabilizers",
+		hotkey: "T",
+		icon: "btn-ability-protoss-disruptionblast",
+		mask: false,
+		y: 0,
+		x: 2
 	},
 	"ResearchDoubleGravitonBeam/FleetBeacon": {
 		name: "Research Double Graviton Beam",
