@@ -12830,6 +12830,7 @@ data.commands = {
 		name: "Hold Position",
 		hotkey: "H",
 		icon: "btn-command-holdposition",
+		mask: true,
 		y: 0,
 		x: 2
 	},
