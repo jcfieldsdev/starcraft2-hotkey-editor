@@ -1087,20 +1087,17 @@ Commands.prototype.getHotkeys = function(commander, id) {
 		value = data.commands[id].hotkey || "";
 	}
 
-	let hotkeys = value.split(DELIMITER);
-
-	hotkeys = hotkeys.map(function(symbol) {
-		let hotkey = symbol;
-
+	let hotkeys = value.split(DELIMITER).map(function(symbol) {
 		// converts from file format to display representation
-		for (let keyCode of Object.values(data.keyCodes)) {
-			if (symbol == keyCode.hotkey) {
-				hotkey = keyCode.symbol || keyCode.hotkey;
-				break;
-			}
+		let keyCode = Object.values(data.keyCodes).find(function(value) {
+			return symbol == value.hotkey;
+		});
+
+		if (keyCode != undefined) {
+			return keyCode.symbol || keyCode.hotkey;
 		}
 
-		return hotkey;
+		return symbol;
 	});
 
 	return hotkeys;
@@ -1115,17 +1112,16 @@ Commands.prototype.setHotkeys = function(command, hotkeys) {
 		return hotkey != ""; // omits blank entries
 	});
 	hotkeys = hotkeys.map(function(hotkey) {
-		let symbol = hotkey;
-
 		// converts from display format to file representation
-		for (let keyCode of Object.values(data.keyCodes)) {
-			if (hotkey == keyCode.symbol) {
-				symbol = keyCode.hotkey;
-				break;
-			}
+		let keyCode = Object.values(data.keyCodes).find(function(value) {
+			return hotkey == value.symbol;
+		});
+
+		if (keyCode != undefined) {
+			return keyCode.hotkey;
 		}
 
-		return symbol;
+		return hotkey;
 	});
 
 	this.list["Commands"][command] = "";

@@ -9554,16 +9554,20 @@ data.units = {
 	},
 	"Protoss_Oracle": {
 		name: "Oracle",
+		keywords: "Stasis Ward",
 		icon: "btn-unit-protoss-oracle",
 		race: PROTOSS,
 		commander: "Protoss",
 		type: UNIT,
-		commands: [
-			"OracleRevelation/Oracle",
-			"OracleBuildStasisTrap/Oracle",
-			"OracleWeaponOn/Oracle",
-			"OracleWeaponOff/Oracle"
-		]
+		commands: {
+			"Oracle": [
+				"OracleRevelation/Oracle",
+				"OracleBuildStasisTrap/Oracle",
+				"OracleWeaponOn/Oracle",
+				"OracleWeaponOff/Oracle"
+			],
+			"Stasis Ward": []
+		}
 	},
 	"Protoss_VoidRay": {
 		name: "Void Ray",
@@ -11099,15 +11103,19 @@ data.units = {
 	},
 	"Vorazun_Oracle": {
 		name: "Oracle",
+		keywords: "Stasis Ward",
 		icon: "btn-unit-protoss-oracle",
 		race: PROTOSS,
 		commander: "Vorazun",
 		type: UNIT,
-		commands: [
-			"OracleWeaponOn/Oracle",
-			"OracleWeaponOff/Oracle",
-			"OracleBuildStasisTrap/Oracle"
-		]
+		commands: {
+			"Oracle": [
+				"OracleWeaponOn/Oracle",
+				"OracleWeaponOff/Oracle",
+				"OracleBuildStasisTrap/Oracle"
+			],
+			"Stasis Ward": []
+		}
 	},
 	"Vorazun_ShadowGuard": {
 		name: "Shadow Guard",
