@@ -8644,13 +8644,13 @@ data.units = {
 				"RallySCV",
 				"DehakaLearnPrimalWeaponsLevel1/DehakaHatchery",
 				"DehakaLearnPrimalArmorLevel1/DehakaHatchery",
-				"PrimalBuildingRoot/DehakaHatcheryUprooted",
+				"PrimalBuildingUproot/DehakaHatchery",
 				"Cancel"
 			],
 			"Uprooted": [
 				...data.common.basic,
 				"Rally",
-				"PrimalBuildingUproot/DehakaHatchery"
+				"PrimalBuildingRoot/DehakaHatcheryUprooted"
 			]
 		}
 	},
@@ -20959,7 +20959,7 @@ data.commands = {
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
-		icon: "btn-ability-zerg-dehaka-uproot-color",
+		icon: "btn-ability-zerg-dehaka-root-color",
 		mask: false,
 		y: 2,
 		x: 3
@@ -20969,7 +20969,7 @@ data.commands = {
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
-		icon: "btn-ability-zerg-dehaka-root-color",
+		icon: "btn-ability-zerg-dehaka-uproot-color",
 		mask: false,
 		y: 2,
 		x: 3
