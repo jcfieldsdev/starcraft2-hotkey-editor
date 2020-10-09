@@ -10800,6 +10800,15 @@ data.units = {
 			"LightningBomb/Tempest"
 		]
 	},
+	"Artanis_UnboundFanatic": {
+		name: "Unbound Fanatic",
+		keywords: "Archon",
+		icon: "btn-unit-protoss-archon",
+		race: PROTOSS,
+		commander: "Artanis",
+		type: UNIT,
+		commands: []
+	},
 	"Artanis_Nexus": {
 		name: "Nexus",
 		icon: "btn-building-protoss-nexus",
