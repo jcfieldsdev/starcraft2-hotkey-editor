@@ -20247,7 +20247,7 @@ data.commands = {
 	"ResearchSIBarracksTrainInfestedCivilianLevel4/SICivilianStructure": {
 		name: "Evolve Infestation",
 		hotkey: "E",
-		icon: "btn-ability-stukov-infestedcivilianstructurelv3",
+		icon: "btn-ability-stukov-infestedcivilianstructure_lv3",
 		mask: false,
 		y: 0,
 		x: 0
@@ -27211,12 +27211,6 @@ data.overrides = {
 		"DarkShrine/Probe": {
 			name: "Warp In Void Shrine",
 			icon: "btn-building-protoss-zeratuldarkshrine"
-		},
-		"MorphtoObserver/Observer": {
-			icon: "btn-building-protoss-zeratulobserver"
-		},
-		"MorphtoObserverSiege/Observer": {
-			icon: "btn-building-protoss-zeratulobserver-surveillance"
 		},
 		"Probe/Nexus": {
 			name: "Warp In Xel’Naga Precursor",
