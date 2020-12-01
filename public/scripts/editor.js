@@ -71,7 +71,6 @@ window.addEventListener("load", function() {
 	editor.load();
 
 	window.addEventListener("beforeunload", function() {
-		// saves on close
 		store.save(commands.list);
 	});
 	window.addEventListener("hashchange", function() {
@@ -512,9 +511,8 @@ Editor.prototype.formatHotkey = function(hotkeys) {
 };
 
 Editor.prototype.setHotkey = function(input, event) {
-	if (event.keyCode in data.keyCodes) {
-		let keyCode = data.keyCodes[event.keyCode];
-		input.value = keyCode.symbol || keyCode.hotkey;
+	if (event.keyCode in data.keyInfo) {
+		input.value = data.keyInfo[event.keyCode].symbol;
 	}
 
 	let fields = [];
@@ -983,7 +981,7 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 
 function Commands() {
 	this.list = {
-		"Commands": {}
+		Commands: {}
 	};
 	this.suffix = "";
 	this.allowSetConflicts = false;
@@ -992,26 +990,26 @@ function Commands() {
 Commands.prototype.load = function(list={}) {
 	this.list = list;
 
-	if (this.list["Commands"] == undefined) {
-		this.list["Commands"] = {};
+	if (this.list.Commands == undefined) {
+		this.list.Commands = {};
 	}
 
 	// gets suffix used for non-standard base layouts
-	if (this.list["Settings"] == undefined) {
+	if (this.list.Settings == undefined) {
 		this.suffix = "";
 		this.allowSetConflicts = false;
 	} else {
-		if (this.list["Settings"]["Suffix"] == undefined) {
+		if (this.list.Settings.Suffix == undefined) {
 			this.suffix = "";
 		} else {
 			// _NRS standard for lefties
 			// _GLS grid
 			// _GRS grid for lefties
 			// _SC1 classic
-			this.suffix = this.list["Settings"]["Suffix"];
+			this.suffix = this.list.Settings.Suffix;
 		}
 
-		let allowSetConflicts = this.list["Settings"]["AllowSetConflicts"];
+		let allowSetConflicts = this.list.Settings.AllowSetConflicts;
 		this.allowSetConflicts = Boolean(allowSetConflicts);
 	}
 };
@@ -1100,7 +1098,7 @@ Commands.prototype.getHotkeys = function(commander, id) {
 	let value = "";
 
 	if (this.checkUserOverride(id, true)) {
-		value = this.list["Commands"][id];
+		value = this.list.Commands[id];
 	} else if (this.checkCommanderSuffixOverride(id, commander)) {
 		value = data.overrides[commander][id]["hotkey" + this.suffix];
 	} else if (this.checkCommanderOverride(id, commander, true)) {
@@ -1111,20 +1109,18 @@ Commands.prototype.getHotkeys = function(commander, id) {
 		value = data.commands[id].hotkey || "";
 	}
 
-	let hotkeys = value.split(DELIMITER).map(function(symbol) {
+	return value.split(DELIMITER).map(function(symbol) {
 		// converts from file format to display representation
-		let keyCode = Object.values(data.keyCodes).find(function(value) {
+		let keyCode = Object.values(data.keyInfo).find(function(value) {
 			return symbol == value.hotkey;
 		});
 
 		if (keyCode != undefined) {
-			return keyCode.symbol || keyCode.hotkey;
+			return keyCode.symbol;
 		}
 
 		return symbol;
 	});
-
-	return hotkeys;
 };
 
 Commands.prototype.setHotkeys = function(command, hotkeys) {
@@ -1137,7 +1133,7 @@ Commands.prototype.setHotkeys = function(command, hotkeys) {
 	});
 	hotkeys = hotkeys.map(function(hotkey) {
 		// converts from display format to file representation
-		let keyCode = Object.values(data.keyCodes).find(function(value) {
+		let keyCode = Object.values(data.keyInfo).find(function(value) {
 			return hotkey == value.symbol;
 		});
 
@@ -1148,8 +1144,8 @@ Commands.prototype.setHotkeys = function(command, hotkeys) {
 		return hotkey;
 	});
 
-	this.list["Commands"][command] = "";
-	this.list["Commands"][command] = hotkeys.join(DELIMITER);
+	this.list.Commands[command] = "";
+	this.list.Commands[command] = hotkeys.join(DELIMITER);
 };
 
 Commands.prototype.checkConflicts = function(id) {
@@ -1230,11 +1226,11 @@ Commands.prototype.checkDefaults = function(id, commander) {
 
 // applies only to hotkey
 Commands.prototype.checkUserOverride = function(id) {
-	if (this.list["Commands"] == undefined) {
+	if (this.list.Commands == undefined) {
 		return;
 	}
 
-	if (this.list["Commands"][id] == undefined) {
+	if (this.list.Commands[id] == undefined) {
 		return;
 	}
 
@@ -1310,15 +1306,15 @@ Commands.prototype.checkSuffixOverride = function(id) {
 
 Commands.prototype.removeLast = function(id) {
 	if (this.checkUserOverride(id)) {
-		let fields = this.list["Commands"][id].split(DELIMITER);
+		let fields = this.list.Commands[id].split(DELIMITER);
 		fields.splice(-1, 1);
 
-		this.list["Commands"][id] = fields.join(DELIMITER);
+		this.list.Commands[id] = fields.join(DELIMITER);
 	}
 };
 
 Commands.prototype.clear = function(id) {
-	delete this.list["Commands"][id];
+	delete this.list.Commands[id];
 };
 
 Commands.prototype.reset = function() {
@@ -1394,7 +1390,7 @@ Storage.prototype.load = function() {
 };
 
 Storage.prototype.save = function(list) {
-	if (list["Commands"] == undefined) {
+	if (list.Commands == undefined) {
 		return;
 	}
 
@@ -1402,10 +1398,7 @@ Storage.prototype.save = function(list) {
 		// saves storage if:
 		// it contains more than one section ("Commands" is always present)
 		// or "Commands" is not empty (and therefore contains custom values)
-		if (
-			Object.keys(list).length > 1
-			|| Object.keys(list["Commands"]).length
-		) {
+		if (Object.keys(list).length > 1 || Object.keys(list.Commands.length) {
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();

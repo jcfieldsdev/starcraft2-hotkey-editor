@@ -13,13 +13,14 @@ const BUILDING = 4;
 
 const data = {};
 
-data.keyCodes = {
+data.keyInfo = {
 	8: {
 		hotkey: "Backspace",
 		symbol: "Bck"
 	},
 	9: {
-		hotkey: "Tab"
+		hotkey: "Tab",
+		symbol: "Tab"
 	},
 	12: {
 		hotkey: "Clear",
@@ -54,7 +55,8 @@ data.keyCodes = {
 		symbol: "PDn"
 	},
 	35: {
-		hotkey: "End"
+		hotkey: "End",
+		symbol: "End"
 	},
 	36: {
 		hotkey: "Home",
@@ -65,7 +67,8 @@ data.keyCodes = {
 		symbol: "Lft"
 	},
 	38: {
-		hotkey: "Up"
+		hotkey: "Up",
+		symbol: "Up"
 	},
 	39: {
 		hotkey: "Right",
@@ -92,34 +95,44 @@ data.keyCodes = {
 		symbol: "Hlp"
 	},
 	48: {
-		hotkey: "0"
+		hotkey: "0",
+		symbol: "0"
 	},
 	49: {
-		hotkey: "1"
+		hotkey: "1",
+		symbol: "1"
 	},
 	50: {
-		hotkey: "2"
+		hotkey: "2",
+		symbol: "2"
 	},
 	51: {
-		hotkey: "3"
+		hotkey: "3",
+		symbol: "3"
 	},
 	52: {
-		hotkey: "4"
+		hotkey: "4",
+		symbol: "4"
 	},
 	53: {
-		hotkey: "5"
+		hotkey: "5",
+		symbol: "5"
 	},
 	54: {
-		hotkey: "6"
+		hotkey: "6",
+		symbol: "6"
 	},
 	55: {
-		hotkey: "7"
+		hotkey: "7",
+		symbol: "7"
 	},
 	56: {
-		hotkey: "8"
+		hotkey: "8",
+		symbol: "8"
 	},
 	57: {
-		hotkey: "9"
+		hotkey: "9",
+		symbol: "9"
 	},
 	59: {
 		hotkey: "SemiColon",
@@ -130,82 +143,108 @@ data.keyCodes = {
 		symbol: "="
 	},
 	65: {
-		hotkey: "A"
+		hotkey: "A",
+		symbol: "A"
 	},
 	66: {
-		hotkey: "B"
+		hotkey: "B",
+		symbol: "B"
 	},
 	67: {
-		hotkey: "C"
+		hotkey: "C",
+		symbol: "C"
 	},
 	68: {
-		hotkey: "D"
+		hotkey: "D",
+		symbol: "D"
 	},
 	69: {
-		hotkey: "E"
+		hotkey: "E",
+		symbol: "E"
 	},
 	70: {
-		hotkey: "F"
+		hotkey: "F",
+		symbol: "F"
 	},
 	71: {
-		hotkey: "G"
+		hotkey: "G",
+		symbol: "G"
 	},
 	72: {
-		hotkey: "H"
+		hotkey: "H",
+		symbol: "H"
 	},
 	73: {
-		hotkey: "I"
+		hotkey: "I",
+		symbol: "I"
 	},
 	74: {
-		hotkey: "J"
+		hotkey: "J",
+		symbol: "J"
 	},
 	75: {
-		hotkey: "K"
+		hotkey: "K",
+		symbol: "K"
 	},
 	76: {
-		hotkey: "L"
+		hotkey: "L",
+		symbol: "L"
 	},
 	77: {
-		hotkey: "M"
+		hotkey: "M",
+		symbol: "M"
 	},
 	78: {
-		hotkey: "N"
+		hotkey: "N",
+		symbol: "N"
 	},
 	79: {
-		hotkey: "O"
+		hotkey: "O",
+		symbol: "O"
 	},
 	80: {
-		hotkey: "P"
+		hotkey: "P",
+		symbol: "P"
 	},
 	81: {
-		hotkey: "Q"
+		hotkey: "Q",
+		symbol: "Q"
 	},
 	82: {
-		hotkey: "R"
+		hotkey: "R",
+		symbol: "R"
 	},
 	83: {
-		hotkey: "S"
+		hotkey: "S",
+		symbol: "S"
 	},
 	84: {
-		hotkey: "T"
+		hotkey: "T",
+		symbol: "T"
 	},
 	85: {
-		hotkey: "U"
+		hotkey: "U",
+		symbol: "U"
 	},
 	86: {
-		hotkey: "V"
+		hotkey: "V",
+		symbol: "V"
 	},
 	87: {
-		hotkey: "W"
+		hotkey: "W",
+		symbol: "W"
 	},
 	88: {
-		hotkey: "X"
+		hotkey: "X",
+		symbol: "X"
 	},
 	89: {
-		hotkey: "Y"
+		hotkey: "Y",
+		symbol: "Y"
 	},
 	90: {
-		hotkey: "Z"
+		hotkey: "Z",
+		symbol: "Z"
 	},
 	96: {
 		hotkey: "NumPad0",
@@ -268,76 +307,100 @@ data.keyCodes = {
 		symbol: "N /"
 	},
 	112: {
-		hotkey: "F1"
+		hotkey: "F1",
+		symbol: "F1"
 	},
 	113: {
-		hotkey: "F2"
+		hotkey: "F2",
+		symbol: "F2"
 	},
 	114: {
-		hotkey: "F3"
+		hotkey: "F3",
+		symbol: "F3"
 	},
 	115: {
-		hotkey: "F4"
+		hotkey: "F4",
+		symbol: "F4"
 	},
 	116: {
-		hotkey: "F5"
+		hotkey: "F5",
+		symbol: "F5"
 	},
 	117: {
-		hotkey: "F6"
+		hotkey: "F6",
+		symbol: "F6"
 	},
 	118: {
-		hotkey: "F7"
+		hotkey: "F7",
+		symbol: "F7"
 	},
 	119: {
-		hotkey: "F8"
+		hotkey: "F8",
+		symbol: "F8"
 	},
 	120: {
-		hotkey: "F9"
+		hotkey: "F9",
+		symbol: "F9"
 	},
 	121: {
-		hotkey: "F10"
+		hotkey: "F10",
+		symbol: "F10"
 	},
 	122: {
-		hotkey: "F11"
+		hotkey: "F11",
+		symbol: "F11"
 	},
 	123: {
-		hotkey: "F12"
+		hotkey: "F12",
+		symbol: "F12"
 	},
 	124: {
-		hotkey: "F13"
+		hotkey: "F13",
+		symbol: "F13"
 	},
 	125: {
-		hotkey: "F14"
+		hotkey: "F14",
+		symbol: "F14"
 	},
 	126: {
-		hotkey: "F15"
+		hotkey: "F15",
+		symbol: "F15"
 	},
 	127: {
-		hotkey: "F16"
+		hotkey: "F16",
+		symbol: "F16"
 	},
 	128: {
-		hotkey: "F17"
+		hotkey: "F17",
+		symbol: "F17"
 	},
 	129: {
-		hotkey: "F18"
+		hotkey: "F18",
+		symbol: "F18"
 	},
 	130: {
-		hotkey: "F19"
+		hotkey: "F19",
+		symbol: "F19"
 	},
 	131: {
-		hotkey: "F20"
+		hotkey: "F20",
+		symbol: "F20"
 	},
 	132: {
-		hotkey: "F21"
+		hotkey: "F21",
+		symbol: "F21"
 	},
 	133: {
-		hotkey: "F22"
+		hotkey: "F22",
+		symbol: "F22"
 	},
 	134: {
-		hotkey: "F23"
+		hotkey: "F23",
+		symbol: "F23"
 	},
 	135: {
-		hotkey: "F24"
+		hotkey: "F24",
+		symbol: "F24"
 	},
 	144: {
 		hotkey: "NumLock",
