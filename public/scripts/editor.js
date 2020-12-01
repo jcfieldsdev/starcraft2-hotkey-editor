@@ -1398,7 +1398,7 @@ Storage.prototype.save = function(list) {
 		// saves storage if:
 		// it contains more than one section ("Commands" is always present)
 		// or "Commands" is not empty (and therefore contains custom values)
-		if (Object.keys(list).length > 1 || Object.keys(list.Commands.length) {
+		if (Object.keys(list).length > 1 || Object.keys(list.Commands.length)) {
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();
