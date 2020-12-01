@@ -48,7 +48,7 @@ data.keyInfo = {
 	},
 	33: {
 		hotkey: "PageUp",
-		symbol: "Pup"
+		symbol: "PUp"
 	},
 	34: {
 		hotkey: "PageDown",
