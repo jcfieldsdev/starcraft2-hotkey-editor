@@ -47,10 +47,6 @@
 	--zerg-button: #804080;
 }
 
-*.hidden, a#link, h1, ul#filters span {
-	display: none;
-}
-
 a {
 	background: none;
 	color: var(--base-link);
@@ -60,6 +56,10 @@ a {
 
 a, button, div#cards img {
 	cursor: pointer;
+}
+
+a#link, h1, ul#filters span {
+	display: none;
 }
 
 a.conflict, span.conflict {

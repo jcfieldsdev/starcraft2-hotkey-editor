@@ -367,7 +367,7 @@ Editor.prototype.unitEditor = function() {
 		}
 
 		if (n > 2) { // unhides extra card
-			fieldset.classList.remove("hidden");
+			fieldset.hidden = false;
 		}
 
 		for (let id of commands) {
@@ -432,7 +432,7 @@ Editor.prototype.createInput = function(hotkey="") {
 Editor.prototype.setLegend = function(title, n) {
 	let legend = $(`#card${n} legend`);
 	legend.textContent = title;
-	legend.classList.toggle("hidden", !title);
+	legend.hidden = !Boolean(title);
 };
 
 Editor.prototype.commandEditor = function(n) {
@@ -451,7 +451,7 @@ Editor.prototype.commandEditor = function(n) {
 	this.findCommandsNamed(this.id);
 
 	for (let element of $$("#control button, #tabs")) {
-		element.classList.remove("hidden");
+		element.hidden = false;
 	}
 };
 
@@ -497,16 +497,15 @@ Editor.prototype.formatHotkey = function(hotkeys) {
 
 	if (hotkeys.length == 0) { // hides field if empty
 		element.replaceWith(p);
-		element.classList.add("hidden");
-		return;
-	}
+		element.hidden = true;
+	} else {
+		for (let hotkey of hotkeys) { // handles multiple hotkeys
+			p.appendChild(this.createInput(hotkey));
+		}
 
-	for (let hotkey of hotkeys) { // handles multiple hotkeys
-		p.appendChild(this.createInput(hotkey));
+		element.replaceWith(p);
+		element.hidden = false;
 	}
-
-	element.classList.remove("hidden");
-	element.replaceWith(p);
 };
 
 Editor.prototype.setHotkey = function(input, event) {
@@ -654,7 +653,7 @@ Editor.prototype.filter = function(unit) {
 
 	// hides unit lists for commanders other than selected
 	for (let element of $$("section")) {
-		element.classList.toggle("hidden", element.id != filter);
+		element.hidden = element.id != filter;
 	}
 
 	// sets commander icon to active
@@ -676,7 +675,7 @@ Editor.prototype.switchTab = function(value) {
 			continue;
 		}
 
-		element.classList.toggle("hidden", element.id != value);
+		element.hidden = element.id != value;
 	}
 
 	this.tab = value;
@@ -937,7 +936,7 @@ Editor.prototype.clearButtons = function() {
 		}
 
 		if (n > 2) { // hides cards after third unless needed
-			card.classList.add("hidden");
+			card.hidden = true;
 		}
 	}
 };
@@ -952,7 +951,7 @@ Editor.prototype.clearFields = function() {
 	this.clear($("#commands"));
 
 	for (let element of $$("#control button, #lists ul")) {
-		element.classList.add("hidden");
+		element.hidden = true;
 	}
 };
 
@@ -965,7 +964,7 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 	this.selected = -1;
 
 	this.clear($("#results"));
-	$("#results").classList.add("hidden");
+	$("#results").hidden = true;
 
 	for (let element of $$(".filter")) {
 		element.classList.remove("exclude", "highlight");
