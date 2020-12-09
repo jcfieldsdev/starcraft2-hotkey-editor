@@ -286,9 +286,7 @@ Editor.prototype.open = function() {
 Editor.prototype.setUnit = function(unit) {
 	this.unit = unit;
 
-	if (data.units[this.unit] == undefined) {
-		console.error(`Undefined: ${this.unit} (unit)`);
-	} else {
+	if (data.units[this.unit] != undefined) {
 		this.commander = data.units[this.unit].commander;
 		this.filter(data.units[this.unit]);
 	}
@@ -309,6 +307,7 @@ Editor.prototype.unitEditor = function() {
 	let unit = data.units[this.unit];
 
 	if (unit == undefined) {
+		console.error(`Undefined: ${this.unit} (unit)`);
 		return;
 	}
 
@@ -586,16 +585,14 @@ Editor.prototype.setVisibleHotkeys = function() {
 				let size = ids.size;
 
 				if (this.commands.allowSetConflicts && size > 1) {
-					let currentSet = sets[id];
-
 					for (let [compareId, compareSet] of Object.entries(sets)) {
-						// ignores hotkey conflict if it comes from a
-						// member of the same set
-						if (
-							id != compareId
-							&& currentSet == compareSet
-							&& ids.has(compareId)
-						) {
+						if (id == compareId || sets[id] != compareSet) {
+							continue;
+						}
+
+						// ignores hotkey conflict if it comes from a member
+						// of the same set
+						if (ids.has(compareId)) {
 							size--;
 						}
 					}
@@ -1009,8 +1006,7 @@ Commands.prototype.load = function(list={}) {
 			this.suffix = this.list.Settings.Suffix;
 		}
 
-		let allowSetConflicts = this.list.Settings.AllowSetConflicts;
-		this.allowSetConflicts = Boolean(allowSetConflicts);
+		this.allowSetConflicts = Boolean(this.list.Settings.AllowSetConflicts);
 	}
 };
 
