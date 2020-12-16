@@ -71,7 +71,7 @@ window.addEventListener("load", function() {
 	editor.load();
 
 	window.addEventListener("beforeunload", function() {
-		store.save(commands.list);
+		store.save(commands);
 	});
 	window.addEventListener("hashchange", function() {
 		// changes on link or browser back/forward
@@ -124,7 +124,7 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.closest("#save")) {
-			store.save(commands.list);
+			store.save(commands);
 			overlays.save.setText(commands.convert());
 			overlays.save.show();
 		}
@@ -208,12 +208,22 @@ window.addEventListener("load", function() {
 			}
 
 			if (keyCode == 38) { // up arrow
-				editor.highlightResult(true);
+				editor.selectResult(true);
 			}
 
 			if (keyCode == 40) { // down arrow
-				editor.highlightResult(false);
+				editor.selectResult(false);
 			}
+		}
+	});
+	document.addEventListener("mouseover", function(event) {
+		let element = event.target;
+
+		if (element.matches("#results li")) {
+			editor.selected = $$("#results li").findIndex(function(item) {
+				return item == element;
+			});
+			editor.highlightResult();
 		}
 	});
 
@@ -849,7 +859,7 @@ Editor.prototype.formatResults = function(id, matches) {
 	$("#" + id).replaceWith(ul);
 };
 
-Editor.prototype.highlightResult = function(dir) {
+Editor.prototype.selectResult = function(dir) {
 	let results = $$("#results li");
 
 	if (dir) { // up arrow
@@ -868,7 +878,11 @@ Editor.prototype.highlightResult = function(dir) {
 		}
 	}
 
-	for (let [i, result] of results.entries()) {
+	this.highlightResult();
+};
+
+Editor.prototype.highlightResult = function() {
+	for (let [i, result] of $$("#results li").entries()) {
 		if (this.selected == i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
@@ -1384,7 +1398,9 @@ Storage.prototype.load = function() {
 	}
 };
 
-Storage.prototype.save = function(list) {
+Storage.prototype.save = function(commands) {
+	let list = commands.list;
+
 	if (list.Commands == undefined) {
 		return;
 	}
@@ -1393,7 +1409,7 @@ Storage.prototype.save = function(list) {
 		// saves storage if:
 		// it contains more than one section ("Commands" is always present)
 		// or "Commands" is not empty (and therefore contains custom values)
-		if (Object.keys(list).length > 1 || Object.keys(list.Commands.length)) {
+		if (Object.keys(list).length > 1 || Object.keys(list.Commands).length) {
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();
