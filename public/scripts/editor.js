@@ -352,11 +352,9 @@ Editor.prototype.unitEditor = function() {
 		legends = Object.keys(unit.commands);
 	}
 
-	const self = this;
-
 	for (let n of commands.keys()) {
 		this.setLegend(legends[n], n);
-		createCommandCard(unit, commands[n], n);
+		createCommandCard.call(this, unit, commands[n], n);
 	}
 
 	this.setVisibleHotkeys();
@@ -381,8 +379,8 @@ Editor.prototype.unitEditor = function() {
 		}
 
 		for (let id of commands) {
-			let command = self.commands.getCommand(
-				unit.commander, self.unit, id
+			let command = this.commands.getCommand(
+				unit.commander, this.unit, id
 			);
 
 			if (command == undefined) {
@@ -397,16 +395,16 @@ Editor.prototype.unitEditor = function() {
 			});
 
 			// re-selects command if selected on previously viewed unit
-			if (self.id == id) {
-				self.setCommand(id, command);
+			if (this.id == id) {
+				this.setCommand(id, command);
 			}
 
-			let button = createButton(id, command, n);
+			let button = createButton.call(this, id, command, n);
 			let pos = COLS * command.y + command.x;
 			$$(`#card${n}>div div`)[pos].replaceWith(button);
 		}
 
-		self.buttons.push(buttons);
+		this.buttons.push(buttons);
 	}
 
 	function createButton(id, command, n) {
@@ -418,8 +416,8 @@ Editor.prototype.unitEditor = function() {
 		img.setAttribute("alt", "[" + command.name + "]");
 		img.setAttribute("title", command.name);
 		img.addEventListener("click", function() {
-			self.setCommand(id, command);
-		});
+			this.setCommand(id, command);
+		}.bind(this));
 		img.classList.toggle("mask", command.mask || icon == DEFAULT_ICON);
 		div.appendChild(img);
 
