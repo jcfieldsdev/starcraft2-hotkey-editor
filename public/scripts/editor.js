@@ -1373,22 +1373,7 @@ function Storage(name) {
 
 Storage.prototype.load = function() {
 	try {
-		let contents = localStorage.getItem(this.name);
-
-		if (contents != null) {
-			let obj = JSON.parse(contents);
-
-			// converts from old format
-			for (let section of Object.keys(obj)) {
-				for (let [key, value] of Object.entries(obj[section])) {
-					if (typeof value == "object" && value.hotkey != undefined) {
-						obj[section][key] = value.hotkey;
-					}
-				}
-			}
-
-			return obj;
-		}
+		return JSON.parse(localStorage.getItem(this.name));
 	} catch (err) {
 		console.error(err);
 		this.reset();
