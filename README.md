@@ -57,7 +57,7 @@ Uses [Fira Mono](https://github.com/mozilla/Fira) font by [Carrois Type Design](
 
 ## Authors
 
-- J.C. Fields <jcfields+gitlab@gmail.com>
+- J.C. Fields <jcfields@jcfields.dev>
 
 ## License
 
