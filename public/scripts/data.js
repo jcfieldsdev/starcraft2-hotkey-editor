@@ -7647,6 +7647,7 @@ data.units = {
 				"BurrowDown"
 			],
 			"Burrowed": [
+				"BrutaliskDeepTunnel/RavagerAbathur",
 				"BurrowUp"
 			]
 		}
