@@ -334,9 +334,11 @@ div.overlay textarea {
 }
 
 div.overlay.open {
+	backdrop-filter: blur(4px);
 	opacity: 1;
 	transition: 0.3s opacity;
 	visibility: visible;
+	-webkit-backdrop-filter: blur(4px);
 }
 
 fieldset, ul#commands, ul#units {
