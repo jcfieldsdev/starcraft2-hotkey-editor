@@ -13884,7 +13884,7 @@ data.commands = {
 	"RavenShredderMissile/Raven": {
 		name: "Anti-Armor Missile",
 		hotkey: "R",
-		icon: "btn-ability-terran-huntermissile-color",
+		icon: "btn-ability-terran-shreddermissile-color",
 		mask: false,
 		y: 2,
 		x: 2
