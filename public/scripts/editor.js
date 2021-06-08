@@ -1063,8 +1063,8 @@ Commands.prototype.convert = function() {
 	for (let [section, block] of Object.entries(this.list)) {
 		text += "\n[" + section + "]\n";
 
-		for (let id of Object.keys(block).sort()) {
-			text += id + "=" + block[id] + "\n";
+		for (let command of Object.keys(block).sort()) {
+			text += command + "=" + block[command] + "\n";
 		}
 	}
 
