@@ -1047,6 +1047,7 @@ Commands.prototype.parse = function(text) {
 		if (line.match(pattern)) {
 			command = line.replace(pattern, "$1");
 			hotkey = line.replace(pattern, "$2");
+
 			block[command] = {};
 			block[command] = hotkey;
 		}
@@ -1057,28 +1058,15 @@ Commands.prototype.parse = function(text) {
 
 // converts from object to hotkey file format
 Commands.prototype.convert = function() {
-	let text = Object.keys(this.list).reduce(function(text, section) {
-		let list = Object.keys(this.list[section]).reduce(function(list, id) {
-			list.push({id, hotkey: this.list[section][id]});
-			return list;
-		}.bind(this), []);
+	let text = "";
 
-		// alphabetizes commands
-		list.sort(function(a, b) {
-			if (a.id < b.id) {
-				return -1;
-			}
-
-			return a.id > b.id;
-		});
-
+	for (let [section, block] of Object.entries(this.list)) {
 		text += "\n[" + section + "]\n";
-		text = list.reduce(function(text, item) {
-			return text + item.id + "=" + item.hotkey + "\n";
-		}.bind(this), text);
 
-		return text;
-	}.bind(this), "");
+		for (let id of Object.keys(block).sort()) {
+			text += id + "=" + block[id] + "\n";
+		}
+	}
 
 	return text.trim();
 };

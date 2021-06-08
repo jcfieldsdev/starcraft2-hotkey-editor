@@ -80,46 +80,6 @@ body {
 	padding: 0;
 }
 
-body.doc h1 {
-	display: block;
-}
-
-body.doc h3, h2, h3#command {
-	font-size: 1.5rem;
-}
-
-body.doc h4, div#editor input, div.overlay, fieldset.card span {
-	font-size: 1.25rem;
-}
-
-body.doc header {
-	text-align: center;
-}
-
-body.doc main {
-	margin: 4em 10%;
-}
-
-body.doc main, code, div#editor, div.overlay, fieldset.card>div div, fieldset.card span, figure {
-	background: rgba(0, 0, 0, 0.5);
-	color: inherit;
-}
-
-body.doc main, div#editor {
-	box-shadow: 0 0 0 2px #606060;
-	border: 2px solid var(--base-border);
-	border-radius: 1em;
-	padding: 1em;
-}
-
-body.doc section {
-	margin-bottom: 5em;
-}
-
-body.doc section p {
-	margin-left: 2em;
-}
-
 button {
 	border: 2px outset var(--base-border);
 	border-radius: 0.1em;
@@ -256,6 +216,11 @@ cite {
 	font-weight: bold;
 }
 
+code, div#editor, div.overlay, fieldset.card>div div, fieldset.card span, figure, main.doc {
+	background: rgba(0, 0, 0, 0.5);
+	color: inherit;
+}
+
 code, fieldset {
 	border: 1px solid #c0c0c0;
 }
@@ -296,10 +261,21 @@ div#editor {
 	top: 120px;
 }
 
+div#editor, main.doc {
+	box-shadow: 0 0 0 2px #606060;
+	border: 2px solid var(--base-border);
+	border-radius: 1em;
+	padding: 1em;
+}
+
 div#editor button {
 	font-size: 0.75rem;
 	padding: 0.25em 1em;
 	width: auto;
+}
+
+div#editor input, div.overlay, fieldset.card span, main.doc h4 {
+	font-size: 1.25rem;
 }
 
 div#fields {
@@ -438,6 +414,10 @@ h1, h2, h3, h4, p#prestige {
 	font-weight: bold;
 }
 
+h2 {
+	font-size: 1.5rem;
+}
+
 h2#unit {
 	font-size: 2rem;
 	grid-area: heading;
@@ -458,9 +438,22 @@ h3#command {
 	margin: 0 0 1em;
 }
 
+h3#command, main.doc h3 {
+	font-size: 1.5rem;
+}
+
 h4 {
 	font-size: 1rem;
 	font-weight: normal;
+}
+
+header {
+	text-align: center;
+}
+
+header h2 {
+	font-size: 2rem;
+	margin: 2em 0;
 }
 
 html {
@@ -644,6 +637,18 @@ main ul {
 	list-style: square;
 	margin: 0 2em;
 	padding: 0;
+}
+
+main.doc {
+	margin: 4em 10%;
+}
+
+main.doc section {
+	margin-bottom: 5em;
+}
+
+main.doc section p {
+	margin-left: 2em;
 }
 
 p#code {

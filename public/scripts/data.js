@@ -1029,6 +1029,37 @@ data.units = {
 		type: COMMANDER,
 		defaultUnit: "Terran_SCV"
 	},
+	"CoopMissionsTerran_Ghost": {
+		name: "Ghost",
+		icon: "btn-unit-terran-ghost",
+		race: TERRAN,
+		commander: "CoopMissionsTerran",
+		type: UNIT,
+		commands: [
+			"NukeCalldown/Ghost",
+			"GhostHoldFire/Ghost",
+			"WeaponsFree/Ghost",
+			"Snipe/Ghost",
+			"EMP/Ghost",
+			"CloakOnBanshee",
+			"CloakOff",
+			"Cancel"
+		],
+		overrides: {
+			"NukeCalldown/Ghost": {
+				x: 3,
+				y: 2
+			},
+			"CloakOnBanshee": {
+				x: 0,
+				y: 1
+			},
+			"CloakOff": {
+				x: 1,
+				y: 1
+			}
+		}
+	},
 	"CoopMissionsTerran_Raven": {
 		name: "Raven",
 		keywords: "Auto-Turret",
