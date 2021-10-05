@@ -29,6 +29,7 @@
  */
 
 // dimensions of command cards
+const CARDS = 3;
 const ROWS = 3;
 const COLS = 5;
 
@@ -374,7 +375,7 @@ Editor.prototype.unitEditor = function() {
 			return;
 		}
 
-		if (n > 2) { // unhides extra card
+		if (n > CARDS - 1) { // unhides extra card
 			fieldset.hidden = false;
 		}
 
@@ -948,7 +949,7 @@ Editor.prototype.clearButtons = function() {
 			this.clear(element);
 		}
 
-		if (n > 2) { // hides cards after third unless needed
+		if (n > CARDS - 1) { // hides cards after third unless needed
 			card.hidden = true;
 		}
 	}

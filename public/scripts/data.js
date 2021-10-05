@@ -6823,7 +6823,7 @@ data.units = {
 		commands: {
 			"Unburrowed": [
 				"Lurker/HydraliskLurker",
-				"HydraliskFrenzy/Hydralisk",
+				"HydraliskFrenzy/HydraliskLurker",
 				"BurrowDown"
 			],
 			"Burrowed": [
@@ -7659,6 +7659,19 @@ data.units = {
 			"Burrowed": [
 				...data.common.basic,
 				"BrutaliskDeepTunnel/RoachVileBurrowed",
+				"EvolveToBrutalisk/RoachBurrowed",
+				"BurrowUp"
+			],
+			"Unupgraded Unburrowed": [
+				...data.common.basic,
+				"Ravager/Roach",
+				"BrutaliskDeepTunnel/Roach",
+				"EvolveToBrutalisk/Roach",
+				"BurrowDown"
+			],
+			"Unupgraded Burrowed": [
+				...data.common.basic,
+				"BrutaliskDeepTunnel/RoachBurrowed",
 				"EvolveToBrutalisk/RoachBurrowed",
 				"BurrowUp"
 			]
@@ -19634,6 +19647,24 @@ data.commands = {
 		y: 2,
 		x: 3
 	},
+	"BrutaliskDeepTunnel/Roach": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
+	"BrutaliskDeepTunnel/RoachBurrowed": {
+		name: "Deep Tunnel",
+		prestige: "Tunneling Horror",
+		hotkey: "D",
+		icon: "btn-ability-zerg-deeptunnel",
+		mask: false,
+		y: 2,
+		x: 1
+	},
 	"BrutaliskDeepTunnel/RoachVile": {
 		name: "Deep Tunnel",
 		prestige: "Tunneling Horror",
@@ -26428,9 +26459,6 @@ data.overrides = {
 		},
 		"NydusNetwork/Drone": {
 			name: "Mutate into Omega Network"
-		},
-		"HydraliskFrenzy/Hydralisk": {
-			x: 1
 		},
 		"zerglingattackspeed/SpawningPool": {
 			x: 2
