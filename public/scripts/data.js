@@ -1047,16 +1047,16 @@ data.units = {
 		],
 		overrides: {
 			"NukeCalldown/Ghost": {
-				x: 3,
-				y: 2
+				y: 2,
+				x: 3
 			},
 			"CloakOnBanshee": {
-				x: 0,
-				y: 1
+				y: 1,
+				x: 0
 			},
 			"CloakOff": {
-				x: 1,
-				y: 1
+				y: 1,
+				x: 1
 			}
 		}
 	},
@@ -1389,8 +1389,8 @@ data.units = {
 				x: 2
 			},
 			"NukeCalldown/Ghost": {
-				x: 3,
-				y: 2
+				y: 2,
+				x: 3
 			}
 		}
 	},
@@ -5229,8 +5229,8 @@ data.units = {
 		},
 		overrides: {
 			"Cancel": {
-				x: 2,
-				y: 1
+				y: 1,
+				x: 2
 			}
 		}
 	},
