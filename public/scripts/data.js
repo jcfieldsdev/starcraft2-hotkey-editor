@@ -10533,10 +10533,17 @@ data.units = {
 		type: BUILDING,
 		commands: [
 			"Probe/Nexus",
+			"Stop",
+			"Attack",
 			"Rally",
 			"TimeWarp/Nexus",
 			"Cancel"
-		]
+		],
+		overrides: {
+			"Stop": {
+				x: 3
+			}
+		}
 	},
 	"LegacyOfTheVoid_Assimilator": {
 		name: "Assimilator",
