@@ -10963,14 +10963,12 @@ data.units = {
 				"Stalker",
 				"HighTemplar",
 				"Rally",
-				"UpgradeToWarpGate/Gateway",
 				"Cancel"
 			],
 			"Warp Gate": [
 				"Zealot",
 				"Stalker",
 				"HighTemplar",
-				"MorphBackToGateway/WarpGate",
 				"Cancel"
 			]
 		}
@@ -11051,14 +11049,12 @@ data.units = {
 				"Colossus/RoboticsFacility",
 				"Observer/RoboticsFacility",
 				"Rally",
-				"UpgradeToRoboticsFacilityWarp/RoboticsFacility",
 				"Cancel"
 			],
 			"Warp Robotics Facility": [
 				"Immortal/RoboticsFacilityWarp",
 				"Colossus/RoboticsFacilityWarp",
 				"Observer/RoboticsFacilityWarp",
-				"MorphBackToRoboticsFacility/RoboticsFacilityWarp",
 				"Cancel"
 			]
 		}
@@ -11089,13 +11085,11 @@ data.units = {
 				"Phoenix/Stargate",
 				"VoidRay/Stargate",
 				"Rally",
-				"UpgradeToStargateWarp/Stargate",
 				"Cancel"
 			],
 			"Warp Stargate": [
 				"Phoenix/StargateWarp",
 				"VoidRay/StargateWarp",
-				"MorphBackToStargate/StargateWarp",
 				"Cancel"
 			]
 		}
@@ -26785,6 +26779,18 @@ data.overrides = {
 	"Artanis": {
 		"GatherProt": {
 			icon: "btn-ability-protoss-gather"
+		},
+		"Gateway/Probe": {
+			name: "Warp In Warp Gate",
+			icon: "btn-building-protoss-warpgate"
+		},
+		"Stargate/Probe": {
+			name: "Warp In Warp Stargate",
+			icon: "btn-building-protoss-starwarpgate"
+		},
+		"RoboticsFacility/Probe": {
+			name: "Warp In Warp Robotics Facility",
+			icon: "btn-building-protoss-roboticswarpfacility"
 		},
 		"Zealot": {
 			icon: "btn-unit-protoss-zealot-aiur"
