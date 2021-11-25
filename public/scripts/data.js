@@ -5742,6 +5742,14 @@ data.units = {
 				"UltraliskCavern/Drone",
 				"Cancel"
 			]
+		},
+		overrides: {
+			"HarvestQuillgorCorpse/Drone": {
+				prestige: "Waking the Ancient"
+			},
+			"CarryBiomass/Drone": {
+				prestige: "Waking the Ancient"
+			}
 		}
 	},
 	"HeartOfTheSwarm_Queen": {
@@ -10541,7 +10549,11 @@ data.units = {
 		],
 		overrides: {
 			"Stop": {
+				prestige: "Nexus Overcharge",
 				x: 3
+			},
+			"Attack": {
+				prestige: "Nexus Overcharge"
 			}
 		}
 	},
@@ -10672,7 +10684,12 @@ data.units = {
 		commands: [
 			"Rally",
 			"Cancel"
-		]
+		],
+		overrides: {
+			"Rally": {
+				prestige: "Emergency Recall"
+			}
+		}
 	},
 	"LegacyOfTheVoid_RoboticsFacility": {
 		name: "Robotics Facility",

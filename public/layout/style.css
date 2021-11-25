@@ -283,7 +283,6 @@ div#fields {
 }
 
 div#fields, div#lists {
-	max-height: 35vh;
 	overflow: auto;
 	padding: 0.5em;
 }
