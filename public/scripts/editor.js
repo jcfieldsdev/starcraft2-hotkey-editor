@@ -42,7 +42,7 @@ const DEFAULT_ICON = "btn-missing-kaeo";
 const ICON_DIR = "icons";
 const ICON_EXT = ".png";
 const HELP_PAGE = "help.html";
-const ANNOYED_CLICKS = 10;
+const ANNOYED_CLICKS = 5;
 const ANNOYED_SOUND = "annoyed.ogg";
 const MIME_TYPE = "text/plain";
 const STORAGE_NAME = "sc2hk";
@@ -87,6 +87,8 @@ window.addEventListener("load", function() {
 			}
 		}
 	});
+
+	let clicks = 0;
 
 	document.addEventListener("click", function(event) {
 		const element = event.target;
@@ -153,13 +155,12 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches("#unit img")) {
-			editor.clicks++;
+			clicks++;
 
-			if (editor.clicks >= ANNOYED_CLICKS) {
-				editor.clicks = 0;
-
+			if (clicks >= ANNOYED_CLICKS) {
 				const audio = new Audio([ICON_DIR, ANNOYED_SOUND].join("/"));
 				audio.play();
+				clicks = 0;
 			}
 		}
 
@@ -332,8 +333,6 @@ Editor.prototype.unitEditor = function() {
 		this.setUnit(unit.defaultUnit);
 		return;
 	}
-
-	this.clicks = 0;
 
 	const icon = unit.icon || DEFAULT_ICON;
 	const img = $("#unit img");
