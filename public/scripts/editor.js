@@ -402,7 +402,7 @@ Editor.prototype.unitEditor = function() {
 
 			const button = createButton.call(this, id, command, n);
 			const pos = COLS * command.y + command.x;
-			$$(`#card${n}>div div`)[pos].replaceWith(button);
+			$$(`#card${n} .button`)[pos].replaceWith(button);
 		}
 
 		this.buttons.push(buttons);
