@@ -5745,10 +5745,10 @@ data.units = {
 		},
 		overrides: {
 			"HarvestQuillgorCorpse/Drone": {
-				prestige: "Waking the Ancient"
+				prereq: "Waking the Ancient"
 			},
 			"CarryBiomass/Drone": {
-				prestige: "Waking the Ancient"
+				prereq: "Waking the Ancient"
 			}
 		}
 	},
@@ -8190,7 +8190,7 @@ data.units = {
 		},
 		overrides: {
 			"BunkerLoad": {
-				prestige: "Plague Warden",
+				prereq: "Plague Warden",
 				x: 2
 			}
 		}
@@ -10549,11 +10549,11 @@ data.units = {
 		],
 		overrides: {
 			"Stop": {
-				prestige: "Nexus Overcharge",
+				prereq: "Nexus Overcharge",
 				x: 3
 			},
 			"Attack": {
-				prestige: "Nexus Overcharge"
+				prereq: "Nexus Overcharge"
 			}
 		}
 	},
@@ -10687,7 +10687,7 @@ data.units = {
 		],
 		overrides: {
 			"Rally": {
-				prestige: "Emergency Recall"
+				prereq: "Emergency Recall"
 			}
 		}
 	},
@@ -14077,7 +14077,7 @@ data.commands = {
 	},
 	"FleetwideJump/ScienceVessel": {
 		name: "Tactical Jump",
-		prestige: "Payload Director",
+		prereq: "Payload Director",
 		hotkey: "T",
 		hotkey_NRS: "B",
 		hotkey_SC1: "B",
@@ -18839,7 +18839,7 @@ data.commands = {
 	},
 	"CommanderPrestigeZagaraZagaraDeepTunnel/ZagaraVoidCoop": {
 		name: "Deep Tunnel",
-		prestige: "Apex Predator",
+		prereq: "Apex Predator",
 		hotkey: "T",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -19225,7 +19225,7 @@ data.commands = {
 	},
 	"CommanderPrestigeZagaraMaxSupplyScourgeSpawn/ScourgeNest": {
 		name: "Birthing Roost",
-		prestige: "Scourge Queen",
+		prereq: "Scourge Queen",
 		hotkey: "B",
 		icon: "talent-zagara-level04-scourgeresearchbundle_result",
 		mask: false,
@@ -19667,7 +19667,7 @@ data.commands = {
 	},
 	"BrutaliskDeepTunnel/Roach": {
 		name: "Deep Tunnel",
-		prestige: "Tunneling Horror",
+		prereq: "Tunneling Horror",
 		hotkey: "D",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -19676,7 +19676,7 @@ data.commands = {
 	},
 	"BrutaliskDeepTunnel/RoachBurrowed": {
 		name: "Deep Tunnel",
-		prestige: "Tunneling Horror",
+		prereq: "Tunneling Horror",
 		hotkey: "D",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -19685,7 +19685,7 @@ data.commands = {
 	},
 	"BrutaliskDeepTunnel/RoachVile": {
 		name: "Deep Tunnel",
-		prestige: "Tunneling Horror",
+		prereq: "Tunneling Horror",
 		hotkey: "D",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -19694,7 +19694,7 @@ data.commands = {
 	},
 	"BrutaliskDeepTunnel/RoachVileBurrowed": {
 		name: "Deep Tunnel",
-		prestige: "Tunneling Horror",
+		prereq: "Tunneling Horror",
 		hotkey: "D",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -19703,7 +19703,7 @@ data.commands = {
 	},
 	"BrutaliskDeepTunnel/RavagerAbathur": {
 		name: "Deep Tunnel",
-		prestige: "Tunneling Horror",
+		prereq: "Tunneling Horror",
 		hotkey: "D",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -19712,7 +19712,7 @@ data.commands = {
 	},
 	"BrutaliskDeepTunnel/SwarmHost": {
 		name: "Deep Tunnel",
-		prestige: "Tunneling Horror",
+		prereq: "Tunneling Horror",
 		hotkey: "D",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -19721,7 +19721,7 @@ data.commands = {
 	},
 	"BrutaliskDeepTunnel/SwarmHostBurrowed": {
 		name: "Deep Tunnel",
-		prestige: "Tunneling Horror",
+		prereq: "Tunneling Horror",
 		hotkey: "D",
 		icon: "btn-ability-zerg-deeptunnel",
 		mask: false,
@@ -20094,7 +20094,7 @@ data.commands = {
 	},
 	"CommanderPrestigeStukovBansheesDeploy/StukovInfestedBanshee": {
 		name: "Remote Deployment",
-		prestige: "Plague Warden",
+		prereq: "Plague Warden",
 		hotkey: "E",
 		icon: "btn-upgrade-zerg-stukov-infestedciviliansleap",
 		mask: false,
@@ -20103,7 +20103,7 @@ data.commands = {
 	},
 	"SIBansheeUnloadAll": {
 		name: "Unload All",
-		prestige: "Plague Warden",
+		prereq: "Plague Warden",
 		hotkey: "N",
 		icon: "btn-ability-terran-unloadall",
 		mask: true,
@@ -20783,7 +20783,7 @@ data.commands = {
 	},
 	"DehakaLeapStomp/DehakaCoopClone": {
 		name: "Leap",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "Q",
 		icon: "btn-ability-zerg-dehaka-leapattack",
 		mask: false,
@@ -20792,7 +20792,7 @@ data.commands = {
 	},
 	"DehakaIntimidatingRoar/DehakaCoopClone": {
 		name: "Intimidating Roar",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "W",
 		icon: "btn-ability-zerg-dehaka-intimidatingroar",
 		mask: false,
@@ -20801,7 +20801,7 @@ data.commands = {
 	},
 	"DehakaConsume/DehakaCoopClone": {
 		name: "Devour",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "E",
 		icon: "btn-ability-zerg-dehaka-consume",
 		mask: false,
@@ -20810,7 +20810,7 @@ data.commands = {
 	},
 	"MammothBreath/DehakaCoopClone": {
 		name: "Scorching Breath",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "R",
 		icon: "btn-ability-zerg-dehaka-godzillabreath",
 		mask: false,
@@ -20819,7 +20819,7 @@ data.commands = {
 	},
 	"DehakaDeepTunnel/DehakaCoopClone": {
 		name: "Deep Tunnel",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "D",
 		icon: "btn-ability-zerg-dehaka-deeptunnelunlocked",
 		mask: false,
@@ -20828,7 +20828,7 @@ data.commands = {
 	},
 	"DehakaLearnAbilities/DehakaCoopClone": {
 		name: "Evolve Mutations",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "T",
 		icon: "btn-ability-zerg-dehaka-levelup",
 		mask: false,
@@ -20837,7 +20837,7 @@ data.commands = {
 	},
 	"LearnDehakaMendingAura/DehakaCoopClone": {
 		name: "Evolve Primal Regeneration",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "Z",
 		icon: "btn-ability-zerg-dehaka-healingaura",
 		mask: false,
@@ -20846,7 +20846,7 @@ data.commands = {
 	},
 	"LearnDehakaDetector/DehakaCoopClone": {
 		name: "Evolve Keen Senses",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "X",
 		icon: "btn-ability-dehaka-detector",
 		mask: false,
@@ -20855,7 +20855,7 @@ data.commands = {
 	},
 	"LearnDehakaArmorUpgrade/DehakaCoopClone": {
 		name: "Evolve Chitinous Plating",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "C",
 		icon: "btn-upgrade-dehaka-groundcarapace-level3",
 		mask: false,
@@ -20864,7 +20864,7 @@ data.commands = {
 	},
 	"DehakaAirAttackUpgrade/DehakaCoopClone": {
 		name: "Evolve Deadly Reach",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "V",
 		icon: "btn-ability-zerg-dehaka-attackair",
 		mask: false,
@@ -20873,7 +20873,7 @@ data.commands = {
 	},
 	"LearnDehakaLeapStomp/DehakaCoopClone": {
 		name: "Evolve Leap",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "Q",
 		icon: "btn-ability-zerg-dehaka-leapattack",
 		mask: false,
@@ -20882,7 +20882,7 @@ data.commands = {
 	},
 	"LearnDehakaIntimidatingRoar/DehakaCoopClone": {
 		name: "Evolve Intimidating Roar",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "W",
 		icon: "btn-ability-zerg-dehaka-intimidatingroar",
 		mask: false,
@@ -20891,7 +20891,7 @@ data.commands = {
 	},
 	"LearnDehakaConsume/DehakaCoopClone": {
 		name: "Evolve Devour",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "E",
 		icon: "btn-ability-zerg-dehaka-consume",
 		mask: false,
@@ -20900,7 +20900,7 @@ data.commands = {
 	},
 	"LearnDehakaMammothBreath/DehakaCoopClone": {
 		name: "Evolve Scorching Breath",
-		prestige: "Broodbrother",
+		prereq: "Broodbrother",
 		hotkey: "R",
 		icon: "btn-ability-zerg-dehaka-godzillabreath",
 		mask: false,
@@ -21407,7 +21407,7 @@ data.commands = {
 	},
 	"CommanderPrestigeDehakaPackLeadersRetreat/DehakaDakrun": {
 		name: "Make Way for the King",
-		prestige: "Primal Contender",
+		prereq: "Primal Contender",
 		hotkey: "K",
 		icon: "btn-progression-zerg-dehaka-1-dehakaunlock_result",
 		mask: false,
@@ -21416,7 +21416,7 @@ data.commands = {
 	},
 	"CommanderPrestigeDehakaPackLeadersRetreat/DehakaGlevig": {
 		name: "Make Way for the King",
-		prestige: "Primal Contender",
+		prereq: "Primal Contender",
 		hotkey: "K",
 		icon: "btn-progression-zerg-dehaka-1-dehakaunlock_result",
 		mask: false,
@@ -21425,7 +21425,7 @@ data.commands = {
 	},
 	"CommanderPrestigeDehakaPackLeadersRetreat/DehakaMurvar": {
 		name: "Make Way for the King",
-		prestige: "Primal Contender",
+		prereq: "Primal Contender",
 		hotkey: "K",
 		icon: "btn-progression-zerg-dehaka-1-dehakaunlock_result",
 		mask: false,
@@ -24026,7 +24026,7 @@ data.commands = {
 	},
 	"VoidRay/SOAMothershipv4": {
 		name: "Warp In Destroyer",
-		prestige: "Shadow of Death",
+		prereq: "Shadow of Death",
 		hotkey: "V",
 		hotkey_NRS: "O",
 		hotkey_SC1: "O",

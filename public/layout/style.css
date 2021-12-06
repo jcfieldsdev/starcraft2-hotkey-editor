@@ -54,7 +54,7 @@ a {
 	text-decoration: none;
 }
 
-a, button, div#cards img {
+a, button {
 	cursor: pointer;
 }
 
@@ -196,6 +196,37 @@ button.close {
 	margin-left: 0.5em;
 }
 
+button.icon {
+	background: transparent !important;
+	border: 0;
+	border-radius: 0;
+	color: inherit;
+	font-size: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+button.icon img {
+	padding: 1px;
+}
+
+button.icon img, div.button, h2#unit img {
+	height: 64px;
+	width: 64px;
+}
+
+button.icon:hover {
+	box-shadow: none;
+	transition: none;
+}
+
+button.icon:hover img {
+	border-radius: 0.5em;
+	border: 1px solid #fff;
+	box-shadow: inset 0 0 12px #fff;
+	padding: 0;
+}
+
 button:disabled {
 	background: #808080 linear-gradient(#808080, #c0c0c0) !important;
 	border-color: #c0c0c0 !important;
@@ -216,7 +247,7 @@ cite {
 	font-weight: bold;
 }
 
-code, div#editor, div.overlay, fieldset.card>div div, fieldset.card span, figure, main.doc {
+code, div#editor, div.button, div.overlay, fieldset.card span, figure, main.doc {
 	background: rgba(0, 0, 0, 0.5);
 	color: inherit;
 }
@@ -268,16 +299,6 @@ div#editor, main.doc {
 	padding: 1em;
 }
 
-div#editor button {
-	font-size: 0.75rem;
-	padding: 0.25em 1em;
-	width: auto;
-}
-
-div#editor input, div.overlay, fieldset.card span, main.doc h4 {
-	font-size: 1.25rem;
-}
-
 div#fields {
 	grid-area: fields;
 }
@@ -287,8 +308,35 @@ div#fields, div#lists {
 	padding: 0.5em;
 }
 
+div#fields button, div#lists button {
+	font-size: 0.75rem;
+	padding: 0.25em 1em;
+	width: auto;
+}
+
+div#fields input, div.overlay, fieldset.card span, main.doc h4 {
+	font-size: 1.25rem;
+}
+
 div#lists {
 	grid-area: lists;
+}
+
+div.button {
+	color: inherit;
+	position: relative;
+}
+
+div.buttons {
+	display: grid;
+	grid-gap: 5px 5px;
+	grid-template-columns: 64px 64px 64px 64px 64px;
+	grid-template-rows: 64px 64px 64px;
+	justify-content: center;
+}
+
+div.buttons:last-child {
+	margin-right: 0;
 }
 
 div.overlay {
@@ -327,39 +375,6 @@ fieldset.card {
 	margin-right: 1em;
 }
 
-fieldset.card>div {
-	display: grid;
-	grid-gap: 5px 5px;
-	grid-template-columns: 64px 64px 64px 64px 64px;
-	grid-template-rows: 64px 64px 64px;
-	justify-content: center;
-}
-
-fieldset.card>div:last-child {
-	margin-right: 0;
-}
-
-fieldset.card>div div {
-	color: inherit;
-	position: relative;
-}
-
-fieldset.card>div div, fieldset.card img, h2#unit img {
-	height: 64px;
-	width: 64px;
-}
-
-fieldset.card img {
-	padding: 1px;
-}
-
-fieldset.card img:hover {
-	border-radius: 0.5em;
-	border: 1px solid #fff;
-	box-shadow: inset 0 0 12px #fff;
-	padding: 0;
-}
-
 fieldset.card span {
 	font-weight: bold;
 	height: 1em;
@@ -371,7 +386,7 @@ fieldset.card span {
 	top: 0;
 }
 
-fieldset.card span, h3, p#hotkey input, p#prestige {
+fieldset.card span, h3, p#hotkey input, p#prereq {
 	text-shadow: 1px 1px #000;
 }
 
@@ -408,7 +423,7 @@ h1, h2 {
 	text-transform: uppercase;
 }
 
-h1, h2, h3, h4, p#prestige {
+h1, h2, h3, h4, p#prereq {
 	font-family: "Eurostile Extended", Verdana, sans-serif;
 	font-weight: bold;
 }
@@ -662,7 +677,7 @@ p#hotkey input {
 	width: 4em;
 }
 
-p#prestige {
+p#prereq {
 	font-size: 1rem;
 	margin: 0;
 }
@@ -699,11 +714,6 @@ ul#commands img, ul#results img, ul#units img {
 	margin-right: 0.5em;
 	vertical-align: middle;
 	width: 1.5em;
-}
-
-ul#commands img:hover, ul#units img:hover {
-	cursor: default;
-	outline: 0;
 }
 
 ul#filters {
@@ -858,25 +868,25 @@ ul#tabs button:not(.active) {
 		font-size: 1.5rem;
 	}
 
-	button:hover, p#hotkey input:focus {
-		box-shadow: 0 0 4px 1px #fff;
-	}
-
-	fieldset.card>div {
-		grid-gap: 3px 3px;
-		grid-template-columns: 48px 48px 48px 48px 48px;
-		grid-template-rows: 48px 48px 48px;
-	}
-
-	fieldset.card>div div, fieldset.card img, h2#unit img {
+	button.icon img, div.button, h2#unit img {
 		height: 48px;
 		width: 48px;
+	}
+
+	button:hover, p#hotkey input:focus {
+		box-shadow: 0 0 4px 1px #fff;
 	}
 
 	div#editor {
 		bottom: 4em;
 		font-size: 1rem;
 		top: 100px;
+	}
+
+	div.buttons {
+		grid-gap: 3px 3px;
+		grid-template-columns: 48px 48px 48px 48px 48px;
+		grid-template-rows: 48px 48px 48px;
 	}
 
 	h2, h3#command {
@@ -918,32 +928,29 @@ ul#tabs button:not(.active) {
 
 @media (max-width: 1366px) {
 	button {
+		border-width: 1px;
 		font-size: 1.25rem;
 	}
 
-	button {
-		border-width: 1px;
+	button.icon img, div.button, h2#unit img {
+		height: 32px;
+		width: 32px;
 	}
 
 	button:hover, p#hotkey input:focus {
 		box-shadow: 0 0 2px 1px #fff;
 	}
 
-	fieldset.card>div {
-		grid-gap: 2px 2px;
-		grid-template-columns: 32px 32px 32px 32px 32px;
-		grid-template-rows: 32px 32px 32px;
-	}
-
-	fieldset.card>div div, fieldset.card img, h2#unit img {
-		height: 32px;
-		width: 32px;
-	}
-
 	div#editor {
 		bottom: 3.5em;
 		font-size: 1rem;
 		top: 80px;
+	}
+
+	div.buttons {
+		grid-gap: 2px 2px;
+		grid-template-columns: 32px 32px 32px 32px 32px;
+		grid-template-rows: 32px 32px 32px;
 	}
 
 	h2#unit {

@@ -175,6 +175,14 @@ window.addEventListener("load", function() {
 			overlays[element.closest(".close").value].hide();
 		}
 
+		if (element.closest(".icon")) {
+			editor.setCommand(element.closest(".icon").value);
+		}
+
+		if (element.closest(".command")) {
+			editor.setCommand(element.textContent);
+		}
+
 		if (element.matches(".tab")) {
 			editor.switchTab(element.value);
 		}
@@ -263,10 +271,9 @@ function $$(selector) {
 function Editor(commands) {
 	this.commands = commands;
 
-	this.unit = "";
-	this.commander = "";
+	this.filter = "";
+	this.name = "";
 	this.id = "";
-	this.command = null;
 
 	this.buttons = [];
 	this.tab = "units";
@@ -276,16 +283,16 @@ function Editor(commands) {
 }
 
 Editor.prototype.load = function() {
-	let unit = "";
+	let name = "";
 
 	// gets current unit from URL if specified
 	if (window.location.hash != "") {
-		unit = window.location.hash.replace("#", ""); // chops initial #
+		name = window.location.hash.replace("#", ""); // chops initial #
 	} else {
-		unit = DEFAULT_UNIT;
+		name = DEFAULT_UNIT;
 	}
 
-	this.setUnit(unit);
+	this.setUnit(name);
 };
 
 Editor.prototype.open = function() {
@@ -294,31 +301,30 @@ Editor.prototype.open = function() {
 	this.unitEditor();
 };
 
-Editor.prototype.setUnit = function(unit) {
-	this.unit = unit;
+Editor.prototype.setUnit = function(name) {
+	this.name = name;
 
-	if (data.units[this.unit] != undefined) {
-		this.commander = data.units[this.unit].commander;
-		this.filter(data.units[this.unit]);
+	if (data.units[this.name] != undefined) {
+		this.filter = data.units[this.name].commander;
+		this.filterUnits(data.units[this.name]);
 	}
 
 	this.clearSearch(true);
 	this.open();
 };
 
-Editor.prototype.setCommand = function(id, command) {
+Editor.prototype.setCommand = function(id) {
 	this.id = id;
-	this.command = command;
 
 	this.commandEditor();
 	this.switchTab(this.tab);
 };
 
 Editor.prototype.unitEditor = function() {
-	const unit = data.units[this.unit];
+	const unit = data.units[this.name];
 
 	if (unit == undefined) {
-		console.error(`Undefined: ${this.unit} (unit)`);
+		console.error(`Undefined: ${this.name} (unit)`);
 		return;
 	}
 
@@ -329,18 +335,13 @@ Editor.prototype.unitEditor = function() {
 
 	this.clicks = 0;
 
-	const h2 = document.createElement("h2");
-	h2.id = "unit";
-
 	const icon = unit.icon || DEFAULT_ICON;
-	const img = document.createElement("img");
+	const img = $("#unit img");
 	img.setAttribute("src", [ICON_DIR, icon + ICON_EXT].join("/"));
 	img.setAttribute("alt", "[" + unit.name + "]");
 	img.setAttribute("title", unit.name);
 
-	h2.appendChild(img);
-	h2.appendChild(document.createTextNode(unit.name));
-	$("#unit").replaceWith(h2);
+	$("#unit span").textContent = unit.name;
 
 	let commands = [], legends = [];
 	this.buttons = [];
@@ -381,7 +382,7 @@ Editor.prototype.unitEditor = function() {
 
 		for (const id of commands) {
 			const command = this.commands.getCommand(
-				unit.commander, this.unit, id
+				unit.commander, this.name, id
 			);
 
 			if (command == undefined) {
@@ -397,7 +398,7 @@ Editor.prototype.unitEditor = function() {
 
 			// re-selects command if selected on previously viewed unit
 			if (this.id == id) {
-				this.setCommand(id, command);
+				this.setCommand(id);
 			}
 
 			const button = createButton.call(this, id, command, n);
@@ -410,21 +411,25 @@ Editor.prototype.unitEditor = function() {
 
 	function createButton(id, command, n) {
 		const div = document.createElement("div");
+		div.className = "button";
 
 		const icon = command.icon || DEFAULT_ICON;
 		const img = document.createElement("img");
 		img.setAttribute("src", [ICON_DIR, icon + ICON_EXT].join("/"));
 		img.setAttribute("alt", "[" + command.name + "]");
 		img.setAttribute("title", command.name);
-		img.addEventListener("click", function() {
-			this.setCommand(id, command);
-		}.bind(this));
 		img.classList.toggle("mask", command.mask || icon == DEFAULT_ICON);
-		div.appendChild(img);
+
+		const button = document.createElement("button");
+		button.className = "icon";
+		button.setAttribute("type", "button");
+		button.setAttribute("value", id);
+		button.appendChild(img);
 
 		const span = document.createElement("span");
 		span.id = "span_" + n + command.y + command.x;
-		div.appendChild(span);
+		button.appendChild(span);
+		div.appendChild(button);
 
 		return div;
 	}
@@ -445,7 +450,7 @@ Editor.prototype.setLegend = function(title, n) {
 };
 
 Editor.prototype.commandEditor = function(n) {
-	const hotkeys = this.commands.getHotkeys(this.commander, this.id);
+	const hotkeys = this.commands.getHotkeys(this.filter, this.id);
 	this.formatHotkey(hotkeys);
 
 	// automatically selects last hotkey field
@@ -453,8 +458,12 @@ Editor.prototype.commandEditor = function(n) {
 		$("#hotkey").lastChild.focus();
 	}
 
-	$("#command").innerHTML = this.command.name.replace(/\n/g, "<br>");
-	$("#prestige").textContent = this.command.prestige || "";
+	const command = this.commands.getCommand(
+		data.units[this.name].commander, this.name, this.id
+	);
+
+	$("#command").innerHTML = command.name.replace(/\n/g, "<br>");
+	$("#prereq").textContent = command.prereq || "";
 
 	this.findUnitsWith(this.id);
 	this.findCommandsNamed(this.id);
@@ -484,7 +493,7 @@ Editor.prototype.removeField = function() {
 	if (element.childElementCount > 1) {
 		element.removeChild(element.lastChild);
 		this.commands.removeLast(this.id);
-		this.commands.checkDefaults(this.id, this.commander);
+		this.commands.checkDefaults(this.id, this.filter);
 	} else { // last field
 		element.lastChild.value = "";
 		this.commands.setHotkeys(this.id, []);
@@ -529,7 +538,7 @@ Editor.prototype.setHotkey = function(input, event) {
 	}
 
 	this.commands.setHotkeys(this.id, fields);
-	this.commands.checkDefaults(this.id, this.commander);
+	this.commands.checkDefaults(this.id, this.filter);
 
 	this.findCommandsNamed(this.id);
 	this.switchTab(this.tab);
@@ -557,9 +566,7 @@ Editor.prototype.setVisibleHotkeys = function() {
 				continue;
 			}
 
-			const hotkeys = this.commands.getHotkeys(
-				this.commander, command.id
-			);
+			const hotkeys = this.commands.getHotkeys(this.filter, command.id);
 			const hotkeySet = data.commands[command.id].hotkeySet || "";
 
 			const spanId = "span_" + n + command.y + command.x;
@@ -623,7 +630,8 @@ Editor.prototype.setVisibleHotkeys = function() {
 };
 
 Editor.prototype.checkAllConflicts = function() {
-	const commanders = new Set(), units = new Set();
+	const commanders = new Set();
+	const names = new Set();
 
 	// checks for conflicts in all unit links
 	for (const element of $$("section a")) {
@@ -631,13 +639,13 @@ Editor.prototype.checkAllConflicts = function() {
 			continue;
 		}
 
-		const unit = element.hash.replace("#", "");
+		const name = element.hash.replace("#", "");
 
-		if (this.commands.checkConflicts(unit)) {
+		if (this.commands.checkConflicts(name)) {
 			element.classList.add("conflict");
 
 			commanders.add(element.closest("section").id);
-			units.add(unit);
+			names.add(name);
 		} else {
 			element.classList.remove("conflict");
 		}
@@ -649,8 +657,8 @@ Editor.prototype.checkAllConflicts = function() {
 			continue;
 		}
 
-		const unit = element.hash.replace("#", "");
-		element.classList.toggle("conflict", units.has(unit));
+		const name = element.hash.replace("#", "");
+		element.classList.toggle("conflict", names.has(name));
 	}
 
 	// flags filter icon if section contains conflict
@@ -659,7 +667,7 @@ Editor.prototype.checkAllConflicts = function() {
 	}
 };
 
-Editor.prototype.filter = function(unit) {
+Editor.prototype.filterUnits = function(unit) {
 	const filter = data.units[unit.commander].sortCommander || unit.commander;
 
 	// hides unit lists for commanders other than selected
@@ -701,18 +709,19 @@ Editor.prototype.findUnitsNamed = function(query) {
 		return;
 	}
 
-	const matches = new Set(), filters = new Set();
+	const matches = new Set();
+	const filters = new Set();
 
-	for (const [unit, properties] of Object.entries(data.units)) {
+	for (const [name, properties] of Object.entries(data.units)) {
 		if (properties.name == undefined) {
 			continue;
 		}
 
-		const name = prepareString(properties.displayName || properties.name);
+		const search = prepareString(properties.displayName || properties.name);
 		const keywords = prepareString(properties.keywords || "");
 
-		if (name.includes(query) || keywords.includes(query)) {
-			matches.add(unit);
+		if (search.includes(query) || keywords.includes(query)) {
+			matches.add(name);
 			filters.add(properties.commander);
 		}
 	}
@@ -738,23 +747,23 @@ Editor.prototype.findUnitsNamed = function(query) {
 Editor.prototype.findUnitsWith = function(id) {
 	const matches = new Set();
 
-	for (const [unit, properties] of Object.entries(data.units)) {
+	for (const [name, properties] of Object.entries(data.units)) {
 		if (properties.commands == undefined) {
 			continue;
 		}
 
-		let search = [];
+		let ids = [];
 
 		if (Array.isArray(properties.commands)) {
-			search = properties.commands;
+			ids = properties.commands;
 		} else {
 			for (const card of Object.values(properties.commands)) {
-				search = search.concat(card); // combines all command cards
+				ids = ids.concat(card); // combines all command cards
 			}
 		}
 
-		if (search.includes(id)) {
-			matches.add(unit);
+		if (ids.includes(id)) {
+			matches.add(name);
 		}
 	}
 
@@ -764,17 +773,20 @@ Editor.prototype.findUnitsWith = function(id) {
 
 Editor.prototype.findCommandsNamed = function(id) {
 	const matches = new Set();
+	const command = this.commands.getCommand(
+		data.units[this.name].commander, this.name, this.id
+	);
 
-	for (const [command, properties] of Object.entries(data.commands)) {
-		if (properties.name == this.command.name) {
-			matches.add(command);
+	for (const [id, properties] of Object.entries(data.commands)) {
+		if (properties.name == command.name) {
+			matches.add(id);
 		}
 	}
 
 	for (const commander of Object.values(data.overrides)) {
-		for (const [command, properties] of Object.entries(commander)) {
-			if (properties.name == this.command.name) {
-				matches.add(command);
+		for (const [id, properties] of Object.entries(commander)) {
+			if (properties.name == command.name) {
+				matches.add(id);
 			}
 		}
 	}
@@ -795,13 +807,11 @@ Editor.prototype.findCommandsNamed = function(id) {
 		li.appendChild(img);
 
 		const a = document.createElement("a");
-		a.addEventListener("click", function() {
-			this.setCommand(match, command);
-		}.bind(this));
+		a.className = "command";
 		a.appendChild(document.createTextNode(match));
 		li.appendChild(a);
 
-		const hotkey = this.commands.getHotkeys(this.commander, match);
+		const hotkey = this.commands.getHotkeys(this.filter, match);
 
 		if (hotkey != "") {
 			li.appendChild(document.createTextNode(" (" + hotkey + ")"));
@@ -833,7 +843,7 @@ Editor.prototype.formatResults = function(id, matches) {
 
 		// special case for currently selected unit (which will not fire
 		// hashchange event)
-		if (this.unit == match) {
+		if (this.name == match) {
 			a.classList.add("clear");
 		}
 
@@ -930,7 +940,7 @@ Editor.prototype.highlightFilter = function(n) {
 	}
 };
 
-Editor.prototype.clear = function(element) {
+Editor.prototype.clearElements = function(element) {
 	if (element == null) {
 		return;
 	}
@@ -944,9 +954,8 @@ Editor.prototype.clearButtons = function() {
 	for (const [n, card] of $$(".card").entries()) {
 		this.setLegend(" ", n);
 
-		for (const element of $$(`#card${n}>div div`)) {
-			element.className = "";
-			this.clear(element);
+		for (const element of $$(`#card${n} .button`)) {
+			this.clearElements(element);
 		}
 
 		if (n > CARDS - 1) { // hides cards after third unless needed
@@ -957,12 +966,12 @@ Editor.prototype.clearButtons = function() {
 
 Editor.prototype.clearFields = function() {
 	for (const element of $$("#fields h3, #fields p")) {
-		this.clear(element);
+		this.clearElements(element);
 	}
 
-	this.clear($("#code"));
-	this.clear($("#units"));
-	this.clear($("#commands"));
+	this.clearElements($("#code"));
+	this.clearElements($("#units"));
+	this.clearElements($("#commands"));
 
 	for (const element of $$("#control button, #lists ul")) {
 		element.hidden = true;
@@ -977,7 +986,7 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 	this.matches = [];
 	this.selected = -1;
 
-	this.clear($("#results"));
+	this.clearElements($("#results"));
 	$("#results").hidden = true;
 
 	for (const element of $$(".filter")) {
@@ -1074,7 +1083,7 @@ Commands.prototype.convert = function() {
 	return text.trim();
 };
 
-Commands.prototype.getCommand = function(commander, unit, id) {
+Commands.prototype.getCommand = function(commander, name, id) {
 	if (data.commands[id] == undefined) {
 		return;
 	}
@@ -1085,8 +1094,8 @@ Commands.prototype.getCommand = function(commander, unit, id) {
 		command = Object.assign(command, data.overrides[commander][id]);
 	}
 
-	if (this.checkUnitOverride(id, unit)) {
-		command = Object.assign(command, data.units[unit].overrides[id]);
+	if (this.checkUnitOverride(id, name)) {
+		command = Object.assign(command, data.units[name].overrides[id]);
 	}
 
 	return command;
@@ -1237,16 +1246,16 @@ Commands.prototype.checkUserOverride = function(id) {
 };
 
 // applies to everything but hotkey
-Commands.prototype.checkUnitOverride = function(id, unit) {
-	if (data.units[unit] == undefined) {
+Commands.prototype.checkUnitOverride = function(id, name) {
+	if (data.units[name] == undefined) {
 		return;
 	}
 
-	if (data.units[unit].overrides == undefined) {
+	if (data.units[name].overrides == undefined) {
 		return;
 	}
 
-	if (data.units[unit].overrides[id] == undefined) {
+	if (data.units[name].overrides[id] == undefined) {
 		return;
 	}
 
