@@ -26264,6 +26264,9 @@ data.overrides = {
 		"FaceEmbrace/Viper": {
 			x: 0
 		},
+		"Queen": {
+			name: "Birth Swarm Queen"
+		},
 		"SpineCrawlerRoot/SpineCrawlerUprooted": {
 			hotkey: "R",
 			hotkey_NRS: "U",
