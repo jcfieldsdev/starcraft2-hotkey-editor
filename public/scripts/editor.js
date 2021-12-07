@@ -180,7 +180,7 @@ window.addEventListener("load", function() {
 			editor.setCommand(element.closest(".icon").value);
 		}
 
-		if (element.closest(".command")) {
+		if (element.matches(".command")) {
 			editor.setCommand(element.textContent);
 		}
 
