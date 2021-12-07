@@ -154,7 +154,7 @@ window.addEventListener("load", function() {
 			editor.resetDefaults();
 		}
 
-		if (element.matches("#unit img")) {
+		if (element.matches("#name img")) {
 			clicks++;
 
 			if (clicks >= ANNOYED_CLICKS) {
@@ -335,12 +335,12 @@ Editor.prototype.unitEditor = function() {
 	}
 
 	const icon = unit.icon || DEFAULT_ICON;
-	const img = $("#unit img");
+	const img = $("#name img");
 	img.setAttribute("src", [ICON_DIR, icon + ICON_EXT].join("/"));
 	img.setAttribute("alt", "[" + unit.name + "]");
 	img.setAttribute("title", unit.name);
 
-	$("#unit span").textContent = unit.name;
+	$("#name span").textContent = unit.name;
 
 	let commands = [], legends = [];
 	this.buttons = [];
@@ -402,7 +402,7 @@ Editor.prototype.unitEditor = function() {
 
 			const button = createButton.call(this, id, command, n);
 			const pos = COLS * command.y + command.x;
-			$$(`#card${n} .button`)[pos].replaceWith(button);
+			$$(`#card${n} .cell`)[pos].replaceWith(button);
 		}
 
 		this.buttons.push(buttons);
@@ -410,7 +410,7 @@ Editor.prototype.unitEditor = function() {
 
 	function createButton(id, command, n) {
 		const div = document.createElement("div");
-		div.className = "button";
+		div.className = "cell";
 
 		const icon = command.icon || DEFAULT_ICON;
 		const img = document.createElement("img");
@@ -953,7 +953,7 @@ Editor.prototype.clearButtons = function() {
 	for (const [n, card] of $$(".card").entries()) {
 		this.setLegend(" ", n);
 
-		for (const element of $$(`#card${n} .button`)) {
+		for (const element of $$(`#card${n} .cell`)) {
 			this.clearElements(element);
 		}
 
