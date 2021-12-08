@@ -165,7 +165,7 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches(".clear")) {
-			editor.clearSearch(true);
+			editor.clearSearchAndQuery();
 		}
 
 		if (element.matches(".filter")) {
@@ -214,7 +214,7 @@ window.addEventListener("load", function() {
 			}
 
 			if (keyCode == 27) { // Esc
-				editor.clearSearch(true);
+				editor.clearSearchAndQuery();
 			}
 
 			if (keyCode == 38) { // up arrow
@@ -310,7 +310,7 @@ Editor.prototype.setUnit = function(name) {
 		this.filterUnits(data.units[this.name]);
 	}
 
-	this.clearSearch(true);
+	this.clearSearchAndQuery();
 	this.open();
 };
 
@@ -389,11 +389,7 @@ Editor.prototype.unitEditor = function() {
 				continue;
 			}
 
-			buttons.push({
-				id,
-				y: command.y,
-				x: command.x
-			});
+			buttons.push({id, y: command.y, x: command.x});
 
 			// re-selects command if selected on previously viewed unit
 			if (this.id == id) {
@@ -977,11 +973,7 @@ Editor.prototype.clearFields = function() {
 	}
 };
 
-Editor.prototype.clearSearch = function(clearQuery=false) {
-	if (clearQuery) {
-		$("#query").value = "";
-	}
-
+Editor.prototype.clearSearch = function() {
 	this.matches = [];
 	this.selected = -1;
 
@@ -991,6 +983,11 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 	for (const element of $$(".filter")) {
 		element.classList.remove("exclude", "highlight");
 	}
+};
+
+Editor.prototype.clearSearchAndQuery = function() {
+	$("#query").value = "";
+	this.clearSearch();
 };
 
 /*
