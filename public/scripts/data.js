@@ -7659,15 +7659,15 @@ data.units = {
 		type: UNIT,
 		commands: {
 			"Unburrowed": [
-				"Ravager/Roach",
+				"Ravager/RoachVile",
 				"BrutaliskDeepTunnel/RoachVile",
-				"EvolveToBrutalisk/Roach",
+				"EvolveToBrutalisk/RoachVile",
 				"BurrowDown"
 			],
 			"Burrowed": [
 				...data.common.basic,
 				"BrutaliskDeepTunnel/RoachVileBurrowed",
-				"EvolveToBrutalisk/RoachBurrowed",
+				"EvolveToBrutalisk/RoachVileBurrowed",
 				"BurrowUp"
 			],
 			"Unupgraded Unburrowed": [
@@ -15865,7 +15865,7 @@ data.commands = {
 		y: 0,
 		x: 1
 	},
-	"ResearchNovaShotgunBlastRange/GhostAcademyNova": {
+	"ResearchNovaSnipeRefund/GhostAcademyNova": {
 		name: "Research Operational Efficiency",
 		hotkey: "E",
 		hotkey_NRS: "B",
@@ -15875,7 +15875,7 @@ data.commands = {
 		y: 0,
 		x: 2
 	},
-	"ResearchNovaSnipeRefund/GhostAcademyNova": {
+	"ResearchNovaShotgunBlastRange/GhostAcademyNova": {
 		name: "Research Infernal Projectiles",
 		hotkey: "H",
 		hotkey_NRS: "P",
@@ -19281,6 +19281,22 @@ data.commands = {
 		y: 2,
 		x: 2
 	},
+	"EvolveToBrutalisk/RoachVile": {
+		name: "Evolve to Brutalisk",
+		hotkey: "B",
+		icon: "btn-ability-zerg-spawnbrutaliskex3",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"EvolveToBrutalisk/RoachVileBurrowed": {
+		name: "Evolve to Brutalisk",
+		hotkey: "B",
+		icon: "btn-ability-zerg-spawnbrutaliskex3",
+		mask: false,
+		y: 2,
+		x: 2
+	},
 	"EvolveToBrutalisk/RavagerAbathur": {
 		name: "Evolve to Brutalisk",
 		hotkey: "B",
@@ -19364,6 +19380,14 @@ data.commands = {
 		x: 2
 	},
 	"Ravager/Roach": {
+		name: "Morph to Ravager",
+		hotkey: "V",
+		icon: "btn-unit-zerg-ravager",
+		mask: false,
+		y: 2,
+		x: 0
+	},
+	"Ravager/RoachVile": {
 		name: "Morph to Ravager",
 		hotkey: "V",
 		icon: "btn-unit-zerg-ravager",
