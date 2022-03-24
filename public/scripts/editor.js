@@ -1131,7 +1131,6 @@ Commands.prototype.setHotkeys = function(command, hotkeys) {
 		this.clear(command);
 	}
 
-	this.list.Commands[command] = "";
 	this.list.Commands[command] = hotkeys.filter(function(hotkey) {
 		return hotkey != ""; // omits blank entries
 	}).map(function(hotkey) {
