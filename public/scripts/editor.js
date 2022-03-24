@@ -1131,10 +1131,10 @@ Commands.prototype.setHotkeys = function(command, hotkeys) {
 		this.clear(command);
 	}
 
-	hotkeys = hotkeys.filter(function(hotkey) {
+	this.list.Commands[command] = "";
+	this.list.Commands[command] = hotkeys.filter(function(hotkey) {
 		return hotkey != ""; // omits blank entries
-	});
-	hotkeys = hotkeys.map(function(hotkey) {
+	}).map(function(hotkey) {
 		// converts from display format to file representation
 		const keyCode = Object.values(data.keyInfo).find(function(value) {
 			return hotkey == value.symbol;
@@ -1145,10 +1145,7 @@ Commands.prototype.setHotkeys = function(command, hotkeys) {
 		}
 
 		return hotkey;
-	});
-
-	this.list.Commands[command] = "";
-	this.list.Commands[command] = hotkeys.join(DELIMITER);
+	}).join(DELIMITER);
 };
 
 Commands.prototype.checkConflicts = function(id) {
