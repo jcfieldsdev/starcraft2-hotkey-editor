@@ -28,7 +28,7 @@ The right side of the editor shows some additional information:
 
 - The editor code for the command. This uniquely identifies the command. In many cases, two commands that appear to be the same actually have two editor codes (such as the multiplayer and campaign Stalker's "Blink" command). Or sometimes, two commands that seem different are actually the same (such as the standard "Use Stimpack" and the Nova campaign's "Super Stimpack" command).
 - The "Units with Command" tab below it shows all units with that exact same command. These units will also be affected when this hotkey is edited. Sometimes changing a hotkey for one unit inadvertently creates a conflict for another; if that happens, the unit with the conflict will be highlighted in red in this area.
-- The "Similar Commands" tab shows other commands that have the same name as the command you're editing, which you may also want to change for consistency. For example, selecting the "Cloak" command of one unit shows all of the other "Cloak" commands used by other units, which can be clicked and edited separately. However, this only finds exact name matches so, for instance, "Yamato Cannon" won't match with "Stetmato Cannon."
+- The "Similar Commands" tab shows other commands that are similar to the command you're editing, which you may also want to change for consistency. For example, selecting the "Cloak" command of one unit shows all of the other "Cloak" commands used by other units, which can be clicked and edited separately.
 
 ### Loading and saving
 

@@ -2238,7 +2238,7 @@ data.units = {
 		overrides: {
 			"Stim": {
 				name: "Use Stimpack",
-				icon: "btn-ability-terran-stimpack-color",
+				icon: "btn-ability-terran-stimpack-color"
 			}
 		}
 	},
@@ -5000,7 +5000,7 @@ data.units = {
 				"BurrowDown",
 				"BurrowUp"
 			],
-			"Build Structure": [
+			"Basic Mutation": [
 				"Hatchery/Drone",
 				"Extractor/Drone",
 				"SpawningPool/Drone",
@@ -5011,7 +5011,7 @@ data.units = {
 				"SporeCrawler/Drone",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Advanced Mutation": [
 				"HydraliskDen/Drone",
 				"InfestationPit/Drone",
 				"MutateintoLurkerDen/Drone",
@@ -5724,7 +5724,7 @@ data.units = {
 				"ZergBuildAdvanced/Drone",
 				"BurrowDown"
 			],
-			"Build Structure": [
+			"Basic Mutation": [
 				"Hatchery/Drone",
 				"Extractor/Drone",
 				"SpawningPool/Drone",
@@ -5735,7 +5735,7 @@ data.units = {
 				"SporeCrawler/Drone",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Advanced Mutation": [
 				"HydraliskDen/Drone",
 				"InfestationPit/Drone",
 				"Spire/Drone",
@@ -6734,7 +6734,7 @@ data.units = {
 				"Spray",
 				"BurrowDown"
 			],
-			"Build Structure": [
+			"Basic Mutation": [
 				"Hatchery/Drone",
 				"Extractor/Drone",
 				"SpawningPool/Drone",
@@ -6743,7 +6743,7 @@ data.units = {
 				"SporeCrawler/Drone",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Advanced Mutation": [
 				"HydraliskDen/Drone",
 				"Spire/Drone",
 				"NydusNetwork/Drone",
@@ -7192,7 +7192,7 @@ data.units = {
 				"Spray",
 				"BurrowDown"
 			],
-			"Build Structure": [
+			"Basic Mutation": [
 				"Hatchery/Drone",
 				"Extractor/Drone",
 				"SpawningPool/Drone",
@@ -7203,7 +7203,7 @@ data.units = {
 				"ZagaraBileLauncher/Drone",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Advanced Mutation": [
 				"ScourgeNest/Drone",
 				"Cancel"
 			]
@@ -7582,7 +7582,7 @@ data.units = {
 				"Spray",
 				"BurrowDown"
 			],
-			"Build Structure": [
+			"Basic Mutation": [
 				"Hatchery/Drone",
 				"Extractor/Drone",
 				"EvolutionChamber/Drone",
@@ -7591,7 +7591,7 @@ data.units = {
 				"SporeCrawler/Drone",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Advanced Mutation": [
 				"InfestationPit/Drone",
 				"Spire/Drone",
 				"NydusNetwork/Drone",
@@ -8541,7 +8541,7 @@ data.units = {
 				"Spray",
 				"BurrowDown"
 			],
-			"Build Structure": [
+			"Basic Mutation": [
 				"DehakaHatchery/DehakaDrone",
 				"DehakaBarracks/DehakaDrone",
 				"DehakaGlevigStructure/DehakaDrone",
@@ -8953,7 +8953,7 @@ data.units = {
 				"GaryStetmannRecall/SuperGaryStetmann",
 				"PowerFieldSuperGaryStetmannSpeed/SuperGaryStetmann"
 			]
-		},
+		}
 	},
 	"Stetmann_Larva": {
 		name: "Mecha Larva",
@@ -8993,7 +8993,7 @@ data.units = {
 				"Spray",
 				"BurrowUp"
 			],
-			"Build Structure": [
+			"Basic Mutation": [
 				"HatcheryStetmann/DroneStetmann",
 				"ExtractorStetmann/DroneStetmann",
 				"SpawningPoolStetmann/DroneStetmann",
@@ -9003,7 +9003,7 @@ data.units = {
 				"SporeCrawlerStetmann/DroneStetmann",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Advanced Mutation": [
 				"HydraliskDenStetmann/DroneStetmann",
 				"InfestationPitStetmann/DroneStetmann",
 				"SpireStetmann/DroneStetmann",
@@ -9486,7 +9486,7 @@ data.units = {
 				"ProtossBuildAdvanced/Probe",
 				"Spray"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Assimilator/Probe",
 				"Pylon/Probe",
@@ -9497,7 +9497,7 @@ data.units = {
 				"ShieldBattery/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"TwilightCouncil/Probe",
 				"Stargate/Probe",
 				"RoboticsFacility/Probe",
@@ -10077,7 +10077,7 @@ data.units = {
 				"ProtossBuild/Probe",
 				"ProtossBuildAdvanced/Probe"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Assimilator/Probe",
 				"Pylon/Probe",
@@ -10089,7 +10089,7 @@ data.units = {
 				"KhaydarinMonolith/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"Stargate/Probe",
 				"RoboticsFacility/Probe",
 				"TemplarArchive/Probe",
@@ -10816,7 +10816,7 @@ data.units = {
 				"ProtossBuildAdvanced/Probe",
 				"Spray"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Assimilator/Probe",
 				"Pylon/Probe",
@@ -10826,7 +10826,7 @@ data.units = {
 				"PhotonCannon/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"TwilightCouncil/Probe",
 				"Stargate/Probe",
 				"RoboticsFacility/Probe",
@@ -11154,7 +11154,7 @@ data.units = {
 				"ProtossBuildAdvanced/Probe",
 				"Spray"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Assimilator/Probe",
 				"Pylon/Probe",
@@ -11164,7 +11164,7 @@ data.units = {
 				"PhotonCannon/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"TwilightCouncil/Probe",
 				"Stargate/Probe",
 				"FleetBeacon/Probe",
@@ -11453,7 +11453,7 @@ data.units = {
 				"ProtossBuildAdvanced/Probe",
 				"Spray"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Assimilator/Probe",
 				"Pylon/Probe",
@@ -11465,7 +11465,7 @@ data.units = {
 				"KhaydarinMonolith/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"TwilightCouncil/Probe",
 				"Stargate/Probe",
 				"RoboticsFacility/Probe",
@@ -11819,7 +11819,7 @@ data.units = {
 				"ProtossBuildAdvanced/Probe",
 				"Spray"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Assimilator/Probe",
 				"Pylon/Probe",
@@ -11829,7 +11829,7 @@ data.units = {
 				"PhotonCannon/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"TwilightCouncil/Probe",
 				"RoboticsFacility/Probe",
 				"TemplarArchive/Probe",
@@ -12142,7 +12142,7 @@ data.units = {
 				"ProtossBuildAdvanced/Probe",
 				"Spray"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Assimilator/Probe",
 				"Pylon/Probe",
@@ -12152,7 +12152,7 @@ data.units = {
 				"PhotonCannon/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"TwilightCouncil/Probe",
 				"Stargate/Probe",
 				"RoboticsFacility/Probe",
@@ -12277,7 +12277,7 @@ data.units = {
 				"FenixProbiusProbe23/FenixProbiusProbe",
 				"FenixProbiusProbe24/FenixProbiusProbe"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"FenixProbiusProbe00/FenixProbiusProbe",
 				"FenixProbiusProbe01/FenixProbiusProbe",
 				"FenixProbiusProbe02/FenixProbiusProbe",
@@ -12294,7 +12294,7 @@ data.units = {
 				"FenixProbiusProbe23/FenixProbiusProbe",
 				"FenixProbiusProbe24/FenixProbiusProbe"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"FenixProbiusProbe00/FenixProbiusProbe",
 				"FenixProbiusProbe01/FenixProbiusProbe",
 				"FenixProbiusProbe02/FenixProbiusProbe",
@@ -12621,14 +12621,14 @@ data.units = {
 				"ProtossBuildAdvanced/Probe",
 				"Spray"
 			],
-			"Build Structure": [
+			"Warp In Structure": [
 				"Nexus/Probe",
 				"Gateway/Probe",
 				"CyberneticsCore/Probe",
 				"PhotonCannon/Probe",
 				"Cancel"
 			],
-			"Build Advanced Structure": [
+			"Warp In Advanced Structure": [
 				"RoboticsFacility/Probe",
 				"RoboticsBay/Probe",
 				"DarkShrine/Probe",
@@ -13277,6 +13277,7 @@ data.commands = {
 	},
 	"ZergBuild/Drone": {
 		name: "Basic Mutation",
+		sameAs: "Build Structure",
 		hotkey: "B",
 		icon: "btn-ability-zerg-basicmutation",
 		mask: true,
@@ -13285,6 +13286,7 @@ data.commands = {
 	},
 	"ZergBuildAdvanced/Drone": {
 		name: "Advanced Mutation",
+		sameAs: "Build Advanced Structure",
 		hotkey: "V",
 		hotkey_NRS: "N",
 		icon: "btn-ability-zerg-advancedmutation",
@@ -13294,6 +13296,7 @@ data.commands = {
 	},
 	"ZergBuild/DroneStetmann": {
 		name: "Basic Mutation",
+		sameAs: "Build Structure",
 		hotkey: "B",
 		icon: "btn-ability-zerg-basicmutation",
 		mask: true,
@@ -13302,6 +13305,7 @@ data.commands = {
 	},
 	"ZergBuildAdvanced/DroneStetmann": {
 		name: "Advanced Mutation",
+		sameAs: "Build Advanced Structure",
 		hotkey: "V",
 		hotkey_NRS: "N",
 		icon: "btn-ability-zerg-advancedmutation",
@@ -13311,6 +13315,7 @@ data.commands = {
 	},
 	"ProtossBuild/Probe": {
 		name: "Warp In Structure",
+		sameAs: "Build Structure",
 		hotkey: "B",
 		icon: "btn-command-protoss-buildstructure",
 		mask: true,
@@ -13319,6 +13324,7 @@ data.commands = {
 	},
 	"ProtossBuildAdvanced/Probe": {
 		name: "Warp In Advanced Structure",
+		sameAs: "Build Advanced Structure",
 		hotkey: "V",
 		hotkey_NRS: "N",
 		icon: "btn-command-protoss-buildadvancedstructure",
@@ -13598,6 +13604,7 @@ data.commands = {
 	},
 	"D8Charge/Reaper": {
 		name: "G-4 Cluster Bombs",
+		sameAs: "KD8 Charge",
 		hotkey: "G",
 		icon: "btn-ability-terran-d8charge",
 		mask: true,
@@ -13639,6 +13646,7 @@ data.commands = {
 	},
 	"ChannelSnipe/Ghost": {
 		name: "Steady Targeting",
+		sameAs: "Snipe",
 		hotkey: "R",
 		hotkey_NRS: "I",
 		icon: "btn-ability-terran-snipe-color",
@@ -13829,6 +13837,7 @@ data.commands = {
 	},
 	"SelfRepair/Thor": {
 		name: "Emergency Repair",
+		sameAs: "Immortality Protocol",
 		hotkey: "R",
 		icon: "btn-techupgrade-terran-immortalityprotocol",
 		mask: true,
@@ -13837,6 +13846,7 @@ data.commands = {
 	},
 	"SelfRepair/ThorWreckage": {
 		name: "Emergency Repair",
+		sameAs: "Immortality Protocol",
 		hotkey: "R",
 		icon: "btn-techupgrade-terran-immortalityprotocol",
 		mask: true,
@@ -14314,6 +14324,7 @@ data.commands = {
 	},
 	"Spectre/Barracks": {
 		name: "Train Spectre",
+		sameAs: "Train Ghost",
 		hotkey: "G",
 		hotkey_NRS: "K",
 		hotkey_SC1: "Q",
@@ -15517,6 +15528,7 @@ data.commands = {
 	},
 	"SwannCommanderRebuild": {
 		name: "Rebuild",
+		sameAs: "Immortality Protocol",
 		hotkey: "R",
 		icon: "btn-techupgrade-terran-immortalityprotocol",
 		mask: true,
@@ -15550,6 +15562,7 @@ data.commands = {
 	},
 	"NovaWeaponCanisterRifleSnipe/NovaHero": {
 		name: "Break Neck\nSnipe\nPenetrating Blast\nDash Attack\nPlasma Shot\nFury of One",
+		sameAs: "Snipe\nPenetrating Blast",
 		hotkey: "Q",
 		icon: "btn-ability-terran-snipe-color",
 		mask: false,
@@ -15614,6 +15627,7 @@ data.commands = {
 	},
 	"NovaUnitNuke": {
 		name: "Tac Nuke Strike\nHolo Decoy",
+		sameAs: "Tac Nuke Strike",
 		hotkey: "R",
 		hotkey_SC1: "Y",
 		icon: "btn-ability-terran-nuclearstrike-color",
@@ -15631,6 +15645,7 @@ data.commands = {
 	},
 	"MarineSuperStimpack/Marine_BlackOps": {
 		name: "Super Stimpack",
+		sameAs: "Use Stimpack",
 		hotkey: "T",
 		icon: "btn-upgrade-nova-equipment-superstimppack",
 		mask: false,
@@ -15733,6 +15748,7 @@ data.commands = {
 	},
 	"DeploySpiderMines/SiegeTank": {
 		name: "Jump Jets\nDeploy Spider Mines",
+		sameAs: "Deploy Spider Mine",
 		hotkey: "R",
 		icon: "btn-upgrade-terran-jumpjets",
 		mask: false,
@@ -15749,6 +15765,7 @@ data.commands = {
 	},
 	"DeploySpiderMines/SiegeTank_BlackOps": {
 		name: "Deploy Spider Mines",
+		sameAs: "Deploy Spider Mine",
 		hotkey: "R",
 		icon: "btn-upgrade-siegetank-spidermines",
 		mask: false,
@@ -15904,6 +15921,7 @@ data.commands = {
 	},
 	"NovaAlarmBotEMP/NovaAlarmBot": {
 		name: "EMP Blast",
+		sameAs: "EMP Round",
 		hotkey: "E",
 		icon: "btn-ability-terran-emp-color",
 		mask: false,
@@ -16315,6 +16333,7 @@ data.commands = {
 	},
 	"Wraith/HHStarport": {
 		name: "Build Asteria Wraith",
+		sameAs: "Build Wraith",
 		hotkey: "T",
 		hotkey_SC1: "W",
 		icon: "btn-unit-terran-wraith",
@@ -16324,6 +16343,7 @@ data.commands = {
 	},
 	"VikingFighter/HHStarport": {
 		name: "Build Deimos Viking",
+		sameAs: "Build Viking",
 		hotkey: "V",
 		hotkey_NRS: "K",
 		hotkey_SC1: "K",
@@ -16334,6 +16354,7 @@ data.commands = {
 	},
 	"Battlecruiser/HHStarport": {
 		name: "Build Sovereign Battlecruiser",
+		sameAs: "Build Battlecruiser",
 		hotkey: "B",
 		icon: "btn-unit-collection-battlecruiser-covertops",
 		mask: false,
@@ -16342,6 +16363,7 @@ data.commands = {
 	},
 	"HHRaven/HHStarport": {
 		name: "Build Theia Raven",
+		sameAs: "Build Raven",
 		hotkey: "R",
 		icon: "btn-unit-collection-raven-covertops",
 		mask: false,
@@ -16350,6 +16372,7 @@ data.commands = {
 	},
 	"HHTechLabStarport/HHStarport": {
 		name: "Build Han’s Tech Lab",
+		sameAs: "Build Tech Lab",
 		hotkey: "X",
 		icon: "btn-building-hornerhan-techlab",
 		mask: false,
@@ -16632,6 +16655,7 @@ data.commands = {
 	},
 	"TychusOutlawWeaponsLevel1/TychusEngineeringBay": {
 		name: "Upgrade Outlaw Weapons",
+		sameAs: "Upgrade Infantry Weapons",
 		hotkey: "E",
 		icon: "btn-upgrade-tychus-weapons-level1",
 		mask: false,
@@ -16640,6 +16664,7 @@ data.commands = {
 	},
 	"TychusOutlawArmorLevel1/TychusEngineeringBay": {
 		name: "Upgrade Outlaw Armor",
+		sameAs: "Upgrade Infantry Armor",
 		hotkey: "A",
 		icon: "btn-upgrade-tychus-armor-level1",
 		mask: false,
@@ -16993,6 +17018,7 @@ data.commands = {
 	},
 	"CommandCenterMengsk/SCVMengsk": {
 		name: "Build Enlistment Center",
+		sameAs: "Build Command Center",
 		hotkey: "C",
 		icon: "btn-building-terran-commandcentermengsk",
 		mask: false,
@@ -17009,6 +17035,7 @@ data.commands = {
 	},
 	"BunkerMengsk/SCVMengsk": {
 		name: "Build Supply Bunker",
+		sameAs: "Build Supply Depot",
 		hotkey: "S",
 		icon: "btn-building-terran-supplybunkermengsk",
 		mask: false,
@@ -17017,6 +17044,7 @@ data.commands = {
 	},
 	"BunkerMengsk/TrooperMengsk": {
 		name: "Build Supply Bunker",
+		sameAs: "Build Supply Depot",
 		hotkey: "S",
 		icon: "btn-building-terran-supplybunkermengsk",
 		mask: false,
@@ -17073,6 +17101,7 @@ data.commands = {
 	},
 	"GhostAcademyMengsk/SCVMengsk": {
 		name: "Build Royal Academy",
+		sameAs: "Build Ghost Academy",
 		hotkey: "G",
 		icon: "btn-building-terran-ghostacademymengsk",
 		mask: false,
@@ -17113,6 +17142,7 @@ data.commands = {
 	},
 	"TrooperMengskBuild/TrooperMengsk": {
 		name: "Build Combat Structure",
+		sameAs: "Build Structure",
 		hotkey: "B",
 		icon: "btn-ability-mengsk-trooper-buildcombatstructure",
 		mask: true,
@@ -17145,6 +17175,7 @@ data.commands = {
 	},
 	"MarauderMengskAttackSpeedBoost/MarauderMengsk": {
 		name: "High-Grade Stimpacks",
+		sameAs: "Use Stimpack",
 		hotkey: "T",
 		icon: "btn-ability-mengsk-marauder-royalstimpack",
 		mask: false,
@@ -17161,6 +17192,7 @@ data.commands = {
 	},
 	"GhostMengskEMP/GhostMengsk": {
 		name: "EMP Blast",
+		sameAs: "EMP Round",
 		hotkey: "E",
 		icon: "btn-ability-mengsk-ghost-staticempblast",
 		mask: false,
@@ -17169,6 +17201,7 @@ data.commands = {
 	},
 	"GhostMengskSuperCloak/GhostMengsk": {
 		name: "Labyrinth Cloak",
+		sameAs: "Cloak",
 		hotkey: "Z",
 		icon: "btn-ability-mengsk-ghost-supercloak",
 		mask: false,
@@ -17177,6 +17210,7 @@ data.commands = {
 	},
 	"NukeCalldownMengsk/GhostMengsk": {
 		name: "Tactical Missile Strike",
+		sameAs: "Tac Nuke Strike",
 		hotkey: "N",
 		icon: "btn-ability-mengsk-ghost-tacticalmissilestrike",
 		mask: false,
@@ -17285,6 +17319,7 @@ data.commands = {
 	},
 	"SCVMengsk": {
 		name: "Conscript Dominion Laborer",
+		sameAs: "Train SCV",
 		hotkey: "S",
 		icon: "btn-unit-terran-scvmengsk",
 		mask: false,
@@ -17317,6 +17352,7 @@ data.commands = {
 	},
 	"SetArtilleryMengskRallyPoint/CommandCenterMengsk": {
 		name: "Set Trooper Rally Point",
+		sameAs: "Set Rally Point",
 		hotkey: "Y",
 		icon: "btn-ability-terran-setrallypoint",
 		mask: true,
@@ -17325,6 +17361,7 @@ data.commands = {
 	},
 	"MarauderMengsk/BarracksMengsk": {
 		name: "Train Aegis Guard",
+		sameAs: "Train Marauder",
 		hotkey: "D",
 		icon: "btn-unit-terran-maraudermengsk",
 		mask: false,
@@ -17333,6 +17370,7 @@ data.commands = {
 	},
 	"GhostMengsk/BarracksMengsk": {
 		name: "Train Emperor’s Shadow",
+		sameAs: "Train Ghost",
 		hotkey: "G",
 		icon: "btn-unit-terran-ghostmengsk",
 		mask: false,
@@ -17357,6 +17395,7 @@ data.commands = {
 	},
 	"SetArtilleryMengskRallyPoint/BunkerDepotMengsk": {
 		name: "Set Supply Bunker Rally Point",
+		sameAs: "Set Rally Point",
 		hotkey: "Y",
 		icon: "btn-ability-terran-setrallypoint",
 		mask: true,
@@ -17381,6 +17420,7 @@ data.commands = {
 	},
 	"MengskTrooperWeaponsLevel1/EngineeringBayMengsk": {
 		name: "Upgrade Dominion Weapons",
+		sameAs: "Upgrade Infantry Weapons",
 		hotkey: "E",
 		icon: "btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1",
 		mask: false,
@@ -17389,6 +17429,7 @@ data.commands = {
 	},
 	"MengskTrooperArmorLevel1/EngineeringBayMengsk": {
 		name: "Upgrade Dominion Armor",
+		sameAs: "Upgrade Infantry Armor",
 		hotkey: "A",
 		icon: "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1",
 		mask: false,
@@ -17405,6 +17446,7 @@ data.commands = {
 	},
 	"StructureArmorMengsk/EngineeringBayMengsk": {
 		name: "Research Neosteel Fortified Armor",
+		sameAs: "Upgrade Neosteel Armor",
 		hotkey: "F",
 		icon: "btn-upgrade-mengsk-engineeringbay-neosteelfortifiedarmor",
 		mask: false,
@@ -17429,6 +17471,7 @@ data.commands = {
 	},
 	"SetArtilleryMengskRallyPoint/ArtilleryMengsk": {
 		name: "Set Earthsplitter Ordnance Rally Point",
+		sameAs: "Set Rally Point",
 		hotkey: "Y",
 		icon: "btn-ability-terran-setrallypoint",
 		mask: true,
@@ -17469,6 +17512,7 @@ data.commands = {
 	},
 	"NukeMengskArm/GhostAcademyMengsk": {
 		name: "Arm Silo with Tactical Missile",
+		sameAs: "Arm Silo with Nuke",
 		hotkey: "R",
 		icon: "btn-ability-mengsk-ghostacademy-armsilowithtacticalmissile",
 		mask: false,
@@ -17477,6 +17521,7 @@ data.commands = {
 	},
 	"SiegeTankMengsk/FactoryMengsk": {
 		name: "Build Shock Division",
+		sameAs: "Build Siege Tank",
 		hotkey: "S",
 		icon: "btn-unit-terran-siegetankmengsk",
 		mask: false,
@@ -17485,6 +17530,7 @@ data.commands = {
 	},
 	"ThorMengsk/FactoryMengsk": {
 		name: "Build Blackhammer",
+		sameAs: "Build Thor",
 		hotkey: "T",
 		icon: "btn-unit-terran-thormengsk",
 		mask: false,
@@ -17493,6 +17539,7 @@ data.commands = {
 	},
 	"VikingMengskFighter/StarportMengsk": {
 		name: "Build Sky Fury",
+		sameAs: "Build Viking",
 		hotkey: "V",
 		icon: "btn-unit-terran-vikingmengskfighter",
 		mask: false,
@@ -17501,6 +17548,7 @@ data.commands = {
 	},
 	"MedivacMengsk/StarportMengsk": {
 		name: "Build Imperial Intercessor",
+		sameAs: "Build Medivac",
 		hotkey: "D",
 		icon: "btn-unit-terran-medivacmengsk",
 		mask: false,
@@ -17509,6 +17557,7 @@ data.commands = {
 	},
 	"RavenMengsk/StarportMengsk": {
 		name: "Build Imperial Witness",
+		sameAs: "Build Raven",
 		hotkey: "R",
 		icon: "btn-unit-terran-blimpmengsk",
 		mask: false,
@@ -17517,6 +17566,7 @@ data.commands = {
 	},
 	"BattlecruiserMengsk/StarportMengsk": {
 		name: "Build Pride of Augustgrad",
+		sameAs: "Build Battlecruiser",
 		hotkey: "B",
 		icon: "btn-unit-terran-battlecruisermengsk",
 		mask: false,
@@ -18090,6 +18140,7 @@ data.commands = {
 	},
 	"Impaler/HydraliskImpaler": {
 		name: "Morph to Impaler",
+		sameAs: "Morph to Lurker",
 		hotkey: "E",
 		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-impaler",
@@ -18633,6 +18684,7 @@ data.commands = {
 	},
 	"SpineCrawlerRoot/SpineCrawlerUprooted": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "D",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -18641,6 +18693,7 @@ data.commands = {
 	},
 	"SpineCrawlerUproot/SpineCrawler": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -18651,6 +18704,7 @@ data.commands = {
 	},
 	"SporeCrawlerRoot/SporeCrawlerUprooted": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "D",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -18659,6 +18713,7 @@ data.commands = {
 	},
 	"SporeCrawlerUproot/SporeCrawler": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -18701,6 +18756,7 @@ data.commands = {
 	},
 	"EvolveSeveringGlave/Spire": {
 		name: "Evolve Severing Glave",
+		sameAs: "Evolve Sundering Glave",
 		hotkey: "S",
 		icon: "btn-upgrade-zerg-explosiveglaive",
 		mask: false,
@@ -18749,6 +18805,7 @@ data.commands = {
 	},
 	"EvolveSeveringGlave/GreaterSpire": {
 		name: "Evolve Severing Glave",
+		sameAs: "Evolve Sundering Glave",
 		hotkey: "S",
 		icon: "btn-upgrade-zerg-explosiveglaive",
 		mask: false,
@@ -18936,6 +18993,7 @@ data.commands = {
 	},
 	"ScourgeNest/Drone": {
 		name: "Mutate into Scourge Nest",
+		sameAs: "Mutate into Spire",
 		hotkey: "C",
 		icon: "btn-doodad-scourgenests",
 		mask: false,
@@ -19225,19 +19283,12 @@ data.commands = {
 	},
 	"CommanderPrestigeZagaraMaxSupplyScourgeSpawn/ScourgeNest": {
 		name: "Birthing Roost",
+		sameAs: "Birthing Chamber",
 		prereq: "Scourge Queen",
 		hotkey: "B",
 		icon: "talent-zagara-level04-scourgeresearchbundle_result",
 		mask: false,
 		y: 2,
-		x: 0
-	},
-	"SICommandCenter/SISCV": {
-		name: "Build Infested Command Center",
-		hotkey: "C",
-		icon: "btn-building-stukov-infestedcommandcenter",
-		mask: false,
-		y: 0,
 		x: 0
 	},
 	"RoachWarren/Drone": {
@@ -19564,6 +19615,7 @@ data.commands = {
 	},
 	"SwarmHostRoot": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-swarmhost_root",
@@ -19573,6 +19625,7 @@ data.commands = {
 	},
 	"SwarmHostUproot": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		icon: "btn-ability-zerg-swarmhost_unroot",
@@ -19972,8 +20025,18 @@ data.commands = {
 		y: 2,
 		x: 0
 	},
+	"SICommandCenter/SISCV": {
+		name: "Build Infested Command Center",
+		sameAs: "Build Command Center",
+		hotkey: "C",
+		icon: "btn-building-stukov-infestedcommandcenter",
+		mask: false,
+		y: 0,
+		x: 0
+	},
 	"SIRefinery/SISCV": {
 		name: "Build Infested Refinery",
+		sameAs: "Build Refinery",
 		hotkey: "R",
 		icon: "btn-building-stukov-infestedrefinery",
 		mask: false,
@@ -19990,6 +20053,7 @@ data.commands = {
 	},
 	"SIBarracks/SISCV": {
 		name: "Build Infested Barracks",
+		sameAs: "Build Barracks",
 		hotkey: "B",
 		icon: "btn-building-stukov-infestedbarracks",
 		mask: false,
@@ -19998,6 +20062,7 @@ data.commands = {
 	},
 	"SIEngineeringBay/SISCV": {
 		name: "Build Infested Engineering Bay",
+		sameAs: "Build Engineering Bay",
 		hotkey: "E",
 		icon: "btn-building-stukov-infestedengineeringbay",
 		mask: false,
@@ -20006,6 +20071,7 @@ data.commands = {
 	},
 	"SIInfestedBunker/SISCV": {
 		name: "Build Infested Bunker",
+		sameAs: "Build Bunker",
 		hotkey: "U",
 		icon: "btn-building-stukov-infestedbunkerform",
 		mask: false,
@@ -20014,6 +20080,7 @@ data.commands = {
 	},
 	"SIMissileTurret/SISCV": {
 		name: "Build Infested Missile Turret",
+		sameAs: "Build Missile Turret",
 		hotkey: "T",
 		icon: "btn-building-stukov-infestedturret",
 		mask: false,
@@ -20022,6 +20089,7 @@ data.commands = {
 	},
 	"SIFactory/SISCV": {
 		name: "Build Infested Factory",
+		sameAs: "Build Factory",
 		hotkey: "F",
 		hotkey_NRS: "O",
 		icon: "btn-building-stukov-infestedfactory",
@@ -20031,6 +20099,7 @@ data.commands = {
 	},
 	"SIArmory/SISCV": {
 		name: "Build Infested Armory",
+		sameAs: "Build Armory",
 		hotkey: "A",
 		hotkey_NRS: "M",
 		icon: "btn-building-stukov-infestedarmory",
@@ -20040,6 +20109,7 @@ data.commands = {
 	},
 	"SIStarport/SISCV": {
 		name: "Build Infested Starport",
+		sameAs: "Build Starport",
 		hotkey: "S",
 		hotkey_NRS: "P",
 		icon: "btn-building-stukov-infestedstarport",
@@ -20092,6 +20162,7 @@ data.commands = {
 	},
 	"StukovInfestedSiegeTankRoot/StukovInfestedSiegeTank": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "E",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -20100,6 +20171,7 @@ data.commands = {
 	},
 	"StukovInfestedSiegeTankUproot/StukovInfestedSiegeTank": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "D",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20209,6 +20281,7 @@ data.commands = {
 	},
 	"SIUproot/SICommandCenter": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20219,6 +20292,7 @@ data.commands = {
 	},
 	"SIRoot/SICommandCenterFlying": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20229,6 +20303,7 @@ data.commands = {
 	},
 	"SIUproot/SICivilianStructure": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20239,6 +20314,7 @@ data.commands = {
 	},
 	"SIRoot/SICivilianStructureFlying": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20249,6 +20325,7 @@ data.commands = {
 	},
 	"SIUproot/SIBarracks": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20259,6 +20336,7 @@ data.commands = {
 	},
 	"SIRoot/SIBarracksFlying": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20269,6 +20347,7 @@ data.commands = {
 	},
 	"SIUproot/SIMissileTurret": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20279,6 +20358,7 @@ data.commands = {
 	},
 	"SIRoot/SIMissileTurretFlying": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20289,6 +20369,7 @@ data.commands = {
 	},
 	"SIUproot/SIFactory": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20299,6 +20380,7 @@ data.commands = {
 	},
 	"SIRoot/SIFactoryFlying": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20309,6 +20391,7 @@ data.commands = {
 	},
 	"SIUproot/SIStarport": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20319,6 +20402,7 @@ data.commands = {
 	},
 	"SIRoot/SIStarportFlying": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -20329,6 +20413,7 @@ data.commands = {
 	},
 	"SIInfestedBunkerUproot/SIInfestedBunker": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_SC1: "E",
 		icon: "btn-ability-zerg-uproot-color",
@@ -20338,6 +20423,7 @@ data.commands = {
 	},
 	"SIInfestedBunkerRoot/SIInfestedBunkerUprooted": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -20373,6 +20459,7 @@ data.commands = {
 	},
 	"SISCV": {
 		name: "Spawn Infested SCV",
+		sameAs: "Train SCV",
 		hotkey: "S",
 		hotkey_NRS: "J",
 		icon: "btn-unit-zerg-infestedscv",
@@ -20382,6 +20469,7 @@ data.commands = {
 	},
 	"SIOverlord/SICommandCenter": {
 		name: "Spawn Overlord",
+		sameAs: "Morph to Overlord",
 		hotkey: "V",
 		icon: "btn-unit-zerg-overlord",
 		mask: false,
@@ -20454,6 +20542,7 @@ data.commands = {
 	},
 	"SIInfestedMarine/SIBarracks": {
 		name: "Spawn Infested Marine",
+		sameAs: "Train Marine",
 		hotkey: "A",
 		icon: "btn-unit-zerg-infestedmarine",
 		mask: false,
@@ -20462,6 +20551,7 @@ data.commands = {
 	},
 	"SITechLabBarracks/SIBarracks": {
 		name: "Build Infested Tech Lab",
+		sameAs: "Build Tech Lab",
 		hotkey: "X",
 		hotkey_SC1: "Z",
 		icon: "btn-building-stukov-infestedtechlab",
@@ -20530,6 +20620,7 @@ data.commands = {
 	},
 	"SIDiamondBack/SIFactory": {
 		name: "Spawn Infested Diamondback",
+		sameAs: "Build Diamondback",
 		hotkey: "D",
 		icon: "btn-unit-zerg-infesteddiamondback",
 		mask: false,
@@ -20538,6 +20629,7 @@ data.commands = {
 	},
 	"SISiegeTank/SIFactory": {
 		name: "Spawn Infested Siege Tank",
+		sameAs: "Build Siege Tank",
 		hotkey: "S",
 		hotkey_NRS: "I",
 		hotkey_SC1: "T",
@@ -20548,6 +20640,7 @@ data.commands = {
 	},
 	"SITechLabFactory/SIFactory": {
 		name: "Build Infested Tech Lab",
+		sameAs: "Build Tech Lab",
 		hotkey: "X",
 		hotkey_SC1: "Z",
 		icon: "btn-building-stukov-infestedtechlab",
@@ -20608,6 +20701,7 @@ data.commands = {
 	},
 	"SILiberator/SIStarport": {
 		name: "Spawn Infested Liberator",
+		sameAs: "Build Liberator",
 		hotkey: "N",
 		hotkey_NRS: "E",
 		icon: "btn-unit-zerg-infestedliberator",
@@ -20617,6 +20711,7 @@ data.commands = {
 	},
 	"SIBanshee/SIStarport": {
 		name: "Spawn Infested Banshee",
+		sameAs: "Build Banshee",
 		hotkey: "E",
 		hotkey_NRS: "N",
 		icon: "btn-unit-zerg-infestedbanshee",
@@ -20636,6 +20731,7 @@ data.commands = {
 	},
 	"SITechLabStarport/SIStarport": {
 		name: "Build Infested Tech Lab",
+		sameAs: "Build Tech Lab",
 		hotkey: "X",
 		hotkey_SC1: "Z",
 		icon: "btn-building-stukov-infestedtechlab",
@@ -20941,6 +21037,7 @@ data.commands = {
 	},
 	"DehakaHatchery/DehakaDrone": {
 		name: "Summon Primal Hive",
+		sameAs: "Mutate into Hatchery",
 		hotkey: "H",
 		icon: "btn-building-dehaka-primalhatchery",
 		mask: false,
@@ -21037,6 +21134,7 @@ data.commands = {
 	},
 	"DehakaSpawnLocusts/DehakaSwarmHost": {
 		name: "Spawn Primal Locusts",
+		sameAs: "Spawn Locusts",
 		hotkey: "C",
 		icon: "btn-unit-collection-primal-creeperhostspawn",
 		mask: false,
@@ -21045,6 +21143,7 @@ data.commands = {
 	},
 	"DehakaSpawnLocusts/DehakaSwarmHostBurrowed": {
 		name: "Spawn Primal Locusts",
+		sameAs: "Spawn Locusts",
 		hotkey: "C",
 		icon: "btn-unit-collection-primal-creeperhostspawn",
 		mask: false,
@@ -21053,6 +21152,7 @@ data.commands = {
 	},
 	"DehakaSpawnLocustsBomb/DehakaPrimalSwarmHost": {
 		name: "Spawn Explosive Creeper",
+		sameAs: "Spawn Locusts",
 		hotkey: "C",
 		icon: "btn-unit-collection-primal-swarmhostspawn",
 		mask: false,
@@ -21061,6 +21161,7 @@ data.commands = {
 	},
 	"DehakaSpawnLocustsBomb/DehakaPrimalSwarmHostBurrowed": {
 		name: "Spawn Explosive Creeper",
+		sameAs: "Spawn Locusts",
 		hotkey: "C",
 		icon: "btn-unit-collection-primal-swarmhostspawn",
 		mask: false,
@@ -21101,6 +21202,7 @@ data.commands = {
 	},
 	"DehakaDrone/DehakaHatchery": {
 		name: "Spawn Primal Drone",
+		sameAs: "Morph to Drone",
 		hotkey: "D",
 		icon: "btn-unit-collection-primal-drone",
 		mask: false,
@@ -21109,6 +21211,7 @@ data.commands = {
 	},
 	"BuildDehakaExtractor/DehakaHatchery": {
 		name: "Mutate Extractor",
+		sameAs: "Mutate into Extractor",
 		hotkey: "E",
 		icon: "btn-building-dehaka-extractor",
 		mask: false,
@@ -21133,6 +21236,7 @@ data.commands = {
 	},
 	"PrimalBuildingRoot/DehakaHatcheryUprooted": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -21143,6 +21247,7 @@ data.commands = {
 	},
 	"PrimalBuildingUproot/DehakaHatchery": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -21153,6 +21258,7 @@ data.commands = {
 	},
 	"PrimalBuildingRoot/DehakaBarracksUprooted": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -21163,6 +21269,7 @@ data.commands = {
 	},
 	"PrimalBuildingUproot/DehakaBarracks": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		hotkey_SC1: "U",
@@ -21173,6 +21280,7 @@ data.commands = {
 	},
 	"DehakaZergling/DehakaBarracks": {
 		name: "Spawn Primal Zergling",
+		sameAs: "Morph to Zergling",
 		hotkey: "Z",
 		icon: "btn-unit-collection-primal-zergling",
 		mask: false,
@@ -21181,6 +21289,7 @@ data.commands = {
 	},
 	"DehakaRoach/DehakaBarracks": {
 		name: "Spawn Primal Roach",
+		sameAs: "Morph to Roach",
 		hotkey: "C",
 		icon: "btn-unit-collection-primal-roach",
 		mask: false,
@@ -21189,6 +21298,7 @@ data.commands = {
 	},
 	"DehakaHydralisk/DehakaBarracks": {
 		name: "Spawn Primal Hydralisk",
+		sameAs: "Morph to Hydralisk",
 		hotkey: "H",
 		icon: "btn-unit-collection-primal-hydralisk",
 		mask: false,
@@ -21197,6 +21307,7 @@ data.commands = {
 	},
 	"DehakaSwarmHost/DehakaBarracks": {
 		name: "Spawn Primal Host",
+		sameAs: "Morph to Swarm Host",
 		hotkey: "W",
 		icon: "btn-unit-collection-primal-creeperhost",
 		mask: false,
@@ -21205,6 +21316,7 @@ data.commands = {
 	},
 	"DehakaUltralisk/DehakaBarracks": {
 		name: "Spawn Primal Ultralisk",
+		sameAs: "Morph to Ultralisk",
 		hotkey: "U",
 		hotkey_NRS: "A",
 		hotkey_SC1: "A",
@@ -21474,6 +21586,7 @@ data.commands = {
 	},
 	"GaryStetmannRecall/GaryStetmann": {
 		name: "Semi-Stable Mass Transportation",
+		sameAs: "Recall",
 		hotkey: "R",
 		icon: "btn-ability-stetmann-garymassteleport",
 		mask: false,
@@ -21514,6 +21627,7 @@ data.commands = {
 	},
 	"GaryStetmannRecall/SuperGaryStetmann": {
 		name: "Semi-Stable Mass Transportation",
+		sameAs: "Recall",
 		hotkey: "R",
 		icon: "btn-ability-stetmann-garymassteleport",
 		mask: false,
@@ -21530,6 +21644,7 @@ data.commands = {
 	},
 	"DroneStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Drone",
+		sameAs: "Morph to Drone",
 		hotkey: "D",
 		icon: "btn-unit-collection-drone-mecha",
 		mask: false,
@@ -21538,6 +21653,7 @@ data.commands = {
 	},
 	"OverlordStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Overlord",
+		sameAs: "Morph to Overlord",
 		hotkey: "V",
 		icon: "btn-unit-collection-overlord-mecha",
 		mask: false,
@@ -21546,6 +21662,7 @@ data.commands = {
 	},
 	"ZerglingStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Zergling",
+		sameAs: "Morph to Zergling",
 		hotkey: "Z",
 		icon: "btn-unit-collection-zergling-mecha",
 		mask: false,
@@ -21554,6 +21671,7 @@ data.commands = {
 	},
 	"HydraliskStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Hydralisk",
+		sameAs: "Morph to Hydralisk",
 		hotkey: "H",
 		icon: "btn-unit-collection-hydralisk-mecha",
 		mask: false,
@@ -21562,6 +21680,7 @@ data.commands = {
 	},
 	"CorruptorStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Corruptor",
+		sameAs: "Morph to Corruptor",
 		hotkey: "A",
 		icon: "btn-unit-collection-corruptor-mecha",
 		mask: false,
@@ -21570,6 +21689,7 @@ data.commands = {
 	},
 	"InfestorStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Infestor",
+		sameAs: "Morph to Infestor",
 		hotkey: "F",
 		icon: "btn-unit-collection-infestor-mecha",
 		mask: false,
@@ -21578,6 +21698,7 @@ data.commands = {
 	},
 	"UltraliskStetmann/LarvaStetmann": {
 		name: "Morph to Mecha Ultralisk",
+		sameAs: "Morph to Ultralisk",
 		hotkey: "U",
 		icon: "btn-unit-collection-ultralisk-mecha",
 		mask: false,
@@ -21586,6 +21707,7 @@ data.commands = {
 	},
 	"HatcheryStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Hatchery",
+		sameAs: "Mutate into Hatchery",
 		hotkey: "H",
 		icon: "btn-building-zerg-hatchery-mecha",
 		mask: false,
@@ -21594,6 +21716,7 @@ data.commands = {
 	},
 	"ExtractorStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Extractor",
+		sameAs: "Mutate into Extractor",
 		hotkey: "E",
 		icon: "btn-building-zerg-extractor-mecha",
 		mask: false,
@@ -21602,6 +21725,7 @@ data.commands = {
 	},
 	"SpawningPoolStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spawning Pool",
+		sameAs: "Mutate into Spawning Pool",
 		hotkey: "S",
 		icon: "btn-building-zerg-spawningpool-mecha",
 		mask: false,
@@ -21610,6 +21734,7 @@ data.commands = {
 	},
 	"EvolutionChamberStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Evolution Chamber",
+		sameAs: "Mutate into Evolution Chamber",
 		hotkey: "V",
 		icon: "btn-building-zerg-evolutionchamber-mecha",
 		mask: false,
@@ -21618,6 +21743,7 @@ data.commands = {
 	},
 	"BanelingNestStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Baneling Nest",
+		sameAs: "Mutate into Baneling Nest",
 		hotkey: "B",
 		icon: "btn-building-zerg-banelingnest-mecha",
 		mask: false,
@@ -21626,6 +21752,7 @@ data.commands = {
 	},
 	"SpineCrawlerStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spine Crawler",
+		sameAs: "Mutate into Spine Crawler",
 		hotkey: "C",
 		icon: "btn-building-zerg-spinecrawler-mecha",
 		mask: false,
@@ -21634,6 +21761,7 @@ data.commands = {
 	},
 	"SporeCrawlerStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spore Crawler",
+		sameAs: "Mutate into Spore Crawler",
 		hotkey: "A",
 		icon: "btn-building-zerg-sporecrawler-mecha",
 		mask: false,
@@ -21642,6 +21770,7 @@ data.commands = {
 	},
 	"HydraliskDenStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Hydralisk Den",
+		sameAs: "Mutate into Hydralisk Den",
 		hotkey: "H",
 		icon: "btn-building-zerg-hydraliskden-mecha",
 		mask: false,
@@ -21650,6 +21779,7 @@ data.commands = {
 	},
 	"InfestationPitStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Infestation Pit",
+		sameAs: "Mutate into Infestation Pit",
 		hotkey: "I",
 		icon: "btn-building-zerg-infestationpit-mecha",
 		mask: false,
@@ -21658,6 +21788,7 @@ data.commands = {
 	},
 	"SpireStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Spire",
+		sameAs: "Mutate into Spire",
 		hotkey: "S",
 		icon: "btn-building-zerg-spire-mecha",
 		mask: false,
@@ -21666,6 +21797,7 @@ data.commands = {
 	},
 	"UltraliskCavernStetmann/DroneStetmann": {
 		name: "Mutate into Mecha Ultralisk Cavern",
+		sameAs: "Mutate into Ultralisk Cavern",
 		hotkey: "U",
 		icon: "btn-building-zerg-ultraliskcavern-mecha",
 		mask: false,
@@ -21674,6 +21806,7 @@ data.commands = {
 	},
 	"MorphToOverseerStetmann/OverlordStetmann": {
 		name: "Morph to Mecha Overseer",
+		sameAs: "Morph to Overseer",
 		hotkey: "V",
 		icon: "btn-unit-collection-overseer-mecha",
 		mask: false,
@@ -21774,6 +21907,7 @@ data.commands = {
 	},
 	"LurkerStetmann/HydraliskStetmann": {
 		name: "Morph to Mecha Lurker",
+		sameAs: "Morph to Lurker",
 		hotkey: "E",
 		icon: "btn-unit-collection-lurker-mecha",
 		mask: false,
@@ -21830,6 +21964,7 @@ data.commands = {
 	},
 	"BroodLordStetmann/CorruptorStetmann": {
 		name: "Morph to Mecha Battlecarrier Lord",
+		sameAs: "Morph to Brood Lord",
 		hotkey: "B",
 		icon: "btn-unit-collection-broodlord-mecha",
 		mask: false,
@@ -21846,6 +21981,7 @@ data.commands = {
 	},
 	"BroodLordStetmannBombers/BroodLordStetmann": {
 		name: "Build Mecha Locusceptor",
+		sameAs: "Build Interceptor",
 		hotkey: "I",
 		icon: "btn-unit-collection-creeperhostspawnflyer-mecha",
 		mask: false,
@@ -21854,6 +21990,7 @@ data.commands = {
 	},
 	"BroodLordStetmannYamatoCannon": {
 		name: "Stetmato Cannon",
+		sameAs: "Yamato Cannon",
 		hotkey: "Y",
 		icon: "btn-ability-stetmann-battlecarrierlordmechayamatocannon",
 		mask: false,
@@ -21910,6 +22047,7 @@ data.commands = {
 	},
 	"UltraliskStetmannBurrowCharge/UltraliskStetmann": {
 		name: "Vectored Burrow Charge",
+		sameAs: "Burrow Charge",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-mechaburrowcharge",
 		mask: false,
@@ -21950,6 +22088,7 @@ data.commands = {
 	},
 	"LarvaStetmann": {
 		name: "Select Mecha Larva",
+		sameAs: "Select Larva",
 		hotkey: "S",
 		icon: "btn-unit-zerg-larva-mecha",
 		mask: false,
@@ -21958,6 +22097,7 @@ data.commands = {
 	},
 	"ResearchOverlordStetmannSpeed": {
 		name: "Research Pneumatized Fuselage",
+		sameAs: "Evolve Pneumatized Carapace",
 		hotkey: "P",
 		hotkey_NRS: "C",
 		icon: "btn-upgrade-stetmann-mechapneumatizedcarapace",
@@ -21967,6 +22107,7 @@ data.commands = {
 	},
 	"ResearchOverlordStetmannVentralSacks": {
 		name: "Research Ventral Pods",
+		sameAs: "Evolve Ventral Sacs",
 		hotkey: "E",
 		icon: "btn-upgrade-stetmann-mechaventralsacs",
 		mask: false,
@@ -21983,6 +22124,7 @@ data.commands = {
 	},
 	"LairStetmann/HatcheryStetmann": {
 		name: "Mutate into Mecha Lair",
+		sameAs: "Mutate into Lair",
 		hotkey: "L",
 		icon: "btn-building-zerg-lair-mecha",
 		mask: false,
@@ -21991,6 +22133,7 @@ data.commands = {
 	},
 	"HiveStetmann/LairStetmann": {
 		name: "Mutate into Mecha Hive",
+		sameAs: "Mutate into Hive",
 		hotkey: "H",
 		icon: "btn-building-zerg-hive-mecha",
 		mask: false,
@@ -21999,6 +22142,7 @@ data.commands = {
 	},
 	"ResearchZerglingStetmannMovementSpeed/SpawningPoolStetmann": {
 		name: "Research Metal-bolic Boost",
+		sameAs: "Evolve Metabolic Boost",
 		hotkey: "M",
 		icon: "btn-upgrade-stetmann-mechametabolicboost",
 		mask: false,
@@ -22015,6 +22159,7 @@ data.commands = {
 	},
 	"ResearchZerglingStetmannAttackSpeed/SpawningPoolStetmann": {
 		name: "Research Synthetic Adrenal Pumps",
+		sameAs: "Evolve Adrenal Overload",
 		hotkey: "A",
 		icon: "btn-upgrade-stetmann-mechaadrenalglands",
 		mask: false,
@@ -22023,6 +22168,7 @@ data.commands = {
 	},
 	"ZerglingStetmannRespawn/SpawningPoolStetmann": {
 		name: "Recycle Mecha Zergling",
+		sameAs: "Recycle",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-zerglingrespawn",
 		mask: false,
@@ -22031,6 +22177,7 @@ data.commands = {
 	},
 	"ZergMeleeWeaponsStetmann1/EvolutionChamberStetmann": {
 		name: "Research Mecha Melee Attacks",
+		sameAs: "Evolve Melee Attacks",
 		hotkey: "M",
 		icon: "btn-upgrade-stetmann-mechameleeattacks-level1",
 		mask: false,
@@ -22039,6 +22186,7 @@ data.commands = {
 	},
 	"ZergMissileWeaponsStetmann1/EvolutionChamberStetmann": {
 		name: "Research Mecha Missile Attacks",
+		sameAs: "Evolve Missile Attacks",
 		hotkey: "A",
 		icon: "btn-upgrade-stetmann-mechamissileattacks-level1",
 		mask: false,
@@ -22047,6 +22195,7 @@ data.commands = {
 	},
 	"ZergGroundArmorStetmann1/EvolutionChamberStetmann": {
 		name: "Research Mecha Ground Plating",
+		sameAs: "Evolve Ground Carapace",
 		hotkey: "C",
 		icon: "btn-upgrade-stetmann-mechagroundplating-level1",
 		mask: false,
@@ -22079,6 +22228,7 @@ data.commands = {
 	},
 	"SpineCrawlerRootStetmann/SpineCrawlerUprootedStetmann": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "D",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -22087,6 +22237,7 @@ data.commands = {
 	},
 	"SpineCrawlerUprootStetmann/SpineCrawlerStetmann": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -22095,6 +22246,7 @@ data.commands = {
 	},
 	"SporeCrawlerRootStetmann/SporeCrawlerUprootedStetmann": {
 		name: "Root",
+		sameAs: "Land",
 		hotkey: "D",
 		icon: "btn-ability-zerg-root-color",
 		mask: false,
@@ -22103,6 +22255,7 @@ data.commands = {
 	},
 	"SporeCrawlerUprootStetmann/SporeCrawlerStetmann": {
 		name: "Uproot",
+		sameAs: "Lift Off",
 		hotkey: "R",
 		icon: "btn-ability-zerg-uproot-color",
 		mask: false,
@@ -22151,6 +22304,7 @@ data.commands = {
 	},
 	"LurkerDenStetmann/HydraliskDenStetmann": {
 		name: "Mutate into Mecha Lurker Den",
+		sameAs: "Mutate into Lurker Den",
 		hotkey: "D",
 		icon: "btn-building-zerg-lurkerden-mecha",
 		mask: false,
@@ -22159,6 +22313,7 @@ data.commands = {
 	},
 	"HydraliskStetmannRespawn/HydraliskDenStetmann": {
 		name: "Recycle Mecha Hydralisk",
+		sameAs: "Recycle",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-hydraliskrespawn",
 		mask: false,
@@ -22207,6 +22362,7 @@ data.commands = {
 	},
 	"HydraliskStetmannRespawn/LurkerDenStetmann": {
 		name: "Recycle Mecha Hydralisk",
+		sameAs: "Recycle",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-hydraliskrespawn",
 		mask: false,
@@ -22231,6 +22387,7 @@ data.commands = {
 	},
 	"InfestorStetmannRespawn/InfestationPitStetmann": {
 		name: "Recycle Mecha Infestor",
+		sameAs: "Recycle",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-infestorrespawn",
 		mask: false,
@@ -22239,6 +22396,7 @@ data.commands = {
 	},
 	"ZergFlyerAttackStetmann1": {
 		name: "Research Mecha Flyer Attacks",
+		sameAs: "Evolve Flyer Attacks",
 		hotkey: "A",
 		icon: "btn-upgrade-stetmann-mechaflyerattacks-level1",
 		mask: false,
@@ -22247,6 +22405,7 @@ data.commands = {
 	},
 	"ZergFlyerArmorStetmann1": {
 		name: "Research Mecha Flyer Plating",
+		sameAs: "Evolve Flyer Carapace",
 		hotkey: "C",
 		icon: "btn-upgrade-stetmann-mechaflyerplating-level1",
 		mask: false,
@@ -22287,6 +22446,7 @@ data.commands = {
 	},
 	"GreaterSpireStetmann/SpireStetmann": {
 		name: "Mutate into Mecha Greater Spire",
+		sameAs: "Mutate into Greater Spire",
 		hotkey: "G",
 		icon: "btn-building-zerg-greaterspire-mecha",
 		mask: false,
@@ -22295,6 +22455,7 @@ data.commands = {
 	},
 	"CorruptorStetmannRespawn/SpireStetmann": {
 		name: "Recycle Mecha Corruptor",
+		sameAs: "Recycle",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-corruptorrespawn",
 		mask: false,
@@ -22335,6 +22496,7 @@ data.commands = {
 	},
 	"CorruptorStetmannRespawn/GreaterSpireStetmann": {
 		name: "Recycle Mecha Corruptor",
+		sameAs: "Recycle",
 		hotkey: "B",
 		icon: "btn-ability-stetmann-corruptorrespawn",
 		mask: false,
@@ -22359,6 +22521,7 @@ data.commands = {
 	},
 	"ReserachUltraliskStetmannArmor/UltraliskCavernStetmann": {
 		name: "Research Chitanium Plating",
+		sameAs: "Evolve Chitinous Plating",
 		hotkey: "H",
 		icon: "btn-upgrade-stetmann-mechachitinousplating",
 		mask: false,
@@ -22367,6 +22530,7 @@ data.commands = {
 	},
 	"UltraliskStetmannRespawn/UltraliskCavernStetmann": {
 		name: "Recycle Mecha Ultralisk",
+		sameAs: "Recycle",
 		hotkey: "U",
 		icon: "btn-ability-stetmann-ultraliskrespawn",
 		mask: false,
@@ -22690,6 +22854,7 @@ data.commands = {
 	},
 	"MothershipCoreMassRecall/MothershipCore": {
 		name: "Mass Recall",
+		sameAs: "Recall",
 		hotkey: "R",
 		hotkey_NRS: "U",
 		icon: "btn-ability-protoss-massrecall",
@@ -22709,6 +22874,7 @@ data.commands = {
 	},
 	"MassRecall/Mothership": {
 		name: "Mass Recall",
+		sameAs: "Recall",
 		hotkey: "R",
 		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-wormholetransit-color",
@@ -22736,6 +22902,7 @@ data.commands = {
 	},
 	"MassRecall/Artanis": {
 		name: "Mass Recall",
+		sameAs: "Recall",
 		hotkey: "R",
 		hotkey_NRS: "L",
 		icon: "btn-ability-protoss-wormholetransit-color",
@@ -22788,6 +22955,7 @@ data.commands = {
 	},
 	"NexusMassRecall/Nexus": {
 		name: "Strategic Recall",
+		sameAs: "Recall",
 		hotkey: "R",
 		hotkey_SC1: "A",
 		icon: "btn-ability-protoss-massrecall",
@@ -23295,6 +23463,7 @@ data.commands = {
 	},
 	"VoidZealotShadowCharge/ZealotShakuras": {
 		name: "Shadow Charge",
+		sameAs: "Charge",
 		hotkey: "C",
 		icon: "btn-ability-protoss-shadowcharge",
 		mask: false,
@@ -23507,6 +23676,7 @@ data.commands = {
 	},
 	"DarkTemplarBlink/DarkTemplar": {
 		name: "Shadow Stride",
+		sameAs: "Blink",
 		hotkey: "B",
 		icon: "btn-ability-protoss-stealth-blink",
 		mask: false,
@@ -23662,6 +23832,7 @@ data.commands = {
 	},
 	"ResearchDarkTemplarBlink/DarkShrine": {
 		name: "Research Shadow Stride",
+		sameAs: "Research Blink",
 		hotkey: "B",
 		icon: "btn-ability-protoss-stealth-blink",
 		mask: false,
@@ -24018,6 +24189,7 @@ data.commands = {
 	},
 	"VoidSentryBlackHole/SOAMothershipv4": {
 		name: "Black Hole",
+		sameAs: "Vortex",
 		hotkey: "E",
 		icon: "btn-ability-protoss-blackhole-redcolor",
 		mask: false,
@@ -24050,6 +24222,7 @@ data.commands = {
 	},
 	"VoidRay/SOAMothershipv4": {
 		name: "Warp In Destroyer",
+		sameAs: "Warp In Void Ray",
 		prereq: "Shadow of Death",
 		hotkey: "V",
 		hotkey_NRS: "O",
@@ -24069,6 +24242,7 @@ data.commands = {
 	},
 	"FenixThunderousChargeCoop/FenixCoop": {
 		name: "Thunderous Charge",
+		sameAs: "Charge",
 		hotkey: "Q",
 		icon: "btn-ability-protoss-thunderouscharge",
 		mask: false,
@@ -24149,6 +24323,7 @@ data.commands = {
 	},
 	"FenixSentryGuardianZone/SentryFenix": {
 		name: "Protective Field",
+		sameAs: "Guardian Shield",
 		hotkey: "G",
 		icon: "btn-upgrade-protoss-purifier-sentry-optimizedemitters",
 		mask: false,
@@ -24549,6 +24724,7 @@ data.commands = {
 	},
 	"Blink/ZeratulStalker": {
 		name: "Predictive Blink",
+		sameAs: "Blink",
 		hotkey: "B",
 		icon: "btn-ability-zeratul-stalker-predectiveblink",
 		mask: false,
@@ -24566,6 +24742,7 @@ data.commands = {
 	},
 	"ZeratulReflectionShield/ZeratulSentry": {
 		name: "Reflection Shield",
+		sameAs: "Guardian Shield",
 		hotkey: "G",
 		icon: "btn-ability-zeratul-sentry-reflectionshield",
 		mask: false,
@@ -24672,6 +24849,7 @@ data.commands = {
 	},
 	"Assimilator/Nexus": {
 		name: "Warp In Ancient Assimilator",
+		sameAs: "Warp In Assimilator",
 		hotkey: "A",
 		icon: "btn-building-protoss-zeratulassimilator",
 		mask: false,
@@ -24680,6 +24858,7 @@ data.commands = {
 	},
 	"StalkerZeratul/ZeratulGateway": {
 		name: "Warp In Xel’Naga Ambusher",
+		sameAs: "Warp In Stalker",
 		hotkey: "S",
 		hotkey_NRS: "L",
 		hotkey_SC1: "D",
@@ -24690,6 +24869,7 @@ data.commands = {
 	},
 	"SentryZeratul/ZeratulGateway": {
 		name: "Warp In Xel’Naga Shieldguard",
+		sameAs: "Warp In Sentry",
 		hotkey: "E",
 		hotkey_NRS: "N",
 		icon: "btn-unit-protoss-zeratulsentry",
@@ -24699,6 +24879,7 @@ data.commands = {
 	},
 	"DarkTemplarZeratul/ZeratulGateway": {
 		name: "Warp In Void Templar",
+		sameAs: "Warp In Dark Templar",
 		hotkey: "D",
 		hotkey_NRS: "K",
 		hotkey_SC1: "K",
@@ -24741,6 +24922,7 @@ data.commands = {
 	},
 	"ImmortalZeratul/ZeratulRoboticsFacility": {
 		name: "Warp In Xel’Naga Enforcer",
+		sameAs: "Warp In Immortal",
 		hotkey: "I",
 		icon: "btn-unit-protoss-zeratulimmortal",
 		mask: false,
@@ -24749,6 +24931,7 @@ data.commands = {
 	},
 	"ZeratulWarpinDisruptor/ZeratulRoboticsFacility": {
 		name: "Warp In Xel’Naga Abrogator",
+		sameAs: "Warp In Disruptor",
 		hotkey: "D",
 		icon: "btn-unit-protoss-zeratuldisruptor",
 		mask: false,
@@ -24757,6 +24940,7 @@ data.commands = {
 	},
 	"WarpInZeratulWarpPrism/ZeratulRoboticsFacility": {
 		name: "Warp In Xel’Naga Void Array",
+		sameAs: "Warp In Warp Prism",
 		hotkey: "V",
 		hotkey_NRS: "R",
 		hotkey_SC1: "U",
@@ -24767,6 +24951,7 @@ data.commands = {
 	},
 	"ZeratulObserver/ZeratulRoboticsFacility": {
 		name: "Warp In Xel’Naga Watcher",
+		sameAs: "Warp In Observer",
 		hotkey: "B",
 		icon: "btn-unit-protoss-zeratulobserver",
 		mask: false,
@@ -25079,6 +25264,7 @@ data.commands = {
 	},
 	"SuperStimpackStone": {
 		name: "Stim Infusion",
+		sameAs: "Use Stimpack",
 		hotkey: "W",
 		icon: "btn-upgrade-nova-equipment-superstimppack",
 		mask: false,
@@ -25190,6 +25376,7 @@ data.commands = {
 	},
 	"SwarmQueenZergling/LargeSwarmQueen": {
 		name: "Birth Zergling",
+		sameAs: "Morph to Zergling",
 		hotkey: "W",
 		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-zergling",
@@ -25199,6 +25386,7 @@ data.commands = {
 	},
 	"SwarmQueenZergling/HugeSwarmQueen": {
 		name: "Birth Zergling",
+		sameAs: "Morph to Zergling",
 		hotkey: "W",
 		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-zergling",
@@ -25208,6 +25396,7 @@ data.commands = {
 	},
 	"SwarmQueenRoach/LargeSwarmQueen": {
 		name: "Birth Roach",
+		sameAs: "Morph to Roach",
 		hotkey: "E",
 		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-roach",
@@ -25217,6 +25406,7 @@ data.commands = {
 	},
 	"SwarmQueenRoach/HugeSwarmQueen": {
 		name: "Birth Roach",
+		sameAs: "Morph to Roach",
 		hotkey: "E",
 		hotkey_NRS: "B",
 		icon: "btn-unit-zerg-roach",
@@ -25226,6 +25416,7 @@ data.commands = {
 	},
 	"SwarmQueenHydralisk/HugeSwarmQueen": {
 		name: "Birth Hydralisk",
+		sameAs: "Morph to Hydralisk",
 		hotkey: "D",
 		hotkey_NRS: "L",
 		icon: "btn-unit-zerg-hydralisk",
@@ -25244,6 +25435,7 @@ data.commands = {
 	},
 	"StukovInfestedTerrans/InfestedStukov": {
 		name: "Spawn Infested Terrans",
+		sameAs: "Infested Terran",
 		hotkey: "W",
 		hotkey_NRS: "I",
 		icon: "btn-unit-zerg-infestedmarine",
@@ -25307,6 +25499,7 @@ data.commands = {
 	},
 	"SJHyperionYamato/SJHyperion": {
 		name: "Yamato",
+		sameAs: "Yamato Cannon",
 		hotkey: "E",
 		hotkey_NRS: "B",
 		icon: "btn-ability-terran-yamatogun-color",
@@ -25405,6 +25598,7 @@ data.commands = {
 	},
 	"FenixSOACharge/FenixChampion": {
 		name: "Thunderous Charge",
+		sameAs: "Charge",
 		hotkey: "Q",
 		hotkey_NRS: "C",
 		hotkey_SC1: "C",
@@ -25415,6 +25609,7 @@ data.commands = {
 	},
 	"FenixSOACharge/FenixSOA": {
 		name: "Thunderous Charge",
+		sameAs: "Charge",
 		hotkey: "Q",
 		hotkey_NRS: "C",
 		hotkey_SC1: "C",
@@ -25597,7 +25792,8 @@ data.commands = {
 data.overrides = {
 	"WingsOfLiberty": {
 		"GhostAcademy/SCV": {
-			name: "Build Ghost Academy\nBuild Shadow Ops"
+			name: "Build Ghost Academy\nBuild Shadow Ops",
+			sameAs: "Build Ghost Academy"
 		},
 		"Marauder/Barracks": {
 			hotkey_SC1: "D",
@@ -25645,6 +25841,7 @@ data.overrides = {
 		},
 		"Raven/Starport": {
 			name: "Build Raven\nBuild Science Vessel",
+			sameAs: "Build Raven",
 			x: 2
 		},
 		"Banshee/Starport": {
@@ -25767,6 +25964,7 @@ data.overrides = {
 		},
 		"Stim": {
 			name: "Super Stimpack",
+			sameAs: "Use Stimpack",
 			hotkey_NRS: "I",
 			icon: "btn-upgrade-nova-equipment-superstimppack"
 		},
@@ -25968,7 +26166,7 @@ data.overrides = {
 		"Wraith/Starport": {
 			hotkey: "T",
 			hotkey_SC1: "W",
-			y: 0,
+			y: 0
 		},
 		"BuildHercules/Starport": {
 			y: 0
@@ -25983,6 +26181,7 @@ data.overrides = {
 		},
 		"Refinery/SCV": {
 			name: "Build Automated Refinery",
+			sameAs: "Build Refinery",
 			icon: "btn-building-nova-refineryautomated"
 		},
 		"Barracks/SCV": {
@@ -26013,15 +26212,18 @@ data.overrides = {
 		},
 		"Marine/Barracks": {
 			name: "Deploy Elite Marines",
+			sameAs: "Train Marine",
 			icon: "btn-unit-terran-marineblackops"
 		},
 		"Marauder/Barracks": {
 			name: "Deploy Marauder Commandos",
+			sameAs: "Train Marauder",
 			icon: "btn-unit-terran-marauderblackops",
 			x: 1
 		},
 		"Firebat/Barracks": {
 			name: "Deploy Spec Ops Ghosts",
+			sameAs: "Train Ghost",
 			hotkey: "G",
 			icon: "btn-unit-terran-blackops-femaleghost",
 			y: 0,
@@ -26040,10 +26242,12 @@ data.overrides = {
 		},
 		"Stimpack/BarracksTechLab": {
 			name: "Research Super Stimpack",
+			sameAs: "Research Stimpack",
 			icon: "btn-upgrade-nova-equipment-superstimppack"
 		},
 		"Stimpack/BarracksTechReactor": {
 			name: "Research Super Stimpack",
+			sameAs: "Research Stimpack",
 			icon: "btn-upgrade-nova-equipment-superstimppack"
 		},
 		"ResearchPunisherGrenades/BarracksTechLab": {
@@ -26075,17 +26279,20 @@ data.overrides = {
 		},
 		"HellionTank/Factory": {
 			name: "Deploy Hellbat Rangers",
+			sameAs: "Build Hellbat",
 			icon: "btn-unit-terran-hellbatblackops",
 			y: 0
 		},
 		"Goliath/Factory": {
 			name: "Deploy Strike Goliaths",
+			sameAs: "Build Goliath",
 			icon: "btn-unit-terran-goliathblackops",
 			y: 0,
 			x: 1
 		},
 		"SiegeTank/Factory": {
 			name: "Deploy Heavy Siege Tanks",
+			sameAs: "Build Siege Tank",
 			icon: "btn-unit-terran-siegetankblackops-tank",
 			x: 2
 		},
@@ -26134,16 +26341,19 @@ data.overrides = {
 		},
 		"Liberator/Starport": {
 			name: "Deploy Raid Liberators",
+			sameAs: "Build Liberator",
 			icon: "btn-unit-terran-liberatorblackops",
 			x: 0
 		},
 		"Banshee/Starport": {
 			name: "Deploy Covert Banshees",
+			sameAs: "Build Banshee",
 			icon: "btn-unit-terran-bansheeblackops",
 			x: 1
 		},
 		"Raven/Starport": {
 			name: "Deploy Raven Type-II",
+			sameAs: "Build Raven",
 			icon: "btn-unit-terran-ravenblackops",
 			x: 2
 		},
@@ -26152,6 +26362,12 @@ data.overrides = {
 		},
 		"ResearchBansheeCloak/StarportTechLab": {
 			name: "Research Advanced Cloaking Field",
+			sameAs: "Research Cloaking Field",
+			x: 0
+		},
+		"ResearchBansheeCloak/StarportTechReactor": {
+			name: "Research Advanced Cloaking Field",
+			sameAs: "Research Cloaking Field",
 			x: 0
 		},
 		"ResearchShockwaveMissileBattery/StarportTechLab": {
@@ -26199,10 +26415,12 @@ data.overrides = {
 		},
 		"TerranVehicleAndShipWeaponsLevel1/Armory": {
 			name: "Upgrade Weapons",
+			sameAs: "Upgrade Vehicle and Ship Weapons",
 			icon: "btn-ability-hornerhan-mechbioweaponupgrades-a"
 		},
 		"TerranVehicleAndShipPlatingLevel1/Armory": {
 			name: "Upgrade Armor",
+			sameAs: "Upgrade Vehicle and Ship Armor",
 			icon: "btn-ability-hornerhan-mechbioarmorupgrades-a"
 		},
 		"ResearchBattlecruiserSpecializations/FusionCore": {
@@ -26289,7 +26507,8 @@ data.overrides = {
 			x: 0
 		},
 		"Queen": {
-			name: "Birth Swarm Queen"
+			name: "Birth Swarm Queen",
+			sameAs: "Birth Queen"
 		},
 		"SpineCrawlerRoot/SpineCrawlerUprooted": {
 			hotkey: "R",
@@ -26352,7 +26571,7 @@ data.overrides = {
 			x: 2
 		},
 		"Hellion/Factory": {
-			hotkey_SC1: "H",
+			hotkey_SC1: "H"
 		},
 		"Goliath/Factory": {
 			y: 0,
@@ -26503,7 +26722,8 @@ data.overrides = {
 			x: 3
 		},
 		"NydusNetwork/Drone": {
-			name: "Mutate into Omega Network"
+			name: "Mutate into Omega Network",
+			sameAs: "Mutate into Nydus Network"
 		},
 		"zerglingattackspeed/SpawningPool": {
 			x: 2
@@ -26642,6 +26862,7 @@ data.overrides = {
 		},
 		"Queen": {
 			name: "Birth Swarm Queen",
+			sameAs: "Birth Queen",
 			icon: "btn-unit-zerg-broodqueen"
 		},
 		"Transfusion/Queen": {
@@ -26772,54 +26993,69 @@ data.overrides = {
 		},
 		"Zealot": {
 			name: "Warp In Zealot\nWarp In Centurion\nWarp In Sentinel",
+			sameAs: "Warp In Zealot",
 			icon: "btn-unit-protoss-zealot-aiur"
 		},
 		"Sentry": {
-			name: "Warp In Sentry\nWarp In Energizer\nWarp In Havoc"
+			name: "Warp In Sentry\nWarp In Energizer\nWarp In Havoc",
+			sameAs: "Warp In Sentry"
 		},
 		"Stalker": {
-			name: "Warp In Stalker\nWarp In Dragoon\nWarp In Adept"
+			name: "Warp In Stalker\nWarp In Dragoon\nWarp In Adept",
+			sameAs: "Warp In Stalker"
 		},
 		"HighTemplar": {
 			name: "Warp In High Templar\nWarp In Dark Archon\nWarp In Ascendant",
+			sameAs: "Warp In High Templar",
 			icon: "btn-unit-protoss-hightemplarnocord"
 		},
 		"DarkTemplar": {
 			name: "Warp In Dark Templar\nWarp In Avenger\nWarp In Blood Hunter",
+			sameAs: "Warp In Dark Templar"
 		},
 		"Immortal/RoboticsFacility": {
 			name: "Warp In Immortal\nWarp In Annihilator\nWarp In Vanguard",
+			sameAs: "Warp In Immortal",
 			x: 0
 		},
 		"Colossus/RoboticsFacility": {
 			name: "Warp In Colossus\nWarp In Reaver\nWarp In Wrathwalker",
+			sameAs: "Warp In Colossus",
 			x: 1
 		},
 		"Immortal/RoboticsFacilityWarp": {
-			name: "Warp In Immortal\nWarp In Annihilator\nWarp In Vanguard"
+			name: "Warp In Immortal\nWarp In Annihilator\nWarp In Vanguard",
+			sameAs: "Warp In Immortal"
 		},
 		"Colossus/RoboticsFacilityWarp": {
-			name: "Warp In Colossus\nWarp In Reaver\nWarp In Wrathwalker"
+			name: "Warp In Colossus\nWarp In Reaver\nWarp In Wrathwalker",
+			sameAs: "Warp In Colossus"
 		},
 		"Phoenix/Stargate": {
-			name: "Warp In Phoenix\nWarp In Corsair\nWarp In Mirage"
+			name: "Warp In Phoenix\nWarp In Corsair\nWarp In Mirage",
+			sameAs: "Warp In Phoenix"
 		},
 		"VoidRay/Stargate": {
 			name: "Warp In Void Ray\nWarp In Destroyer\nWarp In Arbiter",
+			sameAs: "Warp In Void Ray",
 			x: 1
 		},
 		"Carrier/Stargate": {
 			name: "Warp In Carrier\nWarp In Tempest\nWarp In Mothership",
+			sameAs: "Warp In Carrier",
 			x: 2
 		},
 		"Phoenix/StargateWarp": {
-			name: "Warp In Phoenix\nWarp In Corsair\nWarp In Mirage"
+			name: "Warp In Phoenix\nWarp In Corsair\nWarp In Mirage",
+			sameAs: "Warp In Phoenix"
 		},
 		"VoidRay/StargateWarp": {
-			name: "Warp In Void Ray\nWarp In Destroyer\nWarp In Arbiter"
+			name: "Warp In Void Ray\nWarp In Destroyer\nWarp In Arbiter",
+			sameAs: "Warp In Void Ray"
 		},
 		"Carrier/StargateWarp": {
-			name: "Warp In Carrier\nWarp In Tempest\nWarp In Mothership"
+			name: "Warp In Carrier\nWarp In Tempest\nWarp In Mothership",
+			sameAs: "Warp In Carrier"
 		}
 	},
 	"CoopMissionsProtoss": {
@@ -26833,14 +27069,17 @@ data.overrides = {
 		},
 		"Gateway/Probe": {
 			name: "Warp In Warp Gate",
+			sameAs: "Warp In Gateway",
 			icon: "btn-building-protoss-warpgate"
 		},
 		"Stargate/Probe": {
 			name: "Warp In Warp Stargate",
+			sameAs: "Warp In Stargate",
 			icon: "btn-building-protoss-starwarpgate"
 		},
 		"RoboticsFacility/Probe": {
 			name: "Warp In Warp Robotics Facility",
+			sameAs: "Warp In Robotics Facility",
 			icon: "btn-building-protoss-roboticswarpfacility"
 		},
 		"Zealot": {
@@ -26848,6 +27087,7 @@ data.overrides = {
 		},
 		"Stalker": {
 			name: "Warp In Dragoon",
+			sameAs: "Warp In Stalker",
 			icon: "btn-unit-protoss-dragoon-void"
 		},
 		"HighTemplar": {
@@ -26867,11 +27107,13 @@ data.overrides = {
 		},
 		"Colossus/RoboticsFacility": {
 			name: "Warp In Reaver",
+			sameAs: "Warp In Colossus",
 			icon: "btn-unit-protoss-reaver",
 			x: 1
 		},
 		"Colossus/RoboticsFacilityWarp": {
 			name: "Warp In Reaver",
+			sameAs: "Warp In Colossus",
 			icon: "btn-unit-protoss-reaver"
 		},
 		"ResearchExtendedThermalLance/RoboticsBay": {
@@ -26907,10 +27149,12 @@ data.overrides = {
 		},
 		"Zealot": {
 			name: "Warp In Centurion",
+			sameAs: "Warp In Zealot",
 			icon: "btn-unit-protoss-zealot-nerazim"
 		},
 		"ResearchCharge/TwilightCouncil": {
 			name: "Research Shadow Charge",
+			sameAs: "Research Charge",
 			icon: "btn-ability-protoss-shadowcharge"
 		},
 		"ResearchDragoonRange/TwilightCouncil": {
@@ -26927,6 +27171,7 @@ data.overrides = {
 		},
 		"Phoenix/Stargate": {
 			name: "Warp In Corsair",
+			sameAs: "Warp In Phoenix",
 			icon: "btn-unit-protoss-corsair"
 		},
 		"VoidRay/Stargate": {
@@ -26961,10 +27206,12 @@ data.overrides = {
 		},
 		"Zealot": {
 			name: "Warp In Sentinel",
+			sameAs: "Warp In Zealot",
 			icon: "btn-unit-protoss-zealot-purifier"
 		},
 		"Sentry": {
 			name: "Warp In Energizer",
+			sameAs: "Warp In Sentry",
 			icon: "btn-unit-protoss-sentry-purifier"
 		},
 		"VoidSentryPhasingMode/SentryPurifier": {
@@ -27018,6 +27265,7 @@ data.overrides = {
 		},
 		"Phoenix/Stargate": {
 			name: "Warp In Mirage",
+			sameAs: "Warp In Phoenix",
 			icon: "btn-unit-protoss-phoenix-purifier"
 		},
 		"VoidRay/Stargate": {
@@ -27078,7 +27326,8 @@ data.overrides = {
 			icon: "btn-unit-protoss-alarak-taldarim-roboticssupportbay"
 		},
 		"Blink/Stalker": {
-			name: "Phase Blink"
+			name: "Phase Blink",
+			sameAs: "Blink"
 		},
 		"AscendantSacrifice/HighTemplarTaldarim": {
 			hotkey: "C"
@@ -27088,18 +27337,22 @@ data.overrides = {
 		},
 		"Zealot": {
 			name: "Warp In Supplicant",
+			sameAs: "Warp In Zealot",
 			icon: "btn-unit-protoss-alarak-taldarim-supplicant"
 		},
 		"Sentry": {
 			name: "Warp In Havoc",
+			sameAs: "Warp In Sentry",
 			icon: "btn-unit-protoss-alarak-taldarim-sentry"
 		},
 		"Stalker": {
 			name: "Warp In Slayer",
+			sameAs: "Warp In Stalker",
 			icon: "btn-unit-protoss-alarak-taldarim-stalker"
 		},
 		"HighTemplar": {
 			name: "Warp In Ascendant",
+			sameAs: "Warp In High Templar",
 			icon: "btn-unit-protoss-alarak-taldarim-hightemplar"
 		},
 		"UpgradeToWarpGate/Gateway": {
@@ -27109,10 +27362,12 @@ data.overrides = {
 			icon: "btn-unit-protoss-alarak-taldarim-gateway"
 		},
 		"ProtossGroundWeaponsLevel1/Forge": {
-			name: "Upgrade Protoss Weapons"
+			name: "Upgrade Protoss Weapons",
+			sameAs: "Upgrade Ground Weapons"
 		},
 		"ProtossGroundArmorLevel1/Forge": {
-			name: "Upgrade Protoss Armor"
+			name: "Upgrade Protoss Armor",
+			sameAs: "Upgrade Ground Armor"
 		},
 		"ResearchKaraxTurretRange/Forge": {
 			name: "Research Imposing Presence",
@@ -27139,6 +27394,7 @@ data.overrides = {
 		},
 		"ResearchDragoonRange/TwilightCouncil": {
 			name: "Research Phase Blink",
+			sameAs: "Research Blink",
 			icon: "btn-ability-protoss-blink-color"
 		},
 		"ResearchWhirlwind/TwilightCouncil": {
@@ -27163,16 +27419,19 @@ data.overrides = {
 		},
 		"Immortal/RoboticsFacility": {
 			name: "Warp In Vanguard",
+			sameAs: "Warp In Immortal",
 			icon: "btn-unit-protoss-alarak-taldarim-immortal",
 			x: 0
 		},
 		"Colossus/RoboticsFacility": {
 			name: "Warp In Wrathwalker",
+			sameAs: "Warp In Colossus",
 			icon: "btn-unit-protoss-alarak-taldarim-colossus",
 			x: 1
 		},
 		"WarpinDisruptor/RoboticsFacility": {
 			name: "Warp In War Prism",
+			sameAs: "Warp In Warp Prism",
 			icon: "btn-unit-protoss-alarak-taldarim-warpprism",
 			hotkey: "V",
 			hotkey_SC1: "U",
@@ -27258,10 +27517,12 @@ data.overrides = {
 		},
 		"Zealot": {
 			name: "Warp In Legionnaire",
+			sameAs: "Warp In Immortal",
 			icon: "btn-unit-collection-purifier-zealot"
 		},
 		"Sentry": {
 			name: "Warp In Conservator",
+			sameAs: "Warp In Sentry",
 			icon: "btn-unit-collection-purifier-sentry"
 		},
 		"Stalker": {
@@ -27336,6 +27597,7 @@ data.overrides = {
 		},
 		"Phoenix/Stargate": {
 			name: "Warp In Scout",
+			sameAs: "Warp In Phoenix",
 			icon: "btn-unit-protoss-scout-purifier"
 		},
 		"VoidRay/Stargate": {
@@ -27366,34 +27628,42 @@ data.overrides = {
 		},
 		"Nexus/Probe": {
 			name: "Warp In Ancient Nexus",
+			sameAs: "Warp In Nexus",
 			icon: "btn-building-protoss-zeratulnexus"
 		},
 		"Gateway/Probe": {
 			name: "Warp In Xel’Naga Passageway",
+			sameAs: "Warp In Gateway",
 			icon: "btn-building-protoss-zeratulgateway"
 		},
 		"CyberneticsCore/Probe": {
 			name: "Warp In Core Forge",
+			sameAs: "Warp In Cybernetics Core",
 			icon: "btn-building-protoss-zeratulcyberneticscore"
 		},
 		"PhotonCannon/Probe": {
 			name: "Warp In Tesseract Cannon",
+			sameAs: "Warp In Photon Cannon",
 			icon: "btn-building-protoss-zeratulphotoncannon"
 		},
 		"RoboticsFacility/Probe": {
 			name: "Warp In Constructs Facility",
+			sameAs: "Warp In Robotics Facility",
 			icon: "btn-building-protoss-zeratulroboticsfacility"
 		},
 		"RoboticsBay/Probe": {
 			name: "Warp In Constructs Bay",
+			sameAs: "Warp In Robotics Bay",
 			icon: "btn-building-protoss-zeratulroboticssupportbay"
 		},
 		"DarkShrine/Probe": {
 			name: "Warp In Void Shrine",
+			sameAs: "Warp In Dark Shrine",
 			icon: "btn-building-protoss-zeratuldarkshrine"
 		},
 		"Probe/Nexus": {
 			name: "Warp In Xel’Naga Precursor",
+			sameAs: "Warp In Probe",
 			icon: "btn-unit-protoss-zeratulprobe"
 		}
 	}

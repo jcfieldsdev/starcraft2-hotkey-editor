@@ -771,16 +771,17 @@ Editor.prototype.findCommandsNamed = function(id) {
 	const command = this.commands.getCommand(
 		data.units[this.name].commander, this.name, this.id
 	);
+	const name = command.sameAs || command.name;
 
 	for (const [id, properties] of Object.entries(data.commands)) {
-		if (properties.name == command.name) {
+		if (name == (properties.sameAs || properties.name)) {
 			matches.add(id);
 		}
 	}
 
 	for (const commander of Object.values(data.overrides)) {
 		for (const [id, properties] of Object.entries(commander)) {
-			if (properties.name == command.name) {
+			if (name == (properties.sameAs || properties.name)) {
 				matches.add(id);
 			}
 		}
