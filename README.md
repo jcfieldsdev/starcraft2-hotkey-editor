@@ -1,8 +1,8 @@
 # starcraft2-hotkey-editor
 
-<div align="center"><img src="https://gitlab.com/jcfields/starcraft2-hotkey-editor/raw/master/screenshot.jpg" width="713" height="384" alt="[Starcraft II Hotkey Editor]"></div>
+A [hotkey editor for *Starcraft II*](https://jcfieldsdev.github.io/starcraft2-hotkey-editor/). Written in JavaScript. Includes all units and structures from versus, co-op, and the official campaigns. Identifies conflicts across all three modes simultaneously.
 
-A [hotkey editor for *Starcraft II*](https://jcfields.gitlab.io/starcraft2-hotkey-editor/). Written in JavaScript. Includes all units and structures from versus, co-op, and the official campaigns. Identifies conflicts across all three modes simultaneously.
+![Starcraft II Hotkey Editor](screenshot.jpg)
 
 ## Guide
 
@@ -42,7 +42,7 @@ If you load a hotkey profile based on the "Standard for Lefties" or "Classic" se
 
 After customizing your hotkeys, click the `Save` button in the bottom-right corner of the screen to generate a new hotkey file based on your modifications. You can copy the contents of this file by directly copying from the text box or by clicking the `Copy` button, or you can download the file by clicking the `Download` button.
 
-The `?` button next to the `Load` and `Save` buttons brings up the [help page](https://jcfields.gitlab.io/starcraft2-hotkey-editor/help.html), which explains in detail where the hotkey file is located on your computer and how to select it in the game.
+The `?` button next to the `Load` and `Save` buttons brings up the [help page](https://jcfieldsdev.github.io/starcraft2-hotkey-editor/help.html), which explains in detail where the hotkey file is located on your computer and how to select it in the game.
 
 ## Limitations
 
@@ -65,6 +65,6 @@ Uses [Fira Mono](https://github.com/mozilla/Fira) font by [Carrois Type Design](
 
 ## See also
 
-- [*Warcraft III* Hotkey Editor](https://gitlab.com/jcfields/warcraft3-hotkey-editor)—A similar editor on which this project is based.
-- [*Starcraft II* Co-op Randomizer](https://gitlab.com/jcfields/starcraft2-coop-randomizer)—A utility for picking a random co-op map or commander.
-- [*Starcraft II* Co-op Replay Tool](https://gitlab.com/jcfields/starcraft2-coop-replay-tool)—A utility for analyzing co-op replays.
+- [*Warcraft III* Hotkey Editor](https://github.com/jcfieldsdev/warcraft3-hotkey-editor)—A similar editor on which this project is based.
+- [*Starcraft II* Co-op Randomizer](https://github.com/jcfieldsdev/starcraft2-coop-randomizer)—A utility for picking a random co-op map or commander.
+- [*Starcraft II* Co-op Replay Tool](https://github.com/jcfieldsdev/starcraft2-coop-replay-tool)—A utility for analyzing co-op replays.
