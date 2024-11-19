@@ -10,966 +10,1338 @@
 <script src="scripts/data.js" type="text/javascript"></script>
 <script src="scripts/editor.js" type="text/javascript"></script></head>
 <body><header><h1>Starcraft II Hotkey Editor</h1></header>
-<nav><ul id="filters"><li><button type="button" value="Terran" title="Terran" id="terran" class="filter terran"><span>Terran</span></button></li>
-<li><button type="button" value="Raynor" title="Raynor" id="raynor" class="filter terran"><span>Raynor</span></button></li>
-<li><button type="button" value="Swann" title="Swann" id="swann" class="filter terran"><span>Swann</span></button></li>
-<li><button type="button" value="Nova" title="Nova" id="nova" class="filter terran"><span>Nova</span></button></li>
-<li><button type="button" value="Han" title="Han &amp; Horner" id="han" class="filter terran"><span>Han &amp; Horner</span></button></li>
-<li><button type="button" value="Tychus" title="Tychus" id="tychus" class="filter terran"><span>Tychus</span></button></li>
-<li><button type="button" value="Mengsk" title="Mengsk" id="mengsk" class="filter terran"><span>Mengsk</span></button></li>
-<li><button type="button" value="Zerg" title="Zerg" id="zerg" class="filter zerg"><span>Zerg</span></button></li>
-<li><button type="button" value="Kerrigan" title="Kerrigan" id="kerrigan" class="filter zerg"><span>Kerrigan</span></button></li>
-<li><button type="button" value="Zagara" title="Zagara" id="zagara" class="filter zerg"><span>Zagara</span></button></li>
-<li><button type="button" value="Abathur" title="Abathur" id="abathur" class="filter zerg"><span>Abathur</span></button></li>
-<li><button type="button" value="Stukov" title="Stukov" id="stukov" class="filter zerg"><span>Stukov</span></button></li>
-<li><button type="button" value="Dehaka" title="Dehaka" id="dehaka" class="filter zerg"><span>Dehaka</span></button></li>
-<li><button type="button" value="Stetmann" title="Stetmann" id="stetmann" class="filter zerg"><span>Stetmann</span></button></li>
-<li><button type="button" value="Protoss" title="Protoss" id="protoss" class="filter protoss"><span>Protoss</span></button></li>
-<li><button type="button" value="Artanis" title="Artanis" id="artanis" class="filter protoss"><span>Artanis</span></button></li>
-<li><button type="button" value="Vorazun" title="Vorazun" id="vorazun" class="filter protoss"><span>Vorazun</span></button></li>
-<li><button type="button" value="Karax" title="Karax" id="karax" class="filter protoss"><span>Karax</span></button></li>
-<li><button type="button" value="Alarak" title="Alarak" id="alarak" class="filter protoss"><span>Alarak</span></button></li>
-<li><button type="button" value="Fenix" title="Fenix" id="fenix" class="filter protoss"><span>Fenix</span></button></li>
-<li><button type="button" value="Zeratul" title="Zeratul" id="zeratul" class="filter protoss"><span>Zeratul</span></button></li></ul></nav>
-<main><noscript><p>Must have JavaScript enabled.</p></noscript>
-<section id="Terran"><h2>Terran</h2>
-<h3>Units</h3>
-<ul><li><a href="#Terran_SCV">SCV</a></li>
-<li><a href="#Terran_MULE">MULE</a></li>
-<li><a href="#Terran_Marine">Marine</a></li>
-<li><a href="#Terran_Reaper">Reaper</a></li>
-<li><a href="#Terran_Marauder">Marauder</a></li>
-<li><a href="#Terran_Ghost">Ghost</a></li>
-<li><a href="#Terran_Hellbat">Hellion / Hellbat</a></li>
-<li><a href="#Terran_WidowMine">Widow Mine</a></li>
-<li><a href="#Terran_Cyclone">Cyclone</a></li>
-<li><a href="#Terran_SiegeTank">Siege Tank</a></li>
-<li><a href="#Terran_Thor">Thor</a></li>
-<li><a href="#Terran_Viking">Viking</a></li>
-<li><a href="#Terran_Medivac">Medivac</a></li>
-<li><a href="#Terran_Liberator">Liberator</a></li>
-<li><a href="#Terran_Raven">Raven</a></li>
-<li><a href="#Terran_Banshee">Banshee</a></li>
-<li><a href="#Terran_Battlecruiser">Battlecruiser</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Terran_CommandCenter">Command Center</a></li>
-<li><a href="#Terran_SupplyDepot">Supply Depot</a></li>
-<li><a href="#Terran_Refinery">Refinery</a></li>
-<li><a href="#Terran_Barracks">Barracks</a></li>
-<li><a href="#Terran_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#Terran_Bunker">Bunker</a></li>
-<li><a href="#Terran_MissileTurret">Missile Turret</a></li>
-<li><a href="#Terran_SensorTower">Sensor Tower</a></li>
-<li><a href="#Terran_GhostAcademy">Ghost Academy</a></li>
-<li><a href="#Terran_Factory">Factory</a></li>
-<li><a href="#Terran_Armory">Armory</a></li>
-<li><a href="#Terran_Starport">Starport</a></li>
-<li><a href="#Terran_FusionCore">Fusion Core</a></li></ul>
-<h2>Wings of Liberty</h2>
-<h3>Heroes</h3>
-<h4>Raynor&rsquo;s Raiders</h4>
-<ul><li><a href="#WingsOfLiberty_Raynor">Raynor</a></li>
-<li><a href="#WingsOfLiberty_Tychus">Tychus</a></li>
-<li><a href="#WingsOfLiberty_Swann">Swann</a></li>
-<li><a href="#WingsOfLiberty_Stetmann">Stetmann</a></li></ul>
-<h4>Terran Dominion</h4>
-<ul><li><a href="#WingsOfLiberty_Nova">Nova</a></li>
-<li><a href="#WingsOfLiberty_Tosh">Tosh</a></li></ul>
-<h4>Daelaam Protoss</h4>
-<ul><li><a href="#WingsOfLiberty_Zeratul">Zeratul</a></li>
-<li><a href="#WingsOfLiberty_Urun">Urun</a></li>
-<li><a href="#WingsOfLiberty_Mohandar">Mohandar</a></li>
-<li><a href="#WingsOfLiberty_Selendis">Selendis</a></li>
-<li><a href="#WingsOfLiberty_Artanis">Artanis</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#WingsOfLiberty_SCV">SCV</a></li>
-<li><a href="#WingsOfLiberty_MULE">MULE</a></li>
-<li><a href="#WingsOfLiberty_Marine">Marine</a></li>
-<li><a href="#WingsOfLiberty_Reaper">Reaper</a></li>
-<li><a href="#WingsOfLiberty_Marauder">Marauder</a></li>
-<li><a href="#WingsOfLiberty_Firebat">Firebat</a></li>
-<li><a href="#WingsOfLiberty_Medic">Medic</a></li>
-<li><a href="#WingsOfLiberty_Ghost">Ghost</a></li>
-<li><a href="#WingsOfLiberty_Spectre">Spectre</a></li>
-<li><a href="#WingsOfLiberty_Hellion">Hellion</a></li>
-<li><a href="#WingsOfLiberty_SiegeTank">Siege Tank</a></li>
-<li><a href="#WingsOfLiberty_Thor">Thor</a></li>
-<li><a href="#WingsOfLiberty_Predator">Predator</a></li>
-<li><a href="#WingsOfLiberty_Vulture">Vulture</a></li>
-<li><a href="#WingsOfLiberty_Diamondback">Diamondback</a></li>
-<li><a href="#WingsOfLiberty_Goliath">Goliath</a></li>
-<li><a href="#WingsOfLiberty_Viking">Viking</a></li>
-<li><a href="#WingsOfLiberty_Wraith">Wraith</a></li>
-<li><a href="#WingsOfLiberty_Medivac">Medivac</a></li>
-<li><a href="#WingsOfLiberty_Banshee">Banshee</a></li>
-<li><a href="#WingsOfLiberty_Raven">Raven</a></li>
-<li><a href="#WingsOfLiberty_ScienceVessel">Science Vessel</a></li>
-<li><a href="#WingsOfLiberty_Hercules">Hercules</a></li>
-<li><a href="#WingsOfLiberty_Battlecruiser">Battlecruiser</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#WingsOfLiberty_CommandCenter">Command Center</a></li>
-<li><a href="#WingsOfLiberty_SupplyDepot">Supply Depot</a></li>
-<li><a href="#WingsOfLiberty_Refinery">Refinery</a></li>
-<li><a href="#WingsOfLiberty_Barracks">Barracks</a></li>
-<li><a href="#WingsOfLiberty_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#WingsOfLiberty_Bunker">Bunker</a></li>
-<li><a href="#WingsOfLiberty_PerditionTurret">Perdition Turret</a></li>
-<li><a href="#WingsOfLiberty_MissileTurret">Missile Turret</a></li>
-<li><a href="#WingsOfLiberty_SensorTower">Sensor Tower</a></li>
-<li><a href="#WingsOfLiberty_HiveMindEmulator">Hive Mind Emulator</a></li>
-<li><a href="#WingsOfLiberty_PsiDisrupter">Psi Disrupter</a></li>
-<li><a href="#WingsOfLiberty_GhostAcademy">Ghost Academy / Shadow Ops</a></li>
-<li><a href="#WingsOfLiberty_Factory">Factory</a></li>
-<li><a href="#WingsOfLiberty_Armory">Armory</a></li>
-<li><a href="#WingsOfLiberty_Starport">Starport</a></li>
-<li><a href="#WingsOfLiberty_FusionCore">Fusion Core</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#WingsOfLiberty_Odin">Odin</a></li>
-<li><a href="#WingsOfLiberty_WarBot">A.R.E.S.</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#WingsOfLiberty_MercCompound">Merc Compound</a></li>
-<li><a href="#WingsOfLiberty_LaserDrill">Drakken Laser Drill</a></li>
-<li><a href="#WingsOfLiberty_Artifact">Artifact</a></li></ul>
-<h2>Nova Covert Ops</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#NovaCovertOps_Nova">Nova</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#NovaCovertOps_SCV">SCV</a></li>
-<li><a href="#NovaCovertOps_Marine">Marine</a></li>
-<li><a href="#NovaCovertOps_Reaper">Reaper</a></li>
-<li><a href="#NovaCovertOps_Marauder">Marauder</a></li>
-<li><a href="#NovaCovertOps_Hellbat">Hellion / Hellbat</a></li>
-<li><a href="#NovaCovertOps_Goliath">Goliath</a></li>
-<li><a href="#NovaCovertOps_SiegeTank">Siege Tank</a></li>
-<li><a href="#NovaCovertOps_Liberator">Liberator</a></li>
-<li><a href="#NovaCovertOps_Raven">Raven</a></li>
-<li><a href="#NovaCovertOps_Banshee">Banshee</a></li>
-<li><a href="#NovaCovertOps_Battlecruiser">Battlecruiser</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#NovaCovertOps_CommandCenter">Command Center</a></li>
-<li><a href="#NovaCovertOps_SupplyDepot">Supply Depot</a></li>
-<li><a href="#NovaCovertOps_Refinery">Refinery</a></li>
-<li><a href="#NovaCovertOps_Barracks">Barracks</a></li>
-<li><a href="#NovaCovertOps_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#NovaCovertOps_Bunker">Bunker</a></li>
-<li><a href="#NovaCovertOps_MissileTurret">Missile Turret</a></li>
-<li><a href="#NovaCovertOps_GhostAcademy">Ghost Academy</a></li>
-<li><a href="#NovaCovertOps_Factory">Factory</a></li>
-<li><a href="#NovaCovertOps_Armory">Armory</a></li>
-<li><a href="#NovaCovertOps_Starport">Starport</a></li>
-<li><a href="#NovaCovertOps_FusionCore">Fusion Core</a></li></ul>
-<h3>Special Units and Structures</h3>
-<h4>Terran Dominion</h4>
-<ul><li><a href="#NovaCovertOps_Stone">Stone</a></li></ul>
-<h4>Defenders of Man</h4>
-<ul><li><a href="#NovaCovertOps_Trooper">Trooper</a></li>
-<li><a href="#NovaCovertOps_Ghost">Ghost</a></li>
-<li><a href="#NovaCovertOps_SensorDrone">Sensor Drone</a></li>
-<li><a href="#NovaCovertOps_SonarDrone">Sonar Drone</a></li></ul>
-<h4>Umojan Expedition</h4>
-<ul><li><a href="#NovaCovertOps_HERC">HERC</a></li>
-<li><a href="#NovaCovertOps_HERCCompound">HERC Compound</a></li></ul>
-<h4>Feral Zerg</h4>
-<ul><li><a href="#NovaCovertOps_Defiler">Defiler</a></li></ul>
-<h2>Co-op Missions</h2>
-<h3>Units</h3>
-<h4>Amon&rsquo;s Forces</h4>
-<ul><li><a href="#CoopMissionsTerran_Ghost">Ghost</a></li>
-<li><a href="#CoopMissionsTerran_Raven">Raven</a></li></ul>
-<h4>Mutators</h4>
-<ul><li><a href="#CoopMissionsTerran_BoomBot">Boom Bot</a></li></ul></section>
-<section id="Raynor"><h2>Raynor</h2>
-<h3>Units</h3>
-<ul><li><a href="#Raynor_SCV">SCV</a></li>
-<li><a href="#Raynor_MULE">MULE</a></li>
-<li><a href="#Raynor_Marine">Marine</a></li>
-<li><a href="#Raynor_Marauder">Marauder</a></li>
-<li><a href="#Raynor_Firebat">Firebat</a></li>
-<li><a href="#Raynor_Medic">Medic</a></li>
-<li><a href="#Raynor_Vulture">Vulture</a></li>
-<li><a href="#Raynor_SiegeTank">Siege Tank</a></li>
-<li><a href="#Raynor_Viking">Viking</a></li>
-<li><a href="#Raynor_Banshee">Banshee</a></li>
-<li><a href="#Raynor_Battlecruiser">Battlecruiser</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Raynor_CommandCenter">Command Center</a></li>
-<li><a href="#Raynor_SupplyDepot">Supply Depot</a></li>
-<li><a href="#Raynor_Refinery">Refinery</a></li>
-<li><a href="#Raynor_Barracks">Barracks</a></li>
-<li><a href="#Raynor_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#Raynor_Bunker">Bunker</a></li>
-<li><a href="#Raynor_MissileTurret">Missile Turret</a></li>
-<li><a href="#Raynor_Factory">Factory</a></li>
-<li><a href="#Raynor_Armory">Armory</a></li>
-<li><a href="#Raynor_Starport">Starport</a></li>
-<li><a href="#Raynor_FusionCore">Fusion Core</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Raynor_Hyperion">Hyperion</a></li>
-<li><a href="#Raynor_DuskWings">Dusk Wings</a></li></ul></section>
-<section id="Swann"><h2>Swann</h2>
-<h3>Units</h3>
-<ul><li><a href="#Swann_SCV">SCV</a></li>
-<li><a href="#Swann_Hellbat">Hellion / Hellbat</a></li>
-<li><a href="#Swann_Goliath">Goliath</a></li>
-<li><a href="#Swann_SiegeTank">Siege Tank</a></li>
-<li><a href="#Swann_Cyclone">Cyclone</a></li>
-<li><a href="#Swann_Thor">Thor</a></li>
-<li><a href="#Swann_Wraith">Wraith</a></li>
-<li><a href="#Swann_Hercules">Hercules</a></li>
-<li><a href="#Swann_ScienceVessel">Science Vessel</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Swann_CommandCenter">Command Center</a></li>
-<li><a href="#Swann_SupplyDepot">Supply Depot</a></li>
-<li><a href="#Swann_Refinery">Refinery</a></li>
-<li><a href="#Swann_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#Swann_PerditionTurret">Perdition Turret / Flaming Betty</a></li>
-<li><a href="#Swann_DevastationTurret">Devastation Turret / Blaster Billy</a></li>
-<li><a href="#Swann_MissileTurret">Missile Turret / Spinning Dizzy</a></li>
-<li><a href="#Swann_Factory">Factory</a></li>
-<li><a href="#Swann_Armory">Armory</a></li>
-<li><a href="#Swann_Starport">Starport</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Swann_WarBot">A.R.E.S.</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Swann_LaserDrill">Drakken Laser Drill</a></li></ul></section>
-<section id="Nova"><h2>Nova</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Nova_Nova">Nova</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Nova_SCV">SCV</a></li>
-<li><a href="#Nova_Marine">Elite Marine</a></li>
-<li><a href="#Nova_Marauder">Marauder Commando</a></li>
-<li><a href="#Nova_Ghost">Spec Ops Ghost</a></li>
-<li><a href="#Nova_Hellbat">Hellbat Ranger</a></li>
-<li><a href="#Nova_Goliath">Strike Goliath</a></li>
-<li><a href="#Nova_SiegeTank">Heavy Siege Tank</a></li>
-<li><a href="#Nova_Liberator">Raid Liberator</a></li>
-<li><a href="#Nova_Raven">Raven Type-II</a></li>
-<li><a href="#Nova_Banshee">Covert Banshee</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Nova_CommandCenter">Command Center</a></li>
-<li><a href="#Nova_Refinery">Automated Refinery</a></li>
-<li><a href="#Nova_Barracks">Barracks</a></li>
-<li><a href="#Nova_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#Nova_RailgunTurret">Railgun Turret</a></li>
-<li><a href="#Nova_MissileTurret">Missile Turret</a></li>
-<li><a href="#Nova_Factory">Factory</a></li>
-<li><a href="#Nova_Armory">Armory</a></li>
-<li><a href="#Nova_Starport">Starport</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Nova_DefensiveDrone">Defensive Drone</a></li>
-<li><a href="#Nova_SabotageDrone">Sabotage Drone</a></li>
-<li><a href="#Nova_RepairDrone">Bio-Mechanical Repair Drone</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Nova_GhostAcademy">Ghost Academy</a></li></ul></section>
-<section id="Han"><h2>Han &amp; Horner</h2>
-<h3>Units</h3>
-<ul><li><a href="#Han_SCV">SCV</a></li>
-<li><a href="#Han_Reaper">Reaper</a></li>
-<li><a href="#Han_WidowMine">Widow Mine</a></li>
-<li><a href="#Han_Hellbat">Hellion / Hellbat</a></li>
-<li><a href="#Han_Wraith">Asteria Wraith</a></li>
-<li><a href="#Han_Viking">Deimos Viking</a></li>
-<li><a href="#Han_Raven">Theia Raven</a></li>
-<li><a href="#Han_Battlecruiser">Sovereign Battlecruiser</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Han_CommandCenter">Command Center</a></li>
-<li><a href="#Han_SupplyDepot">Supply Depot</a></li>
-<li><a href="#Han_Refinery">Refinery</a></li>
-<li><a href="#Han_AssaultGalleon">Assault Galleon</a></li>
-<li><a href="#Han_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#Han_MissileTurret">Missile Turret</a></li>
-<li><a href="#Han_Armory">Armory</a></li>
-<li><a href="#Han_StrikeFighterPlatform">Strike Fighter Platform</a></li>
-<li><a href="#Han_FusionCore">Fusion Core</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Han_Starport">Dominion Starport</a></li></ul></section>
-<section id="Tychus"><h2>Tychus</h2>
-<h3>Outlaws</h3>
-<ul><li><a href="#Tychus_Tychus">Tychus</a></li>
-<li><a href="#Tychus_CrookedSam">Crooked Sam</a></li>
-<li><a href="#Tychus_Sirius">James &ldquo;Sirius&rdquo; Sykes</a></li>
-<li><a href="#Tychus_Blaze">Miles &ldquo;Blaze&rdquo; Lewis</a></li>
-<li><a href="#Tychus_Rattlesnake">Kev &ldquo;Rattlesnake&rdquo; West</a></li>
-<li><a href="#Tychus_Cannonball">Rob &ldquo;Cannonball&rdquo; Boswell</a></li>
-<li><a href="#Tychus_Vega">Vega</a></li>
-<li><a href="#Tychus_Nux">Nux</a></li>
-<li><a href="#Tychus_Nikara">Lt. Layna Nikara</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Tychus_SCV">SCV</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Tychus_CommandCenter">Command Center</a></li>
-<li><a href="#Tychus_Refinery">Refinery</a></li>
-<li><a href="#Tychus_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#Tychus_Guns">Gunslinger&rsquo;s Hideout</a></li>
-<li><a href="#Tychus_Muscle">Muscle Armory</a></li>
-<li><a href="#Tychus_Fixers">Fixers&rsquo; Safehouse</a></li>
-<li><a href="#Tychus_AutoTurret">Auto-Turret</a></li>
-<li><a href="#Tychus_MedivacPlatform">Medivac Platform</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Tychus_Odin">Odin</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Tychus_Bar">Joeyray&rsquo;s Bar</a></li></ul></section>
-<section id="Mengsk"><h2>Mengsk</h2>
-<h3>Units</h3>
-<ul><li><a href="#Mengsk_Laborer">Dominion Laborer</a></li>
-<li><a href="#Mengsk_Trooper">Dominion Trooper</a></li>
-<li><a href="#Mengsk_Marauder">Aegis Guard</a></li>
-<li><a href="#Mengsk_Ghost">Emperor&rsquo;s Shadow</a></li>
-<li><a href="#Mengsk_SiegeTank">Shock Division</a></li>
-<li><a href="#Mengsk_Thor">Blackhammer</a></li>
-<li><a href="#Mengsk_Viking">Sky Fury</a></li>
-<li><a href="#Mengsk_Medivac">Imperial Intercessor</a></li>
-<li><a href="#Mengsk_Raven">Imperial Witness</a></li>
-<li><a href="#Mengsk_Battlecruiser">Pride of Augustgrad</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Mengsk_CommandCenter">Enlistment Center</a></li>
-<li><a href="#Mengsk_Refinery">Refinery</a></li>
-<li><a href="#Mengsk_SupplyDepot">Supply Bunker</a></li>
-<li><a href="#Mengsk_Barracks">Barracks</a></li>
-<li><a href="#Mengsk_EngineeringBay">Engineering Bay</a></li>
-<li><a href="#Mengsk_Artillery">Earthsplitter Ordnance</a></li>
-<li><a href="#Mengsk_MissileTurret">Missile Turret</a></li>
-<li><a href="#Mengsk_GhostAcademy">Royal Academy</a></li>
-<li><a href="#Mengsk_Factory">Factory</a></li>
-<li><a href="#Mengsk_Armory">Armory</a></li>
-<li><a href="#Mengsk_Starport">Starport</a></li>
-<li><a href="#Mengsk_FusionCore">Fusion Core</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Mengsk_Zergling">Enthralled Zergling</a></li>
-<li><a href="#Mengsk_Hydralisk">Enthralled Hydralisk</a></li>
-<li><a href="#Mengsk_Mutalisk">Enthralled Mutalisk</a></li>
-<li><a href="#Mengsk_Ultralisk">Enthralled Ultralisk</a></li></ul></section>
-<section id="Zerg"><h2>Zerg</h2>
-<h3>Units</h3>
-<ul><li><a href="#Zerg_Larva">Larva</a></li>
-<li><a href="#Zerg_Drone">Drone</a></li>
-<li><a href="#Zerg_Overlord">Overlord</a>
-	<ul><li><a href="#Zerg_Overseer">Overseer</a></li></ul>
-</li>
-<li><a href="#Zerg_Queen">Queen</a></li>
-<li><a href="#Zerg_Zergling">Zergling</a>
-	<ul><li><a href="#Zerg_Baneling">Baneling</a></li></ul>
-</li>
-<li><a href="#Zerg_Roach">Roach</a>
-	<ul><li><a href="#Zerg_Ravager">Ravager</a></li></ul>
-</li>
-<li><a href="#Zerg_Hydralisk">Hydralisk</a>
-	<ul><li><a href="#Zerg_Lurker">Lurker</a></li></ul>
-</li>
-<li><a href="#Zerg_Mutalisk">Mutalisk</a></li>
-<li><a href="#Zerg_Corruptor">Corruptor</a>
-	<ul><li><a href="#Zerg_BroodLord">Brood Lord</a></li></ul>
-</li>
-<li><a href="#Zerg_Infestor">Infestor</a></li>
-<li><a href="#Zerg_SwarmHost">Swarm Host</a></li>
-<li><a href="#Zerg_Viper">Viper</a></li>
-<li><a href="#Zerg_Ultralisk">Ultralisk</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Zerg_Hatchery">Hatchery / Lair / Hive</a></li>
-<li><a href="#Zerg_Extractor">Extractor</a></li>
-<li><a href="#Zerg_SpawningPool">Spawning Pool</a></li>
-<li><a href="#Zerg_EvolutionChamber">Evolution Chamber</a></li>
-<li><a href="#Zerg_RoachWarren">Roach Warren</a></li>
-<li><a href="#Zerg_BanelingNest">Baneling Nest</a></li>
-<li><a href="#Zerg_SpineCrawler">Spine Crawler</a></li>
-<li><a href="#Zerg_SporeCrawler">Spore Crawler</a></li>
-<li><a href="#Zerg_HydraliskDen">Hydralisk Den</a></li>
-<li><a href="#Zerg_InfestationPit">Infestation Pit</a></li>
-<li><a href="#Zerg_LurkerDen">Lurker Den</a></li>
-<li><a href="#Zerg_Spire">Spire / Greater Spire</a></li>
-<li><a href="#Zerg_NydusNetwork">Nydus Network / Nydus Worm</a></li>
-<li><a href="#Zerg_UltraliskCavern">Ultralisk Cavern</a></li></ul>
-<h2>Heart of the Swarm</h2>
-<h3>Heroes</h3>
-<h4>Zerg Swarm</h4>
-<ul><li><a href="#HeartOfTheSwarm_Kerrigan">Kerrigan</a></li>
-<li><a href="#HeartOfTheSwarm_Niadra">Niadra</a></li>
-<li><a href="#HeartOfTheSwarm_Stukov">Stukov</a></li>
-<li><a href="#HeartOfTheSwarm_Dehaka">Dehaka</a></li></ul>
-<h4>Raynor&rsquo;s Raiders</h4>
-<ul><li><a href="#HeartOfTheSwarm_Hyperion">Hyperion</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#HeartOfTheSwarm_Larva">Larva</a></li>
-<li><a href="#HeartOfTheSwarm_Drone">Drone</a></li>
-<li><a href="#HeartOfTheSwarm_Overlord">Overlord</a></li>
-<li><a href="#HeartOfTheSwarm_Queen">Swarm Queen</a></li>
-<li><a href="#HeartOfTheSwarm_Zergling">Zergling</a>
-	<ul><li><a href="#HeartOfTheSwarm_ZerglingRaptor">Raptor Strain</a></li>
-	<li><a href="#HeartOfTheSwarm_ZerglingSwarmling">Swarmling Strain</a></li></ul>
-</li>
-<li><a href="#HeartOfTheSwarm_Baneling">Baneling</a>
-	<ul><li><a href="#HeartOfTheSwarm_BanelingSplitter">Splitter Strain</a></li>
-	<li><a href="#HeartOfTheSwarm_BanelingHunter">Hunter Strain</a></li></ul>
-</li>
-<li><a href="#HeartOfTheSwarm_Aberration">Aberration</a></li>
-<li><a href="#HeartOfTheSwarm_Roach">Roach</a>
-	<ul><li><a href="#HeartOfTheSwarm_RoachCorpser">Corpser Strain</a></li>
-	<li><a href="#HeartOfTheSwarm_RoachVile">Vile Strain</a></li></ul>
-</li>
-<li><a href="#HeartOfTheSwarm_Hydralisk">Hydralisk</a>
-	<ul><li><a href="#HeartOfTheSwarm_HydraliskImpaler">Impaler Strain</a>
-		<ul><li><a href="#HeartOfTheSwarm_Impaler">Impaler</a></li></ul>
-	</li>
-	<li><a href="#HeartOfTheSwarm_HydraliskLurker">Lurker Strain</a>
-		<ul><li><a href="#HeartOfTheSwarm_Lurker">Lurker</a></li></ul>
-	</li></ul>
-</li>
-<li><a href="#HeartOfTheSwarm_Infestor">Infestor</a></li>
-<li><a href="#HeartOfTheSwarm_SwarmHost">Swarm Host</a>
-	<ul><li><a href="#HeartOfTheSwarm_SwarmHostCarrion">Carrion Strain</a></li>
-	<li><a href="#HeartOfTheSwarm_SwarmHostCreeper">Creeper Strain</a></li></ul>
-</li>
-<li><a href="#HeartOfTheSwarm_Mutalisk">Mutalisk</a>
-	<ul><li><a href="#HeartOfTheSwarm_MutaliskBroodLord">Brood Lord Strain</a>
-		<ul><li><a href="#HeartOfTheSwarm_BroodLord">Brood Lord</a></li></ul>
-	</li>
-	<li><a href="#HeartOfTheSwarm_MutaliskViper">Viper Strain</a>
-		<ul><li><a href="#HeartOfTheSwarm_Viper">Viper</a></li></ul>
-	</li></ul>
-</li>
-<li><a href="#HeartOfTheSwarm_Ultralisk">Ultralisk</a>
-	<ul><li><a href="#HeartOfTheSwarm_UltraliskNoxious">Noxious Strain</a></li>
-	<li><a href="#HeartOfTheSwarm_UltraliskTorrasque">Torrasque Strain</a></li></ul>
-</li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#HeartOfTheSwarm_Hatchery">Hatchery / Lair / Hive</a></li>
-<li><a href="#HeartOfTheSwarm_Extractor">Extractor</a></li>
-<li><a href="#HeartOfTheSwarm_SpawningPool">Spawning Pool</a></li>
-<li><a href="#HeartOfTheSwarm_RoachWarren">Roach Warren</a></li>
-<li><a href="#HeartOfTheSwarm_BanelingNest">Baneling Nest</a></li>
-<li><a href="#HeartOfTheSwarm_EvolutionChamber">Evolution Chamber</a></li>
-<li><a href="#HeartOfTheSwarm_SpineCrawler">Spine Crawler</a></li>
-<li><a href="#HeartOfTheSwarm_SporeCrawler">Spore Crawler</a></li>
-<li><a href="#HeartOfTheSwarm_HydraliskDen">Hydralisk Den / Lurker Den / Impaler Den</a></li>
-<li><a href="#HeartOfTheSwarm_InfestationPit">Infestation Pit</a></li>
-<li><a href="#HeartOfTheSwarm_Spire">Spire / Greater Spire</a></li>
-<li><a href="#HeartOfTheSwarm_UltraliskCavern">Ultralisk Cavern</a></li></ul>
-<h3>Special Units</h3>
-<h4>Zerg Swarm</h4>
-<ul><li><a href="#HeartOfTheSwarm_Brutalisk">Brutalisk</a></li>
-<li><a href="#HeartOfTheSwarm_Leviathan">Leviathan</a></li></ul>
-<h4>Terran Dominion</h4>
-<ul><li><a href="#HeartOfTheSwarm_Warhound">Warhound</a></li></ul>
-<h4>Arkship Specimens</h4>
-<ul><li><a href="#HeartOfTheSwarm_Lyote">Lyote</a></li>
-<li><a href="#HeartOfTheSwarm_GiantUrsadon">Giant Ursadon</a></li></ul>
-<h3>Special Structures</h3>
-<h4>Zerg Swarm</h4>
-<ul><li><a href="#HeartOfTheSwarm_Chrysalis">Kerrigan&rsquo;s Chrysalis</a></li></ul>
-<h4>Raynor&rsquo;s Raiders</h4>
-<ul><li><a href="#HeartOfTheSwarm_Barracks">Barracks</a></li>
-<li><a href="#HeartOfTheSwarm_Factory">Factory</a></li>
-<li><a href="#HeartOfTheSwarm_Starport">Starport</a></li></ul>
-<h2>Co-op Missions</h2>
-<h3>Units</h3>
-<h4>Amon&rsquo;s Forces</h4>
-<ul><li><a href="#CoopMissionsZerg_Queen">Swarm Queen</a></li>
-<li><a href="#CoopMissionsZerg_Corruptor">Corruptor</a></li>
-<li><a href="#CoopMissionsZerg_Infestor">Infestor</a></li></ul></section>
-<section id="Kerrigan"><h2>Kerrigan</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Kerrigan_Kerrigan">Kerrigan</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Kerrigan_Larva">Larva</a></li>
-<li><a href="#Kerrigan_Drone">Drone</a></li>
-<li><a href="#Kerrigan_Overlord">Overlord</a>
-	<ul><li><a href="#Kerrigan_Overseer">Overseer</a></li></ul>
-</li>
-<li><a href="#Kerrigan_Queen">Queen</a></li>
-<li><a href="#Kerrigan_Zergling">Zergling</a></li>
-<li><a href="#Kerrigan_Hydralisk">Hydralisk</a>
-	<ul><li><a href="#Kerrigan_Lurker">Lurker</a></li></ul>
-</li>
-<li><a href="#Kerrigan_Mutalisk">Mutalisk</a>
-	<ul><li><a href="#Kerrigan_BroodLord">Brood Lord</a></li></ul>
-</li>
-<li><a href="#Kerrigan_Ultralisk">Ultralisk</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Kerrigan_Hatchery">Hatchery / Lair / Hive</a></li>
-<li><a href="#Kerrigan_Extractor">Extractor</a></li>
-<li><a href="#Kerrigan_SpawningPool">Spawning Pool</a></li>
-<li><a href="#Kerrigan_EvolutionChamber">Evolution Chamber</a></li>
-<li><a href="#Kerrigan_SpineCrawler">Spine Crawler</a></li>
-<li><a href="#Kerrigan_SporeCrawler">Spore Crawler</a></li>
-<li><a href="#Kerrigan_HydraliskDen">Hydralisk Den / Lurker Den</a></li>
-<li><a href="#Kerrigan_Spire">Spire / Greater Spire</a></li>
-<li><a href="#Kerrigan_NydusNetwork">Omega Network / Omega Worm</a></li>
-<li><a href="#Kerrigan_UltraliskCavern">Ultralisk Cavern</a></li></ul></section>
-<section id="Zagara"><h2>Zagara</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Zagara_Zagara">Zagara</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Zagara_Larva">Larva</a></li>
-<li><a href="#Zagara_Drone">Drone</a></li>
-<li><a href="#Zagara_Overlord">Overlord</a>
-	<ul><li><a href="#Zagara_Overseer">Overseer</a></li></ul>
-</li>
-<li><a href="#Zagara_Queen">Queen</a></li>
-<li><a href="#Zagara_Zergling">Zergling</a>
-	<ul><li><a href="#Zagara_Baneling">Baneling</a></li></ul>
-</li>
-<li><a href="#Zagara_Aberration">Aberration</a></li>
-<li><a href="#Zagara_Scourge">Scourge</a></li>
-<li><a href="#Zagara_Corruptor">Corruptor</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Zagara_Hatchery">Hatchery / Lair / Hive</a></li>
-<li><a href="#Zagara_Extractor">Extractor</a></li>
-<li><a href="#Zagara_SpawningPool">Spawning Pool</a></li>
-<li><a href="#Zagara_EvolutionChamber">Evolution Chamber</a></li>
-<li><a href="#Zagara_BanelingNest">Baneling Nest</a></li>
-<li><a href="#Zagara_SpineCrawler">Spine Crawler</a></li>
-<li><a href="#Zagara_SporeCrawler">Spore Crawler</a></li>
-<li><a href="#Zagara_BileLauncher">Bile Launcher</a></li>
-<li><a href="#Zagara_ScourgeNest">Scourge Nest</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Zagara_HunterKiller">Hunter Killer</a></li>
-<li><a href="#Zagara_Roach">Roach</a></li></ul></section>
-<section id="Abathur"><h2>Abathur</h2>
-<h3>Units</h3>
-<ul><li><a href="#Abathur_Larva">Larva</a></li>
-<li><a href="#Abathur_Drone">Drone</a></li>
-<li><a href="#Abathur_Overlord">Overlord</a>
-	<ul><li><a href="#Abathur_Overseer">Overseer</a></li></ul>
-</li>
-<li><a href="#Abathur_Queen">Swarm Queen</a></li>
-<li><a href="#Abathur_Roach">Roach</a>
-	<ul><li><a href="#Abathur_Ravager">Ravager</a></li></ul>
-</li>
-<li><a href="#Abathur_SwarmHost">Swarm Host</a></li>
-<li><a href="#Abathur_Mutalisk">Mutalisk</a>
-	<ul><li><a href="#Abathur_Guardian">Guardian</a></li>
-	<li><a href="#Abathur_Devourer">Devourer</a></li></ul>
-<li><a href="#Abathur_Viper">Viper</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Abathur_Hatchery">Hatchery / Lair / Hive</a></li>
-<li><a href="#Abathur_Extractor">Extractor</a></li>
-<li><a href="#Abathur_RoachWarren">Roach Warren</a></li>
-<li><a href="#Abathur_EvolutionChamber">Evolution Chamber</a></li>
-<li><a href="#Abathur_SpineCrawler">Spine Crawler</a></li>
-<li><a href="#Abathur_SporeCrawler">Spore Crawler</a></li>
-<li><a href="#Abathur_InfestationPit">Infestation Pit</a></li>
-<li><a href="#Abathur_Spire">Spire</a></li>
-<li><a href="#Abathur_NydusNetwork">Nydus Network</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Abathur_Brutalisk">Brutalisk</a></li>
-<li><a href="#Abathur_Leviathan">Leviathan</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Abathur_ToxicNest">Toxic Nest</a></li></ul></section>
-<section id="Stukov"><h2>Stukov</h2>
-<h3>Units</h3>
-<ul><li><a href="#Stukov_SCV">Infested SCV</a></li>
-<li><a href="#Stukov_Overlord">Overlord</a>
-	<ul><li><a href="#Stukov_Overseer">Overseer</a></li></ul>
-</li>
-<li><a href="#Stukov_Civilian">Infested Civilian</a></li>
-<li><a href="#Stukov_Volatile">Volatile Infested</a></li>
-<li><a href="#Stukov_Marine">Infested Marine / Infested Trooper</a></li>
-<li><a href="#Stukov_Diamondback">Infested Diamondback</a></li>
-<li><a href="#Stukov_SiegeTank">Infested Siege Tank</a></li>
-<li><a href="#Stukov_Liberator">Infested Liberator</a></li>
-<li><a href="#Stukov_Banshee">Infested Banshee</a></li>
-<li><a href="#Stukov_Queen">Brood Queen</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Stukov_CommandCenter">Infested Command Center</a></li>
-<li><a href="#Stukov_Refinery">Infested Refinery</a></li>
-<li><a href="#Stukov_Barracks">Infested Barracks</a></li>
-<li><a href="#Stukov_EngineeringBay">Infested Engineering Bay</a></li>
-<li><a href="#Stukov_Bunker">Infested Bunker</a></li>
-<li><a href="#Stukov_MissileTurret">Infested Missile Turret</a></li>
-<li><a href="#Stukov_Factory">Infested Factory</a></li>
-<li><a href="#Stukov_Armory">Infested Armory</a></li>
-<li><a href="#Stukov_Starport">Infested Starport</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Stukov_Apocalisk">Apocalisk</a></li>
-<li><a href="#Stukov_Aleksander">Aleksander</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Stukov_ColonistCompound">Infested Colonist Compound</a></li></ul></section>
-<section id="Dehaka"><h2>Dehaka</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Dehaka_Dehaka">Dehaka</a></li>
-<li><a href="#Dehaka_Zweihaka">Zweihaka</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Dehaka_Drone">Primal Drone</a></li>
-<li><a href="#Dehaka_Zergling">Primal Zergling</a>
-	<ul><li><a href="#Dehaka_Ravasaur">Ravasaur</a></li></ul>
-<li><a href="#Dehaka_Roach">Primal Roach</a>
-	<ul><li><a href="#Dehaka_Igniter">Primal Igniter</a></li>
-	<li><a href="#Dehaka_Guardian">Primal Guardian</a></li></ul>
-<li><a href="#Dehaka_Hydralisk">Primal Hydralisk</a>
-	<ul><li><a href="#Dehaka_Lurker">Impaler</a></li>
-	<li><a href="#Dehaka_Mutalisk">Primal Mutalisk</a></li></ul>
-<li><a href="#Dehaka_SwarmHost">Primal Host</a>
-	<ul><li><a href="#Dehaka_CreeperHost">Creeper Host</a></li></ul>
-<li><a href="#Dehaka_Ultralisk">Primal Ultralisk</a>
-	<ul><li><a href="#Dehaka_Tyrannozor">Tyrannozor</a></li></ul>
-</li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Dehaka_Hatchery">Primal Hive</a></li>
-<li><a href="#Dehaka_Extractor">Extractor</a></li>
-<li><a href="#Dehaka_Barracks">Primal Warden</a></li>
-<li><a href="#Dehaka_GlevigDen">Glevig&rsquo;s Den</a></li>
-<li><a href="#Dehaka_MurvarDen">Murvar&rsquo;s Den</a></li>
-<li><a href="#Dehaka_DakrunDen">Dakrun&rsquo;s Den</a></li>
-<li><a href="#Dehaka_Wurm">Primal Wurm</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Dehaka_Glevig">Glevig</a></li>
-<li><a href="#Dehaka_Murvar">Murvar</a></li>
-<li><a href="#Dehaka_Dakrun">Dakrun</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Dehaka_DehakaDen">Dehaka&rsquo;s Den</a></li>
-<li><a href="#Dehaka_GreaterWurm">Greater Primal Wurm</a></li></ul></section>
-<section id="Stetmann"><h2>Stetmann</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Stetmann_Gary">Gary</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Stetmann_Larva">Mecha Larva</a></li>
-<li><a href="#Stetmann_Drone">Mecha Drone</a></li>
-<li><a href="#Stetmann_Overlord">Mecha Overlord</a>
-	<ul><li><a href="#Stetmann_Overseer">Mecha Overseer</a></li></ul>
-</li>
-<li><a href="#Stetmann_Zergling">Mecha Zergling</a>
-	<ul><li><a href="#Stetmann_Baneling">Mecha Baneling</a></li></ul>
-</li>
-<li><a href="#Stetmann_Hydralisk">Mecha Hydralisk</a>
-	<ul><li><a href="#Stetmann_Lurker">Mecha Lurker</a></li></ul>
-</li>
-<li><a href="#Stetmann_Corruptor">Mecha Corruptor</a>
-	<ul><li><a href="#Stetmann_BroodLord">Mecha Battlecarrier Lord</a></li></ul>
-</li>
-<li><a href="#Stetmann_Infestor">Mecha Infestor</a>
-	<ul><li><a href="#Stetmann_Roach">Mecha Roach</a></li>
-	<li><a href="#Stetmann_Ravager">Mecha Ravager</a></li></ul>
-</li>
-<li><a href="#Stetmann_Ultralisk">Mecha Ultralisk</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Stetmann_Hatchery">Mecha Hatchery / Mecha Lair / Mecha Hive</a></li>
-<li><a href="#Stetmann_Extractor">Mecha Extractor</a></li>
-<li><a href="#Stetmann_SpawningPool">Mecha Spawning Pool</a></li>
-<li><a href="#Stetmann_EvolutionChamber">Mecha Evolution Chamber</a></li>
-<li><a href="#Stetmann_BanelingNest">Mecha Baneling Nest</a></li>
-<li><a href="#Stetmann_SpineCrawler">Mecha Spine Crawler</a></li>
-<li><a href="#Stetmann_SporeCrawler">Mecha Spore Crawler</a></li>
-<li><a href="#Stetmann_HydraliskDen">Mecha Hydralisk Den / Mecha Lurker Den</a></li>
-<li><a href="#Stetmann_InfestationPit">Mecha Infestation Pit</a></li>
-<li><a href="#Stetmann_Spire">Mecha Spire / Mecha Greater Spire</a></li>
-<li><a href="#Stetmann_UltraliskCavern">Mecha Ultralisk Cavern</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Stetmann_Stetellite">Stetellite</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Stetmann_GaryRoom">Gary&rsquo;s Room</a></li></ul></section>
-<section id="Protoss"><h2>Protoss</h2>
-<h3>Units</h3>
-<ul><li><a href="#Protoss_Probe">Probe</a></li>
-<li><a href="#Protoss_Zealot">Zealot</a></li>
-<li><a href="#Protoss_Sentry">Sentry</a></li>
-<li><a href="#Protoss_Stalker">Stalker</a></li>
-<li><a href="#Protoss_Adept">Adept</a></li>
-<li><a href="#Protoss_HighTemplar">High Templar</a></li>
-<li><a href="#Protoss_Archon">Archon</a></li>
-<li><a href="#Protoss_DarkTemplar">Dark Templar</a></li>
-<li><a href="#Protoss_Observer">Observer</a></li>
-<li><a href="#Protoss_WarpPrism">Warp Prism</a></li>
-<li><a href="#Protoss_Immortal">Immortal</a></li>
-<li><a href="#Protoss_Colossus">Colossus</a></li>
-<li><a href="#Protoss_Disruptor">Disruptor</a></li>
-<li><a href="#Protoss_Phoenix">Phoenix</a></li>
-<li><a href="#Protoss_Oracle">Oracle</a></li>
-<li><a href="#Protoss_VoidRay">Void Ray</a></li>
-<li><a href="#Protoss_Tempest">Tempest</a></li>
-<li><a href="#Protoss_Carrier">Carrier</a></li>
-<li><a href="#Protoss_Mothership">Mothership</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Protoss_Nexus">Nexus</a></li>
-<li><a href="#Protoss_Pylon">Pylon</a></li>
-<li><a href="#Protoss_Assimilator">Assimilator</a></li>
-<li><a href="#Protoss_Gateway">Gateway</a></li>
-<li><a href="#Protoss_Forge">Forge</a></li>
-<li><a href="#Protoss_PhotonCannon">Photon Cannon</a></li>
-<li><a href="#Protoss_ShieldBattery">Shield Battery</a></li>
-<li><a href="#Protoss_CyberneticsCore">Cybernetics Core</a></li>
-<li><a href="#Protoss_TwilightCouncil">Twilight Council</a></li>
-<li><a href="#Protoss_TemplarArchives">Templar Archives</a></li>
-<li><a href="#Protoss_DarkShrine">Dark Shrine</a></li>
-<li><a href="#Protoss_RoboticsFacility">Robotics Facility</a></li>
-<li><a href="#Protoss_RoboticsBay">Robotics Bay</a></li>
-<li><a href="#Protoss_Stargate">Stargate</a></li>
-<li><a href="#Protoss_FleetBeacon">Fleet Beacon</a></li></ul>
-<h2>Legacy of the Void</h2>
-<h3>Heroes</h3>
-<h4>Whispers of Oblivion</h4>
-<ul><li><a href="#LegacyOfTheVoid_Zeratul">Zeratul</a></li></ul>
-<h4>Legacy of the Void</h4>
-<ul><li><a href="#LegacyOfTheVoid_Artanis">Artanis</a></li>
-<li><a href="#LegacyOfTheVoid_Vorazun">Vorazun</a></li>
-<li><a href="#LegacyOfTheVoid_Alarak">Alarak</a></li>
-<li><a href="#LegacyOfTheVoid_Karax">Karax</a></li>
-<li><a href="#LegacyOfTheVoid_Fenix">Fenix</a></li></ul>
-<h4>Into the Void</h4>
-<ul><li><a href="#LegacyOfTheVoid_Kerrigan">Kerrigan</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#LegacyOfTheVoid_Probe">Probe</a></li>
-<li>Melee Warrior
-	<ul><li><a href="#LegacyOfTheVoid_Zealot">Zealot</a></li>
-	<li><a href="#LegacyOfTheVoid_Centurion">Centurion</a></li>
-	<li><a href="#LegacyOfTheVoid_Sentinel">Sentinel</a></li></ul>
-</li>
-<li>Ranged Warrior
-	<ul><li><a href="#LegacyOfTheVoid_Stalker">Stalker</a></li>
-	<li><a href="#LegacyOfTheVoid_Dragoon">Dragoon</a></li>
-	<li><a href="#LegacyOfTheVoid_Adept">Adept</a></li></ul>
-</li>
-<li>Robotic Assault
-	<ul><li><a href="#LegacyOfTheVoid_Immortal">Immortal</a></li>
-	<li><a href="#LegacyOfTheVoid_Annihilator">Annihilator</a></li>
-	<li><a href="#LegacyOfTheVoid_Vanguard">Vanguard</a></li>
+<nav>
+	<ul id="filters">
+		<li><button type="button" value="Terran" title="Terran" id="terran" class="filter terran"><span>Terran</span></button></li>
+		<li><button type="button" value="Raynor" title="Raynor" id="raynor" class="filter terran"><span>Raynor</span></button></li>
+		<li><button type="button" value="Swann" title="Swann" id="swann" class="filter terran"><span>Swann</span></button></li>
+		<li><button type="button" value="Nova" title="Nova" id="nova" class="filter terran"><span>Nova</span></button></li>
+		<li><button type="button" value="Han" title="Han &amp; Horner" id="han" class="filter terran"><span>Han &amp; Horner</span></button></li>
+		<li><button type="button" value="Tychus" title="Tychus" id="tychus" class="filter terran"><span>Tychus</span></button></li>
+		<li><button type="button" value="Mengsk" title="Mengsk" id="mengsk" class="filter terran"><span>Mengsk</span></button></li>
+		<li><button type="button" value="Zerg" title="Zerg" id="zerg" class="filter zerg"><span>Zerg</span></button></li>
+		<li><button type="button" value="Kerrigan" title="Kerrigan" id="kerrigan" class="filter zerg"><span>Kerrigan</span></button></li>
+		<li><button type="button" value="Zagara" title="Zagara" id="zagara" class="filter zerg"><span>Zagara</span></button></li>
+		<li><button type="button" value="Abathur" title="Abathur" id="abathur" class="filter zerg"><span>Abathur</span></button></li>
+		<li><button type="button" value="Stukov" title="Stukov" id="stukov" class="filter zerg"><span>Stukov</span></button></li>
+		<li><button type="button" value="Dehaka" title="Dehaka" id="dehaka" class="filter zerg"><span>Dehaka</span></button></li>
+		<li><button type="button" value="Stetmann" title="Stetmann" id="stetmann" class="filter zerg"><span>Stetmann</span></button></li>
+		<li><button type="button" value="Protoss" title="Protoss" id="protoss" class="filter protoss"><span>Protoss</span></button></li>
+		<li><button type="button" value="Artanis" title="Artanis" id="artanis" class="filter protoss"><span>Artanis</span></button></li>
+		<li><button type="button" value="Vorazun" title="Vorazun" id="vorazun" class="filter protoss"><span>Vorazun</span></button></li>
+		<li><button type="button" value="Karax" title="Karax" id="karax" class="filter protoss"><span>Karax</span></button></li>
+		<li><button type="button" value="Alarak" title="Alarak" id="alarak" class="filter protoss"><span>Alarak</span></button></li>
+		<li><button type="button" value="Fenix" title="Fenix" id="fenix" class="filter protoss"><span>Fenix</span></button></li>
+		<li><button type="button" value="Zeratul" title="Zeratul" id="zeratul" class="filter protoss"><span>Zeratul</span></button></li>
 	</ul>
-</li>
-<li>Cloaked Warrior
-	<ul><li><a href="#LegacyOfTheVoid_DarkTemplar">Dark Templar</a></li>
-	<li><a href="#LegacyOfTheVoid_Avenger">Avenger</a></li>
-	<li><a href="#LegacyOfTheVoid_BloodHunter">Blood Hunter</a></li></ul>
-</li>
-<li>Robotic Support
-	<ul><li><a href="#LegacyOfTheVoid_Sentry">Sentry</a></li>
-	<li><a href="#LegacyOfTheVoid_Energizer">Energizer</a></li>
-	<li><a href="#LegacyOfTheVoid_Havoc">Havoc</a></li></ul>
-</li>
-<li>Starfighter
-	<ul><li><a href="#LegacyOfTheVoid_Phoenix">Phoenix</a></li>
-	<li><a href="#LegacyOfTheVoid_Corsair">Corsair</a></li>
-	<li><a href="#LegacyOfTheVoid_Mirage">Mirage</a></li></ul>
-</li>
-<li>Psionic Warrior
-	<ul><li><a href="#LegacyOfTheVoid_HighTemplar">High Templar</a></li>
-	<li><a href="#LegacyOfTheVoid_DarkArchon">Dark Archon</a></li>
-	<li><a href="#LegacyOfTheVoid_Ascendant">Ascendant</a></li></ul>
-</li>
-<li>Robotic Siege
-	<ul><li><a href="#LegacyOfTheVoid_Colossus">Colossus</a></li>
-	<li><a href="#LegacyOfTheVoid_Reaver">Reaver</a></li>
-	<li><a href="#LegacyOfTheVoid_Wrathwalker">Wrathwalker</a></li></ul>
-</li>
-<li>Assault Ship
-	<ul><li><a href="#LegacyOfTheVoid_VoidRay">Void Ray</a></li>
-	<li><a href="#LegacyOfTheVoid_Destroyer">Destroyer</a></li>
-	<li><a href="#LegacyOfTheVoid_Arbiter">Arbiter</a></li></ul>
-</li>
-<li>Capital Ship
-	<ul><li><a href="#LegacyOfTheVoid_Carrier">Carrier</a></li>
-	<li><a href="#LegacyOfTheVoid_Tempest">Tempest</a></li>
-	<li><a href="#LegacyOfTheVoid_Mothership">Mothership</a></li></ul>
-</li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#LegacyOfTheVoid_Nexus">Nexus</a></li>
-<li><a href="#LegacyOfTheVoid_Pylon">Pylon</a></li>
-<li><a href="#LegacyOfTheVoid_Assimilator">Assimilator</a></li>
-<li><a href="#LegacyOfTheVoid_Gateway">Gateway</a></li>
-<li><a href="#LegacyOfTheVoid_Forge">Forge</a></li>
-<li><a href="#LegacyOfTheVoid_PhotonCannon">Photon Cannon</a></li>
-<li><a href="#LegacyOfTheVoid_Monolith">Khaydarin Monolith</a></li>
-<li><a href="#LegacyOfTheVoid_ShieldBattery">Shield Battery</a></li>
-<li><a href="#LegacyOfTheVoid_CyberneticsCore">Cybernetics Core</a></li>
-<li><a href="#LegacyOfTheVoid_TemplarArchives">Templar Archives</a></li>
-<li><a href="#LegacyOfTheVoid_DarkShrine">Dark Shrine</a></li>
-<li><a href="#LegacyOfTheVoid_RoboticsFacility">Robotics Facility</a></li>
-<li><a href="#LegacyOfTheVoid_RoboticsBay">Robotics Bay</a></li>
-<li><a href="#LegacyOfTheVoid_Stargate">Stargate</a></li>
-<li><a href="#LegacyOfTheVoid_FleetBeacon">Fleet Beacon</a></li></ul>
-<h3>Special Units</h3>
-<h4>Cybros Purifiers</h4>
-<ul><li><a href="#LegacyOfTheVoid_Instigator">Instigator</a></li></ul>
-<h4>Feral Zerg</h4>
-<ul><li><a href="#LegacyOfTheVoid_Queen">Queen</a></li></ul>
-<h2>Co-op Missions</h2>
-<h3>Units</h3>
-<h4>Amon&rsquo;s Forces</h4>
-<ul><li><a href="#CoopMissionsProtoss_Sentry">Sentry</a></li></ul>
-<h3>Special Structures</h3>
-<h4>Ancient Purifiers</h4>
-<ul><li><a href="#CoopMissionsProtoss_PurifierDataCore">Purifier Data Core</a></li></ul></section>
-<section id="Artanis"><h2>Artanis</h2>
-<h3>Units</h3>
-<ul><li><a href="#Artanis_Probe">Probe</a></li>
-<li><a href="#Artanis_Zealot">Zealot</a></li>
-<li><a href="#Artanis_Dragoon">Dragoon</a></li>
-<li><a href="#Artanis_HighTemplar">High Templar</a></li>
-<li><a href="#Artanis_Archon">Archon</a></li>
-<li><a href="#Artanis_Immortal">Immortal</a></li>
-<li><a href="#Artanis_Observer">Observer</a></li>
-<li><a href="#Artanis_Reaver">Reaver</a></li>
-<li><a href="#Artanis_Phoenix">Phoenix</a></li>
-<li><a href="#Artanis_Tempest">Tempest</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Artanis_Nexus">Nexus</a></li>
-<li><a href="#Artanis_Pylon">Pylon</a></li>
-<li><a href="#Artanis_Assimilator">Assimilator</a></li>
-<li><a href="#Artanis_Gateway">Gateway</a></li>
-<li><a href="#Artanis_Forge">Forge</a></li>
-<li><a href="#Artanis_PhotonCannon">Photon Cannon</a></li>
-<li><a href="#Artanis_CyberneticsCore">Cybernetics Core</a></li>
-<li><a href="#Artanis_TwilightCouncil">Twilight Council</a></li>
-<li><a href="#Artanis_TemplarArchives">Templar Archives</a></li>
-<li><a href="#Artanis_RoboticsFacility">Robotics Facility</a></li>
-<li><a href="#Artanis_RoboticsBay">Robotics Bay</a></li>
-<li><a href="#Artanis_Stargate">Stargate</a></li>
-<li><a href="#Artanis_FleetBeacon">Fleet Beacon</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Artanis_UnboundFanatic">Unbound Fanatic</a></li></ul></section>
-<section id="Vorazun"><h2>Vorazun</h2>
-<h3>Units</h3>
-<ul><li><a href="#Vorazun_Probe">Probe</a></li>
-<li><a href="#Vorazun_Zealot">Centurion</a></li>
-<li><a href="#Vorazun_Stalker">Stalker</a></li>
-<li><a href="#Vorazun_DarkTemplar">Dark Templar</a></li>
-<li><a href="#Vorazun_DarkArchon">Dark Archon</a></li>
-<li><a href="#Vorazun_Corsair">Corsair</a></li>
-<li><a href="#Vorazun_VoidRay">Void Ray</a></li>
-<li><a href="#Vorazun_Oracle">Oracle</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Vorazun_Nexus">Nexus</a></li>
-<li><a href="#Vorazun_Pylon">Pylon</a></li>
-<li><a href="#Vorazun_Assimilator">Orbital Assimilator</a></li>
-<li><a href="#Vorazun_Gateway">Gateway</a></li>
-<li><a href="#Vorazun_Forge">Forge</a></li>
-<li><a href="#Vorazun_PhotonCannon">Photon Cannon</a></li>
-<li><a href="#Vorazun_CyberneticsCore">Cybernetics Core</a></li>
-<li><a href="#Vorazun_TwilightCouncil">Twilight Council</a></li>
-<li><a href="#Vorazun_DarkShrine">Dark Shrine</a></li>
-<li><a href="#Vorazun_Stargate">Stargate</a></li>
-<li><a href="#Vorazun_FleetBeacon">Fleet Beacon</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Vorazun_ShadowGuard">Shadow Guard</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Vorazun_DarkPylon">Dark Pylon</a></li></ul></section>
-<section id="Karax"><h2>Karax</h2>
-<h3>Units</h3>
-<ul><li><a href="#Karax_Probe">Probe</a></li>
-<li><a href="#Karax_Zealot">Sentinel</a></li>
-<li><a href="#Karax_Sentry">Energizer</a></li>
-<li><a href="#Karax_Immortal">Immortal</a></li>
-<li><a href="#Karax_Observer">Observer</a></li>
-<li><a href="#Karax_Colossus">Colossus</a></li>
-<li><a href="#Karax_Phoenix">Mirage</a></li>
-<li><a href="#Karax_Carrier">Carrier</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Karax_Nexus">Nexus</a></li>
-<li><a href="#Karax_Pylon">Pylon</a></li>
-<li><a href="#Karax_Assimilator">Assimilator</a></li>
-<li><a href="#Karax_Gateway">Gateway</a></li>
-<li><a href="#Karax_Forge">Forge</a></li>
-<li><a href="#Karax_PhotonCannon">Photon Cannon</a></li>
-<li><a href="#Karax_Monolith">Khaydarin Monolith</a></li>
-<li><a href="#Karax_ShieldBattery">Shield Battery</a></li>
-<li><a href="#Karax_CyberneticsCore">Cybernetics Core</a></li>
-<li><a href="#Karax_TwilightCouncil">Twilight Council</a></li>
-<li><a href="#Karax_RoboticsFacility">Robotics Facility</a></li>
-<li><a href="#Karax_RoboticsBay">Robotics Bay</a></li>
-<li><a href="#Karax_Stargate">Stargate</a></li>
-<li><a href="#Karax_FleetBeacon">Fleet Beacon</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Karax_PurifierBeam">Purifier Beam</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Karax_SolarForge">Solar Forge</a></li></ul></section>
-<section id="Alarak"><h2>Alarak</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Alarak_Alarak">Alarak</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Alarak_Probe">Probe</a></li>
-<li><a href="#Alarak_Supplicant">Supplicant</a></li>
-<li><a href="#Alarak_Stalker">Slayer</a></li>
-<li><a href="#Alarak_Sentry">Havoc</a></li>
-<li><a href="#Alarak_HighTemplar">Ascendant</a></li>
-<li><a href="#Alarak_Immortal">Vanguard</a></li>
-<li><a href="#Alarak_Colossus">Wrathwalker</a></li>
-<li><a href="#Alarak_WarpPrism">War Prism</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Alarak_Nexus">Nexus</a></li>
-<li><a href="#Alarak_Pylon">Pylon</a></li>
-<li><a href="#Alarak_Assimilator">Assimilator</a></li>
-<li><a href="#Alarak_Gateway">Gateway</a></li>
-<li><a href="#Alarak_Forge">Forge</a></li>
-<li><a href="#Alarak_PhotonCannon">Photon Cannon</a></li>
-<li><a href="#Alarak_CyberneticsCore">Cybernetics Core</a></li>
-<li><a href="#Alarak_TwilightCouncil">Death Council</a></li>
-<li><a href="#Alarak_TemplarArchives">Ascendant Archives</a></li>
-<li><a href="#Alarak_RoboticsFacility">Robotics Facility</a></li>
-<li><a href="#Alarak_RoboticsBay">Robotics Bay</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Alarak_Mothership">Mothership</a></li>
-<li><a href="#Alarak_VoidRay">Destroyer</a></li></ul></section>
-<section id="Fenix"><h2>Fenix</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Fenix_Fenix">Fenix</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Fenix_Probe">Probe</a></li>
-<li><a href="#Fenix_Zealot">Legionnaire</a></li>
-<li><a href="#Fenix_Adept">Adept</a></li>
-<li><a href="#Fenix_Sentry">Conservator</a></li>
-<li><a href="#Fenix_Immortal">Immortal</a></li>
-<li><a href="#Fenix_Observer">Observer</a></li>
-<li><a href="#Fenix_Colossus">Colossus</a></li>
-<li><a href="#Fenix_Disruptor">Disruptor</a></li>
-<li><a href="#Fenix_Scout">Scout</a></li>
-<li><a href="#Fenix_Carrier">Carrier</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Fenix_Nexus">Nexus</a></li>
-<li><a href="#Fenix_Pylon">Pylon</a></li>
-<li><a href="#Fenix_Assimilator">Assimilator</a></li>
-<li><a href="#Fenix_Gateway">Gateway</a></li>
-<li><a href="#Fenix_Forge">Forge</a></li>
-<li><a href="#Fenix_PhotonCannon">Photon Cannon</a></li>
-<li><a href="#Fenix_CyberneticsCore">Cybernetics Core</a></li>
-<li><a href="#Fenix_TwilightCouncil">Twilight Council</a></li>
-<li><a href="#Fenix_RoboticsFacility">Robotics Facility</a></li>
-<li><a href="#Fenix_RoboticsBay">Robotics Bay</a></li>
-<li><a href="#Fenix_Stargate">Stargate</a></li>
-<li><a href="#Fenix_FleetBeacon">Fleet Beacon</a></li></ul>
-<h3>Champions</h3>
-<ul><li><a href="#Fenix_ProbeChampion">Probius</a></li>
-<li><a href="#Fenix_ZealotChampion">Kaldalis</a></li>
-<li><a href="#Fenix_AdeptChampion">Talis</a></li>
-<li><a href="#Fenix_ImmortalChampion">Taldarin</a></li>
-<li><a href="#Fenix_ColossusChampion">Warbringer</a></li>
-<li><a href="#Fenix_ScoutChampion">Mojo</a></li>
-<li><a href="#Fenix_CarrierChampion">Clolarion</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Fenix_PurifierConclave">Purifier Conclave</a></li></ul></section>
-<section id="Zeratul"><h2>Zeratul</h2>
-<h3>Heroes</h3>
-<ul><li><a href="#Zeratul_Zeratul">Zeratul</a></li></ul>
-<h3>Units</h3>
-<ul><li><a href="#Zeratul_Probe">Precursor</a></li>
-<li><a href="#Zeratul_Stalker">Ambusher</a></li>
-<li><a href="#Zeratul_Sentry">Shieldguard</a></li>
-<li><a href="#Zeratul_DarkTemplar">Void Templar</a></li>
-<li><a href="#Zeratul_Immortal">Enforcer</a></li>
-<li><a href="#Zeratul_Observer">Watcher</a></li>
-<li><a href="#Zeratul_Disruptor">Abrogator</a></li>
-<li><a href="#Zeratul_WarpPrism">Void Array</a></li></ul>
-<h3>Structures</h3>
-<ul><li><a href="#Zeratul_Nexus">Ancient Nexus</a></li>
-<li><a href="#Zeratul_Assimilator">Ancient Assimilator</a></li>
-<li><a href="#Zeratul_Gateway">Passageway</a></li>
-<li><a href="#Zeratul_PhotonCannon">Tesseract Cannon</a></li>
-<li><a href="#Zeratul_Monolith">Tesseract Monolith</a></li>
-<li><a href="#Zeratul_CyberneticsCore">Core Forge</a></li>
-<li><a href="#Zeratul_DarkShrine">Void Shrine</a></li>
-<li><a href="#Zeratul_RoboticsFacility">Constructs Facility</a></li>
-<li><a href="#Zeratul_RoboticsBay">Constructs Bay</a></li></ul>
-<h3>Special Units</h3>
-<ul><li><a href="#Zeratul_VoidSuppressionCrystal">Void Suppression Crystal</a></li>
-<li><a href="#Zeratul_AvatarOfForm">Avatar of Form</a></li>
-<li><a href="#Zeratul_AvatarOfEssence">Avatar of Essence</a></li></ul>
-<h3>Special Structures</h3>
-<ul><li><a href="#Zeratul_ArtifactReserve">Artifact Reserve</a></li></ul>
-<h3>Legendary Legions</h3>
-<ul><li><a href="#Zeratul_Zealot">Zealot</a></li>
-<li><a href="#Zeratul_Telbrus">Telbrus</a></li>
-<li><a href="#Zeratul_DarkArchon">Dark Archon</a></li>
-<li><a href="#Zeratul_Serdath">Serdath</a></li>
-<li><a href="#Zeratul_VoidRay">Void Ray</a></li>
-<li><a href="#Zeratul_Zoraya">Zoraya</a></li></ul></section></main>
+</nav>
+<main>
+	<noscript><p>Must have JavaScript enabled.</p></noscript>
+	<section id="Terran">
+		<h2>Terran</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Terran_SCV">SCV</a></li>
+			<li><a href="#Terran_MULE">MULE</a></li>
+			<li><a href="#Terran_Marine">Marine</a></li>
+			<li><a href="#Terran_Reaper">Reaper</a></li>
+			<li><a href="#Terran_Marauder">Marauder</a></li>
+			<li><a href="#Terran_Ghost">Ghost</a></li>
+			<li><a href="#Terran_Hellbat">Hellion / Hellbat</a></li>
+			<li><a href="#Terran_WidowMine">Widow Mine</a></li>
+			<li><a href="#Terran_Cyclone">Cyclone</a></li>
+			<li><a href="#Terran_SiegeTank">Siege Tank</a></li>
+			<li><a href="#Terran_Thor">Thor</a></li>
+			<li><a href="#Terran_Viking">Viking</a></li>
+			<li><a href="#Terran_Medivac">Medivac</a></li>
+			<li><a href="#Terran_Liberator">Liberator</a></li>
+			<li><a href="#Terran_Raven">Raven</a></li>
+			<li><a href="#Terran_Banshee">Banshee</a></li>
+			<li><a href="#Terran_Battlecruiser">Battlecruiser</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Terran_CommandCenter">Command Center</a></li>
+			<li><a href="#Terran_SupplyDepot">Supply Depot</a></li>
+			<li><a href="#Terran_Refinery">Refinery</a></li>
+			<li><a href="#Terran_Barracks">Barracks</a></li>
+			<li><a href="#Terran_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#Terran_Bunker">Bunker</a></li>
+			<li><a href="#Terran_MissileTurret">Missile Turret</a></li>
+			<li><a href="#Terran_SensorTower">Sensor Tower</a></li>
+			<li><a href="#Terran_GhostAcademy">Ghost Academy</a></li>
+			<li><a href="#Terran_Factory">Factory</a></li>
+			<li><a href="#Terran_Armory">Armory</a></li>
+			<li><a href="#Terran_Starport">Starport</a></li>
+			<li><a href="#Terran_FusionCore">Fusion Core</a></li>
+		</ul>
+		<h2>Wings of Liberty</h2>
+		<h3>Heroes</h3>
+		<h4>Raynor&rsquo;s Raiders</h4>
+		<ul>
+			<li><a href="#WingsOfLiberty_Raynor">Raynor</a></li>
+			<li><a href="#WingsOfLiberty_Tychus">Tychus</a></li>
+			<li><a href="#WingsOfLiberty_Swann">Swann</a></li>
+			<li><a href="#WingsOfLiberty_Stetmann">Stetmann</a></li>
+		</ul>
+		<h4>Terran Dominion</h4>
+		<ul>
+			<li><a href="#WingsOfLiberty_Nova">Nova</a></li>
+			<li><a href="#WingsOfLiberty_Tosh">Tosh</a></li>
+		</ul>
+		<h4>Daelaam Protoss</h4>
+		<ul>
+			<li><a href="#WingsOfLiberty_Zeratul">Zeratul</a></li>
+			<li><a href="#WingsOfLiberty_Urun">Urun</a></li>
+			<li><a href="#WingsOfLiberty_Mohandar">Mohandar</a></li>
+			<li><a href="#WingsOfLiberty_Selendis">Selendis</a></li>
+			<li><a href="#WingsOfLiberty_Artanis">Artanis</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#WingsOfLiberty_SCV">SCV</a></li>
+			<li><a href="#WingsOfLiberty_MULE">MULE</a></li>
+			<li><a href="#WingsOfLiberty_Marine">Marine</a></li>
+			<li><a href="#WingsOfLiberty_Reaper">Reaper</a></li>
+			<li><a href="#WingsOfLiberty_Marauder">Marauder</a></li>
+			<li><a href="#WingsOfLiberty_Firebat">Firebat</a></li>
+			<li><a href="#WingsOfLiberty_Medic">Medic</a></li>
+			<li><a href="#WingsOfLiberty_Ghost">Ghost</a></li>
+			<li><a href="#WingsOfLiberty_Spectre">Spectre</a></li>
+			<li><a href="#WingsOfLiberty_Hellion">Hellion</a></li>
+			<li><a href="#WingsOfLiberty_SiegeTank">Siege Tank</a></li>
+			<li><a href="#WingsOfLiberty_Thor">Thor</a></li>
+			<li><a href="#WingsOfLiberty_Predator">Predator</a></li>
+			<li><a href="#WingsOfLiberty_Vulture">Vulture</a></li>
+			<li><a href="#WingsOfLiberty_Diamondback">Diamondback</a></li>
+			<li><a href="#WingsOfLiberty_Goliath">Goliath</a></li>
+			<li><a href="#WingsOfLiberty_Viking">Viking</a></li>
+			<li><a href="#WingsOfLiberty_Wraith">Wraith</a></li>
+			<li><a href="#WingsOfLiberty_Medivac">Medivac</a></li>
+			<li><a href="#WingsOfLiberty_Banshee">Banshee</a></li>
+			<li><a href="#WingsOfLiberty_Raven">Raven</a></li>
+			<li><a href="#WingsOfLiberty_ScienceVessel">Science Vessel</a></li>
+			<li><a href="#WingsOfLiberty_Hercules">Hercules</a></li>
+			<li><a href="#WingsOfLiberty_Battlecruiser">Battlecruiser</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#WingsOfLiberty_CommandCenter">Command Center</a></li>
+			<li><a href="#WingsOfLiberty_SupplyDepot">Supply Depot</a></li>
+			<li><a href="#WingsOfLiberty_Refinery">Refinery</a></li>
+			<li><a href="#WingsOfLiberty_Barracks">Barracks</a></li>
+			<li><a href="#WingsOfLiberty_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#WingsOfLiberty_Bunker">Bunker</a></li>
+			<li><a href="#WingsOfLiberty_PerditionTurret">Perdition Turret</a></li>
+			<li><a href="#WingsOfLiberty_MissileTurret">Missile Turret</a></li>
+			<li><a href="#WingsOfLiberty_SensorTower">Sensor Tower</a></li>
+			<li><a href="#WingsOfLiberty_HiveMindEmulator">Hive Mind Emulator</a></li>
+			<li><a href="#WingsOfLiberty_PsiDisrupter">Psi Disrupter</a></li>
+			<li><a href="#WingsOfLiberty_GhostAcademy">Ghost Academy / Shadow Ops</a></li>
+			<li><a href="#WingsOfLiberty_Factory">Factory</a></li>
+			<li><a href="#WingsOfLiberty_Armory">Armory</a></li>
+			<li><a href="#WingsOfLiberty_Starport">Starport</a></li>
+			<li><a href="#WingsOfLiberty_FusionCore">Fusion Core</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#WingsOfLiberty_Odin">Odin</a></li>
+			<li><a href="#WingsOfLiberty_WarBot">A.R.E.S.</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#WingsOfLiberty_MercCompound">Merc Compound</a></li>
+			<li><a href="#WingsOfLiberty_LaserDrill">Drakken Laser Drill</a></li>
+			<li><a href="#WingsOfLiberty_Artifact">Artifact</a></li>
+		</ul>
+		<h2>Nova Covert Ops</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#NovaCovertOps_Nova">Nova</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#NovaCovertOps_SCV">SCV</a></li>
+			<li><a href="#NovaCovertOps_Marine">Marine</a></li>
+			<li><a href="#NovaCovertOps_Reaper">Reaper</a></li>
+			<li><a href="#NovaCovertOps_Marauder">Marauder</a></li>
+			<li><a href="#NovaCovertOps_Hellbat">Hellion / Hellbat</a></li>
+			<li><a href="#NovaCovertOps_Goliath">Goliath</a></li>
+			<li><a href="#NovaCovertOps_SiegeTank">Siege Tank</a></li>
+			<li><a href="#NovaCovertOps_Liberator">Liberator</a></li>
+			<li><a href="#NovaCovertOps_Raven">Raven</a></li>
+			<li><a href="#NovaCovertOps_Banshee">Banshee</a></li>
+			<li><a href="#NovaCovertOps_Battlecruiser">Battlecruiser</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#NovaCovertOps_CommandCenter">Command Center</a></li>
+			<li><a href="#NovaCovertOps_SupplyDepot">Supply Depot</a></li>
+			<li><a href="#NovaCovertOps_Refinery">Refinery</a></li>
+			<li><a href="#NovaCovertOps_Barracks">Barracks</a></li>
+			<li><a href="#NovaCovertOps_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#NovaCovertOps_Bunker">Bunker</a></li>
+			<li><a href="#NovaCovertOps_MissileTurret">Missile Turret</a></li>
+			<li><a href="#NovaCovertOps_GhostAcademy">Ghost Academy</a></li>
+			<li><a href="#NovaCovertOps_Factory">Factory</a></li>
+			<li><a href="#NovaCovertOps_Armory">Armory</a></li>
+			<li><a href="#NovaCovertOps_Starport">Starport</a></li>
+			<li><a href="#NovaCovertOps_FusionCore">Fusion Core</a></li>
+		</ul>
+		<h3>Special Units and Structures</h3>
+		<h4>Terran Dominion</h4>
+		<ul>
+			<li><a href="#NovaCovertOps_Stone">Stone</a></li>
+		</ul>
+		<h4>Defenders of Man</h4>
+		<ul>
+			<li><a href="#NovaCovertOps_Trooper">Trooper</a></li>
+			<li><a href="#NovaCovertOps_Ghost">Ghost</a></li>
+			<li><a href="#NovaCovertOps_SensorDrone">Sensor Drone</a></li>
+			<li><a href="#NovaCovertOps_SonarDrone">Sonar Drone</a></li>
+		</ul>
+		<h4>Umojan Expedition</h4>
+		<ul>
+			<li><a href="#NovaCovertOps_HERC">HERC</a></li>
+			<li><a href="#NovaCovertOps_HERCCompound">HERC Compound</a></li>
+		</ul>
+		<h4>Feral Zerg</h4>
+		<ul>
+			<li><a href="#NovaCovertOps_Defiler">Defiler</a></li>
+		</ul>
+		<h2>Co-op Missions</h2>
+		<h3>Units</h3>
+		<h4>Amon&rsquo;s Forces</h4>
+		<ul>
+			<li><a href="#CoopMissionsTerran_Ghost">Ghost</a></li>
+			<li><a href="#CoopMissionsTerran_Raven">Raven</a></li>
+		</ul>
+		<h4>Mutators</h4>
+		<ul>
+			<li><a href="#CoopMissionsTerran_BoomBot">Boom Bot</a></li>
+		</ul>
+	</section>
+	<section id="Raynor">
+		<h2>Raynor</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Raynor_SCV">SCV</a></li>
+			<li><a href="#Raynor_MULE">MULE</a></li>
+			<li><a href="#Raynor_Marine">Marine</a></li>
+			<li><a href="#Raynor_Marauder">Marauder</a></li>
+			<li><a href="#Raynor_Firebat">Firebat</a></li>
+			<li><a href="#Raynor_Medic">Medic</a></li>
+			<li><a href="#Raynor_Vulture">Vulture</a></li>
+			<li><a href="#Raynor_SiegeTank">Siege Tank</a></li>
+			<li><a href="#Raynor_Viking">Viking</a></li>
+			<li><a href="#Raynor_Banshee">Banshee</a></li>
+			<li><a href="#Raynor_Battlecruiser">Battlecruiser</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Raynor_CommandCenter">Command Center</a></li>
+			<li><a href="#Raynor_SupplyDepot">Supply Depot</a></li>
+			<li><a href="#Raynor_Refinery">Refinery</a></li>
+			<li><a href="#Raynor_Barracks">Barracks</a></li>
+			<li><a href="#Raynor_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#Raynor_Bunker">Bunker</a></li>
+			<li><a href="#Raynor_MissileTurret">Missile Turret</a></li>
+			<li><a href="#Raynor_Factory">Factory</a></li>
+			<li><a href="#Raynor_Armory">Armory</a></li>
+			<li><a href="#Raynor_Starport">Starport</a></li>
+			<li><a href="#Raynor_FusionCore">Fusion Core</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Raynor_Hyperion">Hyperion</a></li>
+			<li><a href="#Raynor_DuskWings">Dusk Wings</a></li>
+		</ul>
+	</section>
+	<section id="Swann">
+		<h2>Swann</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Swann_SCV">SCV</a></li>
+			<li><a href="#Swann_Hellbat">Hellion / Hellbat</a></li>
+			<li><a href="#Swann_Goliath">Goliath</a></li>
+			<li><a href="#Swann_SiegeTank">Siege Tank</a></li>
+			<li><a href="#Swann_Cyclone">Cyclone</a></li>
+			<li><a href="#Swann_Thor">Thor</a></li>
+			<li><a href="#Swann_Wraith">Wraith</a></li>
+			<li><a href="#Swann_Hercules">Hercules</a></li>
+			<li><a href="#Swann_ScienceVessel">Science Vessel</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Swann_CommandCenter">Command Center</a></li>
+			<li><a href="#Swann_SupplyDepot">Supply Depot</a></li>
+			<li><a href="#Swann_Refinery">Refinery</a></li>
+			<li><a href="#Swann_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#Swann_PerditionTurret">Perdition Turret / Flaming Betty</a></li>
+			<li><a href="#Swann_DevastationTurret">Devastation Turret / Blaster Billy</a></li>
+			<li><a href="#Swann_MissileTurret">Missile Turret / Spinning Dizzy</a></li>
+			<li><a href="#Swann_Factory">Factory</a></li>
+			<li><a href="#Swann_Armory">Armory</a></li>
+			<li><a href="#Swann_Starport">Starport</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Swann_WarBot">A.R.E.S.</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Swann_LaserDrill">Drakken Laser Drill</a></li>
+		</ul>
+	</section>
+	<section id="Nova">
+		<h2>Nova</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Nova_Nova">Nova</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Nova_SCV">SCV</a></li>
+			<li><a href="#Nova_Marine">Elite Marine</a></li>
+			<li><a href="#Nova_Marauder">Marauder Commando</a></li>
+			<li><a href="#Nova_Ghost">Spec Ops Ghost</a></li>
+			<li><a href="#Nova_Hellbat">Hellbat Ranger</a></li>
+			<li><a href="#Nova_Goliath">Strike Goliath</a></li>
+			<li><a href="#Nova_SiegeTank">Heavy Siege Tank</a></li>
+			<li><a href="#Nova_Liberator">Raid Liberator</a></li>
+			<li><a href="#Nova_Raven">Raven Type-II</a></li>
+			<li><a href="#Nova_Banshee">Covert Banshee</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Nova_CommandCenter">Command Center</a></li>
+			<li><a href="#Nova_Refinery">Automated Refinery</a></li>
+			<li><a href="#Nova_Barracks">Barracks</a></li>
+			<li><a href="#Nova_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#Nova_RailgunTurret">Railgun Turret</a></li>
+			<li><a href="#Nova_MissileTurret">Missile Turret</a></li>
+			<li><a href="#Nova_Factory">Factory</a></li>
+			<li><a href="#Nova_Armory">Armory</a></li>
+			<li><a href="#Nova_Starport">Starport</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Nova_DefensiveDrone">Defensive Drone</a></li>
+			<li><a href="#Nova_SabotageDrone">Sabotage Drone</a></li>
+			<li><a href="#Nova_RepairDrone">Bio-Mechanical Repair Drone</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Nova_GhostAcademy">Ghost Academy</a></li>
+		</ul>
+	</section>
+	<section id="Han">
+		<h2>Han &amp; Horner</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Han_SCV">SCV</a></li>
+			<li><a href="#Han_Reaper">Reaper</a></li>
+			<li><a href="#Han_WidowMine">Widow Mine</a></li>
+			<li><a href="#Han_Hellbat">Hellion / Hellbat</a></li>
+			<li><a href="#Han_Wraith">Asteria Wraith</a></li>
+			<li><a href="#Han_Viking">Deimos Viking</a></li>
+			<li><a href="#Han_Raven">Theia Raven</a></li>
+			<li><a href="#Han_Battlecruiser">Sovereign Battlecruiser</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Han_CommandCenter">Command Center</a></li>
+			<li><a href="#Han_SupplyDepot">Supply Depot</a></li>
+			<li><a href="#Han_Refinery">Refinery</a></li>
+			<li><a href="#Han_AssaultGalleon">Assault Galleon</a></li>
+			<li><a href="#Han_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#Han_MissileTurret">Missile Turret</a></li>
+			<li><a href="#Han_Armory">Armory</a></li>
+			<li><a href="#Han_StrikeFighterPlatform">Strike Fighter Platform</a></li>
+			<li><a href="#Han_FusionCore">Fusion Core</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Han_Starport">Dominion Starport</a></li>
+		</ul>
+	</section>
+	<section id="Tychus">
+		<h2>Tychus</h2>
+		<h3>Outlaws</h3>
+		<ul>
+			<li><a href="#Tychus_Tychus">Tychus</a></li>
+			<li><a href="#Tychus_CrookedSam">Crooked Sam</a></li>
+			<li><a href="#Tychus_Sirius">James &ldquo;Sirius&rdquo; Sykes</a></li>
+			<li><a href="#Tychus_Blaze">Miles &ldquo;Blaze&rdquo; Lewis</a></li>
+			<li><a href="#Tychus_Rattlesnake">Kev &ldquo;Rattlesnake&rdquo; West</a></li>
+			<li><a href="#Tychus_Cannonball">Rob &ldquo;Cannonball&rdquo; Boswell</a></li>
+			<li><a href="#Tychus_Vega">Vega</a></li>
+			<li><a href="#Tychus_Nux">Nux</a></li>
+			<li><a href="#Tychus_Nikara">Lt. Layna Nikara</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Tychus_SCV">SCV</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Tychus_CommandCenter">Command Center</a></li>
+			<li><a href="#Tychus_Refinery">Refinery</a></li>
+			<li><a href="#Tychus_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#Tychus_Guns">Gunslinger&rsquo;s Hideout</a></li>
+			<li><a href="#Tychus_Muscle">Muscle Armory</a></li>
+			<li><a href="#Tychus_Fixers">Fixers&rsquo; Safehouse</a></li>
+			<li><a href="#Tychus_AutoTurret">Auto-Turret</a></li>
+			<li><a href="#Tychus_MedivacPlatform">Medivac Platform</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Tychus_Odin">Odin</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Tychus_Bar">Joeyray&rsquo;s Bar</a></li>
+		</ul>
+	</section>
+	<section id="Mengsk">
+		<h2>Mengsk</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Mengsk_Laborer">Dominion Laborer</a></li>
+			<li><a href="#Mengsk_Trooper">Dominion Trooper</a></li>
+			<li><a href="#Mengsk_Marauder">Aegis Guard</a></li>
+			<li><a href="#Mengsk_Ghost">Emperor&rsquo;s Shadow</a></li>
+			<li><a href="#Mengsk_SiegeTank">Shock Division</a></li>
+			<li><a href="#Mengsk_Thor">Blackhammer</a></li>
+			<li><a href="#Mengsk_Viking">Sky Fury</a></li>
+			<li><a href="#Mengsk_Medivac">Imperial Intercessor</a></li>
+			<li><a href="#Mengsk_Raven">Imperial Witness</a></li>
+			<li><a href="#Mengsk_Battlecruiser">Pride of Augustgrad</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Mengsk_CommandCenter">Enlistment Center</a></li>
+			<li><a href="#Mengsk_Refinery">Refinery</a></li>
+			<li><a href="#Mengsk_SupplyDepot">Supply Bunker</a></li>
+			<li><a href="#Mengsk_Barracks">Barracks</a></li>
+			<li><a href="#Mengsk_EngineeringBay">Engineering Bay</a></li>
+			<li><a href="#Mengsk_Artillery">Earthsplitter Ordnance</a></li>
+			<li><a href="#Mengsk_MissileTurret">Missile Turret</a></li>
+			<li><a href="#Mengsk_GhostAcademy">Royal Academy</a></li>
+			<li><a href="#Mengsk_Factory">Factory</a></li>
+			<li><a href="#Mengsk_Armory">Armory</a></li>
+			<li><a href="#Mengsk_Starport">Starport</a></li>
+			<li><a href="#Mengsk_FusionCore">Fusion Core</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Mengsk_Zergling">Enthralled Zergling</a></li>
+			<li><a href="#Mengsk_Hydralisk">Enthralled Hydralisk</a></li>
+			<li><a href="#Mengsk_Mutalisk">Enthralled Mutalisk</a></li>
+			<li><a href="#Mengsk_Ultralisk">Enthralled Ultralisk</a></li>
+		</ul>
+	</section>
+	<section id="Zerg">
+		<h2>Zerg</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Zerg_Larva">Larva</a></li>
+			<li><a href="#Zerg_Drone">Drone</a></li>
+			<li><a href="#Zerg_Overlord">Overlord</a>
+				<ul>
+					<li><a href="#Zerg_Overseer">Overseer</a></li>
+				</ul>
+			</li>
+			<li><a href="#Zerg_Queen">Queen</a></li>
+			<li><a href="#Zerg_Zergling">Zergling</a>
+				<ul>
+					<li><a href="#Zerg_Baneling">Baneling</a></li>
+				</ul>
+			</li>
+			<li><a href="#Zerg_Roach">Roach</a>
+				<ul>
+					<li><a href="#Zerg_Ravager">Ravager</a></li>
+				</ul>
+			</li>
+			<li><a href="#Zerg_Hydralisk">Hydralisk</a>
+				<ul>
+					<li><a href="#Zerg_Lurker">Lurker</a></li>
+				</ul>
+			</li>
+			<li><a href="#Zerg_Mutalisk">Mutalisk</a></li>
+			<li><a href="#Zerg_Corruptor">Corruptor</a>
+				<ul>
+					<li><a href="#Zerg_BroodLord">Brood Lord</a></li>
+				</ul>
+			</li>
+			<li><a href="#Zerg_Infestor">Infestor</a></li>
+			<li><a href="#Zerg_SwarmHost">Swarm Host</a></li>
+			<li><a href="#Zerg_Viper">Viper</a></li>
+			<li><a href="#Zerg_Ultralisk">Ultralisk</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Zerg_Hatchery">Hatchery / Lair / Hive</a></li>
+			<li><a href="#Zerg_Extractor">Extractor</a></li>
+			<li><a href="#Zerg_SpawningPool">Spawning Pool</a></li>
+			<li><a href="#Zerg_EvolutionChamber">Evolution Chamber</a></li>
+			<li><a href="#Zerg_RoachWarren">Roach Warren</a></li>
+			<li><a href="#Zerg_BanelingNest">Baneling Nest</a></li>
+			<li><a href="#Zerg_SpineCrawler">Spine Crawler</a></li>
+			<li><a href="#Zerg_SporeCrawler">Spore Crawler</a></li>
+			<li><a href="#Zerg_HydraliskDen">Hydralisk Den</a></li>
+			<li><a href="#Zerg_InfestationPit">Infestation Pit</a></li>
+			<li><a href="#Zerg_LurkerDen">Lurker Den</a></li>
+			<li><a href="#Zerg_Spire">Spire / Greater Spire</a></li>
+			<li><a href="#Zerg_NydusNetwork">Nydus Network / Nydus Worm</a></li>
+			<li><a href="#Zerg_UltraliskCavern">Ultralisk Cavern</a></li>
+		</ul>
+		<h2>Heart of the Swarm</h2>
+		<h3>Heroes</h3>
+		<h4>Zerg Swarm</h4>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Kerrigan">Kerrigan</a></li>
+			<li><a href="#HeartOfTheSwarm_Niadra">Niadra</a></li>
+			<li><a href="#HeartOfTheSwarm_Stukov">Stukov</a></li>
+			<li><a href="#HeartOfTheSwarm_Dehaka">Dehaka</a></li>
+		</ul>
+		<h4>Raynor&rsquo;s Raiders</h4>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Hyperion">Hyperion</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Larva">Larva</a></li>
+			<li><a href="#HeartOfTheSwarm_Drone">Drone</a></li>
+			<li><a href="#HeartOfTheSwarm_Overlord">Overlord</a></li>
+			<li><a href="#HeartOfTheSwarm_Queen">Swarm Queen</a></li>
+			<li><a href="#HeartOfTheSwarm_Zergling">Zergling</a>
+				<ul>
+					<li><a href="#HeartOfTheSwarm_ZerglingRaptor">Raptor Strain</a></li>
+					<li><a href="#HeartOfTheSwarm_ZerglingSwarmling">Swarmling Strain</a></li>
+				</ul>
+			</li>
+			<li><a href="#HeartOfTheSwarm_Baneling">Baneling</a>
+				<ul>
+					<li><a href="#HeartOfTheSwarm_BanelingSplitter">Splitter Strain</a></li>
+					<li><a href="#HeartOfTheSwarm_BanelingHunter">Hunter Strain</a></li>
+				</ul>
+			</li>
+			<li><a href="#HeartOfTheSwarm_Aberration">Aberration</a></li>
+			<li><a href="#HeartOfTheSwarm_Roach">Roach</a>
+				<ul>
+					<li><a href="#HeartOfTheSwarm_RoachCorpser">Corpser Strain</a></li>
+					<li><a href="#HeartOfTheSwarm_RoachVile">Vile Strain</a></li>
+				</ul>
+			</li>
+			<li><a href="#HeartOfTheSwarm_Hydralisk">Hydralisk</a>
+				<ul>
+					<li><a href="#HeartOfTheSwarm_HydraliskImpaler">Impaler Strain</a>
+						<ul>
+							<li><a href="#HeartOfTheSwarm_Impaler">Impaler</a></li>
+						</ul>
+					</li>
+					<li><a href="#HeartOfTheSwarm_HydraliskLurker">Lurker Strain</a>
+						<ul>
+							<li><a href="#HeartOfTheSwarm_Lurker">Lurker</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#HeartOfTheSwarm_Infestor">Infestor</a></li>
+			<li><a href="#HeartOfTheSwarm_SwarmHost">Swarm Host</a>
+				<ul>
+					<li><a href="#HeartOfTheSwarm_SwarmHostCarrion">Carrion Strain</a></li>
+					<li><a href="#HeartOfTheSwarm_SwarmHostCreeper">Creeper Strain</a></li>
+				</ul>
+			</li>
+			<li><a href="#HeartOfTheSwarm_Mutalisk">Mutalisk</a>
+				<ul>
+					<li><a href="#HeartOfTheSwarm_MutaliskBroodLord">Brood Lord Strain</a>
+						<ul>
+							<li><a href="#HeartOfTheSwarm_BroodLord">Brood Lord</a></li>
+						</ul>
+					</li>
+					<li><a href="#HeartOfTheSwarm_MutaliskViper">Viper Strain</a>
+						<ul>
+							<li><a href="#HeartOfTheSwarm_Viper">Viper</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#HeartOfTheSwarm_Ultralisk">Ultralisk</a>
+				<ul>
+					<li><a href="#HeartOfTheSwarm_UltraliskNoxious">Noxious Strain</a></li>
+					<li><a href="#HeartOfTheSwarm_UltraliskTorrasque">Torrasque Strain</a></li>
+				</ul>
+			</li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Hatchery">Hatchery / Lair / Hive</a></li>
+			<li><a href="#HeartOfTheSwarm_Extractor">Extractor</a></li>
+			<li><a href="#HeartOfTheSwarm_SpawningPool">Spawning Pool</a></li>
+			<li><a href="#HeartOfTheSwarm_RoachWarren">Roach Warren</a></li>
+			<li><a href="#HeartOfTheSwarm_BanelingNest">Baneling Nest</a></li>
+			<li><a href="#HeartOfTheSwarm_EvolutionChamber">Evolution Chamber</a></li>
+			<li><a href="#HeartOfTheSwarm_SpineCrawler">Spine Crawler</a></li>
+			<li><a href="#HeartOfTheSwarm_SporeCrawler">Spore Crawler</a></li>
+			<li><a href="#HeartOfTheSwarm_HydraliskDen">Hydralisk Den / Lurker Den / Impaler Den</a></li>
+			<li><a href="#HeartOfTheSwarm_InfestationPit">Infestation Pit</a></li>
+			<li><a href="#HeartOfTheSwarm_Spire">Spire / Greater Spire</a></li>
+			<li><a href="#HeartOfTheSwarm_UltraliskCavern">Ultralisk Cavern</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<h4>Zerg Swarm</h4>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Brutalisk">Brutalisk</a></li>
+			<li><a href="#HeartOfTheSwarm_Leviathan">Leviathan</a></li>
+		</ul>
+		<h4>Terran Dominion</h4>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Warhound">Warhound</a></li>
+		</ul>
+		<h4>Arkship Specimens</h4>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Lyote">Lyote</a></li>
+			<li><a href="#HeartOfTheSwarm_GiantUrsadon">Giant Ursadon</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<h4>Zerg Swarm</h4>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Chrysalis">Kerrigan&rsquo;s Chrysalis</a></li>
+		</ul>
+		<h4>Raynor&rsquo;s Raiders</h4>
+		<ul>
+			<li><a href="#HeartOfTheSwarm_Barracks">Barracks</a></li>
+			<li><a href="#HeartOfTheSwarm_Factory">Factory</a></li>
+			<li><a href="#HeartOfTheSwarm_Starport">Starport</a></li>
+		</ul>
+		<h2>Co-op Missions</h2>
+		<h3>Units</h3>
+		<h4>Amon&rsquo;s Forces</h4>
+		<ul>
+			<li><a href="#CoopMissionsZerg_Queen">Swarm Queen</a></li>
+			<li><a href="#CoopMissionsZerg_Corruptor">Corruptor</a></li>
+			<li><a href="#CoopMissionsZerg_Infestor">Infestor</a></li>
+		</ul>
+	</section>
+	<section id="Kerrigan">
+		<h2>Kerrigan</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Kerrigan_Kerrigan">Kerrigan</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Kerrigan_Larva">Larva</a></li>
+			<li><a href="#Kerrigan_Drone">Drone</a></li>
+			<li><a href="#Kerrigan_Overlord">Overlord</a>
+				<ul>
+					<li><a href="#Kerrigan_Overseer">Overseer</a></li>
+				</ul>
+			</li>
+			<li><a href="#Kerrigan_Queen">Queen</a></li>
+			<li><a href="#Kerrigan_Zergling">Zergling</a></li>
+			<li><a href="#Kerrigan_Hydralisk">Hydralisk</a>
+				<ul>
+					<li><a href="#Kerrigan_Lurker">Lurker</a></li>
+				</ul>
+			</li>
+			<li><a href="#Kerrigan_Mutalisk">Mutalisk</a>
+				<ul>
+					<li><a href="#Kerrigan_BroodLord">Brood Lord</a></li>
+				</ul>
+			</li>
+			<li><a href="#Kerrigan_Ultralisk">Ultralisk</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Kerrigan_Hatchery">Hatchery / Lair / Hive</a></li>
+			<li><a href="#Kerrigan_Extractor">Extractor</a></li>
+			<li><a href="#Kerrigan_SpawningPool">Spawning Pool</a></li>
+			<li><a href="#Kerrigan_EvolutionChamber">Evolution Chamber</a></li>
+			<li><a href="#Kerrigan_SpineCrawler">Spine Crawler</a></li>
+			<li><a href="#Kerrigan_SporeCrawler">Spore Crawler</a></li>
+			<li><a href="#Kerrigan_HydraliskDen">Hydralisk Den / Lurker Den</a></li>
+			<li><a href="#Kerrigan_Spire">Spire / Greater Spire</a></li>
+			<li><a href="#Kerrigan_NydusNetwork">Omega Network / Omega Worm</a></li>
+			<li><a href="#Kerrigan_UltraliskCavern">Ultralisk Cavern</a></li>
+		</ul>
+	</section>
+	<section id="Zagara">
+		<h2>Zagara</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Zagara_Zagara">Zagara</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Zagara_Larva">Larva</a></li>
+			<li><a href="#Zagara_Drone">Drone</a></li>
+			<li><a href="#Zagara_Overlord">Overlord</a>
+				<ul>
+					<li><a href="#Zagara_Overseer">Overseer</a></li>
+				</ul>
+			</li>
+			<li><a href="#Zagara_Queen">Queen</a></li>
+			<li><a href="#Zagara_Zergling">Zergling</a>
+				<ul>
+					<li><a href="#Zagara_Baneling">Baneling</a></li>
+				</ul>
+			</li>
+			<li><a href="#Zagara_Aberration">Aberration</a></li>
+			<li><a href="#Zagara_Scourge">Scourge</a></li>
+			<li><a href="#Zagara_Corruptor">Corruptor</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Zagara_Hatchery">Hatchery / Lair / Hive</a></li>
+			<li><a href="#Zagara_Extractor">Extractor</a></li>
+			<li><a href="#Zagara_SpawningPool">Spawning Pool</a></li>
+			<li><a href="#Zagara_EvolutionChamber">Evolution Chamber</a></li>
+			<li><a href="#Zagara_BanelingNest">Baneling Nest</a></li>
+			<li><a href="#Zagara_SpineCrawler">Spine Crawler</a></li>
+			<li><a href="#Zagara_SporeCrawler">Spore Crawler</a></li>
+			<li><a href="#Zagara_BileLauncher">Bile Launcher</a></li>
+			<li><a href="#Zagara_ScourgeNest">Scourge Nest</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Zagara_HunterKiller">Hunter Killer</a></li>
+			<li><a href="#Zagara_Roach">Roach</a></li>
+		</ul>
+	</section>
+	<section id="Abathur">
+		<h2>Abathur</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Abathur_Larva">Larva</a></li>
+			<li><a href="#Abathur_Drone">Drone</a></li>
+			<li><a href="#Abathur_Overlord">Overlord</a>
+				<ul>
+					<li><a href="#Abathur_Overseer">Overseer</a></li>
+				</ul>
+			</li>
+			<li><a href="#Abathur_Queen">Swarm Queen</a></li>
+			<li><a href="#Abathur_Roach">Roach</a>
+				<ul>
+					<li><a href="#Abathur_Ravager">Ravager</a></li>
+				</ul>
+			</li>
+			<li><a href="#Abathur_SwarmHost">Swarm Host</a></li>
+			<li><a href="#Abathur_Mutalisk">Mutalisk</a>
+				<ul>
+					<li><a href="#Abathur_Guardian">Guardian</a></li>
+					<li><a href="#Abathur_Devourer">Devourer</a></li>
+				</ul>
+			</li>
+			<li><a href="#Abathur_Viper">Viper</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Abathur_Hatchery">Hatchery / Lair / Hive</a></li>
+			<li><a href="#Abathur_Extractor">Extractor</a></li>
+			<li><a href="#Abathur_RoachWarren">Roach Warren</a></li>
+			<li><a href="#Abathur_EvolutionChamber">Evolution Chamber</a></li>
+			<li><a href="#Abathur_SpineCrawler">Spine Crawler</a></li>
+			<li><a href="#Abathur_SporeCrawler">Spore Crawler</a></li>
+			<li><a href="#Abathur_InfestationPit">Infestation Pit</a></li>
+			<li><a href="#Abathur_Spire">Spire</a></li>
+			<li><a href="#Abathur_NydusNetwork">Nydus Network</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Abathur_Brutalisk">Brutalisk</a></li>
+			<li><a href="#Abathur_Leviathan">Leviathan</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Abathur_ToxicNest">Toxic Nest</a></li>
+		</ul>
+	</section>
+	<section id="Stukov">
+		<h2>Stukov</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Stukov_SCV">Infested SCV</a></li>
+			<li><a href="#Stukov_Overlord">Overlord</a>
+				<ul>
+					<li><a href="#Stukov_Overseer">Overseer</a></li>
+				</ul>
+			</li>
+			<li><a href="#Stukov_Civilian">Infested Civilian</a></li>
+			<li><a href="#Stukov_Volatile">Volatile Infested</a></li>
+			<li><a href="#Stukov_Marine">Infested Marine / Infested Trooper</a></li>
+			<li><a href="#Stukov_Diamondback">Infested Diamondback</a></li>
+			<li><a href="#Stukov_SiegeTank">Infested Siege Tank</a></li>
+			<li><a href="#Stukov_Liberator">Infested Liberator</a></li>
+			<li><a href="#Stukov_Banshee">Infested Banshee</a></li>
+			<li><a href="#Stukov_Queen">Brood Queen</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Stukov_CommandCenter">Infested Command Center</a></li>
+			<li><a href="#Stukov_Refinery">Infested Refinery</a></li>
+			<li><a href="#Stukov_Barracks">Infested Barracks</a></li>
+			<li><a href="#Stukov_EngineeringBay">Infested Engineering Bay</a></li>
+			<li><a href="#Stukov_Bunker">Infested Bunker</a></li>
+			<li><a href="#Stukov_MissileTurret">Infested Missile Turret</a></li>
+			<li><a href="#Stukov_Factory">Infested Factory</a></li>
+			<li><a href="#Stukov_Armory">Infested Armory</a></li>
+			<li><a href="#Stukov_Starport">Infested Starport</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Stukov_Apocalisk">Apocalisk</a></li>
+			<li><a href="#Stukov_Aleksander">Aleksander</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Stukov_ColonistCompound">Infested Colonist Compound</a></li>
+		</ul>
+	</section>
+	<section id="Dehaka">
+		<h2>Dehaka</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Dehaka_Dehaka">Dehaka</a></li>
+			<li><a href="#Dehaka_Zweihaka">Zweihaka</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Dehaka_Drone">Primal Drone</a></li>
+			<li><a href="#Dehaka_Zergling">Primal Zergling</a>
+				<ul>
+					<li><a href="#Dehaka_Ravasaur">Ravasaur</a></li>
+				</ul>
+			</li>
+			<li><a href="#Dehaka_Roach">Primal Roach</a>
+				<ul>
+					<li><a href="#Dehaka_Igniter">Primal Igniter</a></li>
+					<li><a href="#Dehaka_Guardian">Primal Guardian</a></li>
+				</ul>
+			</li>
+			<li><a href="#Dehaka_Hydralisk">Primal Hydralisk</a>
+				<ul>
+					<li><a href="#Dehaka_Lurker">Impaler</a></li>
+					<li><a href="#Dehaka_Mutalisk">Primal Mutalisk</a></li>
+				</ul>
+			</li>
+			<li><a href="#Dehaka_SwarmHost">Primal Host</a>
+				<ul>
+					<li><a href="#Dehaka_CreeperHost">Creeper Host</a></li>
+				</ul>
+			</li>
+			<li><a href="#Dehaka_Ultralisk">Primal Ultralisk</a>
+				<ul>
+					<li><a href="#Dehaka_Tyrannozor">Tyrannozor</a></li>
+				</ul>
+			</li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Dehaka_Hatchery">Primal Hive</a></li>
+			<li><a href="#Dehaka_Extractor">Extractor</a></li>
+			<li><a href="#Dehaka_Barracks">Primal Warden</a></li>
+			<li><a href="#Dehaka_GlevigDen">Glevig&rsquo;s Den</a></li>
+			<li><a href="#Dehaka_MurvarDen">Murvar&rsquo;s Den</a></li>
+			<li><a href="#Dehaka_DakrunDen">Dakrun&rsquo;s Den</a></li>
+			<li><a href="#Dehaka_Wurm">Primal Wurm</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Dehaka_Glevig">Glevig</a></li>
+			<li><a href="#Dehaka_Murvar">Murvar</a></li>
+			<li><a href="#Dehaka_Dakrun">Dakrun</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Dehaka_DehakaDen">Dehaka&rsquo;s Den</a></li>
+			<li><a href="#Dehaka_GreaterWurm">Greater Primal Wurm</a></li>
+		</ul>
+	</section>
+	<section id="Stetmann">
+		<h2>Stetmann</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Stetmann_Gary">Gary</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Stetmann_Larva">Mecha Larva</a></li>
+			<li><a href="#Stetmann_Drone">Mecha Drone</a></li>
+			<li><a href="#Stetmann_Overlord">Mecha Overlord</a>
+				<ul>
+					<li><a href="#Stetmann_Overseer">Mecha Overseer</a></li>
+				</ul>
+			</li>
+			<li><a href="#Stetmann_Zergling">Mecha Zergling</a>
+				<ul>
+					<li><a href="#Stetmann_Baneling">Mecha Baneling</a></li>
+				</ul>
+			</li>
+			<li><a href="#Stetmann_Hydralisk">Mecha Hydralisk</a>
+				<ul>
+					<li><a href="#Stetmann_Lurker">Mecha Lurker</a></li>
+				</ul>
+			</li>
+			<li><a href="#Stetmann_Corruptor">Mecha Corruptor</a>
+				<ul>
+					<li><a href="#Stetmann_BroodLord">Mecha Battlecarrier Lord</a></li>
+				</ul>
+			</li>
+			<li><a href="#Stetmann_Infestor">Mecha Infestor</a>
+				<ul>
+					<li><a href="#Stetmann_Roach">Mecha Roach</a></li>
+					<li><a href="#Stetmann_Ravager">Mecha Ravager</a></li>
+				</ul>
+			</li>
+			<li><a href="#Stetmann_Ultralisk">Mecha Ultralisk</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Stetmann_Hatchery">Mecha Hatchery / Mecha Lair / Mecha Hive</a></li>
+			<li><a href="#Stetmann_Extractor">Mecha Extractor</a></li>
+			<li><a href="#Stetmann_SpawningPool">Mecha Spawning Pool</a></li>
+			<li><a href="#Stetmann_EvolutionChamber">Mecha Evolution Chamber</a></li>
+			<li><a href="#Stetmann_BanelingNest">Mecha Baneling Nest</a></li>
+			<li><a href="#Stetmann_SpineCrawler">Mecha Spine Crawler</a></li>
+			<li><a href="#Stetmann_SporeCrawler">Mecha Spore Crawler</a></li>
+			<li><a href="#Stetmann_HydraliskDen">Mecha Hydralisk Den / Mecha Lurker Den</a></li>
+			<li><a href="#Stetmann_InfestationPit">Mecha Infestation Pit</a></li>
+			<li><a href="#Stetmann_Spire">Mecha Spire / Mecha Greater Spire</a></li>
+			<li><a href="#Stetmann_UltraliskCavern">Mecha Ultralisk Cavern</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Stetmann_Stetellite">Stetellite</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Stetmann_GaryRoom">Gary&rsquo;s Room</a></li>
+		</ul>
+	</section>
+	<section id="Protoss">
+		<h2>Protoss</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Protoss_Probe">Probe</a></li>
+			<li><a href="#Protoss_Zealot">Zealot</a></li>
+			<li><a href="#Protoss_Sentry">Sentry</a></li>
+			<li><a href="#Protoss_Stalker">Stalker</a></li>
+			<li><a href="#Protoss_Adept">Adept</a></li>
+			<li><a href="#Protoss_HighTemplar">High Templar</a></li>
+			<li><a href="#Protoss_Archon">Archon</a></li>
+			<li><a href="#Protoss_DarkTemplar">Dark Templar</a></li>
+			<li><a href="#Protoss_Observer">Observer</a></li>
+			<li><a href="#Protoss_WarpPrism">Warp Prism</a></li>
+			<li><a href="#Protoss_Immortal">Immortal</a></li>
+			<li><a href="#Protoss_Colossus">Colossus</a></li>
+			<li><a href="#Protoss_Disruptor">Disruptor</a></li>
+			<li><a href="#Protoss_Phoenix">Phoenix</a></li>
+			<li><a href="#Protoss_Oracle">Oracle</a></li>
+			<li><a href="#Protoss_VoidRay">Void Ray</a></li>
+			<li><a href="#Protoss_Tempest">Tempest</a></li>
+			<li><a href="#Protoss_Carrier">Carrier</a></li>
+			<li><a href="#Protoss_Mothership">Mothership</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Protoss_Nexus">Nexus</a></li>
+			<li><a href="#Protoss_Pylon">Pylon</a></li>
+			<li><a href="#Protoss_Assimilator">Assimilator</a></li>
+			<li><a href="#Protoss_Gateway">Gateway</a></li>
+			<li><a href="#Protoss_Forge">Forge</a></li>
+			<li><a href="#Protoss_PhotonCannon">Photon Cannon</a></li>
+			<li><a href="#Protoss_ShieldBattery">Shield Battery</a></li>
+			<li><a href="#Protoss_CyberneticsCore">Cybernetics Core</a></li>
+			<li><a href="#Protoss_TwilightCouncil">Twilight Council</a></li>
+			<li><a href="#Protoss_TemplarArchives">Templar Archives</a></li>
+			<li><a href="#Protoss_DarkShrine">Dark Shrine</a></li>
+			<li><a href="#Protoss_RoboticsFacility">Robotics Facility</a></li>
+			<li><a href="#Protoss_RoboticsBay">Robotics Bay</a></li>
+			<li><a href="#Protoss_Stargate">Stargate</a></li>
+			<li><a href="#Protoss_FleetBeacon">Fleet Beacon</a></li>
+		</ul>
+		<h2>Legacy of the Void</h2>
+		<h3>Heroes</h3>
+		<h4>Whispers of Oblivion</h4>
+		<ul>
+			<li><a href="#LegacyOfTheVoid_Zeratul">Zeratul</a></li>
+		</ul>
+		<h4>Legacy of the Void</h4>
+		<ul>
+			<li><a href="#LegacyOfTheVoid_Artanis">Artanis</a></li>
+			<li><a href="#LegacyOfTheVoid_Vorazun">Vorazun</a></li>
+			<li><a href="#LegacyOfTheVoid_Alarak">Alarak</a></li>
+			<li><a href="#LegacyOfTheVoid_Karax">Karax</a></li>
+			<li><a href="#LegacyOfTheVoid_Fenix">Fenix</a></li>
+		</ul>
+		<h4>Into the Void</h4>
+		<ul>
+			<li><a href="#LegacyOfTheVoid_Kerrigan">Kerrigan</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#LegacyOfTheVoid_Probe">Probe</a></li>
+			<li>Melee Warrior
+				<ul>
+					<li><a href="#LegacyOfTheVoid_Zealot">Zealot</a></li>
+					<li><a href="#LegacyOfTheVoid_Centurion">Centurion</a></li>
+					<li><a href="#LegacyOfTheVoid_Sentinel">Sentinel</a></li>
+				</ul>
+			</li>
+			<li>Ranged Warrior
+				<ul>
+					<li><a href="#LegacyOfTheVoid_Stalker">Stalker</a></li>
+					<li><a href="#LegacyOfTheVoid_Dragoon">Dragoon</a></li>
+					<li><a href="#LegacyOfTheVoid_Adept">Adept</a></li>
+				</ul>
+			</li>
+			<li>Robotic Assault
+				<ul>
+					<li><a href="#LegacyOfTheVoid_Immortal">Immortal</a></li>
+					<li><a href="#LegacyOfTheVoid_Annihilator">Annihilator</a></li>
+					<li><a href="#LegacyOfTheVoid_Vanguard">Vanguard</a></li>
+				</ul>
+			</li>
+			<li>Cloaked Warrior
+				<ul>
+					<li><a href="#LegacyOfTheVoid_DarkTemplar">Dark Templar</a></li>
+					<li><a href="#LegacyOfTheVoid_Avenger">Avenger</a></li>
+					<li><a href="#LegacyOfTheVoid_BloodHunter">Blood Hunter</a></li>
+				</ul>
+			</li>
+			<li>Robotic Support
+				<ul>
+					<li><a href="#LegacyOfTheVoid_Sentry">Sentry</a></li>
+					<li><a href="#LegacyOfTheVoid_Energizer">Energizer</a></li>
+					<li><a href="#LegacyOfTheVoid_Havoc">Havoc</a></li>
+				</ul>
+			</li>
+			<li>Starfighter
+				<ul>
+					<li><a href="#LegacyOfTheVoid_Phoenix">Phoenix</a></li>
+					<li><a href="#LegacyOfTheVoid_Corsair">Corsair</a></li>
+					<li><a href="#LegacyOfTheVoid_Mirage">Mirage</a></li>
+				</ul>
+			</li>
+			<li>Psionic Warrior
+				<ul>
+					<li><a href="#LegacyOfTheVoid_HighTemplar">High Templar</a></li>
+					<li><a href="#LegacyOfTheVoid_DarkArchon">Dark Archon</a></li>
+					<li><a href="#LegacyOfTheVoid_Ascendant">Ascendant</a></li>
+				</ul>
+			</li>
+			<li>Robotic Siege
+				<ul>
+					<li><a href="#LegacyOfTheVoid_Colossus">Colossus</a></li>
+					<li><a href="#LegacyOfTheVoid_Reaver">Reaver</a></li>
+					<li><a href="#LegacyOfTheVoid_Wrathwalker">Wrathwalker</a></li>
+				</ul>
+			</li>
+			<li>Assault Ship
+				<ul>
+					<li><a href="#LegacyOfTheVoid_VoidRay">Void Ray</a></li>
+					<li><a href="#LegacyOfTheVoid_Destroyer">Destroyer</a></li>
+					<li><a href="#LegacyOfTheVoid_Arbiter">Arbiter</a></li>
+				</ul>
+			</li>
+			<li>Capital Ship
+				<ul>
+					<li><a href="#LegacyOfTheVoid_Carrier">Carrier</a></li>
+					<li><a href="#LegacyOfTheVoid_Tempest">Tempest</a></li>
+					<li><a href="#LegacyOfTheVoid_Mothership">Mothership</a></li>
+				</ul>
+			</li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#LegacyOfTheVoid_Nexus">Nexus</a></li>
+			<li><a href="#LegacyOfTheVoid_Pylon">Pylon</a></li>
+			<li><a href="#LegacyOfTheVoid_Assimilator">Assimilator</a></li>
+			<li><a href="#LegacyOfTheVoid_Gateway">Gateway</a></li>
+			<li><a href="#LegacyOfTheVoid_Forge">Forge</a></li>
+			<li><a href="#LegacyOfTheVoid_PhotonCannon">Photon Cannon</a></li>
+			<li><a href="#LegacyOfTheVoid_Monolith">Khaydarin Monolith</a></li>
+			<li><a href="#LegacyOfTheVoid_ShieldBattery">Shield Battery</a></li>
+			<li><a href="#LegacyOfTheVoid_CyberneticsCore">Cybernetics Core</a></li>
+			<li><a href="#LegacyOfTheVoid_TemplarArchives">Templar Archives</a></li>
+			<li><a href="#LegacyOfTheVoid_DarkShrine">Dark Shrine</a></li>
+			<li><a href="#LegacyOfTheVoid_RoboticsFacility">Robotics Facility</a></li>
+			<li><a href="#LegacyOfTheVoid_RoboticsBay">Robotics Bay</a></li>
+			<li><a href="#LegacyOfTheVoid_Stargate">Stargate</a></li>
+			<li><a href="#LegacyOfTheVoid_FleetBeacon">Fleet Beacon</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<h4>Cybros Purifiers</h4>
+		<ul>
+			<li><a href="#LegacyOfTheVoid_Instigator">Instigator</a></li>
+		</ul>
+		<h4>Feral Zerg</h4>
+		<ul>
+			<li><a href="#LegacyOfTheVoid_Queen">Queen</a></li>
+		</ul>
+		<h2>Co-op Missions</h2>
+		<h3>Units</h3>
+		<h4>Amon&rsquo;s Forces</h4>
+		<ul>
+			<li><a href="#CoopMissionsProtoss_Sentry">Sentry</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<h4>Ancient Purifiers</h4>
+		<ul>
+			<li><a href="#CoopMissionsProtoss_PurifierDataCore">Purifier Data Core</a></li>
+		</ul>
+	</section>
+	<section id="Artanis">
+		<h2>Artanis</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Artanis_Probe">Probe</a></li>
+			<li><a href="#Artanis_Zealot">Zealot</a></li>
+			<li><a href="#Artanis_Dragoon">Dragoon</a></li>
+			<li><a href="#Artanis_HighTemplar">High Templar</a></li>
+			<li><a href="#Artanis_Archon">Archon</a></li>
+			<li><a href="#Artanis_Immortal">Immortal</a></li>
+			<li><a href="#Artanis_Observer">Observer</a></li>
+			<li><a href="#Artanis_Reaver">Reaver</a></li>
+			<li><a href="#Artanis_Phoenix">Phoenix</a></li>
+			<li><a href="#Artanis_Tempest">Tempest</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Artanis_Nexus">Nexus</a></li>
+			<li><a href="#Artanis_Pylon">Pylon</a></li>
+			<li><a href="#Artanis_Assimilator">Assimilator</a></li>
+			<li><a href="#Artanis_Gateway">Gateway</a></li>
+			<li><a href="#Artanis_Forge">Forge</a></li>
+			<li><a href="#Artanis_PhotonCannon">Photon Cannon</a></li>
+			<li><a href="#Artanis_CyberneticsCore">Cybernetics Core</a></li>
+			<li><a href="#Artanis_TwilightCouncil">Twilight Council</a></li>
+			<li><a href="#Artanis_TemplarArchives">Templar Archives</a></li>
+			<li><a href="#Artanis_RoboticsFacility">Robotics Facility</a></li>
+			<li><a href="#Artanis_RoboticsBay">Robotics Bay</a></li>
+			<li><a href="#Artanis_Stargate">Stargate</a></li>
+			<li><a href="#Artanis_FleetBeacon">Fleet Beacon</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Artanis_UnboundFanatic">Unbound Fanatic</a></li>
+		</ul>
+	</section>
+	<section id="Vorazun">
+		<h2>Vorazun</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Vorazun_Probe">Probe</a></li>
+			<li><a href="#Vorazun_Zealot">Centurion</a></li>
+			<li><a href="#Vorazun_Stalker">Stalker</a></li>
+			<li><a href="#Vorazun_DarkTemplar">Dark Templar</a></li>
+			<li><a href="#Vorazun_DarkArchon">Dark Archon</a></li>
+			<li><a href="#Vorazun_Corsair">Corsair</a></li>
+			<li><a href="#Vorazun_VoidRay">Void Ray</a></li>
+			<li><a href="#Vorazun_Oracle">Oracle</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Vorazun_Nexus">Nexus</a></li>
+			<li><a href="#Vorazun_Pylon">Pylon</a></li>
+			<li><a href="#Vorazun_Assimilator">Orbital Assimilator</a></li>
+			<li><a href="#Vorazun_Gateway">Gateway</a></li>
+			<li><a href="#Vorazun_Forge">Forge</a></li>
+			<li><a href="#Vorazun_PhotonCannon">Photon Cannon</a></li>
+			<li><a href="#Vorazun_CyberneticsCore">Cybernetics Core</a></li>
+			<li><a href="#Vorazun_TwilightCouncil">Twilight Council</a></li>
+			<li><a href="#Vorazun_DarkShrine">Dark Shrine</a></li>
+			<li><a href="#Vorazun_Stargate">Stargate</a></li>
+			<li><a href="#Vorazun_FleetBeacon">Fleet Beacon</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Vorazun_ShadowGuard">Shadow Guard</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Vorazun_DarkPylon">Dark Pylon</a></li>
+		</ul>
+	</section>
+	<section id="Karax">
+		<h2>Karax</h2>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Karax_Probe">Probe</a></li>
+			<li><a href="#Karax_Zealot">Sentinel</a></li>
+			<li><a href="#Karax_Sentry">Energizer</a></li>
+			<li><a href="#Karax_Immortal">Immortal</a></li>
+			<li><a href="#Karax_Observer">Observer</a></li>
+			<li><a href="#Karax_Colossus">Colossus</a></li>
+			<li><a href="#Karax_Phoenix">Mirage</a></li>
+			<li><a href="#Karax_Carrier">Carrier</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Karax_Nexus">Nexus</a></li>
+			<li><a href="#Karax_Pylon">Pylon</a></li>
+			<li><a href="#Karax_Assimilator">Assimilator</a></li>
+			<li><a href="#Karax_Gateway">Gateway</a></li>
+			<li><a href="#Karax_Forge">Forge</a></li>
+			<li><a href="#Karax_PhotonCannon">Photon Cannon</a></li>
+			<li><a href="#Karax_Monolith">Khaydarin Monolith</a></li>
+			<li><a href="#Karax_ShieldBattery">Shield Battery</a></li>
+			<li><a href="#Karax_CyberneticsCore">Cybernetics Core</a></li>
+			<li><a href="#Karax_TwilightCouncil">Twilight Council</a></li>
+			<li><a href="#Karax_RoboticsFacility">Robotics Facility</a></li>
+			<li><a href="#Karax_RoboticsBay">Robotics Bay</a></li>
+			<li><a href="#Karax_Stargate">Stargate</a></li>
+			<li><a href="#Karax_FleetBeacon">Fleet Beacon</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Karax_PurifierBeam">Purifier Beam</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Karax_SolarForge">Solar Forge</a></li>
+		</ul>
+	</section>
+	<section id="Alarak">
+		<h2>Alarak</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Alarak_Alarak">Alarak</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Alarak_Probe">Probe</a></li>
+			<li><a href="#Alarak_Supplicant">Supplicant</a></li>
+			<li><a href="#Alarak_Stalker">Slayer</a></li>
+			<li><a href="#Alarak_Sentry">Havoc</a></li>
+			<li><a href="#Alarak_HighTemplar">Ascendant</a></li>
+			<li><a href="#Alarak_Immortal">Vanguard</a></li>
+			<li><a href="#Alarak_Colossus">Wrathwalker</a></li>
+			<li><a href="#Alarak_WarpPrism">War Prism</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Alarak_Nexus">Nexus</a></li>
+			<li><a href="#Alarak_Pylon">Pylon</a></li>
+			<li><a href="#Alarak_Assimilator">Assimilator</a></li>
+			<li><a href="#Alarak_Gateway">Gateway</a></li>
+			<li><a href="#Alarak_Forge">Forge</a></li>
+			<li><a href="#Alarak_PhotonCannon">Photon Cannon</a></li>
+			<li><a href="#Alarak_CyberneticsCore">Cybernetics Core</a></li>
+			<li><a href="#Alarak_TwilightCouncil">Death Council</a></li>
+			<li><a href="#Alarak_TemplarArchives">Ascendant Archives</a></li>
+			<li><a href="#Alarak_RoboticsFacility">Robotics Facility</a></li>
+			<li><a href="#Alarak_RoboticsBay">Robotics Bay</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Alarak_Mothership">Mothership</a></li>
+			<li><a href="#Alarak_VoidRay">Destroyer</a></li>
+		</ul>
+	</section>
+	<section id="Fenix">
+		<h2>Fenix</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Fenix_Fenix">Fenix</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Fenix_Probe">Probe</a></li>
+			<li><a href="#Fenix_Zealot">Legionnaire</a></li>
+			<li><a href="#Fenix_Adept">Adept</a></li>
+			<li><a href="#Fenix_Sentry">Conservator</a></li>
+			<li><a href="#Fenix_Immortal">Immortal</a></li>
+			<li><a href="#Fenix_Observer">Observer</a></li>
+			<li><a href="#Fenix_Colossus">Colossus</a></li>
+			<li><a href="#Fenix_Disruptor">Disruptor</a></li>
+			<li><a href="#Fenix_Scout">Scout</a></li>
+			<li><a href="#Fenix_Carrier">Carrier</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Fenix_Nexus">Nexus</a></li>
+			<li><a href="#Fenix_Pylon">Pylon</a></li>
+			<li><a href="#Fenix_Assimilator">Assimilator</a></li>
+			<li><a href="#Fenix_Gateway">Gateway</a></li>
+			<li><a href="#Fenix_Forge">Forge</a></li>
+			<li><a href="#Fenix_PhotonCannon">Photon Cannon</a></li>
+			<li><a href="#Fenix_CyberneticsCore">Cybernetics Core</a></li>
+			<li><a href="#Fenix_TwilightCouncil">Twilight Council</a></li>
+			<li><a href="#Fenix_RoboticsFacility">Robotics Facility</a></li>
+			<li><a href="#Fenix_RoboticsBay">Robotics Bay</a></li>
+			<li><a href="#Fenix_Stargate">Stargate</a></li>
+			<li><a href="#Fenix_FleetBeacon">Fleet Beacon</a></li>
+		</ul>
+		<h3>Champions</h3>
+		<ul>
+			<li><a href="#Fenix_ProbeChampion">Probius</a></li>
+			<li><a href="#Fenix_ZealotChampion">Kaldalis</a></li>
+			<li><a href="#Fenix_AdeptChampion">Talis</a></li>
+			<li><a href="#Fenix_ImmortalChampion">Taldarin</a></li>
+			<li><a href="#Fenix_ColossusChampion">Warbringer</a></li>
+			<li><a href="#Fenix_ScoutChampion">Mojo</a></li>
+			<li><a href="#Fenix_CarrierChampion">Clolarion</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Fenix_PurifierConclave">Purifier Conclave</a></li>
+		</ul>
+	</section>
+	<section id="Zeratul">
+		<h2>Zeratul</h2>
+		<h3>Heroes</h3>
+		<ul>
+			<li><a href="#Zeratul_Zeratul">Zeratul</a></li>
+		</ul>
+		<h3>Units</h3>
+		<ul>
+			<li><a href="#Zeratul_Probe">Precursor</a></li>
+			<li><a href="#Zeratul_Stalker">Ambusher</a></li>
+			<li><a href="#Zeratul_Sentry">Shieldguard</a></li>
+			<li><a href="#Zeratul_DarkTemplar">Void Templar</a></li>
+			<li><a href="#Zeratul_Immortal">Enforcer</a></li>
+			<li><a href="#Zeratul_Observer">Watcher</a></li>
+			<li><a href="#Zeratul_Disruptor">Abrogator</a></li>
+			<li><a href="#Zeratul_WarpPrism">Void Array</a></li>
+		</ul>
+		<h3>Structures</h3>
+		<ul>
+			<li><a href="#Zeratul_Nexus">Ancient Nexus</a></li>
+			<li><a href="#Zeratul_Assimilator">Ancient Assimilator</a></li>
+			<li><a href="#Zeratul_Gateway">Passageway</a></li>
+			<li><a href="#Zeratul_PhotonCannon">Tesseract Cannon</a></li>
+			<li><a href="#Zeratul_Monolith">Tesseract Monolith</a></li>
+			<li><a href="#Zeratul_CyberneticsCore">Core Forge</a></li>
+			<li><a href="#Zeratul_DarkShrine">Void Shrine</a></li>
+			<li><a href="#Zeratul_RoboticsFacility">Constructs Facility</a></li>
+			<li><a href="#Zeratul_RoboticsBay">Constructs Bay</a></li>
+		</ul>
+		<h3>Special Units</h3>
+		<ul>
+			<li><a href="#Zeratul_VoidSuppressionCrystal">Void Suppression Crystal</a></li>
+			<li><a href="#Zeratul_AvatarOfForm">Avatar of Form</a></li>
+			<li><a href="#Zeratul_AvatarOfEssence">Avatar of Essence</a></li>
+		</ul>
+		<h3>Special Structures</h3>
+		<ul>
+			<li><a href="#Zeratul_ArtifactReserve">Artifact Reserve</a></li>
+		</ul>
+		<h3>Legendary Legions</h3>
+		<ul>
+			<li><a href="#Zeratul_Zealot">Zealot</a></li>
+			<li><a href="#Zeratul_Telbrus">Telbrus</a></li>
+			<li><a href="#Zeratul_DarkArchon">Dark Archon</a></li>
+			<li><a href="#Zeratul_Serdath">Serdath</a></li>
+			<li><a href="#Zeratul_VoidRay">Void Ray</a></li>
+			<li><a href="#Zeratul_Zoraya">Zoraya</a></li>
+		</ul>
+	</section>
+</main>
 <div id="editor">
 	<h2 id="name"><img src="icons/btn-unit-terran-scv.png" alt="[SCV]" title="SCV"> <span>SCV</span></h2>
 	<div id="cards">
@@ -1102,21 +1474,36 @@
 											 0 0 0 1 0"/>
 	</filter>
 </svg>
-<div id="overlay_load" class="overlay"><p>Copy and paste a hotkey file in the area below or load a file.</p>
-<p><label>Load local file: <input type="file" id="file" accept=".SC2Hotkeys"></label></p>
-<textarea id="text_load" cols="80" rows="20"></textarea>
-<p><button type="button" id="open" accesskey="o"><span class="hotkey">O</span>pen</button>
-<button type="button" id="reset" accesskey="r"><span class="hotkey">R</span>eset</button>
-<button type="button" value="load" class="close">Close (<span class="hotkey">Esc</span>)</button></p></div>
-<div id="overlay_save" class="overlay"><p>Save as <code>Hotkeys.SC2Hotkeys</code> in your <cite>Starcraft II</cite> user profile directory.</p>
-<textarea id="text_save" cols="80" rows="20"></textarea>
-<p><button type="button" id="copy" accesskey="c"><span class="hotkey">C</span>opy</button>
-<button type="button" id="download" accesskey="d"><span class="hotkey">D</span>ownload</button>
-<button type="button" value="save" class="close">Close (<span class="hotkey">Esc</span>)</button></p>
-<p><a id="link">Download &ldquo;CustomKeys.txt&rdquo;</a></p></div>
-<footer><div id="search"><input type="search" placeholder="Find unit..." id="query" accesskey="f">
-<ul id="results"></ul></div>
-<div id="author">Created by <a href="mailto:jcfields@jcfields.dev">J.C. Fields</a>. Hosted by <a href="https://github.com/jcfieldsdev/starcraft2-hotkey-editor">GitHub</a>.</div>
-<div id="buttons"><button type="button" id="help" accesskey="h">?</button>
-<button type="button" id="load" accesskey="l"><span class="hotkey">L</span>oad</button>
-<button type="button" id="save" accesskey="s"><span class="hotkey">S</span>ave</button></div></footer></body></html>
+<div id="overlay_load" class="overlay">
+	<p>Copy and paste a hotkey file in the area below or load a file.</p>
+	<div id="dropzone">Click here or drag-and-drop a file to upload.</div>
+	<input type="file" id="file" accept=".SC2Hotkeys">
+	<textarea id="text_load" cols="80" rows="20"></textarea>
+	<p>
+		<button type="button" id="open" accesskey="o"><span class="hotkey">O</span>pen</button>
+		<button type="button" id="reset" accesskey="r"><span class="hotkey">R</span>eset</button>
+		<button type="button" value="load" class="close">Close (<span class="hotkey">Esc</span>)</button>
+	</p>
+</div>
+<div id="overlay_save" class="overlay">
+	<p>Save as <code>Hotkeys.SC2Hotkeys</code> in your <cite>Starcraft II</cite> user profile directory.</p>
+	<textarea id="text_save" cols="80" rows="20"></textarea>
+	<p>
+		<button type="button" id="copy" accesskey="c"><span class="hotkey">C</span>opy</button>
+		<button type="button" id="download" accesskey="d"><span class="hotkey">D</span>ownload</button>
+		<button type="button" value="save" class="close">Close (<span class="hotkey">Esc</span>)</button>
+	</p>
+	<p><a id="link">Download &ldquo;CustomKeys.txt&rdquo;</a></p>
+</div>
+<footer>
+	<div id="search">
+		<input type="search" placeholder="Find unit..." id="query" accesskey="f">
+		<ul id="results"></ul>
+	</div>
+	<div id="author">Created by <a href="mailto:jcfields@jcfields.dev">J.C. Fields</a>. Hosted by <a href="https://github.com/jcfieldsdev/starcraft2-hotkey-editor">GitHub</a>.</div>
+	<div id="buttons">
+		<button type="button" id="help" accesskey="h">?</button>
+		<button type="button" id="load" accesskey="l"><span class="hotkey">L</span>oad</button>
+		<button type="button" id="save" accesskey="s"><span class="hotkey">S</span>ave</button>
+	</div>
+</footer></body></html>

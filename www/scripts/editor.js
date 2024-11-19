@@ -71,24 +71,26 @@ window.addEventListener("load", function() {
 
 	editor.load();
 
+	let clicks = 0;
+
 	window.addEventListener("beforeunload", function() {
 		store.save(commands);
 	});
 	window.addEventListener("hashchange", function() {
+		clicks = 0;
+
 		// changes on link or browser back/forward
 		editor.load();
 	});
 	window.addEventListener("keyup", function(event) {
-		const keyCode = event.keyCode;
+		const {key} = event;
 
-		if (keyCode == 27) { // Esc
+		if (key == "Escape") {
 			for (const overlay of Object.values(overlays)) {
 				overlay.hide();
 			}
 		}
 	});
-
-	let clicks = 0;
 
 	document.addEventListener("click", function(event) {
 		const element = event.target;
@@ -130,6 +132,10 @@ window.addEventListener("load", function() {
 			store.save(commands);
 			overlays.save.setText(commands.convert());
 			overlays.save.show();
+		}
+
+		if (element.matches("#dropzone")) {
+			$("#file").click();
 		}
 
 		if (element.matches("#download")) {
@@ -207,21 +213,21 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches("#query")) {
-			const keyCode = event.keyCode;
+			const {key} = event;
 
-			if (keyCode == 13) { // return/enter
+			if (key == "Enter") {
 				editor.openResult();
 			}
 
-			if (keyCode == 27) { // Esc
+			if (key == "Escape") {
 				editor.clearSearchAndQuery();
 			}
 
-			if (keyCode == 38) { // up arrow
+			if (key == "ArrowUp") {
 				editor.selectResult(true);
 			}
 
-			if (keyCode == 40) { // down arrow
+			if (key == "ArrowDown") {
 				editor.selectResult(false);
 			}
 		}
@@ -233,7 +239,41 @@ window.addEventListener("load", function() {
 			editor.selected = $$("#results li").findIndex(function(item) {
 				return item == element;
 			});
-			editor.highlightResult();
+			editor.highlightResult(false);
+		}
+	});
+	document.addEventListener("dragover", function(event) {
+		const element = event.target;
+
+		if (element.matches("#dropzone")) {
+			event.preventDefault();
+		}
+	});
+	document.addEventListener("dragenter", function(event) {
+		const element = event.target;
+
+		if (element.matches("#dropzone")) {
+			$("#dropzone").classList.add("hover");
+		}
+	});
+	document.addEventListener("dragleave", function(event) {
+		const element = event.target;
+
+		if (element.matches("#dropzone")) {
+			$("#dropzone").classList.remove("hover");
+		}
+	});
+	document.addEventListener("drop", function(event) {
+		const element = event.target;
+
+		if (element.matches("#dropzone")) {
+			event.preventDefault();
+			$("#dropzone").classList.remove("hover");
+
+			const files = event.dataTransfer.files;
+			const input = $("#file");
+			input.files = files;
+			input.dispatchEvent(new Event('change'));
 		}
 	});
 
@@ -865,7 +905,7 @@ Editor.prototype.formatResults = function(id, matches) {
 	$("#" + id).replaceWith(ul);
 };
 
-Editor.prototype.selectResult = function(dir) {
+Editor.prototype.selectResult = function(dir=false) {
 	const results = $$("#results li");
 
 	if (dir) { // up arrow
@@ -884,15 +924,18 @@ Editor.prototype.selectResult = function(dir) {
 		}
 	}
 
-	this.highlightResult();
+	this.highlightResult(true);
 };
 
-Editor.prototype.highlightResult = function() {
+Editor.prototype.highlightResult = function(scroll=false) {
 	for (const [i, result] of $$("#results li").entries()) {
 		if (this.selected == i) {
 			result.classList.add("selected");
-			result.scrollIntoView(); // for long lists with scrollbars
 			this.highlightFilter(i);
+
+			if (scroll) {
+				result.scrollIntoView(); // for long lists with scrollbars
+			}
 		} else {
 			if (this.selected < 0) {
 				for (const element of $$(".filter")) {

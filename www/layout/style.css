@@ -58,7 +58,7 @@ a, button {
 	cursor: pointer;
 }
 
-a#link, h1, ul#filters span {
+a#link, h1, input#file, ul#filters span {
 	display: none;
 }
 
@@ -224,8 +224,8 @@ button.icon span {
 	top: 0;
 }
 
-button.icon span, code, div#editor, div.cell, div.overlay, figure, main.doc {
-	background: rgba(0, 0, 0, 0.5);
+button.icon span, code, div#dropzone, div#editor, div.cell, div.overlay, figure, main.doc {
+	background-color: rgba(0, 0, 0, 0.5);
 	color: inherit;
 }
 
@@ -258,7 +258,7 @@ button:focus, input:focus, textarea:focus {
 	outline: 0;
 }
 
-button:hover, p#hotkey input:focus {
+button:hover, div#dropzone.hover, p#hotkey input:focus {
 	box-shadow: 0 0 8px 2px #fff;
 	transition: 0.1s box-shadow;
 }
@@ -295,6 +295,32 @@ div#cards {
 	display: flex;
 	grid-area: cards;
 	overflow: auto;
+}
+
+div#dropzone {
+	background-image: url(file.svg);
+	background-position: 85% 50%;
+	background-repeat: no-repeat;
+	background-size: 3.5em;
+	border: 3px dashed #fff;
+	border-radius: 1rem;
+	color: inherit;
+	font-size: 0.75rem;
+	line-height: 150%;
+	margin: 1em auto;
+	padding: 1.5em 8em 1.5em 3em;
+	text-align: left;
+	width: 12em;
+}
+
+div#dropzone, label {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+div#dropzone.hover {
+	border-style: solid;
 }
 
 div#editor {
@@ -368,11 +394,11 @@ div.overlay textarea {
 }
 
 div.overlay.open {
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(2px);
 	opacity: 1;
 	transition: 0.3s opacity;
 	visibility: visible;
-	-webkit-backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(2px);
 }
 
 fieldset, ul#commands, ul#units {
@@ -918,7 +944,7 @@ ul#tabs button:not(.active) {
 	}
 
 	ul#results {
-		bottom: 1em;
+		bottom: 2em;
 	}
 }
 

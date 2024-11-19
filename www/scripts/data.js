@@ -886,7 +886,6 @@ data.units = {
 		commands: [
 			...data.common.tower,
 			"SelectBuilder",
-			"Salvage/MissileTurret",
 			"Halt",
 			"Cancel"
 		]
@@ -911,7 +910,6 @@ data.units = {
 		type: BUILDING,
 		commands: [
 			"ResearchPersonalCloaking/GhostAcademy",
-			"ResearchEnhancedShockwaves/GhostAcademy",
 			"NukeArm/GhostAcademy",
 			"SelectBuilder",
 			"Halt",
@@ -941,7 +939,7 @@ data.units = {
 			],
 			"Tech Lab": [
 				"ResearchHighCapacityBarrels/FactoryTechLab",
-				"CycloneResearchLockOnDamageUpgrade/FactoryTechLab",
+				"CycloneResearchHurricaneThrusters/FactoryTechLab",
 				"ResearchDrillClaws/FactoryTechLab",
 				"ResearchSmartServos/FactoryTechLab",
 				"Cancel"
@@ -991,9 +989,9 @@ data.units = {
 				"Cancel"
 			],
 			"Tech Lab": [
-				"ResearchRavenEnergyUpgrade/StarportTechLab",
 				"ResearchBansheeCloak/StarportTechLab",
 				"BansheeSpeed/StarportTechLab",
+				"ResearchRavenInterferenceMatrix/StarportTechLab",
 				"Cancel"
 			],
 			"Flying": [
@@ -1012,7 +1010,7 @@ data.units = {
 		type: BUILDING,
 		commands: [
 			"ResearchBattlecruiserSpecializations/FusionCore",
-			"ResearchRapidReignitionSystem/FusionCore",
+			"ResearchMedivacEnergyUpgrade/FusionCore",
 			"ResearchBallisticRange/FusionCore",
 			"SelectBuilder",
 			"Halt",
@@ -5423,7 +5421,6 @@ data.units = {
 		commander: "Zerg",
 		type: BUILDING,
 		commands: [
-			"EvolveInfestorEnergyUpgrade/InfestationPit",
 			"ResearchNeuralParasite/InfestationPit",
 			"Cancel"
 		]
@@ -9817,7 +9814,12 @@ data.units = {
 			"Stop",
 			"ShieldBatteryRecharge/ShieldBattery",
 			"Cancel"
-		]
+		],
+		overrides: {
+			"ShieldBatteryRecharge/ShieldBattery": {
+				y: 0
+			}
+		}
 	},
 	"Protoss_Forge": {
 		name: "Forge",
@@ -14868,6 +14870,14 @@ data.commands = {
 		y: 0,
 		x: 1
 	},
+	"CycloneResearchHurricaneThrusters/FactoryTechLab": {
+		name: "Research Hurricane Engines",
+		hotkey: "R",
+		icon: "btn-upgrade-mengsk-armory-smartservos",
+		mask: false,
+		y: 0,
+		x: 1
+	},
 	"ResearchDrillClaws/FactoryTechLab": {
 		name: "Research Drilling Claws",
 		hotkey: "C",
@@ -15216,12 +15226,20 @@ data.commands = {
 		icon: "btn-ability-terran-cloak-color",
 		mask: false,
 		y: 0,
-		x: 1
+		x: 0
 	},
 	"BansheeSpeed/StarportTechLab": {
 		name: "Research Hyperflight Rotors",
 		hotkey: "B",
 		icon: "btn-upgrade-terran-hyperflightrotors",
+		mask: false,
+		y: 0,
+		x: 1
+	},
+	"ResearchRavenInterferenceMatrix/StarportTechLab": {
+		name: "Research Interference Matrix",
+		hotkey: "T",
+		icon: "btn-upgrade-terran-interferencematrix",
 		mask: false,
 		y: 0,
 		x: 2
@@ -15332,6 +15350,14 @@ data.commands = {
 		mask: false,
 		y: 0,
 		x: 0
+	},
+	"ResearchMedivacEnergyUpgrade/FusionCore": {
+		name: "Research Caduceus Reactor",
+		hotkey: "A",
+		icon: "btn-upgrade-terran-caduceusreactor",
+		mask: false,
+		y: 0,
+		x: 1
 	},
 	"ResearchRapidReignitionSystem/FusionCore": {
 		name: "Research Rapid Reignition System",
@@ -19927,7 +19953,7 @@ data.commands = {
 		icon: "btn-ability-zerg-neuralparasite-color",
 		mask: false,
 		y: 0,
-		x: 1
+		x: 0
 	},
 	"EvolveAmorphousArmorcloud/InfestationPit": {
 		name: "Evolve Microbial Shroud",
