@@ -939,7 +939,7 @@ data.units = {
 			],
 			"Tech Lab": [
 				"ResearchHighCapacityBarrels/FactoryTechLab",
-				"CycloneResearchHurricaneThrusters/FactoryTechLab",
+				"CycloneResearchLockOnDamageUpgrade/FactoryTechLab",
 				"ResearchDrillClaws/FactoryTechLab",
 				"ResearchSmartServos/FactoryTechLab",
 				"Cancel"
@@ -5145,10 +5145,16 @@ data.units = {
 		commander: "Zerg",
 		type: UNIT,
 		commands: [
+			"HydraliskFrenzy/Hydralisk",
 			"LurkerMP/Hydralisk",
 			"BurrowDown",
 			"BurrowUp"
-		]
+		],
+		overrides: {
+			"HydraliskFrenzy/Hydralisk": {
+				name: "Lunge"
+			}
+		}
 	},
 	"Zerg_Lurker": {
 		name: "Lurker",
@@ -5411,6 +5417,7 @@ data.units = {
 		commands: [
 			"EvolveGroovedSpines/HydraliskDen",
 			"EvolveMuscularAugments/HydraliskDen",
+			"ResearchFrenzy/HydraliskDen",
 			"Cancel"
 		]
 	},
@@ -9749,7 +9756,7 @@ data.units = {
 			"Rally",
 			"ChronoBoostEnergyCost/Nexus",
 			"NexusMassRecall/Nexus",
-			"BatteryOvercharge/Nexus",
+			"EnergyRecharge/Nexus",
 			"Cancel"
 		]
 	},
@@ -18153,7 +18160,7 @@ data.commands = {
 		icon: "btn-unit-zerg-lurker",
 		mask: false,
 		y: 2,
-		x: 0
+		x: 1
 	},
 	"Lurker/HydraliskLurker": {
 		name: "Morph to Lurker",
@@ -18630,6 +18637,14 @@ data.commands = {
 	},
 	"EvolveFrenzy/HydraliskDen": {
 		name: "Evolve Frenzy",
+		hotkey: "F",
+		icon: "btn-upgrade-zerg-frenzy",
+		mask: false,
+		y: 0,
+		x: 2
+	},
+	"ResearchFrenzy/HydraliskDen": {
+		name: "Evolve Nanomuscular Swell",
 		hotkey: "F",
 		icon: "btn-upgrade-zerg-frenzy",
 		mask: false,
@@ -22993,6 +23008,14 @@ data.commands = {
 		name: "Battery Overcharge",
 		hotkey: "B",
 		icon: "btn-ability-zeratul-observer-sensorarray",
+		mask: false,
+		y: 2,
+		x: 2
+	},
+	"EnergyRecharge/Nexus": {
+		name: "Energy Recharge",
+		hotkey: "B",
+		icon: "btn-ability-zeratul-warpprism-transferlink",
 		mask: false,
 		y: 2,
 		x: 2
